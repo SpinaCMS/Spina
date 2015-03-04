@@ -1,0 +1,7 @@
+%tr
+  %td= attachment.name
+  %td.nowrap= number_to_human_size(attachment.file.size)
+  %td.nowrap
+    %small= l attachment.created_at, format: '%d %B %Y %H:%M'
+  %td.nowrap
+    = link_to "Verwijderen", "#", class: 'button button-link button-danger button-small', data: {confirm: "Weet je zeker dat je <strong>#{attachment.name}</strong> wilt verwijderen?"}

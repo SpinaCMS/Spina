@@ -1,0 +1,17 @@
+%li.dd-item{data: {id: page.id}}
+  %div.dd-item-inner
+    = link_to spina.edit_admin_page_path(page), class: 'button button-link button-small sortable-link dd-nodrag' do
+      = page.menu_title
+      - if page.draft?
+        %small (concept)
+      - elsif !page.show_in_menu?
+        %small (onzichtbaar)
+
+      - if page.skip_to_first_child
+        %small (doorsturen naar 1<sup>e</sup> subpagina)
+
+    %span.pull-right= link_to "Bewerken", spina.edit_admin_page_path(page), class: 'button button-small button-link dd-nodrag', data: {icon: 'q'}
+
+  - if page.children.active.present?
+    %ol.dd-list
+      = render partial: 'page', collection: page.children.active.sorted

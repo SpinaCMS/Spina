@@ -1,0 +1,11 @@
+- content_for :tertiary_navigation do
+  %nav.tabs
+    %ul
+      %li.active
+        = link_to "Inhoud", "#page_content"
+      %li
+        = link_to "Zoekmachines", "#page_seo"
+      %li
+        = link_to "Geavanceerd", "#advanced"
+
+= render 'form'

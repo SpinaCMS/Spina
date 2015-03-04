@@ -1,0 +1,36 @@
+- content_for(:tertiary_navigation) do
+  %nav.tabs
+    %ul
+      %li{class: ('active' if action_name == "index")}
+        = link_to spina.admin_inquiries_path do
+          Alle berichten
+      %li{ class: ('active' if action_name == 'spam')}
+        = link_to spina.spam_admin_inquiries_path do
+          Spam
+
+.table-container
+  %table.table
+    %thead
+      %tr
+        %th{width: 200} Afzender
+        %th Bericht
+        %th{colspan: 2}
+
+    %tbody
+      - if @inquiries.present?
+        - @inquiries.each do |inquiry|
+          %tr
+            %td
+              %p 
+                %strong= inquiry.name
+            %td
+              %p
+                = link_to inquiry.summary, spina.admin_inquiry_path(inquiry)
+            %td.nowrap
+              %small=l inquiry.created_at, format: '%e %B %Y %H:%M'
+            %td.nowrap
+              = link_to "Verwijderen", spina.admin_inquiry_path(inquiry), method: :delete, class: 'button button-danger button-link button-small', data: {confirm: "Weet je zeker dat je het bericht van <strong>#{inquiry.name}</strong> definitief wilt verwijderen?"}
+      - else
+        %tr
+          %td.align-center{colspan: 3}
+            %em Je hebt nog geen berichten ontvangen.

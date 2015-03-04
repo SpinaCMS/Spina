@@ -1,0 +1,5 @@
+<% if @attachment.new_record? %>
+  alert("Document kon niet worden verwerkt: <%= j @attachment.errors.full_messages.join(', ').html_safe %>");
+<% else %>
+  $(".table-prepend-document").prepend("<%= j render partial: 'spina/admin/attachments/attachment', object: @attachment %>");
+<% end %>

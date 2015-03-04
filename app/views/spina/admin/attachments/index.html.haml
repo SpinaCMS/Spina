@@ -1,0 +1,19 @@
+.table-container
+  .search-input.pull-right
+    = text_field_tag :search, nil, placeholder: "Zoeken...", class: 'input-search input-rounded'
+    .clear-input{data: {icon: 'm'}}
+
+  %table.table.datatable
+    %thead
+      %tr
+        %th Bestandsnaam
+        %th Grootte
+        %th Aangemaakt op
+        %th 
+      %tr
+        %td{colspan: 4}
+          = form_for [spina, :admin, @attachment], html: {multipart: true, class: "new_document"} do |f|
+            = f.file_field :file, data: {customfileinput: true}
+
+    %tbody.table-prepend-document      
+      = render partial: 'spina/admin/attachments/attachment', collection: @attachments

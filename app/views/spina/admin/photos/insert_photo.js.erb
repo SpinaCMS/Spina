@@ -1,0 +1,10 @@
+var hidden_input = $("input[name='<%= j params[:page_part_id] %>[page_partable_id]']");
+hidden_input.parents('td').find('a .image, a .placeholder').remove();
+<% if @photo.present? %>
+  hidden_input.parents('td').find('a').prepend("<div class='placeholder pull-right'><span class='button button-small button-round' data-icon='U'>Foto kiezen</span></div><div class='image'><img src='<%= @photo.file.thumb %>' /></div>");
+  hidden_input.val("<%= @photo.id %>");
+<% else %>
+  hidden_input.parents('td').find('a').prepend("<div class='placeholder'><span class='button button-small button-round' data-icon='U'>Foto kiezen</span></div>");
+  hidden_input.parents('td').append("<input type='hidden' type='checkbox' name='<%= j params[:page_part_id] %>[_destroy]' value='1' />")
+<% end %>
+$.hideModal();

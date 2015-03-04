@@ -1,0 +1,4 @@
+- if current_user.present?
+  #admin_bar
+    = link_to "Bewerk je website", spina.admin_root_url, data: {icon: 'q', :"no-turbolink" => true}, class: 'button button-hollow button-round button-small'
+    = link_to "Uitloggen", spina.admin_logout_path, data: {icon: 'h'}, class: 'button button-hollow button-round button-small'

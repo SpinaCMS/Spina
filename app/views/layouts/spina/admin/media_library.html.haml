@@ -1,0 +1,14 @@
+- content_for(:tertiary_navigation) do
+  %nav.tabs
+    %ul
+      %li{class: ('active' if controller_name == "photos")}
+        = link_to spina.admin_photos_path do
+          Afbeeldingen
+      %li{class: ('active' if controller_name == "attachments")}
+        = link_to spina.admin_attachments_path do
+          Documenten
+
+- content_for :website_content do
+  = yield
+
+= render template: "layouts/spina/admin/website"

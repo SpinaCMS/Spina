@@ -1,0 +1,16 @@
+%nav#primary
+  %ul
+    %li{class: ('active' if (%w[pages photos attachments] + Spina.plugins(:website_resource).map { |plugin| plugin.config.controller if current_theme.config.plugins.include?(plugin.name.downcase) }).include? controller_name)}
+      = link_to "", spina.admin_pages_path, data: {icon: 'y'}
+
+    %li{class: ('active' if %w[inquiries].include? controller_name)}
+      - if @new_messages.present?
+        = link_to "", spina.inbox_admin_inquiries_path, data: {icon: 'A', badge: "#{@new_messages.size}"}
+      - else
+        = link_to "", spina.admin_inquiries_path, data: {icon: 'A'}
+
+    %li{class: ('active' if %w[accounts users tenants].include? controller_name)}
+      = link_to "", spina.edit_admin_account_path, data: {icon: 'f'}
+
+    %li.bottom
+      = link_to "", spina.admin_logout_path, data: {icon: 'h', :"no-turbolink" => true}

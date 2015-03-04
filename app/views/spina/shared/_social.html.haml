@@ -1,0 +1,5 @@
+- if current_account.facebook.present?
+  = link_to "", current_account.facebook, class: 'facebook-button', data: {:"no-turbolink" => true}
+
+- if current_account.twitter.present?
+  = link_to "", current_account.twitter, class: 'twitter-button', data: {:"no-turbolink" => true}

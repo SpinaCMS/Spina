@@ -1,0 +1,10 @@
+en:
+  text: Text
+  photo: Photo
+  line: Line of text
+
+  misc:
+    messages:
+      zero: "No messages"
+      one: "One message"
+      other: "%{count} messages"

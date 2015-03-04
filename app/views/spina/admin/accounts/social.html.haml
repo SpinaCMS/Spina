@@ -1,0 +1,23 @@
+= form_for [spina, :admin, current_account] do |f|
+  .table-container
+    %table.table.table-form
+      %tr
+        %td
+          %label Facebook
+        %td
+          = f.text_field :facebook, placeholder: "Facebook"
+
+      %tr
+        %td
+          %label Twitter
+        %td
+          = f.text_field :twitter, placeholder: "Twitter"
+
+      %tr
+        %td
+          %label Google+
+        %td
+          = f.text_field :google_plus, placeholder: "Google+"
+
+  %button.button.button-primary{type: 'submit', data: {icon: 'o'}}
+    Social media opslaan

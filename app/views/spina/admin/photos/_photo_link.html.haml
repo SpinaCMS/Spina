@@ -1,0 +1,11 @@
+#modal.modal
+  %header.big-header
+    = link_to '#', class: 'close_modal', data: {dismiss: 'modal'} do
+      %i.icon-only{data: {icon: 'm'}}
+
+    %h3
+      De link naar de afbeelding is:
+      %strong= @photo.file.url
+
+  %footer
+    = link_to 'Venster sluiten', '#', data: {dismiss: 'modal'}, style: 'width: 100%'

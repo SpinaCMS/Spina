@@ -1,0 +1,37 @@
+- content_for(:permanent_notice) do
+  - unless current_account.robots_allowed?
+    .permanent-notice.permanent-notice-info{data: {icon: 'k'}}
+      %p
+        Je website is niet zichtbaar voor zoekmachines
+        %small Bij instellingen voor #{link_to "Statistieken en zoekmachines", spina.analytics_admin_account_path} kun je dit activeren.
+
+.filters
+  %span{data: {dropdown: true}}
+    = link_to "Nieuwe pagina", spina.new_admin_page_path, class: 'button button-primary', data: {icon: 't', trigger: ('dropdown' if current_theme.new_page_templates.size > 1), target: '#create_page_dropdown'}
+
+    .sliding-dropdown#create_page_dropdown
+      .slide-controls
+        %a.previous.muted.icon-only{href: '#', data: {icon: '!'}}
+
+        - current_theme.new_page_templates.each_with_index do |template, index|
+          .slide-title{class: ('active' if index == 0), data: {target: "#slide-#{template[1].parameterize}"}}= template[1]
+
+        %a.next.icon-only{href: '#', data: {icon: '"'}}
+
+      - current_theme.new_page_templates.each_with_index do |template, index|
+        .slide{class: ('active' if index == 0), id: "slide-#{template[1].parameterize}"}
+          %p= template[2]
+
+          %p.muted= template[3]
+
+          .slide-dots
+            - current_theme.new_page_templates.each_with_index do |template2, index2|
+              .slide-dot{class: ('active' if index2 == index)}
+
+          = link_to "#{template[1]} invullen", spina.new_admin_page_path(params: {view_template: template[0]}), class: 'button button-primary', data: {icon: 'q'}
+
+  = link_to 'Volgorde wijzigen', '#pages_list', class: 'button button-link sort-switch', data: {icon: '8'}
+
+.dd#pages_list{data: {:"sort-url" => spina.sort_admin_pages_url }}
+  %ol.dd-list
+    = render partial: 'page', collection: @pages.roots

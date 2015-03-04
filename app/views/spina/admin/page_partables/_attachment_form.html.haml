@@ -1,0 +1,8 @@
+= link_to select_admin_attachments_path(attachment_form.object_name), remote: true, class: "media_picker" do
+  - if attachment_form.object.page_partable && attachment_form.object.page_partable.file.present?
+    .attachment= attachment_form.object.page_partable.name
+  - else
+    .placeholder
+      %span{data: {icon: 't'}} Kies uit bibliotheek
+
+  = attachment_form.hidden_field :page_partable_id

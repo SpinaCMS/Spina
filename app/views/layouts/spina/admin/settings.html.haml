@@ -1,0 +1,30 @@
+- content_for :secondary_navigation do
+  %nav#secondary
+    %h1 Voorkeuren
+
+    %ul
+      %li{class: ('active' if params[:action] == 'edit' && params[:controller] == 'spina/admin/accounts')}
+        = link_to spina.edit_admin_account_path, data: {icon: 'J'} do
+          Algemene gegevens
+          %small Persoonlijke instellingen
+
+      - if can? :manage, Spina::User
+        %li{class: ('active' if %w[users].include? controller_name)}
+          = link_to spina.admin_users_path, data: {icon: 'K'} do
+            Gebruikers
+            %small Beheer gebruikers en beheerders
+
+      %li{class: ('active' if params[:action] == 'social')}
+        = link_to spina.social_admin_account_path, data: {icon: 'D'} do
+          Social media
+          %small Facebook en Twitter accounts
+
+      %li{class: ('active' if params[:action] == 'analytics')}
+        = link_to spina.analytics_admin_account_path, data: {icon: 'E'} do
+          Statistieken en zoekmachines
+          %small Koppel je account voor real-time statistieken
+
+- content_for :content do
+  = yield
+
+= render template: "layouts/spina/admin/application"

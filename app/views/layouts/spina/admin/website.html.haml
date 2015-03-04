@@ -1,0 +1,26 @@
+- content_for :secondary_navigation do
+  %nav#secondary
+    %h1 Je website
+
+    %ul
+      %li{class: ('active' if params[:controller] == "spina/admin/pages")}
+        = link_to spina.admin_pages_path, data: {icon: 'B'} do
+          Pagina's
+          %small Alle pagina's op je website
+
+      %li{class: ('active' if params[:controller] == "spina/admin/photos" || params[:controller] == "spina/admin/attachments")}
+        = link_to spina.admin_photos_path, data: {icon: 'N'} do
+          Mediabibliotheek
+          %small Hier staan al je afbeeldingen, video's en documenten
+
+      - Spina.plugins(:website_resource).each do |plugin|
+        - if current_theme.config.plugins.include? plugin.name.downcase
+          %li{class: ('active' if params[:controller] == "spina/admin/#{plugin.config.controller}")}
+            = link_to spina.send("admin_#{plugin.config.controller}_path"), data: {icon: plugin.config.spina_icon} do
+              = plugin.config.title
+              %small= plugin.config.description
+
+- content_for(:content) do
+  = content_for?(:website_content) ? yield(:website_content) : yield
+  
+= render template: "layouts/spina/admin/application"

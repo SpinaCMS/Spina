@@ -1,0 +1,20 @@
+.modal.modal-large
+  %header
+    = link_to "", "#", class: 'close_modal', data: {dismiss: 'modal', icon: 'm'}
+    %h3 Afbeelding invoegen
+
+  %section
+    .gallery-select.gallery
+      .item
+        = form_for [spina, :admin, @photo], html: {multipart: true} do |f|
+          = f.file_field :file, data: {customfileinput: true}
+
+      = form_tag spina.wysihtml5_insert_admin_photos_path(params[:object_id]), remote: true, class: 'gallery-prepend-image' do
+        - @photos.each do |photo|
+          .item
+            .overlay= radio_button_tag :photo_id, photo.id
+            = image_tag photo.file.thumb
+
+        %footer
+          = link_to "Annuleren", "#", data: {dismiss: 'modal'}
+          = button_tag "Afbeelding invoegen", type: 'submit', class: 'primary', data: {icon: 't '}

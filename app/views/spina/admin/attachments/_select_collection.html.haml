@@ -1,0 +1,25 @@
+.modal.modal-large
+  %header
+    = link_to "", "#", class: 'close_modal', data: {dismiss: 'modal', icon: 'm'}
+    %h3 Documenten invoegen
+
+  %section
+    -# = form_for [spina, :admin, @attachment], html: {multipart: true} do |f|
+    -#   = f.file_field :file, data: {customfileinput: true}
+
+    = form_tag spina.insert_collection_admin_attachments_path(params[:page_part_id]), remote: true, class: 'gallery-prepend-attachment' do
+      .table-container
+        %table.table.table-clickable
+          %thead
+            %tr
+              %th 
+              %th Bestandsnaam
+          %tbody
+            - @attachments.each do |attachment|
+              %tr
+                %td= check_box_tag 'attachment_ids[]', attachment.id
+                %td= attachment.name
+
+      %footer
+        = link_to "Annuleren", "#", data: {dismiss: 'modal'}
+        = button_tag "Documenten invoegen", type: 'submit', class: 'primary', data: {icon: 't '}

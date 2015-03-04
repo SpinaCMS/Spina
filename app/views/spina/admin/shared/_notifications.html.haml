@@ -1,0 +1,16 @@
+%aside#notifications
+  - if flash[:notice]
+    .notification{data: {icon: 'L'}}
+      %p
+        Informatie
+        %small= flash[:notice]
+
+  - if content_for?(:notification_alert)
+    = yield(:notification_alert)
+
+  - else
+    - if flash[:alert]
+      .notification.notification-error{data: {icon: 'm'}}
+        %p 
+          Oeps! Er is iets mis gegaan
+          %small= flash[:alert]

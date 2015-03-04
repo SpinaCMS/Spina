@@ -1,0 +1,32 @@
+= form_for [spina, :admin, current_account] do |f|
+  .table-container
+    %table.table.table-form
+      %tr
+        %td
+          %label Layout website
+        %td
+          .select-dropdown.account-theme{data: {layout_parts: current_theme.config.layout_parts.map{|layout_part| layout_part[:name]}}}
+            - options = options_for_select(Spina.themes.map { |theme| [theme.to_s, theme.to_s, {'data-layout-parts' => theme.config.layout_parts.map{|layout_part| layout_part[:name] }}] }, current_account.theme)
+            = f.select :theme, options
+
+      %tr
+        %td
+          %label Logo
+        %td
+          = image_tag current_account.logo
+          = f.file_field :logo
+
+      = f.fields_for :layout_parts do |layout_part_form|
+        %tr.layout-part{data: {name: layout_part_form.object.name}}
+          %td
+            %label= layout_part_form.object.title
+          %td
+            = layout_part_form.hidden_field :id
+            = layout_part_form.hidden_field :title
+            = layout_part_form.hidden_field :layout_partable_type
+            = layout_part_form.hidden_field :name
+
+            = render partial: "spina/admin/layout_partables/#{layout_part_form.object.layout_partable_type.demodulize.underscore}_form", object: layout_part_form
+
+  %button.button.button-primary{type: 'submit', data: {icon: 'o'}}
+    Vormgeving opslaan

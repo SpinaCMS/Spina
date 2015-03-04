@@ -1,0 +1,23 @@
+.table-container.table-form
+  %table.table
+    %tr
+      %th Naam
+      %td= @inquiry.name
+    %tr
+      %th Email
+      %td= @inquiry.email
+    %tr
+      %th Telefoon
+      %td= @inquiry.phone
+    %tr
+      %td
+      %td= simple_format @inquiry.message
+
+.pull-right
+  - unless @inquiry.archived?
+    = link_to "Bericht markeren als gelezen", spina.mark_as_read_admin_inquiry_path(@inquiry), method: :patch, class: 'button', data: {icon: 'k'}
+
+  - if @inquiry.spam
+    = link_to "Geen spam", spina.unmark_spam_admin_inquiry_path(@inquiry), method: :patch, class: 'button', data: {icon: 'v'}
+
+  = link_to "Verwijderen", spina.admin_inquiry_path(@inquiry), method: :delete, class: 'button button-danger button-link', data: {confirm: "Weet je zeker dat je het bericht van <strong>#{@inquiry.name}</strong> definitief wilt verwijderen?"}

@@ -1,0 +1,7 @@
+.item
+  .overlay
+    = radio_button_tag :photo_id, photo.id
+    = check_box_tag 'photo_ids[]', photo.id
+    = link_to '', admin_photo_path(photo), class: 'icon-only', data: {icon: 'Z', aviary: true}
+    = link_to '', spina.admin_photo_path(photo), method: :delete, class: 'icon-only', data: {icon: 'Q', confirm: "Weet je zeker dat je deze <strong>foto</strong> wilt verwijderen?"}
+  = image_tag photo.file.thumb.url, id: "photo_#{photo.id}", data: {posturl: spina.enhance_admin_photo_path(photo), image: photo.file.url}

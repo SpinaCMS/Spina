@@ -1,0 +1,3 @@
+- pages = current_user.present? ? Spina::Page.active : Spina::Page.live
+- menu = Spina::Pages::MenuPresenter.new(pages.in_menu.arrange(order: :position), self, @page)
+= menu.to_html

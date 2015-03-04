@@ -1,0 +1,5 @@
+<% if @photo.new_record? %>
+  alert("Foto kon niet worden verwerkt: <%= j @photo.errors.full_messages.join(', ').html_safe %>");
+<% else %>
+  $(".gallery-prepend-image").prepend("<%= j render partial: 'spina/admin/photos/photo', object: @photo %>");
+<% end %>

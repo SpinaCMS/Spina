@@ -1,0 +1,21 @@
+= text_form.fields_for :page_partable, text_form.object.page_partable do |form|
+  .wysihtml5-container{data: {:"object-id" => text_form.object.object_id}}
+    .toolbar{id: "wysihtml5-toolbar-#{text_form.object.object_id}"}
+      = link_to "", "#", class: 'command command-bold', title: "CTRL+B", data: {:"wysihtml5-command" => "bold", icon: 'H'}
+      = link_to "", "#", class: 'command command-italic', title: "CTRL+I", data: {:"wysihtml5-command" => "italic", icon: 'G'}
+      = link_to "", "#", class: 'command command-insert-unordered-list', data: {:"wysihtml5-command" => "insertUnorderedList", icon: 'F'}
+      = link_to "", spina.wysihtml5_link_admin_page_parts_path(text_form.object.object_id), class: 'command', data: {icon: 'Y'}, remote: true
+      = link_to "", spina.wysihtml5_select_admin_photos_path(text_form.object.object_id), class: 'command', data: {icon: 'V'}, remote: true
+
+      .pull-right
+        .choose-text-type
+          %ul
+            %li= link_to "Paragraaf", "#", data: {:"wysihtml5-command" => "formatBlock", :"wysihtml5-command-value" => "P"}
+            %li= link_to "Kop 1", "#", data: {:"wysihtml5-command" => "formatBlock", :"wysihtml5-command-value" => "h1"}
+            %li= link_to "Kop 2", "#", data: {:"wysihtml5-command" => "formatBlock", :"wysihtml5-command-value" => "h2"}
+            %li= link_to "Kop 3", "#", data: {:"wysihtml5-command" => "formatBlock", :"wysihtml5-command-value" => "h3"}
+            %li= link_to "Quote", "#", data: {:"wysihtml5-command" => "formatBlock", :"wysihtml5-command-value" => "blockquote"}
+
+        = link_to "", "#", class: 'command action-change-view', data: {:"wysihtml5-action" => "change_view", icon: 'I'}
+
+    = form.text_area :content, placeholder: "Paginasectie #{text_form.object.name.downcase}", class: 'wysihtml5'

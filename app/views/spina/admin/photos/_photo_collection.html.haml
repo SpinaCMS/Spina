@@ -1,0 +1,5 @@
+- if photos.present?
+  %ul.sortable-grid
+    - photos.each do |photo|
+      %li.image{data: {photo_id: photo.id}}
+        = image_tag photo.file.thumb

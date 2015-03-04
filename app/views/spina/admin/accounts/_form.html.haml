@@ -1,0 +1,55 @@
+= form_for [spina, :admin, current_account] do |f|
+  .table-container
+    %table.table.table-form
+      %tr
+        %td
+          %label Naam website
+        %td
+          = f.text_field :name, placeholder: "Naam van je website"
+
+      %tr
+        %td
+          %label Adres
+        %td
+          = f.text_field :address, placeholder: "Straat en huisnummer"
+
+      %tr
+        %td
+          %label Postcode
+        %td
+          = f.text_field :postal_code, placeholder: "Postcode"
+
+      %tr
+        %td
+          %label Plaats
+        %td
+          = f.text_field :city, placeholder: "Plaats"
+
+      %tr
+        %td
+          %label Telefoonnummer
+        %td
+          = f.text_field :phone, placeholder: "Telefoonnummer"
+
+      %tr
+        %td
+          %label Email
+        %td
+          = f.text_field :email, placeholder: "Emailadres"
+
+      %tr
+        %td
+          %label KvK-nummer
+          %small Het is verplicht je KvK-nummer te vermelden op je website
+        %td
+          = f.text_field :kvk_identifier, placeholder: "KvK-nummer"
+
+      %tr
+        %td
+          %label BTW-nummer
+          %small Het is verplicht je BTW-nummer te vermelden op je website
+        %td
+          = f.text_field :vat_identifier, placeholder: "BTW-nummer"
+
+  %button.button.button-primary{type: 'submit', data: {icon: 'o'}}
+    Gegevens opslaan
