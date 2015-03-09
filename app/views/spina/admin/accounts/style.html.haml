@@ -3,7 +3,7 @@
     %table.table.table-form
       %tr
         %td
-          %label Layout website
+          %label= Spina::Account.human_attribute_name(:theme)
         %td
           .select-dropdown.account-theme{data: {layout_parts: current_theme.config.layout_parts.map{|layout_part| layout_part[:name]}}}
             - options = options_for_select(Spina.themes.map { |theme| [theme.to_s, theme.to_s, {'data-layout-parts' => theme.config.layout_parts.map{|layout_part| layout_part[:name] }}] }, current_account.theme)
@@ -11,7 +11,7 @@
 
       %tr
         %td
-          %label Logo
+          %label= Spina::Account.human_attribute_name(:logo)
         %td
           = image_tag current_account.logo
           = f.file_field :logo
@@ -29,4 +29,4 @@
             = render partial: "spina/admin/layout_partables/#{layout_part_form.object.layout_partable_type.demodulize.underscore}_form", object: layout_part_form
 
   %button.button.button-primary{type: 'submit', data: {icon: 'o'}}
-    Vormgeving opslaan
+    = t('spina.preferences.style_save')

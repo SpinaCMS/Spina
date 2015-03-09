@@ -3,53 +3,53 @@
     %table.table.table-form
       %tr
         %td
-          %label Naam website
+          %label= Spina::Account.human_attribute_name(:name)
         %td
-          = f.text_field :name, placeholder: "Naam van je website"
+          = f.text_field :name, placeholder: Spina::Account.human_attribute_name(:name)
 
       %tr
         %td
-          %label Adres
+          %label= Spina::Account.human_attribute_name(:address)
         %td
-          = f.text_field :address, placeholder: "Straat en huisnummer"
+          = f.text_field :address, placeholder: Spina::Account.human_attribute_name(:address)
 
       %tr
         %td
-          %label Postcode
+          %label= Spina::Account.human_attribute_name(:postal_code)
         %td
-          = f.text_field :postal_code, placeholder: "Postcode"
+          = f.text_field :postal_code, placeholder: Spina::Account.human_attribute_name(:postal_code)
 
       %tr
         %td
-          %label Plaats
+          %label= Spina::Account.human_attribute_name(:city)
         %td
-          = f.text_field :city, placeholder: "Plaats"
+          = f.text_field :city, placeholder: Spina::Account.human_attribute_name(:city)
 
       %tr
         %td
-          %label Telefoonnummer
+          %label= Spina::Account.human_attribute_name(:phone)
         %td
-          = f.text_field :phone, placeholder: "Telefoonnummer"
+          = f.text_field :phone, placeholder: Spina::Account.human_attribute_name(:phone)
 
       %tr
         %td
-          %label Email
+          %label= Spina::Account.human_attribute_name(:email)
         %td
-          = f.text_field :email, placeholder: "Emailadres"
+          = f.text_field :email, placeholder: Spina::Account.human_attribute_name(:email)
 
       %tr
         %td
-          %label KvK-nummer
-          %small Het is verplicht je KvK-nummer te vermelden op je website
+          %label= Spina::Account.human_attribute_name(:kvk_identifier)
+          %small= Spina::Account.human_attribute_name(:kvk_identifier_description)
         %td
-          = f.text_field :kvk_identifier, placeholder: "KvK-nummer"
+          = f.text_field :kvk_identifier, placeholder: Spina::Account.human_attribute_name(:kvk_identifier)
 
       %tr
         %td
-          %label BTW-nummer
-          %small Het is verplicht je BTW-nummer te vermelden op je website
+          %label= Spina::Account.human_attribute_name(:vat_identifier)
+          %small= Spina::Account.human_attribute_name(:vat_identifier_description)
         %td
-          = f.text_field :vat_identifier, placeholder: "BTW-nummer"
+          = f.text_field :vat_identifier, placeholder: Spina::Account.human_attribute_name(:vat_identifier)
 
   %button.button.button-primary{type: 'submit', data: {icon: 'o'}}
-    Gegevens opslaan
+    = t('spina.preferences.account_save')

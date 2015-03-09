@@ -3,21 +3,21 @@
     %table.table.table-form
       %tr
         %td
-          %label Facebook
+          %label= Spina::Account.human_attribute_name(:facebook)
         %td
-          = f.text_field :facebook, placeholder: "Facebook"
+          = f.text_field :facebook, placeholder: Spina::Account.human_attribute_name(:facebook)
 
       %tr
         %td
-          %label Twitter
+          %label= Spina::Account.human_attribute_name(:twitter)
         %td
-          = f.text_field :twitter, placeholder: "Twitter"
+          = f.text_field :twitter, placeholder: Spina::Account.human_attribute_name(:twitter)
 
       %tr
         %td
-          %label Google+
+          %label= Spina::Account.human_attribute_name(:google_plus)
         %td
-          = f.text_field :google_plus, placeholder: "Google+"
+          = f.text_field :google_plus, placeholder: Spina::Account.human_attribute_name(:google_plus)
 
   %button.button.button-primary{type: 'submit', data: {icon: 'o'}}
-    Social media opslaan
+    = t('spina.preferences.social_media_save')

@@ -3,19 +3,19 @@
     %table.table.table-form
       %tr
         %td
-          %label Website zichtbaar in zoekmachines
+          %label= Spina::Account.human_attribute_name(:robots_allowed)
         %td
           = f.check_box :robots_allowed, data: {switch: true}
       %tr
         %td
-          %label Google Analytics
+          %label= Spina::Account.human_attribute_name(:google_analytics)
         %td
-          = f.text_field :google_analytics, placeholder: "Google Analytics code"
+          = f.text_field :google_analytics, placeholder: Spina::Account.human_attribute_name(:google_analytics)
       %tr
         %td
-          %label Google Site Verification
+          %label= Spina::Account.human_attribute_name(:google_site_verification)
         %td
-          = f.text_field :google_site_verification, placeholder: "Google Site Verification code"
+          = f.text_field :google_site_verification, placeholder: Spina::Account.human_attribute_name(:google_site_verification)
 
   %button.button.button-primary{type: 'submit', data: {icon: 'o'}}
-    Voorkeuren opslaan
+    = t('spina.preferences.analytics_save')
