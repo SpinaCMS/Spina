@@ -1,28 +1,28 @@
 - content_for :secondary_navigation do
   %nav#secondary
-    %h1 Voorkeuren
+    %h1= t('spina.preferences')
 
     %ul
       %li{class: ('active' if params[:action] == 'edit' && params[:controller] == 'spina/admin/accounts')}
         = link_to spina.edit_admin_account_path, data: {icon: 'J'} do
-          Algemene gegevens
-          %small Persoonlijke instellingen
+          = t('spina.preferences.account')
+          %small= t('spina.preferences.account_description')
 
       - if can? :manage, Spina::User
         %li{class: ('active' if %w[users].include? controller_name)}
           = link_to spina.admin_users_path, data: {icon: 'K'} do
-            Gebruikers
-            %small Beheer gebruikers en beheerders
+            = t('spina.preferences.users')
+            %small= t('spina.preferences.users_description')
 
       %li{class: ('active' if params[:action] == 'social')}
         = link_to spina.social_admin_account_path, data: {icon: 'D'} do
-          Social media
-          %small Facebook en Twitter accounts
+          = t('spina.preferences.social_media')
+          %small= t('spina.preferences.social_media_description')
 
       %li{class: ('active' if params[:action] == 'analytics')}
         = link_to spina.analytics_admin_account_path, data: {icon: 'E'} do
-          Statistieken en zoekmachines
-          %small Koppel je account voor real-time statistieken
+          = t('spina.preferences.analytics')
+          %small= t('spina.preferences.analytics_description')
 
 - content_for :content do
   = yield

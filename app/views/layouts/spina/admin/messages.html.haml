@@ -1,20 +1,20 @@
 - content_for :secondary_navigation do
   %nav#secondary
-    %h1 Berichten
+    %h1= Spina::Inquiry.model_name.human(count: 2)
 
     %ul
       %li{class: ('active' if ["inbox", "inbox_show"].include? action_name )}
         = link_to spina.inbox_admin_inquiries_path, data: {icon: 'b'} do
           - if @new_messages.present?
-            = "Inbox (#{@new_messages.size})"
+            = "#{t('spina.inquiries.inbox')} (#{@new_messages.size})"
           - else
-            Inbox
-          %small Binnenkomende berichten
+            = t('spina.inquiries.inbox')
+          %small= t('spina.inquiries.inbox_description')
           
       %li{class: ('active' if ["index", "spam", "show"].include? action_name )}
         = link_to spina.admin_inquiries_path, data: {icon: 'z'} do
-          Alle berichten
-          %small Alle berichten
+          = t('spina.inquiries.all')
+          %small= t('spina.inquiries.all_description')
 
 - content_for :content do
   = yield
