@@ -7,27 +7,27 @@ module Spina
       layout "spina/admin/settings"
 
       def edit
-        add_breadcrumb "Algemene gegevens", spina.edit_admin_account_path
+        add_breadcrumb I18n.t('spina.preferences.account'), spina.edit_admin_account_path
       end
 
       def update
         if current_account.update_attributes(account_params)
-          redirect_to :back, notice: "Voorkeuren zijn bijgewerkt"
+          redirect_to :back
         else
-          redirect_to :back, alert: "Voorkeuren zijn niet bijgewerkt"
+          redirect_to :back
         end
       end
 
       def analytics
-        add_breadcrumb "Statistieken en zoekmachines", spina.analytics_admin_account_path
+        add_breadcrumb I18n.t('spina.preferences.analytics'), spina.analytics_admin_account_path
       end
 
       def social
-        add_breadcrumb "Social media", spina.social_admin_account_path
+        add_breadcrumb I18n.t('spina.preferences.social_media'), spina.social_admin_account_path
       end
 
       def style
-        add_breadcrumb "Vormgeving", spina.style_admin_account_path
+        add_breadcrumb I18n.t('spina.preferences.style'), spina.style_admin_account_path
         @themes = ::Spina.themes
         @layout_parts = current_theme.config.layout_parts.map { |layout_part| current_account.layout_part(layout_part) }
       end

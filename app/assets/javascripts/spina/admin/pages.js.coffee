@@ -39,11 +39,9 @@ $(document).on 'click', '.sort-switch', (event) ->
   if $(this).attr('data-icon') == 'j'
     $(this).attr('data-icon', '8')
     $(this).removeClass('button-success')
-    $(this).addClass('button-link')
-    $(this).text('Volgorde wijzigen')
+    $(this).text($(this).data('change-order'))
   else
     $(this).attr('data-icon', 'j')
     $(this).addClass('button-success')
-    $(this).removeClass('button-link')
-    $(this).text('Klaar met slepen')
+    $(this).text($(this).data('done-changing-order'))
   return false

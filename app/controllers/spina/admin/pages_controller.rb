@@ -17,15 +17,15 @@ module Spina
         if current_theme.new_page_templates.any? { |template| template[0] == params[:view_template] }
           @page.view_template = params[:view_template] 
         end
-        add_breadcrumb "Nieuwe pagina"
+        add_breadcrumb I18n.t('spina.pages.new')
         @page_parts = current_theme.config.page_parts.map { |page_part| @page.page_part(page_part) }
       end
 
       def create
         @page = Page.new(page_params)
-        add_breadcrumb "Nieuwe pagina"
+        add_breadcrumb I18n.t('spina.pages.new')
         if @page.save
-          redirect_to spina.admin_pages_url, notice: "#{@page.title} is aangemaakt."
+          redirect_to spina.admin_pages_url
         else
           @page_parts = @page.page_parts
           render :new
@@ -43,7 +43,7 @@ module Spina
         add_breadcrumb @page.title
         respond_to do |format|
           if @page.update_attributes(page_params)
-            format.html { redirect_to spina.admin_pages_url, notice: "#{@page.title} opgeslagen" }
+            format.html { redirect_to spina.admin_pages_url
             format.js
           else
             format.html do
@@ -70,13 +70,13 @@ module Spina
       def destroy
         @page = Page.find(params[:id])
         @page.destroy
-        redirect_to spina.admin_pages_url, notice: "De pagina is verwijderd."
+        redirect_to spina.admin_pages_url
       end
 
       private
 
       def set_breadcrumb
-        add_breadcrumb "Pagina's", spina.admin_pages_path
+        add_breadcrumb I18n.t('spina.website.pages'), spina.admin_pages_path
       end
 
       def update_page_position(page, parent_id = nil)

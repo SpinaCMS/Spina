@@ -3,7 +3,7 @@
     %table.table.table-form
       %tr
         %td
-          %label= Spina::Account.human_attribute_name(:theme)
+          = Spina::Account.human_attribute_name(:theme)
         %td
           .select-dropdown.account-theme{data: {layout_parts: current_theme.config.layout_parts.map{|layout_part| layout_part[:name]}}}
             - options = options_for_select(Spina.themes.map { |theme| [theme.to_s, theme.to_s, {'data-layout-parts' => theme.config.layout_parts.map{|layout_part| layout_part[:name] }}] }, current_account.theme)
@@ -11,7 +11,7 @@
 
       %tr
         %td
-          %label= Spina::Account.human_attribute_name(:logo)
+          = Spina::Account.human_attribute_name(:logo)
         %td
           = image_tag current_account.logo
           = f.file_field :logo
@@ -19,7 +19,7 @@
       = f.fields_for :layout_parts do |layout_part_form|
         %tr.layout-part{data: {name: layout_part_form.object.name}}
           %td
-            %label= layout_part_form.object.title
+            = layout_part_form.object.title
           %td
             = layout_part_form.hidden_field :id
             = layout_part_form.hidden_field :title

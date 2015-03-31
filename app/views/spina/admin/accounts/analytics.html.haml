@@ -3,17 +3,17 @@
     %table.table.table-form
       %tr
         %td
-          %label= Spina::Account.human_attribute_name(:robots_allowed)
+          = Spina::Account.human_attribute_name(:robots_allowed)
         %td
           = f.check_box :robots_allowed, data: {switch: true}
       %tr
         %td
-          %label= Spina::Account.human_attribute_name(:google_analytics)
+          = Spina::Account.human_attribute_name(:google_analytics)
         %td
           = f.text_field :google_analytics, placeholder: Spina::Account.human_attribute_name(:google_analytics)
       %tr
         %td
-          %label= Spina::Account.human_attribute_name(:google_site_verification)
+          = Spina::Account.human_attribute_name(:google_site_verification)
         %td
           = f.text_field :google_site_verification, placeholder: Spina::Account.human_attribute_name(:google_site_verification)
 

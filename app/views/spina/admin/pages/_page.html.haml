@@ -1,16 +1,16 @@
 %li.dd-item{data: {id: page.id}}
   %div.dd-item-inner
-    = link_to spina.edit_admin_page_path(page), class: 'button button-link button-small sortable-link dd-nodrag' do
+    = link_to spina.edit_admin_page_path(page), class: 'button button-link button-small sortable-link' do
       = page.menu_title
       - if page.draft?
-        %small (concept)
+        %small (#{t('spina.pages.concept')})
       - elsif !page.show_in_menu?
-        %small (onzichtbaar)
+        %small (#{t('spina.pages.show_in_menu')})
 
       - if page.skip_to_first_child
-        %small (doorsturen naar 1<sup>e</sup> subpagina)
+        %small (#{raw t('spina.pages.skip_to_first_child')})
 
-    %span.pull-right= link_to "Bewerken", spina.edit_admin_page_path(page), class: 'button button-small button-link dd-nodrag', data: {icon: 'q'}
+    %span.pull-right= link_to t('spina.edit'), spina.edit_admin_page_path(page), class: 'button button-small button-link dd-nodrag', data: {icon: 'q'}
 
   - if page.children.active.present?
     %ol.dd-list

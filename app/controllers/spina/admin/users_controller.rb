@@ -13,16 +13,16 @@ module Spina
 
       def new
         @user = User.new
-        add_breadcrumb "Nieuwe gebruiker"
+        add_breadcrumb I18n.t('spina.users.new')
       end
 
       def create
         @user = User.new(user_params)
-        add_breadcrumb "Nieuwe gebruiker"
+        add_breadcrumb I18n.t('spina.users.new')
         if @user.save
-          redirect_to admin_users_url, notice: "Gebruiker #{@user} is aangemaakt."
+          redirect_to admin_users_url
         else
-          flash.now[:alert] = "De gebruiker kan nog niet worden opgeslagen."
+          flash.now[:alert] = I18n.t('spina.users.cannot_be_created')
           render :new
         end
       end
@@ -38,7 +38,7 @@ module Spina
         if @user.update_attributes(user_params)
           redirect_to spina.admin_users_url
         else
-          flash.now[:alert] = "De gebruiker kan nog worden opgeslagen."
+          flash.now[:alert] = I18n.t('spina.users.cannot_be_created')
           render :edit
         end
       end
@@ -46,13 +46,13 @@ module Spina
       def destroy
         @user = User.find(params[:id])
         @user.destroy unless @user == current_user
-        redirect_to admin_users_url, notice: "De gebruiker is verwijderd."
+        redirect_to admin_users_url
       end
 
       private
 
       def set_breadcrumbs
-        add_breadcrumb "Gebruikers", spina.admin_users_path
+        add_breadcrumb I18n.t('spina.preferences.users'), spina.admin_users_path
       end
 
       def user_params

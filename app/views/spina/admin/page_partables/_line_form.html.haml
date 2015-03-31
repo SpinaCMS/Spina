@@ -1,2 +1,2 @@
 = line_form.fields_for :page_partable, line_form.object.page_partable do |form|
-  = form.text_field :content, placeholder: "Paginsectie #{line_form.object.name.downcase}"
+  = form.text_field :content, placeholder: "#{t 'spina.pages.page_part'} #{line_form.object.name.downcase}"

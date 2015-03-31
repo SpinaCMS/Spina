@@ -2,7 +2,7 @@
   - content_for :notification_alert do
     .notification.notification-error{data: {icon: 'm'}}
       %p 
-        De gebruiker kan niet worden opgeslagen
+        = Spina::User.human_attribute_name :cannot_be_created
         %small
           - @user.errors.full_messages.each do |msg|
             = msg
@@ -13,42 +13,41 @@
     %table.table.table-form
       %tr
         %td
-          %label Naam
+          = Spina::User.human_attribute_name :name
         %td
-          = f.text_field :name, placeholder: "Naam van de gebruiker", class: 'large'
+          = f.text_field :name, placeholder: Spina::User.human_attribute_name(:name_placeholder), class: 'large'
 
       %tr
         %td
-          %label Emailadres
-          %small Gebruik een uniek emailadres
+          = Spina::User.human_attribute_name :email
+          %small= Spina::User.human_attribute_name :email_description
         %td
-          = f.text_field :email, placeholder: "Emailadres"
+          = f.text_field :email, placeholder: Spina::User.human_attribute_name(:email)
 
       %tr
         %td
-          %label Wachtwoord
-          %small Leeglaten om niet te veranderen
+          = Spina::User.human_attribute_name :password
+          %small= Spina::User.human_attribute_name :password_description
         %td
-          = f.password_field :password, placeholder: "Wachtwoord"
+          = f.password_field :password, placeholder: Spina::User.human_attribute_name(:password)
 
       %tr
         %td
-          %label Bevestig wachtwoord
+          = Spina::User.human_attribute_name :password_confirmation
         %td
-          = f.password_field :password_confirmation, placeholder: "Bevestig wachtwoord"
+          = f.password_field :password_confirmation, placeholder: Spina::User.human_attribute_name(:password_confirmation)
 
       %tr
         %td
-          %label Beheerder?
-          %small Beheerders kunnen gebruikers aanmaken
+          #{Spina::User.human_attribute_name :admin}?
+          %small= Spina::User.human_attribute_name :admin_description
         %td
           = f.check_box :admin, data: {switch: 'true'}
 
-
   %button.button.button-primary{type: 'submit', data: {icon: 'o'}}
-    Gebruiker opslaan
+    =t('spina.users.save')
 
-  = link_to "Annuleren", spina.admin_users_path, class: 'button button-link'
+  = link_to t('spina.cancel'), spina.admin_users_path, class: 'button button-link'
 
   - unless @user.new_record? || @user == current_user
-    .pull-right= link_to "Definitief verwijderen", spina.admin_user_path(@user), method: :delete, data: {confirm: "Weet je zeker dat je de gebruiker <strong>#{@user}</strong> wilt verwijderen?"}, class: 'button button-link button-danger'
+    .pull-right= link_to t('spina.permanently_delete'), spina.admin_user_path(@user), method: :delete, data: {confirm: t('spina.users.delete_confirmation', user: @user)}, class: 'button button-link button-danger'

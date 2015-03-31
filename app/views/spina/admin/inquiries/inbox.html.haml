@@ -2,8 +2,8 @@
   %table.table
     %thead
       %tr
-        %th{width: 200} Afzender
-        %th Bericht
+        %th{width: 200}= Spina::Inquiry.human_attribute_name(:name)
+        %th= Spina::Inquiry.human_attribute_name(:message)
         %th{colspan: 2}
 
     %tbody
@@ -21,10 +21,10 @@
               = l inquiry.created_at, format: '%e %B %Y %H:%M'
 
             %td.nowrap
-              = link_to "Bericht markeren als gelezen", spina.mark_as_read_admin_inquiry_path(inquiry), method: :patch, class: 'button button-link button-small', data: {icon: 'k'}
-              = link_to "Verwijderen", spina.admin_inquiry_path(inquiry), method: :delete, class: 'button button-danger button-link button-small', data: {confirm: "Weet je zeker dat je het bericht van <strong>#{inquiry.name}</strong> definitief wilt verwijderen?"}
+              = link_to t('spina.inquiries.mark_as_read'), spina.mark_as_read_admin_inquiry_path(inquiry), method: :patch, class: 'button button-link button-small', data: {icon: 'k'}
+              = link_to "Verwijderen", spina.admin_inquiry_path(inquiry), method: :delete, class: 'button button-danger button-link button-small', data: {confirm: t('spina.inquiries.delete_confirmation', subject: inquiry.name)}
       
       - else
         %tr
           %td.align-center{colspan: 3}
-            %em Inbox is leeg.
+            %em= t('spina.inquiries.empty_inbox')

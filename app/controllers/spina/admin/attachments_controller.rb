@@ -8,7 +8,7 @@ module Spina
       layout "spina/admin/media_library"
 
       def index
-        add_breadcrumb "Documenten", spina.admin_attachments_path
+        add_breadcrumb I18n.t('spina.website.documents'), spina.admin_attachments_path
         @attachments = Attachment.file_attached.sorted
         @attachment = Attachment.new
       end
@@ -44,7 +44,7 @@ module Spina
       private
 
       def set_breadcrumbs
-        add_breadcrumb "Mediabibliotheek", spina.admin_media_library_path
+        add_breadcrumb I18n.t('spina.website.media_library'), spina.admin_media_library_path
       end
 
       def attachment_params

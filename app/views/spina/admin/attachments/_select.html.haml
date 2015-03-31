@@ -1,7 +1,7 @@
 .modal.modal-large
   %header
     = link_to "", "#", class: 'close_modal', data: {dismiss: 'modal', icon: 'm'}
-    %h3 Document invoegen
+    %h3= t('spina.attachments.insert')
 
   %section
     -# = form_for [spina, :admin, @attachment], html: {multipart: true} do |f|
@@ -13,7 +13,7 @@
           %thead
             %tr
               %th 
-              %th Bestandsnaam
+              %th= Spina::Attachment.human_attribute_name(:name)
           %tbody
             - @attachments.each do |attachment|
               %tr
@@ -21,5 +21,5 @@
                 %td= attachment.name
 
       %footer
-        = link_to "Annuleren", "#", data: {dismiss: 'modal'}
-        = button_tag "Document invoegen", type: 'submit', class: 'primary', data: {icon: 't '}
+        = link_to t('spina.cancel'), "#", data: {dismiss: 'modal'}
+        = button_tag t('spina.attachments.insert'), type: 'submit', class: 'primary', data: {icon: 't '}

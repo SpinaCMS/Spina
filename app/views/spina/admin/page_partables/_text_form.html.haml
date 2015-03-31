@@ -10,12 +10,12 @@
       .pull-right
         .choose-text-type
           %ul
-            %li= link_to "Paragraaf", "#", data: {:"wysihtml5-command" => "formatBlock", :"wysihtml5-command-value" => "P"}
-            %li= link_to "Kop 1", "#", data: {:"wysihtml5-command" => "formatBlock", :"wysihtml5-command-value" => "h1"}
-            %li= link_to "Kop 2", "#", data: {:"wysihtml5-command" => "formatBlock", :"wysihtml5-command-value" => "h2"}
-            %li= link_to "Kop 3", "#", data: {:"wysihtml5-command" => "formatBlock", :"wysihtml5-command-value" => "h3"}
-            %li= link_to "Quote", "#", data: {:"wysihtml5-command" => "formatBlock", :"wysihtml5-command-value" => "blockquote"}
+            %li= link_to t('spina.wysiwyg.paragraph'), "#", data: {:"wysihtml5-command" => "formatBlock", :"wysihtml5-command-value" => "P"}
+            %li= link_to t('spina.wysiwyg.heading_1'), "#", data: {:"wysihtml5-command" => "formatBlock", :"wysihtml5-command-value" => "h1"}
+            %li= link_to t('spina.wysiwyg.heading_2'), "#", data: {:"wysihtml5-command" => "formatBlock", :"wysihtml5-command-value" => "h2"}
+            %li= link_to t('spina.wysiwyg.heading_3'), "#", data: {:"wysihtml5-command" => "formatBlock", :"wysihtml5-command-value" => "h3"}
+            %li= link_to t('spina.wysiwyg.quote'), "#", data: {:"wysihtml5-command" => "formatBlock", :"wysihtml5-command-value" => "blockquote"}
 
         = link_to "", "#", class: 'command action-change-view', data: {:"wysihtml5-action" => "change_view", icon: 'I'}
 
-    = form.text_area :content, placeholder: "Paginasectie #{text_form.object.name.downcase}", class: 'wysihtml5'
+    = form.text_area :content, placeholder: "#{t 'spina.pages.page_part'} #{text_form.object.name.downcase}", class: 'wysihtml5'

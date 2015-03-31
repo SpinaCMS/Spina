@@ -1,7 +1,7 @@
 .modal.modal-large
   %header
     = link_to "", "#", class: 'close_modal', data: {dismiss: 'modal', icon: 'm'}
-    %h3 Afbeelding invoegen
+    %h3=t 'spina.photos.insert_photo'
 
   %section
     .gallery-select.gallery
@@ -16,5 +16,5 @@
             = image_tag photo.file.thumb
 
         %footer
-          = link_to "Annuleren", "#", data: {dismiss: 'modal'}
-          = button_tag "Afbeelding invoegen", type: 'submit', class: 'primary', data: {icon: 't '}
+          = link_to t('spina.cancel'), "#", data: {dismiss: 'modal'}
+          = button_tag t('spina.photos.insert_photo'), type: 'submit', class: 'primary', data: {icon: 't '}

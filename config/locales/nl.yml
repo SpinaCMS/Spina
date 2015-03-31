@@ -1,23 +1,89 @@
 nl:
   spina:
+    cancel: Annuleren
+    close: Sluiten
+    choose_from_library: Kies uit bibliotheek
+    edit: Bewerken
+    delete: Verwijderen
+    permanently_delete: Defintief verwijderen
+    delete_confirmation: "Weet je zeker dat je <strong>%{subject}</strong> wilt verwijderen?"
     login: Aanmelden
     preview_website: Bekijk je website
-    website: Je website
-    preferences: Voorkeuren
+    search: Zoeken...
+    ago: geleden
+    edit_website: Bewerk je website
+    logout: Uitloggen
+
+    notifications:
+      information: Informatie
+      alert: Oeps! Er is iets mis gegaan
+      login: Je zult eerst moeten inloggen
+      wrong_username_or_password: Email of wachtwoord is onjuist
 
     website:
+      title: Je website
       pages: Pagina's
       pages_description: "Alle pagina's op je website"
       media_library: Mediabibliotheek
       media_library_description: "Hier staan al je afbeeldingen, video's en documenten"
+      documents: Documenten
+      photos: Afbeeldingen
 
     inquiries:
       all: Alle berichten
       all_description: Alle berichten
+      delete_confirmation: "Weet je zeker dat je het bericht van %{subject}</strong> wilt verwijderen?"
+      empty: Je hebt nog geen berichten ontvangen
+      empty_inbox: Inbox is leeg
+      empty_spam: Er zijn geen berichten gemarkeerd als spam
       inbox: Inbox
       inbox_description: Binnenkomende berichten
+      mark_as_read: Bericht markeren als gelezen
+      no_spam: Geen spam
+      spam: Spam
+
+    pages:
+      new: Nieuwe pagina
+      create_page: "%{template} invullen"
+      change_order: Volgorde wijzigen
+      done_changing_order: Klaar met slepen
+      page_content: Inhoud
+      page_seo: Zoekmachines
+      advanced: Geavanceerd
+      page_part: Paginasectie
+      photos_picker: Foto's kiezen
+      photo_picker: Foto kiezen
+      delete_confirmation: "Weet je zeker dat je de pagina <strong>%{subject}</strong> wilt verwijderen?"
+      save: Pagina opslaan
+      concept: concept
+      show_in_menu: onzichtbaar
+      skip_to_first_child: doorsturen naar 1<sup>e</sup> subpagina
+      invisible_to_search_engines: Je website is niet zichtbaar voor zoekmachines
+      invisible_to_search_engines: Bij voorkeuren voor Statistieken en zoekmachines kun je dit activeren.
+
+    users:
+      new: Nieuwe gebruiker
+      save: Gebruiker opslaan
+      delete_confirmation: "Weet je zeker dat je de gebruiker <strong>%{user}</strong> wilt verwijderen?"
+      cannot_be_created: De gebruiker kan niet worden opgeslagen
+
+    photos:
+      delete_confirmation: "Weet je zeker dat je deze <strong>foto</strong> wilt verwijderen?"
+      insert_photos: Afbeeldingen invoegen
+      insert_photo: Afbeelding invoegen
+      link: "De link naar de afbeelding is:"
+      cannot_be_created: "Foto kon niet worden verwerkt:"
+
+    wysiwyg:
+      paragraph: Paragraaf
+      heading_1: Kop 1
+      heading_2: Kop 2
+      heading_3: Kop 3
+      quote: Quote
+      insert_link: Link invoegen
 
     preferences:
+      title: Voorkeuren
       account: Algemene gegevens
       account_description: Persoonlijke instellingen
       account_save: Gegevens opslaan
@@ -34,6 +100,10 @@ nl:
       analytics_save: Voorkeuren opslaan
       domain_name_settings: Eigen domein instellen
       domain_name_settings_description: Zorg dat je bereikbaar bent via je eigen domeinnaam
+
+    attachments:
+      insert: 'Document toevoegen'
+      insert_multiple: 'Documenten toevoegen'
 
   activerecord:
     models:
@@ -54,13 +124,6 @@ nl:
         other: Berichten
 
     attributes:
-      spina/page:
-        title: Titel
-
-      spina/user:
-        email: Emailadres
-        password: Wachtwoord
-
       spina/account:
         name: Naam website
         address: Adres
@@ -80,6 +143,51 @@ nl:
         facebook: Facebook
         twitter: Twitter
         google_plus: Google+
+
+      spina/attachment:
+        created_at: Aangemaakt op
+        name: Bestandsnaam
+        size: Grootte
+
+      spina/inquiries:
+        email: Email
+        name: Afzender
+        message: Bericht
+        phone: Telefoon
+
+      spina/page:
+        title: Titel
+        title_placeholder: Titel van de pagina
+        seo_title: SEO <title>
+        seo_title_placeholder: Deze titel komt in de <title>-tag van de broncode te staan
+        description: SEO Beschrijving
+        description_description: De beschrijving wordt weergegeven bij resultaten van zoekmachines
+        description_placeholder: Een korte beschrijving van de pagina
+        draft: Concept
+        draft_description: Handig wanneer de pagina nog niet helemaal af is
+        skip_to_first_child: Doorsturen
+        skip_to_first_child_description: Doorsturen naar eerste onderliggende pagina
+        show_in_menu: In menu weergeven
+        show_in_menu_description: Als dit uit staat komt de pagina niet voor in het menu
+        menu_title: Menu titel
+        menu_title_placeholder: Leeglaten om de titel van de pagina over te nemen
+        view_template: Pagina template
+
+      spina/user:
+        email: Emailadres
+        password: Wachtwoord
+        name: Naam
+        name_placeholder: Naam
+        email: Emailadres
+        email_description: Gebruik een uniek emailadres
+        password: Wachtwoord
+        password_description: Leeglaten om niet te veranderen
+        password_confirmation: Wachtwoord bevestigen
+        admin: Beheerder
+        user: Gebruiker
+        admin_description: Beheerders kunnen gebruikers aanmaken
+        role: Rol
+        last_logged_in: Laatst ingelogd
 
   misc:
     messages:

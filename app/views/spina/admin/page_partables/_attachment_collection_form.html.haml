@@ -5,5 +5,6 @@
         .attachment= attachment.name
     - else
       .placeholder
-        %span{data: {icon: 't'}} Kies uit bibliotheek
+        %span{data: {icon: 't'}}
+          = t('spina.choose_from_library')
     = form.hidden_field :attachment_tokens, value: form.object.attachment_ids.join(",")

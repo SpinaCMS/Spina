@@ -1,14 +1,14 @@
 .table-container
   .search-input.pull-right
-    = text_field_tag :search, nil, placeholder: "Zoeken...", class: 'input-search input-rounded'
+    = text_field_tag :search, nil, placeholder: t('spina.search'), class: 'input-search input-rounded'
     .clear-input{data: {icon: 'm'}}
 
   %table.table.datatable
     %thead
       %tr
-        %th Bestandsnaam
-        %th Grootte
-        %th Aangemaakt op
+        %th= Spina::Attachment.human_attribute_name(:name)
+        %th= Spina::Attachment.human_attribute_name(:size)
+        %th= Spina::Attachment.human_attribute_name(:created_at)
         %th 
       %tr
         %td{colspan: 4}

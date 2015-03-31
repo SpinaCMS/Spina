@@ -8,30 +8,30 @@ module Spina
 
       def show
         @inquiry = Inquiry.find(params[:id])
-        add_breadcrumb "Alle berichten", spina.admin_inquiries_path
+        add_breadcrumb I18n.t('spina.inquiries.all'), spina.admin_inquiries_path
         add_breadcrumb @inquiry.name
       end
 
       def inbox_show
         @inquiry = Inquiry.find(params[:id])
-        add_breadcrumb "Inbox", spina.inbox_admin_inquiries_path
+        add_breadcrumb I18n.t('spina.inquiries.inbox'), spina.inbox_admin_inquiries_path
         add_breadcrumb @inquiry.name
         render :show
       end
 
       def index
-        add_breadcrumb "Alle berichten", spina.admin_inquiries_path
+        add_breadcrumb I18n.t('spina.inquiries.all'), spina.admin_inquiries_path
         @inquiries = Inquiry.sorted
       end
 
       def inbox
-        add_breadcrumb "Inbox", spina.inbox_admin_inquiries_path
+        add_breadcrumb I18n.t('spina.inquiries.inbox'), spina.inbox_admin_inquiries_path
         @inquiries = Inquiry.new_messages.sorted
       end
 
       def spam
-        add_breadcrumb "Alle berichten", spina.admin_inquiries_path
-        add_breadcrumb "Spam", spina.spam_admin_inquiries_path
+        add_breadcrumb I18n.t('spina.inquiries.all'), spina.admin_inquiries_path
+        add_breadcrumb I18n.t('spina.inquiries.spam'), spina.spam_admin_inquiries_path
         @inquiries = Inquiry.spam.order('created_at DESC')
       end
 
@@ -50,7 +50,7 @@ module Spina
       def destroy
         @inquiry = Inquiry.find(params[:id])
         @inquiry.destroy
-        redirect_to spina.admin_inquiries_path, notice: "Het bericht is verwijderd."
+        redirect_to spina.admin_inquiries_path
       end
 
       private

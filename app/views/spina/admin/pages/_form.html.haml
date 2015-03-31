@@ -7,14 +7,14 @@
       %table.table.table-form
         %tr
           %td
-            Titel
+            = Spina::Page.human_attribute_name :title
           %td
-            = f.text_field :title, placeholder: "Titel in de pagina"
+            = f.text_field :title, placeholder: Spina::Page.human_attribute_name(:title_placeholder)
 
         = f.fields_for :page_parts, @page_parts.sort { |a,b| a.position(current_theme) <=> b.position(current_theme) } do |page_part_form|
           %tr.page-part{data: {name: page_part_form.object.name}}
             %td
-              %label= page_part_form.object.title
+              = page_part_form.object.title
             %td
               = page_part_form.hidden_field :id
               = page_part_form.hidden_field :title
@@ -28,56 +28,56 @@
       %table.table.table-form
         %tr
           %td
-            SEO &lt;title&gt;
+            = Spina::Page.human_attribute_name :seo_title
           %td
-            = f.text_field :seo_title, placeholder: "Deze titel komt in de <title>-tag van de broncode te staan"
+            = f.text_field :seo_title, placeholder: Spina::Page.human_attribute_name(:seo_title_placeholder)
 
         %tr
           %td
-            SEO Beschrijving
-            %small De beschrijving wordt weergegeven bij resultaten van zoekmachines
+            = Spina::Page.human_attribute_name :description
+            %small= Spina::Page.human_attribute_name :description_description
           %td
-            = f.text_field :description, placeholder: "Een korte beschrijving van de pagina"
+            = f.text_field :description, placeholder: Spina::Page.human_attribute_name(:description_placeholder)
 
   #advanced.tab-content
     .table-container
       %table.table.table-form
         %tr
           %td
-            Concept
-            %small Handig wanneer de pagina nog niet helemaal af is
+            = Spina::Page.human_attribute_name :draft
+            %small= Spina::Page.human_attribute_name :draft_description
           %td
             = f.check_box :draft, data: {switch: true}
         %tr
           %td
-            Doorsturen
-            %small Doorsturen naar eerste onderliggende pagina
+            = Spina::Page.human_attribute_name :skip_to_first_child
+            %small= Spina::Page.human_attribute_name :skip_to_first_child_description
           %td
             = f.check_box :skip_to_first_child, data: {switch: true}
         %tr
           %td
-            In menu weergeven
-            %small Als dit uit staat komt de pagina niet voor in het menu
+            = Spina::Page.human_attribute_name :show_in_menu
+            %small= Spina::Page.human_attribute_name :show_in_menu_description
           %td
             = f.check_box :show_in_menu, data: {switch: true}
         %tr{style: ('border-bottom: none' if @page.custom_page?)}
           %td
-            Menu titel
+            = Spina::Page.human_attribute_name :menu_title
           %td
-            = f.text_field :menu_title, placeholder: "Leeglaten om de titel van de pagina over te nemen"
+            = f.text_field :menu_title, placeholder: Spina::Page.human_attribute_name(:show_in_menu_placeholder)
 
         %tr{style: ('display: none' if @page.custom_page?)}
           %td
-            Pagina template
+            = Spina::Page.human_attribute_name :view_template
           %td
             .select-dropdown.page-template{data: {page_parts: current_theme.config.view_templates[@page.view_template || "show"][:page_parts]}}
               - options = options_for_select(current_theme.config.view_templates.map { |template| [template[1][:title], template[0], {'data-page-parts' => template[1][:page_parts]}] }, @page.view_template)
               = f.select :view_template, options
 
   %button.button.button-primary{type: 'submit', data: {icon: 'o'}}
-    Pagina opslaan
+    =t 'spina.pages.save'
 
-  = link_to "Annuleren", spina.admin_pages_path, class: 'button button-link'
+  = link_to t('spina.cancel'), spina.admin_pages_path, class: 'button button-link'
 
   - unless @page.new_record? || !@page.deletable
-    .pull-right= link_to "Definitief verwijderen", spina.admin_page_path(@page), method: :delete, data: {confirm: "Weet je zeker dat je de pagina <strong>#{@page.menu_title}</strong> wilt verwijderen?"}, class: 'button button-link button-danger'
+    .pull-right= link_to t('spina.permanently_delete'), spina.admin_page_path(@page), method: :delete, data: {confirm: t('spina.pages.delete_confirmation', subject: @page.menu_title)}, class: 'button button-link button-danger'

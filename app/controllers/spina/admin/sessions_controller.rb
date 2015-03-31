@@ -16,7 +16,7 @@ module Spina
           user.update_last_logged_in!
           redirect_to spina.admin_root_url
         else
-          flash.now[:alert] = "Email of wachtwoord is onjuist"
+          flash.now[:alert] = I18n.t('spina.notifications.wrong_username_or_password')
           render "new"
         end
       end

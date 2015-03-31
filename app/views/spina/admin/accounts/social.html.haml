@@ -3,19 +3,19 @@
     %table.table.table-form
       %tr
         %td
-          %label= Spina::Account.human_attribute_name(:facebook)
+          = Spina::Account.human_attribute_name(:facebook)
         %td
           = f.text_field :facebook, placeholder: Spina::Account.human_attribute_name(:facebook)
 
       %tr
         %td
-          %label= Spina::Account.human_attribute_name(:twitter)
+          = Spina::Account.human_attribute_name(:twitter)
         %td
           = f.text_field :twitter, placeholder: Spina::Account.human_attribute_name(:twitter)
 
       %tr
         %td
-          %label= Spina::Account.human_attribute_name(:google_plus)
+          = Spina::Account.human_attribute_name(:google_plus)
         %td
           = f.text_field :google_plus, placeholder: Spina::Account.human_attribute_name(:google_plus)
 

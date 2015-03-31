@@ -1,13 +1,13 @@
 .table-container.table-form
   %table.table
     %tr
-      %th Naam
+      %th= Spina::Inquiry.human_attribute_name(:name)
       %td= @inquiry.name
     %tr
-      %th Email
+      %th= Spina::Inquiry.human_attribute_name(:email)
       %td= @inquiry.email
     %tr
-      %th Telefoon
+      %th= Spina::Inquiry.human_attribute_name(:phone)
       %td= @inquiry.phone
     %tr
       %td
@@ -15,9 +15,9 @@
 
 .pull-right
   - unless @inquiry.archived?
-    = link_to "Bericht markeren als gelezen", spina.mark_as_read_admin_inquiry_path(@inquiry), method: :patch, class: 'button', data: {icon: 'k'}
+    = link_to t('spina.inquiries.mark_as_read'), spina.mark_as_read_admin_inquiry_path(@inquiry), method: :patch, class: 'button', data: {icon: 'k'}
 
   - if @inquiry.spam
-    = link_to "Geen spam", spina.unmark_spam_admin_inquiry_path(@inquiry), method: :patch, class: 'button', data: {icon: 'v'}
+    = link_to t('spina.inquiries.no_spam'), spina.unmark_spam_admin_inquiry_path(@inquiry), method: :patch, class: 'button', data: {icon: 'v'}
 
-  = link_to "Verwijderen", spina.admin_inquiry_path(@inquiry), method: :delete, class: 'button button-danger button-link', data: {confirm: "Weet je zeker dat je het bericht van <strong>#{@inquiry.name}</strong> definitief wilt verwijderen?"}
+  = link_to t('spina.cancel'), spina.admin_inquiry_path(@inquiry), method: :delete, class: 'button button-danger button-link', data: {confirm: t('spina.inquiries.delete_confirmation', subject: @inquiry.name)}

@@ -3,17 +3,17 @@
     %ul
       %li{class: ('active' if action_name == "index")}
         = link_to spina.admin_inquiries_path do
-          Alle berichten
+          = t('spina.inquiries.all')
       %li{ class: ('active' if action_name == 'spam')}
         = link_to spina.spam_admin_inquiries_path do
-          Spam
+          = t('spina.inquiries.spam')
 
 .table-container
   %table.table
     %thead
       %tr
-        %th{width: 200} Afzender
-        %th Bericht
+        %th{width: 200}= Spina::Inquiry.human_attribute_name(:name)
+        %th= Spina::Inquiry.human_attribute_name(:message)
         %th{colspan: 2}
 
     %tbody
@@ -28,9 +28,9 @@
             %td.nowrap
               %small=l inquiry.created_at, format: '%e %B %Y %H:%M'
             %td.nowrap
-              = link_to "Geen spam", spina.unmark_spam_admin_inquiry_path(inquiry), method: :patch, class: 'button button-link button-primary button-small', data: {icon: 'x'}
-              = link_to "Verwijderen", spina.admin_inquiry_path(inquiry), method: :delete, class: 'button button-danger button-link button-small', data: {confirm: "Weet je zeker dat je het bericht van <strong>#{inquiry.name}</strong> definitief wilt verwijderen?"}
+              = link_to t('spina.inquiries.no_spam'), spina.unmark_spam_admin_inquiry_path(inquiry), method: :patch, class: 'button button-link button-primary button-small', data: {icon: 'x'}
+              = link_to t('spina.delete'), spina.admin_inquiry_path(inquiry), method: :delete, class: 'button button-danger button-link button-small', data: {confirm: t('spina.inquiries.delete_confirmation', subject: inquiry.name)}
       - else
         %tr
           %td.align-center{colspan: 3}
-            %em Er zijn geen berichten gemarkeerd als spam.
+            %em= t('spina.inquiries.empty_spam')

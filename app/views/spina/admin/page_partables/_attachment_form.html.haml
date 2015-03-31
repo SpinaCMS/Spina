@@ -3,6 +3,7 @@
     .attachment= attachment_form.object.page_partable.name
   - else
     .placeholder
-      %span{data: {icon: 't'}} Kies uit bibliotheek
+      %span{data: {icon: 't'}}
+        = t('spina.choose_from_library')
 
   = attachment_form.hidden_field :page_partable_id

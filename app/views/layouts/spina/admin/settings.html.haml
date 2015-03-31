@@ -1,6 +1,6 @@
 - content_for :secondary_navigation do
   %nav#secondary
-    %h1= t('spina.preferences')
+    %h1= t('spina.preferences.title')
 
     %ul
       %li{class: ('active' if params[:action] == 'edit' && params[:controller] == 'spina/admin/accounts')}

@@ -3,50 +3,50 @@
     %table.table.table-form
       %tr
         %td
-          %label= Spina::Account.human_attribute_name(:name)
+          = Spina::Account.human_attribute_name(:name)
         %td
           = f.text_field :name, placeholder: Spina::Account.human_attribute_name(:name)
 
       %tr
         %td
-          %label= Spina::Account.human_attribute_name(:address)
+          = Spina::Account.human_attribute_name(:address)
         %td
           = f.text_field :address, placeholder: Spina::Account.human_attribute_name(:address)
 
       %tr
         %td
-          %label= Spina::Account.human_attribute_name(:postal_code)
+          = Spina::Account.human_attribute_name(:postal_code)
         %td
           = f.text_field :postal_code, placeholder: Spina::Account.human_attribute_name(:postal_code)
 
       %tr
         %td
-          %label= Spina::Account.human_attribute_name(:city)
+          = Spina::Account.human_attribute_name(:city)
         %td
           = f.text_field :city, placeholder: Spina::Account.human_attribute_name(:city)
 
       %tr
         %td
-          %label= Spina::Account.human_attribute_name(:phone)
+          = Spina::Account.human_attribute_name(:phone)
         %td
           = f.text_field :phone, placeholder: Spina::Account.human_attribute_name(:phone)
 
       %tr
         %td
-          %label= Spina::Account.human_attribute_name(:email)
+          = Spina::Account.human_attribute_name(:email)
         %td
           = f.text_field :email, placeholder: Spina::Account.human_attribute_name(:email)
 
       %tr
         %td
-          %label= Spina::Account.human_attribute_name(:kvk_identifier)
+          = Spina::Account.human_attribute_name(:kvk_identifier)
           %small= Spina::Account.human_attribute_name(:kvk_identifier_description)
         %td
           = f.text_field :kvk_identifier, placeholder: Spina::Account.human_attribute_name(:kvk_identifier)
 
       %tr
         %td
-          %label= Spina::Account.human_attribute_name(:vat_identifier)
+          = Spina::Account.human_attribute_name(:vat_identifier)
           %small= Spina::Account.human_attribute_name(:vat_identifier_description)
         %td
           = f.text_field :vat_identifier, placeholder: Spina::Account.human_attribute_name(:vat_identifier)

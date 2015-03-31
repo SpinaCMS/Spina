@@ -1,21 +1,21 @@
 .filters
-  = link_to "Nieuwe gebruiker", spina.new_admin_user_path, class: 'button button-primary', data: {icon: 't'}
+  = link_to t('spina.users.new'), spina.new_admin_user_path, class: 'button button-primary', data: {icon: 't'}
 
 .table-container
   %table.table
     %thead
       %tr
-        %th Naam
-        %th Rol
-        %th Laatst ingelogd
+        %th= Spina::User.human_attribute_name :name
+        %th= Spina::User.human_attribute_name :role
+        %th= Spina::User.human_attribute_name :last_logged_in
         %th
 
     %tbody
       - @users.each do |user|
         %tr
           %td= link_to user, spina.edit_admin_user_path(user)
-          %td= user.admin? ? "Beheerder" : "Gebruiker"
+          %td= user.admin? ? Spina::User.human_attribute_name(:admin) : Spina::User.human_attribute_name(:user)
           %td
             - if user.last_logged_in.present?
-              = time_ago_in_words(user.last_logged_in) + " geleden"
-          %td= link_to "Bewerken", spina.edit_admin_user_path(user), class: 'button button-small', data: {icon: 'q'}
+              = time_ago_in_words(user.last_logged_in) + " #{t('spina.ago')}"
+          %td= link_to t('spina.edit'), spina.edit_admin_user_path(user), class: 'button button-small', data: {icon: 'q'}

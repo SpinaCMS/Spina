@@ -2,7 +2,7 @@
   - if flash[:notice]
     .notification{data: {icon: 'L'}}
       %p
-        Informatie
+        =t 'spina.notifications.information'
         %small= flash[:notice]
 
   - if content_for?(:notification_alert)
@@ -12,5 +12,5 @@
     - if flash[:alert]
       .notification.notification-error{data: {icon: 'm'}}
         %p 
-          Oeps! Er is iets mis gegaan
+          =t 'spina.notifications.alert'
           %small= flash[:alert]

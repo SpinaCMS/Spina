@@ -1,7 +1,7 @@
 = photo_collection_form.fields_for :page_partable, photo_collection_form.object.page_partable do |form|
   = link_to spina.photo_collection_select_admin_photos_path(form.object_name, selected_photo_ids: (form.object.photo_ids if form.object.photos.any?)), remote: true, class: "media_picker" do
     .placeholder{class: ('pull-right' if form.object.photos.any?)}
-      %span.button.button-small.button-round{data: {icon: 'U'}} Foto's kiezen
+      %span.button.button-small.button-round{data: {icon: 'U'}}=t 'spina.pages.photos_picker'
 
   .photo-collection
     - if form.object.photos.sorted_by_photo_collection.any?

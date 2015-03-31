@@ -2,12 +2,12 @@
   - unless current_account.robots_allowed?
     .permanent-notice.permanent-notice-info{data: {icon: 'k'}}
       %p
-        Je website is niet zichtbaar voor zoekmachines
-        %small Bij instellingen voor #{link_to "Statistieken en zoekmachines", spina.analytics_admin_account_path} kun je dit activeren.
+        =t 'spina.pages.invisible_to_search_engines'
+        %small=t 'spina.pages.invisible_to_search_engines_description'
 
 .filters
   %span{data: {dropdown: true}}
-    = link_to "Nieuwe pagina", spina.new_admin_page_path, class: 'button button-primary', data: {icon: 't', trigger: ('dropdown' if current_theme.new_page_templates.size > 1), target: '#create_page_dropdown'}
+    = link_to t('spina.pages.new'), spina.new_admin_page_path, class: 'button button-primary', data: {icon: 't', trigger: ('dropdown' if current_theme.new_page_templates.size > 1), target: '#create_page_dropdown'}
 
     .sliding-dropdown#create_page_dropdown
       .slide-controls
@@ -28,9 +28,9 @@
             - current_theme.new_page_templates.each_with_index do |template2, index2|
               .slide-dot{class: ('active' if index2 == index)}
 
-          = link_to "#{template[1]} invullen", spina.new_admin_page_path(params: {view_template: template[0]}), class: 'button button-primary', data: {icon: 'q'}
+          = link_to t('spina.pages.create_page', template: template[1]), spina.new_admin_page_path(params: {view_template: template[0]}), class: 'button button-primary', data: {icon: 'q'}
 
-  = link_to 'Volgorde wijzigen', '#pages_list', class: 'button button-link sort-switch', data: {icon: '8'}
+  = link_to t('spina.pages.change_order'), '#pages_list', class: 'button sort-switch', data: {icon: '8', change_order: t('spina.pages.change_order'), done_changing_order: t('spina.pages.done_changing_order')}
 
 .dd#pages_list{data: {:"sort-url" => spina.sort_admin_pages_url }}
   %ol.dd-list

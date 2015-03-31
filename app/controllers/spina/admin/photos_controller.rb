@@ -8,7 +8,7 @@ module Spina
       layout "spina/admin/media_library"
 
       def index
-        add_breadcrumb "Afbeeldingen", spina.admin_photos_path
+        add_breadcrumb I18n.t('spina.website.photos'), spina.admin_photos_path
         @photos = Photo.sorted
         @photo = Photo.new
       end
@@ -65,7 +65,7 @@ module Spina
       private
 
       def set_breadcrumbs
-        add_breadcrumb "Mediabibliotheek", spina.admin_media_library_path
+        add_breadcrumb I18n.t('spina.website.media_library'), spina.admin_media_library_path
       end
 
       def photo_params
