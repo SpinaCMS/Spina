@@ -43,7 +43,7 @@ module Spina
         add_breadcrumb @page.title
         respond_to do |format|
           if @page.update_attributes(page_params)
-            format.html { redirect_to spina.admin_pages_url
+            format.html { redirect_to spina.admin_pages_url }
             format.js
           else
             format.html do
