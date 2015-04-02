@@ -65,7 +65,7 @@ module Spina
         structure_item = page_part.page_partable.structure_items.build
         structure_item_part = structure_item.structure_parts.build(name: 'line', title: 'Line', structure_partable_type: 'Spina::Line')
         structure_item_part.structure_partable = structure_item_part.structure_partable_type.constantize.new
-        structure_item_part = structure_item.structure_parts.build(name: 'footer', title: 'Footer', structure_partable_type: 'Spina::Line')
+        structure_item_part = structure_item.structure_parts.build(name: 'footer', title: 'Footer', structure_partable_type: 'Spina::Text')
         structure_item_part.structure_partable = structure_item_part.structure_partable_type.constantize.new
       end
 

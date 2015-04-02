@@ -13,5 +13,13 @@ module Spina
     def to_s
       name
     end
+
+    def structure_partable_attributes=(attributes)
+      if self.structure_partable.present?
+        self.structure_partable.assign_attributes(attributes)
+      else
+        self.structure_partable = self.structure_partable_type.constantize.new(attributes)
+      end
+    end
   end
 end
