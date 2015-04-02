@@ -34,5 +34,6 @@ Gem::Specification.new do |s|
   s.add_dependency 'negative_captcha', '~> 0.4'
   s.add_dependency 'ancestry', '~> 2.1', '>= 2.1.0'
   s.add_dependency 'breadcrumbs_on_rails', '~> 2.3', '>= 2.3.0'
-  s.add_dependency 'spina-template', '~> 0.2.4'
+  s.add_dependency 'spina-template'
+  s.add_dependency 'turbolinks'
 end

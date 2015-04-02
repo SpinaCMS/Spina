@@ -8,4 +8,5 @@ group :development do
   gem 'quiet_assets'
   gem 'letter_opener'
   gem 'brakeman'
+  gem 'spina-template'
 end

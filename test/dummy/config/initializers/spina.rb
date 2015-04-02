@@ -1,7 +1,33 @@
 Spina::Engine.configure do
-
-  config.default_theme = "Business"
-
-  config.NEGATIVE_CAPTCHA_SECRET = 'fee3b3c8b2faa53dafe0978c10c691c29f9c0fdcf12e0052d8c4f5852903707f4a1b6c14f2ac270950b06a287b0683c02a383745025ae6aa3f85091a5deccf06'
-
+  config.NEGATIVE_CAPTCHA_SECRET = 'abc'
 end
+
+module Spina
+  module DefaultTheme
+    include ActiveSupport::Configurable
+
+    config_accessor :title, :page_parts, :view_templates, :layout_parts, :custom_pages, :plugins
+
+    self.title = "Default theme"
+
+    self.page_parts = [{ name: 'content', title: 'Content', page_partable_type: "Spina::Text" }]
+    self.layout_parts = []
+
+    self.custom_pages = []
+    self.plugins = []
+
+    self.view_templates = {
+      'show' => {
+        title: 'Default',
+        description: 'Default template',
+        usage: 'Default page',
+        page_parts: ['content']
+      }
+    }
+  end
+end
+
+theme = Spina::Theme.new
+theme.name = "Default theme"
+theme.config = Spina::DefaultTheme.config
+Spina.register_theme(theme)
