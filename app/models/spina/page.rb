@@ -60,15 +60,6 @@ module Spina
     def page_part(page_part)
       page_part = page_parts.where(name: page_part[:name]).first || page_parts.build(page_part)
       page_part.page_partable = page_part.page_partable_type.constantize.new unless page_part.page_partable.present?
-
-      if page_part.page_partable_type == "Spina::Structure"
-        structure_item = page_part.page_partable.structure_items.build
-        structure_item_part = structure_item.structure_parts.build(name: 'line', title: 'Line', structure_partable_type: 'Spina::Line')
-        structure_item_part.structure_partable = structure_item_part.structure_partable_type.constantize.new
-        structure_item_part = structure_item.structure_parts.build(name: 'footer', title: 'Footer', structure_partable_type: 'Spina::Text')
-        structure_item_part.structure_partable = structure_item_part.structure_partable_type.constantize.new
-      end
-
       page_part
     end
 
