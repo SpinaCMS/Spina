@@ -10,7 +10,11 @@ module Spina
 
     self.title = "Default theme"
 
-    self.page_parts = [{ name: 'content', title: 'Content', page_partable_type: "Spina::Text" }]
+    self.page_parts = [
+      { name: 'content', title: 'Content', page_partable_type: "Spina::Text" },
+      { name: 'team', title: 'Team', page_partable_type: "Spina::Structure" }
+    ]
+
     self.layout_parts = []
 
     self.custom_pages = []
@@ -21,7 +25,7 @@ module Spina
         title: 'Default',
         description: 'Default template',
         usage: 'Default page',
-        page_parts: ['content']
+        page_parts: ['content', 'team']
       }
     }
   end

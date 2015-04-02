@@ -1,0 +1,5 @@
+%h2 Line form
+
+= line_form.fields_for :structure_partable do |f|
+  content
+  = f.text_field :content, placeholder: line_form.object.title

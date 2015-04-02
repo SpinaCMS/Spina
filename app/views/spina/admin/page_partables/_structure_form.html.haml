@@ -1,0 +1,35 @@
+= structure_form.fields_for :page_partable do |form|
+
+  = form.fields_for :structure_items do |structure_item_form|
+
+    = structure_item_form.text_field :position, placeholder: "Position"
+
+    = structure_item_form.fields_for :structure_parts do |structure_part_form|
+
+      = structure_part_form.hidden_field :id
+      = structure_part_form.hidden_field :title
+      = structure_part_form.hidden_field :name
+      = structure_part_form.hidden_field :structure_partable_type
+
+      = render partial: "spina/admin/structure_partables/#{structure_part_form.object.structure_partable_type.demodulize.underscore}_form", object: structure_part_form
+
+
+    -# = structure_item_form.fields_for :structure_parts, structure_item_form.object.structure_parts do |structure_part_form|
+    -#   = structure_part_form.object.inspect
+
+    -#   structure part
+    -#   %br/
+
+
+    -# - structure_parts = structure_item_form.object.structure_parts
+
+    -# = structure_item_form.fields_for :structure_parts, structure_parts do |structure_part_form|
+
+    -#   = structure_part_form
+
+    -#   = structure_part_form.hidden_field :id
+    -#   = structure_part_form.hidden_field :title
+    -#   = structure_part_form.hidden_field :name
+    -#   = structure_part_form.hidden_field :structure_partable_type
+
+    -#   = render partial: "spina/admin/structure_partables/#{structure_part_form.object.structure_partable_type.demodulize.underscore}_form", object: structure_part_form
