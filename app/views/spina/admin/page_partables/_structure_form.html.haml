@@ -1,5 +1,5 @@
 = structure_form.fields_for :page_partable do |form|
-
+  = structure_form.object.inspect
   = form.fields_for :structure_items do |structure_item_form|
     = render 'structure_item_fields', f: structure_item_form
 
