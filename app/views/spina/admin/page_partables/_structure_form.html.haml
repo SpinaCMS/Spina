@@ -1,16 +1,8 @@
 = structure_form.fields_for :page_partable do |form|
 
   = form.fields_for :structure_items do |structure_item_form|
+    = render 'structure_item_fields', f: structure_item_form
 
-    / Hidden field
-    = structure_item_form.hidden_field :position, placeholder: "Position"
-
-    / Strucure parts
-    = structure_item_form.fields_for :structure_parts do |structure_part_form|
-
-      = structure_part_form.hidden_field :id
-      = structure_part_form.hidden_field :title
-      = structure_part_form.hidden_field :name
-      = structure_part_form.hidden_field :structure_partable_type
-
-      %p= render partial: "spina/admin/structure_partables/#{structure_part_form.object.structure_partable_type.demodulize.underscore}_form", object: structure_part_form
+  = link_to_add_fields form, :structure_items do
+    %i{data: {icon: 't '}}
+    =t 'spina.website.new_structure'

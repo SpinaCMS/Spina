@@ -6,7 +6,7 @@ module Spina
   module DefaultTheme
     include ActiveSupport::Configurable
 
-    config_accessor :title, :page_parts, :view_templates, :layout_parts, :custom_pages, :plugins
+    config_accessor :title, :page_parts, :view_templates, :layout_parts, :custom_pages, :plugins, :structures
 
     self.title = "Default theme"
 
@@ -17,17 +17,20 @@ module Spina
     }, { 
       name: 'team', 
       title: 'Team', 
-      page_partable_type: "Spina::Structure", 
-      structure: [{
+      page_partable_type: "Spina::Structure"
+    }]
+
+    self.structures = {
+      'team' => [{
         name: 'name',
         title: 'Naam',
         page_partable_type: "Spina::Line"
       }, {
         name: 'description',
         title: 'Omschrijving',
-        page_partable_type: "Spina::Text"  
+        page_partable_type: "Spina::Text"
       }]
-    }]
+    }
 
     self.layout_parts = []
 
