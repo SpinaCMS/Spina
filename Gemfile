@@ -8,7 +8,7 @@ group :development do
   gem 'quiet_assets'
   gem 'letter_opener'
   gem 'brakeman'
-  gem 'spina-template'
+  gem 'spina-template', path: '~/apps/spina-template'
   gem 'better_errors'
   gem 'binding_of_caller'
 end

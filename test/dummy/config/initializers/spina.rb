@@ -24,11 +24,11 @@ module Spina
       'team' => [{
         name: 'name',
         title: 'Naam',
-        page_partable_type: "Spina::Line"
+        structure_partable_type: "Spina::Line"
       }, {
         name: 'description',
         title: 'Omschrijving',
-        page_partable_type: "Spina::Text"
+        structure_partable_type: "Spina::Text"
       }]
     }
 

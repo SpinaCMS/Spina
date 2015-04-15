@@ -1,15 +1,13 @@
-- if f.object.structure.present?
-  - f.object.structure_parts.where(name: 'title').first || f.object.structure_parts.build(name: 'title', title: 'Titel', structure_partable_type: "Spina::Line")
+.structure-form-pane{id: "structure_form_pane_#{f.object.id}"}
+  / Hidden field
+  = f.hidden_field :position, placeholder: "Position"
 
-/ Hidden field
-= f.text_field :position, placeholder: "Position"
+  / Strucure parts
+  = f.fields_for :structure_parts do |structure_part_form|
 
-/ Strucure parts
-= f.fields_for :structure_parts do |structure_part_form|
+    = structure_part_form.hidden_field :id
+    = structure_part_form.hidden_field :title
+    = structure_part_form.hidden_field :name
+    = structure_part_form.hidden_field :structure_partable_type
 
-  = structure_part_form.text_field :id
-  = structure_part_form.text_field :title
-  = structure_part_form.text_field :name
-  = structure_part_form.text_field :structure_partable_type
-
-  %p= render partial: "spina/admin/structure_partables/#{structure_part_form.object.structure_partable_type.demodulize.underscore}_form", object: structure_part_form
+    %p= render partial: "spina/admin/structure_partables/#{structure_part_form.object.structure_partable_type.demodulize.underscore}_form", object: structure_part_form

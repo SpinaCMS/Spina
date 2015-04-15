@@ -33,6 +33,24 @@ $(document).on 'click', 'form .remove_fields', (event) ->
   $(this).closest('fieldset').slideUp()
   event.preventDefault()
 
+# Dynamically add and remove structures
+$(document).on 'click', 'form .add_structure', (event) ->
+  $structureForm = $(this).parents('.structure-form')
+
+  time = new Date().getTime()
+  regexp = new RegExp($(this).data('id'), 'g')
+  $fields = $($(this).data('fields').replace(regexp, time))
+  $(this).before($fields)
+
+  $link = $("<li><a href='#structure_form_pane_#{time}'><i data-icon='7'></i> New</a></li>")
+
+  $structureForm.find('.structure-form-menu ul').append($link)
+  $fields.attr('id', "structure_form_pane_#{time}")
+
+  $link.find('a').click()
+
+  event.preventDefault()
+
 # Sort pages
 $(document).on 'click', '.sort-switch', (event) ->
   $($(this).attr('href') + ' .dd-item-inner').toggleClass('dd-handle')

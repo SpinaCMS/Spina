@@ -1,8 +1,24 @@
-= structure_form.fields_for :page_partable do |form|
-  = structure_form.object.inspect
-  = form.fields_for :structure_items do |structure_item_form|
-    = render 'structure_item_fields', f: structure_item_form
+%td{colspan: 2, style: 'vertical-align: top; padding-left: 0px; padding-right: 0px'}
+  = structure_form.hidden_field :id
+  = structure_form.hidden_field :title
+  = structure_form.hidden_field :page_partable_type
+  = structure_form.hidden_field :name
 
-  = link_to_add_fields form, :structure_items do
-    %i{data: {icon: 't '}}
-    =t 'spina.website.new_structure'
+  .structure-form
+    .structure-form-menu
+      %label= structure_form.object.title
+
+      %ul
+        - structure_form.object.page_partable.structure_items.each_with_index do |structure_item, index|
+          %li
+            = link_to "#structure_form_pane_#{structure_item.id}" do
+              %i{data: {icon: '7'}}
+              Bram
+
+    .structure-form-content
+      = structure_form.fields_for :page_partable do |form|
+        = form.fields_for :structure_items do |structure_item_form|
+          = render 'structure_item_fields', f: structure_item_form
+
+        = link_to_add_structure form, :structure_items do
+          +

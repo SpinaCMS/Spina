@@ -13,15 +13,18 @@
 
         = f.fields_for :page_parts, @page_parts.sort { |a,b| a.position(current_theme) <=> b.position(current_theme) } do |page_part_form|
           %tr.page-part{data: {name: page_part_form.object.name}}
-            %td
-              = page_part_form.object.title
-            %td
-              = page_part_form.hidden_field :id
-              = page_part_form.hidden_field :title
-              = page_part_form.hidden_field :page_partable_type
-              = page_part_form.hidden_field :name
-
+            - if page_part_form.object.page_partable_type == 'Spina::Structure'
               = render partial: "spina/admin/page_partables/#{page_part_form.object.page_partable_type.demodulize.underscore}_form", object: page_part_form
+            - else
+              %td
+                = page_part_form.object.title
+              %td
+                = page_part_form.hidden_field :id
+                = page_part_form.hidden_field :title
+                = page_part_form.hidden_field :page_partable_type
+                = page_part_form.hidden_field :name
+
+                = render partial: "spina/admin/page_partables/#{page_part_form.object.page_partable_type.demodulize.underscore}_form", object: page_part_form
 
   #page_seo.tab-content
     .table-container
