@@ -29,6 +29,10 @@ module Spina
         name: 'description',
         title: 'Omschrijving',
         structure_partable_type: "Spina::Text"
+      }, {
+        name: 'photo',
+        title: 'Foto',
+        structure_partable_type: "Spina::Photo"  
       }]
     }
 

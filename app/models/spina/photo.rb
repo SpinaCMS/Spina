@@ -3,6 +3,7 @@ module Spina
     mount_uploader :file, PhotoUploader
 
     has_many :page_parts, as: :page_partable
+    has_many :structure_parts, as: :structure_partable
     has_many :photo_collections_photos
     has_many :photo_collections, through: :photo_collections_photos
 

@@ -9,6 +9,11 @@ ready = ->
       position_array.push $(this).data('photo-id')
     $(e.target).parents('td').find('.photo-positions').val(position_array.join(","))
 
+  $('.structure-form-menu ul').sortable().bind 'sortupdate', (e) ->
+    $(e.target).find('li').each (index) ->
+      id = $(this).data('structure-item-id')
+      $(".structure_form_pane_#{id}_position").val(index)
+
 $(document).on 'ready page:load', ready
 
 # Change templates makes page parts appear and disappear
@@ -42,13 +47,21 @@ $(document).on 'click', 'form .add_structure', (event) ->
   $fields = $($(this).data('fields').replace(regexp, time))
   $(this).before($fields)
 
-  $link = $("<li><a href='#structure_form_pane_#{time}'><i data-icon='7'></i> New</a></li>")
+  $link = $("<li><a href='#structure_form_pane_#{time}'><i data-icon='7'></i> </a></li>")
 
   $structureForm.find('.structure-form-menu ul').append($link)
   $fields.attr('id', "structure_form_pane_#{time}")
 
   $link.find('a').click()
 
+  event.preventDefault()
+
+$(document).on 'click', 'form .remove-structure-item-fields', (event) ->
+  $(this).prev('input[type=hidden]').val('1')
+  $pane = $(this).closest('.structure-form-pane')
+  console.log $pane.attr('id')
+  $("a[href='##{$pane.attr('id')}']").parents('li').hide()
+  $pane.hide()
   event.preventDefault()
 
 # Sort pages

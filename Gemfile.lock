@@ -25,7 +25,7 @@ PATH
 PATH
   remote: ~/apps/spina-template
   specs:
-    spina-template (0.2.4)
+    spina-template (0.2.5)
       bourbon (~> 3.2.1)
       coffee-rails
       jquery-fileupload-rails
