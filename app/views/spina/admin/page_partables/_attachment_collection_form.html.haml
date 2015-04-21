@@ -1,10 +1,18 @@
-= attachment_collection_form.fields_for :page_partable, attachment_collection_form.object.page_partable do |form|
-  = link_to select_collection_admin_attachments_path(form.object_name), remote: true, class: "media_picker" do
-    - if form.object.attachments.any?
-      - form.object.attachments.each do |attachment|
-        .attachment= attachment.name
-    - else
-      .placeholder
-        %span{data: {icon: 't'}}
-          = t('spina.choose_from_library')
-    = form.hidden_field :attachment_tokens, value: form.object.attachment_ids.join(",")
+%td
+  = attachment_collection_form.object.title
+%td
+  = attachment_collection_form.hidden_field :id
+  = attachment_collection_form.hidden_field :title
+  = attachment_collection_form.hidden_field :page_partable_type
+  = attachment_collection_form.hidden_field :name
+
+  = attachment_collection_form.fields_for :page_partable, attachment_collection_form.object.page_partable do |form|
+    = link_to select_collection_admin_attachments_path(form.object_name), remote: true, class: "media_picker" do
+      - if form.object.attachments.any?
+        - form.object.attachments.each do |attachment|
+          .attachment= attachment.name
+      - else
+        .placeholder
+          %span{data: {icon: 't'}}
+            = t('spina.choose_from_library')
+      = form.hidden_field :attachment_tokens, value: form.object.attachment_ids.join(",")

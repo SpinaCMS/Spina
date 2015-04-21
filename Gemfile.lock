@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    spina (0.6.13)
+    spina (0.6.14)
       ancestry (~> 2.1, >= 2.1.0)
       bcrypt-ruby (~> 3.1)
       bourbon (~> 3.2, >= 3.2.1)
@@ -25,7 +25,7 @@ PATH
 PATH
   remote: ~/apps/spina-template
   specs:
-    spina-template (0.2.5)
+    spina-template (0.2.6)
       bourbon (~> 3.2.1)
       coffee-rails
       jquery-fileupload-rails
@@ -154,7 +154,7 @@ GEM
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
     mime-types (2.4.3)
-    mini_magick (4.2.0)
+    mini_magick (4.2.3)
     mini_portile (0.6.2)
     minitest (5.6.0)
     multi_json (1.11.0)
