@@ -17,12 +17,11 @@
 
 
       = structure_form.fields_for :page_partable do |form|
+        - form.object.page_part = structure_form.object
         = link_to_add_fields form, :structure_items do
           %i{data: {icon: 't'}}
 
     .structure-form-content
       = structure_form.fields_for :page_partable do |form|
-        - form.object.page_part = structure_form.object
-
         = form.fields_for :structure_items, form.object.structure_items.sorted_by_structure do |structure_item_form|
           = render 'structure_item_fields', f: structure_item_form
