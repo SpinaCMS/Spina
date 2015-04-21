@@ -76,9 +76,3 @@ $(document).on 'click', '.sort-switch', (event) ->
     $(this).addClass('button-success')
     $(this).text($(this).data('done-changing-order'))
   return false
-
-# JavaScript save page
-$(document).on 'submit', 'form.edit_page', (event) ->
-  $submitButton = $(this).find('button[type="submit"]')
-  $submitButton.addClass('button-saving')
-  $submitButton.attr('data-icon', 'f')

@@ -14,6 +14,10 @@ module Spina
       name
     end
 
+    def content
+      structure_partable.try(:content) || structure_partable
+    end
+
     def structure_partable_attributes=(attributes)
       if self.structure_partable.present?
         self.structure_partable.assign_attributes(attributes)

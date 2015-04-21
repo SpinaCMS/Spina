@@ -13,7 +13,7 @@
           %li{data: {structure_item_id: structure_item.id}}
             = link_to "#structure_form_pane_#{structure_item.id}" do
               %i.sortable-handle{data: {icon: '7'}}
-              = structure_item.structure_parts.first.structure_partable.try(:content)
+              = structure_item.structure_parts.first.try(:structure_partable).try(:content)
 
     .structure-form-content
       = structure_form.fields_for :page_partable do |form|

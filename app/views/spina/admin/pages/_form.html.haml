@@ -1,4 +1,4 @@
-= form_for [spina, :admin, @page], multipart: true, html: {autocomplete: "off"}, remote: !@page.new_record? do |f|
+= form_for [spina, :admin, @page], multipart: true, html: {autocomplete: "off"} do |f|
   - content_for :notification_alert do
     = error_explanation!(@page)
 

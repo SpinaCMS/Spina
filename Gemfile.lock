@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    spina (0.6.14)
+    spina (0.6.15)
       ancestry (~> 2.1, >= 2.1.0)
       bcrypt-ruby (~> 3.1)
       bourbon (~> 3.2, >= 3.2.1)
@@ -25,7 +25,7 @@ PATH
 PATH
   remote: ~/apps/spina-template
   specs:
-    spina-template (0.2.6)
+    spina-template (0.2.7)
       bourbon (~> 3.2.1)
       coffee-rails
       jquery-fileupload-rails
