@@ -60,7 +60,7 @@ nl:
       show_in_menu: onzichtbaar
       skip_to_first_child: doorsturen naar 1<sup>e</sup> subpagina
       invisible_to_search_engines: Je website is niet zichtbaar voor zoekmachines
-      invisible_to_search_engines: Bij voorkeuren voor Statistieken en zoekmachines kun je dit activeren.
+      invisible_to_search_engines_description: Bij voorkeuren voor Statistieken en zoekmachines kun je dit activeren.
 
     users:
       new: Nieuwe gebruiker
