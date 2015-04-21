@@ -22,5 +22,5 @@
         = form.fields_for :structure_items, form.object.structure_items.sorted_by_structure do |structure_item_form|
           = render 'structure_item_fields', f: structure_item_form
 
-        = link_to_add_structure form, :structure_items do
+        = link_to_add_fields form, :structure_items do
           %i{data: {icon: 't'}}
