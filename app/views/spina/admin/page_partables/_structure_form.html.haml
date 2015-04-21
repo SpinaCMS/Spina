@@ -9,11 +9,16 @@
       %label= structure_form.object.title
 
       %ul
-        - structure_form.object.page_partable.structure_items.sorted_by_structure.each do |structure_item|
-          %li{data: {structure_item_id: structure_item.id}}
+        - structure_form.object.page_partable.structure_items.sorted_by_structure.each_with_index do |structure_item, index|
+          %li{class: ('active' if index == 0), data: {structure_item_id: structure_item.id}}
             = link_to "#structure_form_pane_#{structure_item.id}" do
               %i.sortable-handle{data: {icon: '7'}}
               = structure_item.structure_parts.first.try(:structure_partable).try(:content)
+
+
+      = structure_form.fields_for :page_partable do |form|
+        = link_to_add_fields form, :structure_items do
+          %i{data: {icon: 't'}}
 
     .structure-form-content
       = structure_form.fields_for :page_partable do |form|
@@ -21,6 +26,3 @@
 
         = form.fields_for :structure_items, form.object.structure_items.sorted_by_structure do |structure_item_form|
           = render 'structure_item_fields', f: structure_item_form
-
-        = link_to_add_fields form, :structure_items do
-          %i{data: {icon: 't'}}

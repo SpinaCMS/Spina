@@ -54,6 +54,7 @@ nl:
       photos_picker: Foto's kiezen
       photo_picker: Foto kiezen
       delete_confirmation: "Weet je zeker dat je de pagina <strong>%{subject}</strong> wilt verwijderen?"
+      delete_structure_item_confirmation: "Weet je zeker dat je dit item wilt verwijderen?"
       save: Pagina opslaan
       concept: concept
       show_in_menu: onzichtbaar

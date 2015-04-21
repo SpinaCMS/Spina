@@ -45,7 +45,7 @@ $(document).on 'click', 'form .add_structure', (event) ->
   time = new Date().getTime()
   regexp = new RegExp($(this).data('id'), 'g')
   $fields = $($(this).data('fields').replace(regexp, time))
-  $(this).before($fields)
+  $structureForm.find('.structure-form-content').append($fields)
 
   $link = $("<li><a href='#structure_form_pane_#{time}'><i data-icon='7'></i> </a></li>")
 
@@ -59,8 +59,11 @@ $(document).on 'click', 'form .add_structure', (event) ->
 $(document).on 'click', 'form .remove-structure-item-fields', (event) ->
   $(this).prev('input[type=hidden]').val('1')
   $pane = $(this).closest('.structure-form-pane')
-  console.log $pane.attr('id')
-  $("a[href='##{$pane.attr('id')}']").parents('li').hide()
+  $link = $("a[href='##{$pane.attr('id')}']").parents('li')
+  $previousLink = $link.siblings('li:visible')
+
+  $previousLink.find('a').trigger('click')
+  $link.hide()
   $pane.hide()
   event.preventDefault()
 
