@@ -8,6 +8,7 @@ module Spina
       else
         can :manage, Page
         can :manage, Photo
+        can :manage, Attachment
         can :manage, Account
         can :manage, Inquiry
 
