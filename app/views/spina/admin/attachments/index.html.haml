@@ -9,9 +9,9 @@
         %th= Spina::Attachment.human_attribute_name(:name)
         %th= Spina::Attachment.human_attribute_name(:size)
         %th= Spina::Attachment.human_attribute_name(:created_at)
-        %th 
+        %th{colspan: 2}
       %tr
-        %td{colspan: 4}
+        %td{colspan: 5}
           = form_for [spina, :admin, @attachment], html: {multipart: true, class: "new_document"} do |f|
             = f.file_field :file, data: {customfileinput: true}
 
