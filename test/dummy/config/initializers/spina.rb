@@ -4,7 +4,9 @@ end
 
 module Spina
   module DefaultTheme
-    include Spina::Configurable
+    include ::ActiveSupport::Configurable
+
+    config_accessor :title, :page_parts, :view_templates, :layout_parts, :custom_pages, :plugins, :structures
 
     self.title = "Default theme"
 
