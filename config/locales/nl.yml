@@ -30,6 +30,7 @@ nl:
       photos: Afbeeldingen
 
     inquiries:
+      title: Berichten
       all: Alle berichten
       all_description: Alle berichten
       delete_confirmation: "Weet je zeker dat je het bericht van %{subject}</strong> wilt verwijderen?"
