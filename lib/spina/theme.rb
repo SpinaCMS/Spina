@@ -1,7 +1,7 @@
 module Spina
   class Theme
 
-    attr_accessor :name, :config
+    attr_accessor :name, :config, :public_theme
 
     def to_s
       name

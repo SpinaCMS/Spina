@@ -3,14 +3,6 @@
     %table.table.table-form
       %tr
         %td
-          = Spina::Account.human_attribute_name(:theme)
-        %td
-          .select-dropdown.account-theme{data: {layout_parts: current_theme.config.layout_parts.map{|layout_part| layout_part[:name]}}}
-            - options = options_for_select(Spina.themes.map { |theme| [theme.to_s, theme.to_s, {'data-layout-parts' => theme.config.layout_parts.map{|layout_part| layout_part[:name] }}] }, current_account.theme)
-            = f.select :theme, options
-
-      %tr
-        %td
           = Spina::Account.human_attribute_name(:logo)
         %td
           = image_tag current_account.logo
