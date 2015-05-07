@@ -9,4 +9,6 @@ namespace :spina do
     Spina::Page.where(name: 'homepage').where(deletable: false).first_or_create!
     puts "Done"
   end
+
+    
 end
