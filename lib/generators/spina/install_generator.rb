@@ -35,6 +35,10 @@ module Spina
       User.create name: 'admin', email: email, password: password, admin: true
     end
 
+    def bootstrap_spina
+      rake "spina:bootstrap"
+    end
+
     def add_route
       route "mount Spina::Engine => '/'"
     end
