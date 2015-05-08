@@ -1,14 +1,12 @@
 namespace :spina do
   desc "Generate basic pages"
-  task bootstrap: [:create_basic_pages]
+  task bootstrap: [:create_account]
 
   desc "Create custom pages from spina config"
-  task :create_basic_pages => :environment do
+  task create_account: :environment do
     puts "Bootstrap Spina!"
-    puts "Creating Homepage..."
-    Spina::Page.where(name: 'homepage').where(deletable: false).first_or_create!
+    puts "Creating account..."
+    Spina::Account.create name: 'Your Website', theme: 'Default'
     puts "Done"
   end
-
-    
 end
