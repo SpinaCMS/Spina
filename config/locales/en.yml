@@ -1,10 +1,197 @@
 en:
-  text: Text
-  photo: Photo
-  line: Line of text
+  spina:
+    cancel: Cancel
+    close: Close
+    choose_from_library: Choose from library
+    edit: Edit
+    delete: Delete
+    permanently_delete: Permanently delete
+    delete_confirmation: "Are you sure you want to delete <strong>%{subject}</strong>?"
+    login: Login
+    preview_website: Preview website
+    search: Search...
+    ago: ago
+    edit_website: Edit your website
+    logout: Logout
+
+    notifications:
+      information: Information
+      alert: Oops! Something went wrong
+      login: You have to login first
+      wrong_username_or_password: Wrong email or password
+
+    website:
+      title: Your website
+      pages: Pages
+      pages_description: "All pages on your website"
+      media_library: Media library
+      media_library_description: "Here's where you'll find all of your images and documents"
+      documents: Documents
+      photos: Images
+
+    inquiries:
+      title: Messages
+      all: All messages
+      all_description: All messages
+      delete_confirmation: "Are you sure you want to delete <strong>%{subject}'s</strong> message?"
+      empty: You have not received any messages
+      empty_inbox: Inbox is empty
+      empty_spam: You have no messages marked as spam
+      inbox: Inbox
+      inbox_description: Incoming messages
+      mark_as_read: Mark as read
+      no_spam: No spam
+      spam: Spam
+
+    pages:
+      new: New page
+      create_page: "use %{template}"
+      change_order: Change order
+      done_changing_order: Done ordering
+      page_content: Content
+      page_seo: Search engines
+      advanced: Advanced
+      page_part: Page section
+      photos_picker: Choose images
+      photo_picker: Choose image
+      delete_confirmation: "Are you sure you want to delete the page <strong>%{subject}</strong>?"
+      save: Save page
+      concept: concept
+      show_in_menu: invisible
+      skip_to_first_child: forward to first child page
+      invisible_to_search_engines: Your website is invisible to search engines
+      invisible_to_search_engines_description: Go to your preferences to activate search engines.
+
+    users:
+      new: New user
+      save: Save user
+      delete_confirmation: "Are you sure you want to delete the user <strong>%{user}</strong>?"
+      cannot_be_created: The user cannot be saved
+
+    photos:
+      delete_confirmation: "Are you sure you want to delete this <strong>image</strong>?"
+      insert_photos: Insert images
+      insert_photo: Insert image
+      link: "URL of your image:"
+      cannot_be_created: "Image could not be processed:"
+
+    wysiwyg:
+      paragraph: Paragraph
+      heading_1: Heading 1
+      heading_2: Heading 2
+      heading_3: Heading 3
+      quote: Quote
+      insert_link: Insert link
+
+    preferences:
+      title: Preferences
+      account: General
+      account_description: Personal preferences
+      account_save: Save preferences
+      style: Styling
+      style_description: Choose a theme that fits your brand
+      style_save: Save styling
+      users: Users
+      users_description: Manage users and administrators
+      social_media: Social media
+      social_media_description: Facebook and Twitter accounts
+      social_media_save: Save social media
+      analytics: Analytics and search engines
+      analytics_description: Link your account with for real-time analytics
+      analytics_save: Save preferences
+      domain_name_settings: Domain settings
+      domain_name_settings_description: Setup your own custom domain
+
+    attachments:
+      insert: 'Insert document'
+      insert_multiple: 'Insert documents'
+
+  activerecord:
+    models:
+      spina/page: 
+        one: Page
+        other: Pages
+      spina/user: 
+        one: User
+        other: Users
+      spina/photo:
+        one: Image
+        other: Images
+      spina/attachment:
+        one: Document
+        other: Documents
+      spina/inquiry:
+        one: Message
+        other: Messages
+
+    attributes:
+      spina/account:
+        name: Website name
+        address: Address
+        postal_code: Postal code
+        city: City
+        phone: Phone
+        email: Email
+        kvk_identifier: Chamber of commerce
+        kvk_identifier_description: Chamber of commerce
+        vat_identifier: VAT
+        vat_identifier_description: VAT
+        theme: Theme website
+        logo: Logo
+        google_analytics: Google Analytics
+        google_site_verification: Google Site Verification
+        robots_allowed: Visible in search engines
+        facebook: Facebook
+        twitter: Twitter
+        google_plus: Google+
+
+      spina/attachment:
+        created_at: Created at
+        name: Filename
+        size: Size
+
+      spina/inquiries:
+        email: Email
+        name: From
+        message: Message
+        phone: Phone
+
+      spina/page:
+        title: Title
+        title_placeholder: Page title
+        seo_title: SEO <title>
+        seo_title_placeholder: This title is used in the <title>-tag
+        description: Meta description
+        description_description: This description will be shown in search results
+        description_placeholder: Short description of your page
+        draft: Concept
+        draft_description: Great for when your page is not quite finished
+        skip_to_first_child: Forward
+        skip_to_first_child_description: Forward to first child page
+        show_in_menu: Show in navigation
+        show_in_menu_description: "When turned off this page won't be shown in your navigation"
+        menu_title: Navigation title
+        menu_title_placeholder: Leave empty to use the page title
+        view_template: Page template
+
+      spina/user:
+        email: Email
+        password: Password
+        name: Name
+        name_placeholder: Name
+        email: Email
+        email_description: Your email must be unique
+        password: Password
+        password_description: Leave blank to keep password
+        password_confirmation: Confirm password
+        admin: Administrator
+        user: User
+        admin_description: Administrators can create users
+        role: Role
+        last_logged_in: Last logged in
 
   misc:
     messages:
-      zero: "No messages"
-      one: "One message"
-      other: "%{count} messages"
+      zero: "0 new messages"
+      one: "1 new message"
+      other: "%{count} new messages"

@@ -5,7 +5,7 @@ nl:
     choose_from_library: Kies uit bibliotheek
     edit: Bewerken
     delete: Verwijderen
-    permanently_delete: Defintief verwijderen
+    permanently_delete: Definitief verwijderen
     delete_confirmation: "Weet je zeker dat je <strong>%{subject}</strong> wilt verwijderen?"
     login: Aanmelden
     preview_website: Bekijk je website
