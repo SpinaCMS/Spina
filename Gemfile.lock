@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    spina (0.6.24)
+    spina (0.6.25)
       ancestry
       bcrypt-ruby
       breadcrumbs_on_rails
@@ -23,7 +23,7 @@ PATH
 PATH
   remote: ~/apps/spina-template
   specs:
-    spina-template (0.2.13)
+    spina-template (0.2.14)
       bourbon (~> 3.2)
       coffee-rails
       font-awesome-sass

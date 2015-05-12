@@ -37,20 +37,6 @@
         %td
           = f.text_field :email, placeholder: Spina::Account.human_attribute_name(:email)
 
-      %tr
-        %td
-          = Spina::Account.human_attribute_name(:kvk_identifier)
-          %small= Spina::Account.human_attribute_name(:kvk_identifier_description)
-        %td
-          = f.text_field :kvk_identifier, placeholder: Spina::Account.human_attribute_name(:kvk_identifier)
-
-      %tr
-        %td
-          = Spina::Account.human_attribute_name(:vat_identifier)
-          %small= Spina::Account.human_attribute_name(:vat_identifier_description)
-        %td
-          = f.text_field :vat_identifier, placeholder: Spina::Account.human_attribute_name(:vat_identifier)
-
   %button.button.button-primary{type: 'submit'}
     = icon('check')
     = t('spina.preferences.account_save')
