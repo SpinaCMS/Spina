@@ -19,5 +19,6 @@
         %td
           = f.text_field :google_plus, placeholder: Spina::Account.human_attribute_name(:google_plus)
 
-  %button.button.button-primary{type: 'submit', data: {icon: 'o'}}
+  %button.button.button-primary{type: 'submit'}
+    = icon('check')
     = t('spina.preferences.social_media_save')

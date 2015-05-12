@@ -4,23 +4,27 @@
 
     %ul
       %li{class: ('active' if params[:action] == 'edit' && params[:controller] == 'spina/admin/accounts')}
-        = link_to spina.edit_admin_account_path, data: {icon: 'J'} do
+        = link_to spina.edit_admin_account_path do
+          = icon('cog')
           = t('spina.preferences.account')
           %small= t('spina.preferences.account_description')
 
       - if can? :manage, Spina::User
         %li{class: ('active' if %w[users].include? controller_name)}
-          = link_to spina.admin_users_path, data: {icon: 'K'} do
+          = link_to spina.admin_users_path do
+            = icon('street-view')
             = t('spina.preferences.users')
             %small= t('spina.preferences.users_description')
 
       %li{class: ('active' if params[:action] == 'social')}
-        = link_to spina.social_admin_account_path, data: {icon: 'D'} do
+        = link_to spina.social_admin_account_path do
+          = icon('facebook-square')
           = t('spina.preferences.social_media')
           %small= t('spina.preferences.social_media_description')
 
       %li{class: ('active' if params[:action] == 'analytics')}
-        = link_to spina.analytics_admin_account_path, data: {icon: 'E'} do
+        = link_to spina.analytics_admin_account_path do
+          = icon('search')
           = t('spina.preferences.analytics')
           %small= t('spina.preferences.analytics_description')
 

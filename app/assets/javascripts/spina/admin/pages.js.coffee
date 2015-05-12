@@ -70,12 +70,12 @@ $(document).on 'click', 'form .remove-structure-item-fields', (event) ->
 # Sort pages
 $(document).on 'click', '.sort-switch', (event) ->
   $($(this).attr('href') + ' .dd-item-inner').toggleClass('dd-handle')
-  if $(this).attr('data-icon') == 'j'
-    $(this).attr('data-icon', '8')
+  if $(this).hasClass('button-success')
     $(this).removeClass('button-success')
     $(this).text($(this).data('change-order'))
+    $(this).prepend('<i class="fa fa-random"></i>')
   else
-    $(this).attr('data-icon', 'j')
     $(this).addClass('button-success')
     $(this).text($(this).data('done-changing-order'))
+    $(this).prepend('<i class="fa fa-check"></i>')
   return false

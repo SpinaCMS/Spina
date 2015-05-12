@@ -10,7 +10,10 @@
       - if page.skip_to_first_child
         %small (#{raw t('spina.pages.skip_to_first_child')})
 
-    %span.pull-right= link_to t('spina.edit'), spina.edit_admin_page_path(page), class: 'button button-small button-link dd-nodrag', data: {icon: 'q'}
+    %span.pull-right
+      = link_to spina.edit_admin_page_path(page), class: 'button button-small button-link dd-nodrag' do
+        = icon('pencil')
+        = t('spina.edit')
 
   - if page.children.active.present?
     %ol.dd-list

@@ -66,7 +66,8 @@
               - options = options_for_select(current_theme.config.view_templates.map { |template| [template[1][:title], template[0], {'data-page-parts' => template[1][:page_parts]}] }, @page.view_template)
               = f.select :view_template, options
 
-  %button.button.button-primary{type: 'submit', data: {icon: 'o'}}
+  %button.button.button-primary{type: 'submit'}
+    = icon('check')
     =t 'spina.pages.save'
 
   = link_to t('spina.cancel'), spina.admin_pages_path, class: 'button button-link'

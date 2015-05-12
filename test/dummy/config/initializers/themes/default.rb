@@ -9,10 +9,28 @@ module Spina
     self.page_parts = [{ 
       name: 'content', 
       title: 'Content', 
-      page_partable_type: "Spina::Text" 
+      page_partable_type: "Spina::Text"
+    }, {
+      name: 'structure',
+      title: 'Structuur',
+      page_partable_type: "Spina::Structure"
     }]
 
-    self.structures = []
+    self.structures = {
+      'structure' => [{
+        name: 'name',
+        title: 'Naam',
+        structure_partable_type: "Spina::Line"  
+      }, {
+        name: 'role',
+        title: 'Rol',
+        structure_partable_type: "Spina::Line"
+      }, {
+        name: 'description',
+        title: 'Beschrijving',
+        structure_partable_type: "Spina::Text"
+      }]
+    }
     self.layout_parts = []
     self.custom_pages = []
     self.plugins = []
@@ -26,13 +44,17 @@ module Spina
         title: 'Default',
         description: 'A simple page',
         usage: 'Use for your content',
-        page_parts: ['content']
+        page_parts: ['content', 'structure']
       }
     }
+
+    self.custom_pages = [
+      { name: 'homepage', title: 'Homepage', deletable: false, view_template: 'homepage' }
+    ]
   end
 end
 
 theme = Spina::Theme.new
-theme.name = "Default"
+theme.name = "default"
 theme.config = Spina::DefaultTheme.config
 Spina.register_theme(theme)

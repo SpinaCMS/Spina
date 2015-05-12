@@ -1,10 +1,9 @@
 PATH
   remote: .
   specs:
-    spina (0.6.22)
+    spina (0.6.24)
       ancestry
       bcrypt-ruby
-      bourbon
       breadcrumbs_on_rails
       cancan
       carrierwave
@@ -15,7 +14,6 @@ PATH
       jquery-fileupload-rails
       jquery-rails
       mini_magick
-      neat
       negative_captcha
       rails
       sass-rails
@@ -28,6 +26,7 @@ PATH
     spina-template (0.2.13)
       bourbon (~> 3.2)
       coffee-rails
+      font-awesome-sass
       jquery-fileupload-rails
       neat (~> 1.5)
 
@@ -115,6 +114,8 @@ GEM
     execjs (2.5.2)
     fastercsv (1.5.5)
     filters_spam (0.5)
+    font-awesome-sass (4.3.2.1)
+      sass (~> 3.2)
     friendly_id (5.1.0)
       activerecord (>= 4.0.0)
     gem-release (0.7.3)
@@ -211,7 +212,7 @@ GEM
     sexp_processor (4.5.0)
     sprockets (3.0.3)
       rack (~> 1.0)
-    sprockets-rails (2.2.4)
+    sprockets-rails (2.3.0)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)

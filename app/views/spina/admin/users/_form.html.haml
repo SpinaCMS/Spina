@@ -44,7 +44,8 @@
         %td
           = f.check_box :admin, data: {switch: 'true'}
 
-  %button.button.button-primary{type: 'submit', data: {icon: 'o'}}
+  %button.button.button-primary{type: 'submit'}
+    = icon('check')
     =t('spina.users.save')
 
   = link_to t('spina.cancel'), spina.admin_users_path, class: 'button button-link'

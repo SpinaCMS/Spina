@@ -12,14 +12,14 @@
         - structure_form.object.page_partable.structure_items.sorted_by_structure.each_with_index do |structure_item, index|
           %li{class: ('active' if index == 0), data: {structure_item_id: structure_item.id}}
             = link_to "#structure_form_pane_#{structure_item.id}" do
-              %i.sortable-handle{data: {icon: '7'}}
+              %i.sortable-handle.fa.fa-bars
               = structure_item.structure_parts.first.try(:structure_partable).try(:content)
 
 
       = structure_form.fields_for :page_partable do |form|
         - form.object.page_part = structure_form.object
         = link_to_add_fields form, :structure_items do
-          %i{data: {icon: 't'}}
+          = icon('plus')
 
     .structure-form-content
       = structure_form.fields_for :page_partable do |form|

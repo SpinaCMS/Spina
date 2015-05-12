@@ -4,7 +4,8 @@
 
     %ul
       %li{class: ('active' if ["inbox", "inbox_show"].include? action_name )}
-        = link_to spina.inbox_admin_inquiries_path, data: {icon: 'b'} do
+        = link_to spina.inbox_admin_inquiries_path do
+          = icon('comment-o')
           - if @new_messages.present?
             = "#{t('spina.inquiries.inbox')} (#{@new_messages.size})"
           - else
@@ -12,7 +13,8 @@
           %small= t('spina.inquiries.inbox_description')
           
       %li{class: ('active' if ["index", "spam", "show"].include? action_name )}
-        = link_to spina.admin_inquiries_path, data: {icon: 'z'} do
+        = link_to spina.admin_inquiries_path do
+          = icon('comments-o')
           = t('spina.inquiries.all')
           %small= t('spina.inquiries.all_description')
 

@@ -21,8 +21,6 @@ Gem::Specification.new do |s|
   s.add_dependency 'bcrypt-ruby'
   s.add_dependency 'haml-rails'
   s.add_dependency 'sass-rails'
-  s.add_dependency 'bourbon'
-  s.add_dependency 'neat'
   s.add_dependency 'coffee-rails'
   s.add_dependency 'jquery-rails'
   s.add_dependency 'jquery-fileupload-rails'

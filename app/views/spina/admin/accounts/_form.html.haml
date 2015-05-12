@@ -51,5 +51,6 @@
         %td
           = f.text_field :vat_identifier, placeholder: Spina::Account.human_attribute_name(:vat_identifier)
 
-  %button.button.button-primary{type: 'submit', data: {icon: 'o'}}
+  %button.button.button-primary{type: 'submit'}
+    = icon('check')
     = t('spina.preferences.account_save')

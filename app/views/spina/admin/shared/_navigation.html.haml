@@ -1,16 +1,26 @@
 %nav#primary
   %ul
     %li{class: ('active' if (%w[pages photos attachments] + Spina.plugins(:website_resource).map { |plugin| plugin.config.controller if current_theme.config.plugins.include?(plugin.name.downcase) }).include? controller_name)}
-      = link_to t('spina.website.title'), spina.admin_pages_path, data: {icon: 'y'}
+      = link_to spina.admin_pages_path do
+        = icon('home')
+        = t('spina.website.title')
 
     %li{class: ('active' if %w[inquiries].include? controller_name)}
       - if @new_messages.present?
-        = link_to t('spina.inquiries.title'), spina.inbox_admin_inquiries_path, data: {icon: 'A', badge: "#{@new_messages.size}"}
+        = link_to spina.inbox_admin_inquiries_path, data: {badge: "#{@new_messages.size}"} do
+          = icon('comment')
+          = t('spina.inquiries.title')
       - else
-        = link_to t('spina.inquiries.title'), spina.admin_inquiries_path, data: {icon: 'A'}
+        = link_to spina.admin_inquiries_path do
+          = icon('comment')
+          = t('spina.inquiries.title')
 
     %li{class: ('active' if %w[accounts users tenants].include? controller_name)}
-      = link_to t('spina.preferences.title'), spina.edit_admin_account_path, data: {icon: 'f'}
+      = link_to spina.edit_admin_account_path do
+        = icon('gear')
+        = t('spina.preferences.title')
 
     %li.bottom
-      = link_to t('spina.logout'), spina.admin_logout_path, data: {icon: 'h', :"no-turbolink" => true}
+      = link_to spina.admin_logout_path, data: {no_turbolink: true} do
+        = icon('power-off')
+        = t('spina.logout')

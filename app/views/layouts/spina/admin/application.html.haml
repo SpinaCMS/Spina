@@ -25,7 +25,9 @@
       %header#main_content_header
         = yield(:permanent_notice) if content_for?(:permanent_notice)
         .pull-right
-          = link_to t('spina.preview_website'), "/", class: 'button button-hollow button-round button-small', data: {:"no-turbolink" => true, icon: "W"}
+          = link_to "/", class: 'button button-hollow button-round button-small', target: :blank, data: {:"no-turbolink" => true} do
+            = icon('desktop')
+            = t('spina.preview_website')
         .breadcrumbs= render_breadcrumbs separator: '<div class="divider"></div>'
         = yield(:tertiary_navigation) if content_for?(:tertiary_navigation)
 

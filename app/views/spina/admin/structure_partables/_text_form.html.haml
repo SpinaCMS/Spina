@@ -1,11 +1,16 @@
 = text_form.fields_for :structure_partable, text_form.object.structure_partable do |form|
   .wysihtml5-container{data: {:"object-id" => text_form.object.object_id}}
     .toolbar{id: "wysihtml5-toolbar-#{text_form.object.object_id}"}
-      = link_to "", "#", class: 'command command-bold', title: "CTRL+B", data: {:"wysihtml5-command" => "bold", icon: 'H'}
-      = link_to "", "#", class: 'command command-italic', title: "CTRL+I", data: {:"wysihtml5-command" => "italic", icon: 'G'}
-      = link_to "", "#", class: 'command command-insert-unordered-list', data: {:"wysihtml5-command" => "insertUnorderedList", icon: 'F'}
-      = link_to "", spina.wysihtml5_link_admin_page_parts_path(text_form.object.object_id), class: 'command', data: {icon: 'Y'}, remote: true
-      = link_to "", spina.wysihtml5_select_admin_photos_path(text_form.object.object_id), class: 'command', data: {icon: 'V'}, remote: true
+      = link_to "#", class: 'command command-bold', title: "CTRL+B", data: {:"wysihtml5-command" => "bold"} do
+        = icon('bold')
+      = link_to "#", class: 'command command-italic', title: "CTRL+I", data: {:"wysihtml5-command" => "italic"} do
+        = icon('italic')
+      = link_to "#", class: 'command command-insert-unordered-list', data: {:"wysihtml5-command" => "insertUnorderedList"} do
+        = icon('list-ul')
+      = link_to spina.wysihtml5_link_admin_page_parts_path(text_form.object.object_id), class: 'command', remote: true do
+        = icon('link')
+      = link_to spina.wysihtml5_select_admin_photos_path(text_form.object.object_id), class: 'command', remote: true do
+        = icon('picture-o')
 
       .pull-right
         .choose-text-type
@@ -16,6 +21,7 @@
             %li= link_to t('spina.wysiwyg.heading_3'), "#", data: {:"wysihtml5-command" => "formatBlock", :"wysihtml5-command-value" => "h3"}
             %li= link_to t('spina.wysiwyg.quote'), "#", data: {:"wysihtml5-command" => "formatBlock", :"wysihtml5-command-value" => "blockquote"}
 
-        = link_to "", "#", class: 'command action-change-view', data: {:"wysihtml5-action" => "change_view", icon: 'I'}
+        = link_to "#", class: 'command action-change-view', data: {:"wysihtml5-action" => "change_view"} do
+          = icon('code')
 
     = form.text_area :content, placeholder: "#{t 'spina.pages.page_part'} #{text_form.object.name.downcase}", class: 'wysihtml5'

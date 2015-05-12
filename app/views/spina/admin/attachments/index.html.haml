@@ -1,7 +1,8 @@
 .table-container
   .search-input.pull-right
     = text_field_tag :search, nil, placeholder: t('spina.search'), class: 'input-search input-rounded'
-    .clear-input{data: {icon: 'm'}}
+    .clear-input
+      = icon('times-circle')
 
   %table.table.datatable
     %thead

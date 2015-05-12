@@ -17,5 +17,6 @@
         %td
           = f.text_field :google_site_verification, placeholder: Spina::Account.human_attribute_name(:google_site_verification)
 
-  %button.button.button-primary{type: 'submit', data: {icon: 'o'}}
+  %button.button.button-primary{type: 'submit'}
+    = icon('check')
     = t('spina.preferences.analytics_save')
