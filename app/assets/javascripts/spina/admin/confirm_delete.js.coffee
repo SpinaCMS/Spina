@@ -5,11 +5,11 @@ $.rails.allowAction = (element) ->
 
   $link = element.clone().removeAttr('data-confirm').removeAttr('data-icon').removeAttr('class')
   $link.addClass('primary')
-  $link.html('<i class="fa fa-check"></i> Ja, dat weet ik zeker')
+  $link.html('<i class="icon icon-check"></i> Ja, dat weet ik zeker')
 
   modal_html = """
               <div id="modal" class="modal"><header class="big-header">
-                <a href="#" class="close_modal" data-dismiss="modal"><i class="icon-only" data-icon="m"></i></a>
+                <a href="#" class="close_modal" data-dismiss="modal"><i class="icon icon-cross"></i></a>
                 <h3>#{message}</h3>
               </header>
 

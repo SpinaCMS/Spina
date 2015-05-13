@@ -5,7 +5,7 @@
     %ul
       %li{class: ('active' if ["inbox", "inbox_show"].include? action_name )}
         = link_to spina.inbox_admin_inquiries_path do
-          = icon('comment-o')
+          = icon('mail-outline')
           - if @new_messages.present?
             = "#{t('spina.inquiries.inbox')} (#{@new_messages.size})"
           - else
@@ -14,7 +14,7 @@
           
       %li{class: ('active' if ["index", "spam", "show"].include? action_name )}
         = link_to spina.admin_inquiries_path do
-          = icon('comments-o')
+          = icon('inbox-outline')
           = t('spina.inquiries.all')
           %small= t('spina.inquiries.all_description')
 

@@ -47,7 +47,7 @@ $(document).on 'click', 'form .add_structure', (event) ->
   $fields = $($(this).data('fields').replace(regexp, time))
   $structureForm.find('.structure-form-content').append($fields)
 
-  $link = $("<li><a href='#structure_form_pane_#{time}'><i class='fa fa-bars'></i> </a></li>")
+  $link = $("<li><a href='#structure_form_pane_#{time}'><i class='icon icon-bars'></i> </a></li>")
 
   $structureForm.find('.structure-form-menu ul').append($link)
   $fields.attr('id', "structure_form_pane_#{time}")
@@ -73,9 +73,9 @@ $(document).on 'click', '.sort-switch', (event) ->
   if $(this).hasClass('button-success')
     $(this).removeClass('button-success')
     $(this).text($(this).data('change-order'))
-    $(this).prepend('<i class="fa fa-random"></i>')
+    $(this).prepend('<i class="icon icon-random"></i>')
   else
     $(this).addClass('button-success')
     $(this).text($(this).data('done-changing-order'))
-    $(this).prepend('<i class="fa fa-check"></i>')
+    $(this).prepend('<i class="icon icon-check"></i>')
   return false

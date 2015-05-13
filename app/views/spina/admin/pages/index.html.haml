@@ -32,7 +32,7 @@
               .slide-dot{class: ('active' if index2 == index)}
 
           = link_to spina.new_admin_page_path(params: {view_template: template[0]}), class: 'button button-primary' do
-            = icon('pencil')
+            = icon('pencil-outline')
             = t('spina.pages.create_page', template: template[1])
 
   = link_to '#pages_list', class: 'button sort-switch', data: {change_order: t('spina.pages.change_order'), done_changing_order: t('spina.pages.done_changing_order')} do
