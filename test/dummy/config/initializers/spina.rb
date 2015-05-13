@@ -1,3 +1,3 @@
 Spina::Engine.configure do
-  config.NEGATIVE_CAPTCHA_SECRET = '29996c25326cca2a250b561ba1f0bd2f190b7dbe0dfec8be0c593b3f90010f36fccb8ebbf8bd7f9b4ea8c14ebdd84e28f40dda1d05b77de5feb789c9cf108c23'
+  config.NEGATIVE_CAPTCHA_SECRET = '445e0c9c0cee31f783754bc174661052d1236850da8f5f5ba5e11cbfa56cbaa8bce9260df75feaa56da91949ee4204fefac41c35b3e4f5e0d3e395b00c87781a'
 end
