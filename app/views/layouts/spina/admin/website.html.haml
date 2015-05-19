@@ -18,7 +18,8 @@
       - Spina.plugins(:website_resource).each do |plugin|
         - if current_theme.config.plugins.include? plugin.name.downcase
           %li{class: ('active' if params[:controller] == "spina/admin/#{plugin.config.controller}")}
-            = link_to spina.send("admin_#{plugin.config.controller}_path"), data: {icon: plugin.config.spina_icon} do
+            = link_to spina.send("admin_#{plugin.config.controller}_path") do
+              = icon(plugin.config.spina_icon)
               = plugin.config.title
               %small= plugin.config.description
 
