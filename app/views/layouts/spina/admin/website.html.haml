@@ -5,13 +5,13 @@
     %ul
       %li{class: ('active' if params[:controller] == "spina/admin/pages")}
         = link_to spina.admin_pages_path do
-          = icon('document')
+          = icon('pages')
           = t('spina.website.pages')
           %small= t('spina.website.pages_description')
 
       %li{class: ('active' if params[:controller] == "spina/admin/photos" || params[:controller] == "spina/admin/attachments")}
         = link_to spina.admin_photos_path do
-          = icon('media-library')
+          = icon('image')
           = t('spina.website.media_library')
           %small= t('spina.website.media_library_description')
 

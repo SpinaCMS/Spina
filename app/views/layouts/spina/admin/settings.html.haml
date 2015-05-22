@@ -9,6 +9,12 @@
           = t('spina.preferences.account')
           %small= t('spina.preferences.account_description')
 
+      %li{class: ('active' if params[:action] == 'style')}
+        = link_to spina.style_admin_account_path do
+          = icon('brush')
+          = t('spina.preferences.style')
+          %small= t('spina.preferences.style_description')
+
       - if can? :manage, Spina::User
         %li{class: ('active' if %w[users].include? controller_name)}
           = link_to spina.admin_users_path do

@@ -25,7 +25,7 @@ module Spina
         @page = Page.new(page_params)
         add_breadcrumb I18n.t('spina.pages.new')
         if @page.save
-          redirect_to spina.admin_pages_url
+          redirect_to spina.edit_admin_page_url(@page)
         else
           @page_parts = @page.page_parts
           render :new
@@ -43,7 +43,7 @@ module Spina
         add_breadcrumb @page.title
         respond_to do |format|
           if @page.update_attributes(page_params)
-            format.html { redirect_to spina.admin_pages_url }
+            format.html { redirect_to spina.edit_admin_page_url(@page) }
             format.js
           else
             format.html do

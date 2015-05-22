@@ -28,4 +28,5 @@
             = render partial: "spina/admin/layout_partables/#{layout_part_form.object.layout_partable_type.demodulize.underscore}_form", object: layout_part_form
 
   %button.button.button-primary{type: 'submit', data: {icon: 'o'}}
+    = icon('check')
     = t('spina.preferences.style_save')
