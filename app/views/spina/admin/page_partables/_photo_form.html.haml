@@ -9,11 +9,15 @@
   = link_to spina.photo_select_admin_photos_path(photo_form.object_name, selected_photo_id: (photo_form.object.page_partable.id if photo_form.object.page_partable.present?)), remote: true, class: "media_picker" do
     - if photo_form.object.page_partable && photo_form.object.page_partable.file.present?
       .placeholder.pull-right
-        %span.button.button-small.button-round{data: {icon: 'U'}}=t 'spina.pages.photo_picker'
+        %span.button.button-small.button-round
+          %i.icon.icon-dots
+          =t 'spina.pages.photo_picker'
       .image
         = image_tag photo_form.object.page_partable.file.thumb
     - else
       .placeholder
-        %span.button.button-small.button-round{data: {icon: 'U'}}=t 'spina.pages.photo_picker'
+        %span.button.button-small.button-round
+          %i.icon.icon-dots
+          =t 'spina.pages.photo_picker'
 
     = photo_form.hidden_field :page_partable_id

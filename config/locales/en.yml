@@ -45,7 +45,7 @@ en:
 
     pages:
       new: New page
-      create_page: "use %{template}"
+      create_page: "new %{template}"
       change_order: Change order
       done_changing_order: Done ordering
       page_content: Content

@@ -5,7 +5,7 @@
 
   %section
     .gallery-select.gallery
-      .item
+      .item.item-small
         = form_for [spina, :admin, @photo], html: {multipart: true} do |f|
           = f.file_field :file, data: {customfileinput: true}
 
@@ -17,4 +17,6 @@
 
         %footer
           = link_to t('spina.cancel'), "#", data: {dismiss: 'modal'}
-          = button_tag t('spina.photos.insert_photo'), type: 'submit', class: 'primary', data: {icon: 't '}
+          = button_tag type: 'submit', class: 'primary' do
+            %i.icon.icon-plus
+            = t('spina.photos.insert_photo')
