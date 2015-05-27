@@ -6,7 +6,7 @@ module Spina
       @routes = Engine.routes
     end
 
-    def test_homepage
+    test "visit homepage" do
       get :homepage
       assert_response :success
     end
