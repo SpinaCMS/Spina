@@ -14,4 +14,6 @@ group :development, :test do
   gem 'minitest-reporters'
   gem 'guard'
   gem 'guard-minitest'
+  gem "codeclimate-test-reporter", require: nil
+  gem 'figaro'
 end
