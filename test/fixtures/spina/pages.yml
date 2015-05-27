@@ -1,19 +1,5 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  title: MyString
-  menu_title: MyString
-  description: MyString
-  show_in_menu: false
-  position: MyString
-  slug: MyString
-  deletable: 1
-
-two:
-  title: MyString
-  menu_title: MyString
-  description: MyString
-  show_in_menu: false
-  position: MyString
-  slug: MyString
-  deletable: 1
+  name: homepage
+  title: Homepage

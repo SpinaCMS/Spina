@@ -1,9 +1,0 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
-
-one:
-  photo_id: 1
-  page_part_id: 1
-
-two:
-  photo_id: 1
-  page_part_id: 1

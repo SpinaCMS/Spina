@@ -2,7 +2,7 @@ source "http://rubygems.org"
 
 gemspec
 
-group :development do
+group :development, :test do
   gem 'gem-release'
   gem 'pg'
   gem 'quiet_assets'
@@ -11,4 +11,7 @@ group :development do
   gem 'spina-template', path: '~/apps/spina-template'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'minitest-reporters'
+  gem 'guard'
+  gem 'guard-minitest'
 end

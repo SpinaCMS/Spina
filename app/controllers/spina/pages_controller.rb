@@ -22,26 +22,26 @@ module Spina
 
     private
 
-    def page
-      @page ||= (action_name == 'homepage') ? Page.find_by(name: 'homepage') : Page.find(params[:id])
-    end
-    helper_method :page
+      def page
+        @page ||= (action_name == 'homepage') ? Page.find_by(name: 'homepage') : Page.find(params[:id])
+      end
+      helper_method :page
 
-    def current_user_can_view_page?
-      raise ActiveRecord::RecordNotFound unless page.live? || current_user.present?
-    end
+      def current_user_can_view_page?
+        raise ActiveRecord::RecordNotFound unless page.live? || current_user.present?
+      end
 
-    def should_skip_to_first_child?
-      page.skip_to_first_child && first_live_child
-    end
+      def should_skip_to_first_child?
+        page.skip_to_first_child && first_live_child
+      end
 
-    def first_live_child
-      page.children.sorted.live.first
-    end
+      def first_live_child
+        page.children.sorted.live.first
+      end
 
-    def render_with_template(page)
-      render layout: "#{current_theme.to_s.underscore}/application", template: "#{current_theme.to_s.underscore}/pages/#{page.view_template || 'show'}"
-    end
+      def render_with_template(page)
+        render layout: "#{current_theme.to_s.underscore}/application", template: "#{current_theme.to_s.underscore}/pages/#{page.view_template || 'show'}"
+      end
 
   end
 end
