@@ -1,6 +1,7 @@
 # MIT License
  
 Copyright (c) 2015 [denkGroot](http://www.denkgroot.com)
+
 Copyright (c) 2005-2015 [Resolve Digital](http://resolve.digital)
  
 Permission is hereby granted, free of charge, to any person obtaining a copy
