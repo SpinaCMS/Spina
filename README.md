@@ -62,3 +62,5 @@ Spina is released under the MIT license.
 # Credits
 
 Some parts of Spina are heavily influenced by the wonderful Refinery CMS. Credits to [Resolve Digital](http://resolve.digital).
+
+All icons in Spina were made by Brent Jackson [Geomicons](http://jxnblk.com/geomicons-wired/)
