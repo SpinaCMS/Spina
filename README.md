@@ -54,3 +54,11 @@ The views for these templates are stored in app/views/default/pages.
 ## Custom pages
 
 You can define custom pages for your theme that will be generated when bootstrapping your website. You can define wether or not they're deletable. By default Spina creates a custom page named Homepage which is not deletable.
+
+# License
+
+Spina is released under the MIT license.
+
+# Credits
+
+Some parts of Spina are heavily influenced by the wonderful Refinery CMS. Credits to [Resolve Digital](http://resolve.digital).
