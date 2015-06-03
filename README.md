@@ -10,8 +10,10 @@ Spina is a CMS built upon the Rails framework. This guide is designed for develo
 
 To start using Spina CMS simply add the following lines to your Gemfile:
 
-    gem 'spina-template'
-    gem 'spina'
+```ruby
+gem 'spina-template'
+gem 'spina'
+```
 
 Make sure you run the installer to get started.
 
@@ -57,10 +59,10 @@ You can define custom pages for your theme that will be generated when bootstrap
 
 # License
 
-Spina is released under the MIT license.
+Spina is released under the [MIT license](LICENSE.md).
 
 # Credits
 
-Some parts of Spina are heavily influenced by the wonderful Refinery CMS. Credits to [Resolve Digital](http://resolve.digital).
+Some parts of Spina are heavily influenced by the wonderful Refinery CMS. Credits to [the Refinery  team](http://www.refinerycms.com/about).
 
-All icons in Spina were made by Brent Jackson [Geomicons](http://jxnblk.com/geomicons-wired/)
+All icons in Spina were made by Brent Jackson [Geomicons](http://jxnblk.com/geomicons-wired/).
