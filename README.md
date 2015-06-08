@@ -21,6 +21,8 @@ Make sure you run the installer to get started.
 
 The installer will help you setup your first user.
 
+Then start rails s and access your admin panel at /admin.
+
 # Basics
 
 The installer generates a few initializers that contain necessary configuration for Spina.
