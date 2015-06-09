@@ -2,8 +2,10 @@ require 'test_helper'
 
 module Spina
   class TextTest < ActiveSupport::TestCase
-    # test "the truth" do
-    #   assert true
-    # end
+
+    test 'content_md converted to html content' do
+
+    end
+
   end
 end
