@@ -1,0 +1,197 @@
+de:
+  spina:
+    cancel: Abbrechen
+    close: Schließen
+    choose_from_library: Wähle aus Bibliothek
+    edit: Bearbeiten
+    delete: Löschen
+    permanently_delete: Permanen Löschen
+    delete_confirmation: "Bist du sicher, dass du <strong>%{subject}</strong> löschen möchtest?"
+    login: Login
+    preview_website: Website Vorschau
+    search: Suchen...
+    ago: vor
+    edit_website: Deine Website bearbeiten
+    logout: Logout
+
+    notifications:
+      information: Information
+      alert: Oops! Etwas ist falsch gelaufen
+      login: Du musst Dich zuerst einloggen
+      wrong_username_or_password: Falsche E-Mail oder Passwort
+
+    website:
+      title: Deine Website
+      pages: Seiten
+      pages_description: "Alle Seiten deiner Website"
+      media_library: Medien-Bibliothek
+      media_library_description: "Hier findest du alle deine Bilder und Dokumente"
+      documents: Dokumente
+      photos: Bilder
+
+    inquiries:
+      title: Nachrichten
+      all: Alle Nachrichten
+      all_description: Alle Nachrichten
+      delete_confirmation: "Bist du sicher, dass du die Nachricht <strong>%{subject}'s</strong> löschen möchtest?"
+      empty: Du hast bis jetzt noch keine Nachrichten empfangen
+      empty_inbox: Posteingang ist leer
+      empty_spam: Du hast keine Spam-Nachrichten
+      inbox: Posteingang
+      inbox_description: Posteingang
+      mark_as_read: Als gelesen markieren
+      no_spam: Kein Spam
+      spam: Spam
+
+    pages:
+      new: Neue Seite
+      create_page: "Neu %{template}"
+      change_order: Reihenfolge ändern
+      done_changing_order: Reihenfolge speichern
+      page_content: Inhalt
+      page_seo: Suchmaschinen
+      advanced: Erweitert
+      page_part: Seiteninhalt
+      photos_picker: Wähle Bilder
+      photo_picker: Wähle Bild
+      delete_confirmation: "Bist du sicher, dass du die Seite <strong>%{subject}</strong> löschen möchtest?"
+      save: Seite speichern
+      concept: Konzept
+      show_in_menu: Unsichtbar
+      skip_to_first_child: forward to first child page
+      invisible_to_search_engines: Deine Website ist für Suchmaschinen nicht sichtbar.
+      invisible_to_search_engines_description: Gehe zu deinen Einstellungen um Suchmaschinen-Support zu aktivieren.
+
+    users:
+      new: Neuer Benutzer
+      save: Benutzer speichern
+      delete_confirmation: "Bist du sicher, dass du den Benutzer <strong>%{user}</strong> löschen möchtest?"
+      cannot_be_created: Der Benutzer kann nicht gespeichert werden
+
+    photos:
+      delete_confirmation: "Bist du sicher, dass du das Bild <strong>%{image}</strong> löschen möchtest?"
+      insert_photos: Bilder einfügen
+      insert_photo: Bild einfügen
+      link: "URL des Bildes:"
+      cannot_be_created: "Bild kann nicht verarbeitet werden:"
+
+    wysiwyg:
+      paragraph: Paragraph
+      heading_1: Heading 1
+      heading_2: Heading 2
+      heading_3: Heading 3
+      quote: Quote
+      insert_link: Link einfügen
+
+    preferences:
+      title: Einstellungen
+      account: Allgemein
+      account_description: Persönliche Einstellungen
+      account_save: Einstellungen speichern
+      style: Styling
+      style_description: Wähle ein passendes Theme
+      style_save: Style speichern
+      users: Benutzer
+      users_description: Benutzer & Administratoren verwalten
+      social_media: Social media
+      social_media_description: Facebook und Twitter Accounts
+      social_media_save: Speichere social media
+      analytics: Analytics und Suchmaschinen
+      analytics_description: Vernetzte deinen Account für real-time Analysen
+      analytics_save: Einstellungen speichern
+      domain_name_settings: Domain Einstellungen
+      domain_name_settings_description: Richte deine Domain ein
+
+    attachments:
+      insert: 'Dokument einfügen'
+      insert_multiple: 'Dokumente einfügen'
+
+  activerecord:
+    models:
+      spina/page:
+        one: Seite
+        other: Seiten
+      spina/user:
+        one: Benutzer
+        other: Benutzer
+      spina/photo:
+        one: Bild
+        other: Bilder
+      spina/attachment:
+        one: Dokument
+        other: Dokumente
+      spina/inquiry:
+        one: Nachricht
+        other: Nachrichten
+
+    attributes:
+      spina/account:
+        name: Website Name
+        address: Adresse
+        postal_code: PLZ
+        city: Stadt
+        phone: Telefon
+        email: E-Mail
+        kvk_identifier: Handelskammer
+        kvk_identifier_description: Handelskammer
+        vat_identifier: USt-IdNr
+        vat_identifier_description: USt-IdNr
+        theme: Website Theme
+        logo: Logo
+        google_analytics: Google Analytics
+        google_site_verification: Google Site Verification
+        robots_allowed: Sichtbar für Suchmaschinen
+        facebook: Facebook
+        twitter: Twitter
+        google_plus: Google+
+
+      spina/attachment:
+        created_at: Erstellt am
+        name: Dateiname
+        size: Größe
+
+      spina/inquiries:
+        email: E-Mail
+        name: Von
+        message: Nachricht
+        phone: Telefon
+
+      spina/page:
+        title: Titel
+        title_placeholder: Seiten-Titel
+        seo_title: SEO <title>
+        seo_title_placeholder: Dieser Titel wird im <title>-tag verwendet
+        description: Meta description
+        description_description: Diese Beschreibung wird in den Suchergebnissen angezeigt
+        description_placeholder: Kurze Beschreibung deiner Seite
+        draft: Entwurf
+        draft_description: Great for when your page is not quite finished
+        skip_to_first_child: Vorwärts
+        skip_to_first_child_description: Zur ersten Seite
+        show_in_menu: In der Navigation anzeigen
+        show_in_menu_description: "Wenn diese Option ausgeschaltet ist, wird deine Seite nicht in der Navigation angezeigt"
+        menu_title: Menü-Titel
+        menu_title_placeholder: Leer lassen um den Seiten-Titel zu verwenden
+        view_template: Seiten-Template
+
+      spina/user:
+        email: E-Mail
+        password: Passwort
+        name: Name
+        name_placeholder: Name
+        email: E-Mail
+        email_description: Deine E-Mail muss eindeutig sein
+        password: Passwort
+        password_description: Leer lassen wenn das Passwort nicht geändert werden soll
+        password_confirmation: Passwort bestätigen
+        admin: Administrator
+        user: Benutzer
+        admin_description: Administratoren können Benutzer anlegen
+        role: Rolle
+        last_logged_in: Zuletzt eingeloggt
+
+  misc:
+    messages:
+      zero: "0 neue Nachrichten"
+      one: "1 neue Nachricht"
+      other: "%{count} neue Nachrichten"
