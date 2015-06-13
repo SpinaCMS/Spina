@@ -16,5 +16,5 @@
           = form_for [spina, :admin, @attachment], html: {multipart: true, class: "new_document"} do |f|
             = f.file_field :file, data: {customfileinput: true}
 
-    %tbody.table-prepend-document      
+    %tbody.table-prepend-document
       = render partial: 'spina/admin/attachments/attachment', collection: @attachments

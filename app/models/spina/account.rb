@@ -66,7 +66,7 @@ module Spina
       end
     end
 
-    serialized_attr_accessor :google_analytics, :google_site_verification, :facebook, :twitter, :google_plus, :theme
+    serialized_attr_accessor :google_analytics, :google_site_verification, :facebook, :twitter, :google_plus, :theme, :aviary_api_key, :aviary_language, :ngrok_address
 
   end
 end

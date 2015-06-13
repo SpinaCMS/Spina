@@ -14,6 +14,10 @@ nl:
     edit_website: Bewerk je website
     logout: Uitloggen
 
+    modal:
+      agree: "Ja, dat weet ik zeker"
+      cancel: "Nee, annuleren"
+
     notifications:
       information: Informatie
       alert: Oeps! Er is iets mis gegaan
@@ -88,6 +92,9 @@ nl:
       account: Algemene gegevens
       account_description: Persoonlijke instellingen
       account_save: Gegevens opslaan
+      aviary: Aviary
+      aviary_description: Instellingen voor Aviary
+      aviary_save: Voorkeuren opslaan
       style: Vormgeving
       style_description: Kies het thema en huisstijl dat bij jouw bedrijf past
       style_save: Vormgeving opslaan
