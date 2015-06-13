@@ -14,6 +14,10 @@ en:
     edit_website: Edit your website
     logout: Logout
 
+    modal:
+      agree: "Yes, I'm sure"
+      cancel: "No, cancel"
+
     notifications:
       information: Information
       alert: Oops! Something went wrong
@@ -88,6 +92,9 @@ en:
       account: General
       account_description: Personal preferences
       account_save: Save preferences
+      aviary: Aviary
+      aviary_description: Settings for aviary
+      aviary_save: Save preferences
       style: Styling
       style_description: Choose a theme that fits your brand
       style_save: Save styling
