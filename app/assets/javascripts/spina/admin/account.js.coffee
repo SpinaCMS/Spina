@@ -12,4 +12,5 @@ $(document).on 'change', '.account-theme select', ->
 show_layout_parts = (layout_parts) ->
   $('tr.layout-part').hide()
   for layout_part in layout_parts
-    $('tr.layout-part[data-name=' + layout_part + ']').show()
+    if layout_part
+      $('tr.layout-part[data-name=' + layout_part + ']').show()
