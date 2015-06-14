@@ -32,7 +32,8 @@ module Spina
     def create_user
       email = ask("Please enter an email address for your first user:")
       password = ask("Create a temporary password:")
-      User.create name: 'admin', email: email, password: password, admin: true
+      user = User.create name: 'admin', email: email, password: password, admin: true
+      user.accounts << Account.first
     end
 
     def bootstrap_spina
