@@ -11,6 +11,10 @@ module Spina
 
     after_save :bootstrap_website
 
+    before_validation {
+      self.subdomain = self.name.parameterize unless self.subdomain.present?
+    }
+
     def to_s
       name
     end
