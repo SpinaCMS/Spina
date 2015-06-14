@@ -14,8 +14,7 @@ module Spina
       end
 
       def create
-        @photo = Photo.create(photo_params)
-        @photo.update_attribute :account_id, current_account.id
+        @photo = current_account.photos.create(photo_params)
       end
 
       def destroy
