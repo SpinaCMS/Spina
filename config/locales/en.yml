@@ -202,3 +202,7 @@ en:
       zero: "0 new messages"
       one: "1 new message"
       other: "%{count} new messages"
+
+  errors:
+    messages:
+      not_saved: There are some missing fields...
