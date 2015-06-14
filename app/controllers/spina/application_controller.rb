@@ -9,7 +9,7 @@ module Spina
     end
 
     def current_theme
-      @current_theme = ::Spina.themes.first
+      @current_theme = Spina.theme(current_account.theme) || ::Spina.themes.first
     end
     helper_method :current_theme
 
