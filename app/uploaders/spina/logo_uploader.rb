@@ -6,7 +6,11 @@ module Spina
     include CarrierWave::MiniMagick
 
     def store_dir
-      "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+      if Engine.config.storage == :s3
+        "#{mounted_as}/#{model.id}"
+      else
+        "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+      end
     end
 
     process resize_to_fit: [300, 300]
