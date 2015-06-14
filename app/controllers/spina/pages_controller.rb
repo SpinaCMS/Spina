@@ -23,7 +23,7 @@ module Spina
     private
 
       def page
-        @page ||= (action_name == 'homepage') ? Page.find_by(name: 'homepage') : Page.find(params[:id])
+        @page ||= (action_name == 'homepage') ? current_account.pages.find_by(name: 'homepage') : current_account.pages.find(params[:id])
       end
       helper_method :page
 

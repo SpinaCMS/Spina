@@ -29,18 +29,21 @@ class CreateSpinaTables < ActiveRecord::Migration
     end
 
     create_table "spina_attachments", force: :cascade do |t|
+      t.integer  "account_id"
       t.string   "file"
       t.datetime "created_at", null: false
       t.datetime "updated_at", null: false
     end
 
     create_table "spina_colors", force: :cascade do |t|
+      t.integer  "account_id"
       t.text     "content"
       t.datetime "created_at"
       t.datetime "updated_at"
     end
 
     create_table "spina_inquiries", force: :cascade do |t|
+      t.integer  "account_id"
       t.string   "name"
       t.string   "email"
       t.string   "phone"
@@ -78,6 +81,7 @@ class CreateSpinaTables < ActiveRecord::Migration
     end
 
     create_table "spina_pages", force: :cascade do |t|
+      t.integer  "account_id"
       t.string   "title"
       t.string   "menu_title"
       t.string   "description"
@@ -111,6 +115,7 @@ class CreateSpinaTables < ActiveRecord::Migration
     end
 
     create_table "spina_photos", force: :cascade do |t|
+      t.integer  "account_id"
       t.string   "file"
       t.datetime "created_at", null: false
       t.datetime "updated_at", null: false

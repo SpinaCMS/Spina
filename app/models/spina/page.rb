@@ -6,6 +6,7 @@ module Spina
 
     friendly_id :slug_candidates, use: [:slugged, :finders]
 
+    belongs_to :account
     has_many :page_parts, dependent: :destroy
 
     before_validation :ensure_title
