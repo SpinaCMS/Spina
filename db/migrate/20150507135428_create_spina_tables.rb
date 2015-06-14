@@ -14,6 +14,8 @@ class CreateSpinaTables < ActiveRecord::Migration
       t.string   "kvk_identifier"
       t.string   "vat_identifier"
       t.boolean  "robots_allowed", default: false
+      t.string   "subdomain"
+      t.string   "custom_domain"
     end
 
     create_table "spina_attachment_collections", force: :cascade do |t|
@@ -156,5 +158,12 @@ class CreateSpinaTables < ActiveRecord::Migration
       t.datetime "updated_at",                      null: false
       t.datetime "last_logged_in"
     end
+
+    create_table "spina_accounts_users", id: false do |t|
+      t.references "account"
+      t.references "user"
+    end
+    add_index "spina_accounts_users", [:account_id, :user_id]
+
   end
 end
