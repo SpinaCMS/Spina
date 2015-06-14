@@ -40,7 +40,7 @@ module Spina
       end
 
       def render_with_template(page)
-        render layout: "#{current_theme.to_s.underscore}/application", template: "#{current_theme.to_s.underscore}/pages/#{page.view_template || 'show'}"
+        render layout: "#{current_theme.to_s.parameterize}/application", template: "#{current_theme.to_s.parameterize}/pages/#{page.view_template || 'show'}"
       end
 
   end
