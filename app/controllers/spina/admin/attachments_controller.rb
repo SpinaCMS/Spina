@@ -9,12 +9,13 @@ module Spina
 
       def index
         add_breadcrumb I18n.t('spina.website.documents'), spina.admin_attachments_path
-        @attachments = Attachment.file_attached.sorted
+        @attachments = current_account.attachments.file_attached.sorted
         @attachment = Attachment.new
       end
 
       def create
         @attachment = Attachment.create(attachment_params)
+        @attachment.update_attribute :account_id, current_account.id
       end
 
       def destroy

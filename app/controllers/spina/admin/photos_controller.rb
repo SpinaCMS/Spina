@@ -9,12 +9,13 @@ module Spina
 
       def index
         add_breadcrumb I18n.t('spina.website.photos'), spina.admin_photos_path
-        @photos = Photo.sorted
+        @photos = current_account.photos.sorted
         @photo = Photo.new
       end
 
       def create
         @photo = Photo.create(photo_params)
+        @photo.update_attribute :account_id, current_account.id
       end
 
       def destroy
@@ -34,13 +35,13 @@ module Spina
       end
 
       def photo_select
-        @photos = Photo.sorted
+        @photos = current_account.photos.sorted
         @photo = Photo.new
         @selected_photo = Photo.find(params[:selected_photo_id]) if params[:selected_photo_id]
       end
 
       def photo_collection_select
-        @photos = Photo.sorted
+        @photos = current_account.photos.sorted
         @photo = Photo.new
         @selected_photos = params[:selected_photo_ids] ? Photo.where(id: params[:selected_photo_ids]) : Photo.none
       end
@@ -58,7 +59,7 @@ module Spina
       end
 
       def wysihtml5_select
-        @photos = Photo.sorted
+        @photos = current_account.photos.sorted
         @photo = Photo.new
       end
 
