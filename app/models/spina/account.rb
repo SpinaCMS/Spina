@@ -7,6 +7,7 @@ module Spina
     has_and_belongs_to_many :users
     has_many :pages, dependent: :destroy
     has_many :attachments, dependent: :destroy
+    has_many :photos, dependent: :destroy
     has_many :colours, dependent: :destroy
     has_many :inquiries, dependent: :destroy
     has_many :layout_parts, dependent: :destroy
