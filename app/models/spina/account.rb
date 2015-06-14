@@ -17,7 +17,7 @@ module Spina
 
     after_save :bootstrap_website
 
-    friendly_id :name, use: :slugged
+    friendly_id :name
 
     before_validation {
       self.subdomain = self.name.parameterize unless self.subdomain.present?
