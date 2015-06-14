@@ -1,5 +1,7 @@
 module Spina
   class Account < ActiveRecord::Base
+    extend FriendlyId
+    
     serialize :preferences
 
     mount_uploader :logo, LogoUploader
@@ -14,6 +16,8 @@ module Spina
     accepts_nested_attributes_for :layout_parts, allow_destroy: true
 
     after_save :bootstrap_website
+
+    friendly_id :name, use: :slugged
 
     before_validation {
       self.subdomain = self.name.parameterize unless self.subdomain.present?
