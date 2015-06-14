@@ -11,7 +11,7 @@ module Spina
     end
 
     def current_theme
-      @current_theme = ::Spina.themes.detect{|theme| theme.name == current_account.theme }
+      @current_theme = Spina.theme(current_account.theme) || ::Spina.themes.first
     end
     helper_method :current_theme
 
