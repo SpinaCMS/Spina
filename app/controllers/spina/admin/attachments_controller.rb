@@ -14,8 +14,7 @@ module Spina
       end
 
       def create
-        @attachment = Attachment.create(attachment_params)
-        @attachment.update_attribute :account_id, current_account.id
+        @attachment = current_account.attachments.create(attachment_params)
       end
 
       def destroy
