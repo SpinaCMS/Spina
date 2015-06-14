@@ -31,10 +31,10 @@ module Spina
         if Engine.config.storage == :s3
           cfg.storage = :fog
           cfg.fog_credentials = {
-            :provider               => 'AWS',
-            :region                 => Engine.config.aws_region,
-            :aws_access_key_id      => Engine.config.aws_access_key_id,
-            :aws_secret_access_key  => Engine.config.aws_secret_key
+            provider: 'AWS',
+            region: Engine.config.aws_region,
+            aws_access_key_id: Engine.config.aws_access_key_id,
+            aws_secret_access_key: Engine.config.aws_secret_key
           }
           cfg.fog_directory  = Engine.config.s3_bucket
           cfg.fog_public     = true
