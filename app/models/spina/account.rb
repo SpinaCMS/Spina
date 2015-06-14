@@ -1,5 +1,7 @@
 module Spina
   class Account < ActiveRecord::Base
+    extend FriendlyId
+    
     serialize :preferences
     include Spina::Partable
 
@@ -18,6 +20,8 @@ module Spina
     alias_attribute :parts, :layout_parts
 
     after_save :bootstrap_website
+
+    friendly_id :name, use: :slugged
 
     before_validation {
       self.subdomain = self.name.parameterize unless self.subdomain.present?
