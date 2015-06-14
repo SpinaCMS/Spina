@@ -2,6 +2,8 @@ module Spina
   class User < ActiveRecord::Base
     has_secure_password
 
+    has_and_belongs_to_many :accounts
+
     validates_presence_of :name, :email
     validates_presence_of :password, on: :create
     validate :uniqueness_of_email

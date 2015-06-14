@@ -5,6 +5,8 @@ module Spina
 
     mount_uploader :logo, LogoUploader
 
+    has_and_belongs_to_many :users
+
     has_many :layout_parts, dependent: :destroy
     accepts_nested_attributes_for :layout_parts, allow_destroy: true
 
