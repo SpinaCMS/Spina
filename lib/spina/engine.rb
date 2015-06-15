@@ -28,7 +28,7 @@ module Spina
 
     initializer "spina.configure_carrierwave" do
       CarrierWave.configure do |cfg|
-        if Engine.config.storage == :s3
+        if Engine.config.try(:storage) == :s3
           cfg.storage = :fog
           cfg.fog_credentials = {
             provider: 'AWS',
