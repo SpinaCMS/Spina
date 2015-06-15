@@ -1,7 +1,7 @@
 module Spina
   class InquiriesController < ApplicationController
 
-    before_filter :setup_negative_captcha, :only => [:create]
+    before_filter :setup_negative_captcha, only: [:create]
 
     def create
       @inquiry = Inquiry.new(@captcha.values)
