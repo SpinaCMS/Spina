@@ -4,8 +4,9 @@ module Spina
     
     has_ancestry orphan_strategy: :adopt # i.e. added to the parent of deleted node
 
-    friendly_id :slug_candidates, use: [:slugged, :finders]
+    friendly_id :slug_candidates, use: [:slugged, :finders, :scoped], scope: :account
 
+    belongs_to :account
     has_many :page_parts, dependent: :destroy
 
     before_validation :ensure_title

@@ -4,16 +4,16 @@ module Spina
 
       authorize_resource class: Inquiry
 
+      before_filter :set_inquiry, except: [:index, :inbox, :spam]
+
       layout "spina/admin/messages"
 
       def show
-        @inquiry = Inquiry.find(params[:id])
         add_breadcrumb I18n.t('spina.inquiries.all'), spina.admin_inquiries_path
         add_breadcrumb @inquiry.name
       end
 
       def inbox_show
-        @inquiry = Inquiry.find(params[:id])
         add_breadcrumb I18n.t('spina.inquiries.inbox'), spina.inbox_admin_inquiries_path
         add_breadcrumb @inquiry.name
         render :show
@@ -21,39 +21,40 @@ module Spina
 
       def index
         add_breadcrumb I18n.t('spina.inquiries.all'), spina.admin_inquiries_path
-        @inquiries = Inquiry.sorted
+        @inquiries = current_account.inquiries.sorted
       end
 
       def inbox
         add_breadcrumb I18n.t('spina.inquiries.inbox'), spina.inbox_admin_inquiries_path
-        @inquiries = Inquiry.new_messages.sorted
+        @inquiries = current_account.inquiries.new_messages.sorted
       end
 
       def spam
         add_breadcrumb I18n.t('spina.inquiries.all'), spina.admin_inquiries_path
         add_breadcrumb I18n.t('spina.inquiries.spam'), spina.spam_admin_inquiries_path
-        @inquiries = Inquiry.spam.order('created_at DESC')
+        @inquiries = current_account.inquiries.spam.order('created_at DESC')
       end
 
       def mark_as_read
-        @inquiry = Inquiry.find(params[:id])
         @inquiry.update_attribute(:archived, true)
         redirect_to spina.inbox_admin_inquiries_path
       end
 
       def unmark_spam
-        @inquiry = Inquiry.find(params[:id])
         @inquiry.ham!
         redirect_to spina.admin_inquiries_path
       end
 
       def destroy
-        @inquiry = Inquiry.find(params[:id])
         @inquiry.destroy
         redirect_to spina.admin_inquiries_path
       end
 
       private
+
+      def set_inquiry
+        @inquiry = current_account.inquiries.find(params[:id])
+      end
 
       def inquiry_params
         params.require(:inquiry).permit(:archived, :email, :message, :name, :phone)

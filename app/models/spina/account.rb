@@ -1,13 +1,27 @@
 module Spina
   class Account < ActiveRecord::Base
+    extend FriendlyId
+    
     serialize :preferences
 
     mount_uploader :logo, LogoUploader
 
+    has_and_belongs_to_many :users
+    has_many :pages, dependent: :destroy
+    has_many :attachments, dependent: :destroy
+    has_many :photos, dependent: :destroy
+    has_many :colours, dependent: :destroy
+    has_many :inquiries, dependent: :destroy
     has_many :layout_parts, dependent: :destroy
     accepts_nested_attributes_for :layout_parts, allow_destroy: true
 
     after_save :bootstrap_website
+
+    friendly_id :name
+
+    before_validation {
+      self.subdomain = self.name.parameterize unless self.subdomain.present?
+    }
 
     def to_s
       name
@@ -39,7 +53,7 @@ module Spina
 
     def find_or_create_custom_pages(theme)
       theme.config.custom_pages.each do |page| 
-        Page.where(name: page[:name], deletable: false).first_or_create(title: page[:title], view_template: page[:view_template]).activate!
+        Page.where(account_id: self.id, name: page[:name], deletable: false).first_or_create(title: page[:title], view_template: page[:view_template]).activate!
       end
     end
 

@@ -37,6 +37,18 @@
         %td
           = f.text_field :email, placeholder: Spina::Account.human_attribute_name(:email)
 
+      %tr
+        %td
+          = Spina::Account.human_attribute_name(:subdomain)
+        %td
+          = f.text_field :subdomain, placeholder: Spina::Account.human_attribute_name(:subdomain)
+
+      %tr
+        %td
+          = Spina::Account.human_attribute_name(:custom_domain)
+        %td
+          = f.text_field :custom_domain, placeholder: Spina::Account.human_attribute_name(:custom_domain)
+
   %button.button.button-primary{type: 'submit'}
     = icon('check')
     = t('spina.preferences.account_save')
