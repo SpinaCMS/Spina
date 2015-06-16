@@ -5,7 +5,7 @@ $.rails.allowAction = (element) ->
 
   $link = element.clone().removeAttr('data-confirm').removeAttr('data-icon').removeAttr('class')
   $link.addClass('primary')
-  $link.html('<i class="icon icon-check"></i> Ja, dat weet ik zeker')
+  $link.html("<i class='icon icon-check'></i> <%= I18n.t('spina.modal.agree') %>")
 
   modal_html = """
               <div id="modal" class="modal"><header class="big-header">
@@ -14,7 +14,7 @@ $.rails.allowAction = (element) ->
               </header>
 
               <footer>
-                <a href="#" data-dismiss="modal">Nee, annuleren</a>
+                <a href="#" data-dismiss="modal"><%= I18n.t('spina.modal.cancel') %></a>
               </footer></div>
                """
 

@@ -34,6 +34,12 @@
           = t('spina.preferences.analytics')
           %small= t('spina.preferences.analytics_description')
 
+      %li{class: ('active' if params[:action] == 'aviary')}
+        = link_to spina.aviary_admin_account_path do
+          = icon('image')
+          = t('spina.preferences.aviary')
+          %small= t('spina.preferences.aviary_description')
+
 - content_for :content do
   = yield
 
