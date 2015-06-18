@@ -14,9 +14,7 @@ module Spina
     end
 
     def layout_part(layout_part)
-      layout_part = layout_parts.where(name: layout_part[:name]).first || layout_parts.build(layout_part)
-      layout_part.layout_partable = layout_part.layout_partable_type.constantize.new unless layout_part.layout_partable.present?
-      layout_part
+      Partable.part(layout_part)
     end
 
     def content(layout_part)

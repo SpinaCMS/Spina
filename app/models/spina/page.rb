@@ -58,9 +58,7 @@ module Spina
     end
 
     def page_part(page_part)
-      page_part = page_parts.where(name: page_part[:name]).first || page_parts.build(page_part)
-      page_part.page_partable = page_part.page_partable_type.constantize.new unless page_part.page_partable.present?
-      page_part
+      Partable.part(page_part)
     end
 
     def has_content?(page_part)
