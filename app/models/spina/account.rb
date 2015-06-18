@@ -14,7 +14,7 @@ module Spina
     end
 
     def layout_part(layout_part)
-      Partable.part(layout_part)
+      Spina::Partable.part(layout_part)
     end
 
     def content(layout_part)

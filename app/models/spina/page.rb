@@ -58,7 +58,7 @@ module Spina
     end
 
     def page_part(page_part)
-      Partable.part(page_part)
+      Spina::Partable.part(page_part)
     end
 
     def has_content?(page_part)
