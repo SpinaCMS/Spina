@@ -1,16 +1,7 @@
 # encoding: utf-8
 module Spina
-  class PhotoUploader < CarrierWave::Uploader::Base
-
+  class PhotoUploader < Spina::DefaultStoreUploader
     include CarrierWave::MiniMagick
-
-    def store_dir
-      if Engine.config.storage == :s3
-        "#{mounted_as}/#{model.id}"
-      else
-        "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
-      end
-    end
 
     version :image do
       process resize_to_fit: [800, 800], if: :too_large?
