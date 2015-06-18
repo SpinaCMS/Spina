@@ -14,6 +14,10 @@ de:
     edit_website: Deine Website bearbeiten
     logout: Logout
 
+    modal:
+      agree: Ja ich bin sicher
+      cancel: "Nein, abbrechen"
+
     notifications:
       information: Information
       alert: Oops! Etwas ist falsch gelaufen
@@ -88,6 +92,9 @@ de:
       account: Allgemein
       account_description: Persönliche Einstellungen
       account_save: Einstellungen speichern
+      aviary: Aviary
+      aviary_description: Einstellungen für Aviary
+      aviary_save: Einstellungen speichern
       style: Styling
       style_description: Wähle ein passendes Theme
       style_save: Style speichern

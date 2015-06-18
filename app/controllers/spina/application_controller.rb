@@ -1,5 +1,7 @@
 module Spina
   class ApplicationController < ActionController::Base
+    protect_from_forgery with: :exception
+    
     include ApplicationHelper
 
     private
@@ -9,7 +11,7 @@ module Spina
     end
 
     def current_theme
-      @current_theme = ::Spina.themes.first
+      @current_theme = ::Spina.themes.detect{|theme| theme.name == current_account.theme }
     end
     helper_method :current_theme
 

@@ -1,4 +1,3 @@
-!!!
 %html{lang: I18n.locale}
   %head
     %meta{charset: 'utf-8'}
@@ -14,9 +13,9 @@
       = javascript_include_tag "//html5shiv.googlecode.com/svn/trunk/html5.js"
 
     / JavaScript
-    = javascript_include_tag "http://feather.aviary.com/js/feather.js"
+    = javascript_include_tag "http://feather.aviary.com/imaging/v2/editor.js"
     = javascript_include_tag "spina/admin/application"
-  %body
+  %body{aviary_api_key: current_account.aviary_api_key, aviary_language: current_account.aviary_language, ngrok_address: (current_account.ngrok_address if Rails.env.development?) }
     = render 'spina/admin/shared/navigation'
 
     = yield(:secondary_navigation)

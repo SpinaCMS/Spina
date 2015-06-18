@@ -55,14 +55,14 @@ module Spina
       end
 
       def sort
-        params[:list].each do |id|
-          if id[1][:children].present?
-            id[1][:children].each do |child|
-              child[1][:children].each { |child_child| update_page_position(child_child, child[1][:id]) } if child[1][:children].present?
-              update_page_position(child, id[1][:id])
+        params[:list].each_pair do |parent_pos, parent_node|
+          if parent_node[:children].present?
+            parent_node[:children].each_pair do |child_pos, child_node|
+              child_node[:children].each_pair { |grand_child_pos, grand_child| update_page_position(grand_child, grand, child_node[:id]) } if child_node[:children].present?
+              update_page_position(child_node, child_pos, parent_node[:id])
             end
           end
-          update_page_position(id, nil)
+          update_page_position(parent_node, parent_pos, nil)
         end
         render nothing: true
       end
@@ -79,8 +79,8 @@ module Spina
         add_breadcrumb I18n.t('spina.website.pages'), spina.admin_pages_path
       end
 
-      def update_page_position(page, parent_id = nil)
-        Page.update(page[1][:id], position: page[0].to_i + 1, parent_id: parent_id )
+      def update_page_position(page, position, parent_id = nil)
+        Page.update(page[:id], position: position.to_i + 1, parent_id: parent_id )
       end
 
       def page_params
