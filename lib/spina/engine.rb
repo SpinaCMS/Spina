@@ -27,6 +27,15 @@ module Spina
     end
 
     initializer "spina.configure_carrierwave" do
+      configure_carrierwave
+    end
+
+    config.to_prepare &method(:require_decorators).to_proc
+    config.autoload_paths += %W( #{config.root}/lib )
+
+    private
+
+    def configure_carrierwave
       CarrierWave.configure do |cfg|
         if Engine.config.try(:storage) == :s3
           cfg.storage = :fog
@@ -46,9 +55,6 @@ module Spina
         cfg.enable_processing = !Rails.env.test?
       end
     end
-
-    config.to_prepare &method(:require_decorators).to_proc
-    config.autoload_paths += %W( #{config.root}/lib )
   end
 
   class << self
