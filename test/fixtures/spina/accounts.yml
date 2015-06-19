@@ -1,2 +1,3 @@
 one:
   name: My Website
+  preferences: <%= { theme: "default" }.to_yaml.inspect %>
