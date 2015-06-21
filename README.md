@@ -2,7 +2,10 @@
 
 [Visit the website](http://www.spinacms.com)
 
-[![Code Climate](https://codeclimate.com/github/denkGroot/Spina/badges/gpa.svg)](https://codeclimate.com/github/denkGroot/Spina) [![Test Coverage](https://codeclimate.com/github/denkGroot/Spina/badges/coverage.svg)](https://codeclimate.com/github/denkGroot/Spina/coverage) [ ![Codeship Status for denkGroot/Spina](https://codeship.com/projects/e13debf0-e6af-0132-8abf-32d84f3372de/status?branch=master)](https://codeship.com/projects/82322)
+[![Code Climate](https://codeclimate.com/github/denkGroot/Spina/badges/gpa.svg)](https://codeclimate.com/github/denkGroot/Spina) [![Test Coverage](https://codeclimate.com/github/denkGroot/Spina/badges/coverage.svg)](https://codeclimate.com/github/denkGroot/Spina/coverage)
+[![Slack](http://slackin.yourhost.com/badge.svg)](https://slack-spina-cms.herokuapp.com)
+
+[ ![Codeship Status for denkGroot/Spina](https://codeship.com/projects/e13debf0-e6af-0132-8abf-32d84f3372de/status?branch=master)](https://codeship.com/projects/82322)
 
 # Getting Started
 
