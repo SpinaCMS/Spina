@@ -1,0 +1,204 @@
+en:
+  spina:
+    cancel: 取消
+    close: 关闭
+    choose_from_library: 从库中选择
+    edit: 编辑
+    delete: 删除
+    permanently_delete: 永久删除
+    delete_confirmation: "是否确定删除 <strong>%{subject}</strong>?"
+    login: 登录
+    preview_website: 预览网站
+    search: 搜索...
+    ago: 以前
+    edit_website: 编辑你的网站
+    logout: 登出
+
+    modal:
+      agree: "同意"
+      cancel: "取消"
+
+    notifications:
+      information: 通知
+      alert: "哎呀, 出错了"
+      login: 请先登录
+      wrong_username_or_password: 用户名或密码错误
+
+    website:
+      title: 你的网站
+      pages: 所有页面
+      pages_description: "网站上的所有页面"
+      media_library: 媒体库
+      media_library_description: "所有图片与文档"
+      documents: 全部文档
+      photos: 全部图片
+
+    inquiries:
+      title: 消息
+      all: 所有消息
+      all_description: 所有消息
+      delete_confirmation: "是否确定删除 <strong>%{subject}'s</strong>?"
+      empty: 没有收到任何消息
+      empty_inbox: 没有新消息
+      empty_spam: 没有垃圾邮件
+      inbox: 收件箱
+      inbox_description: 有新消息
+      mark_as_read: 标为已读
+      no_spam: 不是垃圾邮件
+      spam: 垃圾邮件
+
+    pages:
+      new: 新页面
+      create_page: "新 %{template}"
+      change_order: 排序
+      done_changing_order: 完成排序
+      page_content: 内容
+      page_seo: 搜索引擎
+      advanced: 高级
+      page_part: 局部页面
+      photos_picker: 选择多张图片
+      photo_picker: 选择图片
+      delete_confirmation: "是否确定删除 <strong>%{subject}</strong> 页面?"
+      save: 保存页面
+      concept: concept
+      show_in_menu: 隐藏
+      skip_to_first_child: 跳转到首个子页面
+      invisible_to_search_engines: 对搜索引擎隐身
+      invisible_to_search_engines_description: 设置对搜索引擎显隐
+
+    users:
+      new: 新建用户
+      save: 保存用户
+      delete_confirmation: "是否确定删除用户 <strong>%{user}</strong>?"
+      cannot_be_created: 无法保存用户
+
+    photos:
+      delete_confirmation: "是否确定要删除这张 <strong>图片</strong>?"
+      insert_photos: 插入多张图片
+      insert_photo: 插入图片
+      link: "图片链接"
+      cannot_be_created: "图片不能被处理:"
+
+    wysiwyg:
+      paragraph: 段落
+      heading_1: 标题 1
+      heading_2: 标题 2
+      heading_3: 标题 3
+      quote: 引用
+      insert_link: 插入链接
+
+    preferences:
+      title: 设置
+      account: 通用
+      account_description: 个人设置
+      account_save: 保存设置
+      aviary: Aviary
+      aviary_description: 设置 aviary
+      aviary_save: 保存设置
+      style: 样式
+      style_description: 选择主题
+      style_save: 保存样式
+      users: 所有用户
+      users_description: 管理用户
+      social_media: 社交网络
+      social_media_description: Facebook 及 Twitter 账号
+      social_media_save: 保存
+      analytics: 搜索引擎与分析
+      analytics_description: 关联你的账号进行实时分析
+      analytics_save: 保存设置
+      domain_name_settings: 设置域名
+      domain_name_settings_description: 设置你的自定义域名
+
+    attachments:
+      insert: '插入文档'
+      insert_multiple: '插入多个文档'
+
+  activerecord:
+    models:
+      spina/page:
+        one: 页面
+        other: 所有页面
+      spina/user:
+        one: 用户
+        other: 所有用户
+      spina/photo:
+        one: 图片
+        other: 所有图片
+      spina/attachment:
+        one: 文档
+        other: 所有文档
+      spina/inquiry:
+        one: 消息
+        other: 所有消息
+
+    attributes:
+      spina/account:
+        name: 网站名字
+        address: 地址
+        postal_code: 邮政编码
+        city: 城市
+        phone: 联系电话
+        email: 邮箱
+        kvk_identifier: 商会
+        kvk_identifier_description: 商会
+        vat_identifier: VAT
+        vat_identifier_description: VAT
+        theme: 主题
+        logo: Logo
+        google_analytics: Google Analytics
+        google_site_verification: Google Site Verification
+        robots_allowed: 对搜索引擎可见
+        facebook: Facebook
+        twitter: Twitter
+        google_plus: Google+
+
+      spina/attachment:
+        created_at: 创建于
+        name: 文件名
+        size: 大小
+
+      spina/inquiries:
+        email: 邮箱
+        name: 发件人
+        message: 消息
+        phone: 电话
+
+      spina/page:
+        title: 标题
+        title_placeholder: 页面标题
+        seo_title: SEO <title>
+        seo_title_placeholder: 标签页标题
+        description: 描述
+        description_description: 搜索结果描述
+        description_placeholder: 页面简短描述
+        draft: 草稿
+        draft_description: 页面未完成
+        skip_to_first_child: 跳转到首个子页面
+        skip_to_first_child_description: 跳转到首个子页面
+        show_in_menu: 在导航栏显示
+        show_in_menu_description: "关闭以后在导航栏不显示"
+        menu_title: 导航栏标题
+        menu_title_placeholder: 默认显示页面标题
+        view_template: 页面模板
+
+      spina/user:
+        email: 邮箱
+        password: 密码
+        name: 名字
+        name_placeholder: 名字
+        email: 邮箱
+        email_description: 邮箱必须唯一
+        password: 密码
+        password_description: 不更改密码请保留为空
+        password_confirmation: 确认密码
+        admin: 管理员
+        user: 用户
+        admin_description: 管理员可创建用户
+        role: 角色
+        last_logged_in: 上一次登录
+
+  misc:
+    messages:
+      zero: "新消息 0"
+      one: "1 条新信息"
+      other: "%{count} 条新信息"
