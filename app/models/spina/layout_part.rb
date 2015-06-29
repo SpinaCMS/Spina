@@ -13,6 +13,8 @@ module Spina
 
     scope :sorted, -> { order(:position) }
 
+    alias_method :partable, :layout_partable
+
     def to_s
       name
     end
@@ -32,6 +34,10 @@ module Spina
       else
         self.layout_partable = self.layout_partable_type.constantize.create(attributes)
       end
+    end
+
+    def partable_type
+      layout_partable_type
     end
 
   end

@@ -1,20 +1,20 @@
 module Spina
   class Account < ActiveRecord::Base
     serialize :preferences
+    include Spina::Partable
 
     mount_uploader :logo, LogoUploader
 
     has_many :layout_parts, dependent: :destroy
     accepts_nested_attributes_for :layout_parts, allow_destroy: true
 
+    alias_method :layout_part, :part
+    alias_method :parts, :layout_parts
+
     after_save :bootstrap_website
 
     def to_s
       name
-    end
-
-    def layout_part(layout_part)
-      Spina::Partable.part(layout_part)
     end
 
     def content(layout_part)
