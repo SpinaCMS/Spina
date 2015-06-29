@@ -13,7 +13,7 @@ module Spina
 
     scope :sorted, -> { order(:position) }
 
-    alias_method :partable, :page_partable
+    alias_attribute :partable, :page_partable
 
     def to_s
       name

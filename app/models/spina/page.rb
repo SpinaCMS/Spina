@@ -23,8 +23,8 @@ module Spina
     scope :in_menu, -> { where(show_in_menu: true) }
     scope :active, -> { where(active: true) }
 
-    alias_method :page_part, :part
-    alias_method :parts, :page_parts
+    alias_attribute :page_part, :part
+    alias_attribute :parts, :page_parts
 
     def slug_candidates
       [
