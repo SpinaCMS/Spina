@@ -13,6 +13,8 @@ module Spina
 
     scope :sorted, -> { order(:position) }
 
+    alias_method :partable, :page_partable
+
     def to_s
       name
     end
@@ -32,6 +34,10 @@ module Spina
       else
         self.page_partable = self.page_partable_type.constantize.new(attributes)
       end
+    end
+
+    def partable_type
+      page_partable_type
     end
 
   end

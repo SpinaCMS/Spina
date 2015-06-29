@@ -1,7 +1,8 @@
 module Spina
   class Page < ActiveRecord::Base
     extend FriendlyId
-    
+    include Spina::Partable
+
     has_ancestry orphan_strategy: :adopt # i.e. added to the parent of deleted node
 
     friendly_id :slug_candidates, use: [:slugged, :finders]
@@ -21,6 +22,9 @@ module Spina
     scope :live, -> { where(draft: false, active: true) }
     scope :in_menu, -> { where(show_in_menu: true) }
     scope :active, -> { where(active: true) }
+
+    alias_method :page_part, :part
+    alias_method :parts, :page_parts
 
     def slug_candidates
       [
@@ -57,9 +61,9 @@ module Spina
       read_attribute(:seo_title).blank? ? title : read_attribute(:seo_title)
     end
 
-    def page_part(page_part)
-      Spina::Partable.part(page_part)
-    end
+    # def page_part(page_part)
+    #   part(page_part)
+    # end
 
     def has_content?(page_part)
       content(page_part).present?
