@@ -17,10 +17,6 @@ module Spina
       name
     end
 
-    # def layout_part(layout_part)
-    #   part(layout_part)
-    # end
-
     def content(layout_part)
       layout_part = layout_parts.where(name: layout_part).first
       layout_part.try(:content)

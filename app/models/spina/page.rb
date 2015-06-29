@@ -61,10 +61,6 @@ module Spina
       read_attribute(:seo_title).blank? ? title : read_attribute(:seo_title)
     end
 
-    # def page_part(page_part)
-    #   part(page_part)
-    # end
-
     def has_content?(page_part)
       content(page_part).present?
     end
