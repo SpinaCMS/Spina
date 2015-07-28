@@ -10,7 +10,6 @@ var hidden_input = $("input[name='<%= j params[:page_part_id] %>[photo_tokens]']
   hidden_input.val("");
 <% end %>
 
-$('.sortable-grid').sortable('destroy');
 $('.sortable-grid').sortable().bind('sortupdate', function(e) {
   position_array = [];
   $(e.target).find('li.image').each(function(index) {
