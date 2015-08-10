@@ -58,7 +58,7 @@ module Spina
         params[:list].each_pair do |parent_pos, parent_node|
           if parent_node[:children].present?
             parent_node[:children].each_pair do |child_pos, child_node|
-              child_node[:children].each_pair { |grand_child_pos, grand_child| update_page_position(grand_child, grand, child_node[:id]) } if child_node[:children].present?
+              child_node[:children].each_pair { |grand_child_pos, grand_child| update_page_position(grand_child, grand_child_pos, child_node[:id]) } if child_node[:children].present?
               update_page_position(child_node, child_pos, parent_node[:id])
             end
           end
