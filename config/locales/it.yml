@@ -1,0 +1,204 @@
+it:
+  spina:
+    cancel: Annulla
+    close: Chiudi
+    choose_from_library: Seleziona dalla libreria
+    edit: Modifica
+    delete: Elimina
+    permanently_delete: Elimina definitivamente
+    delete_confirmation: "Sei sicuro di voler eliminare <strong>%{subject}</strong>?"
+    login: Login
+    preview_website: Anteprima sito
+    search: Cerca...
+    ago: fa
+    edit_website: Modifica il sito
+    logout: Logout
+
+    modal:
+      agree: "Si, sono sicuro"
+      cancel: "No, annulla"
+
+    notifications:
+      information: Informazioni
+      alert: Oops! Qualcosa è andato storto
+      login: Devi prima effettuare il login
+      wrong_username_or_password: Email o password errata
+
+    website:
+      title: Il tuo sito
+      pages: Pagine
+      pages_description: "Tutte le pagine del sito"
+      media_library: Libreria media
+      media_library_description: "Qui puoi trovare tutte le tue immagini e i tuoi documenti"
+      documents: Documenti
+      photos: Immagini
+
+    inquiries:
+      title: Messaggi
+      all: Tutti i messaggi
+      all_description: Tutti i messaggi
+      delete_confirmation: "Sei sicuro di voler eliminare il messaggio <strong>%{subject}</strong>?"
+      empty: Non hai ricevuto nessun messaggio
+      empty_inbox: Inbox vuota
+      empty_spam: Non hai messaggi segnati come spam
+      inbox: Inbox
+      inbox_description: Messaggi in arrivo
+      mark_as_read: Segna come letto
+      no_spam: No spam
+      spam: Spam
+
+    pages:
+      new: Nuova pagina
+      create_page: "Nuova %{template}"
+      change_order: Modifica ordine
+      done_changing_order: Ordinamento fatto
+      page_content: Contenuto
+      page_seo: Motori di ricerca
+      advanced: Avanzate
+      page_part: Sezione pagina
+      photos_picker: Seleziona immagini
+      photo_picker: Seleziona immagine
+      delete_confirmation: "Sei sicuro di voler eliminare la pagina <strong>%{subject}</strong>?"
+      save: Salva pagina
+      concept: bozza
+      show_in_menu: nascosto
+      skip_to_first_child: Vai alla prima sottopagina
+      invisible_to_search_engines: Il tuo sito è nascosto ai motori di ricerca
+      invisible_to_search_engines_description: Vai alla sezione impostazioni per attivare la visibilità per i motori di ricerca.
+
+    users:
+      new: Nuovo utente
+      save: Salva utente
+      delete_confirmation: "Sei sicuro di voler eliminare l'utente <strong>%{user}</strong>?"
+      cannot_be_created: "L'utente non può essere salvato"
+
+    photos:
+      delete_confirmation: "Sei sicuro di voler eliminare questa <strong>immagine</strong>?"
+      insert_photos: Inserisci immagini
+      insert_photo: Inserisci immagine
+      link: "URL immagine:"
+      cannot_be_created: "L'immagine non può essere processata:"
+
+    wysiwyg:
+      paragraph: Paragrafo
+      heading_1: Intestazione 1
+      heading_2: Intestazione 2
+      heading_3: Intestazione 3
+      quote: Citazione
+      insert_link: Inserisci link
+
+    preferences:
+      title: Impostazioni
+      account: Generale
+      account_description: Impostazioni personali
+      account_save: Salva impostazioni
+      aviary: Aviary
+      aviary_description: Impostazioni per aviary
+      aviary_save: Salva impostazioni
+      style: Stile
+      style_description: Scegli un tema adatto al tuo brand
+      style_save: Salva stile
+      users: Utenti
+      users_description: Gestisci utenti e amministratori
+      social_media: Social media
+      social_media_description: Account Facebook e Twitter
+      social_media_save: Salva social media
+      analytics: Analytics e motori di ricerca
+      analytics_description: Collega il tuo account per gli analytics in tempo reale
+      analytics_save: Salva impostazioni
+      domain_name_settings: Impostazioni di dominio
+      domain_name_settings_description: Imposta il tuo dominio
+
+    attachments:
+      insert: 'Inserisci documento'
+      insert_multiple: 'Inserisci documenti'
+
+  activerecord:
+    models:
+      spina/page:
+        one: Pagina
+        other: Pagine
+      spina/user:
+        one: Utente
+        other: Utenti
+      spina/photo:
+        one: Immagine
+        other: Immagini
+      spina/attachment:
+        one: Documento
+        other: Documenti
+      spina/inquiry:
+        one: Messaggio
+        other: Messaggi
+
+    attributes:
+      spina/account:
+        name: Nome sito
+        address: Indirizzo
+        postal_code: CAP
+        city: Città
+        phone: Telefono
+        email: Email
+        kvk_identifier: Camera di commercio
+        kvk_identifier_description: Camera di commercio
+        vat_identifier: Partita IVA
+        vat_identifier_description: Partita IVA
+        theme: Tema sito
+        logo: Logo
+        google_analytics: Google Analytics
+        google_site_verification: Google Site Verification
+        robots_allowed: Visibile ai motori di ricerca
+        facebook: Facebook
+        twitter: Twitter
+        google_plus: Google+
+
+      spina/attachment:
+        created_at: Creato il
+        name: Nome file
+        size: Dimensione
+
+      spina/inquiries:
+        email: Email
+        name: Da
+        message: Messaggio
+        phone: Telefono
+
+      spina/page:
+        title: Titolo
+        title_placeholder: Titolo pagina
+        seo_title: <title> SEO
+        seo_title_placeholder: Questo titolo è usato nel <title>-tag
+        description: Meta description
+        description_description: Questa descrizione sarà mostrata nei risultati di ricerca
+        description_placeholder: Breve descrizione della pagina
+        draft: Bozza
+        draft_description: Utile quando la tua pagina non è ancora completa
+        skip_to_first_child: Avanza
+        skip_to_first_child_description: Vai alla prima sottopagina
+        show_in_menu: Mostra nel menù
+        show_in_menu_description: "Quando è disattivato la pagina non verrà mostrata nel menù"
+        menu_title: Titolo menù
+        menu_title_placeholder: Lasciare vuoto per usare il titolo della pagina
+        view_template: Template pagina
+
+      spina/user:
+        email: Email
+        password: Password
+        name: Nome
+        name_placeholder: Nome
+        email: Email
+        email_description: La tua email deve essere univoca
+        password: Password
+        password_description: Lasciare vuoto per mantenere la password
+        password_confirmation: Conferma password
+        admin: Amministratore
+        user: Utente
+        admin_description: Gli amministratori possono creare utenti
+        role: Ruolo
+        last_logged_in: "Loggato l'ultima volta il"
+
+  misc:
+    messages:
+      zero: "0 nuovi messaggi"
+      one: "1 nuovo messaggio"
+      other: "%{count} nuovi messaggi"
