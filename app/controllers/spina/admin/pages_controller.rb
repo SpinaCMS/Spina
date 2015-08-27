@@ -15,7 +15,7 @@ module Spina
       def new
         @page = Page.new
         if current_theme.new_page_templates.any? { |template| template[0] == params[:view_template] }
-          @page.view_template = params[:view_template] 
+          @page.view_template = params[:view_template]
         end
         add_breadcrumb I18n.t('spina.pages.new')
         @page_parts = current_theme.config.page_parts.map { |page_part| @page.page_part(page_part) }
@@ -36,6 +36,7 @@ module Spina
         @page = Page.find(params[:id])
         add_breadcrumb @page.title
         @page_parts = current_theme.config.page_parts.map { |page_part| @page.page_part(page_part) }
+        @tabs = %w{page_content page_seo advanced}
       end
 
       def update

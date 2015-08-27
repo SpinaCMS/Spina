@@ -1,11 +1,8 @@
 - content_for(:tertiary_navigation) do
   %nav.tabs
     %ul
-      %li.active
-        = link_to t('spina.pages.page_content'), "#page_content"
-      %li
-        = link_to t('spina.pages.page_seo'), "#page_seo"
-      %li
-        = link_to t('spina.pages.advanced'), "#advanced"
+      - @tabs.each_with_index do |tab, i|
+        %li{class: (i==0 ? 'active' : '')}
+          = link_to t("spina.pages.#{tab}"), "##{tab}"
 
 = render 'form'
