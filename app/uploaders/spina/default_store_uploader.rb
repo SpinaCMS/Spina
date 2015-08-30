@@ -2,10 +2,13 @@ module Spina
   class DefaultStoreUploader < CarrierWave::Uploader::Base
 
     def store_dir
-      if Engine.config.try(:storage) == :s3
+      case Engine.config.try(:storage)
+      when :s3
         "#{mounted_as}/#{model.class.to_s.underscore}/#{model.id}"
-      else
+      when :file
         "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+      else
+        raise NotImplementedError, "Please set your storage preferences in config/initializers/spina.rb"
       end
     end
   end
