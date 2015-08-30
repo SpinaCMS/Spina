@@ -66,6 +66,14 @@
               - options = options_for_select(current_theme.config.view_templates.map { |template| [template[1][:title], template[0], {'data-page-parts' => template[1][:page_parts]}] }, @page.view_template)
               = f.select :view_template, options
 
+        %tr{style: ('display: none' if @page.custom_page?)}
+          %td
+            = Spina::Page.human_attribute_name :ancestry
+          %td
+            .select-dropdown.ancestry
+              - options = options_for_select(Spina::Page.active.sorted.roots.map { |page| [page.menu_title, page.id] }.unshift([]) )
+              = f.select :ancestry, options
+
   %button.button.button-primary{type: 'submit'}
     = icon('check')
     =t 'spina.pages.save'

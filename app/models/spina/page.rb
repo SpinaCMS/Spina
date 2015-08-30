@@ -10,8 +10,8 @@ module Spina
     has_many :page_parts, dependent: :destroy
 
     before_validation :ensure_title
+    before_validation :ancestry_is_nil
     before_save :set_materialized_path
-    before_save :ancestry_is_nil
     after_save :save_children
 
     accepts_nested_attributes_for :page_parts, allow_destroy: true
@@ -110,9 +110,7 @@ module Spina
     end
 
     def ancestry_is_nil
-      if self.ancestry && self.ancestry.empty?
-        self.ancestry = nil
-      end
+      self.ancestry = self.ancestry.presence
     end
 
     def ensure_title
