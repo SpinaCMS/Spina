@@ -1,0 +1,15 @@
+#page_seo.tab-content
+  .table-container
+    %table.table.table-form
+      %tr
+        %td
+          = Spina::Page.human_attribute_name :seo_title
+        %td
+          = f.text_field :seo_title, placeholder: Spina::Page.human_attribute_name(:seo_title_placeholder)
+
+      %tr
+        %td
+          = Spina::Page.human_attribute_name :description
+          %small= Spina::Page.human_attribute_name :description_description
+        %td
+          = f.text_field :description, placeholder: Spina::Page.human_attribute_name(:description_placeholder)

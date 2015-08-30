@@ -1,0 +1,34 @@
+#advanced.tab-content
+  .table-container
+    %table.table.table-form
+      %tr
+        %td
+          = Spina::Page.human_attribute_name :draft
+          %small= Spina::Page.human_attribute_name :draft_description
+        %td
+          = f.check_box :draft, data: {switch: true}
+      %tr
+        %td
+          = Spina::Page.human_attribute_name :skip_to_first_child
+          %small= Spina::Page.human_attribute_name :skip_to_first_child_description
+        %td
+          = f.check_box :skip_to_first_child, data: {switch: true}
+      %tr
+        %td
+          = Spina::Page.human_attribute_name :show_in_menu
+          %small= Spina::Page.human_attribute_name :show_in_menu_description
+        %td
+          = f.check_box :show_in_menu, data: {switch: true}
+      %tr{style: ('border-bottom: none' if @page.custom_page?)}
+        %td
+          = Spina::Page.human_attribute_name :menu_title
+        %td
+          = f.text_field :menu_title, placeholder: Spina::Page.human_attribute_name(:show_in_menu_placeholder)
+
+      %tr{style: ('display: none' if @page.custom_page?)}
+        %td
+          = Spina::Page.human_attribute_name :view_template
+        %td
+          .select-dropdown.page-template{data: {page_parts: current_theme.config.view_templates[@page.view_template || "show"][:page_parts]}}
+            - options = options_for_select(current_theme.config.view_templates.map { |template| [template[1][:title], template[0], {'data-page-parts' => template[1][:page_parts]}] }, @page.view_template)
+            = f.select :view_template, options

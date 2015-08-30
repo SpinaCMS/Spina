@@ -2,69 +2,8 @@
   - content_for :notification_alert do
     = error_explanation!(@page)
 
-  #page_content.tab-content.active
-    .table-container
-      %table.table.table-form
-        %tr
-          %td
-            = Spina::Page.human_attribute_name :title
-          %td
-            = f.text_field :title, placeholder: Spina::Page.human_attribute_name(:title_placeholder)
-
-        = f.fields_for :page_parts, @page_parts.sort { |a,b| a.position(current_theme) <=> b.position(current_theme) } do |page_part_form|
-          %tr.page-part{data: {name: page_part_form.object.name}}
-            = render partial: "spina/admin/page_partables/#{page_part_form.object.page_partable_type.demodulize.underscore}_form", object: page_part_form
-
-  #page_seo.tab-content
-    .table-container
-      %table.table.table-form
-        %tr
-          %td
-            = Spina::Page.human_attribute_name :seo_title
-          %td
-            = f.text_field :seo_title, placeholder: Spina::Page.human_attribute_name(:seo_title_placeholder)
-
-        %tr
-          %td
-            = Spina::Page.human_attribute_name :description
-            %small= Spina::Page.human_attribute_name :description_description
-          %td
-            = f.text_field :description, placeholder: Spina::Page.human_attribute_name(:description_placeholder)
-
-  #advanced.tab-content
-    .table-container
-      %table.table.table-form
-        %tr
-          %td
-            = Spina::Page.human_attribute_name :draft
-            %small= Spina::Page.human_attribute_name :draft_description
-          %td
-            = f.check_box :draft, data: {switch: true}
-        %tr
-          %td
-            = Spina::Page.human_attribute_name :skip_to_first_child
-            %small= Spina::Page.human_attribute_name :skip_to_first_child_description
-          %td
-            = f.check_box :skip_to_first_child, data: {switch: true}
-        %tr
-          %td
-            = Spina::Page.human_attribute_name :show_in_menu
-            %small= Spina::Page.human_attribute_name :show_in_menu_description
-          %td
-            = f.check_box :show_in_menu, data: {switch: true}
-        %tr{style: ('border-bottom: none' if @page.custom_page?)}
-          %td
-            = Spina::Page.human_attribute_name :menu_title
-          %td
-            = f.text_field :menu_title, placeholder: Spina::Page.human_attribute_name(:show_in_menu_placeholder)
-
-        %tr{style: ('display: none' if @page.custom_page?)}
-          %td
-            = Spina::Page.human_attribute_name :view_template
-          %td
-            .select-dropdown.page-template{data: {page_parts: current_theme.config.view_templates[@page.view_template || "show"][:page_parts]}}
-              - options = options_for_select(current_theme.config.view_templates.map { |template| [template[1][:title], template[0], {'data-page-parts' => template[1][:page_parts]}] }, @page.view_template)
-              = f.select :view_template, options
+  - @tabs.each do |tab|
+    = render "spina/admin/pages/form_#{tab}", f: f
 
         %tr{style: ('display: none' if @page.custom_page?)}
           %td
