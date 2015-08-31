@@ -5,14 +5,6 @@
   - @tabs.each do |tab|
     = render "spina/admin/pages/form_#{tab}", f: f
 
-        %tr{style: ('display: none' if @page.custom_page?)}
-          %td
-            = Spina::Page.human_attribute_name :ancestry
-          %td
-            .select-dropdown.ancestry
-              - options = options_for_select(Spina::Page.active.sorted.roots.map { |page| [page.menu_title, page.id] }.unshift([]) )
-              = f.select :ancestry, options
-
   %button.button.button-primary{type: 'submit'}
     = icon('check')
     =t 'spina.pages.save'
