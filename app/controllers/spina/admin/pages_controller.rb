@@ -3,6 +3,7 @@ module Spina
     class PagesController < AdminController
 
       before_filter :set_breadcrumb
+      before_filter :set_tabs, only: [:new, :create, :edit, :update]
 
       authorize_resource class: Page
 
@@ -36,7 +37,6 @@ module Spina
         @page = Page.find(params[:id])
         add_breadcrumb @page.title
         @page_parts = current_theme.config.page_parts.map { |page_part| @page.page_part(page_part) }
-        @tabs = %w{page_content page_seo advanced}
       end
 
       def update
@@ -78,6 +78,10 @@ module Spina
 
       def set_breadcrumb
         add_breadcrumb I18n.t('spina.website.pages'), spina.admin_pages_path
+      end
+
+      def set_tabs
+        @tabs = %w{page_content page_seo advanced}
       end
 
       def update_page_position(page, position, parent_id = nil)
