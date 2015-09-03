@@ -25,5 +25,9 @@
 
 - content_for(:content) do
   = content_for?(:website_content) ? yield(:website_content) : yield
-  
+
 = render template: "layouts/spina/admin/application"
+
+- if content_for?(:plugin_stylesheets)
+  - content_for(:plugin_stylesheets) do
+    = yield(:plugin_stylesheets)
