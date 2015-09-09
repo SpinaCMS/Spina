@@ -115,10 +115,10 @@ en:
 
   activerecord:
     models:
-      spina/page: 
+      spina/page:
         one: Page
         other: Pages
-      spina/user: 
+      spina/user:
         one: User
         other: Users
       spina/photo:
@@ -175,6 +175,9 @@ en:
         draft_description: Great for when your page is not quite finished
         skip_to_first_child: Forward
         skip_to_first_child_description: Forward to first child page
+        link_url: Page Redirect
+        link_url_description: Forward to URL
+        link_url_placeholder: e.g. http://www.example.com/
         show_in_menu: Show in navigation
         show_in_menu_description: "When turned off this page won't be shown in your navigation"
         menu_title: Navigation title
