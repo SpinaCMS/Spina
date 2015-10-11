@@ -1,0 +1,207 @@
+pt-BR:
+  spina:
+    cancel: Cancelar
+    close: Fechar
+    choose_from_library: Escolher da biblioteca
+    edit: Editar
+    delete: Remover
+    permanently_delete: Remover permanentemente
+    delete_confirmation: "Tem certeza que deseja remover <strong>%{subject}</strong>?"
+    login: Login
+    preview_website: Pré-visualizar site
+    search: Buscar...
+    ago: atrás
+    edit_website: Editar seu site
+    logout: Sair
+
+    modal:
+      agree: "Sim, Tenho certeza"
+      cancel: "Não, cancelar"
+
+    notifications:
+      information: Informação
+      alert: Oops! Algo deu errado
+      login: Você deve estar autenticado
+      wrong_username_or_password: Email ou senha incorreto(s)
+
+    website:
+      title: Seu site
+      pages: Páginas
+      pages_description: "Todas as páginas no seu site"
+      media_library: Biblioteca de mídia
+      media_library_description: "Aqui é onde você vai encontrar todas as suas imagens e documentos"
+      documents: Documentos
+      photos: Imagens
+
+    inquiries:
+      title: Mensagens
+      all: Todas as mensagens
+      all_description: Todas as mensagens
+      delete_confirmation: "Tem certeza que deseja remover a mensagem de <strong>%{subject}</strong>?"
+      empty: Você não recebeu nenhuma mensagem
+      empty_inbox: Caixa de Entrada está vazia
+      empty_spam: Você não tem nenhuma mensagem marcada como spam
+      inbox: Caixa de Entrada
+      inbox_description: Mensagens recebidas
+      mark_as_read: Marcar como lida
+      no_spam: Sem spam
+      spam: Spam
+
+    pages:
+      new: Nova página
+      create_page: "novo %{template}"
+      change_order: Mudar ordem
+      done_changing_order: Ordenação finalizada
+      page_content: Conteúdo
+      page_seo: Sistemas de busca
+      advanced: Avançado
+      page_part: Seção de página
+      photos_picker: Escolher imagens
+      photo_picker: Escolher imagem
+      delete_confirmation: "Tem certeza que deseja remover a página <strong>%{subject}</strong>?"
+      save: Salvar página
+      concept: rascunho
+      show_in_menu: invisível
+      skip_to_first_child: encaminhar para a primeira página filha
+      invisible_to_search_engines: Seu site não está visível para os sistemas de busca
+      invisible_to_search_engines_description: Vá para as preferências para ativar os sistemas de busca
+
+    users:
+      new: Novo usuário
+      save: Salvar usuário
+      delete_confirmation: "Tem certeza que deseja remover o usuário <strong>%{user}</strong>?"
+      cannot_be_created: O usuário não pode ser salvo
+
+    photos:
+      delete_confirmation: "Tem certeza que deseja remover esta <strong>imagem</strong>?"
+      insert_photos: Inserir imagens
+      insert_photo: Inserir imagem
+      link: "URL da sua imagem:"
+      cannot_be_created: "Imagem não pode ser processada:"
+
+    wysiwyg:
+      paragraph: Paragráfo
+      heading_1: Cabeçalho 1
+      heading_2: Cabeçalho 2
+      heading_3: Cabeçalho 3
+      quote: Citação
+      insert_link: Inserir link
+
+    preferences:
+      title: Preferências
+      account: Gerais
+      account_description: Preferências pessoais
+      account_save: Salvar preferências
+      aviary: Aviário
+      aviary_description: Configurações para o aviário
+      aviary_save: Salvar preferências
+      style: Estilo
+      style_description: Escolha o tema que melhor identifica sua marca
+      style_save: Salvar estilo
+      users: Usuários
+      users_description: Gerenciar usuários e administradores
+      social_media: Social media
+      social_media_description: Contas do Facebook e Twitter
+      social_media_save: Salvar social media
+      analytics: Analytics e sistemas de busca
+      analytics_description: Vincule sua conta para análise em tempo real
+      analytics_save: Salvar preferências
+      domain_name_settings: Configurações de domínio
+      domain_name_settings_description: Configurar seu próprio domínio
+
+    attachments:
+      insert: 'Inserir documento'
+      insert_multiple: 'Inserir documentos'
+
+  activerecord:
+    models:
+      spina/page:
+        one: Página
+        other: Páginas
+      spina/user:
+        one: Usuário
+        other: Usuários
+      spina/photo:
+        one: Imagem
+        other: Imagens
+      spina/attachment:
+        one: Documento
+        other: Documentos
+      spina/inquiry:
+        one: Mensagem
+        other: Mensagens
+
+    attributes:
+      spina/account:
+        name: Nome do site
+        address: Endereço
+        postal_code: Caixa Postal
+        city: Cidade
+        phone: Telefone
+        email: Email
+        kvk_identifier: Câmara de Comércio
+        kvk_identifier_description: Câmara de Comércio
+        vat_identifier: VAT
+        vat_identifier_description: VAT
+        theme: Tema do site
+        logo: Logo
+        google_analytics: Google Analytics
+        google_site_verification: Verificação do Google Site
+        robots_allowed: Visível para sistemas de busca
+        facebook: Facebook
+        twitter: Twitter
+        google_plus: Google+
+
+      spina/attachment:
+        created_at: Criado em
+        name: Arquivo
+        size: Tamanho
+
+      spina/inquiries:
+        email: Email
+        name: De
+        message: Mensagem
+        phone: Telefone
+
+      spina/page:
+        title: Título
+        title_placeholder: Título da página
+        seo_title: SEO <title>
+        seo_title_placeholder: Este título é utilizado na tag <title>
+        description: Meta descrição
+        description_description: Esta descrição será exibida nos resultados de busca
+        description_placeholder: Descrição resumida da sua página
+        draft: Rascunho
+        draft_description: Ótimo para quando sua página ainda não está finalizada
+        skip_to_first_child: Encaminhar
+        skip_to_first_child_description: Encaminhar para a primeira página filha
+        link_url: Redirecionar página
+        link_url_description: Encaminhar para URL
+        link_url_placeholder: ex. http://www.example.com/
+        show_in_menu: Mostrar no menu de navegação
+        show_in_menu_description: "Quando desativada, está página não será exibida no seu menu de navegação"
+        menu_title: Título do menu
+        menu_title_placeholder: Deixe vazio para utilizar o título da página
+        view_template: Modelo de página
+
+      spina/user:
+        email: Email
+        password: Senha
+        name: Nome
+        name_placeholder: Nome
+        email: Email
+        email_description: Seu email deve ser único
+        password: Senha
+        password_description: Deixe em branco para manter a senha
+        password_confirmation: Confirmar senha
+        admin: Administrador
+        user: Usuário
+        admin_description: Administradores podem criar usuários
+        role: Papel
+        last_logged_in: Último acesso em
+
+  misc:
+    messages:
+      zero: "0 novas mensagens"
+      one: "1 nova mensagem"
+      other: "%{count} novas mensagens"
