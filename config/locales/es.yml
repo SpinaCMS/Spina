@@ -1,0 +1,207 @@
+en:
+  spina:
+    cancel: Cancelar
+    close: Cerrar
+    choose_from_library: Elegir de la biblioteca
+    edit: Editar
+    delete: Eliminar
+    permanently_delete: Eliminar permanentemente
+    delete_confirmation: "Seguro que quieres eliminar <strong>%{subject}</strong>?"
+    login: Ingresar
+    preview_website: Previsualizar sitio
+    search: Buscar...
+    ago: ago
+    edit_website: Editar sitio
+    logout: Cerrar sesión
+
+    modal:
+      agree: "Si, estoy seguro"
+      cancel: "No, cancelar"
+
+    notifications:
+      information: Información
+      alert: Ups! Algo salió mal
+      login: Primero debes ingresar
+      wrong_username_or_password: Email o password incorrecto
+
+    website:
+      title: Tu sitio
+      pages: Páginas
+      pages_description: "Todas las páginas de tu sitio"
+      media_library: Biblioteca de medios
+      media_library_description: "Aquí encontrarás todas tus imágenes y documentos"
+      documents: Documentos
+      photos: Imágenes
+
+    inquiries:
+      title: Mensajes
+      all: Todos los mensajes
+      all_description: Todos los mensajes
+      delete_confirmation: "Seguro que deseas eliminar el mensaje de <strong>%{subject}'s</strong>?"
+      empty: No has recibido ningún mensaje
+      empty_inbox: Tu bandeja de entrada está vacía
+      empty_spam: You have no messages marked as spam
+      inbox: Bandeja de entrada
+      inbox_description: Mensajes entrantes
+      mark_as_read: Marcar como leído
+      no_spam: No es spam
+      spam: Spam
+
+    pages:
+      new: Nueva página
+      create_page: "Nuevo %{template}"
+      change_order: Cambiar orden
+      done_changing_order: Ordenamiento finalizado
+      page_content: Contenido
+      page_seo: Motores de búsqueda
+      advanced: Avanzado
+      page_part: Sección de página
+      photos_picker: Seleccionar imágenes
+      photo_picker: Seleccionar imagen
+      delete_confirmation: "Seguro que quieres eliminar la página <strong>%{subject}</strong>?"
+      save: Guardar página
+      concept: concepto
+      show_in_menu: invisible
+      skip_to_first_child: omitir hasta la primera página hija
+      invisible_to_search_engines: Tu sitio es invisible para los motores de búsqueda
+      invisible_to_search_engines_description: Ingresa a preferencias para activar los motores de búsqueda.
+
+    users:
+      new: Nuevo usuario
+      save: Guardar usuario
+      delete_confirmation: "Estás seguro que deseas eliminar al usuario <strong>%{user}</strong>?"
+      cannot_be_created: El usuario no puede ser
+
+    photos:
+      delete_confirmation: "Seguro que deseas eliminar ésta <strong>imagen</strong>?"
+      insert_photos: Insertar imágenes
+      insert_photo: Insertar imagen
+      link: "URL de tu imagen:"
+      cannot_be_created: "Tu imagen no puede ser procesada:"
+
+    wysiwyg:
+      paragraph: Parágrafo
+      heading_1: Encabezado 1
+      heading_2: Encabezado 2
+      heading_3: Encabezado 3
+      quote: Cita
+      insert_link: Insertar enlace
+
+    preferences:
+      title: Preferencias
+      account: General
+      account_description: Preferencias personales
+      account_save: Guardar preferencias
+      aviary: Aviario
+      aviary_description: Configuración del aviario
+      aviary_save: Guardar preferencias
+      style: Estilos
+      style_description: Selecciona un tema que se ajuste a tu marca
+      style_save: Guardar estilos
+      users: Usuarios
+      users_description: Administrar usuarios y administradores
+      social_media: Redes sociales
+      social_media_description: Cuentas de Facebook y Twitter
+      social_media_save: Guardar redes sociales
+      analytics: Analíticas y motores de búsqueda
+      analytics_description: Enlaza tu cuenta para analíticas en tiempo real
+      analytics_save: Guardar preferencias
+      domain_name_settings: Configuración de dominio
+      domain_name_settings_description: Configura tu propio dominio
+
+    attachments:
+      insert: 'Insertar documento'
+      insert_multiple: 'Insertar documentos'
+
+  activerecord:
+    models:
+      spina/page:
+        one: Página
+        other: Páginas
+      spina/user:
+        one: Usuario
+        other: Usuarios
+      spina/photo:
+        one: Imagen
+        other: Imágenes
+      spina/attachment:
+        one: Documento
+        other: Documentos
+      spina/inquiry:
+        one: Mensaje
+        other: Mensajes
+
+    attributes:
+      spina/account:
+        name: Nombre del sitio
+        address: Dirección
+        postal_code: Código postal
+        city: Ciudad
+        phone: Teléfono
+        email: Correo electrónico
+        kvk_identifier: Cámara de comercio
+        kvk_identifier_description: Cámara de comercio
+        vat_identifier: VAT
+        vat_identifier_description: VAT
+        theme: Tema del sitio
+        logo: Logo
+        google_analytics: Google Analytics
+        google_site_verification: Verficación de sitio de Google
+        robots_allowed: Visible en motores de búsqueda
+        facebook: Facebook
+        twitter: Twitter
+        google_plus: Google+
+
+      spina/attachment:
+        created_at: Creado en
+        name: Nombre del archivo
+        size: Tamaño
+
+      spina/inquiries:
+        email: Correo electrónico
+        name: De
+        message: Mensaje
+        phone: Teléfono
+
+      spina/page:
+        title: Título
+        title_placeholder: Título de la página
+        seo_title: SEO <title>
+        seo_title_placeholder: Este título es usado en <title>-tag
+        description: Meta description
+        description_description: Esta descripción se mostrará en los resultados de búsqueda
+        description_placeholder: Descripción corta de tu página
+        draft: Concepto
+        draft_description: Ideal para cuando tu página no está del todo terminada
+        skip_to_first_child: Reenviar
+        skip_to_first_child_description: Reenviar a la primera página hija
+        link_url: Redireccionar página
+        link_url_description: Reenviar a URL
+        link_url_placeholder: e.g. http://www.example.com/
+        show_in_menu: Mostrar en navegación
+        show_in_menu_description: "Si se desactiva esta página no será mostrada en tu navegación"
+        menu_title: Título de navegación
+        menu_title_placeholder: Deja en blanco para usar el título de la página
+        view_template: Plantilla de página
+
+      spina/user:
+        email: Correo electrónico
+        password: Contraseña
+        name: Nombre
+        name_placeholder: Nombre
+        email: Correo electrónico
+        email_description: Tu correo debe ser único
+        password: Contraseña
+        password_description: Deja en blanco para conservar la contraseña
+        password_confirmation: Confirmar contraseña
+        admin: Administrador
+        user: Usuario
+        admin_description: Los administradores pueden crear usuarios
+        role: Rol
+        last_logged_in: Último inicio de sesión
+
+  misc:
+    messages:
+      zero: "0 mensajes nuevos"
+      one: "1 mensaje nuevo"
+      other: "%{count} mensajes nuevos"
