@@ -37,7 +37,7 @@ ru:
       title: Сообщения
       all: Все сообщения
       all_description: Все сообщения
-      delete_confirmation: "Вы уверены, что хотите удалить <strong>%{subject}'s</strong> сообщение?"
+      delete_confirmation: "Вы уверены, что хотите удалить <strong>%{subject}</strong> сообщение?"
       empty: У вас нет входящих сообщений
       empty_inbox: У вас нет входящих сообщений
       empty_spam: "У вас нет сообщений, помеченных как спам"
