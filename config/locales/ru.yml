@@ -1,0 +1,207 @@
+ru:
+  spina:
+    cancel: Отмена
+    close: Закрыть
+    choose_from_library: Выбрать из библиотеки
+    edit: Редактировать
+    delete: Удалить
+    permanently_delete: Удалить навсегда
+    delete_confirmation: "Вы уверены, что хотите удалить <strong>%{subject}</strong>?"
+    login: Логин
+    preview_website: Предварительный просмотр сайта
+    search: Поиск...
+    ago: назад
+    edit_website: Редактировать сайт
+    logout: Выход
+
+    modal:
+      agree: "Да, я уверен"
+      cancel: "Нет, отменить"
+
+    notifications:
+      information: Информация
+      alert: Упс! Что-то пошло не так
+      login: Вы должны войти
+      wrong_username_or_password: Неправильная почта или пароль
+
+    website:
+      title: Ваш сайт
+      pages: Страницы
+      pages_description: "Все страницы вашего сайта"
+      media_library: Медиа библиотека
+      media_library_description: "Здесь вы найдете все ваши изображения и документы"
+      documents: Документы
+      photos: Изображения
+
+    inquiries:
+      title: Сообщения
+      all: Все сообщения
+      all_description: Все сообщения
+      delete_confirmation: "Вы уверены, что хотите удалить <strong>%{subject}'s</strong> сообщение?"
+      empty: У вас нет входящих сообщений
+      empty_inbox: У вас нет входящих сообщений
+      empty_spam: "У вас нет сообщений, помеченных как спам"
+      inbox: Входящие
+      inbox_description: Входящие сообщения
+      mark_as_read: Пометить как прочитанное
+      no_spam: Не спам
+      spam: Спам
+
+    pages:
+      new: Новая страница
+      create_page: "Создать %{template}"
+      change_order: Изменить порядок
+      done_changing_order: Порядок изменен
+      page_content: Контент
+      page_seo: Поисковые системы
+      advanced: Дополнительно
+      page_part: Раздел страницы
+      photos_picker: Выбрать изображения
+      photo_picker: Выбрать изображение
+      delete_confirmation: "Вы уверены, что хотите удалить страницу <strong>%{subject}</strong>?"
+      save: Сохранить страницу
+      concept: Концепция
+      show_in_menu: Невидимый
+      skip_to_first_child: Переход на страницу ребенка
+      invisible_to_search_engines: Ваш сайт не виден для поисковых машин
+      invisible_to_search_engines_description: "Перейти к вашим параметрам, чтобы активировать поисковые системы."
+
+    users:
+      new: Новый пользователь
+      save: Сохранить пользователя
+      delete_confirmation: "Вы уверены, что хотите удалить пользователя <strong>%{user}</strong>?"
+      cannot_be_created: Пользователь не сохранен
+
+    photos:
+      delete_confirmation: "Вы уверены, что хотите удалить <strong>image</strong>?"
+      insert_photos: Вставить изображения
+      insert_photo: Вставить изображение
+      link: "URL изображения:"
+      cannot_be_created: "Изображение не может быть обработано:"
+
+    wysiwyg:
+      paragraph: Параграф
+      heading_1: Заголовок 1
+      heading_2: Заголовок 2
+      heading_3: Заголовок 3
+      quote: Цитата
+      insert_link: Вставить ссылку
+
+    preferences:
+      title: Параметры
+      account: Общее
+      account_description: Персональные параметры
+      account_save: Сохранить параметры
+      aviary: Вольер
+      aviary_description: Настройки вольера
+      aviary_save: Сохранить параметры
+      style: Дизайн
+      style_description: Выберите тему
+      style_save: Сохранить параметры стиля
+      users: Пользователи
+      users_description: Управление пользователями и администраторами
+      social_media: Социальные сети
+      social_media_description: Facebook и Twitter аккаунты
+      social_media_save: Сохранить социальные сети
+      analytics: Аналитика и поисковые системы
+      analytics_description: Ссылка на аккаунт аналитики
+      analytics_save: Сохранить настройки
+      domain_name_settings: Настройки домена
+      domain_name_settings_description: Настройка вашего домена
+
+    attachments:
+      insert: 'Вставить документ'
+      insert_multiple: 'Вставить документы'
+
+  activerecord:
+    models:
+      spina/page:
+        one: Страница
+        other: Страницы
+      spina/user:
+        one: Пользователь
+        other: Пользователи
+      spina/photo:
+        one: Изображение
+        other: Изображения
+      spina/attachment:
+        one: Документ
+        other: Документы
+      spina/inquiry:
+        one: Сообщение
+        other: Сообщения
+
+    attributes:
+      spina/account:
+        name: Название сайта
+        address: Адрес
+        postal_code: Почтовый индекс
+        city: Город
+        phone: Телефон
+        email: Почта
+        kvk_identifier: Торговая палата
+        kvk_identifier_description: Торговая палата
+        vat_identifier: НДС
+        vat_identifier_description: НДС
+        theme: Тема сайта
+        logo: Логотип
+        google_analytics: Google Analytics
+        google_site_verification: Google Site Verification
+        robots_allowed: Видимость для поисковых систем
+        facebook: Facebook
+        twitter: Twitter
+        google_plus: Google+
+
+      spina/attachment:
+        created_at: Создан в
+        name: Название файла
+        size: Размер
+
+      spina/inquiries:
+        email: Почта
+        name: от
+        message: Сообщение
+        phone: Телефон
+
+      spina/page:
+        title: Заголовок
+        title_placeholder: Заголовок страницы
+        seo_title: SEO <title>
+        seo_title_placeholder: Это название используется в <title>-tag
+        description: Мета описание
+        description_description: Это описание будет показано в результатах поиска
+        description_placeholder: Краткое описание вашей страницы
+        draft: Концепт
+        draft_description: Ваша страница не совсем завершена
+        skip_to_first_child: Перенаправление
+        skip_to_first_child_description: Переход на страницу ребенка
+        link_url: Перенаправление на страницу
+        link_url_description: Перейти на URL
+        link_url_placeholder: Например http://www.example.com/
+        show_in_menu: Показать в навигации
+        show_in_menu_description: "При выключении эта страница не будет показана в навигации"
+        menu_title: Навигация
+        menu_title_placeholder: "Оставьте пустым, чтобы использовать заголовок страницы"
+        view_template: Шаблон страницы
+
+      spina/user:
+        email: Почта
+        password: Пароль
+        name: Имя
+        name_placeholder: Имя
+        email: Почта
+        email_description: Адрес вашей электронной почты должен быть уникален
+        password: Пароль
+        password_description: "Оставьте пустым, чтобы сохранить пароль"
+        password_confirmation: Подтвердить пароль
+        admin: Администратор
+        user: Пользователь
+        admin_description: Администраторы могут создавать пользователей
+        role: Роль
+        last_logged_in: Последний вход был
+
+  misc:
+    messages:
+      zero: "0 новых сообщений"
+      one: "1 новое сообщение"
+      other: "%{count} новых сообщений"
