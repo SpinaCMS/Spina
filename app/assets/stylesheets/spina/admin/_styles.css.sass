@@ -1,0 +1,13 @@
+// Fix trix button overflow caused by Chrome bug
+.button_group button
+  &:first-child
+    border-radius: 5px 0 0 5px
+  &:last-child
+    border-radius: 0 5px 5px 0
+
+// Fixes for spina template
+
+table.table.table-form
+  td .attachment
+    &:before
+      display: none

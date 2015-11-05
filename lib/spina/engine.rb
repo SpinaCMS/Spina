@@ -32,6 +32,7 @@ module Spina
 
     config.to_prepare &method(:require_decorators).to_proc
     config.autoload_paths += %W( #{config.root}/lib )
+    config.assets.paths << config.root.join('vendor', 'assets', 'bower_components')
 
     private
 

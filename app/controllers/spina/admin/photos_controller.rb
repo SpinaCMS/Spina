@@ -2,7 +2,7 @@ module Spina
   module Admin
     class PhotosController < AdminController
       before_filter :set_breadcrumbs
-      
+
       authorize_resource class: Photo
 
       layout "spina/admin/media_library"
@@ -14,7 +14,13 @@ module Spina
       end
 
       def create
-        @photo = Photo.create(photo_params)
+        @photo = Photo.create!(photo_params)
+        respond_to do |format|
+          format.js
+          format.json do
+            render json: { file_url: @photo.file_url }
+          end
+        end
       end
 
       def destroy
@@ -71,7 +77,7 @@ module Spina
       def photo_params
         params.require(:photo).permit(:file)
       end
-      
+
     end
   end
 end

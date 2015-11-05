@@ -1,8 +1,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require trix/dist/trix
 //= require spina
 //= require ./aviary
 //= require ./pages
 //= require ./account
 //= require ./confirm_delete
+//= require ./spina.trix
