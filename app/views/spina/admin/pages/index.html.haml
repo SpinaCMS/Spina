@@ -15,11 +15,7 @@
     .sliding-dropdown#create_page_dropdown
       .slide-controls
         %a.previous.muted.icon-only{href: '#'}
-<<<<<<< HEAD
-          = icon('chevron-left')
-=======
           %i.icon.icon-caret-left
->>>>>>> added caret icons to page slide controls
 
         - current_theme.new_page_templates.each_with_index do |template, index|
           .slide-title{class: ('active' if index == 0), data: {target: "#slide-#{template[1].parameterize}"}}= template[1]
