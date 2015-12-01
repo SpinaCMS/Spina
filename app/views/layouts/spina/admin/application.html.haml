@@ -25,7 +25,7 @@
       %header#main_content_header
         = yield(:permanent_notice) if content_for?(:permanent_notice)
         .pull-right
-          = link_to "/", class: 'button button-hollow button-round button-small preview-website', data: {:"no-turbolink" => true} do
+          = link_to "/", class: 'button button-hollow button-round button-small preview-website', target: :_blank, data: {:"no-turbolink" => true} do
             = icon('eye')
             = t('spina.preview_website')
         .breadcrumbs= render_breadcrumbs separator: '<div class="divider"></div>'
