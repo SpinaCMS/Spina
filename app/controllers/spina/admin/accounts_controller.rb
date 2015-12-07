@@ -2,9 +2,24 @@ module Spina
   module Admin
     class AccountsController < AdminController
 
+      before_filter :check_account, except: [:new, :create]
       authorize_resource class: Account
-
       layout "spina/admin/settings"
+
+      def new
+        @current_account = Account.new
+        add_breadcrumb I18n.t('spina.accounts.new')
+      end
+
+      def create
+        @account = Account.new(account_params)
+        if @account.save
+          current_user.accounts << @account
+          redirect_to spina.admin_pages_url
+        else
+          add_breadcrumb I18n.t('spina.accounts.new')
+        end
+      end
 
       def edit
         add_breadcrumb I18n.t('spina.preferences.account'), spina.edit_admin_account_path
@@ -38,18 +53,25 @@ module Spina
 
       private
 
+      def check_account
+        if current_account.blank?
+          redirect_to spina.new_admin_account_url
+        end
+      end
+
       def account_params
-        params.require(:account).permit(:address, :city, :email, :logo, :name, :phone, 
-                                        :postal_code, :preferences, :google_analytics, 
-                                        :google_site_verification, :facebook, :twitter, :google_plus, 
-                                        :aviary_api_key, :aviary_language, :ngrok_address, 
-                                        :kvk_identifier, :theme, :vat_identifier, :robots_allowed, 
-                                        layout_parts_attributes: 
-                                          [:id, :layout_partable_type, :layout_partable_id, 
-                                            :name, :title, :position, :content, :page_id, 
-                                            layout_partable_attributes: 
+        params.require(:account).permit(:address, :city, :email, :logo, :name, :phone,
+                                        :postal_code, :preferences, :google_analytics,
+                                        :google_site_verification, :facebook, :twitter, :google_plus,
+                                        :aviary_api_key, :aviary_language, :ngrok_address,
+                                        :kvk_identifier, :theme, :vat_identifier, :robots_allowed,
+                                        :subdomain, :custom_domain,
+                                        layout_parts_attributes:
+                                          [:id, :layout_partable_type, :layout_partable_id,
+                                            :name, :title, :position, :content, :page_id,
+                                            layout_partable_attributes:
                                               [:content, :photo_tokens, :attachment_tokens, :id]])
       end
     end
-  end    
+  end
 end

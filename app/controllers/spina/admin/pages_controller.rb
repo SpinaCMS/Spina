@@ -10,7 +10,11 @@ module Spina
       layout "spina/admin/website"
 
       def index
-        @pages = Page.active.sorted.roots
+        if current_account
+          @pages = current_account.pages.active.sorted.roots
+        else
+          redirect_to spina.new_admin_account_url
+        end
       end
 
       def new
@@ -24,6 +28,7 @@ module Spina
 
       def create
         @page = Page.new(page_params)
+        @page.account_id = current_account.id
         add_breadcrumb I18n.t('spina.pages.new')
         if @page.save
           redirect_to spina.edit_admin_page_url(@page)

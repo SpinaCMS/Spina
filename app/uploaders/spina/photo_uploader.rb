@@ -1,6 +1,6 @@
 # encoding: utf-8
 module Spina
-  class PhotoUploader < Spina::DefaultStoreUploader
+  class PhotoUploader < ::Spina::DefaultStoreUploader
     include CarrierWave::MiniMagick
 
     version :image do

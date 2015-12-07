@@ -33,6 +33,9 @@ zh-CN:
       documents: 全部文档
       photos: 全部图片
 
+    accounts:
+      new: 新网站
+
     inquiries:
       title: 消息
       all: 所有消息

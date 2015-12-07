@@ -33,6 +33,9 @@ tr:
       documents: Belgeler
       photos: Resimler
 
+    accounts:
+      new: Yeni sayfalar
+
     inquiries:
       title: Mesajlar
       all: Tüm mesajlar
@@ -115,10 +118,10 @@ tr:
 
   activerecord:
     models:
-      spina/page: 
+      spina/page:
         one: Sayfa
         other: Sayfalar
-      spina/user: 
+      spina/user:
         one: Kullanıcı
         other: Kullanıcılar
       spina/photo:

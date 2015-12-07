@@ -8,13 +8,14 @@
       - if @new_messages.present?
         = link_to spina.inbox_admin_inquiries_path, data: {badge: "#{@new_messages.size}"} do
           = icon('mail')
-      - else
+      - elsif current_account.not_blank?
         = link_to spina.admin_inquiries_path do
           = icon('mail')
 
     %li{class: ('active' if %w[accounts users tenants].include? controller_name)}
-      = link_to spina.edit_admin_account_path do
-        = icon('cog')
+      - if current_account.not_blank?
+        = link_to spina.edit_admin_account_path(current_account) do
+          = icon('cog')
 
     %li.bottom
       = link_to spina.admin_logout_path, data: {no_turbolink: true} do

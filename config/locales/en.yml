@@ -33,6 +33,9 @@ en:
       documents: Documents
       photos: Images
 
+    accounts:
+      new: New website
+
     inquiries:
       title: Messages
       all: All messages
@@ -49,7 +52,7 @@ en:
 
     pages:
       new: New page
-      create_page: "new %{template}"
+      create_page: "New %{template}"
       change_order: Change order
       done_changing_order: Done ordering
       page_content: Content
@@ -205,3 +208,7 @@ en:
       zero: "0 new messages"
       one: "1 new message"
       other: "%{count} new messages"
+
+  errors:
+    messages:
+      not_saved: There are some missing fields...

@@ -33,6 +33,9 @@ nl:
       documents: Documenten
       photos: Afbeeldingen
 
+    accounts:
+      new: Nieuwe website
+
     inquiries:
       title: Berichten
       all: Alle berichten
@@ -115,10 +118,10 @@ nl:
 
   activerecord:
     models:
-      spina/page: 
+      spina/page:
         one: Pagina
         other: Pagina's
-      spina/user: 
+      spina/user:
         one: Gebruiker
         other: Gebruikers
       spina/photo:

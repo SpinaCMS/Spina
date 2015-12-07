@@ -15,13 +15,13 @@
     .sliding-dropdown#create_page_dropdown
       .slide-controls
         %a.previous.muted.icon-only{href: '#'}
-          = icon('chevron-left')
+          %i.icon.icon-caret-left
 
         - current_theme.new_page_templates.each_with_index do |template, index|
           .slide-title{class: ('active' if index == 0), data: {target: "#slide-#{template[1].parameterize}"}}= template[1]
 
         %a.next.icon-only{href: '#'}
-          = icon('chevron-right')
+          %i.icon.icon-caret-right
 
       - current_theme.new_page_templates.each_with_index do |template, index|
         .slide{class: ('active' if index == 0), id: "slide-#{template[1].parameterize}"}
@@ -35,7 +35,7 @@
 
           = link_to spina.new_admin_page_path(params: {view_template: template[0]}), class: 'button button-primary' do
             = icon('pencil-outline')
-            = t('spina.pages.create_page', template: template[1])
+            = t('spina.pages.create_page', template: template[1].titleize)
 
   = link_to '#pages_list', class: 'button sort-switch', data: {change_order: t('spina.pages.change_order'), done_changing_order: t('spina.pages.done_changing_order')} do
     = icon('random')

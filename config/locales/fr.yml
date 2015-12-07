@@ -10,7 +10,7 @@ fr:
     login: Connexion
     preview_website: Aperçu du site
     search: Rechercher...
-    ago: Il y a 
+    ago: Il y a
     edit_website: Editer votre site
     logout: Déconnexion
 
@@ -28,6 +28,9 @@ fr:
       media_library_description: "Voici où vous trouverez toutes vos images et documents"
       documents: Documents
       photos: Images
+
+    accounts:
+      new: Nouvelle site
 
     inquiries:
       title: Messages
@@ -108,10 +111,10 @@ fr:
 
   activerecord:
     models:
-      spina/page: 
+      spina/page:
         one: Page
         other: Pages
-      spina/user: 
+      spina/user:
         one: Utilisateur
         other: Utilisateurs
       spina/photo:
@@ -180,7 +183,7 @@ fr:
         name: Nom
         name_placeholder: Nom
         email: Email
-        email_description: Votre email doit être unique 
+        email_description: Votre email doit être unique
         password: Mot de passe
         password_description: Laisser vide pour garder le mot de passe
         password_confirmation: Confirmer le mot de passe

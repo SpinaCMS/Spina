@@ -30,6 +30,8 @@ Then start `rails s` and access your admin panel at `/admin`.
 
 The installer generates a few initializers that contain necessary configuration for Spina.
 
+Please see the [wiki](https://github.com/Shinetechchina/Spina/wiki/Documents-for-theme-configuraion) to know more about how Spina configuration file works.
+
 In the initializers folder there's a new folder named `themes`. Inside you will find a configuration file named `default.rb`. This file contains all of your theme-specific settings. You can define multiple Page parts, Layout parts, View templates and Custom pages.
 
 ## Page parts

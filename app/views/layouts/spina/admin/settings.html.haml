@@ -1,44 +1,44 @@
-- content_for :secondary_navigation do
-  %nav#secondary
-    %h1= t('spina.preferences.title')
+- if current_account.not_blank?
+  - content_for :secondary_navigation do
+    %nav#secondary
+      %h1= t('spina.preferences.title')
+      %ul
+        %li{class: ('active' if params[:action] == 'edit' && params[:controller] == 'spina/admin/accounts')}
+          = link_to spina.edit_admin_account_path(current_account) do
+            = icon('cog-outline')
+            = t('spina.preferences.account')
+            %small= t('spina.preferences.account_description')
 
-    %ul
-      %li{class: ('active' if params[:action] == 'edit' && params[:controller] == 'spina/admin/accounts')}
-        = link_to spina.edit_admin_account_path do
-          = icon('cog-outline')
-          = t('spina.preferences.account')
-          %small= t('spina.preferences.account_description')
+        %li{class: ('active' if params[:action] == 'style')}
+          = link_to spina.style_admin_account_path(current_account) do
+            = icon('brush')
+            = t('spina.preferences.style')
+            %small= t('spina.preferences.style_description')
 
-      %li{class: ('active' if params[:action] == 'style')}
-        = link_to spina.style_admin_account_path do
-          = icon('brush')
-          = t('spina.preferences.style')
-          %small= t('spina.preferences.style_description')
+        - if can? :manage, Spina::User
+          %li{class: ('active' if %w[users].include? controller_name)}
+            = link_to spina.admin_users_path do
+              = icon('users-outline')
+              = t('spina.preferences.users')
+              %small= t('spina.preferences.users_description')
 
-      - if can? :manage, Spina::User
-        %li{class: ('active' if %w[users].include? controller_name)}
-          = link_to spina.admin_users_path do
-            = icon('users-outline')
-            = t('spina.preferences.users')
-            %small= t('spina.preferences.users_description')
+        %li{class: ('active' if params[:action] == 'social')}
+          = link_to spina.social_admin_account_path(current_account) do
+            = icon('social-outline')
+            = t('spina.preferences.social_media')
+            %small= t('spina.preferences.social_media_description')
 
-      %li{class: ('active' if params[:action] == 'social')}
-        = link_to spina.social_admin_account_path do
-          = icon('social-outline')
-          = t('spina.preferences.social_media')
-          %small= t('spina.preferences.social_media_description')
+        %li{class: ('active' if params[:action] == 'analytics')}
+          = link_to spina.analytics_admin_account_path(current_account) do
+            = icon('chart-outline')
+            = t('spina.preferences.analytics')
+            %small= t('spina.preferences.analytics_description')
 
-      %li{class: ('active' if params[:action] == 'analytics')}
-        = link_to spina.analytics_admin_account_path do
-          = icon('chart-outline')
-          = t('spina.preferences.analytics')
-          %small= t('spina.preferences.analytics_description')
-
-      %li{class: ('active' if params[:action] == 'aviary')}
-        = link_to spina.aviary_admin_account_path do
-          = icon('image')
-          = t('spina.preferences.aviary')
-          %small= t('spina.preferences.aviary_description')
+        %li{class: ('active' if params[:action] == 'aviary')}
+          = link_to spina.aviary_admin_account_path(current_account) do
+            = icon('image')
+            = t('spina.preferences.aviary')
+            %small= t('spina.preferences.aviary_description')
 
 - content_for :content do
   = yield

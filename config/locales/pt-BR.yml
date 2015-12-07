@@ -33,6 +33,9 @@ pt-BR:
       documents: Documentos
       photos: Imagens
 
+    accounts:
+      new: Nova site
+
     inquiries:
       title: Mensagens
       all: Todas as mensagens
