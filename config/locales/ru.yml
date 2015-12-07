@@ -33,6 +33,9 @@ ru:
       documents: Документы
       photos: Изображения
 
+    accounts:
+      new: Новая сайт
+
     inquiries:
       title: Сообщения
       all: Все сообщения

@@ -4,7 +4,7 @@ Spina::Engine.routes.draw do
   namespace :admin do
     root to: "pages#index"
 
-    resource :account do
+    resources :accounts do
       member do
         get :style
         get :analytics

@@ -1,7 +1,7 @@
 module Spina
   class Page < ActiveRecord::Base
     extend FriendlyId
-    include Spina::Partable
+    include ::Spina::Partable
 
     has_ancestry orphan_strategy: :adopt # i.e. added to the parent of deleted node
 
@@ -29,7 +29,7 @@ module Spina
 
     def slug_candidates
       [
-        :title, 
+        :title,
         [:title, :id]
       ]
     end

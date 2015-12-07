@@ -33,6 +33,9 @@ it:
       documents: Documenti
       photos: Immagini
 
+    accounts:
+      new: Nuova sito
+
     inquiries:
       title: Messaggi
       all: Tutti i messaggi

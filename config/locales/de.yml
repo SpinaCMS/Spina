@@ -33,6 +33,9 @@ de:
       documents: Dokumente
       photos: Bilder
 
+    accounts:
+      new: Neue Website
+
     inquiries:
       title: Nachrichten
       all: Alle Nachrichten

@@ -1,7 +1,7 @@
 module Spina
   module Admin
     class AdminController < ApplicationController
-      
+
       before_filter :authorize_user
       before_filter :new_messages
 
@@ -18,10 +18,10 @@ module Spina
       end
 
       def current_account
-        @current_account ||= Account.find_by(custom_domain: request.host) || Account.find_by(subdomain: request.subdomain) || Account.first
+        @current_account ||= Account.find_by(custom_domain: request.host) || Account.find_by(subdomain: request.subdomain) || current_user.accounts.first
       end
       helper_method :current_account
-      
+
       def current_user
         @current_user ||= User.where(id: session[:user_id]).first if session[:user_id]
       end

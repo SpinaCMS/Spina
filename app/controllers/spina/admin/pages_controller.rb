@@ -10,7 +10,11 @@ module Spina
       layout "spina/admin/website"
 
       def index
-        @pages = current_account.pages.active.sorted.roots
+        if current_account
+          @pages = current_account.pages.active.sorted.roots
+        else
+          redirect_to spina.new_admin_account_url
+        end
       end
 
       def new

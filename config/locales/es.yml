@@ -33,6 +33,9 @@ es:
       documents: Documentos
       photos: Imágenes
 
+    accounts:
+      new: Nueva sitio
+
     inquiries:
       title: Mensajes
       all: Todos los mensajes
