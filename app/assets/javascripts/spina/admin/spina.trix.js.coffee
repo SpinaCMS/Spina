@@ -1,6 +1,6 @@
 window.Spina = {}
 
-Trix.config.blockAttributes = $.extendTrix.config.blockAttributes, {
+Trix.config.blockAttributes = $.extend Trix.config.blockAttributes, {
   h1:
     tagName: 'h1'
     nestable: false
