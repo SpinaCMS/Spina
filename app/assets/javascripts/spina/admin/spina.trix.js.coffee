@@ -3,22 +3,28 @@ window.Spina = {}
 Trix.config.blockAttributes = $.extend Trix.config.blockAttributes, {
   h1:
     tagName: 'h1'
-    nestable: false
+    singleLine: true
+    leaf: true
   h2:
     tagName: 'h2'
-    nestable: false
+    singleLine: true
+    leaf: true
   h3:
     tagName: 'h3'
-    nestable: false
+    singleLine: true
+    leaf: true
   h4:
     tagName: 'h4'
-    nestable: false
+    singleLine: true
+    leaf: true
   h5:
     tagName: 'h5'
-    nestable: false
+    singleLine: true
+    leaf: true
   h6:
     tagName: 'h6'
-    nestable: false
+    singleLine: true
+    leaf: true
 }
 
 class Spina.TrixAttachment
@@ -64,6 +70,6 @@ class Spina.TrixAttachment
 document.addEventListener 'trix-attachment-add', (e) ->
   Spina.TrixAttachment.upload(e.attachment) if e.attachment.file
 
-$(document).on 'click', 'trix-toolbar .photo', Spina.TrixAttachment.photoSelect
+$(document).on 'click', '.js-trix-photo', Spina.TrixAttachment.photoSelect
 
 $(document).on 'photo-insert', 'trix-editor', Spina.TrixAttachment.photoInsert

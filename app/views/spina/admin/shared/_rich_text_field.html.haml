@@ -1,31 +1,36 @@
 = form.hidden_field field, id: "#{form.object.object_id}_input"
-%trix-toolbar{ id: "#{form.object.object_id}_toolbar", data: { editor_id: "#{form.object.object_id}_editor" }}
-  .button_groups
-    %span.button_group.text_tools
-      %button.bold{ title: 'Bold', type: 'button', data: { attribute: 'bold', key: 'b' } } Bold
-      %button.italic{ title: 'Italic', type: 'button', data: { attribute: 'italic', key: 'i' }} Italic
-      -# %button.strike{ title: 'Strikethrough', type: 'button', data: { attribute: 'strike' }} Strikethrough
-      %button.link{ title: 'Link', type: 'button', data: { action: 'link', attribute: 'href', key: 'k' }} Link
-      %button.photo{ title: 'Photo', type: 'button', data: { action: 'photo', attribute: 'photo' }} Photo
+%trix-toolbar.clearfix{ id: "#{form.object.object_id}_toolbar", data: { editor_id: "#{form.object.object_id}_editor" }}
+  .button-group.pull-left
+    %a.button.button-small{ type: 'button', title: 'Bold', data: { attribute: 'bold', key: 'b' }}
+      .icon.icon-bold
+    %button.button.button-small{ type: 'button', title: 'Italic', data: { attribute: 'italic', key: 'i' }}
+      .icon.icon-italic
+    -# %button.button.button-small{ type: 'button', title: 'Strikethrough', data: { attribute: 'strike' }} Striketrough
+    %button.button.button-small{ type: 'button', title: 'Link', data: { action: 'link', attribute: 'href', key: 'k' }}
+      .icon.icon-link
+    %button.button.button-small.js-trix-photo{ type: 'button', title: 'Photo', data: { action: 'photo', attribute: 'photo' }}
+      .icon.icon-picture-o
 
-    %span.button_group.block_tools
-      %button.h1{ title: 'h1', type: 'button', data: { attribute: 'h1' }} H1
-      %button.h2{ title: 'h2', type: 'button', data: { attribute: 'h2' }} H2
-      %button.h3{ title: 'h3', type: 'button', data: { attribute: 'h3' }} H3
-      %button.h4{ title: 'h4', type: 'button', data: { attribute: 'h4' }} H4
-      %button.h5{ title: 'h5', type: 'button', data: { attribute: 'h5' }} H5
-      %button.h6{ title: 'h6', type: 'button', data: { attribute: 'h6' }} H6
+  .button-group.pull-left
+    %button.button.button-small{ type: 'button', title: 'h1', data: { attribute: 'h1' }} H1
+    %button.button.button-small{ type: 'button', title: 'h2', data: { attribute: 'h2' }} H2
+    %button.button.button-small{ type: 'button', title: 'h3', data: { attribute: 'h3' }} H3
+    %button.button.button-small{ type: 'button', title: 'h4', data: { attribute: 'h4' }} H4
+    %button.button.button-small{ type: 'button', title: 'h5', data: { attribute: 'h5' }} H5
+    %button.button.button-small{ type: 'button', title: 'h6', data: { attribute: 'h6' }} H6
 
-    %span.button_group.block_tools
-      -# %button.quote{ title: 'Quote', type: 'button', data: { attribute: 'quote' }} Quote
-      -# %button.code{ title: 'Code', type: 'button', data: { attribute: 'code' }} Code
-      %button.list.bullets{ title: 'Bullets', type: 'button', data: { attribute: 'bullet' }} Bullets
-      %button.list.numbers{ title: 'Numbers', type: 'button', data: { attribute: 'number' }} Numbers
-      -# %button.block-level.decrease{ disabled: 'disabled', title: 'Decrease Level', type: 'button', data: { action: 'decreaseBlockLevel' }} Decrease Level
-      -# %button.block-level.increase{ disabled: 'disabled', title: 'Increase Level', type: 'button', data: { action: 'increaseBlockLevel' }} Increase Level
-    %span.button_group.history_tools
-      %button.undo{ disabled: 'disabled', title: 'Undo', type: 'button', data: { action: 'undo', key: 'z' }} Undo
-      %button.redo{ disabled: 'disabled', title: 'Redo', type: 'button', data: { action: 'redo', key: 'shift+z' }} Redo
+  .button-group.pull-left
+    -# %button.button.button-small{ type: 'button', title: 'Quote', data: { attribute: 'quote' }} Quote
+    -# %button.button.button-small{ type: 'button', title: 'Code', data: { attribute: 'code' }} Code
+    %button.button.button-small{ type: 'button', title: 'Bullets', data: { attribute: 'bullet' }}
+      .icon.icon-list-ul
+    %button.button.button-small{ type: 'button', title: 'Numbers', data: { attribute: 'number' }} Numbers
+    -# %button.button.button-small{ type: 'button', title: 'Decrease Level', disabled: 'disabled', data: { action: 'decreaseBlockLevel' }} Decrease Level
+    -# %button.button.button-small{ type: 'button', title: 'Increase Level', disabled: 'disabled', data: { action: 'increaseBlockLevel' }} Increase Level
+
+  .button-group.pull-left
+    %button.button.button-small{ type: 'button', title: 'Undo', disabled: 'disabled', data: { action: 'undo', key: 'z' }} Undo
+    %button.button.button-small{ type: 'button', title: 'Redo', disabled: 'disabled', data: { action: 'redo', key: 'shift+z' }} Redo
 
   .dialogs
     .dialog.link_dialog{ data: { attribute: 'href', dialog: 'href'}}
@@ -35,4 +40,4 @@
           %input{ type: 'button', value: 'Link', data: { method: 'setAttribute' }}
           %input{ type: 'button', value: 'Unlink', data: { method: 'removeAttribute' }}
 
-%trix-editor{ input: "#{form.object.object_id}_input", toolbar: "#{form.object.object_id}_toolbar", id: "#{form.object.object_id}_editor" }
+%trix-editor.text-input{ input: "#{form.object.object_id}_input", toolbar: "#{form.object.object_id}_toolbar", id: "#{form.object.object_id}_editor" }
