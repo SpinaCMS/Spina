@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/denkGroot/Spina-template.git
-  revision: 3ac1971f2956e7a21e5605770ea32941a5abe8cb
+  revision: 0499eea4158569a4a53b2d93c797cceadf164427
   specs:
     spina-template (0.2.18)
       bourbon (~> 3.2)
@@ -302,3 +302,6 @@ DEPENDENCIES
   quiet_assets
   spina!
   spina-template!
+
+BUNDLED WITH
+   1.10.6

@@ -10,3 +10,4 @@ test/dummy/public/uploads/*
 test/dummy/app/assets/fonts/
 # Ignore application configuration
 test/dummy/config/application.yml
+coverage/*
