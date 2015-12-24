@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*
-Trix 0.9.0
+Trix 0.9.4
 Copyright © 2015 Basecamp, LLC
 http://trix-editor.org/
 */
@@ -12,87 +12,93 @@ trix-editor {
   padding: 4px 8px;
   min-height: 54px;
   outline: none; }
-trix-toolbar {
-  display: inline-block; }
-  trix-toolbar * {
-    box-sizing: border-box; }
-  trix-toolbar .button_groups {
-    height: 36px; }
-  trix-toolbar .button_group {
-    display: inline-block;
+trix-toolbar * {
+  box-sizing: border-box; }
+trix-toolbar .button_group {
+  display: inline-block;
+  font-size: 0;
+  margin: 0 8px 4px 0;
+  border: 1px solid #bbb;
+  border-top-color: #ccc;
+  border-bottom-color: #888;
+  border-radius: 5px;
+  overflow: hidden; }
+  trix-toolbar .button_group:last-of-type {
+    margin-right: 0; }
+  trix-toolbar .button_group button, trix-toolbar .button_group input[type=button] {
+    position: relative;
     font-size: 0;
-    margin: 0 8px 0 0;
-    border: 1px solid #bbb;
-    border-top-color: #ccc;
-    border-bottom-color: #888;
-    border-radius: 5px;
-    overflow: hidden; }
-    trix-toolbar .button_group:last-of-type {
-      margin-right: 0; }
-    trix-toolbar .button_group button, trix-toolbar .button_group input[type=button] {
-      position: relative;
-      font-size: 0;
-      margin: 0;
-      height: 28px;
-      width: 40px;
-      background: #fff;
-      border: none;
-      border-bottom: 1px solid #ddd; }
-      trix-toolbar .button_group button::before, trix-toolbar .button_group input[type=button]::before {
-        display: inline-block;
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background-position: center;
-        background-repeat: no-repeat;
-        opacity: .6;
-        content: ""; }
-      trix-toolbar .button_group button.active, trix-toolbar .button_group input[type=button].active {
-        background: #cbeefa; }
-        trix-toolbar .button_group button.active::before, trix-toolbar .button_group input[type=button].active::before {
-          opacity: 1; }
-      trix-toolbar .button_group button:disabled::before, trix-toolbar .button_group input[type=button]:disabled::before {
-        opacity: .125; }
-      trix-toolbar .button_group button:not(:first-child), trix-toolbar .button_group input[type=button]:not(:first-child) {
-        border-left: 1px solid #ccc; }
-  trix-toolbar .dialogs {
-    position: relative; }
-    trix-toolbar .dialogs .dialog {
+    margin: 0;
+    height: 28px;
+    width: 40px;
+    background: #fff;
+    border: none;
+    border-bottom: 1px solid #ddd; }
+    trix-toolbar .button_group button::before, trix-toolbar .button_group input[type=button]::before {
+      display: inline-block;
       position: absolute;
       top: 0;
-      left: 0;
       right: 0;
-      padding: 12px 8px;
-      background: #fff;
-      box-shadow: 0 0.3rem 1rem #ccc;
-      border-top: 2px solid #888;
+      bottom: 0;
+      left: 0;
+      background-position: center;
+      background-repeat: no-repeat;
+      opacity: .6;
+      content: ""; }
+    trix-toolbar .button_group button.active, trix-toolbar .button_group input[type=button].active {
+      background: #cbeefa; }
+      trix-toolbar .button_group button.active::before, trix-toolbar .button_group input[type=button].active::before {
+        opacity: 1; }
+    trix-toolbar .button_group button:disabled::before, trix-toolbar .button_group input[type=button]:disabled::before {
+      opacity: .125; }
+    trix-toolbar .button_group button:not(:first-child), trix-toolbar .button_group input[type=button]:not(:first-child) {
+      border-left: 1px solid #ccc; }
+trix-toolbar .dialogs {
+  position: relative; }
+  trix-toolbar .dialogs .dialog {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 12px 8px;
+    line-height: 12px;
+    background: #fff;
+    box-shadow: 0 0.3rem 1rem #ccc;
+    border-top: 2px solid #888;
+    border-radius: 5px;
+    z-index: 5; }
+    trix-toolbar .dialogs .dialog input[type=button] {
+      font-size: 12px;
+      height: 24px;
+      width: 50px;
+      padding: 1px 8px 0 8px;
+      width: auto;
+      opacity: .6;
+      -webkit-appearance: none;
+      -webkit-border-radius: 0; }
+    trix-toolbar .dialogs .dialog input[type=url], trix-toolbar .dialogs .dialog input[type=text] {
+      display: inline-block;
+      height: 26px;
+      font-size: 12px;
+      padding: 0 8px;
+      margin: 0 8px 0 0;
       border-radius: 5px;
-      z-index: 5; }
-      trix-toolbar .dialogs .dialog input[type=button] {
-        font-size: 12px;
-        height: 24px;
-        padding: 1px 8px 0 8px;
-        width: auto;
-        opacity: .6; }
-      trix-toolbar .dialogs .dialog input[type=url], trix-toolbar .dialogs .dialog input[type=text] {
-        display: inline-block;
-        height: 26px;
-        font-size: 12px;
-        padding: 0 8px;
-        margin: 0 8px 0 0;
-        border-radius: 5px;
-        border: 1px solid #bbb;
-        background-color: #fff;
-        outline: none;
-        -webkit-appearance: none;
-        -moz-appearance: none; }
+      border: 1px solid #bbb;
+      background-color: #fff;
+      box-shadow: none;
+      outline: none;
+      -webkit-appearance: none;
+      -moz-appearance: none; }
+      trix-toolbar .dialogs .dialog input[type=url].validate:invalid, trix-toolbar .dialogs .dialog input[type=text].validate:invalid {
+        box-shadow: #F00 0px 0px 1.5px 1px; }
+    trix-toolbar .dialogs .dialog.link_dialog {
+      min-width: 300px;
+      max-width: 600px; }
       trix-toolbar .dialogs .dialog.link_dialog .button_group {
-        max-width: 25%; }
+        max-width: 110px; }
       trix-toolbar .dialogs .dialog.link_dialog input[type=url] {
         float: left;
-        width: 75%; }
+        width: calc(100% - 120px); }
 trix-toolbar .button_group button.bold::before {
   background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjRweCIgd2lkdGg9IjI0cHgiIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BCiA8cGF0aCBpZD0iU2hhcGUiIGZpbGw9IiMwMDAiIGQ9Im0xNS42IDExLjc5YzAuOTY1LTAuNjc1IDEuNjUtMS43NjUgMS42NS0yLjc5IDAtMi4yNTUtMS43NDUtNC00LTRoLTYuMjV2MTRoNy4wNGMyLjA5NSAwIDMuNzEtMS43IDMuNzEtMy43OSAwLTEuNTItMC44NjUtMi44MTUtMi4xNS0zLjQyem0tNS42LTQuMjloM2MwLjgzIDAgMS41IDAuNjcgMS41IDEuNXMtMC42NyAxLjUtMS41IDEuNWgtM3YtM3ptMy41IDloLTMuNXYtM2gzLjVjMC44MyAwIDEuNSAwLjY3IDEuNSAxLjVzLTAuNjcgMS41LTEuNSAxLjV6Ii8%2BCjwvc3ZnPgo%3D); }
 trix-toolbar .button_group button.italic::before {
@@ -118,11 +124,6 @@ trix-toolbar .button_group button.undo::before {
 trix-toolbar .button_group button.redo::before {
   background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0ZWQgYnkgSWNvTW9vbi5pbyAtLT4KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4KPHBhdGggZD0iTTE4LjM5NSAxMC42Yy0xLjg0LTEuNjE1LTQuMjUtMi42LTYuODk1LTIuNi00LjY1IDAtOC41ODUgMy4wMzAtOS45NiA3LjIybDIuMzY1IDAuNzhjMS4wNTAtMy4xOTUgNC4wNTAtNS41IDcuNTk1LTUuNSAxLjk1NSAwIDMuNzMgMC43MiA1LjExNSAxLjg4NWwtMy42MTUgMy42MTVoOXYtOWwtMy42MDUgMy42eiIgZmlsbD0iIzAwMCI%2BPC9wYXRoPgo8L3N2Zz4K); }
 @charset "UTF-8";
-trix-editor a[data-trix-attachment] {
-  color: inherit;
-  text-decoration: none; }
-  trix-editor a[data-trix-attachment]:hover, trix-editor a[data-trix-attachment]:visited:hover {
-    color: inherit; }
 trix-editor [data-trix-mutable=true] {
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -130,61 +131,41 @@ trix-editor [data-trix-mutable=true] {
   user-select: none; }
   trix-editor [data-trix-mutable=true] img {
     box-shadow: 0 0 0 2px highlight; }
-trix-editor .attachment {
-  position: relative;
-  display: inline-block;
-  max-width: 100%;
+trix-editor .attachment .remove {
+  display: block;
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  width: 24px;
+  height: 24px;
+  border-radius: 24px;
+  line-height: 22px;
+  font-size: 0;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  background-color: #fff;
+  border: 1px solid #bbb;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1); }
+  trix-editor .attachment .remove:after {
+    content: '×';
+    font-size: 18px;
+    font-weight: bold;
+    opacity: 0.6; }
+  trix-editor .attachment .remove:hover:after {
+    opacity: 1; }
+trix-editor .attachment .caption.caption-editing textarea {
+  width: 100%;
   margin: 0;
   padding: 0;
-  color: #666;
-  font-size: 13px; }
-  trix-editor .attachment .remove {
-    display: block;
-    position: absolute;
-    top: -12px;
-    right: -12px;
-    width: 24px;
-    height: 24px;
-    border-radius: 24px;
-    line-height: 22px;
-    font-size: 0;
-    color: black;
-    text-align: center;
-    text-decoration: none;
-    background-color: #fff;
-    border: 1px solid #bbb;
-    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1); }
-    trix-editor .attachment .remove:after {
-      content: '×';
-      font-size: 18px;
-      font-weight: bold;
-      opacity: 0.6; }
-    trix-editor .attachment .remove:hover:after {
-      opacity: 1; }
-  trix-editor .attachment .caption {
-    display: block;
-    margin: 4px auto 0 auto;
-    padding: 0;
-    text-align: center; }
-    trix-editor .attachment .caption .size:before {
-      content: ' · '; }
-    trix-editor .attachment .caption.caption-editing textarea {
-      width: 100%;
-      margin: 0;
-      padding: 0;
-      font-size: 13px;
-      line-height: 13px;
-      text-align: center;
-      border: none;
-      outline: none;
-      -webkit-appearance: none;
-      -moz-appearance: none; }
-  trix-editor .attachment.attachment-file {
-    color: #333;
-    line-height: 30px;
-    padding: 0 16px;
-    border: 1px solid #bbb;
-    border-radius: 5px; }
+  font-size: 13px;
+  line-height: 13px;
+  text-align: center;
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none; }
+@charset "UTF-8";
 .trix-content blockquote {
   margin: 0 0 0 5px;
   padding: 0 0 0 10px;
@@ -201,3 +182,32 @@ trix-editor .attachment {
   padding: 0; }
   .trix-content ul li, .trix-content ol li, .trix-content li li {
     margin-left: 20px; }
+.trix-content img {
+  max-width: 100%;
+  height: auto; }
+.trix-content a[data-trix-attachment] {
+  color: inherit;
+  text-decoration: none; }
+  .trix-content a[data-trix-attachment]:hover, .trix-content a[data-trix-attachment]:visited:hover {
+    color: inherit; }
+.trix-content .attachment {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  color: #666;
+  font-size: 13px; }
+  .trix-content .attachment.attachment-file {
+    color: #333;
+    line-height: 30px;
+    padding: 0 16px;
+    border: 1px solid #bbb;
+    border-radius: 5px; }
+  .trix-content .attachment .caption {
+    display: block;
+    margin: 4px auto 0 auto;
+    padding: 0;
+    text-align: center; }
+    .trix-content .attachment .caption .size:before {
+      content: ' · '; }
