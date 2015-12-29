@@ -29,6 +29,18 @@ module Spina
         get "/admin/pages"
         assert_select '.dd-item-inner small', text: '(draft)'
       end
+
+      test "update about page" do
+        patch_via_redirect "/admin/pages/about", page: {title: "About us"}
+        assert_select '.breadcrumbs', text: /About\sus\z/
+      end
+
+      test "destroy page" do
+        post_via_redirect "/admin/pages", page: {title: "Ugly page", draft: true}
+        assert_select '.breadcrumbs', text: /Ugly\spage\z/
+        delete_via_redirect "/admin/pages/ugly-page"
+        assert_equal '/admin/pages', path
+      end
     end
   end
 end
