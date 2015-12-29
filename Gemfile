@@ -11,6 +11,7 @@ group :development, :test do
   gem 'spina-template', github: 'denkGroot/Spina-template'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'bcrypt'
   gem 'minitest-reporters'
   gem 'guard'
   gem 'guard-minitest'
