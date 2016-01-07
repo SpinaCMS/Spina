@@ -3,7 +3,8 @@
 homepage:
   name: homepage
   title: Homepage
+  materialized_path: /
 
 about:
   title: About
-  slug: about
+  materialized_path: /about

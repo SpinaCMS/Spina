@@ -28,7 +28,7 @@ module Spina
     end
 
     def url_title
-      title.parameterize
+      title.try(:parameterize)
     end
 
     def custom_page?
