@@ -22,9 +22,9 @@ $(document).on 'change', '.page-template select', ->
   show_page_parts(page_parts)
 
 show_page_parts = (page_parts) ->
-  $('tr.page-part').hide()
+  $('.horizontal-form-group.page-part').hide()
   for page_part in page_parts
-    $('tr.page-part[data-name=' + page_part + ']').show()
+    $('.horizontal-form-group.page-part[data-name=' + page_part + ']').show()
 
 # Dynamically add and remove fields in a nested form
 $(document).on 'click', 'form .add_fields', (event) ->
