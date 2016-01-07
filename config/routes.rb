@@ -83,7 +83,7 @@ Spina::Engine.routes.draw do
   # Frontend
   root to: "pages#homepage"
 
-  get ':root/:subpage/:id' => "pages#show", as: "third_level_page"
-  get ':root/:id' => "pages#show", as: "subpage"
-  get ':id' => "pages#show", as: "page"
+  # get ':materialized_pathroot/:subpage/:id' => "pages#show", as: "third_level_page"
+  # get ':root/:id' => "pages#show", as: "subpage"
+  get '/*id' => "pages#show", as: "page", controller: 'pages'
 end

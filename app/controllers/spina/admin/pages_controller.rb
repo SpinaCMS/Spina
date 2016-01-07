@@ -25,6 +25,7 @@ module Spina
       def create
         @page = Page.new(page_params)
         add_breadcrumb I18n.t('spina.pages.new')
+        @page.set_materialized_path
         if @page.save
           redirect_to spina.edit_admin_page_url(@page)
         else

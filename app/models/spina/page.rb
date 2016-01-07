@@ -5,13 +5,12 @@ module Spina
 
     has_ancestry orphan_strategy: :adopt # i.e. added to the parent of deleted node
 
-    friendly_id :slug_candidates, use: [:slugged, :finders]
+    friendly_id :slug_candidates, use: [:slugged, :finders], slug_column: :materialized_path
 
     has_many :page_parts, dependent: :destroy
 
     before_validation :ensure_title
     before_validation :ancestry_is_nil
-    before_save :set_materialized_path
     after_save :save_children
 
     accepts_nested_attributes_for :page_parts, allow_destroy: true
@@ -28,13 +27,9 @@ module Spina
 
     def slug_candidates
       [
-        :title, 
-        [:title, :id]
+        :materialized_path,
+        [:materialized_path, :id]
       ]
-    end
-
-    def should_generate_new_friendly_id?
-      title_changed?
     end
 
     def to_s
@@ -46,6 +41,7 @@ module Spina
     end
 
     def set_materialized_path
+      self.slug = title
       self.materialized_path = generate_materialized_path
     end
 
