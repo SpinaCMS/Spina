@@ -9,6 +9,3 @@ Spina::Account.create name: "Website"
 Spina::Page.destroy_all
 
 Spina::Photo.destroy_all
-['after sun 2', 'after sun', 'amygdalus', 'at sunset-1', 'colorfull', 'nature tree', 'orchid', 'smooth', 'soft', 'spring memory', 'spring purple', 'spring', 'yew-tree'].each do |image|
-  Spina::Photo.create({ file:  File.open(File.join(Spina::Engine.root, "test/support/images/#{image}.jpg")) })
-end

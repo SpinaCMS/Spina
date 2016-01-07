@@ -1,4 +1,9 @@
 = form_tag spina.admin_sessions_path, id: "login_wrapper" do
+  = image_tag 'spina/admin/spina.png'
+  - if flash[:alert].present?
+    .notification.notification-danger
+      .icon.icon-cross
+      = flash[:alert]
   = text_field_tag :email, params[:email], placeholder: Spina::User.human_attribute_name(:email)
   = password_field_tag :password, nil, placeholder: Spina::User.human_attribute_name(:password)
   = button_tag t('spina.login'), class: 'button button-primary', data: {icon: '3'}

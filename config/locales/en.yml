@@ -60,7 +60,7 @@ en:
       photo_picker: Choose image
       delete_confirmation: "Are you sure you want to delete the page <strong>%{subject}</strong>?"
       save: Save page
-      concept: concept
+      concept: draft
       show_in_menu: invisible
       skip_to_first_child: forward to first child page
       invisible_to_search_engines: Your website is invisible to search engines
@@ -171,7 +171,7 @@ en:
         description: Meta description
         description_description: This description will be shown in search results
         description_placeholder: Short description of your page
-        draft: Concept
+        draft: Draft
         draft_description: Great for when your page is not quite finished
         skip_to_first_child: Forward
         skip_to_first_child_description: Forward to first child page

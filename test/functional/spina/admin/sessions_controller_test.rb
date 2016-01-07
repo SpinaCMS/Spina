@@ -13,7 +13,7 @@ module Spina
       end
 
       test "should be able to login" do
-        post :create, email: "bram@denkgroot.com", password: "password"
+        post :create, email: spina_users(:bram).email, password: "password"
         assert_not_nil session[:user_id]
       end
 
@@ -23,7 +23,7 @@ module Spina
       end
 
       test "should alert the user when wrong password" do
-        post :create, email: "bram@denkgroot.com", password: "wrongpassword"
+        post :create, email: spina_users(:bram).email, password: "1234"
         assert_nil session[:user_id]
         assert_not_empty flash[:alert]
       end
