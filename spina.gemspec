@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   # s.test_files = Dir['test/**/*']
 
   s.add_dependency 'rails'
-  s.add_dependency 'bcrypt-ruby'
+  s.add_dependency 'bcrypt'
   s.add_dependency 'haml-rails'
   s.add_dependency 'sass-rails'
   s.add_dependency 'coffee-rails'
