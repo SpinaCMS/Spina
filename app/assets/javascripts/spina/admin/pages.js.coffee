@@ -43,7 +43,7 @@ $(document).on 'click', 'form .add_structure', (event) ->
   $structureForm = $(this).parents('.structure-form')
 
   time = new Date().getTime()
-  regexp = new RegExp($(this).data('id'), 'g')
+  regexp = new RegExp("#{$(this).data('id')}|new_association", 'g')
   $fields = $($(this).data('fields').replace(regexp, time))
   $structureForm.find('.structure-form-content').append($fields)
 

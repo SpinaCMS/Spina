@@ -1,7 +1,8 @@
-= form.hidden_field field, id: "#{form.object.object_id}_input"
-%trix-toolbar.clearfix{ id: "#{form.object.object_id}_toolbar", data: { editor_id: "#{form.object.object_id}_editor" }}
+- object_id = form.object.persisted? ? form.object.object_id : 'new_association'
+= form.hidden_field field, id: "#{object_id}_input"
+%trix-toolbar.clearfix{ id: "#{object_id}_toolbar", data: { editor_id: "#{object_id}_editor" }}
   .button-group.pull-left
-    %a.button.button-small{ type: 'button', title: 'Bold', data: { attribute: 'bold', key: 'b' }}
+    %button.button.button-small{ type: 'button', title: 'Bold', data: { attribute: 'bold', key: 'b' }}
       .icon.icon-bold
     %button.button.button-small{ type: 'button', title: 'Italic', data: { attribute: 'italic', key: 'i' }}
       .icon.icon-italic
@@ -40,4 +41,4 @@
           %input{ type: 'button', value: 'Link', data: { method: 'setAttribute' }}
           %input{ type: 'button', value: 'Unlink', data: { method: 'removeAttribute' }}
 
-%trix-editor.text-input{ input: "#{form.object.object_id}_input", toolbar: "#{form.object.object_id}_toolbar", id: "#{form.object.object_id}_editor" }
+%trix-editor.text-input{ input: "#{object_id}_input", toolbar: "#{object_id}_toolbar", id: "#{object_id}_editor" }
