@@ -1,14 +1,12 @@
 #page_content.tab-content.active
-  .table-container
-    %table.table.table-form
-    .horizontal-form
-      .horizontal-form-group
-        .horizontal-form-label
-          = Spina::Page.human_attribute_name :title
-          %small Test
-        .horizontal-form-content
-          = f.text_field :title, placeholder: Spina::Page.human_attribute_name(:title_placeholder)
+  .horizontal-form
+    .horizontal-form-group
+      .horizontal-form-label
+        = Spina::Page.human_attribute_name :title
+        %small Test
+      .horizontal-form-content
+        = f.text_field :title, placeholder: Spina::Page.human_attribute_name(:title_placeholder)
 
-      = f.fields_for :page_parts, @page_parts.sort { |a,b| a.position(current_theme) <=> b.position(current_theme) } do |page_part_form|
-        .horizontal-form-group.page-part{data: {name: page_part_form.object.name}}
-          = render partial: "spina/admin/page_partables/#{page_part_form.object.page_partable_type.demodulize.underscore}_form", object: page_part_form
+    = f.fields_for :page_parts, @page_parts.sort { |a,b| a.position(current_theme) <=> b.position(current_theme) } do |page_part_form|
+      .horizontal-form-group.page-part{data: {name: page_part_form.object.name}}
+        = render partial: "spina/admin/page_partables/#{page_part_form.object.page_partable_type.demodulize.underscore}_form", object: page_part_form
