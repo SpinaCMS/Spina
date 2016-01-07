@@ -1,7 +1,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require trix/dist/trix
 //= require spina
 //= require ./aviary
 //= require ./pages

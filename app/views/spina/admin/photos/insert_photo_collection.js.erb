@@ -2,11 +2,11 @@ var hidden_input = $("input[name='<%= j params[:page_part_id] %>[photo_tokens]']
 
 <% if @photos.present? %>
   var photo_collection = $("<%= j render partial: 'photo_collection', locals: {photos: @photos} %>");
-  hidden_input.parents('td').find('.photo-collection').html(photo_collection);
-  hidden_input.parents('td').find('a .placeholder').addClass('pull-right');
+  hidden_input.parents('.horizontal-form-content').find('.photo-collection').html(photo_collection);
+  hidden_input.parents('.horizontal-form-content').find('a .placeholder').addClass('pull-right');
   hidden_input.val("<%= @photos.map(&:id).join(',') %>");
 <% else %>
-  hidden_input.parents('td').find('a .placeholder').removeClass('pull-right');
+  hidden_input.parents('.horizontal-form-content').find('a .placeholder').removeClass('pull-right');
   hidden_input.val("");
 <% end %>
 
@@ -15,7 +15,7 @@ $('.sortable-grid').sortable().bind('sortupdate', function(e) {
   $(e.target).find('li.image').each(function(index) {
     position_array.push($(this).data('photo-id'));
   });
-  $(e.target).parents('td').find('.photo-positions').val(position_array.join(","));
+  $(e.target).parents('.horizontal-form-content').find('.photo-positions').val(position_array.join(","));
 });
 $('.sortable-grid').trigger('sortupdate');
 

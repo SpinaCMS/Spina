@@ -7,7 +7,7 @@ ready = ->
     position_array = []
     $(e.target).find('li.image').each (index) ->
       position_array.push $(this).data('photo-id')
-    $(e.target).parents('td').find('.photo-positions').val(position_array.join(","))
+    $(e.target).parents('.horizontal-form-content').find('.photo-positions').val(position_array.join(","))
 
   $('.structure-form-menu ul').sortable().bind 'sortupdate', (e) ->
     $(e.target).find('li').each (index) ->

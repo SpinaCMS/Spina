@@ -1,14 +1,3 @@
-GIT
-  remote: git://github.com/denkGroot/Spina-template.git
-  revision: 3ac1971f2956e7a21e5605770ea32941a5abe8cb
-  specs:
-    spina-template (0.2.18)
-      bourbon (~> 3.2)
-      coffee-rails
-      fontcustom (~> 1.3)
-      jquery-fileupload-rails
-      neat (~> 1.5)
-
 PATH
   remote: .
   specs:
@@ -30,6 +19,16 @@ PATH
       sass-rails
       spina-template
       turbolinks
+
+PATH
+  remote: ~/apps/spina-template
+  specs:
+    spina-template (0.2.18)
+      bourbon (~> 3.2)
+      coffee-rails
+      fontcustom (~> 1.3)
+      jquery-fileupload-rails
+      neat (~> 1.5)
 
 GEM
   remote: http://rubygems.org/
@@ -302,3 +301,6 @@ DEPENDENCIES
   quiet_assets
   spina!
   spina-template!
+
+BUNDLED WITH
+   1.10.6

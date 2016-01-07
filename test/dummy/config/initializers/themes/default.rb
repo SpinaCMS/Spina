@@ -14,6 +14,14 @@ module Spina
       name: "structure",
       title: "Structuur",
       page_partable_type: "Spina::Structure"
+    }, {
+      name: 'photo',
+      title: "Foto",
+      page_partable_type: "Spina::Photo"
+    }, {
+      name: 'photo_collection',
+      title: "Foto collection",
+      page_partable_type: "Spina::PhotoCollection"
     }]
 
     self.structures = {
@@ -40,7 +48,7 @@ module Spina
         title: 'Default',
         description: 'A simple page',
         usage: 'Use for your content',
-        page_parts: ['content', 'structure']
+        page_parts: ['content', 'structure', 'photo', 'photo_collection']
       }
     }
 
