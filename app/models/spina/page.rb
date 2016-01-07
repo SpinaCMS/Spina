@@ -1,16 +1,14 @@
 module Spina
   class Page < ActiveRecord::Base
-    extend FriendlyId
     include Spina::Partable
 
     has_ancestry orphan_strategy: :adopt # i.e. added to the parent of deleted node
-
-    friendly_id :slug_candidates, use: [:slugged, :finders], slug_column: :materialized_path
 
     has_many :page_parts, dependent: :destroy
 
     before_validation :ensure_title
     before_validation :ancestry_is_nil
+    before_validation :set_materialized_path
     after_save :save_children
 
     accepts_nested_attributes_for :page_parts, allow_destroy: true
@@ -25,24 +23,12 @@ module Spina
     alias_attribute :page_part, :part
     alias_attribute :parts, :page_parts
 
-    def slug_candidates
-      [
-        :materialized_path,
-        [:materialized_path, :id]
-      ]
-    end
-
     def to_s
       name
     end
 
     def custom_page?
       !deletable
-    end
-
-    def set_materialized_path
-      self.slug = title
-      self.materialized_path = generate_materialized_path
     end
 
     def save_children
@@ -90,17 +76,22 @@ module Spina
 
     private
 
+    def set_materialized_path
+      self.materialized_path = generate_materialized_path
+      self.materialized_path += "-#{self.class.where(materialized_path: materialized_path).count}" if self.class.where(materialized_path: materialized_path).count > 0
+    end
+
     def generate_materialized_path
       if self.name == 'homepage'
         "/"
       else
         case self.depth
         when 0
-          "/#{slug}"
+          "/#{title.parameterize}"
         when 1
-          "/#{self.parent.slug}/#{slug}"
+          "/#{self.parent.title.parameterize}/#{title.parameterize}"
         when 2
-          "/#{self.parent.parent.try(:slug)}/#{self.parent.slug}/#{slug}"
+          "/#{self.parent.parent.try(:title).try(:parameterize)}/#{self.parent.title.parameterize}/#{title.parameterize}"
         end
       end
     end
