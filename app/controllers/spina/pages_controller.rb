@@ -23,7 +23,7 @@ module Spina
     private
 
       def page
-        @page ||= (action_name == 'homepage') ? Page.find_by(name: 'homepage') : Page.find(params[:id])
+        @page ||= (action_name == 'homepage') ? Page.find_by(name: 'homepage') : Page.find_by(materialized_path: "/" + params[:id])
       end
       helper_method :page
 
