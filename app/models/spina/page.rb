@@ -27,6 +27,10 @@ module Spina
       name
     end
 
+    def url_title
+      title.parameterize
+    end
+
     def custom_page?
       !deletable
     end
@@ -87,11 +91,11 @@ module Spina
       else
         case self.depth
         when 0
-          "/#{title.parameterize}"
+          "/#{url_title}"
         when 1
-          "/#{self.parent.title.parameterize}/#{title.parameterize}"
+          "/#{self.parent.url_title}/#{title.url_title}"
         when 2
-          "/#{self.parent.parent.try(:title).try(:parameterize)}/#{self.parent.title.parameterize}/#{title.parameterize}"
+          "/#{self.parent.parent.url_title}/#{self.parent.url_title}/#{title.url_title}"
         end
       end
     end
