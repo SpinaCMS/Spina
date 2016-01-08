@@ -9,11 +9,7 @@ module Spina
 
     def show
       if should_skip_to_first_child?
-        if page.is_root?
-          redirect_to spina.subpage_path(page, first_live_child) and return
-        else
-          redirect_to spina.third_level_page_path(page.parent, page, first_live_child) and return
-        end
+        redirect_to first_live_child.try(:materialized_path) and return
       elsif page.link_url.present?
         redirect_to page.link_url and return
       end
