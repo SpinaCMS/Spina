@@ -24,7 +24,7 @@ module Spina
     private
 
       def rewrite_page
-        unless Page.find_by(materialized_path: "/" + params[:id]).present?
+        unless page.present?
           @rule = RewriteRule.find_by(old_path: "/" + params[:id])
           redirect_to @rule.new_path, status: :moved_permanently if @rule.present?
         end
