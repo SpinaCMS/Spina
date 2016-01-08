@@ -2,6 +2,8 @@ module Spina
   class Page < ActiveRecord::Base
     include Spina::Partable
 
+    attr_accessor :old_path
+
     has_ancestry orphan_strategy: :adopt # i.e. added to the parent of deleted node
 
     has_many :page_parts, dependent: :destroy
@@ -10,9 +12,11 @@ module Spina
     before_validation :ancestry_is_nil
     before_validation :set_materialized_path
     after_save :save_children
+    after_save :rewrite_rule
 
     accepts_nested_attributes_for :page_parts, allow_destroy: true
     validates_presence_of :title
+    validates :materialized_path, uniqueness: true
 
     scope :sorted, -> { order('position') }
     scope :custom_pages, -> { where(deletable: false) }
@@ -78,11 +82,17 @@ module Spina
       self.save
     end
 
+    def set_materialized_path
+      self.old_path = materialized_path
+      self.materialized_path = generate_materialized_path
+      self.materialized_path += "-#{self.class.where(materialized_path: materialized_path).count}" if self.class.where(materialized_path: materialized_path).where.not(id: id).count > 0
+      materialized_path
+    end
+
     private
 
-    def set_materialized_path
-      self.materialized_path = generate_materialized_path
-      self.materialized_path += "-#{self.class.where(materialized_path: materialized_path).count}" if self.class.where(materialized_path: materialized_path).count > 0
+    def rewrite_rule
+      RewriteRule.create(old_path: old_path, new_path: materialized_path) if old_path != materialized_path
     end
 
     def generate_materialized_path
@@ -93,9 +103,9 @@ module Spina
         when 0
           "/#{url_title}"
         when 1
-          "/#{self.parent.url_title}/#{title.url_title}"
+          "/#{self.parent.url_title}/#{url_title}"
         when 2
-          "/#{self.parent.parent.url_title}/#{self.parent.url_title}/#{title.url_title}"
+          "/#{self.parent.parent.url_title}/#{self.parent.url_title}/#{url_title}"
         end
       end
     end

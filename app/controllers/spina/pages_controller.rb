@@ -1,5 +1,6 @@
 module Spina
   class PagesController < ApplicationController
+    before_action :rewrite_page, only: [:show]
     before_action :current_user_can_view_page?, except: [:robots]
 
     def homepage
@@ -21,6 +22,13 @@ module Spina
     end
 
     private
+
+      def rewrite_page
+        unless Page.find_by(materialized_path: "/" + params[:id]).present?
+          @rule = RewriteRule.find_by(old_path: "/" + params[:id])
+          redirect_to @rule.new_path, status: :moved_permanently if @rule.present?
+        end
+      end
 
       def page
         @page ||= (action_name == 'homepage') ? Page.find_by(name: 'homepage') : Page.find_by(materialized_path: "/" + params[:id])

@@ -4,7 +4,7 @@ Spina::User.destroy_all
 Spina::User.create name: "Bram", email: "bram@denkgroot.com", password: "spina", password_confirmation: "spina", admin: true
 
 Spina::Account.destroy_all
-Spina::Account.create name: "Website"
+Spina::Account.create name: "Website", theme: "default"
 
 Spina::Page.destroy_all
 

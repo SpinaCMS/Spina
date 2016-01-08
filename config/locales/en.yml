@@ -65,6 +65,8 @@ en:
       skip_to_first_child: forward to first child page
       invisible_to_search_engines: Your website is invisible to search engines
       invisible_to_search_engines_description: Go to your preferences to activate search engines.
+      rebuild_materialized_path: Rebuild materialized path
+      materialize_path_confirmation: "Are you sure you want to rebuild the path for this page?"
 
     users:
       new: New user
@@ -183,6 +185,8 @@ en:
         menu_title: Navigation title
         menu_title_placeholder: Leave empty to use the page title
         view_template: Page template
+        ancestry: Parent page
+        no_parent: No parent
 
       spina/user:
         email: Email
