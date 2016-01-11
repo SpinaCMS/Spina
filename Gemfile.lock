@@ -12,7 +12,7 @@ GIT
 PATH
   remote: .
   specs:
-    spina (0.6.29)
+    spina (0.7.0)
       ancestry
       bcrypt
       breadcrumbs_on_rails
