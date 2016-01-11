@@ -20,4 +20,4 @@
   - if @inquiry.spam
     = link_to t('spina.inquiries.no_spam'), spina.unmark_spam_admin_inquiry_path(@inquiry), method: :patch, class: 'button', data: {icon: 'v'}
 
-  = link_to t('spina.cancel'), spina.admin_inquiry_path(@inquiry), method: :delete, class: 'button button-danger button-link', data: {confirm: t('spina.inquiries.delete_confirmation', subject: @inquiry.name)}
+  = link_to t('spina.delete'), spina.admin_inquiry_path(@inquiry), method: :delete, class: 'button button-danger button-link', data: {confirm: t('spina.inquiries.delete_confirmation', subject: @inquiry.name)}
