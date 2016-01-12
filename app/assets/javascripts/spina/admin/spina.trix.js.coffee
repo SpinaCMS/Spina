@@ -1,6 +1,8 @@
 window.Spina = {}
 
 Trix.config.blockAttributes = $.extend Trix.config.blockAttributes, {
+  default:
+    tagName: 'p'
   h1:
     tagName: 'h1'
     singleLine: true
