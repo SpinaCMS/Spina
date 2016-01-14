@@ -47,11 +47,11 @@ module Spina
     self.layout_parts = [{
       name:               'line',
       title:              'Line',
-      page_partable_type: 'Spina::Line'
+      layout_partable_type: 'Spina::Line'
     }, {
-      name:               'text',
-      title:              'Text',
-      page_partable_type: 'Spina::Text'
+      name:               'color',
+      title:              'Color',
+      layout_partable_type: 'Spina::Color'
     }]
 
     self.view_templates = {

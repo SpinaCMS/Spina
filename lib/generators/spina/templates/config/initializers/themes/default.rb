@@ -49,9 +49,9 @@ module Spina
       title:              'Line',
       page_partable_type: 'Spina::Line'
     }, {
-      name:               'text',
-      title:              'Text',
-      page_partable_type: 'Spina::Text'
+      name:               'color',
+      title:              'Color',
+      page_partable_type: 'Spina::Color'
     }]
 
     self.view_templates = {
