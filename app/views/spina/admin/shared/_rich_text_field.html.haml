@@ -3,24 +3,24 @@
 %trix-toolbar.clearfix{ id: "#{object_id}_toolbar", data: { editor_id: "#{object_id}_editor" }}
   .button-groups
     .button-group.pull-left
-      %button.button.button-small{ type: 'button', title: 'Bold', data: { attribute: 'bold', key: 'b' }}
+      %button.button.button-small{ type: 'button', tabindex: -1, title: 'Bold', data: { attribute: 'bold', key: 'b' }}
         .icon.icon-bold
-      %button.button.button-small{ type: 'button', title: 'Italic', data: { attribute: 'italic', key: 'i' }}
+      %button.button.button-small{ type: 'button', tabindex: -1, title: 'Italic', data: { attribute: 'italic', key: 'i' }}
         .icon.icon-italic
-      %button.button.button-small{ type: 'button', title: 'Bullets', data: { attribute: 'bullet' }}
+      %button.button.button-small{ type: 'button', tabindex: -1, title: 'Bullets', data: { attribute: 'bullet' }}
         .icon.icon-list-ul
-      %button.button.button-small{ type: 'button', title: 'Link', data: { action: 'link', attribute: 'href', key: 'k' }}
+      %button.button.button-small{ type: 'button', tabindex: -1, title: 'Link', data: { action: 'link', attribute: 'href', key: 'k' }}
         .icon.icon-link
-      %button.button.button-small.js-trix-photo{ type: 'button', title: 'Photo', data: { action: 'photo', attribute: 'photo' }}
+      %button.button.button-small.js-trix-photo{ type: 'button', tabindex: -1, title: 'Photo', data: { action: 'photo', attribute: 'photo' }}
         .icon.icon-picture-o
 
     .button-group.pull-left
-      %button.button.button-small{ type: 'button', title: 'h1', data: { attribute: 'h1' }} H1
-      %button.button.button-small{ type: 'button', title: 'h2', data: { attribute: 'h2' }} H2
-      %button.button.button-small{ type: 'button', title: 'h3', data: { attribute: 'h3' }} H3
-      %button.button.button-small{ type: 'button', title: 'h4', data: { attribute: 'h4' }} H4
+      %button.button.button-small{ type: 'button', tabindex: -1, title: 'h1', data: { attribute: 'h1' }} H1
+      %button.button.button-small{ type: 'button', tabindex: -1, title: 'h2', data: { attribute: 'h2' }} H2
+      %button.button.button-small{ type: 'button', tabindex: -1, title: 'h3', data: { attribute: 'h3' }} H3
+      %button.button.button-small{ type: 'button', tabindex: -1, title: 'h4', data: { attribute: 'h4' }} H4
 
-      -# %button.button.button-small{ type: 'button', title: 'Numbers', data: { attribute: 'number' }}
+      -# %button.button.button-small{ type: 'button', tabindex: -1, title: 'Numbers', data: { attribute: 'number' }}
       -#   .icon.icon-list-ul
 
   .dialogs
@@ -28,7 +28,7 @@
       .link_url_fields
         %input{type: 'text', name: 'href', placeholder: 'Enter a URL…', required: true}
         .button-group
-          %input.button{type: 'button', value: 'Link', data: { method: 'setAttribute'}}
-          %input.button{type: 'button', value: 'Unlink', data: { method: 'removeAttribute'}}
+          %input.button{type: 'button', tabindex: -1, value: 'Link', data: { method: 'setAttribute'}}
+          %input.button{type: 'button', tabindex: -1, value: 'Unlink', data: { method: 'removeAttribute'}}
 
 %trix-editor.text-input{input: "#{object_id}_input", toolbar: "#{object_id}_toolbar", id: "#{object_id}_editor"}
