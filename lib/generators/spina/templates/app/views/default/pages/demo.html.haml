@@ -1,0 +1,30 @@
+%h1
+  = @page.title
+
+%h5 Line
+%p
+  = @page.content(:line)
+%h5 Content
+= @page.content(:text).try(:html_safe)
+
+%h5 Photo
+%p
+  = @page.content(:photo).try(:file_url)
+
+%h5 Photo collection
+- if @page.content(:photo_collection).try(:photos)
+  %ul
+    - @page.content(:photo_collection).photos.each do |photo|
+      %li
+        = photo.file_url
+
+%h5 Structure
+- if @page.content(:structure).try(:structure_items)
+  %ul
+    - @page.content(:structure).structure_items.each do |item|
+      %li
+        %h6 Title
+        %p
+          = item.content(:title)
+        %h6 Description
+        = item.content(:description).try(:html_safe)

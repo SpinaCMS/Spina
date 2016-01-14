@@ -10,16 +10,17 @@ module Spina
       include ActionView::Helpers::UrlHelper
       include ActiveSupport::Configurable
 
-      config_accessor :list_tag, :list_wrapper, :list_item_tag, :list_item_css, :selected_css, :current_css, :first_css, :last_css
+      config_accessor :list_tag, :list_class, :li, :list_wrapper, :list_item_tag, :list_item_css, :selected_css, :current_css, :first_css, :last_css
 
       self.list_tag = :ul
+      self.list_class = 'nav'
       self.list_item_tag = :li
       self.list_item_css = nil
       self.list_wrapper = false
-      self.selected_css = :selected
-      self.current_css = :current
-      self.first_css = :first
-      self.last_css = :last
+      self.selected_css = 'active'
+      self.current_css = 'current'
+      self.first_css = 'first'
+      self.last_css = 'last'
 
       attr_accessor :context, :collection, :current_menu_item
       delegate :output_buffer, :output_buffer=, to: :context
@@ -50,7 +51,7 @@ module Spina
       end
 
       def render_menu_items(menu_items)
-        content_tag(list_tag) do
+        content_tag(list_tag, class: list_class) do
           menu_items.each_with_index.inject(ActiveSupport::SafeBuffer.new) do |buffer, (item, index)|
             buffer << render_menu_item(item, index, menu_items.length)
           end

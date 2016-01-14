@@ -19,9 +19,11 @@ module Spina
     end
 
     def copy_views
-      template 'app/views/layouts/default/application.html.erb'
-      template 'app/views/default/pages/homepage.html.erb'
-      template 'app/views/default/pages/show.html.erb'
+      template 'app/assets/stylesheets/default/application.css.sass'
+      template 'app/views/layouts/default/application.html.haml'
+      template 'app/views/default/shared/_navigation.html.haml'
+      template 'app/views/default/pages/homepage.html.haml'
+      template 'app/views/default/pages/show.html.haml'
     end
 
     def create_account

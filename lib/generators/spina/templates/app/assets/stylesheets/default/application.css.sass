@@ -1,0 +1,66 @@
+// require normalize.css
+
+// $color-primary: #6865b4
+$color-link: #0275d8
+
+html
+  font-size: 16px
+
+body
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+  font-size: 1rem
+  line-height: 1.5
+
+h1, h2, h3, h4, h5, h6
+  margin-top: 0
+  margin-bottom: 0.5rem
+
+h1
+  font-size: 2.5rem
+h2
+  font-size: 2rem
+h3
+  font-size: 1.75rem
+h4
+  font-size: 1.5rem
+h5
+  font-size: 1.25rem
+h6
+  font-size: 1rem
+
+p
+  margin-top: 0
+  margin-bottom: 1rem
+
+ul, ol
+  margin-top: 0
+  margin-bottom: 1rem
+
+img
+  vertical-align: middle
+
+a
+  color: $color-link
+  text-decoration: none
+
+  &:hover, &:focus
+    color: darken($color-link, 15%)
+    text-decoration: underline
+
+.container
+  width: 960px
+  margin: 0 auto
+
+.nav
+  padding-left: 0
+  margin-bottom: 2rem
+  list-style: none
+
+.nav-item
+  display: inline-block
+
+.nav-item + .nav-item
+  margin-left: 20px
+
+.nav-item.active > a
+  text-decoration: underline

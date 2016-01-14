@@ -67,7 +67,7 @@ module Spina
       },
       'demo' => {
         title:        'Demo',
-        description:  'An example page',
+        description:  'Example page',
         usage:        'Shows the usage of several page parts',
         page_parts:   ['line', 'text', 'photo', 'photo_collection', 'structure', 'color']
       }
