@@ -1,0 +1,41 @@
+<h1><%= @page.title %></h1>
+
+<h3>Line</h3>
+<p>
+  <%= @page.content(:line) %>
+</p>
+
+<h3>Content</h3>
+<%= @page.content(:text).try(:html_safe) %>
+
+<h3>Photo</h3>
+<p>
+  <%= @page.content(:photo).try(:file_url) %>
+</p>
+
+<h3>Photo collection</h3>
+<% if @page.content(:photo_collection).try(:photos) %>
+  <ul>
+    <% @page.content(:photo_collection).photos.each do |photo| %>
+      <li>
+        <%= photo.file_url %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<h3>Structure</h3>
+<% if @page.content(:structure).try(:structure_items) %>
+  <ul>
+    <% @page.content(:structure).structure_items.each do |item| %>
+      <li>
+        <h4>Title</h4>
+        <p><%= item.content(:title) %></p>
+        <h4>Description</h4>
+        <%= item.content(:description).try(:html_safe) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+

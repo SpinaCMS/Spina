@@ -14,6 +14,8 @@ Spina::Engine.configure do
   # other files. We use CarrierWave for storage. See
   # https://github.com/denkGroot/Spina/tree/master/app/uploaders/spina
   #
+  config.storage = :file
+  #
   # If you want to use s3 to store uploads (recommended)
   #
   # config.storage = :s3
@@ -24,6 +26,5 @@ Spina::Engine.configure do
   # If you want to store your files localy (not recommended for
   # production, in large part because it's more difficult to ensure
   # that files are backed up in sync with your database):
-  #
-  # config.storage = :file
+
 end

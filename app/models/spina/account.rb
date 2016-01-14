@@ -36,17 +36,17 @@ module Spina
     end
 
     def find_or_create_custom_pages(theme)
-      theme.config.custom_pages.each do |page| 
-        Page.where(name: page[:name], deletable: false, active: false).first_or_create(title: page[:title], view_template: page[:view_template]).activate!
+      theme.config.custom_pages.each do |page|
+        Page.where(name: page[:name]).first_or_create(title: page[:title]).update_attributes(view_template: page[:view_template], deletable: page[:deletable])
       end
     end
 
     def deactivate_unused_view_templates(theme)
-      Page.where.not(view_template: theme.config.view_templates.map{|t|t[0]}, active: false).each &:deactivate!
+      Page.where.not(view_template: theme.config.view_templates.keys).update_all(active: false)
     end
 
     def activate_used_view_templates(theme)
-      Page.where(view_template: theme.config.view_templates.map{|t|t[0]}, active: false).each &:activate!
+      Page.where(view_template: theme.config.view_templates.keys).update_all(active: true)
     end
 
     def self.serialized_attr_accessor(*args)

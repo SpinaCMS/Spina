@@ -72,16 +72,6 @@ module Spina
       self.siblings.where('position > ?', self.position).sorted.first
     end
 
-    def deactivate!
-      self.active = false
-      self.save
-    end
-
-    def activate!
-      self.active = true
-      self.save
-    end
-
     def set_materialized_path
       self.old_path = materialized_path
       self.materialized_path = generate_materialized_path
