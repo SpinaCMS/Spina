@@ -4,19 +4,27 @@
 %h5 Line
 %p
   = @page.content(:line)
+
+%hr
+
 %h5 Content
 = @page.content(:text).try(:html_safe)
 
+%hr
+
 %h5 Photo
 %p
-  = @page.content(:photo).try(:file_url)
+  = image_tag @page.content(:photo).try(:file_url)
+
+%hr
 
 %h5 Photo collection
-- if @page.content(:photo_collection).try(:photos)
-  %ul
-    - @page.content(:photo_collection).photos.each do |photo|
-      %li
-        = photo.file_url
+%p
+  - @page.content(:photo_collection).photos.each do |photo|
+    %span
+      = image_tag photo.file_url
+
+%hr
 
 %h5 Structure
 - if @page.content(:structure).try(:structure_items)
@@ -28,3 +36,6 @@
           = item.content(:title)
         %h6 Description
         = item.content(:description).try(:html_safe)
+
+%h5 Color
+= @page.content(:color)

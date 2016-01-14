@@ -9,14 +9,14 @@
 
 %h5 Photo
 %p
-  = @page.content(:photo).try(:file_url)
+  = image_tag @page.content(:photo).try(:file_url)
 
 %h5 Photo collection
 - if @page.content(:photo_collection).try(:photos)
   %ul
     - @page.content(:photo_collection).photos.each do |photo|
       %li
-        = photo.file_url
+        = image_tag photo.file_url
 
 %h5 Structure
 - if @page.content(:structure).try(:structure_items)
