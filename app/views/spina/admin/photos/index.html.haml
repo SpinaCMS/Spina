@@ -1,6 +1,7 @@
 .gallery
   .item
     = form_for [spina, :admin, @photo], html: {multipart: true} do |f|
+      = f.label :file, t('spina.photos.upload_image')
       = f.file_field :file, data: {customfileinput: true}
 
   .gallery-prepend-image

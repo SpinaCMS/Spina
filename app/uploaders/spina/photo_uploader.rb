@@ -8,7 +8,7 @@ module Spina
     end
 
     version :thumb do
-      process resize_to_fill: [240, 135]
+      process resize_to_fill: [150, 150]
     end
 
     def too_large?(new_file)

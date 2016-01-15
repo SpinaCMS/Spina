@@ -1,12 +1,9 @@
 .modal.modal-large
-  %header
-    = link_to "", "#", class: 'close_modal', data: {dismiss: 'modal', icon: 'm'}
-    %h3=t 'spina.photos.insert_photo'
-
   %section
     .gallery-select.gallery
       .item
         = form_for [spina, :admin, @photo], html: {multipart: true} do |f|
+          = f.label :file, t('spina.photos.upload_image')
           = f.file_field :file, data: {customfileinput: true}
 
       = form_tag spina.wysihtml5_insert_admin_photos_path(params[:object_id]), remote: true, class: 'gallery-prepend-image' do
@@ -14,7 +11,3 @@
           .item
             .overlay= radio_button_tag :photo_id, photo.id
             = image_tag photo.file.thumb
-
-        %footer
-          = link_to t('spina.cancel'), "#", data: {dismiss: 'modal'}
-          = button_tag t('spina.photos.insert_photo'), type: 'submit', class: 'primary', data: {icon: 't '}
