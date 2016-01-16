@@ -1,5 +1,5 @@
 module Spina
-  class SitemapsController < ApplicationController
+  class SitemapsController < Spina::ApplicationController
     def show
       @pages = Page.live.sorted
     end
