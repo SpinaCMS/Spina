@@ -1,5 +1,5 @@
 module Spina
-  class InquiriesController < ApplicationController
+  class InquiriesController < Spina::ApplicationController
 
     before_filter :setup_negative_captcha, only: [:create]
 

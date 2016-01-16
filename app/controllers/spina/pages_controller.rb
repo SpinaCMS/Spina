@@ -1,5 +1,5 @@
 module Spina
-  class PagesController < ApplicationController
+  class PagesController < Spina::ApplicationController
     before_action :rewrite_page, only: [:show]
     before_action :current_user_can_view_page?, except: [:robots]
 
