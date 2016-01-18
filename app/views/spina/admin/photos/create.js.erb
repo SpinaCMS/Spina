@@ -1,5 +1,7 @@
 <% if @photo.new_record? %>
   alert("<%= I18n.t 'spina.photos.cannot_be_created' %> <%= j @photo.errors.full_messages.join(', ').html_safe %>");
 <% else %>
-  $(".gallery-prepend-image").prepend("<%= j render partial: 'spina/admin/photos/photo', object: @photo %>");
+  $item = $("<%=j render partial: 'spina/admin/photos/photo', object: @photo %>");
+  $(".gallery-prepend-image").prepend($item).find('.overlay').removeClass('overlay').find('a').remove();
+  $(".gallery-prepend-image .item:first-child").click();
 <% end %>
