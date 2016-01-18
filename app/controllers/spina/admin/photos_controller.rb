@@ -40,15 +40,17 @@ module Spina
       end
 
       def photo_select
-        @photos = Photo.sorted
+        selected = params[:selected_photo_id] || Array.new
+        @photos = Photo.order_by_ids(selected).sorted
         @photo = Photo.new
-        @selected_photo = Photo.find(params[:selected_photo_id]) if params[:selected_photo_id]
+        @selected_photo = Photo.find(selected)
       end
 
       def photo_collection_select
-        @photos = Photo.sorted
+        selected = params[:selected_photo_ids] || Array.new
+        @photos = Photo.order_by_ids(selected).sorted
+        @selected_photos = Photo.where(id: selected)
         @photo = Photo.new
-        @selected_photos = params[:selected_photo_ids] ? Photo.where(id: params[:selected_photo_ids]) : Photo.none
       end
 
       def insert_photo

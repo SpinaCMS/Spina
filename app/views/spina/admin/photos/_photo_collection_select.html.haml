@@ -1,6 +1,6 @@
 .modal.modal-large
   %section
-    .gallery-select.gallery{data: {multiselect: true}}
+    .gallery-select.gallery-select-multiple.gallery{data: {multiselect: true}}
       .item.item-small
         = form_for [spina, :admin, @photo], html: {multipart: true} do |f|
           = f.label :file, t('spina.photos.upload_image')
@@ -9,12 +9,15 @@
       = form_tag spina.insert_photo_collection_admin_photos_path(params[:page_part_id]), remote: true, class: 'gallery-prepend-image' do
         - @photos.each do |photo|
           .item{class: ('selected' if @selected_photos.include?(photo))}
-            .overlay= check_box_tag 'photo_ids[]', photo.id, @selected_photos.include?(photo)
+            = check_box_tag 'photo_ids[]', photo.id, @selected_photos.include?(photo)
             = image_tag photo.file.thumb
 
-        %div{style: 'clear: both'}
+        .gallery-select-action-bar
           .pull-right
             = link_to t('spina.cancel'), "#", class: 'button button-link', data: {dismiss: 'modal'}
             = button_tag type: 'submit', class: 'button button-primary button-large', style: 'margin-bottom: 0px' do
               = icon('plus')
-              = t('spina.photos.insert_photos')
+              = t('spina.photos.choose_images')
+              %span.gallery-select-counter
+                - if @selected_photos.any?
+                  (#{@selected_photos.count})

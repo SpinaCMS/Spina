@@ -9,5 +9,5 @@
       = form_tag spina.insert_photo_admin_photos_path(params[:page_part_id]), remote: true, class: 'gallery-prepend-image' do
         - @photos.each do |photo|
           .item{class: ('selected' if photo == @selected_photo)}
-            .overlay= radio_button_tag :photo_id, photo.id, photo == @selected_photo
+            = radio_button_tag :photo_id, photo.id, photo == @selected_photo
             = image_tag photo.file.thumb

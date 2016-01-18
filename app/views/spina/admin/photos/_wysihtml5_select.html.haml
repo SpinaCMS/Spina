@@ -9,5 +9,5 @@
       = form_tag spina.wysihtml5_insert_admin_photos_path(params[:object_id]), remote: true, class: 'gallery-prepend-image' do
         - @photos.each do |photo|
           .item
-            .overlay= radio_button_tag :photo_id, photo.id
+            = radio_button_tag :photo_id, photo.id
             = image_tag photo.file.thumb

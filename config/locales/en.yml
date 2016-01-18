@@ -76,7 +76,8 @@ en:
 
     photos:
       delete_confirmation: "Are you sure you want to delete this <strong>image</strong>?"
-      insert_photos: Insert images
+      insert_photos: Choose images
+      choose_images: Choose images
       insert_photo: Insert image
       link: "URL of your image:"
       cannot_be_created: "Image could not be processed:"
