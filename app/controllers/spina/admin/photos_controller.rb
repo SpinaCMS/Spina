@@ -9,7 +9,7 @@ module Spina
 
       def index
         add_breadcrumb I18n.t('spina.website.photos'), spina.admin_photos_path
-        @photos = Photo.sorted
+        @photos = Photo.sorted.page(params[:page])
         @photo = Photo.new
       end
 

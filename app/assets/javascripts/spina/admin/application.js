@@ -3,7 +3,9 @@
 //= require turbolinks
 //= require spina
 //= require ./aviary
-//= require ./pages
 //= require ./account
 //= require ./confirm_delete
+//= require ./pages
 //= require ./spina.trix
+//= require ./spina.infinite_scroll
+//= require ./spina.scaffold

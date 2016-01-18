@@ -33,4 +33,5 @@ Gem::Specification.new do |s|
   s.add_dependency 'breadcrumbs_on_rails'
   s.add_dependency 'spina-template'
   s.add_dependency 'turbolinks'
+  s.add_dependency 'kaminari'
 end

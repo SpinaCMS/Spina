@@ -13,6 +13,7 @@ require 'negative_captcha'
 require 'filters_spam'
 require 'ancestry'
 require 'breadcrumbs_on_rails'
+require 'kaminari'
 
 module Spina
   class Engine < ::Rails::Engine
