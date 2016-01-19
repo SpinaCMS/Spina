@@ -1,0 +1,4 @@
+.item
+  = radio_button_tag :photo_id, photo_uploaded.id
+  = check_box_tag 'photo_ids[]', photo_uploaded.id
+  = image_tag photo_uploaded.file.thumb.url, id: "photo_#{photo_uploaded.id}"

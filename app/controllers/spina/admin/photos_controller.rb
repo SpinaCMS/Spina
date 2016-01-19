@@ -41,16 +41,28 @@ module Spina
 
       def photo_select
         selected = params[:selected_photo_id] || Array.new
-        @photos = Photo.order_by_ids(selected).sorted
-        @photo = Photo.new
+        @photos = Photo.order_by_ids(selected).sorted.page(params[:page])
         @selected_photo = Photo.find(selected)
+        @photo = Photo.new
+
+        if params[:page].present?
+          render :single_picker_infinite_scroll
+        else
+          render :photo_select
+        end
       end
 
       def photo_collection_select
         selected = params[:selected_photo_ids] || Array.new
-        @photos = Photo.order_by_ids(selected).sorted
+        @photos = Photo.order_by_ids(selected).sorted.page(params[:page])
         @selected_photos = Photo.where(id: selected)
         @photo = Photo.new
+
+        if params[:page].present?
+          render :multi_picker_infinite_scroll
+        else
+          render :photo_collection_select
+        end
       end
 
       def insert_photo
@@ -66,8 +78,14 @@ module Spina
       end
 
       def wysihtml5_select
-        @photos = Photo.sorted
+        @photos = Photo.sorted.page(params[:page])
         @photo = Photo.new
+
+        if params[:page].present?
+          render :wysihtml5_infinite_scroll
+        else
+          render :wysihtml5_select
+        end
       end
 
       private

@@ -7,7 +7,7 @@
           = f.file_field :file, data: {customfileinput: true}
 
       = form_tag spina.wysihtml5_insert_admin_photos_path(params[:object_id]), remote: true, class: 'gallery-prepend-image' do
-        - @photos.each do |photo|
-          .item
-            = radio_button_tag :photo_id, photo.id
-            = image_tag photo.file.thumb
+        .infinite-scroll
+          = render partial: 'spina/admin/photos/photo_single_picker', collection: @photos
+
+        .infinite-pagination= link_to_next_page @photos, 'Next', remote: true
