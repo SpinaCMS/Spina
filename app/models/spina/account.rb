@@ -22,6 +22,23 @@ module Spina
       layout_part.try(:content)
     end
 
+    def self.serialized_attr_accessor(*args)
+      args.each do |method_name|
+        eval "
+          def #{method_name}
+            (self.preferences || {})[:#{method_name}]
+          end
+
+          def #{method_name}=(value)
+            self.preferences ||= {}
+            self.preferences[:#{method_name}] = value
+          end
+        "
+      end
+    end
+
+    serialized_attr_accessor :google_analytics, :google_site_verification, :facebook, :twitter, :google_plus, :theme, :aviary_api_key, :aviary_language, :ngrok_address
+
     private
 
     def bootstrap_website
@@ -48,23 +65,6 @@ module Spina
     def activate_used_view_templates(theme)
       Page.where(view_template: theme.config.view_templates.keys).update_all(active: true)
     end
-
-    def self.serialized_attr_accessor(*args)
-      args.each do |method_name|
-        eval "
-          def #{method_name}
-            (self.preferences || {})[:#{method_name}]
-          end
-
-          def #{method_name}=(value)
-            self.preferences ||= {}
-            self.preferences[:#{method_name}] = value
-          end
-        "
-      end
-    end
-
-    serialized_attr_accessor :google_analytics, :google_site_verification, :facebook, :twitter, :google_plus, :theme, :aviary_api_key, :aviary_language, :ngrok_address
 
   end
 end
