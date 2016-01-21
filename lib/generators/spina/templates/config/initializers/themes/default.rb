@@ -23,6 +23,14 @@ module Spina
       title:              'Photo collection',
       page_partable_type: 'Spina::PhotoCollection'
     }, {
+      name:               'attachment',
+      title:              'Attachment',
+      page_partable_type: 'Spina::Attachment'
+    }, {
+      name:               'attachment_collection',
+      title:              'Attachment collection',
+      page_partable_type: 'Spina::AttachmentCollection'
+    }, {
       name:               'structure',
       title:              'Structure',
       page_partable_type: 'Spina::Structure'
@@ -69,7 +77,7 @@ module Spina
         title:        'Demo',
         description:  'Example page',
         usage:        'Shows the usage of several page parts',
-        page_parts:   ['line', 'text', 'photo', 'photo_collection', 'structure', 'color']
+        page_parts:   ['line', 'text', 'photo', 'photo_collection', 'attachment', 'attachment_collection', 'structure', 'color']
       }
     }
 

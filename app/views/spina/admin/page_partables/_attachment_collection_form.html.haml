@@ -8,11 +8,13 @@
 
   = attachment_collection_form.fields_for :page_partable, attachment_collection_form.object.page_partable do |form|
     = link_to select_collection_admin_attachments_path(form.object_name), remote: true, class: "media_picker" do
-      - if form.object.attachments.any?
-        - form.object.attachments.each do |attachment|
-          .attachment= attachment.name
-      - else
-        .placeholder
-          %span{data: {icon: 't'}}
+      .clearfix
+        .placeholder.pull-right
+          %span.button.button-small.button-round
+            %i.icon.icon-dots
             = t('spina.choose_from_library')
+        - if form.object.attachments.any?
+          - form.object.attachments.each do |attachment|
+            .attachment= attachment.name
+
       = form.hidden_field :attachment_tokens, value: form.object.attachment_ids.join(",")

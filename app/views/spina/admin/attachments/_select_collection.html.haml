@@ -7,12 +7,12 @@
     -# = form_for [spina, :admin, @attachment], html: {multipart: true} do |f|
     -#   = f.file_field :file, data: {customfileinput: true}
 
-    = form_tag spina.insert_collection_admin_attachments_path(params[:page_part_id]), remote: true, class: 'gallery-prepend-attachment' do
+    = form_tag spina.insert_collection_admin_attachments_path(params[:page_part_id]), remote: true, class: 'gallery-prepend-attachment', style: 'margin-bottom: 0' do
       .table-container
         %table.table.table-clickable
           %thead
             %tr
-              %th 
+              %th
               %th= Spina::Attachment.human_attribute_name(:name)
           %tbody
             - @attachments.each do |attachment|
