@@ -86,7 +86,7 @@ Spina::Engine.routes.draw do
   # get ':materialized_pathroot/:subpage/:id' => "pages#show", as: "third_level_page"
   # get ':root/:id' => "pages#show", as: "subpage"
   get '/*id' => 'pages#show', as: "page", controller: 'pages', constraints: lambda { |request|
-    !Rails.env.development? && !request.env['PATH_INFO'].starts_with?('/rails/')
+    !(Rails.env.development? && request.env['PATH_INFO'].starts_with?('/rails/'))
   }
 
 end
