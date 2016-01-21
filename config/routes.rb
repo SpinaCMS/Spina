@@ -1,7 +1,7 @@
 Spina::Engine.routes.draw do
 
   # Backend
-  namespace :admin do
+  namespace :admin, path: Spina::Engine.config.backend_path do
     root to: "pages#index"
 
     resource :account do
