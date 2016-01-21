@@ -27,11 +27,13 @@ module Spina
     end
 
     def create_account
+      return if Account.exists?
       name = ask('What would you like to name your website?')
       Account.create name: name, theme: 'default'
     end
 
     def create_user
+      return if User.exists?
       email = ask('Please enter an email address for your first user:')
       password = ask('Create a temporary password:')
       User.create name: 'admin', email: email, password: password, admin: true
@@ -42,6 +44,7 @@ module Spina
     end
 
     def add_route
+      return if Rails.application.routes.routes.detect { |route| route.app.app == Spina::Engine }
       route "mount Spina::Engine => '/'"
     end
 

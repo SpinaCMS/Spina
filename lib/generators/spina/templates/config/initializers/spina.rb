@@ -1,5 +1,5 @@
 Spina::Engine.configure do
-  config.NEGATIVE_CAPTCHA_SECRET = '<%= SecureRandom.hex(64) %>'
+  config.NEGATIVE_CAPTCHA_SECRET = '<%= Spina::Engine.config.try(:NEGATIVE_CAPTCHA_SECRET) || SecureRandom.hex(64) %>'
 
   # Important Note
   # ==============
