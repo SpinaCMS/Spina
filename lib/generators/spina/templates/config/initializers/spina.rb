@@ -7,7 +7,7 @@ Spina::Engine.configure do
   # You MUST restart your server before changes to this file
   # will take effect.
 
-  # Specify a backend path. Defaults to /admin
+  # Specify a backend path. Defaults to /admin.
   config.backend_path = 'admin'
 
   # Storage Options
