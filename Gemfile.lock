@@ -12,7 +12,7 @@ GIT
 PATH
   remote: .
   specs:
-    spina (0.7.3)
+    spina (0.8.0)
       ancestry
       bcrypt
       breadcrumbs_on_rails
@@ -26,7 +26,7 @@ PATH
       kaminari
       mini_magick
       negative_captcha
-      rails
+      rails (~> 4.0)
       sass-rails
       spina-template
       turbolinks
@@ -270,7 +270,7 @@ GEM
     sprockets (3.5.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
-    sprockets-rails (3.0.0)
+    sprockets-rails (3.0.1)
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
