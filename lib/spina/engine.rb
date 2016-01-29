@@ -20,35 +20,22 @@ module Spina
 
     isolate_namespace Spina
 
-    def self.require_decorators
-      [Rails.root].flatten.map { |p| Dir[p.join('app', 'decorators', '**', '*_decorator.rb')]}.flatten.uniq.each do |decorator|
-        Rails.configuration.cache_classes ? require(decorator) : load(decorator)
-      end
-    end
-
-    initializer "spina.configure_carrierwave" do
-      configure_carrierwave
-    end
-
-    config.to_prepare &method(:require_decorators).to_proc
     config.autoload_paths += %W( #{config.root}/lib )
     config.assets.paths << config.root.join('vendor', 'assets')
 
-    private
-
-    def configure_carrierwave
+    initializer 'spina.configure_carrierwave' do
       CarrierWave.configure do |cfg|
-        if Engine.config.try(:storage) == :s3
+        if Spina.config.storage == :s3
           cfg.storage = :fog
           cfg.fog_credentials = {
-            provider: 'AWS',
-            region: Engine.config.aws_region,
-            aws_access_key_id: Engine.config.aws_access_key_id,
-            aws_secret_access_key: Engine.config.aws_secret_key
+            provider:               'AWS',
+            region:                 Spina.config.aws_region,
+            aws_access_key_id:      Spina.config.aws_access_key_id,
+            aws_secret_access_key:  Spina.config.aws_secret_key
           }
-          cfg.fog_directory  = Engine.config.s3_bucket
+          cfg.fog_directory  = Spina.config.s3_bucket
           cfg.fog_public     = true
-          cfg.fog_attributes = {'Cache-Control'=>'max-age=315576000'}
+          cfg.fog_attributes = { 'Cache-Control' => 'max-age=315576000' }
         else
           cfg.storage = :file
         end
@@ -56,39 +43,12 @@ module Spina
         cfg.enable_processing = !Rails.env.test?
       end
     end
-  end
 
-  class << self
-    @@themes = []
-    @@plugins = []
-
-    def register_theme(theme)
-      @@themes << theme
-    end
-
-    def theme(theme_name)
-      @@themes.find { |theme| theme.name == theme_name }
-    end
-
-    def themes
-      @@themes
-    end
-
-    def register_plugin(plugin)
-      @@plugins << plugin
-    end
-
-    def plugin(plugin_name)
-      @@plugins.find { |plugin| plugin.name == plugin_name }
-    end
-
-    def plugins(plugin_type = :all)
-      case plugin_type
-      when :website_resource
-        @@plugins.find_all { |plugin| plugin.config.plugin_type == 'website_resource' }
-      else
-        @@plugins
+    config.to_prepare do
+      [Rails.root].flatten.map { |p| Dir[p.join('app', 'decorators', '**', '*_decorator.rb')]}.flatten.uniq.each do |decorator|
+        Rails.configuration.cache_classes ? require(decorator) : load(decorator)
       end
     end
+
   end
 end

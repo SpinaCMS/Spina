@@ -12,7 +12,7 @@ module Spina
         can :manage, Account
         can :manage, Inquiry
 
-        # Engine.config.plugins.each do |plugin|
+        # Spina.config.plugins.each do |plugin|
         #   can :manage, "#{plugin.class_name}".constantize
         # end
       end

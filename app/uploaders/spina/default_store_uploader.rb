@@ -2,7 +2,7 @@ module Spina
   class DefaultStoreUploader < CarrierWave::Uploader::Base
 
     def store_dir
-      case Engine.config.try(:storage)
+      case Spina.config.storage
       when :s3
         "#{mounted_as}/#{model.class.to_s.underscore}/#{model.id}"
       when :file

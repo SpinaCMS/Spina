@@ -26,6 +26,18 @@ The installer will help you setup your first user.
 
 Then start `rails s` and access your admin panel at `/admin`.
 
+## Upgrading from 0.7 to 0.8
+
+Spina-specific configuration moved from `Spina::Engine.config` to just `Spina.config`.
+Change the following in your initializer:
+
+```ruby
+# config/initializers/spina.rb
+
+Spina::Engine.configure do |config| # OLD
+Spina.configure do |config| # NEW
+```
+
 # Basics
 
 The installer generates a few initializers that contain necessary configuration for Spina.

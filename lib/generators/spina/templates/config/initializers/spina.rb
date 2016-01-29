@@ -1,5 +1,5 @@
-Spina::Engine.configure do
-  config.NEGATIVE_CAPTCHA_SECRET = '<%= Spina::Engine.config.try(:NEGATIVE_CAPTCHA_SECRET) || SecureRandom.hex(64) %>'
+Spina.configure do |config|
+  config.NEGATIVE_CAPTCHA_SECRET = '<%= Spina.config.try(:NEGATIVE_CAPTCHA_SECRET) || SecureRandom.hex(64) %>'
 
   # Important Note
   # ==============
@@ -8,7 +8,7 @@ Spina::Engine.configure do
   # will take effect.
 
   # Specify a backend path. Defaults to /admin.
-  config.backend_path = 'admin'
+  # config.backend_path = 'admin'
 
   # Storage Options
   # ===============
@@ -17,7 +17,7 @@ Spina::Engine.configure do
   # other files. We use CarrierWave for storage. See
   # https://github.com/denkGroot/Spina/tree/master/app/uploaders/spina
 
-  config.storage = :file
+  # config.storage = :file
 
   # If you want to use s3 to store uploads (recommended)
 
