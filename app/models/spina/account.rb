@@ -54,16 +54,16 @@ module Spina
 
     def find_or_create_custom_pages(theme)
       theme.config.custom_pages.each do |page|
-        Page.where(name: page[:name]).first_or_create(title: page[:title]).update_attributes(view_template: page[:view_template], deletable: page[:deletable])
+        Page.where(name: page[:name]).first_or_create(title: page[:title]).update_columns(view_template: page[:view_template], deletable: page[:deletable])
       end
     end
 
     def deactivate_unused_view_templates(theme)
-      Page.where.not(view_template: theme.config.view_templates.keys).update_all(active: false)
+      Page.where(active: true).where.not(view_template: theme.config.view_templates.keys).update_all(active: false)
     end
 
     def activate_used_view_templates(theme)
-      Page.where(view_template: theme.config.view_templates.keys).update_all(active: true)
+      Page.where(active: false).where(view_template: theme.config.view_templates.keys).update_all(active: true)
     end
 
   end
