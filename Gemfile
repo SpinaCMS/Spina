@@ -15,4 +15,5 @@ group :development, :test do
   gem 'guard-minitest'
   gem 'codeclimate-test-reporter', require: nil
   gem 'figaro'
+  gem 'appraisal'
 end
