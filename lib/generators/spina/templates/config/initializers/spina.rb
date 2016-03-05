@@ -10,6 +10,12 @@ Spina.configure do |config|
   # Specify a backend path. Defaults to /admin.
   # config.backend_path = 'admin'
 
+  # Pages Options
+  # ===============
+
+  # Note that you might need to remove cached asset after changing this value
+  # config.max_page_depth = 5
+
   # Storage Options
   # ===============
 

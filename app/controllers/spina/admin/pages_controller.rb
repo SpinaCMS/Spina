@@ -58,12 +58,7 @@ module Spina
 
       def sort
         params[:list].each_pair do |parent_pos, parent_node|
-          if parent_node[:children].present?
-            parent_node[:children].each_pair do |child_pos, child_node|
-              child_node[:children].each_pair { |grand_child_pos, grand_child| update_page_position(grand_child, grand_child_pos, child_node[:id]) } if child_node[:children].present?
-              update_page_position(child_node, child_pos, parent_node[:id])
-            end
-          end
+          update_child_pages_position(parent_node)
           update_page_position(parent_node, parent_pos, nil)
         end
         render nothing: true
@@ -87,6 +82,15 @@ module Spina
 
       def update_page_position(page, position, parent_id = nil)
         Page.update(page[:id], position: position.to_i + 1, parent_id: parent_id )
+      end
+
+      def update_child_pages_position(node)
+        if node[:children].present?
+          node[:children].each_pair do |child_pos, child_node|
+            update_child_pages_position(child_node) if child_node[:children].present?
+            update_page_position(child_node, child_pos, node[:id])
+          end
+        end
       end
 
       def page_params

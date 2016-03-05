@@ -86,17 +86,10 @@ module Spina
     end
 
     def generate_materialized_path
-      if self.name == 'homepage'
-        "/"
+      if root?
+        name == 'homepage' ? '/' : "/#{url_title}"
       else
-        case self.depth
-        when 0
-          "/#{url_title}"
-        when 1
-          "/#{self.parent.url_title}/#{url_title}"
-        when 2
-          "/#{self.parent.parent.url_title}/#{self.parent.url_title}/#{url_title}"
-        end
+        ancestors.collect(&:url_title).append(url_title).join('/').prepend('/')
       end
     end
 
