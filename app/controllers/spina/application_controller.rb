@@ -12,7 +12,7 @@ module Spina
     end
 
     def current_theme
-      @current_theme = ::Spina.themes.detect{|theme| theme.name == current_account.theme }
+      @current_theme = ::Spina::Theme.find_by_name(current_account.theme)
     end
 
     def current_user

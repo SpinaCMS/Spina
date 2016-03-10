@@ -35,8 +35,8 @@
         %td
           = Spina::Page.human_attribute_name :view_template
         %td
-          .select-dropdown.page-template{data: {page_parts: current_theme.config.view_templates[@page.view_template || "show"][:page_parts]}}
-            - options = options_for_select(current_theme.config.view_templates.map { |template| [template[1][:title], template[0], {'data-page-parts' => template[1][:page_parts]}] }, @page.view_template)
+          .select-dropdown.page-template{data: {page_parts: current_theme.view_templates[@page.view_template || "show"][:page_parts]}}
+            - options = options_for_select(current_theme.view_templates.map { |template| [template[1][:title], template[0], {'data-page-parts' => template[1][:page_parts]}] }, @page.view_template)
             = f.select :view_template, options
 
       %tr{style: ('display: none' if @page.custom_page?)}

@@ -22,7 +22,7 @@ module Spina
       end
 
       def build_structure_parts(name, item)
-        current_theme.config.structures[name].each do |part|
+        current_theme.structures[name].each do |part|
           part = item.structure_parts.build(part)
           part.structure_partable = part.structure_partable_type.constantize.new
         end

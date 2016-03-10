@@ -1,9 +1,9 @@
 module Spina
   class Plugin
 
-    attr_reader :name, :title, :description, :spina_icon, :plugin_type, :namespace, :config
-
     @@plugins = []
+
+    attr_reader :name, :title, :description, :spina_icon, :plugin_type, :namespace, :config
 
     class << self
 

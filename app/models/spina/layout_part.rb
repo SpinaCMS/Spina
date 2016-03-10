@@ -20,7 +20,7 @@ module Spina
     end
 
     def position(theme)
-      layout_parts = theme.config.layout_template[:layout_parts]
+      layout_parts = theme.layout_template[:layout_parts]
       layout_parts.index { |layout_part| layout_part == self.name }.to_i
     end
 

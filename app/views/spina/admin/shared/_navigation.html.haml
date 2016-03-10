@@ -1,6 +1,6 @@
 %nav#primary
   %ul
-    %li{class: ('active' if (%w[pages photos attachments] + Spina::Plugin.find_all_by_type('website_resource').map { |plugin| plugin.namespace if current_theme.config.plugins.include?(plugin.name.downcase) }).include? controller_name)}
+    %li{class: ('active' if (%w[pages photos attachments] + Spina::Plugin.find_all_by_type('website_resource').map { |plugin| plugin.namespace if current_theme.plugins.include?(plugin.name.downcase) }).include? controller_name)}
       = link_to spina.admin_pages_path do
         = icon('home')
 

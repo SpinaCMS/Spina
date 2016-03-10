@@ -59,10 +59,10 @@ module Spina
       theme_name = Account.first.theme
       if theme_name == 'demo' && !no?('Seed example content? [Yn]')
 
-        current_theme = ::Spina.themes.find { |theme| theme.name == theme_name }
+        current_theme = ::Spina::Theme.find_by_name(theme_name)
         if (page = Spina::Page.find_by(name: 'demo'))
           page.page_parts.clear
-          parts = current_theme.config.page_parts.map { |page_part| page.page_part(page_part) }
+          parts = current_theme.page_parts.map { |page_part| page.page_part(page_part) }
           parts.each do |part|
             case part.partable_type
             when 'Spina::Line' then part.partable.content = 'This is a single line'
