@@ -40,6 +40,11 @@
           = t('spina.preferences.aviary')
           %small= t('spina.preferences.aviary_description')
 
+      - Spina::Plugin.all.each do |plugin|
+        - if current_theme.config.plugins.include? plugin.name.downcase
+          - if lookup_context.exists? "spina/admin/#{ plugin.namespace }/shared/_settings_secondary_navigation"
+            = render "spina/admin/#{ plugin.namespace }/shared/settings_secondary_navigation", plugin: plugin
+
 - content_for :content do
   = yield
 

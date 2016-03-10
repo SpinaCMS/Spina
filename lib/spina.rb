@@ -30,22 +30,5 @@ module Spina
       @@themes
     end
 
-    def register_plugin(plugin)
-      @@plugins << plugin
-    end
-
-    def plugin(plugin_name)
-      @@plugins.find { |plugin| plugin.name == plugin_name }
-    end
-
-    def plugins(plugin_type = :all)
-      case plugin_type
-      when :website_resource
-        @@plugins.find_all { |plugin| plugin.config.plugin_type == 'website_resource' }
-      else
-        @@plugins
-      end
-    end
-
   end
 end

@@ -3,25 +3,22 @@
     %h1= t('spina.website.title')
 
     %ul
-      %li{class: ('active' if params[:controller] == "spina/admin/pages")}
+      %li{class: ('active' if controller_path.start_with?('spina/admin/pages'))}
         = link_to spina.admin_pages_path do
           = icon('pages')
           = t('spina.website.pages')
           %small= t('spina.website.pages_description')
 
-      %li{class: ('active' if params[:controller] == "spina/admin/photos" || params[:controller] == "spina/admin/attachments")}
+      %li{class: ('active' if controller_path =~ %r{\Aspina/admin/(photos|attachments)})}
         = link_to spina.admin_photos_path do
           = icon('image')
           = t('spina.website.media_library')
           %small= t('spina.website.media_library_description')
 
-      - Spina.plugins(:website_resource).each do |plugin|
+      - Spina::Plugin.all.each do |plugin|
         - if current_theme.config.plugins.include? plugin.name.downcase
-          %li{class: ('active' if params[:controller] == "spina/admin/#{plugin.config.controller}")}
-            = link_to spina.send("admin_#{plugin.config.controller}_path") do
-              = icon(plugin.config.spina_icon)
-              = plugin.config.title
-              %small= plugin.config.description
+          - if lookup_context.exists? "spina/admin/#{ plugin.namespace }/shared/_website_secondary_navigation"
+            = render "spina/admin/#{ plugin.namespace }/shared/website_secondary_navigation", plugin: plugin
 
 - content_for(:content) do
   = content_for?(:website_content) ? yield(:website_content) : yield
