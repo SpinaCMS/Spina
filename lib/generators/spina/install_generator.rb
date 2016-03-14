@@ -41,7 +41,6 @@ module Spina
       directory "app/assets/stylesheets/#{theme}"
       directory "app/views/#{theme}"
       directory "app/views/layouts/#{theme}"
-      directory "app/views/layouts/#{theme}"
     end
 
 
