@@ -3,7 +3,8 @@ module Spina
 
     @themes = []
 
-    attr_reader :name, :title, :page_parts, :view_templates, :layout_parts, :custom_pages, :plugins, :structures
+    attr_accessor :name, :config
+    attr_reader :page_parts, :view_templates, :layout_parts, :custom_pages, :plugins, :structures
 
     class << self
 
@@ -21,7 +22,7 @@ module Spina
 
     end
 
-    def initialize(args)
+    def initialize(args = {})
       args.each { |k,v| instance_variable_set("@#{k}", v) }
       @page_parts         ||= []
       @structures         ||= {}
