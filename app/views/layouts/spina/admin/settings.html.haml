@@ -42,8 +42,8 @@
 
       - Spina::Plugin.all.each do |plugin|
         - if current_theme.plugins.include? plugin.name.downcase
-          - if lookup_context.exists? "spina/admin/#{ plugin.namespace }/shared/_settings_secondary_navigation"
-            = render "spina/admin/#{ plugin.namespace }/shared/settings_secondary_navigation", plugin: plugin
+          - if lookup_context.exists? "spina/#{ plugin.namespace }/admin/shared/_settings_secondary_navigation"
+            = render "spina/#{ plugin.namespace }/admin/shared/settings_secondary_navigation", plugin: plugin
 
 - content_for :content do
   = yield

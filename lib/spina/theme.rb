@@ -41,5 +41,6 @@ module Spina
     def is_custom_undeletable_page?(view_template)
       @custom_pages.any? { |page| page[:view_template] == view_template && !page[:deletable] }
     end
+
   end
 end

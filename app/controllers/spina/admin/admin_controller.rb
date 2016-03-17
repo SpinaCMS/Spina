@@ -17,20 +17,6 @@ module Spina
         @new_messages = Inquiry.new_messages.sorted
       end
 
-      def current_account
-        @current_account ||= Account.first
-      end
-      helper_method :current_account
-
-      def current_user
-        @current_user ||= User.where(id: session[:user_id]).first if session[:user_id]
-      end
-      helper_method :current_user
-
-      def current_ability
-        @current_ability ||= Ability.new(current_user)
-      end
-
     end
   end
 end

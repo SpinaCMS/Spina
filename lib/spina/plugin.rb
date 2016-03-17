@@ -29,13 +29,5 @@ module Spina
       args.each { |k,v| instance_variable_set("@#{k}", v) }
     end
 
-    def to_s
-      name
-    end
-
-    def url
-      { controller: namespace }
-    end
-
   end
 end
