@@ -1,9 +1,9 @@
 module Spina
   module Admin
     class AdminController < ApplicationController
-      
-      before_filter :authorize_user
-      before_filter :new_messages
+
+      before_action :authorize_user
+      before_action :new_messages
 
       layout 'spina/admin/application'
 
@@ -21,7 +21,7 @@ module Spina
         @current_account ||= Account.first
       end
       helper_method :current_account
-      
+
       def current_user
         @current_user ||= User.where(id: session[:user_id]).first if session[:user_id]
       end

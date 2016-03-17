@@ -1,7 +1,7 @@
 module Spina
   module Admin
     class PhotosController < AdminController
-      before_filter :set_breadcrumbs
+      before_action :set_breadcrumbs
 
       authorize_resource class: Photo
 
