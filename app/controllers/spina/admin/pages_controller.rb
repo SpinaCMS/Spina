@@ -2,8 +2,8 @@ module Spina
   module Admin
     class PagesController < AdminController
 
-      before_filter :set_breadcrumb
-      before_filter :set_tabs, only: [:new, :create, :edit, :update]
+      before_action :set_breadcrumb
+      before_action :set_tabs, only: [:new, :create, :edit, :update]
 
       authorize_resource class: Page
 

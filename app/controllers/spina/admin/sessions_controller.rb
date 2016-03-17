@@ -1,10 +1,10 @@
 module Spina
   module Admin
     class SessionsController < AdminController
-      
+
       layout "spina/login"
 
-      skip_before_filter :authorize_user
+      skip_before_action :authorize_user
 
       def new
       end
@@ -25,6 +25,6 @@ module Spina
         session[:user_id] = nil
         redirect_to "/"
       end
-    end  
+    end
   end
 end
