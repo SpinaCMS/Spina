@@ -1,22 +1,22 @@
 module Spina
   class Theme
 
-    @@themes = []
+    @themes = []
 
     attr_reader :name, :title, :page_parts, :view_templates, :layout_parts, :custom_pages, :plugins, :structures
 
     class << self
 
       def all
-        @@themes
+        @themes
       end
 
       def register(theme)
-        @@themes << theme
+        @themes << theme
       end
 
       def find_by_name(name)
-        @@themes.find { |theme| theme.name == name }
+        @themes.find { |theme| theme.name == name }
       end
 
     end

@@ -6,7 +6,7 @@
           = Spina::Account.human_attribute_name(:theme)
         %td
           .select-dropdown.account-theme{data: {layout_parts: current_theme.layout_parts.map{|layout_part| layout_part[:name]}}}
-            - options = options_for_select(Spina::Theme.all.map { |theme| [theme.name, theme.name, {'data-layout-parts' => theme.layout_parts.map{|layout_part| layout_part[:name] }}] }, current_account.theme)
+            - options = options_for_select(::Spina::Theme.all.map { |theme| [theme.name, theme.name, {'data-layout-parts' => theme.layout_parts.map{|layout_part| layout_part[:name] }}] }, current_account.theme)
             = f.select :theme, options
       %tr
         %td

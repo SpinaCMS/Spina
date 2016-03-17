@@ -1,15 +1,14 @@
 - content_for :secondary_navigation do
   %nav#secondary
     %h1= t('spina.website.title')
-
     %ul
-      %li{class: ('active' if controller_path.start_with?('spina/admin/pages'))}
+      %li{class: ('active' if current_admin_path.start_with?('/pages'))}
         = link_to spina.admin_pages_path do
           = icon('pages')
           = t('spina.website.pages')
           %small= t('spina.website.pages_description')
 
-      %li{class: ('active' if controller_path =~ %r{\Aspina/admin/(photos|attachments)})}
+      %li{class: ('active' if current_admin_path.start_with?('/photos', '/attachments'))}
         = link_to spina.admin_photos_path do
           = icon('image')
           = t('spina.website.media_library')

@@ -7,6 +7,11 @@ module Spina
 
       layout 'spina/admin/application'
 
+      def current_admin_path
+        request.fullpath[%r{/#{ Spina.config.backend_path }(.*)}, 1]
+      end
+      helper_method :current_admin_path
+
       private
 
       def authorize_user
