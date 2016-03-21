@@ -5,7 +5,7 @@ module Spina
 
   include ActiveSupport::Configurable
 
-  config_accessor :backend_path, :storage
+  config_accessor :backend_path, :storage, :max_page_depth
 
   self.backend_path = 'admin'
 
