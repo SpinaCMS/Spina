@@ -2,7 +2,6 @@ module Spina
   module Reviews
     class Review < ActiveRecord::Base
 
-      self.table_name = 'spina_reviews'
       validates :name, :rating, presence: true
 
       scope :confirmed, -> { where.not(confirmed_at: nil) }
