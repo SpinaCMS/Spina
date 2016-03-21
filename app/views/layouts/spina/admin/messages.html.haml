@@ -3,7 +3,7 @@
     %h1= Spina::Inquiry.model_name.human(count: 2)
 
     %ul
-      %li{class: ('active' if ["inbox", "inbox_show"].include? action_name )}
+      %li{class: ('active' if ['inbox', 'inbox_show'].include? action_name )}
         = link_to spina.inbox_admin_inquiries_path do
           = icon('mail-outline')
           - if @new_messages.present?
@@ -11,14 +11,14 @@
           - else
             = t('spina.inquiries.inbox')
           %small= t('spina.inquiries.inbox_description')
-          
-      %li{class: ('active' if ["index", "spam", "show"].include? action_name )}
+
+      %li{class: ('active' if ['index', 'spam', 'show'].include? action_name )}
         = link_to spina.admin_inquiries_path do
           = icon('inbox-outline')
           = t('spina.inquiries.all')
           %small= t('spina.inquiries.all_description')
 
-- content_for :content do
-  = yield
+- content_for :application do
+  = content_for?(:messages) ? yield(:messages) : yield
 
-= render template: "layouts/spina/admin/application"
+= render template: 'layouts/spina/admin/application'

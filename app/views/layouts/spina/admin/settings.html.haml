@@ -45,7 +45,7 @@
           - if lookup_context.exists? "spina/#{ plugin.namespace }/admin/shared/_settings_secondary_navigation"
             = render "spina/#{ plugin.namespace }/admin/shared/settings_secondary_navigation", plugin: plugin
 
-- content_for :content do
-  = yield
+- content_for(:application) do
+  = content_for?(:settings) ? yield(:settings) : yield
 
-= render template: "layouts/spina/admin/application"
+= render template: 'layouts/spina/admin/application'

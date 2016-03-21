@@ -4,7 +4,7 @@ module Spina
 
       authorize_resource class: Inquiry
 
-      layout "spina/admin/messages"
+      layout 'spina/admin/messages'
 
       def show
         @inquiry = Inquiry.find(params[:id])

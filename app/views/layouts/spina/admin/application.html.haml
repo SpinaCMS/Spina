@@ -7,33 +7,34 @@
     %title Spina
 
     / Stylesheet
-    = stylesheet_link_tag "spina/admin/application"
+    = stylesheet_link_tag 'spina/admin/application'
 
     /[if lt IE 9]
-      = javascript_include_tag "//html5shiv.googlecode.com/svn/trunk/html5.js"
+      = javascript_include_tag '//html5shiv.googlecode.com/svn/trunk/html5.js'
 
     / JavaScript
-    = javascript_include_tag "http://feather.aviary.com/imaging/v2/editor.js"
-    = javascript_include_tag "spina/admin/application"
-    = yield(:plugin_stylesheets) if content_for?(:plugin_stylesheets)
-  %body{aviary_api_key: current_account.aviary_api_key, aviary_language: current_account.aviary_language, ngrok_address: (current_account.ngrok_address if Rails.env.development?) }
-    = render 'spina/admin/shared/navigation'
+    = javascript_include_tag 'http://feather.aviary.com/imaging/v2/editor.js'
+    = javascript_include_tag 'spina/admin/application'
+    = yield(:plugin_stylesheets)
 
+  %body{aviary_api_key: current_account.aviary_api_key, aviary_language: current_account.aviary_language, ngrok_address: (current_account.ngrok_address if Rails.env.development?) }
+
+    = render 'spina/admin/shared/primary_navigation'
     = yield(:secondary_navigation)
 
     %section#main
       %header#main_content_header
-        = yield(:permanent_notice) if content_for?(:permanent_notice)
+        = yield(:permanent_notice)
         .pull-right
-          = link_to "/", class: 'button button-hollow button-round button-small preview-website', data: {:"no-turbolink" => true} do
+          = link_to '/', class: 'button button-hollow button-round button-small preview-website', data: {:"no-turbolink" => true} do
             = icon('eye')
             = t('spina.preview_website')
         .breadcrumbs= render_breadcrumbs separator: '<div class="divider"></div>'
-        = yield(:tertiary_navigation) if content_for?(:tertiary_navigation)
+        = yield(:tertiary_navigation)
 
         = render 'spina/admin/shared/notifications'
 
-      = content_for?(:content) ? yield(:content) : yield
+      = content_for?(:application) ? yield(:application) : yield
 
       = link_to 'http://www.spinacms.com', class: 'spina-logo', target: :blank do
         = image_tag('spina/spina.png')

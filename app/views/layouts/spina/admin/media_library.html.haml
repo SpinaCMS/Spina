@@ -1,12 +1,12 @@
 - content_for(:tertiary_navigation) do
   %nav.tabs
     %ul
-      %li{class: ('active' if controller_name == "photos")}
+      %li{class: ('active' if controller_name == 'photos')}
         = link_to Spina::Photo.model_name.human(count: 2), spina.admin_photos_path
-      %li{class: ('active' if controller_name == "attachments")}
+      %li{class: ('active' if controller_name == 'attachments')}
         = link_to Spina::Attachment.model_name.human(count: 2), spina.admin_attachments_path
 
-- content_for :website_content do
+- content_for :website do
   = yield
 
-= render template: "layouts/spina/admin/website"
+= render template: 'layouts/spina/admin/website'
