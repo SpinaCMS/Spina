@@ -16,8 +16,8 @@
 
       - Spina::Plugin.all.each do |plugin|
         - if current_theme.plugins.include? plugin.name.downcase
-          - if lookup_context.exists? "spina/#{ plugin.namespace }/admin/shared/_website_secondary_navigation"
-            = render "spina/#{ plugin.namespace }/admin/shared/website_secondary_navigation", plugin: plugin
+          - if lookup_context.exists? "spina/#{ plugin.namespace }/admin/hooks/_website_secondary_navigation"
+            = render "spina/#{ plugin.namespace }/admin/hooks/website_secondary_navigation", plugin: plugin
 
 - content_for(:application) do
   = content_for?(:website) ? yield(:website) : yield
