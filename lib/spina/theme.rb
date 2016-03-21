@@ -1,7 +1,7 @@
 module Spina
   class Theme
 
-    attr_accessor :name, :config
+    attr_accessor :name, :config, :public_theme
     attr_reader :page_parts, :view_templates, :layout_parts, :custom_pages, :plugins, :structures
 
     class << self

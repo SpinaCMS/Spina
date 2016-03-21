@@ -25,6 +25,7 @@ module Spina
         custom_pages:   theme.config.custom_pages,
         plugins:        theme.config.plugins,
         structures:     theme.config.structures,
+        public_theme:   theme.config.public_theme
       )
       Spina::Theme.register(new_theme)
     end
