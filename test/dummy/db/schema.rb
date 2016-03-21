@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160114085213) do
+ActiveRecord::Schema.define(version: 20160205145204) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -128,6 +128,15 @@ ActiveRecord::Schema.define(version: 20160114085213) do
     t.string   "file"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "spina_reviews", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "rating",       null: false
+    t.text     "explanation"
+    t.date     "confirmed_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "spina_rewrite_rules", force: :cascade do |t|

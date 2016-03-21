@@ -1,0 +1,48 @@
+.filters
+  = link_to "Nieuwe beoordeling", spina.new_reviews_admin_review_path, class: 'button button-primary', data: {icon: 't'}
+
+  .pull-right
+    %p Gemiddelde beoordeling: <strong>#{@average_rating.round(1)}</strong>
+
+.table-container
+  %table.table
+    %thead
+      %tr
+        %th
+        %th Naam
+        %th Beoordeling
+        %th
+
+    %tbody
+      - if @reviews.any?
+        - @reviews.each do |review|
+          %tr
+            %td
+              - if review.confirmed_at.present?
+                %label.label.label-success
+                  Live
+              - else
+                %label.label
+                  Concept
+            %td.nowrap
+              = review.name
+              %small= time_ago_in_words(review.created_at) + " geleden"
+            %td
+              .rating
+                - review.rating.times do
+                  %i.icon.icon-check{style: 'color: #ffb500'}
+                - (5 - review.rating).times do
+                  %i.icon-dimmed.icon.icon-check{style: 'color: #ccc'}
+              %p= review.explanation
+            %td.nowrap.align-right
+              - if review.confirmed_at.nil?
+                = link_to spina.confirm_reviews_admin_review_path(review), class: 'button button-mini button-primary', data: {method: :post, confirm: "Weet je zeker dat je deze beoordeling wilt publiceren op de website?"} do
+                  = icon('check')
+                  Publiceer
+              = link_to spina.edit_reviews_admin_review_path(review), class: 'button button-link' do
+                = icon('pencil-outline')
+
+      - else
+        %tr
+          %td.align-center{colspan: 4}
+            %em Je hebt nog geen beoordelingen gekregen.
