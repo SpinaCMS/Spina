@@ -11,7 +11,7 @@ module Spina
       end
       config.to_prepare &method(:require_decorators).to_proc
 
-      initializer "register plugin" do
+      initializer 'register plugin' do
         plugin = ::Spina::Plugin.new({
           name:         'reviews',
           namespace:    'reviews',
