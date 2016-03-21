@@ -31,6 +31,12 @@ PATH
       spina-template
       turbolinks
 
+PATH
+  remote: test/dummy/vendor/plugins
+  specs:
+    spina-reviews (0.1.0)
+      rails (~> 4.0)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -307,6 +313,7 @@ DEPENDENCIES
   pg
   quiet_assets
   spina!
+  spina-reviews!
   spina-template!
 
 BUNDLED WITH

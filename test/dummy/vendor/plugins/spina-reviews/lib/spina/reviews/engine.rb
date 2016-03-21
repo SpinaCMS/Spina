@@ -13,10 +13,10 @@ module Spina
 
       initializer "register plugin" do
         plugin = ::Spina::Plugin.new({
-          name:         'Reviews',
+          name:         'reviews',
           namespace:    'reviews',
         })
-        Plugin.register(plugin)
+        ::Spina::Plugin.register(plugin)
       end
 
     end

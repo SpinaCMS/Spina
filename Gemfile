@@ -16,4 +16,5 @@ group :development, :test do
   gem 'codeclimate-test-reporter', require: nil
   gem 'figaro'
   gem 'appraisal'
+  gem 'spina-reviews', path: 'test/dummy/vendor/plugins'
 end
