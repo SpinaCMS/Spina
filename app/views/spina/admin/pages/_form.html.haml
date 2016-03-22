@@ -1,15 +1,17 @@
 = form_for [spina, :admin, @page], multipart: true, html: {autocomplete: "off"} do |f|
+
   - content_for :notification_alert do
     = error_explanation!(@page)
 
-  - @tabs.each do |tab|
-    = render "spina/admin/pages/form_#{tab}", f: f
+  - Globalize.with_locale(@locale) do
+    - @tabs.each do |tab|
+      = render "spina/admin/pages/form_#{tab}", f: f
 
-  %button.button.button-primary{type: 'submit'}
-    = icon('check')
-    =t 'spina.pages.save'
+    %button.button.button-primary{type: 'submit'}
+      = icon('check')
+      =t 'spina.pages.save'
 
-  = link_to t('spina.cancel'), spina.admin_pages_path, class: 'button button-link'
+    = link_to t('spina.cancel'), spina.admin_pages_path, class: 'button button-link'
 
-  - unless @page.new_record? || !@page.deletable
-    .pull-right= link_to t('spina.permanently_delete'), spina.admin_page_path(@page), method: :delete, data: {confirm: t('spina.pages.delete_confirmation', subject: @page.menu_title)}, class: 'button button-link button-danger'
+    - unless @page.new_record? || !@page.deletable
+      .pull-right= link_to t('spina.permanently_delete'), spina.admin_page_path(@page), method: :delete, data: {confirm: t('spina.pages.delete_confirmation', subject: @page.menu_title)}, class: 'button button-link button-danger'

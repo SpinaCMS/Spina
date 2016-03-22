@@ -4,6 +4,7 @@ module Spina
 
       before_action :set_breadcrumb
       before_action :set_tabs, only: [:new, :create, :edit, :update]
+      before_action :set_locale
 
       authorize_resource class: Page
 
@@ -41,6 +42,7 @@ module Spina
       end
 
       def update
+        I18n.locale = params[:locale]
         @page = Page.find(params[:id])
         add_breadcrumb @page.title
         respond_to do |format|
@@ -71,6 +73,10 @@ module Spina
       end
 
       private
+
+      def set_locale
+        @locale = params[:locale] || I18n.default_locale
+      end
 
       def set_breadcrumb
         add_breadcrumb I18n.t('spina.website.pages'), spina.admin_pages_path

@@ -14,6 +14,7 @@ require 'filters_spam'
 require 'ancestry'
 require 'breadcrumbs_on_rails'
 require 'kaminari'
+require 'globalize'
 
 module Spina
   class Engine < ::Rails::Engine

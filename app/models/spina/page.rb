@@ -2,6 +2,8 @@ module Spina
   class Page < ActiveRecord::Base
     include Spina::Partable
 
+    translates :title, :menu_title, :seo_title, :description, :materialized_path
+
     attr_accessor :old_path
 
     has_ancestry orphan_strategy: :adopt # i.e. added to the parent of deleted node

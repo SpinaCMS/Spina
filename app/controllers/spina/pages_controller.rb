@@ -2,6 +2,7 @@ module Spina
   class PagesController < Spina::ApplicationController
     before_action :rewrite_page, only: [:show]
     before_action :current_user_can_view_page?, except: [:robots]
+    before_action :set_locale
 
     def homepage
       render_with_template(page)
@@ -18,6 +19,10 @@ module Spina
     end
 
     private
+
+      def set_locale
+        I18n.locale = params[:locale] || I18n.default_locale
+      end
 
       def rewrite_page
         unless page.present?

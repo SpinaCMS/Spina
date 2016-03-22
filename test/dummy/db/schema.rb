@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160114085213) do
+ActiveRecord::Schema.define(version: 20160322153806) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -90,6 +90,21 @@ ActiveRecord::Schema.define(version: 20160114085213) do
     t.integer  "page_partable_id"
     t.string   "page_partable_type"
   end
+
+  create_table "spina_page_translations", force: :cascade do |t|
+    t.integer  "spina_page_id",     null: false
+    t.string   "locale",            null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.string   "title"
+    t.string   "menu_title"
+    t.string   "description"
+    t.string   "seo_title"
+    t.string   "materialized_path"
+  end
+
+  add_index "spina_page_translations", ["locale"], name: "index_spina_page_translations_on_locale", using: :btree
+  add_index "spina_page_translations", ["spina_page_id"], name: "index_spina_page_translations_on_spina_page_id", using: :btree
 
   create_table "spina_pages", force: :cascade do |t|
     t.string   "title"
