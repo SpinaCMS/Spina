@@ -28,6 +28,8 @@
           = link_to "/", class: 'button button-hollow button-round button-small preview-website', data: {:"no-turbolink" => true} do
             = icon('eye')
             = t('spina.preview_website')
+
+        = yield(:header_actions) if content_for?(:header_actions)
         .breadcrumbs= render_breadcrumbs separator: '<div class="divider"></div>'
         = yield(:tertiary_navigation) if content_for?(:tertiary_navigation)
 

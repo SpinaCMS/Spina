@@ -46,7 +46,7 @@ module Spina
         add_breadcrumb @page.title
         respond_to do |format|
           if @page.update_attributes(page_params)
-            format.html { redirect_to spina.edit_admin_page_url(@page) }
+            format.html { redirect_to spina.edit_admin_page_url(@page, params: {locale: @locale}) }
             format.js
           else
             format.html do

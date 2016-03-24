@@ -1,8 +1,15 @@
-- content_for(:tertiary_navigation) do
-  %nav.tabs.pull-right
-    %ul
+- content_for :header_actions do
+  .pull-right{data: {dropdown: true}}
+    = link_to '#', class: 'button button-round button-hollow button-small', data: {trigger: 'dropdown', target: '#locales'} do
+      = icon('comment')
+      = @locale.upcase
+
+    %ul#locales
       - Spina.config.locales.each do |locale|
-        %li{class: ('active' if @locale.to_s == locale.to_s)}= link_to locale.upcase, "?locale=#{locale}"
+        %li
+          = link_to t("languages.#{locale}"), "?locale=#{locale}", style: ('font-weight: 600' if @locale.to_s == locale.to_s)
+
+- content_for :tertiary_navigation do
   %nav.tabs
     %ul
       - @tabs.each_with_index do |tab, i|
