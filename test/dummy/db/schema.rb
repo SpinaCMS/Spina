@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160322153806) do
+ActiveRecord::Schema.define(version: 20160324144157) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -74,6 +74,17 @@ ActiveRecord::Schema.define(version: 20160322153806) do
     t.datetime "updated_at"
     t.integer  "account_id"
   end
+
+  create_table "spina_line_translations", force: :cascade do |t|
+    t.integer  "spina_line_id", null: false
+    t.string   "locale",        null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.string   "content"
+  end
+
+  add_index "spina_line_translations", ["locale"], name: "index_spina_line_translations_on_locale", using: :btree
+  add_index "spina_line_translations", ["spina_line_id"], name: "index_spina_line_translations_on_spina_line_id", using: :btree
 
   create_table "spina_lines", force: :cascade do |t|
     t.string   "content"
@@ -178,6 +189,17 @@ ActiveRecord::Schema.define(version: 20160322153806) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "spina_text_translations", force: :cascade do |t|
+    t.integer  "spina_text_id", null: false
+    t.string   "locale",        null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.text     "content"
+  end
+
+  add_index "spina_text_translations", ["locale"], name: "index_spina_text_translations_on_locale", using: :btree
+  add_index "spina_text_translations", ["spina_text_id"], name: "index_spina_text_translations_on_spina_text_id", using: :btree
 
   create_table "spina_texts", force: :cascade do |t|
     t.text     "content"
