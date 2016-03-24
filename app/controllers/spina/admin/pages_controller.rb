@@ -42,7 +42,6 @@ module Spina
       end
 
       def update
-        I18n.locale = params[:locale]
         @page = Page.find(params[:id])
         add_breadcrumb @page.title
         respond_to do |format|
@@ -100,7 +99,7 @@ module Spina
       end
 
       def page_params
-        params.require(:page).permit!
+        params.require(:page).permit!.merge(locale: params[:locale] || I18n.default_locale)
       end
 
     end

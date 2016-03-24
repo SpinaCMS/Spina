@@ -1,4 +1,5 @@
 = form_for [spina, :admin, @page], multipart: true, html: {autocomplete: "off"} do |f|
+  = hidden_field_tag :locale, @locale
 
   - content_for :notification_alert do
     = error_explanation!(@page)

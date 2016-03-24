@@ -1,4 +1,8 @@
 - content_for(:tertiary_navigation) do
+  %nav.tabs.pull-right
+    %ul
+      - Spina.config.locales.each do |locale|
+        %li{class: ('active' if @locale.to_s == locale.to_s)}= link_to locale.upcase, "?locale=#{locale}"
   %nav.tabs
     %ul
       - @tabs.each_with_index do |tab, i|
