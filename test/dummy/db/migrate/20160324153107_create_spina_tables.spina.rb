@@ -1,4 +1,4 @@
-# This migration comes from spina (originally 20150507135428)
+# This migration comes from spina (originally 1)
 class CreateSpinaTables < ActiveRecord::Migration
   def change
     create_table "spina_accounts", force: :cascade do |t|
