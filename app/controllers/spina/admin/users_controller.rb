@@ -1,8 +1,8 @@
 module Spina
   module Admin
     class UsersController < AdminController
-      before_filter :set_breadcrumbs
-      
+      before_action :set_breadcrumbs
+
       authorize_resource class: User
 
       layout "spina/admin/settings"
@@ -58,7 +58,7 @@ module Spina
       def user_params
         params.require(:user).permit(:admin, :email, :name, :password_digest, :password, :password_confirmation, :last_logged_in)
       end
-      
+
     end
   end
 end

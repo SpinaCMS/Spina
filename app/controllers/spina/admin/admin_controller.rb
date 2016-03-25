@@ -2,8 +2,8 @@ module Spina
   module Admin
     class AdminController < ApplicationController
 
-      before_filter :authorize_user
-      before_filter :new_messages
+      before_action :authorize_user
+      before_action :new_messages
 
       layout 'spina/admin/application'
 
