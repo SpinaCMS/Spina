@@ -1,13 +1,14 @@
 - content_for :header_actions do
-  .pull-right{data: {dropdown: true}}
-    = link_to '#', class: 'button button-round button-hollow button-small', data: {trigger: 'dropdown', target: '#locales'} do
-      = icon('comment')
-      = @locale.upcase
+  - if Spina.config.locales.size > 1
+    .pull-right{data: {dropdown: true}}
+      = link_to '#', class: 'button button-round button-hollow button-small', data: {trigger: 'dropdown', target: '#locales'} do
+        = icon('comment')
+        = @locale.upcase
 
-    %ul#locales
-      - Spina.config.locales.each do |locale|
-        %li
-          = link_to t("languages.#{locale}"), "?locale=#{locale}", style: ('font-weight: 600' if @locale.to_s == locale.to_s)
+      %ul#locales
+        - Spina.config.locales.each do |locale|
+          %li
+            = link_to t("languages.#{locale}"), "?locale=#{locale}", style: ('font-weight: 600' if @locale.to_s == locale.to_s)
 
 - content_for :tertiary_navigation do
   %nav.tabs

@@ -88,10 +88,19 @@ module Spina
     end
 
     def generate_materialized_path
-      if root?
-        name == 'homepage' ? '/' : "/#{url_title}"
+      locale = I18n.locale
+      if locale == I18n.default_locale
+        if root?
+          name == 'homepage' ? '/' : "/#{url_title}"
+        else
+          ancestors.collect(&:url_title).append(url_title).join('/').prepend('/')
+        end
       else
-        ancestors.collect(&:url_title).append(url_title).join('/').prepend('/')
+        if root?
+          name == 'homepage' ? "/#{locale}" : "/#{locale}/#{url_title}"
+        else
+          ancestors.collect(&:url_title).append(url_title).join('/').prepend("/#{locale}/")
+        end
       end
     end
 

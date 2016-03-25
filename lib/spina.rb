@@ -6,6 +6,9 @@ module Spina
   include ActiveSupport::Configurable
 
   config_accessor :backend_path, :storage, :max_page_depth
+  config_accessor :locales do
+    [I18n.default_locale]
+  end
 
   self.backend_path = 'admin'
 

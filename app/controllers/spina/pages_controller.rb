@@ -21,8 +21,7 @@ module Spina
     private
 
       def set_locale
-        cookies[:locale] = params[:locale] if params[:locale].present?
-        I18n.locale = cookies[:locale] || I18n.default_locale
+        I18n.locale = params[:locale] || I18n.default_locale
       end
 
       def rewrite_page
@@ -33,7 +32,7 @@ module Spina
       end
 
       def page
-        @page ||= (action_name == 'homepage') ? Page.find_by(name: 'homepage') : Page.with_translations(I18n.locale).find_by(materialized_path: "/" + params[:id]) || Page.with_translations(I18n.default_locale).find_by(materialized_path: "/" + params[:id])
+        @page ||= (action_name == 'homepage') ? Page.find_by(name: 'homepage') : Page.with_translations(I18n.locale).find_by(materialized_path: request.path) || Page.with_translations(I18n.default_locale).find_by(materialized_path: request.path)
       end
       helper_method :page
 
