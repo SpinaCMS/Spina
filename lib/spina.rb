@@ -13,6 +13,8 @@ module Spina
 
   self.max_page_depth = 5
 
+  deprecate :register_theme
+
   class << self
 
     def register_theme(theme)

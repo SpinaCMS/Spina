@@ -1,8 +1,9 @@
 module Spina
   class Theme
 
-    attr_accessor :name, :config, :public_theme
-    attr_reader :page_parts, :view_templates, :layout_parts, :custom_pages, :plugins, :structures
+    attr_accessor :name, :title, :page_parts, :structures, :view_templates, :layout_parts, :custom_pages, :plugins, :public_theme, :config
+
+    deprecate :config
 
     class << self
 
@@ -12,24 +13,28 @@ module Spina
         @@themes
       end
 
-      def register(theme)
-        @@themes << theme
-      end
-
       def find_by_name(name)
         @@themes.find { |theme| theme.name == name }
       end
 
+      def register
+        theme = new
+        yield theme
+        raise 'Missing theme name' if theme.name.nil?
+        @@themes << theme
+        theme
+      end
+
     end
 
-    def initialize(args = {})
-      args.each { |k,v| instance_variable_set("@#{k}", v) }
-      @page_parts         ||= []
-      @structures         ||= {}
-      @layout_parts       ||= {}
-      @view_templates     ||= {}
-      @custom_pages       ||= []
-      @plugins            ||= []
+    def initialize
+      @page_parts       = []
+      @structures       = {}
+      @layout_parts     = []
+      @view_templates   = {}
+      @custom_pages     = []
+      @plugins          = []
+      @public_theme = false
     end
 
     def new_page_templates

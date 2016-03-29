@@ -1,7 +1,7 @@
 module Spina
   class Plugin
 
-    attr_reader :name, :namespace
+    attr_accessor :name, :namespace
 
     class << self
 
@@ -15,14 +15,15 @@ module Spina
         @@plugins.find { |plugin| plugin.name == name }
       end
 
-      def register(plugin)
+      def register
+        plugin = new
+        yield plugin
+        raise 'Missing plugin name' if plugin.name.nil?
+        raise 'Missing plugin namespace' if plugin.namespace.nil?
         @@plugins << plugin
+        plugin
       end
 
-    end
-
-    def initialize(args)
-      args.each { |k,v| instance_variable_set("@#{k}", v) }
     end
 
   end

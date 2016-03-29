@@ -32,17 +32,18 @@ page_parts = [{
   page_partable_type: 'Spina::Color'
 }]
 
-structures = {
-  'structure' => [{
-    name:                     'title',
-    title:                    'Title',
-    structure_partable_type:  'Spina::Line'
-  }, {
-    name:                     'description',
-    title:                    'Description',
-    structure_partable_type:  'Spina::Text'
-  }]
-}
+structures = [{
+  name: 'structure'
+  page_parts: ['line', 'text']
+}]
+    'title' => {
+      title:                    'Title',
+      structure_partable_type:  'Spina::Line'
+    }, 'description' => {
+      title:                    'Description',
+      structure_partable_type:  'Spina::Text'
+  ]
+}]
 
 layout_parts = [{
   name:               'line',
