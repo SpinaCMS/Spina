@@ -8,4 +8,4 @@
 
     = f.fields_for :page_parts, @page_parts.sort { |a,b| a.position(current_theme) <=> b.position(current_theme) } do |page_part_form|
       .horizontal-form-group.page-part{data: {name: page_part_form.object.name}}
-        = render partial: "spina/admin/page_partables/#{page_part_form.object.page_partable_type.demodulize.underscore}_form", object: page_part_form
+        = render partial: page_part_form_partial(page_part_form), object: page_part_form

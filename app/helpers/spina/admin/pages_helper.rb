@@ -6,7 +6,7 @@ module Spina
         id = new_object.object_id
         fields = f.fields_for(association, new_object, child_index: id) do |builder|
           build_structure_parts(f.object.page_part.name, new_object) if structure_item?(new_object)
-          render(association.to_s.singularize + "_fields", f: builder)
+          render("#{ new_object.model_name.to_s.deconstantize.underscore }/admin/#{new_object.model_name.to_s.demodulize.pluralize.underscore}/fields", f: builder)
         end
         link_to '#', class: "#{add_fields_class(new_object)} button button-link", data: {id: id, fields: fields.gsub("\n", "")} do
           block.yield
@@ -26,6 +26,10 @@ module Spina
           part = item.structure_parts.build(part)
           part.structure_partable = part.structure_partable_type.constantize.new
         end
+      end
+
+      def page_part_form_partial(form)
+        "#{ form.object.page_partable_type.deconstantize.underscore }/admin/page_partables/#{ form.object.page_partable_type.demodulize.underscore }_form"
       end
     end
   end
