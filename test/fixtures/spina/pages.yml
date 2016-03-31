@@ -2,9 +2,6 @@
 
 homepage:
   name: homepage
-  title: Homepage
-  materialized_path: /
 
 about:
-  title: About
-  materialized_path: /about
+  name:
