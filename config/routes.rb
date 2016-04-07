@@ -83,8 +83,7 @@ Spina::Engine.routes.draw do
   # Frontend
   root to: "pages#homepage"
 
-  # get ':materialized_pathroot/:subpage/:id' => "pages#show", as: "third_level_page"
-  # get ':root/:id' => "pages#show", as: "subpage"
+  # Pages
   get '/:locale/*id' => 'pages#show', constraints: {locale: /#{Spina.config.locales.join('|')}/ }
   get '/:locale/' => 'pages#homepage', constraints: {locale: /#{Spina.config.locales.join('|')}/ }
   get '/*id' => 'pages#show', as: "page", controller: 'pages', constraints: lambda { |request|

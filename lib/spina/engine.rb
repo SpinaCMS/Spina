@@ -15,6 +15,7 @@ require 'ancestry'
 require 'breadcrumbs_on_rails'
 require 'kaminari'
 require 'globalize'
+require 'rack-rewrite'
 
 module Spina
   class Engine < ::Rails::Engine

@@ -35,4 +35,5 @@ Gem::Specification.new do |s|
   s.add_dependency 'turbolinks'
   s.add_dependency 'kaminari'
   s.add_dependency 'globalize', '~> 5.0.0'
+  s.add_dependency 'rack-rewrite', '~> 1.5.0'
 end
