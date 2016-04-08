@@ -26,7 +26,6 @@ module Spina
       def create
         @page = Page.new(page_params)
         add_breadcrumb I18n.t('spina.pages.new')
-        # @page.set_materialized_path
         if @page.save
           redirect_to spina.edit_admin_page_url(@page)
         else
@@ -47,6 +46,7 @@ module Spina
         add_breadcrumb @page.title
         respond_to do |format|
           if @page.update_attributes(page_params)
+            @page.touch
             I18n.locale = I18n.default_locale
             format.html { redirect_to spina.edit_admin_page_url(@page, params: {locale: @locale}) }
             format.js

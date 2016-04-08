@@ -81,6 +81,10 @@ module Spina
       materialized_path
     end
 
+    def cache_key
+      super + "_" + Globalize.locale.to_s
+    end
+
     private
 
     def rewrite_rule
