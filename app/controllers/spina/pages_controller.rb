@@ -1,9 +1,11 @@
 module Spina
   class PagesController < Spina::ApplicationController
+    before_action :set_locale
     before_action :rewrite_page, only: [:show]
     before_action :current_user_can_view_page?, except: [:robots]
 
     def homepage
+
       render_with_template(page)
     end
 
@@ -19,6 +21,10 @@ module Spina
 
     private
 
+      def set_locale
+        I18n.locale = params[:locale] || I18n.default_locale
+      end
+
       def rewrite_page
         unless page.present?
           @rule = RewriteRule.find_by(old_path: "/" + params[:id])
@@ -27,7 +33,7 @@ module Spina
       end
 
       def page
-        @page ||= (action_name == 'homepage') ? Page.find_by!(name: 'homepage') : Page.find_by!(materialized_path: "/" + params[:id])
+        @page ||= (action_name == 'homepage') ? Page.find_by(name: 'homepage') : Page.with_translations(I18n.locale).find_by(materialized_path: request.path) || Page.with_translations(I18n.default_locale).find_by(materialized_path: request.path)
       end
       helper_method :page
 

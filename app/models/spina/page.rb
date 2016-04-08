@@ -2,6 +2,8 @@ module Spina
   class Page < ActiveRecord::Base
     include Spina::Partable
 
+    translates :title, :menu_title, :seo_title, :description, :materialized_path
+
     attr_accessor :old_path
 
     has_ancestry orphan_strategy: :adopt # i.e. added to the parent of deleted node
@@ -79,6 +81,10 @@ module Spina
       materialized_path
     end
 
+    def cache_key
+      super + "_" + Globalize.locale.to_s
+    end
+
     def view_template_config(theme)
       view_template_name = view_template.presence || 'show'
       theme.view_templates.find { |template| template[:name] == view_template_name }
@@ -91,10 +97,19 @@ module Spina
     end
 
     def generate_materialized_path
-      if root?
-        name == 'homepage' ? '/' : "/#{url_title}"
+      locale = I18n.locale
+      if locale == I18n.default_locale
+        if root?
+          name == 'homepage' ? '/' : "/#{url_title}"
+        else
+          ancestors.collect(&:url_title).append(url_title).join('/').prepend('/')
+        end
       else
-        ancestors.collect(&:url_title).append(url_title).join('/').prepend('/')
+        if root?
+          name == 'homepage' ? "/#{locale}" : "/#{locale}/#{url_title}"
+        else
+          ancestors.collect(&:url_title).append(url_title).join('/').prepend("/#{locale}/")
+        end
       end
     end
 

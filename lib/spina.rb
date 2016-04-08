@@ -1,4 +1,5 @@
 require 'spina/engine'
+require 'spina/railtie'
 require 'spina/template'
 
 module Spina
@@ -9,6 +10,9 @@ module Spina
   THEMES = []
 
   config_accessor :backend_path, :storage, :max_page_depth
+  config_accessor :locales do
+    [I18n.default_locale]
+  end
 
   self.backend_path = 'admin'
 

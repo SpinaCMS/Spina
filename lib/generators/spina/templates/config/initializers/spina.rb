@@ -1,6 +1,9 @@
 Spina.configure do |config|
   config.NEGATIVE_CAPTCHA_SECRET = '<%= Spina.config.try(:NEGATIVE_CAPTCHA_SECRET) || SecureRandom.hex(64) %>'
 
+  # Set locales
+  config.locales = [:en]
+
   # Important Note
   # ==============
 

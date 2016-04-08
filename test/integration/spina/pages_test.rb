@@ -15,5 +15,16 @@ module Spina
       get "/about"
       assert_select 'h1', 'About'
     end
+
+    # Globalize different languages
+    test "view homepage in another language" do
+      get "/nl"
+      assert_select 'h1', 'Beginpagina'
+    end
+
+    test "view show page in another language" do
+      get "/nl/over-ons"
+      assert_select 'h1', 'Over ons'
+    end
   end
 end

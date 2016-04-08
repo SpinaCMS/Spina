@@ -4,6 +4,7 @@ module Spina
 
       before_action :set_breadcrumb
       before_action :set_tabs, only: [:new, :create, :edit, :update]
+      before_action :set_locale
 
       authorize_resource class: Page
 
@@ -25,7 +26,6 @@ module Spina
       def create
         @page = Page.new(page_params)
         add_breadcrumb I18n.t('spina.pages.new')
-        # @page.set_materialized_path
         if @page.save
           redirect_to spina.edit_admin_page_url(@page)
         else
@@ -41,11 +41,14 @@ module Spina
       end
 
       def update
+        I18n.locale = params[:locale] || I18n.default_locale
         @page = Page.find(params[:id])
         add_breadcrumb @page.title
         respond_to do |format|
           if @page.update_attributes(page_params)
-            format.html { redirect_to spina.edit_admin_page_url(@page) }
+            @page.touch
+            I18n.locale = I18n.default_locale
+            format.html { redirect_to spina.edit_admin_page_url(@page, params: {locale: @locale}) }
             format.js
           else
             format.html do
@@ -72,6 +75,10 @@ module Spina
 
       private
 
+      def set_locale
+        @locale = params[:locale] || I18n.default_locale
+      end
+
       def set_breadcrumb
         add_breadcrumb I18n.t('spina.website.pages'), spina.admin_pages_path
       end
@@ -94,7 +101,7 @@ module Spina
       end
 
       def page_params
-        params.require(:page).permit!
+        params.require(:page).permit!.merge(locale: params[:locale] || I18n.default_locale)
       end
 
     end

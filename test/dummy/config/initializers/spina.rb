@@ -1,5 +1,8 @@
 Spina.configure do |config|
-  config.NEGATIVE_CAPTCHA_SECRET = '445e0c9c0cee31f783754bc174661052d1236850da8f5f5ba5e11cbfa56cbaa8bce9260df75feaa56da91949ee4204fefac41c35b3e4f5e0d3e395b00c87781a'
+  config.NEGATIVE_CAPTCHA_SECRET = '3e795c8643062d248298d99a899607952631b6733ecba312745cce0507e7602a4b752828a2c109461b40bfc44ca014a6b8bee80e2a6f792a3ee54b286bbc7366'
+
+  # Set locales
+  config.locales = [:en, :nl]
 
   # Important Note
   # ==============

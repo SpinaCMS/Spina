@@ -1,0 +1,23 @@
+homepage_translation:
+  locale: en
+  title: Homepage
+  materialized_path: /
+  globalized_model: homepage
+
+about_translation:
+  locale: en
+  title: About
+  materialized_path: /about
+  globalized_model: about
+
+homepage_nl_translation: 
+  locale: nl
+  title: Beginpagina
+  materialized_path: /nl
+  globalized_model: homepage
+
+about_nl_translation:
+  locale: nl
+  title: Over ons
+  materialized_path: /nl/over-ons
+  globalized_model: about

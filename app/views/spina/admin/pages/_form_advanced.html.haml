@@ -29,7 +29,7 @@
         %td
           = Spina::Page.human_attribute_name :menu_title
         %td
-          = f.text_field :menu_title, placeholder: Spina::Page.human_attribute_name(:show_in_menu_placeholder)
+          = f.text_field :menu_title, placeholder: Spina::Page.human_attribute_name(:show_in_menu_placeholder), value: f.object.read_attribute(:menu_title)
 
       %tr{style: ('display: none' if @page.custom_page?)}
         %td

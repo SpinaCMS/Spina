@@ -210,3 +210,7 @@ en:
       zero: "0 new messages"
       one: "1 new message"
       other: "%{count} new messages"
+
+  languages:
+    en: English
+    nl: Dutch

@@ -1,0 +1,2 @@
+- if Spina.config.locales.size > 1
+  #languages= Spina.config.locales.map{|l| link_to_unless(l == I18n.locale, l.upcase, root_url(params: {locale: l}))}.join(' / ').html_safe

@@ -1,1 +1,0 @@
-Spina::Engine.load_seed
