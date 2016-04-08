@@ -67,42 +67,36 @@ Spina uses an initializer to create the basic building blocks of your page. Ther
 When you install Spina, you will see the following in `config/initializers/themes/default.rb`
 
 ```ruby
-module Spina
-  module DefaultTheme
-    include ::ActiveSupport::Configurable
+::Spina::Theme.register do |theme|
 
-    config_accessor :title, :page_parts, :view_templates, :layout_parts, :custom_pages, :plugins, :structures
+  theme.name = 'default'
+  theme.title = 'Default Theme'
 
-    self.title = "Default theme"
+  theme.page_parts = [{
+    name:             'content',
+    title:            'Content',
+    partable_type:    'Spina::Text'
+  }]
 
-    self.page_parts = [{
-      name: 'content',
-      title: 'Content',
-      page_partable_type: "Spina::Text"
-    }]
+  theme.view_templates = [{
+    name:       'homepage',
+    title:      'Homepage',
+    page_parts: ['content']
+  }, {
+    name: 'show',
+    title:        'Default',
+    description:  'A simple page',
+    usage:        'Use for your content',
+    page_parts:   ['content']
+  }]
 
-    self.structures = []
-    self.layout_parts = []
-    self.custom_pages = []
-    self.plugins = []
+  theme.custom_pages = [{
+    name:           'homepage',
+    title:          'Homepage',
+    deletable:      false,
+    view_template:  'homepage'
+  }]
 
-    self.view_templates = {
-      'homepage' => {
-        title: 'Homepage',
-        page_parts: ['content']
-      },
-      'show' => {
-        title: 'Default',
-        description: 'A simple page',
-        usage: 'Use for your content',
-        page_parts: ['content']
-      }
-    }
-
-    self.custom_pages = [
-      { name: 'homepage', title: 'Homepage', deletable: false, view_template: 'homepage' }
-    ]
-  end
 end
 ```
 
@@ -113,10 +107,15 @@ Spina represents each building block of your page, called a 'page part,' as a ha
 Let's say I wanted to add another text box below this called `portfolio`. First I would add another hash to the `self.page_parts` array like so:
 
 ```ruby
-self.page_parts = [
-  { name: 'content', title: 'Content', page_partable_type: "Spina::Text" },
-  { name: 'portfolio', title: 'Portfolio', page_partable_type: "Spina::Text" } # added this second hash
-]
+theme.page_parts = [{
+  name:             'content',
+  title:            'Content',
+  partable_type:    "'pina::Text'
+}, { # Add this second hash
+  name:             'portfolio',
+  title:            'Portfolio',
+  partable_type:    'Spina::Text'
+}]
 ```
 
 #### Add it to the view template
@@ -124,18 +123,17 @@ self.page_parts = [
 Now, we need to update the `self.view_templates` hash next. These view templates provide customization for the different views you might want. For example, you may have a 'blog' view or an 'about' view which add different page parts. For this example we will add the portfolio part into the 'Default' view template.
 
 ```ruby
-self.view_templates = {
-  'homepage' => {
-    title: 'Homepage',
-    page_parts: ['content']
-  },
-  'show' => {
-    title: 'Default',
-    description: 'A simple page',
-    usage: 'Use for your content',
-    page_parts: ['content', 'portfolio'] # added 'portfolio' here.
-  }
-}
+theme.view_templates = [{
+  name:       'homepage',
+  title:      'Homepage',
+  page_parts: ['content']
+}, {
+  name: 'show',
+  title:        'Default',
+  description:  'A simple page',
+  usage:        'Use for your content',
+  page_parts:   ['content', 'portfolio] # add 'portfolio'
+}]
 ```
 
 #### Add it to the view
