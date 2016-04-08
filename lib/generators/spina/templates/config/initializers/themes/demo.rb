@@ -37,17 +37,18 @@
     page_partable_type: 'Spina::Color'
   }]
 
-  theme.structures = {
-   'structure' => [{
-     name:                     'title',
-     title:                    'Title',
-     structure_partable_type:  'Spina::Line'
-   }, {
-     name:                     'description',
-     title:                    'Description',
-     structure_partable_type:  'Spina::Text'
-   }]
-  }
+  theme.structures = [{
+    name: 'structure',
+    structure_parts: [{
+      name:                     'title',
+      title:                    'Title',
+      structure_partable_type:  'Spina::Line'
+    }, {
+      name:                     'description',
+      title:                    'Description',
+      structure_partable_type:  'Spina::Text'
+    }]
+  }]
 
   theme.layout_parts = [{
     name:               'line',
@@ -59,23 +60,21 @@
     layout_partable_type: 'Spina::Color'
   }]
 
-  theme.view_templates = {
-    'homepage' => {
-      title:      'Homepage',
-      page_parts: ['text']
-    },
-    'show' => {
-      title:        'Default',
-      description:  'A simple page',
-      usage:        'Use for your content',
-      page_parts:   ['text']
-    },
-    'demo' => {
-      title:      'Demo',
-      description: 'Contains examples of every page part',
-      page_parts: ['line', 'text', 'photo', 'photo_collection', 'attachment', 'attachment_collection', 'structure', 'color']
-    }
-  }
+  theme.view_templates = [{
+    name: 'homepage',
+    title: 'Homepage',
+    page_parts: ['text'],
+  }, {
+    name: 'show',
+    title: 'Default',
+    usage: 'Use for your content',
+    page_parts: ['text']
+  }, {
+    name: 'demo',
+    title: 'Demo',
+    description: 'Contains examples of every page part',
+    page_parts: ['line', 'text', 'photo', 'photo_collection', 'attachment', 'attachment_collection', 'structure', 'color']
+  }]
 
   theme.custom_pages = [{
     name:           'homepage',

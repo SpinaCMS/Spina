@@ -3,8 +3,6 @@ module Spina
 
     attr_accessor :name, :title, :page_parts, :structures, :view_templates, :layout_parts, :custom_pages, :plugins, :public_theme, :config
 
-    # deprecate :config
-
     class << self
 
       def all
