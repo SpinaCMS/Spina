@@ -110,9 +110,9 @@ Let's say I wanted to add another text box below this called `portfolio`. First 
 theme.page_parts = [{
   name:             'content',
   title:            'Content',
-  partable_type:    "'pina::Text'
-}, { # Add this second hash
-  name:             'portfolio',
+  partable_type:    'Spina::Text'
+}, {
+  name:             'portfolio', # added this hash
   title:            'Portfolio',
   partable_type:    'Spina::Text'
 }]
@@ -132,7 +132,7 @@ theme.view_templates = [{
   title:        'Default',
   description:  'A simple page',
   usage:        'Use for your content',
-  page_parts:   ['content', 'portfolio] # add 'portfolio'
+  page_parts:   ['content', 'portfolio'] # added 'portfolio'
 }]
 ```
 
