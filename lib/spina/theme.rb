@@ -26,9 +26,9 @@ module Spina
 
     def initialize
       @page_parts       = []
-      @structures       = {}
+      @structures       = []
       @layout_parts     = []
-      @view_templates   = {}
+      @view_templates   = []
       @custom_pages     = []
       @plugins          = []
       @public_theme = false
@@ -36,7 +36,7 @@ module Spina
 
     def new_page_templates
       @view_templates.map do |view_template|
-        [view_template[0], view_template[1][:title], view_template[1][:description], view_template[1][:usage]] unless is_custom_undeletable_page?(view_template[0])
+        [view_template[:name], view_template[:title], view_template[:description], view_template[:usage]] unless is_custom_undeletable_page?(view_template[:name])
       end.compact
     end
 

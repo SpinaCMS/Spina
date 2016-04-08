@@ -22,7 +22,8 @@ module Spina
       end
 
       def build_structure_parts(name, item)
-        current_theme.structures[name].each do |part|
+        structure = current_theme.structures.find { |structure| structure[:name] == name }
+        structure[:structure_parts].each do |part|
           part = item.structure_parts.build(part)
           part.structure_partable = part.structure_partable_type.constantize.new
         end

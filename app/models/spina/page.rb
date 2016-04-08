@@ -6,7 +6,7 @@ module Spina
 
     has_ancestry orphan_strategy: :adopt # i.e. added to the parent of deleted node
 
-    has_many :page_parts, dependent: :destroy
+    has_many :page_parts, dependent: :destroy, inverse_of: :page
 
     before_validation :ensure_title
     before_validation :ancestry_is_nil
@@ -77,6 +77,11 @@ module Spina
       self.materialized_path = generate_materialized_path
       self.materialized_path += "-#{self.class.where(materialized_path: materialized_path).count}" if self.class.where(materialized_path: materialized_path).where.not(id: id).count > 0
       materialized_path
+    end
+
+    def view_template_config(theme)
+      view_template_name = view_template.presence || 'show'
+      theme.view_templates.find { |template| template[:name] == view_template_name }
     end
 
     private

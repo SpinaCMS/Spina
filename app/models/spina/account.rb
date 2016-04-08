@@ -42,8 +42,8 @@ module Spina
     private
 
     def bootstrap_website
-      _theme = ::Spina::Theme.find_by_name(theme)
-      bootstrap_pages(_theme) if _theme
+      theme_config = ::Spina::Theme.find_by_name(theme)
+      bootstrap_pages(theme_config) if theme_config
     end
 
     def bootstrap_pages(theme)
@@ -59,11 +59,11 @@ module Spina
     end
 
     def deactivate_unused_view_templates(theme)
-      Page.where(active: true).where.not(view_template: theme.view_templates.keys).update_all(active: false)
+      Page.where(active: true).where.not(view_template: theme.view_templates.map { |h| h[:name] }).update_all(active: false)
     end
 
     def activate_used_view_templates(theme)
-      Page.where(active: false).where(view_template: theme.view_templates.keys).update_all(active: true)
+      Page.where(active: false).where(view_template: theme.view_templates.map { |h| h[:name] }).update_all(active: true)
     end
 
   end

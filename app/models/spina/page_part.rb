@@ -2,7 +2,7 @@ module Spina
   class PagePart < ActiveRecord::Base
     include ApplicationHelper
 
-    belongs_to :page
+    belongs_to :page, inverse_of: :page_parts
     belongs_to :page_partable, polymorphic: true
 
     accepts_nested_attributes_for :page_partable, allow_destroy: true
@@ -20,8 +20,7 @@ module Spina
     end
 
     def position(theme)
-      page_parts = theme.view_templates[self.page.try(:view_template) || "show"][:page_parts]
-      page_parts.index { |page_part| page_part == self.name }.to_i
+      page.view_template_config(theme)[:page_parts].index { |page_part| page_part == self.name }.to_i
     end
 
     def content
