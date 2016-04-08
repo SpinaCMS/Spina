@@ -7,6 +7,10 @@ module Spina
       template 'config/initializers/spina.rb'
     end
 
+    def create_carrierwave_initializer_file
+      template 'config/initializers/carrierwave.rb'
+    end
+
     def add_route
       return if Rails.application.routes.routes.detect { |route| route.app.app == Spina::Engine }
       route "mount Spina::Engine => '/'"
