@@ -76,7 +76,7 @@ module Spina
 
     def set_materialized_path
       self.old_path = materialized_path
-      self.materialized_path = generate_materialized_path
+      self.materialized_path = localized_materialized_path
       self.materialized_path += "-#{self.class.where(materialized_path: materialized_path).count}" if self.class.where(materialized_path: materialized_path).where.not(id: id).count > 0
       materialized_path
     end
@@ -96,21 +96,20 @@ module Spina
       RewriteRule.create(old_path: old_path, new_path: materialized_path) if old_path != materialized_path
     end
 
-    def generate_materialized_path
-      locale = I18n.locale
-      if locale == I18n.default_locale
-        if root?
-          name == 'homepage' ? '/' : "/#{url_title}"
-        else
-          ancestors.collect(&:url_title).append(url_title).join('/').prepend('/')
-        end
+    def localized_materialized_path
+      if I18n.locale == I18n.default_locale
+        generate_materialized_path.prepend('/')
       else
-        if root?
-          name == 'homepage' ? "/#{locale}" : "/#{locale}/#{url_title}"
-        else
-          ancestors.collect(&:url_title).append(url_title).join('/').prepend("/#{locale}/")
-        end
+        generate_materialized_path.prepend("/#{I18n.locale}/")
       end
+    end
+
+    def generate_materialized_path
+      if root?
+        name == 'homepage' ? '' : "#{url_title}"
+      else
+        ancestors.collect(&:url_title).append(url_title).join('/')
+      end      
     end
 
     def ancestry_is_nil
