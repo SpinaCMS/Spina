@@ -21,6 +21,7 @@ module Spina
     isolate_namespace Spina
 
     config.autoload_paths += %W( #{config.root}/lib )
+    config.autoload_once_paths += %W( #{config.root}/lib/spina/plugin.rb #{config.root}/lib/spina/theme.rb )
     config.assets.paths << config.root.join('vendor', 'assets')
 
     initializer 'spina.configure_carrierwave' do

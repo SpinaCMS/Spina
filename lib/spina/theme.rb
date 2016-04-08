@@ -7,22 +7,19 @@ module Spina
 
     class << self
 
-      @@themes = []
-
       def all
-        @@themes
+        ::Spina::THEMES
       end
 
       def find_by_name(name)
-        @@themes.find { |theme| theme.name == name }
+        all.find { |theme| theme.name == name }
       end
 
       def register
-        theme = new
+        theme = ::Spina::Theme.new
         yield theme
         raise 'Missing theme name' if theme.name.nil?
-        @@themes << theme
-        theme
+        all << theme
       end
 
     end

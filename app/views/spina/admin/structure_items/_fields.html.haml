@@ -3,13 +3,14 @@
   = f.hidden_field :position, placeholder: "Position", class: "structure_form_pane_#{f.object.id}_position"
 
   / Strucure parts
-  = f.fields_for :structure_parts do |structure_part_form|
-    = structure_part_form.hidden_field :id
-    = structure_part_form.hidden_field :title
-    = structure_part_form.hidden_field :name
-    = structure_part_form.hidden_field :structure_partable_type
-
-    .structure-form-part= render partial: "spina/admin/structure_partables/#{structure_part_form.object.structure_partable_type.demodulize.underscore}_form", object: structure_part_form
+  = f.fields_for :structure_parts do |ff|
+    = ff.hidden_field :id
+    = ff.hidden_field :title
+    = ff.hidden_field :structure_partable_type
+    = ff.hidden_field :name
+    .structure-form-part
+      = render "spina/admin/structure_partables/#{ partable_type_partial_namespace(ff.object.structure_partable_type) }/form", f: ff
 
   = f.hidden_field :_destroy
   = link_to t('spina.delete'), '#', class: 'remove-structure-item-fields button button-mini button-link pull-right'
+

@@ -1,5 +1,5 @@
-- object_id = form.object.persisted? ? form.object.object_id : "new_association_#{form.object.object_id}"
-= form.hidden_field field, id: "#{object_id}_input"
+- object_id = f.object.persisted? ? f.object.object_id : "new_association_#{f.object.object_id}"
+= f.hidden_field field, id: "#{object_id}_input"
 %trix-toolbar.clearfix{ id: "#{object_id}_toolbar", data: { editor_id: "#{object_id}_editor" }}
   .button-groups
     .button-group.pull-left

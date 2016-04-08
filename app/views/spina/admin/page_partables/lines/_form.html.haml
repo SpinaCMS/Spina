@@ -1,0 +1,5 @@
+.horizontal-form-label
+  = f.object.title
+.horizontal-form-content
+  = f.fields_for :page_partable, f.object.page_partable do |ff|
+    = ff.text_field :content, placeholder: "#{t 'spina.pages.page_part'} #{f.object.name.downcase}"

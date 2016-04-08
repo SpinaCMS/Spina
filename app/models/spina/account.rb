@@ -42,8 +42,8 @@ module Spina
     private
 
     def bootstrap_website
-      theme = ::Spina::Theme.find_by_name(theme)
-      bootstrap_pages(theme) if theme
+      _theme = ::Spina::Theme.find_by_name(theme)
+      bootstrap_pages(_theme) if _theme
     end
 
     def bootstrap_pages(theme)

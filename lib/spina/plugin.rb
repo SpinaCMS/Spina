@@ -5,14 +5,12 @@ module Spina
 
     class << self
 
-      @@plugins = []
-
       def all
-        @@plugins
+        ::Spina::PLUGINS
       end
 
       def find_by_name(name)
-        @@plugins.find { |plugin| plugin.name == name }
+        all.find { |plugin| plugin.name == name }
       end
 
       def register
@@ -20,7 +18,7 @@ module Spina
         yield plugin
         raise 'Missing plugin name' if plugin.name.nil?
         raise 'Missing plugin namespace' if plugin.namespace.nil?
-        @@plugins << plugin
+        all << plugin
         plugin
       end
 
