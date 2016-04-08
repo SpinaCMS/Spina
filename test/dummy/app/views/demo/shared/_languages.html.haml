@@ -1,5 +1,2 @@
 - if Spina.config.locales.size > 1
-  #languages
-    - array = Spina.config.locales.select{|l| l != I18n.default_locale}.map{|l| link_to_unless(l == I18n.locale, l.upcase, "/#{l}")}
-    - array << link_to_unless(I18n.default_locale == I18n.locale, I18n.default_locale.upcase, root_path)
-    = array.join(' / ').html_safe
+  #languages= Spina.config.locales.map{|l| link_to_unless(l == I18n.locale, l.upcase, root_url(params: {locale: l}))}.join(' / ').html_safe
