@@ -4,9 +4,9 @@
   theme.title = 'Default Theme'
 
   theme.page_parts = [{
-    name:               'text',
-    title:              'Text',
-    page_partable_type: 'Spina::Text'
+    name:           'text',
+    title:          'Text',
+    partable_type:  'Spina::Text'
   }]
 
   theme.view_templates = [{

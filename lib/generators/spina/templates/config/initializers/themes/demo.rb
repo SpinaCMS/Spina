@@ -4,60 +4,60 @@
   theme.title = 'Demo theme'
 
   theme.page_parts = [{
-    name:               'line',
-    title:              'Line',
-    page_partable_type: 'Spina::Line'
+    name:           'line',
+    title:          'Line',
+    partable_type:  'Spina::Line'
   }, {
-    name:               'text',
-    title:              'Text',
-    page_partable_type: 'Spina::Text'
+    name:           'text',
+    title:          'Text',
+    partable_type:  'Spina::Text'
   }, {
-    name:               'photo',
-    title:              'Photo',
-    page_partable_type: 'Spina::Photo'
+    name:           'photo',
+    title:          'Photo',
+    partable_type:  'Spina::Photo'
   }, {
-    name:               'photo_collection',
-    title:              'Photo collection',
-    page_partable_type: 'Spina::PhotoCollection'
+    name:           'photo_collection',
+    title:          'Photo collection',
+    partable_type:  'Spina::PhotoCollection'
   }, {
-    name:               'attachment',
-    title:              'Attachment',
-    page_partable_type: 'Spina::Attachment'
+    name:           'attachment',
+    title:          'Attachment',
+    partable_type:  'Spina::Attachment'
   }, {
-    name:               'attachment_collection',
-    title:              'Attachment collection',
-    page_partable_type: 'Spina::AttachmentCollection'
+    name:           'attachment_collection',
+    title:          'Attachment collection',
+    partable_type:  'Spina::AttachmentCollection'
   }, {
-    name:               'structure',
-    title:              'Structure',
-    page_partable_type: 'Spina::Structure'
+    name:           'structure',
+    title:          'Structure',
+    partable_type:  'Spina::Structure'
   }, {
-    name:               'color',
-    title:              'Color',
-    page_partable_type: 'Spina::Color'
+    name:           'color',
+    title:          'Color',
+    partable_type:  'Spina::Color'
   }]
 
   theme.structures = [{
     name: 'structure',
     structure_parts: [{
-      name:                     'title',
-      title:                    'Title',
-      structure_partable_type:  'Spina::Line'
+      name:           'title',
+      title:          'Title',
+      partable_type:  'Spina::Line'
     }, {
-      name:                     'description',
-      title:                    'Description',
-      structure_partable_type:  'Spina::Text'
+      name:           'description',
+      title:          'Description',
+      partable_type:  'Spina::Text'
     }]
   }]
 
   theme.layout_parts = [{
-    name:               'line',
-    title:              'Line',
-    layout_partable_type: 'Spina::Line'
+    name:           'line',
+    title:          'Line',
+    partable_type:  'Spina::Line'
   }, {
-    name:               'color',
-    title:              'Color',
-    layout_partable_type: 'Spina::Color'
+    name:           'color',
+    title:          'Color',
+    partable_type:  'Spina::Color'
   }]
 
   theme.view_templates = [{
