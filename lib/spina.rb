@@ -9,16 +9,15 @@ module Spina
   PLUGINS = []
   THEMES = []
 
-  config_accessor :backend_path, :storage, :max_page_depth
-  config_accessor :locales do
-    [I18n.default_locale]
-  end
+  config_accessor :backend_path, :storage, :max_page_depth, :locales
 
   self.backend_path = 'admin'
 
   self.storage = :file
 
   self.max_page_depth = 5
+
+  self.locales = [I18n.default_locale]
 
   class << self
 

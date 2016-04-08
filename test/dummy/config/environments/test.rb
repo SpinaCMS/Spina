@@ -35,4 +35,9 @@ Dummy::Application.configure do
   config.active_support.deprecation = :stderr
 
   config.active_support.test_order = :random
+
+  config.after_initialize do
+    Spina.config.locales = [:en, :nl]
+  end
+
 end
