@@ -9,57 +9,57 @@ module Spina
     self.page_parts = [{
       name:               'line',
       title:              'Line',
-      page_partable_type: 'Spina::Line'
+      partable_type: 'Spina::Line'
     }, {
       name:               'text',
       title:              'Text',
-      page_partable_type: 'Spina::Text'
+      partable_type: 'Spina::Text'
     }, {
       name:               'photo',
       title:              'Photo',
-      page_partable_type: 'Spina::Photo'
+      partable_type: 'Spina::Photo'
     }, {
       name:               'photo_collection',
       title:              'Photo collection',
-      page_partable_type: 'Spina::PhotoCollection'
+      partable_type: 'Spina::PhotoCollection'
     }, {
       name:               'attachment',
       title:              'Attachment',
-      page_partable_type: 'Spina::Attachment'
+      partable_type: 'Spina::Attachment'
     }, {
       name:               'attachment_collection',
       title:              'Attachment collection',
-      page_partable_type: 'Spina::AttachmentCollection'
+      partable_type: 'Spina::AttachmentCollection'
     }, {
       name:               'structure',
       title:              'Structure',
-      page_partable_type: 'Spina::Structure'
+      partable_type: 'Spina::Structure'
     }, {
       name:               'color',
       title:              'Color',
-      page_partable_type: 'Spina::Color'
+      partable_type: 'Spina::Color'
     }]
 
     self.structures = {
       'structure' => [{
         name:                     'title',
         title:                    'Title',
-        structure_partable_type:  'Spina::Line'
+        partable_type:  'Spina::Line'
       }, {
         name:                     'description',
         title:                    'Description',
-        structure_partable_type:  'Spina::Text'
+        partable_type:  'Spina::Text'
       }]
     }
 
     self.layout_parts = [{
       name:               'line',
       title:              'Line',
-      layout_partable_type: 'Spina::Line'
+      partable_type: 'Spina::Line'
     }, {
       name:               'color',
       title:              'Color',
-      layout_partable_type: 'Spina::Color'
+      partable_type: 'Spina::Color'
     }]
 
     self.view_templates = {
