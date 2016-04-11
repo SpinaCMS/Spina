@@ -15,9 +15,9 @@
           %small= t('spina.website.media_library_description')
 
       - Spina::Plugin.all.each do |plugin|
-        - if current_theme.plugins.include? plugin.name.downcase
-          - if lookup_context.exists? "spina/#{ plugin.namespace }/admin/hooks/_website_secondary_navigation"
-            = render "spina/#{ plugin.namespace }/admin/hooks/website_secondary_navigation", plugin: plugin
+        - if current_theme.plugins.include? plugin.name
+          - if lookup_context.exists? "spina/admin/hooks/#{ plugin.namespace }/_website_secondary_navigation"
+            = render "spina/admin/hooks/#{ plugin.namespace }/website_secondary_navigation", plugin: plugin
 
 - content_for(:application) do
   = content_for?(:website) ? yield(:website) : yield

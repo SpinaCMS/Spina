@@ -17,6 +17,9 @@ module Spina
         theme = ::Spina::Theme.new
         yield theme
         raise 'Missing theme name' if theme.name.nil?
+        if theme.plugins.nil?
+          theme.plugins = ::Spina::Plugin.all.map { |plugin| plugin.name }
+        end
         all << theme
       end
 
@@ -28,7 +31,6 @@ module Spina
       @layout_parts     = []
       @view_templates   = []
       @custom_pages     = []
-      @plugins          = []
       @public_theme = false
     end
 

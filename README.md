@@ -128,7 +128,7 @@ theme.view_templates = [{
   title:      'Homepage',
   page_parts: ['content']
 }, {
-  name: 'show',
+  name:         'show',
   title:        'Default',
   description:  'A simple page',
   usage:        'Use for your content',
