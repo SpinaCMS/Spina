@@ -22,16 +22,6 @@ PATH
       spina-template
       turbolinks
 
-PATH
-  remote: ~/apps/spina-template
-  specs:
-    spina-template (0.3.3)
-      bourbon (~> 3.2)
-      coffee-rails
-      fontcustom (~> 1.3)
-      jquery-fileupload-rails
-      neat (~> 1.5)
-
 GEM
   remote: http://rubygems.org/
   specs:
@@ -278,6 +268,12 @@ GEM
       temple (~> 0.7.3)
       tilt (>= 1.3.3, < 2.1)
     slop (3.6.0)
+    spina-template (0.3.3)
+      bourbon (~> 3.2)
+      coffee-rails
+      fontcustom (~> 1.3)
+      jquery-fileupload-rails
+      neat (~> 1.5)
     sprockets (3.5.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -314,7 +310,7 @@ DEPENDENCIES
   pg
   quiet_assets
   spina!
-  spina-template!
+  spina-template
 
 BUNDLED WITH
    1.11.2
