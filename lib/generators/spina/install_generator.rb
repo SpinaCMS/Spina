@@ -4,19 +4,23 @@ module Spina
     source_root File.expand_path("../templates", __FILE__)
 
     def create_initializer_file
+      return if Rails.env.production?
       template 'config/initializers/spina.rb'
     end
 
     def create_carrierwave_initializer_file
+      return if Rails.env.production?
       template 'config/initializers/carrierwave.rb'
     end
 
     def add_route
+      return if Rails.env.production?
       return if Rails.application.routes.routes.detect { |route| route.app.app == Spina::Engine }
       route "mount Spina::Engine => '/'"
     end
 
     def copy_migrations
+      return if Rails.env.production?
       rake 'spina:install:migrations'
     end
 
@@ -35,18 +39,21 @@ module Spina
       return if account.theme.present? && !no?("Theme '#{account.theme} is set. Skip? [Yn]")
 
       theme = begin
-                theme = account.theme || 'default'
-                theme = ask("What theme do you want to use? (default/demo) [#{theme}]").presence || theme
-              end until theme.in? ['default', 'demo']
+                theme = account.theme || themes.first
+                theme = ask("What theme do you want to use? (#{themes.join('/')}) [#{theme}]").presence || theme
+              end until theme.in? themes
 
       account.update_attribute(:theme, theme)
+    end
 
+    def copy_template_files
+      return if Rails.env.production?
+      theme = Account.first.theme
       template "config/initializers/themes/#{theme}.rb"
       directory "app/assets/stylesheets/#{theme}"
       directory "app/views/#{theme}"
       directory "app/views/layouts/#{theme}"
     end
-
 
     def create_user
       return if User.exists? && !no?('A user already exists. Skip? [Yn]')
@@ -74,9 +81,6 @@ module Spina
             when 'Spina::Photo' then part.partable.remote_file_url = 'https://unsplash.it/300/200?random'
             when 'Spina::PhotoCollection'
               5.times { part.partable.photos.build(remote_file_url: 'https://unsplash.it/300/200?random') }
-            # when 'Spina::Structure'
-            #   part.partable.structure_items.build({ name: 'title', title: 'Title', structure_partable_type: 'Spina::Line' })
-            #   part.partable.structure_items.build({ name: 'description', title: 'Description', structure_partable_type:  'Spina::Text' })
             when 'Spina::Color' then part.partable.content = '#6865b4'
             end
           end
@@ -84,6 +88,12 @@ module Spina
         end
       end
     end
+
+    private
+
+      def themes
+        Rails.env.production? ? Spina::Theme.all.map(&:name) : ['default', 'demo']
+      end
 
   end
 end
