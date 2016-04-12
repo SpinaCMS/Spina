@@ -26,6 +26,19 @@ The installer will help you setup your first user.
 
 Then start `rails s` and access your admin panel at `/admin`.
 
+## Upgrading from 0.8 to 0.9
+
+Theme configuration changed to:
+
+```ruby
+# config/initializers/themes/default.rb
+Spina::Theme.register do |theme|
+# Theme config
+end
+```
+
+Check out [config/initializers/themes/default.rb](https://github.com/denkGroot/Spina/blob/master/lib/generators/spina/templates/config/initializers/themes/default.rb) for an example.
+
 ## Upgrading from 0.7 to 0.8
 
 Spina-specific configuration moved from `Spina::Engine.config` to just `Spina.config`.
