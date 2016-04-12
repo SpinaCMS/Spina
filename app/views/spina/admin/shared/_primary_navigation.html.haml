@@ -4,14 +4,6 @@
       = link_to spina.admin_pages_path do
         = icon('home')
 
-    %li{class: ('active' if %w[inquiries].include? controller_name)}
-      - if @new_messages.present?
-        = link_to spina.inbox_admin_inquiries_path, data: {badge: "#{@new_messages.size}"} do
-          = icon('mail')
-      - else
-        = link_to spina.admin_inquiries_path do
-          = icon('mail')
-
     - Spina::Plugin.all.each do |plugin|
       - if current_theme.plugins.include? plugin.name
         - if lookup_context.exists? "spina/admin/hooks/#{ plugin.namespace }/_primary_navigation"

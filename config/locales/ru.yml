@@ -33,20 +33,6 @@ ru:
       documents: Документы
       photos: Изображения
 
-    inquiries:
-      title: Сообщения
-      all: Все сообщения
-      all_description: Все сообщения
-      delete_confirmation: "Вы уверены, что хотите удалить <strong>%{subject}</strong> сообщение?"
-      empty: У вас нет входящих сообщений
-      empty_inbox: У вас нет входящих сообщений
-      empty_spam: "У вас нет сообщений, помеченных как спам"
-      inbox: Входящие
-      inbox_description: Входящие сообщения
-      mark_as_read: Пометить как прочитанное
-      no_spam: Не спам
-      spam: Спам
-
     pages:
       new: Новая страница
       create_page: "Создать %{template}"
@@ -124,9 +110,6 @@ ru:
       spina/attachment:
         one: Документ
         other: Документы
-      spina/inquiry:
-        one: Сообщение
-        other: Сообщения
 
     attributes:
       spina/account:
@@ -153,12 +136,6 @@ ru:
         created_at: Создан в
         name: Название файла
         size: Размер
-
-      spina/inquiries:
-        email: Почта
-        name: от
-        message: Сообщение
-        phone: Телефон
 
       spina/page:
         title: Заголовок

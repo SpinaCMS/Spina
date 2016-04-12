@@ -33,20 +33,6 @@ tr:
       documents: Belgeler
       photos: Resimler
 
-    inquiries:
-      title: Mesajlar
-      all: Tüm mesajlar
-      all_description: Tüm mesajlarınız
-      delete_confirmation: "<strong>%{subject}</strong> başlıklı mesajı silmek istediğinizden emin misiniz?"
-      empty: Henüz hiç mesajınız bulunmuyor
-      empty_inbox: Gelen kutusu boş
-      empty_spam: Spam olarak işaretli mesaj bulunmuyor
-      inbox: Gelen kutusu
-      inbox_description: Yeni gelen mesajlarınız
-      mark_as_read: Okundu olarak işaretle
-      no_spam: Spam değil
-      spam: Spam
-
     pages:
       new: Yeni sayfa
       create_page: "Yeni %{template}"
@@ -112,10 +98,10 @@ tr:
 
   activerecord:
     models:
-      spina/page: 
+      spina/page:
         one: Sayfa
         other: Sayfalar
-      spina/user: 
+      spina/user:
         one: Kullanıcı
         other: Kullanıcılar
       spina/photo:
@@ -124,9 +110,6 @@ tr:
       spina/attachment:
         one: Belge
         other: Belgeler
-      spina/inquiry:
-        one: Mesaj
-        other: Mesajlar
 
     attributes:
       spina/account:
@@ -153,12 +136,6 @@ tr:
         created_at: Oluşturulma zamanı
         name: Dosya adı
         size: Boyut
-
-      spina/inquiries:
-        email: Eposta
-        name: Gönderen
-        message: Mesaj
-        phone: Telefon
 
       spina/page:
         title: Başlık

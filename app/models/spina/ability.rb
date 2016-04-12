@@ -10,7 +10,6 @@ module Spina
         can :manage, Photo
         can :manage, Attachment
         can :manage, Account
-        can :manage, Inquiry
 
         # Spina.config.plugins.each do |plugin|
         #   can :manage, "#{plugin.class_name}".constantize

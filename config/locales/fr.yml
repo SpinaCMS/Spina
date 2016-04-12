@@ -10,7 +10,7 @@ fr:
     login: Connexion
     preview_website: Aperçu du site
     search: Rechercher...
-    ago: Il y a 
+    ago: Il y a
     edit_website: Editer votre site
     logout: Déconnexion
 
@@ -28,20 +28,6 @@ fr:
       media_library_description: "Voici où vous trouverez toutes vos images et documents"
       documents: Documents
       photos: Images
-
-    inquiries:
-      title: Messages
-      all: Tous les messages
-      all_description: Tous les messages
-      delete_confirmation: "Êtes vous sûr de vouloir supprimer le message : <strong>%{subject}'s</strong>?"
-      empty: Vous n'avez reçu aucun nouveau message
-      empty_inbox: Votre boîte de réception est vide
-      empty_spam: Vous n'avez pas de messages marqué comme spam
-      inbox: Boîte de réception
-      inbox_description: Messages entrants
-      mark_as_read: Marquer comme lu
-      no_spam: Non spam
-      spam: Spam
 
     pages:
       new: Nouvelle page
@@ -108,10 +94,10 @@ fr:
 
   activerecord:
     models:
-      spina/page: 
+      spina/page:
         one: Page
         other: Pages
-      spina/user: 
+      spina/user:
         one: Utilisateur
         other: Utilisateurs
       spina/photo:
@@ -120,9 +106,6 @@ fr:
       spina/attachment:
         one: Document
         other: Documents
-      spina/inquiry:
-        one: Message
-        other: Messages
 
     attributes:
       spina/account:
@@ -150,12 +133,6 @@ fr:
         name: Nom du fichier
         size: Taille
 
-      spina/inquiries:
-        email: Email
-        name: De
-        message: Message
-        phone: Téléphone
-
       spina/page:
         title: Titre
         title_placeholder: Titre de la page
@@ -180,7 +157,7 @@ fr:
         name: Nom
         name_placeholder: Nom
         email: Email
-        email_description: Votre email doit être unique 
+        email_description: Votre email doit être unique
         password: Mot de passe
         password_description: Laisser vide pour garder le mot de passe
         password_confirmation: Confirmer le mot de passe

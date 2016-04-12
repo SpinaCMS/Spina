@@ -33,20 +33,6 @@ pt-BR:
       documents: Documentos
       photos: Imagens
 
-    inquiries:
-      title: Mensagens
-      all: Todas as mensagens
-      all_description: Todas as mensagens
-      delete_confirmation: "Tem certeza que deseja remover a mensagem de <strong>%{subject}</strong>?"
-      empty: Você não recebeu nenhuma mensagem
-      empty_inbox: Caixa de Entrada está vazia
-      empty_spam: Você não tem nenhuma mensagem marcada como spam
-      inbox: Caixa de Entrada
-      inbox_description: Mensagens recebidas
-      mark_as_read: Marcar como lida
-      no_spam: Sem spam
-      spam: Spam
-
     pages:
       new: Nova página
       create_page: "novo %{template}"
@@ -124,9 +110,6 @@ pt-BR:
       spina/attachment:
         one: Documento
         other: Documentos
-      spina/inquiry:
-        one: Mensagem
-        other: Mensagens
 
     attributes:
       spina/account:
@@ -153,12 +136,6 @@ pt-BR:
         created_at: Criado em
         name: Arquivo
         size: Tamanho
-
-      spina/inquiries:
-        email: Email
-        name: De
-        message: Mensagem
-        phone: Telefone
 
       spina/page:
         title: Título
