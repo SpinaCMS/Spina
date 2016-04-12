@@ -15,7 +15,6 @@ PATH
       jquery-rails
       kaminari
       mini_magick
-      negative_captcha
       rack-rewrite (~> 1.5.0)
       rails (>= 4.0)
       sass-rails
@@ -195,9 +194,6 @@ GEM
     neat (1.5.1)
       bourbon (>= 3.1)
       sass (~> 3.2.19)
-    negative_captcha (0.4)
-      actionpack
-      activesupport
     nenv (0.2.0)
     nokogiri (1.6.7.1)
       mini_portile2 (~> 2.0.0.rc2)
@@ -274,7 +270,7 @@ GEM
       fontcustom (~> 1.3)
       jquery-fileupload-rails
       neat (~> 1.5)
-    sprockets (3.5.2)
+    sprockets (3.6.0)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
     sprockets-rails (3.0.4)

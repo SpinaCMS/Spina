@@ -3,7 +3,6 @@ module Spina
     class AdminController < ::Spina::ApplicationController
       before_action :set_admin_locale
       before_action :authorize_user
-      before_action :new_messages
 
       layout 'spina/admin/application'
 
