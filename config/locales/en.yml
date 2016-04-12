@@ -33,20 +33,6 @@ en:
       documents: Documents
       photos: Images
 
-    inquiries:
-      title: Messages
-      all: All messages
-      all_description: All messages
-      delete_confirmation: "Are you sure you want to delete <strong>%{subject}'s</strong> message?"
-      empty: You have not received any messages
-      empty_inbox: Inbox is empty
-      empty_spam: You have no messages marked as spam
-      inbox: Inbox
-      inbox_description: Incoming messages
-      mark_as_read: Mark as read
-      no_spam: No spam
-      spam: Spam
-
     pages:
       new: New page
       create_page: "new %{template}"
@@ -127,9 +113,6 @@ en:
       spina/attachment:
         one: Document
         other: Documents
-      spina/inquiry:
-        one: Message
-        other: Messages
 
     attributes:
       spina/account:
@@ -156,12 +139,6 @@ en:
         created_at: Created at
         name: Filename
         size: Size
-
-      spina/inquiries:
-        email: Email
-        name: From
-        message: Message
-        phone: Phone
 
       spina/page:
         title: Title

@@ -33,20 +33,6 @@ de:
       documents: Dokumente
       photos: Bilder
 
-    inquiries:
-      title: Nachrichten
-      all: Alle Nachrichten
-      all_description: Alle Nachrichten
-      delete_confirmation: "Bist du sicher, dass du die Nachricht <strong>%{subject}'s</strong> löschen möchtest?"
-      empty: Du hast bis jetzt noch keine Nachrichten empfangen
-      empty_inbox: Posteingang ist leer
-      empty_spam: Du hast keine Spam-Nachrichten
-      inbox: Posteingang
-      inbox_description: Posteingang
-      mark_as_read: Als gelesen markieren
-      no_spam: Kein Spam
-      spam: Spam
-
     pages:
       new: Neue Seite
       create_page: "Neu %{template}"
@@ -124,9 +110,6 @@ de:
       spina/attachment:
         one: Dokument
         other: Dokumente
-      spina/inquiry:
-        one: Nachricht
-        other: Nachrichten
 
     attributes:
       spina/account:
@@ -153,12 +136,6 @@ de:
         created_at: Erstellt am
         name: Dateiname
         size: Größe
-
-      spina/inquiries:
-        email: E-Mail
-        name: Von
-        message: Nachricht
-        phone: Telefon
 
       spina/page:
         title: Titel

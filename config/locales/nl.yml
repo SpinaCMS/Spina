@@ -33,20 +33,6 @@ nl:
       documents: Documenten
       photos: Afbeeldingen
 
-    inquiries:
-      title: Berichten
-      all: Alle berichten
-      all_description: Alle berichten
-      delete_confirmation: "Weet je zeker dat je het bericht van %{subject}</strong> wilt verwijderen?"
-      empty: Je hebt nog geen berichten ontvangen
-      empty_inbox: Inbox is leeg
-      empty_spam: Er zijn geen berichten gemarkeerd als spam
-      inbox: Inbox
-      inbox_description: Binnenkomende berichten
-      mark_as_read: Bericht markeren als gelezen
-      no_spam: Geen spam
-      spam: Spam
-
     pages:
       new: Nieuwe pagina
       create_page: "%{template} invullen"
@@ -112,10 +98,10 @@ nl:
 
   activerecord:
     models:
-      spina/page: 
+      spina/page:
         one: Pagina
         other: Pagina's
-      spina/user: 
+      spina/user:
         one: Gebruiker
         other: Gebruikers
       spina/photo:
@@ -124,9 +110,6 @@ nl:
       spina/attachment:
         one: Document
         other: Documenten
-      spina/inquiry:
-        one: Bericht
-        other: Berichten
 
     attributes:
       spina/account:
@@ -153,12 +136,6 @@ nl:
         created_at: Aangemaakt op
         name: Bestandsnaam
         size: Grootte
-
-      spina/inquiries:
-        email: Email
-        name: Afzender
-        message: Bericht
-        phone: Telefoon
 
       spina/page:
         title: Titel
