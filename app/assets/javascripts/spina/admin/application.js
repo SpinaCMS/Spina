@@ -2,7 +2,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require spina
-//= require ./aviary
 //= require ./account
 //= require ./confirm_delete
 //= require ./pages

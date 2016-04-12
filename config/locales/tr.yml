@@ -92,9 +92,6 @@ tr:
       account: Genel
       account_description: Kişisel seçenekleriniz
       account_save: Seçenekleri kaydet
-      aviary: Aviary
-      aviary_description: Aviary seçenekleriniz
-      aviary_save: Seçenekleri kaydet
       style: Görünüm
       style_description: Size uyan bir tema seçin
       style_save: Görünümü kaydet

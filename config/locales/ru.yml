@@ -92,9 +92,6 @@ ru:
       account: Общее
       account_description: Персональные параметры
       account_save: Сохранить параметры
-      aviary: Вольер
-      aviary_description: Настройки вольера
-      aviary_save: Сохранить параметры
       style: Дизайн
       style_description: Выберите тему
       style_save: Сохранить параметры стиля

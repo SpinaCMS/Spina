@@ -95,9 +95,6 @@ en:
       account: General
       account_description: Personal preferences
       account_save: Save preferences
-      aviary: Aviary
-      aviary_description: Settings for aviary
-      aviary_save: Save preferences
       style: Styling
       style_description: Choose a theme that fits your brand
       style_save: Save styling

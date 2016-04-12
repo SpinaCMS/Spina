@@ -13,12 +13,10 @@
       = javascript_include_tag '//html5shiv.googlecode.com/svn/trunk/html5.js'
 
     / JavaScript
-    = javascript_include_tag 'http://feather.aviary.com/imaging/v2/editor.js'
     = javascript_include_tag 'spina/admin/application'
     = yield(:plugin_stylesheets)
 
-  %body{aviary_api_key: current_account.aviary_api_key, aviary_language: current_account.aviary_language, ngrok_address: (current_account.ngrok_address if Rails.env.development?) }
-
+  %body
     = render 'spina/admin/shared/primary_navigation'
     = yield(:secondary_navigation)
 
@@ -40,6 +38,3 @@
 
       = link_to 'http://www.spinacms.com', class: 'spina-logo', target: :blank do
         = image_tag('spina/spina.png')
-
-    / Aviary editor
-    #injection_site

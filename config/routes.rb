@@ -9,7 +9,6 @@ Spina::Engine.routes.draw do
         get :style
         get :analytics
         get :social
-        get :aviary
       end
     end
 

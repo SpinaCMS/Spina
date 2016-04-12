@@ -1,7 +1,5 @@
 .item
   .overlay
-    = link_to admin_photo_path(photo), class: 'icon-only edit-photo-link', data: {aviary: true} do
-      =t('spina.photos.edit')
     = link_to spina.admin_photo_path(photo), method: :delete, class: 'icon-only delete-photo-link', data: {confirm: t('spina.photos.delete_confirmation')} do
       =t('spina.photos.delete')
-  = image_tag photo.file.thumb.url, id: "photo_#{photo.id}", data: {posturl: spina.enhance_admin_photo_path(photo), image: photo.file.url}
+  = image_tag photo.file.thumb.url, id: "photo_#{photo.id}"

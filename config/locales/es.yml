@@ -92,9 +92,6 @@ es:
       account: General
       account_description: Preferencias personales
       account_save: Guardar preferencias
-      aviary: Aviario
-      aviary_description: Configuración del aviario
-      aviary_save: Guardar preferencias
       style: Estilos
       style_description: Selecciona un tema que se ajuste a tu marca
       style_save: Guardar estilos

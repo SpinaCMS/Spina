@@ -92,9 +92,6 @@ zh-CN:
       account: 通用
       account_description: 个人设置
       account_save: 保存设置
-      aviary: Aviary
-      aviary_description: 设置 aviary
-      aviary_save: 保存设置
       style: 样式
       style_description: 选择主题
       style_save: 保存样式

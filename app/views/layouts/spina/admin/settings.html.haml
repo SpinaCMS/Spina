@@ -34,12 +34,6 @@
           = t('spina.preferences.analytics')
           %small= t('spina.preferences.analytics_description')
 
-      %li{class: ('active' if params[:action] == 'aviary')}
-        = link_to spina.aviary_admin_account_path do
-          = icon('image')
-          = t('spina.preferences.aviary')
-          %small= t('spina.preferences.aviary_description')
-
       - Spina::Plugin.all.each do |plugin|
         - if current_theme.plugins.include? plugin.name
           - if lookup_context.exists? "spina/admin/hooks/#{ plugin.namespace }/_settings_secondary_navigation"

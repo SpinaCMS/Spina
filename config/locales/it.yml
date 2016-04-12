@@ -92,9 +92,6 @@ it:
       account: Generale
       account_description: Impostazioni personali
       account_save: Salva impostazioni
-      aviary: Aviary
-      aviary_description: Impostazioni per aviary
-      aviary_save: Salva impostazioni
       style: Stile
       style_description: Scegli un tema adatto al tuo brand
       style_save: Salva stile
