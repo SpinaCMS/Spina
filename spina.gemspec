@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.description = 'CMS'
   s.licenses    = ['MIT']
 
-  s.files = Dir['{app,config,db,lib,test}/**/*'] + ['Rakefile', 'README.md']
+  s.files = Dir['{app,config,db,lib}/**/*'] + ['Rakefile', 'README.md']
   # s.test_files = Dir['test/**/*']
 
   s.add_dependency 'rails', '>= 4.0'
