@@ -1,11 +1,12 @@
 .gallery-container
   .gallery
-    -# .item
-    -#   = form_for [spina, :admin, @photo], html: {multipart: true} do |f|
-    -#     = f.label :file, t('spina.photos.upload_image')
-    -#     = f.file_field :file, data: {customfileinput: true}
+    .item
+      = form_for [spina, :admin, @photo], html: {multipart: true} do |f|
+        = hidden_field_tag :media_library, value: true
+        = f.label :file, t('spina.photos.upload_image')
+        = f.file_field :file, data: {customfileinput: true}
 
-    .gallery-prepend-image.infinite-scroll
-      = render partial: 'spina/admin/photos/photo', collection: @photos
+    .gallery-prepend-image
+      .infinite-scroll= render partial: 'spina/admin/photos/photo', collection: @photos
 
     .infinite-pagination= link_to_next_page @photos, 'Next', remote: true

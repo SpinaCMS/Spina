@@ -16,7 +16,9 @@ module Spina
       def create
         @photo = Photo.create!(photo_params)
         respond_to do |format|
-          format.js
+          format.js do
+            render params[:media_library] ? :create : :create_and_select
+          end
           format.json do
             render json: { file_url: @photo.file_url }
           end
