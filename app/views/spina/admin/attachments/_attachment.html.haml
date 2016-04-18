@@ -1,8 +1,7 @@
 %tr
-  %td= attachment.name
+  %td= link_to attachment.name, attachment.file.try(:url), target: :blank
   %td.nowrap= number_to_human_size(attachment.file.size)
   %td.nowrap
     %small= l attachment.created_at, format: '%d %B %Y %H:%M'
-  %td= attachment.file.try(:url)
   %td.nowrap
     = link_to t('spina.delete'), admin_attachment_path(attachment), method: :delete, class: 'button button-link button-danger button-small', data: {confirm: t('spina.delete_confirmation', subject: attachment.name)}

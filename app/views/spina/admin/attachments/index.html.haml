@@ -1,19 +1,14 @@
 .table-container
-  .search-input.pull-right
-    = text_field_tag :search, nil, placeholder: t('spina.search'), class: 'input-search input-rounded'
-    .clear-input
-      = icon('times-circle')
-
   %table.table
     %thead
       %tr
         %th= Spina::Attachment.human_attribute_name(:name)
         %th= Spina::Attachment.human_attribute_name(:size)
         %th= Spina::Attachment.human_attribute_name(:created_at)
-        %th{colspan: 2}
+        %th
       %tr
         %td{colspan: 5}
-          = form_for [spina, :admin, @attachment], html: {multipart: true, class: "new_document"} do |f|
+          = form_for [spina, :admin, @attachment], html: {multipart: true, class: "new_document", style: 'margin-bottom: 0'} do |f|
             = f.file_field :file, data: {customfileinput: true}
 
     %tbody.table-prepend-document
