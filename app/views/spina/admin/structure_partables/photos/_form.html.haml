@@ -1,11 +1,8 @@
-= link_to spina.photo_select_admin_photos_path(f.object_name, selected_photo_id: (f.object.structure_partable.id if f.object.structure_partable.present?)), remote: true, class: "media_picker" do
+= link_to spina.photo_select_admin_photos_path(f.object_name, selected_photo_id: f.object.structure_partable.id), remote: true, class: "media_picker" do
+  .placeholder.pull-right
+    %span.button.button-small.button-round{data: {icon: 'U'}}=t 'spina.pages.photo_picker'
   - if f.object.structure_partable && f.object.structure_partable.file.present?
-    .placeholder.pull-right
-      %span.button.button-small.button-round{data: {icon: 'U'}}=t 'spina.pages.photo_picker'
     .image
       = image_tag f.object.structure_partable.file.thumb
-  - else
-    .placeholder
-      %span.button.button-small.button-round{data: {icon: 'U'}}=t 'spina.pages.photo_picker'
 
   = f.hidden_field :structure_partable_id

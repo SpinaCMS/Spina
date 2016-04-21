@@ -17,7 +17,7 @@
           %tbody
             - @attachments.each do |attachment|
               %tr
-                %td= radio_button_tag :attachment_id, attachment.id
+                %td= radio_button_tag :attachment_id, attachment.id, attachment.id == @selected_attachment_id
                 %td= attachment.name
 
       %footer

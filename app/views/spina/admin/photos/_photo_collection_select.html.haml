@@ -5,12 +5,12 @@
         = form_for [spina, :admin, @photo], html: {multipart: true} do |f|
           = f.label :file, t('spina.photos.upload_image')
           = f.file_field :file, data: {customfileinput: true}
-          
+
       = form_tag spina.insert_photo_collection_admin_photos_path(params[:page_part_id]), remote: true, class: 'gallery-prepend-image' do
         .infinite-scroll
           = render partial: 'spina/admin/photos/photo_multi_picker', collection: @photos
 
-        .infinite-pagination= link_to_next_page @photos, 'Next', params: {selected_photo_ids: @selected_photos.ids}, remote: true
+        .infinite-pagination= link_to_next_page @photos, 'Next', params: params.slice(:selected_photo_ids), remote: true
 
         .gallery-select-action-bar
           .pull-right
@@ -19,5 +19,5 @@
               = icon('plus')
               = t('spina.photos.choose_images')
               %span.gallery-select-counter
-                - if @selected_photos.any?
-                  (#{@selected_photos.count})
+                - if @selected_photo_ids.any?
+                  (#{ @selected_photo_ids.count })

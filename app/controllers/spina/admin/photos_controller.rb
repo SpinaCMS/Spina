@@ -42,9 +42,8 @@ module Spina
       end
 
       def photo_select
-        selected = params[:selected_photo_id] || Array.new
-        @photos = Photo.order_by_ids(selected).sorted.page(params[:page])
-        @selected_photo = Photo.find(selected)
+        @selected_photo_id = Photo.find_by(id: params[:selected_photo_id]).try(:id)
+        @photos = Photo.order_by_ids(@selected_photo_id).sorted.page(params[:page])
         @photo = Photo.new
 
         if params[:page].present?
@@ -55,9 +54,8 @@ module Spina
       end
 
       def photo_collection_select
-        selected = params[:selected_photo_ids] || Array.new
-        @photos = Photo.order_by_ids(selected).sorted.page(params[:page])
-        @selected_photos = Photo.where(id: selected)
+        @selected_photo_ids = Photo.where(id: params[:selected_photo_ids]).ids
+        @photos = Photo.order_by_ids(@selected_photo_ids).sorted.page(params[:page])
         @photo = Photo.new
 
         if params[:page].present?

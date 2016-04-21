@@ -3,11 +3,10 @@ var hidden_input = $("input[name='<%= j params[:page_part_id] %>[photo_tokens]']
 <% if @photos.present? %>
   var photo_collection = $("<%= j render partial: 'photo_collection', locals: {photos: @photos} %>");
   hidden_input.parents('.horizontal-form-content').find('.photo-collection').html(photo_collection);
-  hidden_input.parents('.horizontal-form-content').find('a .placeholder').addClass('pull-right');
   hidden_input.val("<%= @photos.map(&:id).join(',') %>");
 <% else %>
-  hidden_input.parents('.horizontal-form-content').find('a .placeholder').removeClass('pull-right');
   hidden_input.val("");
+  hidden_input.parents('.horizontal-form-content').find('.photo-collection').empty()
 <% end %>
 
 $('.sortable-grid').sortable().bind('sortupdate', function(e) {

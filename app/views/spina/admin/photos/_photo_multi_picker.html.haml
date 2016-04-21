@@ -1,3 +1,3 @@
-.item{class: ('selected' if @selected_photos.include?(photo_multi_picker))}
-  = check_box_tag 'photo_ids[]', photo_multi_picker.id, @selected_photos.include?(photo_multi_picker)
+.item{class: ('selected' if photo_multi_picker.id.in?(@selected_photo_ids)) }
+  = check_box_tag 'photo_ids[]', photo_multi_picker.id, photo_multi_picker.id.in?(@selected_photo_ids)
   = image_tag photo_multi_picker.file.thumb.url, id: "photo_#{photo_multi_picker.id}"

@@ -2,8 +2,8 @@
   = f.object.title
 .horizontal-form-content
   = f.fields_for :page_partable, f.object.page_partable do |ff|
-    = link_to spina.photo_collection_select_admin_photos_path(ff.object_name, selected_photo_ids: (ff.object.photo_ids if ff.object.photos.any?)), remote: true, class: "media_picker" do
-      .placeholder{class: ('pull-right' if ff.object.photos.any?)}
+    = link_to spina.photo_collection_select_admin_photos_path(ff.object_name, selected_photo_ids: ff.object.photo_ids), remote: true, class: 'media_picker clearfix' do
+      .placeholder.pull-right
         %span.button.button-small.button-round
           %i.icon.icon-dots
           =t 'spina.pages.photos_picker'

@@ -24,7 +24,8 @@ module Spina
       end
 
       def select
-        @attachments = Attachment.file_attached.sorted
+        @selected_attachment_id = Attachment.find_by(id: params[:selected_attachment_id]).try(:id)
+        @attachments = Attachment.order_by_ids(@selected_attachment_id).file_attached.sorted
         @attachment = Attachment.new
       end
 
@@ -33,12 +34,13 @@ module Spina
       end
 
       def select_collection
-        @attachments = Attachment.file_attached.sorted
+        @selected_attachment_ids = Attachment.where(id: params[:selected_attachment_ids]).ids
+        @attachments = Attachment.order_by_ids(@selected_attachment_ids).file_attached.sorted
         @attachment = Attachment.new
       end
 
       def insert_collection
-        @attachments = Attachment.find(params[:attachment_ids])
+        @attachments = Attachment.where(id: params[:attachment_ids])
       end
 
       private
