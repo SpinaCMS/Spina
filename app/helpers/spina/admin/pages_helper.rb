@@ -41,8 +41,11 @@ module Spina
         hash.flat_map{|k, v| [k, *flatten_nested_hash(v)]}
       end
 
-      def page_ancestry_options(pages)
-        flatten_nested_hash(pages).map do |page|
+      def page_ancestry_options(page)
+        pages = Spina::Page.active
+        pages = pages.where.not(id: page.subtree.ids) unless page.new_record?
+
+        flatten_nested_hash(pages.arrange(order: :position)).map do |page|
           next if page.depth >= Spina.config.max_page_depth - 1
           page_menu_title = page.depth.zero? ? page.menu_title : " #{page.menu_title}".indent(page.depth, '-')
           [page_menu_title, page.ancestry]

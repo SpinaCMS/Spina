@@ -44,4 +44,4 @@
           = Spina::Page.human_attribute_name :ancestry
         %td
           .select-dropdown.ancestry
-            = f.select :ancestry, page_ancestry_options(Spina::Page.active.sorted.arrange), include_blank: Spina::Page.human_attribute_name(:no_parent)
+            = f.select :ancestry, page_ancestry_options(f.object), include_blank: Spina::Page.human_attribute_name(:no_parent)
