@@ -90,6 +90,11 @@ module Spina
       theme.view_templates.find { |template| template[:name] == view_template_name }
     end
 
+    def possible_parents
+      parents = self.class.active.sorted
+      new_record? ? parents : parents - subtree
+    end
+
     private
 
     def rewrite_rule
@@ -109,7 +114,7 @@ module Spina
         name == 'homepage' ? '' : "#{url_title}"
       else
         ancestors.collect(&:url_title).append(url_title).join('/')
-      end      
+      end
     end
 
     def ancestry_is_nil

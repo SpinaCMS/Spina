@@ -160,7 +160,7 @@ en:
         menu_title: Navigation title
         menu_title_placeholder: Leave empty to use the page title
         view_template: Page template
-        ancestry: Parent page
+        parent_id: Parent page
         no_parent: No parent
 
       spina/user:
