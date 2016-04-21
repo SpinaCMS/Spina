@@ -37,6 +37,18 @@ module Spina
         partable_type.tableize.sub(/\Aspina\//, '')
       end
 
+      def flatten_nested_hash(hash)
+        hash.flat_map{|k, v| [k, *flatten_nested_hash(v)]}
+      end
+
+      def page_ancestry_options(pages)
+        flatten_nested_hash(pages).map do |page|
+          next if page.depth >= Spina.config.max_page_depth - 1
+          page_menu_title = page.depth.zero? ? page.menu_title : " #{page.menu_title}".indent(page.depth, '-')
+          [page_menu_title, page.ancestry]
+        end.compact
+      end
+
     end
   end
 end
