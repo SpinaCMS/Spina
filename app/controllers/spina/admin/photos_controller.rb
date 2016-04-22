@@ -43,6 +43,7 @@ module Spina
 
       def photo_select
         selected = params[:selected_photo_id] || Array.new
+        hidden_field_id = params[:hidden_field_id]
         @photos = Photo.order_by_ids(selected).sorted.page(params[:page])
         @selected_photo = Photo.find(selected)
         @photo = Photo.new

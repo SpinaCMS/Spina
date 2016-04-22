@@ -1,4 +1,4 @@
-var hidden_input = $("input[name='<%= j params[:page_part_id] %>[page_partable_id]'], input[name='<%= j params[:page_part_id] %>[structure_partable_id]']");
+var hidden_input = $("input[name='<%= j params[:page_part_id] %>[page_partable_id]'], input[name='<%= j params[:page_part_id] %>[structure_partable_id]'], input[data-hidden-field='<%= j params[:hidden_field_id] %>']");
 hidden_input.parents('.media_picker').find('.image, .placeholder').remove();
 <% if @photo.present? %>
   hidden_input.parents('.media_picker').prepend("<div class='placeholder pull-right'><span class='button button-small button-round' data-icon='U'><%= I18n.t('spina.pages.photo_picker') %></span></div><div class='image'><img src='<%= @photo.file.thumb %>' /></div>");
