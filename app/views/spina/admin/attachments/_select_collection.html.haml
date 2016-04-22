@@ -17,7 +17,7 @@
           %tbody
             - @attachments.each do |attachment|
               %tr
-                %td= check_box_tag 'attachment_ids[]', attachment.id
+                %td= check_box_tag 'attachment_ids[]', attachment.id, attachment.id.in?(@selected_attachment_ids)
                 %td= attachment.name
 
       %footer

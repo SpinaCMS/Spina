@@ -109,7 +109,7 @@ module Spina
         name == 'homepage' ? '' : "#{url_title}"
       else
         ancestors.collect(&:url_title).append(url_title).join('/')
-      end      
+      end
     end
 
     def ancestry_is_nil
