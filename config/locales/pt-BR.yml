@@ -96,6 +96,10 @@ pt-BR:
       insert: 'Inserir documento'
       insert_multiple: 'Inserir documentos'
 
+    media_library:
+      photos: Imagens
+      attachments: Documentos
+
   activerecord:
     models:
       spina/page:

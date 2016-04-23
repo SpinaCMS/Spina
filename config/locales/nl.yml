@@ -96,6 +96,10 @@ nl:
       insert: 'Document toevoegen'
       insert_multiple: 'Documenten toevoegen'
 
+    media_library:
+      photos: Afbeeldingen
+      attachments: Documenten
+
   activerecord:
     models:
       spina/page:

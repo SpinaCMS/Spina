@@ -110,6 +110,10 @@ zh-CN:
       insert: '插入文档'
       insert_multiple: '插入多个文档'
 
+    media_library:
+      photos: 所有图片
+      attachments: 所有文档
+
   activerecord:
     models:
       spina/page:

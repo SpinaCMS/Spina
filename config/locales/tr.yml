@@ -96,6 +96,10 @@ tr:
       insert: 'Belge ekle'
       insert_multiple: 'Çoklu belge ekle'
 
+    media_library:
+      photos: Resimler
+      attachments: Belgeler
+
   activerecord:
     models:
       spina/page:
