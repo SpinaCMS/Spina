@@ -2,9 +2,9 @@
   %nav.tabs
     %ul
       %li{class: ('active' if controller_name == 'photos')}
-        = link_to Spina::Photo.model_name.human(count: 2), spina.admin_photos_path
+        = link_to t('spina.media_library.photos'), spina.admin_photos_path
       %li{class: ('active' if controller_name == 'attachments')}
-        = link_to Spina::Attachment.model_name.human(count: 2), spina.admin_attachments_path
+        = link_to t('spina.media_library.attachments'), spina.admin_attachments_path
 
 - content_for :website do
   = yield

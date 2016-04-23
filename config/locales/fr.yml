@@ -92,6 +92,10 @@ fr:
       insert: 'Insérer un document'
       insert_multiple: 'Insérer des documents'
 
+    media_library:
+      photos: Images
+      attachments: Documents
+
   activerecord:
     models:
       spina/page:

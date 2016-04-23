@@ -96,20 +96,32 @@ ru:
       insert: 'Вставить документ'
       insert_multiple: 'Вставить документы'
 
+    media_library:
+      photos: Изображения
+      attachments: Документы
+
   activerecord:
     models:
       spina/page:
         one: Страница
-        other: Страницы
+        few: Страницы
+        many: Страниц
+        other: Страниц
       spina/user:
         one: Пользователь
-        other: Пользователи
+        few: Пользователея
+        many: Пользователей
+        other: Пользователей
       spina/photo:
         one: Изображение
-        other: Изображения
+        few: Изображения
+        many: Изображений
+        other: Изображений
       spina/attachment:
         one: Документ
-        other: Документы
+        few: Документа
+        many: Документов
+        other: Документов
 
     attributes:
       spina/account:

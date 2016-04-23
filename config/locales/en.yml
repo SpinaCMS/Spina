@@ -99,6 +99,10 @@ en:
       insert: 'Insert document'
       insert_multiple: 'Insert documents'
 
+    media_library:
+      photos: Images
+      attachments: Documents
+
   activerecord:
     models:
       spina/page:
