@@ -34,9 +34,14 @@ module Spina
       end
 
       def page
-        @page ||= (action_name == 'homepage') ? Page.find_by!(name: 'homepage') : Page.with_translations(I18n.locale).find_by!(materialized_path: request.path) || Page.with_translations(I18n.default_locale).find_by!(materialized_path: request.path)
+        @page ||= (action_name == 'homepage') ? Page.find_by!(name: 'homepage') : Page.with_translations(I18n.locale).find_by!(materialized_path: materialized_path) || Page.with_translations(I18n.default_locale).find_by!(materialized_path: request.path)
       end
       helper_method :page
+
+      def materialized_path
+        segments = ['/', params[:locale], params[:id]].compact
+        File.join(*segments)
+      end
 
       def current_user_can_view_page?
         raise ActiveRecord::RecordNotFound unless page.live? || current_user.present?
