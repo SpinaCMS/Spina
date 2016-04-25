@@ -1,6 +1,6 @@
 Spina.configure do |config|
   # Set locales
-  config.locales = [:en]
+  config.locales = [:en, :nl]
 
   # Important Note
   # ==============

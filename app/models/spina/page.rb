@@ -90,6 +90,10 @@ module Spina
       theme.view_templates.find { |template| template[:name] == view_template_name }
     end
 
+    def full_materialized_path
+      File.join(Spina::Engine.routes.url_helpers.root_path, materialized_path)
+    end
+
     private
 
     def rewrite_rule
