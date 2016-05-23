@@ -1,3 +1,9 @@
+- content_for(:header_actions) do
+  .pull-right
+    = link_to '/', class: 'button button-hollow button-round button-small preview-website', data: {:"no-turbolink" => true} do
+      = icon('eye')
+      = t('spina.preview_website')
+
 - content_for(:permanent_notice) do
   - unless current_account.robots_allowed?
     .permanent-notice.permanent-notice-info

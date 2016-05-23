@@ -9,7 +9,6 @@
         - if lookup_context.exists? "spina/admin/hooks/#{ plugin.namespace }/_primary_navigation"
           = render "spina/admin/hooks/#{ plugin.namespace }/primary_navigation", plugin: plugin
 
-
     %li{class: ('active' if %w[accounts users tenants].include? controller_name)}
       = link_to spina.edit_admin_account_path do
         = icon('cog')
