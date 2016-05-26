@@ -25,6 +25,10 @@ module Spina
     scope :live, -> { where(draft: false, active: true) }
     scope :in_menu, -> { where(show_in_menu: true) }
     scope :active, -> { where(active: true) }
+    scope :not_active, -> { where(active: false) }
+    scope :by_name, ->(name) { where(name: name) }
+    scope :not_by_config_theme, ->(theme) { where.not.(view_template: theme.view_templates.map { |h| h[:name] }) }
+    scope :by_config_theme, ->(theme) { where(view_template: theme.view_templates.map { |h| h[:name] }) }
 
     alias_attribute :page_part, :part
     alias_attribute :parts, :page_parts

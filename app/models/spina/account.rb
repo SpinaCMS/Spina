@@ -26,7 +26,7 @@ module Spina
       args.each do |method_name|
         eval "
           def #{method_name}
-            (self.preferences || {})[:#{method_name}]
+            self.preferences.try(:[], :#{method_name})
           end
 
           def #{method_name}=(value)
@@ -54,16 +54,18 @@ module Spina
 
     def find_or_create_custom_pages(theme)
       theme.custom_pages.each do |page|
-        Page.where(name: page[:name]).first_or_create(title: page[:title]).update_columns(view_template: page[:view_template], deletable: page[:deletable])
+        Page.by_name(page[:name])
+            .first_or_create(title: page[:title])
+            .update_columns(view_template: page[:view_template], deletable: page[:deletable])
       end
     end
 
     def deactivate_unused_view_templates(theme)
-      Page.where(active: true).where.not(view_template: theme.view_templates.map { |h| h[:name] }).update_all(active: false)
+      Page.active.not_by_config_theme(theme).update_all(active: false)
     end
 
     def activate_used_view_templates(theme)
-      Page.where(active: false).where(view_template: theme.view_templates.map { |h| h[:name] }).update_all(active: true)
+      Page.not_active.by_config_theme(theme).update_all(active: true)
     end
 
   end
