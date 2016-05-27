@@ -27,7 +27,7 @@ module Spina
     scope :active, -> { where(active: true) }
     scope :not_active, -> { where(active: false) }
     scope :by_name, ->(name) { where(name: name) }
-    scope :not_by_config_theme, ->(theme) { where.not.(view_template: theme.view_templates.map { |h| h[:name] }) }
+    scope :not_by_config_theme, ->(theme) { where.not(view_template: theme.view_templates.map { |h| h[:name] }) }
     scope :by_config_theme, ->(theme) { where(view_template: theme.view_templates.map { |h| h[:name] }) }
 
     alias_attribute :page_part, :part
