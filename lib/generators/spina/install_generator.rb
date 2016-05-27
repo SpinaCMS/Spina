@@ -1,6 +1,3 @@
-require 'rake'
-Spina::Engine.load_tasks
-
 module Spina
   class InstallGenerator < Rails::Generators::Base
 
@@ -51,17 +48,20 @@ module Spina
     end
 
     def copy_template_files
-      return if Rails.env.production?
       theme = Account.first.theme
-      template "config/initializers/themes/#{theme}.rb"
-      directory "app/assets/stylesheets/#{theme}"
-      directory "app/views/#{theme}"
-      directory "app/views/layouts/#{theme}"
+      if theme.in? ['default', 'demo']
+        template "config/initializers/themes/#{theme}.rb"
+        directory "app/assets/stylesheets/#{theme}"
+        directory "app/views/#{theme}"
+        directory "app/views/layouts/#{theme}"
+      end
+      Spina::THEMES.clear
+      Dir[Rails.root.join('config', 'initializers', 'themes', '*.rb')].each { |file| load file }
     end
 
     def create_user
       return if User.exists? && !no?('A user already exists. Skip? [Yn]')
-      email = 'user@domain.com'
+      email = 'admin@domain.com'
       email = ask("Please enter an email address for your first user: [#{email}]").presence || email
       password = 'password'
       password = ask("Create a temporary password: [#{password}]", echo: false).presence || password
@@ -75,14 +75,30 @@ module Spina
     def seed_demo_content
       theme_name = Account.first.theme
       if theme_name == 'demo' && !no?('Seed example content? [Yn]')
-        Rake::Task['spina:seed_demo_content'].invoke
+        current_theme = ::Spina::Theme.find_by_name(theme_name)
+        if (page = Spina::Page.find_by(name: 'demo'))
+          page.page_parts.clear
+          parts = current_theme.page_parts.map { |page_part| page.page_part(page_part) }
+          parts.each do |part|
+            case part.partable_type
+            when 'Spina::Line' then part.partable.content = 'This is a single line'
+            when 'Spina::Text' then part.partable.content = '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>'
+            when 'Spina::Photo' then part.partable.remote_file_url = 'https://unsplash.it/300/200?random'
+            when 'Spina::PhotoCollection'
+              5.times { part.partable.photos.build(remote_file_url: 'https://unsplash.it/300/200?random') }
+            when 'Spina::Color' then part.partable.content = '#6865b4'
+            end
+          end
+          page.save
+        end
       end
     end
 
     private
 
       def themes
-        Rails.env.production? ? Spina::Theme.all.map(&:name) : ['default', 'demo']
+        themes = Spina::Theme.all.map(&:name)
+        themes | ['default', 'demo']
       end
 
   end
