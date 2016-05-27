@@ -94,6 +94,20 @@ module Spina
       end
     end
 
+    def feedback
+      puts
+      puts '    Your Spina site has been succesfully installed! '
+      puts
+      puts '    Restart your server and visit http://localhost:3000 in your browser!'
+      puts "    The admin backend is located at http://localhost:3000/#{Spina.config.backend_path}."
+      puts
+      puts "    Site name      :  #{Account.first.name}"
+      puts "    Active Theme   :  #{Account.first.theme}"
+      puts "    User Email     :  #{User.first.email}"
+      puts "    User Password  :  'password' by default"
+      puts
+    end
+
     private
 
       def themes
