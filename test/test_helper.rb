@@ -4,6 +4,9 @@ CodeClimate::TestReporter.start
 # Configure Rails Environment
 ENV["RAILS_ENV"] = "test"
 
+# Disable the warning from gems
+$VERBOSE = nil
+
 require File.expand_path("../dummy/config/environment.rb",  __FILE__)
 require "rails/test_help"
 require "minitest/reporters"

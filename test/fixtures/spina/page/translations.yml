@@ -21,3 +21,9 @@ about_nl_translation:
   title: Over ons
   materialized_path: /nl/over-ons
   globalized_model: about
+
+demo_translation:
+  locale: en
+  title: Demo
+  materialized_path: /
+  globalized_model: demo
