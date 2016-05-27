@@ -1,0 +1,5 @@
+structure_part_1:
+  structure_item_id: <%= ActiveRecord::FixtureSet.identify(:structure_item_1) %>
+  structure_partable_id: <%= ActiveRecord::FixtureSet.identify(:line_1) %>
+  structure_partable_type: Spina::Line
+  name: name_1

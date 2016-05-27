@@ -1,0 +1,5 @@
+structure_item_1:
+  structure_id: <%= ActiveRecord::FixtureSet.identify(:structure_1) %>
+
+structure_item_2:
+  structure_id: <%= ActiveRecord::FixtureSet.identify(:structure_2) %>
