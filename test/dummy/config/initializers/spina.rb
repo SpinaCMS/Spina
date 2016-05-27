@@ -1,6 +1,7 @@
 Spina.configure do |config|
   # Set locales
   config.locales = [:en, :nl]
+  # Run `rake spina:update_translations` after you add any new locale.
 
   # Important Note
   # ==============
