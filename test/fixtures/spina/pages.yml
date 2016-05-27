@@ -2,6 +2,12 @@
 
 homepage:
   name: homepage
+  deletable: false
 
 about:
-  name:
+  name: about
+  deletable: false
+
+demo:
+  name: demo
+  deletable: true
