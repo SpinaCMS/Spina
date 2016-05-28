@@ -18,8 +18,7 @@ module Spina
     end
 
     def content(layout_part)
-      layout_part = layout_parts.where(name: layout_part).first
-      layout_part.try(:content)
+      layout_parts.find_by(name: layout_part).try(:content)
     end
 
     def self.serialized_attr_accessor(*args)
