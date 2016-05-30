@@ -27,14 +27,13 @@ module Spina
       end
 
       def rewrite_page
-        unless page.present?
-          @rule = RewriteRule.find_by(old_path: "/" + params[:id])
-          redirect_to @rule.new_path, status: :moved_permanently if @rule.present?
+        if page.nil? && rule = RewriteRule.find_by(old_path: "/" + params[:id])
+          redirect_to rule.new_path, status: :moved_permanently
         end
       end
 
       def page_by_locale(locale)
-        Page.with_translations(locale).find_by!(materialized_path: spina_request_path)
+        Page.with_translations(locale).find_by(materialized_path: spina_request_path)
       end
 
       def page
