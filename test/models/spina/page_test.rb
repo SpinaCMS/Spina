@@ -16,5 +16,13 @@ module Spina
       assert_equal false, @demo.custom_page?
     end
 
+    test 'homepage live?' do
+      assert_equal true, @homepage.live?
+    end
+
+    test 'demo live?' do
+      assert_equal false, @demo.live?
+    end
+
   end
 end
