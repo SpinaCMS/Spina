@@ -48,7 +48,9 @@ module Spina
       end
 
       def current_user_can_view_page?
-        raise ActiveRecord::RecordNotFound unless page.live? || current_user.present?
+        raise ActiveRecord::RecordNotFound if page.nil? || !page.live?
+
+        current_user.present?
       end
 
       def should_skip_to_first_child?
