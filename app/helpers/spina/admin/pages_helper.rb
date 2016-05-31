@@ -48,7 +48,7 @@ module Spina
         flatten_nested_hash(pages.arrange(order: :position)).map do |page|
           next if page.depth >= Spina.config.max_page_depth - 1
           page_menu_title = page.depth.zero? ? page.menu_title : " #{page.menu_title}".indent(page.depth, '-')
-          [page_menu_title, page.ancestry]
+          [page_menu_title, page.id]
         end.compact
       end
 
