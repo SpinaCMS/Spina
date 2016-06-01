@@ -62,8 +62,7 @@ module Spina
     end
 
     def content(page_part)
-      page_part = page_parts.where(name: page_part).first
-      page_part.try(:content)
+      page_parts.find_by(name: page_part).try(:content)
     end
 
     def live?
