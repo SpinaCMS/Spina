@@ -1,4 +1,4 @@
-var hidden_input = $("input[name='<%= j params[:page_part_id] %>[photo_tokens]']");
+var hidden_input = $("input[name='<%= j params[:page_part_id] %>[photo_tokens]'], input[data-hidden-field-id='<%= j params[:hidden_field_id] %>[photo_tokens]']");
 
 <% if @photos.present? %>
   var photo_collection = $("<%= j render partial: 'photo_collection', locals: {photos: @photos} %>");
