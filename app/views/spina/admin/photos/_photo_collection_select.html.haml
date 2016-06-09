@@ -7,7 +7,6 @@
           = f.file_field :file, data: {customfileinput: true}
 
       = form_tag spina.insert_photo_collection_admin_photos_path(params[:page_part_id]), remote: true, class: 'gallery-prepend-image' do
-        = hidden_field_tag :hidden_field_id, @hidden_field_id
         .infinite-scroll
           = render partial: 'spina/admin/photos/photo_multi_picker', collection: @photos
 

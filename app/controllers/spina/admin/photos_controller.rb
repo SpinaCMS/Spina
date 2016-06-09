@@ -56,7 +56,6 @@ module Spina
 
       def photo_collection_select
         @selected_photo_ids = Photo.where(id: params[:selected_photo_ids]).ids
-        @hidden_field_id = params[:hidden_field_id]
         @photos = Photo.order_by_ids(@selected_photo_ids).sorted.page(params[:page])
         @photo = Photo.new
 
