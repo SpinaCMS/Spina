@@ -20,7 +20,7 @@ Spina::Engine.routes.draw do
     get "logout" => "sessions#destroy"
 
     # Media library
-    get 'media_library' => 'photos#index', as: "media_library"
+    get 'media_library' => 'photos#media_library', as: "media_library"
 
     resources :pages do
       post :sort, on: :collection

@@ -1,4 +1,12 @@
 = form_for [spina, :admin, current_account] do |f|
+  %header#header
+    = render partial: 'spina/admin/shared/breadcrumbs'
+
+    #header_actions
+      %button.button.button-primary{type: 'submit', data: {icon: 'o'}}
+        = icon('check')
+        = t('spina.preferences.style_save')
+        
   .well
     .horizontal-form
       .horizontal-form-group
@@ -26,7 +34,3 @@
             = ff.hidden_field :name
 
             = render "spina/admin/layout_partables/#{ partable_type_partial_namespace(ff.object.layout_partable_type) }/form", f: ff
-
-  %button.button.button-primary{type: 'submit', data: {icon: 'o'}}
-    = icon('check')
-    = t('spina.preferences.style_save')

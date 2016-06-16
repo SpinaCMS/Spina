@@ -1,14 +1,24 @@
-- if @user.errors.any?
-  - content_for :notification_alert do
-    .notification.notification-error{data: {icon: 'm'}}
-      %p 
-        = Spina::User.human_attribute_name :cannot_be_created
-        %small
-          - @user.errors.full_messages.each do |msg|
-            = msg
-            %br/
-
 = form_for [spina, :admin, @user] do |f|
+  %header#header
+    = render partial: 'spina/admin/shared/breadcrumbs'
+
+    #header_actions
+      = link_to t('spina.cancel'), spina.admin_users_path, class: 'button button-link'
+
+      %button.button.button-primary{type: 'submit'}
+        = icon('check')
+        =t('spina.users.save')
+
+  - if @user.errors.any?
+    - content_for :notification_alert do
+      .notification.notification-error{data: {icon: 'm'}}
+        %p 
+          = Spina::User.human_attribute_name :cannot_be_created
+          %small
+            - @user.errors.full_messages.each do |msg|
+              = msg
+              %br/
+
   .well
     .horizontal-form
       .horizontal-form-group
@@ -43,12 +53,6 @@
           %small= Spina::User.human_attribute_name :admin_description
         .horizontal-form-content
           = f.check_box :admin, data: {switch: 'true'}
-
-  %button.button.button-primary{type: 'submit'}
-    = icon('check')
-    =t('spina.users.save')
-
-  = link_to t('spina.cancel'), spina.admin_users_path, class: 'button button-link'
 
   - unless @user.new_record? || @user == current_user
     .pull-right= link_to t('spina.permanently_delete'), spina.admin_user_path(@user), method: :delete, data: {confirm: t('spina.users.delete_confirmation', user: @user)}, class: 'button button-link button-danger'

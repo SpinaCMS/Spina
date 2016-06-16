@@ -1,4 +1,12 @@
 = form_for [spina, :admin, current_account] do |f|
+  %header#header
+    = render partial: 'spina/admin/shared/breadcrumbs'
+
+    #header_actions
+      %button.button.button-primary{type: 'submit'}
+        = icon('check')
+        = t('spina.preferences.analytics_save')
+
   .well
     .horizontal-form
       .horizontal-form-group
@@ -16,7 +24,3 @@
           = Spina::Account.human_attribute_name(:google_site_verification)
         .horizontal-form-content
           = f.text_field :google_site_verification, placeholder: Spina::Account.human_attribute_name(:google_site_verification)
-
-  %button.button.button-primary{type: 'submit'}
-    = icon('check')
-    = t('spina.preferences.analytics_save')

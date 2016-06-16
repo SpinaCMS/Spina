@@ -1,7 +1,10 @@
-- content_for(:header_actions) do
-  = link_to spina.new_admin_user_path, class: 'button button-primary' do
-    = icon('plus')
-    = t('spina.users.new')
+%header#header
+  = render partial: 'spina/admin/shared/breadcrumbs'
+
+  #header_actions
+    = link_to spina.new_admin_user_path, class: 'button button-primary' do
+      = icon('plus')
+      = t('spina.users.new')
 
 .well
   .table-container
@@ -21,7 +24,7 @@
             %td
               - if user.last_logged_in.present?
                 = time_ago_in_words(user.last_logged_in) + " #{t('spina.ago')}"
-            %td
+            %td.align-right
               = link_to spina.edit_admin_user_path(user), class: 'button button-small' do
                 = icon('pencil-outline')
                 = t('spina.edit')
