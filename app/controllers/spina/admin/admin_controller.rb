@@ -4,8 +4,6 @@ module Spina
       before_action :set_admin_locale
       before_action :authorize_user
 
-      layout 'spina/admin/application'
-
       def current_admin_path
         request.fullpath[%r{/#{ Spina.config.backend_path }(.*)}, 1]
       end

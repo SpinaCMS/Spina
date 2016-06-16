@@ -19,6 +19,6 @@ class Spina.InfiniteScroll
 $.fn.infiniteScroll = () ->
   Spina.InfiniteScroll.init(this)
 
-$(document).on 'page:change', ->
+$(document).on 'turbolinks:load', ->
   $(window).off('scroll.infiniteScroll')
   $('#main, #overlay section').off('scroll.infiniteScroll')

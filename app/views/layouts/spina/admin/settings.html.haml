@@ -1,9 +1,7 @@
-- content_for(:application) do
+- content_for :application do
   %header#header
-    = render 'spina/admin/shared/breadcrumbs'
+    = render partial: 'spina/admin/shared/breadcrumbs'
 
-    #header_actions= yield(:header_actions)
+  = yield
 
-  = content_for?(:settings) ? yield(:settings) : yield
-
-= render template: 'layouts/spina/admin/application'
+= render template: 'layouts/spina/admin/admin'

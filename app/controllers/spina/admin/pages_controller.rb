@@ -8,8 +8,6 @@ module Spina
 
       authorize_resource class: Page
 
-      layout "spina/admin/website"
-
       def index
         @pages = Page.active.sorted.roots
       end
