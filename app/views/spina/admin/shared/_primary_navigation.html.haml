@@ -1,7 +1,7 @@
 %nav#primary.animated{data: {turbolinks_permanent: true}}
   %ul
     %li{class: ('active' if (%w[pages photos attachments].include? controller_name))}
-      = link_to '#' do
+      = link_to spina.admin_pages_path do
         = icon('home')
         = t('spina.website.title')
         = icon('caret-right')
@@ -26,7 +26,7 @@
           = render "spina/admin/hooks/#{ plugin.namespace }/primary_navigation", plugin: plugin
 
     %li{class: ('active' if %w[accounts users tenants].include? controller_name)}
-      = link_to '#' do
+      = link_to spina.edit_admin_account_path do
         = icon('cog')
         = t('spina.preferences.title')
         = icon('caret-right')
