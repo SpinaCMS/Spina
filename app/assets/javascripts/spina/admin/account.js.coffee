@@ -3,7 +3,7 @@ ready = ->
     layout_parts = $('.account-theme').data('layout-parts')
     show_layout_parts(layout_parts)
 
-$(document).on 'ready page:load', ready
+$(document).on 'turbolinks:load', ready
 
 $(document).on 'change', '.account-theme select', ->
   layout_parts = $(this).find('option:selected').data('layout-parts').split(" ")

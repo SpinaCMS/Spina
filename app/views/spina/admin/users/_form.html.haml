@@ -9,39 +9,39 @@
             %br/
 
 = form_for [spina, :admin, @user] do |f|
-  .table-container
-    %table.table.table-form
-      %tr
-        %td
+  .well
+    .horizontal-form
+      .horizontal-form-group
+        .horizontal-form-label
           = Spina::User.human_attribute_name :name
-        %td
+        .horizontal-form-content
           = f.text_field :name, placeholder: Spina::User.human_attribute_name(:name_placeholder), class: 'large'
 
-      %tr
-        %td
+      .horizontal-form-group
+        .horizontal-form-label
           = Spina::User.human_attribute_name :email
           %small= Spina::User.human_attribute_name :email_description
-        %td
+        .horizontal-form-content
           = f.text_field :email, placeholder: Spina::User.human_attribute_name(:email)
 
-      %tr
-        %td
+      .horizontal-form-group
+        .horizontal-form-label
           = Spina::User.human_attribute_name :password
           %small= Spina::User.human_attribute_name :password_description
-        %td
+        .horizontal-form-content
           = f.password_field :password, placeholder: Spina::User.human_attribute_name(:password)
 
-      %tr
-        %td
+      .horizontal-form-group
+        .horizontal-form-label
           = Spina::User.human_attribute_name :password_confirmation
-        %td
+        .horizontal-form-content
           = f.password_field :password_confirmation, placeholder: Spina::User.human_attribute_name(:password_confirmation)
 
-      %tr
-        %td
+      .horizontal-form-group
+        .horizontal-form-label
           #{Spina::User.human_attribute_name :admin}?
           %small= Spina::User.human_attribute_name :admin_description
-        %td
+        .horizontal-form-content
           = f.check_box :admin, data: {switch: 'true'}
 
   %button.button.button-primary{type: 'submit'}

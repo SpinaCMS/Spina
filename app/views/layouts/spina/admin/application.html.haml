@@ -18,17 +18,11 @@
 
   %body
     = render 'spina/admin/shared/primary_navigation'
-    = yield(:secondary_navigation)
 
     %section#main
-      %header#main_content_header
-        = yield(:permanent_notice)
+      = yield(:permanent_notice)
 
-        = yield(:header_actions) if content_for?(:header_actions)
-        .breadcrumbs= render_breadcrumbs separator: '<div class="divider"></div>'
-        = yield(:tertiary_navigation)
-
-        = render 'spina/admin/shared/notifications'
+      = render 'spina/admin/shared/notifications'
 
       = content_for?(:application) ? yield(:application) : yield
 

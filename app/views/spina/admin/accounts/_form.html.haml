@@ -1,40 +1,40 @@
 = form_for [spina, :admin, current_account] do |f|
-  .table-container
-    %table.table.table-form
-      %tr
-        %td
+  .well
+    .horizontal-form
+      .horizontal-form-group
+        .horizontal-form-label
           = Spina::Account.human_attribute_name(:name)
-        %td
+        .horizontal-form-content
           = f.text_field :name, placeholder: Spina::Account.human_attribute_name(:name)
 
-      %tr
-        %td
+      .horizontal-form-group
+        .horizontal-form-label
           = Spina::Account.human_attribute_name(:address)
-        %td
+        .horizontal-form-content
           = f.text_field :address, placeholder: Spina::Account.human_attribute_name(:address)
 
-      %tr
-        %td
+      .horizontal-form-group
+        .horizontal-form-label
           = Spina::Account.human_attribute_name(:postal_code)
-        %td
+        .horizontal-form-content
           = f.text_field :postal_code, placeholder: Spina::Account.human_attribute_name(:postal_code)
 
-      %tr
-        %td
+      .horizontal-form-group
+        .horizontal-form-label
           = Spina::Account.human_attribute_name(:city)
-        %td
+        .horizontal-form-content
           = f.text_field :city, placeholder: Spina::Account.human_attribute_name(:city)
 
-      %tr
-        %td
+      .horizontal-form-group
+        .horizontal-form-label
           = Spina::Account.human_attribute_name(:phone)
-        %td
+        .horizontal-form-content
           = f.text_field :phone, placeholder: Spina::Account.human_attribute_name(:phone)
 
-      %tr
-        %td
+      .horizontal-form-group
+        .horizontal-form-label
           = Spina::Account.human_attribute_name(:email)
-        %td
+        .horizontal-form-content
           = f.text_field :email, placeholder: Spina::Account.human_attribute_name(:email)
 
   %button.button.button-primary{type: 'submit'}

@@ -1,25 +1,25 @@
 = form_for [spina, :admin, current_account] do |f|
-  .table-container
-    %table.table.table-form
-      %tr
-        %td
+  .well
+    .horizontal-form
+      .horizontal-form-group
+        .horizontal-form-label
           = Spina::Account.human_attribute_name(:theme)
-        %td
+        .horizontal-form-content
           .select-dropdown.account-theme{data: {layout_parts: current_theme.layout_parts.map{|layout_part| layout_part[:name]}}}
             - options = options_for_select(::Spina::Theme.all.map { |theme| [theme.name, theme.name, {'data-layout-parts' => theme.layout_parts.map{|layout_part| layout_part[:name] }}] }, current_account.theme)
             = f.select :theme, options
-      %tr
-        %td
+      .horizontal-form-group
+        .horizontal-form-label
           = Spina::Account.human_attribute_name(:logo)
-        %td
+        .horizontal-form-content
           = image_tag current_account.logo
           = f.file_field :logo
 
       = f.fields_for :layout_parts do |ff|
-        %tr.layout-part{data: {name: ff.object.name}}
-          %td
+        .horizontal-form-group.layout-part{data: {name: ff.object.name}}
+          .horizontal-form-label
             = ff.object.title
-          %td
+          .horizontal-form-content
             = ff.hidden_field :id
             = ff.hidden_field :title
             = ff.hidden_field :layout_partable_type

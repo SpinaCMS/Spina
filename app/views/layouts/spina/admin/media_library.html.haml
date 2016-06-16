@@ -1,5 +1,7 @@
-- content_for(:tertiary_navigation) do
-  %nav.tabs
+%header#header
+  .breadcrumbs= render_breadcrumbs separator: '<div class="divider"></div>'
+  
+  %nav#secondary.tabs
     %ul
       %li{class: ('active' if controller_name == 'photos')}
         = link_to t('spina.media_library.photos'), spina.admin_photos_path

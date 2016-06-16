@@ -1,20 +1,20 @@
 = form_for [spina, :admin, current_account] do |f|
-  .table-container
-    %table.table.table-form
-      %tr
-        %td
+  .well
+    .horizontal-form
+      .horizontal-form-group
+        .horizontal-form-label
           = Spina::Account.human_attribute_name(:robots_allowed)
-        %td
+        .horizontal-form-content
           = f.check_box :robots_allowed, data: {switch: true}
-      %tr
-        %td
+      .horizontal-form-group
+        .horizontal-form-label
           = Spina::Account.human_attribute_name(:google_analytics)
-        %td
+        .horizontal-form-content
           = f.text_field :google_analytics, placeholder: Spina::Account.human_attribute_name(:google_analytics)
-      %tr
-        %td
+      .horizontal-form-group
+        .horizontal-form-label
           = Spina::Account.human_attribute_name(:google_site_verification)
-        %td
+        .horizontal-form-content
           = f.text_field :google_site_verification, placeholder: Spina::Account.human_attribute_name(:google_site_verification)
 
   %button.button.button-primary{type: 'submit'}

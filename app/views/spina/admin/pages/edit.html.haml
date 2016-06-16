@@ -1,17 +1,19 @@
-- content_for :header_actions do
-  - if Spina.config.locales.size > 1
-    .pull-right{data: {dropdown: true}}
-      = link_to '#', class: 'button button-round button-hollow button-small', data: {trigger: 'dropdown', target: '#locales'} do
-        = icon('comment')
-        = @locale.upcase
+%header#header
+  .breadcrumbs= render_breadcrumbs separator: '<div class="divider"></div>'
 
-      %ul#locales
-        - Spina.config.locales.each do |locale|
-          %li
-            = link_to t("languages.#{locale}"), "?locale=#{locale}", style: ('font-weight: 600' if @locale.to_s == locale.to_s)
+  #header_actions
+    - if Spina.config.locales.size > 1
+      %div{data: {dropdown: true}}
+        = link_to '#', class: 'button button-round button-hollow button-small', data: {trigger: 'dropdown', target: '#locales'} do
+          = icon('comment')
+          = @locale.upcase
 
-- content_for :tertiary_navigation do
-  %nav.tabs
+        %ul#locales.align-right
+          - Spina.config.locales.each do |locale|
+            %li
+              = link_to t("languages.#{locale}"), "?locale=#{locale}", style: ('font-weight: 600' if @locale.to_s == locale.to_s)
+
+  %nav#secondary.tabs
     %ul
       - @tabs.each_with_index do |tab, i|
         %li{class: (i==0 ? 'active' : '')}

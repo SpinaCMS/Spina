@@ -1,5 +1,7 @@
-- content_for :tertiary_navigation do
-  %nav.tabs
+%header#header
+  .breadcrumbs= render_breadcrumbs separator: '<div class="divider"></div>'
+
+  %nav#secondary.tabs
     %ul
       %li.active
         = link_to t('spina.pages.page_content'), "#page_content"
