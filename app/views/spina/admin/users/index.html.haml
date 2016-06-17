@@ -25,6 +25,6 @@
               - if user.last_logged_in.present?
                 = time_ago_in_words(user.last_logged_in) + " #{t('spina.ago')}"
             %td.align-right
-              = link_to spina.edit_admin_user_path(user), class: 'button button-small' do
+              = link_to spina.edit_admin_user_path(user), class: 'button button-small button-link' do
                 = icon('pencil-outline')
                 = t('spina.edit')

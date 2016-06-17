@@ -1,4 +1,7 @@
 nl:
+  languages:
+    nl: Nederlands
+    en: Engels
   spina:
     cancel: Annuleren
     close: Sluiten

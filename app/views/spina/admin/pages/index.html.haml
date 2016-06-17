@@ -8,6 +8,10 @@
 
 %header#header
   #header_actions
+    = link_to spina.new_admin_page_path(params: {view_template: 'show'}), class: 'button button-primary', data: {trigger: ('dropdown' if current_theme.new_page_templates.size > 1), target: '#create_page_dropdown'} do
+      = icon('plus')
+      = t('spina.pages.new')
+
     %span{data: {dropdown: true}}
       .sliding-dropdown#create_page_dropdown
         .slide-controls
@@ -37,10 +41,6 @@
     = link_to '#pages_list', class: 'button sort-switch', data: {change_order: t('spina.pages.change_order'), done_changing_order: t('spina.pages.done_changing_order')} do
       = icon('random')
       = t('spina.pages.change_order')
-
-    = link_to spina.new_admin_page_path(params: {view_template: 'show'}), class: 'button button-primary', data: {trigger: ('dropdown' if current_theme.new_page_templates.size > 1), target: '#create_page_dropdown'} do
-      = icon('plus')
-      = t('spina.pages.new')
 
   .breadcrumbs= render_breadcrumbs seperator: '<div class="divider"></div>'
 

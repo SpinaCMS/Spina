@@ -1,13 +1,1 @@
-%header#header
-  .breadcrumbs= render_breadcrumbs separator: '<div class="divider"></div>'
-
-  %nav#secondary.tabs
-    %ul
-      %li.active
-        = link_to t('spina.pages.page_content'), "#page_content"
-      %li
-        = link_to t('spina.pages.page_seo'), "#page_seo"
-      %li
-        = link_to t('spina.pages.advanced'), "#advanced"
-
 = render 'form'

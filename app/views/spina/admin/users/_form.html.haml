@@ -3,11 +3,11 @@
     = render partial: 'spina/admin/shared/breadcrumbs'
 
     #header_actions
-      = link_to t('spina.cancel'), spina.admin_users_path, class: 'button button-link'
-
       %button.button.button-primary{type: 'submit'}
         = icon('check')
         =t('spina.users.save')
+
+      = link_to t('spina.cancel'), spina.admin_users_path, class: 'button'
 
   - if @user.errors.any?
     - content_for :notification_alert do
