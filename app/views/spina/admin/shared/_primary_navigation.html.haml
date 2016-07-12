@@ -18,7 +18,7 @@
         %li
           = link_to '#', class: 'back-to-main-menu' do
             = icon('caret-left')
-            hoofdmenu
+            =t 'spina.main_menu'
 
     - Spina::Plugin.all.each do |plugin|
       - if current_theme.plugins.include? plugin.name
@@ -52,7 +52,7 @@
         %li
           = link_to '#', class: 'back-to-main-menu' do
             = icon('caret-left')
-            hoofdmenu
+            =t 'spina.main_menu'
 
     %li.bottom
       = link_to spina.admin_logout_path, data: {no_turbolink: true} do
