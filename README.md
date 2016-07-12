@@ -1,4 +1,4 @@
-![Spina CMS](http://www.denkwebsite.nl/spinacms.png)
+![Spina CMS](http://www.spinacms.com/spinacms.png)
 
 [Visit the website](http://www.spinacms.com)
 
