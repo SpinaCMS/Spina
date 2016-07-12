@@ -13,6 +13,7 @@ en:
     ago: ago
     edit_website: Edit your website
     logout: Logout
+    main_menu: Main menu
 
     modal:
       agree: "Yes, I'm sure"
@@ -89,7 +90,7 @@ en:
       social_media: Social media
       social_media_description: Facebook and Twitter accounts
       social_media_save: Save social media
-      analytics: Analytics and search engines
+      analytics: Analytics and search
       analytics_description: Link your account with for real-time analytics
       analytics_save: Save preferences
       domain_name_settings: Domain settings

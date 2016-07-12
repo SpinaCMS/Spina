@@ -1,4 +1,7 @@
 nl:
+  languages:
+    nl: Nederlands
+    en: Engels
   spina:
     cancel: Annuleren
     close: Sluiten
@@ -13,6 +16,7 @@ nl:
     ago: geleden
     edit_website: Bewerk je website
     logout: Uitloggen
+    main_menu: Hoofdmenu
 
     modal:
       agree: "Ja, dat weet ik zeker"

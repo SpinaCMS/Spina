@@ -18,7 +18,7 @@ ready = ->
       id = $(this).data('structure-item-id')
       $(".structure_form_pane_#{id}_position").val(index)
 
-$(document).on 'ready page:load', ready
+$(document).on 'turbolinks:load', ready
 
 # Change templates makes page parts appear and disappear
 $(document).on 'change', '.page-template select', ->

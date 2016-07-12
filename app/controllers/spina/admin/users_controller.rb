@@ -5,8 +5,6 @@ module Spina
 
       authorize_resource class: User
 
-      layout "spina/admin/settings"
-
       def index
         @users = User.all
       end

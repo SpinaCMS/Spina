@@ -1,26 +1,30 @@
-.filters
-  = link_to spina.new_admin_user_path, class: 'button button-primary' do
-    = icon('plus')
-    = t('spina.users.new')
+%header#header
+  = render partial: 'spina/admin/shared/breadcrumbs'
 
-.table-container
-  %table.table
-    %thead
-      %tr
-        %th= Spina::User.human_attribute_name :name
-        %th= Spina::User.human_attribute_name :role
-        %th= Spina::User.human_attribute_name :last_logged_in
-        %th
+  #header_actions
+    = link_to spina.new_admin_user_path, class: 'button button-primary' do
+      = icon('plus')
+      = t('spina.users.new')
 
-    %tbody
-      - @users.each do |user|
+.well
+  .table-container
+    %table.table
+      %thead
         %tr
-          %td= link_to user, spina.edit_admin_user_path(user)
-          %td= user.admin? ? Spina::User.human_attribute_name(:admin) : Spina::User.human_attribute_name(:user)
-          %td
-            - if user.last_logged_in.present?
-              = time_ago_in_words(user.last_logged_in) + " #{t('spina.ago')}"
-          %td
-            = link_to spina.edit_admin_user_path(user), class: 'button button-small' do
-              = icon('pencil-outline')
-              = t('spina.edit')
+          %th= Spina::User.human_attribute_name :name
+          %th= Spina::User.human_attribute_name :role
+          %th= Spina::User.human_attribute_name :last_logged_in
+          %th
+
+      %tbody
+        - @users.each do |user|
+          %tr
+            %td= link_to user, spina.edit_admin_user_path(user)
+            %td= user.admin? ? Spina::User.human_attribute_name(:admin) : Spina::User.human_attribute_name(:user)
+            %td
+              - if user.last_logged_in.present?
+                = time_ago_in_words(user.last_logged_in) + " #{t('spina.ago')}"
+            %td.align-right
+              = link_to spina.edit_admin_user_path(user), class: 'button button-small button-link' do
+                = icon('pencil-outline')
+                = t('spina.edit')

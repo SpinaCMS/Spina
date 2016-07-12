@@ -1,24 +1,28 @@
 = form_for [spina, :admin, current_account] do |f|
-  .table-container
-    %table.table.table-form
-      %tr
-        %td
+  %header#header
+    = render partial: 'spina/admin/shared/breadcrumbs'
+
+    #header_actions
+      %button.button.button-primary{type: 'submit'}
+        = icon('check')
+        = t('spina.preferences.social_media_save')
+
+  .well
+    .horizontal-form
+      .horizontal-form-group
+        .horizontal-form-label
           = Spina::Account.human_attribute_name(:facebook)
-        %td
+        .horizontal-form-content
           = f.text_field :facebook, placeholder: Spina::Account.human_attribute_name(:facebook)
 
-      %tr
-        %td
+      .horizontal-form-group
+        .horizontal-form-label
           = Spina::Account.human_attribute_name(:twitter)
-        %td
+        .horizontal-form-content
           = f.text_field :twitter, placeholder: Spina::Account.human_attribute_name(:twitter)
 
-      %tr
-        %td
+      .horizontal-form-group
+        .horizontal-form-label
           = Spina::Account.human_attribute_name(:google_plus)
-        %td
+        .horizontal-form-content
           = f.text_field :google_plus, placeholder: Spina::Account.human_attribute_name(:google_plus)
-
-  %button.button.button-primary{type: 'submit'}
-    = icon('check')
-    = t('spina.preferences.social_media_save')

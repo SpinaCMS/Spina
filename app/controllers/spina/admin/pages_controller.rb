@@ -8,9 +8,8 @@ module Spina
 
       authorize_resource class: Page
 
-      layout "spina/admin/website"
-
       def index
+        redirect_to admin_pages_path unless current_admin_path.starts_with?('/pages')
         @pages = Page.active.sorted.roots
       end
 

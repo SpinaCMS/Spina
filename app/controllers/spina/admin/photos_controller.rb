@@ -13,6 +13,10 @@ module Spina
         @photo = Photo.new
       end
 
+      def media_library
+        redirect_to spina.admin_photos_path
+      end
+
       def create
         @photo = Photo.create!(photo_params)
         respond_to do |format|

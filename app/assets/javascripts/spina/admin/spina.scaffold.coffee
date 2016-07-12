@@ -11,5 +11,5 @@ class Spina.Scaffold
 $.fn.enhance = () ->
   Spina.Scaffold.enhance(this)
 
-$(document).on 'page:change', ->
+$(document).on 'turbolinks:load', ->
   Spina.Scaffold.init()

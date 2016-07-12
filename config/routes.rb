@@ -20,7 +20,7 @@ Spina::Engine.routes.draw do
     get "logout" => "sessions#destroy"
 
     # Media library
-    get 'media_library' => 'photos#index', as: "media_library"
+    get 'media_library' => 'photos#media_library', as: "media_library"
 
     resources :pages do
       post :sort, on: :collection
@@ -71,7 +71,7 @@ Spina::Engine.routes.draw do
   get '/:locale/*id' => 'pages#show', constraints: {locale: /#{Spina.config.locales.join('|')}/ }
   get '/:locale/' => 'pages#homepage', constraints: {locale: /#{Spina.config.locales.join('|')}/ }
   get '/*id' => 'pages#show', as: "page", controller: 'pages', constraints: lambda { |request|
-    !(Rails.env.development? && request.env['PATH_INFO'].starts_with?('/rails/'))
+    !(Rails.env.development? && request.env['PATH_INFO'].starts_with?('/rails/') || request.env['PATH_INFO'].starts_with?('/attachments/'))
   }
 
 end

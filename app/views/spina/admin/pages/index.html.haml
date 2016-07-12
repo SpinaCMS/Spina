@@ -1,9 +1,3 @@
-- content_for(:header_actions) do
-  .pull-right
-    = link_to '/', class: 'button button-hollow button-round button-small preview-website', data: {:"no-turbolink" => true} do
-      = icon('eye')
-      = t('spina.preview_website')
-
 - content_for(:permanent_notice) do
   - unless current_account.robots_allowed?
     .permanent-notice.permanent-notice-info
@@ -12,41 +6,48 @@
         =t 'spina.pages.invisible_to_search_engines'
         %small=t 'spina.pages.invisible_to_search_engines_description'
 
-.filters
-  %span{data: {dropdown: true}}
+%header#header
+  #header_actions
     = link_to spina.new_admin_page_path(params: {view_template: 'show'}), class: 'button button-primary', data: {trigger: ('dropdown' if current_theme.new_page_templates.size > 1), target: '#create_page_dropdown'} do
       = icon('plus')
       = t('spina.pages.new')
 
-    .sliding-dropdown#create_page_dropdown
-      .slide-controls
-        %a.previous.muted.icon-only{href: '#'}
-          = icon('chevron-left')
+    %span{data: {dropdown: true}}
+      .sliding-dropdown#create_page_dropdown
+        .slide-controls
+          %a.previous.muted.icon-only{href: '#'}
+            = icon('chevron-left')
+
+          - current_theme.new_page_templates.each_with_index do |template, index|
+            .slide-title{class: ('active' if index == 0), data: {target: "#slide-#{template[1].parameterize}"}}= template[1]
+
+          %a.next.icon-only{href: '#'}
+            = icon('chevron-right')
 
         - current_theme.new_page_templates.each_with_index do |template, index|
-          .slide-title{class: ('active' if index == 0), data: {target: "#slide-#{template[1].parameterize}"}}= template[1]
+          .slide{class: ('active' if index == 0), id: "slide-#{template[1].parameterize}"}
+            %p= template[2]
 
-        %a.next.icon-only{href: '#'}
-          = icon('chevron-right')
+            %p.muted= template[3]
 
-      - current_theme.new_page_templates.each_with_index do |template, index|
-        .slide{class: ('active' if index == 0), id: "slide-#{template[1].parameterize}"}
-          %p= template[2]
+            .slide-dots
+              - current_theme.new_page_templates.each_with_index do |template2, index2|
+                .slide-dot{class: ('active' if index2 == index)}
 
-          %p.muted= template[3]
+            = link_to spina.new_admin_page_path(params: {view_template: template[0]}), class: 'button button-primary' do
+              = icon('pencil-outline')
+              = t('spina.pages.create_page', template: template[1])
 
-          .slide-dots
-            - current_theme.new_page_templates.each_with_index do |template2, index2|
-              .slide-dot{class: ('active' if index2 == index)}
+    = link_to '#pages_list', class: 'button sort-switch', data: {change_order: t('spina.pages.change_order'), done_changing_order: t('spina.pages.done_changing_order')} do
+      = icon('random')
+      = t('spina.pages.change_order')
 
-          = link_to spina.new_admin_page_path(params: {view_template: template[0]}), class: 'button button-primary' do
-            = icon('pencil-outline')
-            = t('spina.pages.create_page', template: template[1])
+  .breadcrumbs= render_breadcrumbs seperator: '<div class="divider"></div>'
 
-  = link_to '#pages_list', class: 'button sort-switch', data: {change_order: t('spina.pages.change_order'), done_changing_order: t('spina.pages.done_changing_order')} do
-    = icon('random')
-    = t('spina.pages.change_order')
+.filters
+  
 
-.dd#pages_list{data: {:"sort-url" => spina.sort_admin_pages_url }}
-  %ol.dd-list
-    = render partial: 'page', collection: @pages.roots
+.well
+  .dd#pages_list{data: {:"sort-url" => spina.sort_admin_pages_url }}
+    %ol.dd-list
+      = render partial: 'page', collection: @pages.roots

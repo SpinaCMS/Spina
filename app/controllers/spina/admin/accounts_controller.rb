@@ -4,8 +4,6 @@ module Spina
 
       authorize_resource class: Account
 
-      layout "spina/admin/settings"
-
       def edit
         add_breadcrumb I18n.t('spina.preferences.account'), spina.edit_admin_account_path
       end
