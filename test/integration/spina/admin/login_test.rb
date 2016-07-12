@@ -12,7 +12,7 @@ module Spina
         assert_response :success
 
         post_via_redirect "/admin/sessions", email: spina_users(:bram).email, password: "password"
-        assert_equal '/admin', path
+        assert_equal '/admin/pages', path
 
         get "/admin/pages"
         assert_response :success

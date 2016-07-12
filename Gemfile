@@ -5,10 +5,11 @@ gemspec
 group :development, :test do
   gem 'gem-release'
   gem 'pg'
-  gem 'quiet_assets'
   gem 'letter_opener'
   gem 'brakeman'
+  gem 'globalize', github: 'globalize/globalize'
   gem 'spina-template', github: 'denkGroot/Spina-template'
+  gem 'rails-controller-testing'
   gem 'bcrypt'
   gem 'minitest-reporters'
   gem 'guard'

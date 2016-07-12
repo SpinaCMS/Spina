@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.files = Dir['{app,config,db,lib}/**/*'] + ['Rakefile', 'README.md']
   # s.test_files = Dir['test/**/*']
 
-  s.add_dependency 'rails', '>= 4.0'
+  s.add_dependency 'rails', '>= 5.0'
   s.add_dependency 'bcrypt'
   s.add_dependency 'haml-rails'
   s.add_dependency 'sass-rails'
@@ -31,8 +31,9 @@ Gem::Specification.new do |s|
   s.add_dependency 'ancestry'
   s.add_dependency 'breadcrumbs_on_rails'
   s.add_dependency 'spina-template'
-  s.add_dependency 'turbolinks', '~> 5.0.0.beta'
+  s.add_dependency 'turbolinks', '~> 5.0.0'
   s.add_dependency 'kaminari'
-  s.add_dependency 'globalize', '> 5.0.0'
+  s.add_dependency 'globalize'
+  s.add_dependency 'activemodel-serializers-xml'
   s.add_dependency 'rack-rewrite', '~> 1.5.0'
 end
