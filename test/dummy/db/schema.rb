@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -70,10 +69,9 @@ ActiveRecord::Schema.define(version: 20160421084455) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.string   "content"
+    t.index ["locale"], name: "index_spina_line_translations_on_locale", using: :btree
+    t.index ["spina_line_id"], name: "index_spina_line_translations_on_spina_line_id", using: :btree
   end
-
-  add_index "spina_line_translations", ["locale"], name: "index_spina_line_translations_on_locale", using: :btree
-  add_index "spina_line_translations", ["spina_line_id"], name: "index_spina_line_translations_on_spina_line_id", using: :btree
 
   create_table "spina_lines", force: :cascade do |t|
     t.string   "content"
@@ -101,10 +99,9 @@ ActiveRecord::Schema.define(version: 20160421084455) do
     t.string   "description"
     t.string   "seo_title"
     t.string   "materialized_path"
+    t.index ["locale"], name: "index_spina_page_translations_on_locale", using: :btree
+    t.index ["spina_page_id"], name: "index_spina_page_translations_on_spina_page_id", using: :btree
   end
-
-  add_index "spina_page_translations", ["locale"], name: "index_spina_page_translations_on_locale", using: :btree
-  add_index "spina_page_translations", ["spina_page_id"], name: "index_spina_page_translations_on_spina_page_id", using: :btree
 
   create_table "spina_pages", force: :cascade do |t|
     t.string   "title"
@@ -157,9 +154,8 @@ ActiveRecord::Schema.define(version: 20160421084455) do
     t.integer  "position"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.index ["structure_id"], name: "index_spina_structure_items_on_structure_id", using: :btree
   end
-
-  add_index "spina_structure_items", ["structure_id"], name: "index_spina_structure_items_on_structure_id", using: :btree
 
   create_table "spina_structure_parts", force: :cascade do |t|
     t.integer  "structure_item_id"
@@ -169,10 +165,9 @@ ActiveRecord::Schema.define(version: 20160421084455) do
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.index ["structure_item_id"], name: "index_spina_structure_parts_on_structure_item_id", using: :btree
+    t.index ["structure_partable_id"], name: "index_spina_structure_parts_on_structure_partable_id", using: :btree
   end
-
-  add_index "spina_structure_parts", ["structure_item_id"], name: "index_spina_structure_parts_on_structure_item_id", using: :btree
-  add_index "spina_structure_parts", ["structure_partable_id"], name: "index_spina_structure_parts_on_structure_partable_id", using: :btree
 
   create_table "spina_structures", force: :cascade do |t|
     t.datetime "created_at"
@@ -185,10 +180,9 @@ ActiveRecord::Schema.define(version: 20160421084455) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.text     "content"
+    t.index ["locale"], name: "index_spina_text_translations_on_locale", using: :btree
+    t.index ["spina_text_id"], name: "index_spina_text_translations_on_spina_text_id", using: :btree
   end
-
-  add_index "spina_text_translations", ["locale"], name: "index_spina_text_translations_on_locale", using: :btree
-  add_index "spina_text_translations", ["spina_text_id"], name: "index_spina_text_translations_on_spina_text_id", using: :btree
 
   create_table "spina_texts", force: :cascade do |t|
     t.text     "content"

@@ -21,7 +21,7 @@ module Spina
     end
 
     def self.order_by_ids(ids)
-      sql = sanitize_sql_for_conditions({id: ids})
+      sql = sanitize_sql_for_assignment({id: ids})
       order("CASE WHEN #{sql} THEN 0 ELSE 1 END")
     end
     

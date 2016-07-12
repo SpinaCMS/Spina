@@ -40,7 +40,7 @@ PATH
       rails (>= 5.0)
       sass-rails
       spina-template
-      turbolinks (~> 5.0.0)
+      turbolinks (~> 5)
 
 GEM
   remote: http://rubygems.org/
