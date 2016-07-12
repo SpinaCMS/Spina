@@ -8,12 +8,12 @@
 
 %header#header
   #header_actions
-    = link_to spina.new_admin_page_path(params: {view_template: 'show'}), class: 'button button-primary', data: {trigger: ('dropdown' if current_theme.new_page_templates.size > 1), target: '#create_page_dropdown'} do
-      = icon('plus')
-      = t('spina.pages.new')
-
     %span{data: {dropdown: true}}
-      .sliding-dropdown#create_page_dropdown
+      = link_to spina.new_admin_page_path(params: {view_template: 'show'}), class: 'button button-primary', data: {trigger: ('dropdown' if current_theme.new_page_templates.size > 1), target: '#create_page_dropdown'} do
+        = icon('plus')
+        = t('spina.pages.new')
+
+      .sliding-dropdown#create_page_dropdown.align-right
         .slide-controls
           %a.previous.muted.icon-only{href: '#'}
             = icon('chevron-left')
