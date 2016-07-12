@@ -1,6 +1,7 @@
 require 'spina/engine'
+require 'spina/plugin'
 require 'spina/railtie'
-require 'spina/template'
+require 'spina/theme'
 
 module Spina
 
