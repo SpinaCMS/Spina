@@ -31,7 +31,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'ancestry'
   s.add_dependency 'breadcrumbs_on_rails'
   s.add_dependency 'spina-template'
-  s.add_dependency 'turbolinks', '~> 5.0.0'
+  s.add_dependency 'turbolinks', '~> 5'
   s.add_dependency 'kaminari'
   s.add_dependency 'globalize'
   s.add_dependency 'activemodel-serializers-xml'
