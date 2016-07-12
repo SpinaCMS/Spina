@@ -1,6 +1,5 @@
 module Spina
   class InstallGenerator < Rails::Generators::Base
-
     source_root File.expand_path("../templates", __FILE__)
 
     def create_initializer_file
@@ -64,7 +63,8 @@ module Spina
       email = 'admin@domain.com'
       email = ask("Please enter an email address for your first user: [#{email}]").presence || email
       password = 'password'
-      password = ask("Create a temporary password: [#{password}]", echo: false).presence || password
+      password = ask("Create a temporary password: [#{password}]").presence || password
+      @temporary_password = password
       User.create name: 'admin', email: email, password: password, admin: true
     end
 
@@ -102,9 +102,9 @@ module Spina
       puts "    The admin backend is located at http://localhost:3000/#{Spina.config.backend_path}."
       puts
       puts "    Site name      :  #{Account.first.name}"
-      puts "    Active Theme   :  #{Account.first.theme}"
-      puts "    User Email     :  #{User.first.email}"
-      puts "    User Password  :  'password' by default"
+      puts "    Active theme   :  #{Account.first.theme}"
+      puts "    User email     :  #{User.first.email}"
+      puts "    User password  :  #{@temporary_password}"
       puts
     end
 
