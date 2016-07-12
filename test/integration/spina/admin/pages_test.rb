@@ -5,7 +5,7 @@ module Spina
     class PagesTest < ActionDispatch::IntegrationTest
       setup do
         @routes = Engine.routes
-        post_via_redirect "/admin/sessions", email: spina_users(:bram).email, password: "password"
+        post "/admin/sessions", params: {email: spina_users(:bram).email, password: "password"}
       end
 
       test "new page form" do
@@ -14,17 +14,19 @@ module Spina
       end
 
       test "create new page" do
-        post_via_redirect "/admin/pages", page: {title: "A new page"}
+        post "/admin/pages", params: {page: {title: "A new page"}}
+        follow_redirect!
         assert_select '.breadcrumbs', text: /A\snew\spage\z/
       end
 
       test "create new page without title" do
-        post_via_redirect "/admin/pages", page: {title: nil}
+        post "/admin/pages", params: {page: {title: nil}}
         assert_select '#error_explanation'
       end
 
       test "create concept page" do
-        post_via_redirect "/admin/pages", page: {title: "A new page", draft: true}
+        post "/admin/pages", params: {page: {title: "A new page", draft: true}}
+        follow_redirect!
         assert_select '.breadcrumbs', text: /A\snew\spage\z/
         get "/admin/pages"
         assert_select '.dd-item-inner small', text: '(draft)'

@@ -11,8 +11,9 @@ module Spina
         get "/admin/login"
         assert_response :success
 
-        post_via_redirect "/admin/sessions", email: spina_users(:bram).email, password: "password"
-        assert_equal '/admin/pages', path
+        post "/admin/sessions", params: {email: spina_users(:bram).email, password: "password"}
+        follow_redirect!
+        assert_equal '/admin', path
 
         get "/admin/pages"
         assert_response :success
@@ -22,7 +23,7 @@ module Spina
       test "login with wrong password" do
         get "/admin/login"
         assert_response :success
-        post_via_redirect "/admin/sessions", email: spina_users(:bram).email, password: "wrongpassword"
+        post "/admin/sessions", params: {email: spina_users(:bram).email, password: "wrongpassword"}
         assert_equal '/admin/sessions', path
         assert_nil assigns(:pages)
       end
