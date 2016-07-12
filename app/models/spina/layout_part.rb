@@ -1,5 +1,5 @@
 module Spina
-  class LayoutPart < ActiveRecord::Base
+  class LayoutPart < ApplicationRecord
     include Part
 
     belongs_to :account

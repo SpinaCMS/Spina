@@ -1,5 +1,5 @@
 module Spina
-  class StructurePart < ActiveRecord::Base
+  class StructurePart < ApplicationRecord
     include Part
 
     belongs_to :structure_item

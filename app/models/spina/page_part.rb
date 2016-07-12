@@ -1,5 +1,5 @@
 module Spina
-  class PagePart < ActiveRecord::Base
+  class PagePart < ApplicationRecord
     include Part
 
     belongs_to :page, inverse_of: :page_parts

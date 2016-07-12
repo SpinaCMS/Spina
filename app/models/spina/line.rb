@@ -1,5 +1,5 @@
 module Spina
-  class Line < ActiveRecord::Base
+  class Line < ApplicationRecord
     translates :content
 
     has_many :page_parts, as: :page_partable

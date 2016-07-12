@@ -1,5 +1,5 @@
 module Spina
-  class StructureItem < ActiveRecord::Base
+  class StructureItem < ApplicationRecord
     belongs_to :structure
     has_many :structure_parts, dependent: :destroy
 

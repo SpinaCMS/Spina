@@ -1,5 +1,5 @@
 module Spina
-  class Account < ActiveRecord::Base
+  class Account < ApplicationRecord
     serialize :preferences
     include Spina::Partable
 

@@ -1,5 +1,5 @@
 module Spina
-  class Structure < ActiveRecord::Base
+  class Structure < ApplicationRecord
     has_one :page_part, as: :page_partable
     has_many :structure_items
 

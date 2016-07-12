@@ -1,5 +1,5 @@
 module Spina
-  class Photo < ActiveRecord::Base
+  class Photo < ApplicationRecord
     mount_uploader :file, PhotoUploader
 
     has_many :page_parts, as: :page_partable

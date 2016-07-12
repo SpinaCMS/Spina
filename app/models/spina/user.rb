@@ -1,5 +1,5 @@
 module Spina
-  class User < ActiveRecord::Base
+  class User < ApplicationRecord
     has_secure_password
 
     validates_presence_of :name, :email

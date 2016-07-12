@@ -1,5 +1,5 @@
 module Spina
-  class PhotoCollection < ActiveRecord::Base
+  class PhotoCollection < ApplicationRecord
     
     has_one :page_part, as: :page_partable
     has_many :photo_collections_photos, autosave: true

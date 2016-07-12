@@ -1,5 +1,5 @@
 module Spina
-  class Page < ActiveRecord::Base
+  class Page < ApplicationRecord
     include Spina::Partable
 
     translates :title, :menu_title, :seo_title, :description, :materialized_path
