@@ -156,7 +156,7 @@ Finally, let's go to `views/default/pages/show.html.erb` and add the following:
 ```ruby
 <h1><%= @page.title %></h1>
 
-<%= @page.content(:content).try(:html_safe) %>
+<%= @page.content(:text).try(:html_safe) %>
 <%= @page.content(:portfolio).try(:html_safe) %> # added this line
 ```
 
