@@ -1,2 +1,2 @@
 %h1= @page.title
-= @page.content(:content).try(:html_safe)
+= @page.content(:text).try(:html_safe)
