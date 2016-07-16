@@ -26,3 +26,15 @@
           = Spina::Account.human_attribute_name(:google_plus)
         .horizontal-form-content
           = f.text_field :google_plus, placeholder: Spina::Account.human_attribute_name(:google_plus)
+
+      .horizontal-form-group
+        .horizontal-form-label
+          = Spina::Account.human_attribute_name(:linkedin)
+        .horizontal-form-content
+          = f.text_field :linkedin, placeholder: Spina::Account.human_attribute_name(:linkedin)
+
+      .horizontal-form-group
+        .horizontal-form-label
+          = Spina::Account.human_attribute_name(:instagram)
+        .horizontal-form-content
+          = f.text_field :instagram, placeholder: Spina::Account.human_attribute_name(:instagram)
