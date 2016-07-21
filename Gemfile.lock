@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/denkGroot/Spina-template.git
-  revision: 6d5708fcfcd3612b4588edf92d1b5582c40f54c5
+  revision: 89dbaa840953ead6a6118acf682e7be06aaeade0
   specs:
     spina-template (0.3.4)
       bourbon (~> 3.2)

@@ -45,7 +45,7 @@ module Dummy
     # config.active_record.schema_format = :sql
 
     # Version of your assets, change this if you want to expire all your assets
-    config.assets.version = '1.01'
+    config.assets.version = '1.02'
   end
 end
 

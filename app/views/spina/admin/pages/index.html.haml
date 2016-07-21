@@ -8,8 +8,12 @@
 
 %header#header
   #header_actions
+    = link_to '#pages_list', class: 'button sort-switch', data: {change_order: t('spina.pages.change_order'), done_changing_order: t('spina.pages.done_changing_order')} do
+      = icon('random')
+      = t('spina.pages.change_order')
+
     %span{data: {dropdown: true}}
-      = link_to spina.new_admin_page_path(params: {view_template: 'show'}), class: 'button button-primary', data: {trigger: ('dropdown' if current_theme.new_page_templates.size > 1), target: '#create_page_dropdown'} do
+      = link_to spina.new_admin_page_path(params: {view_template: 'show'}), class: 'button button-primary', style: 'margin-right: 0', data: {trigger: ('dropdown' if current_theme.new_page_templates.size > 1), target: '#create_page_dropdown'} do
         = icon('plus')
         = t('spina.pages.new')
 
@@ -37,10 +41,6 @@
             = link_to spina.new_admin_page_path(params: {view_template: template[0]}), class: 'button button-primary' do
               = icon('pencil-outline')
               = t('spina.pages.create_page', template: template[1])
-
-    = link_to '#pages_list', class: 'button sort-switch', data: {change_order: t('spina.pages.change_order'), done_changing_order: t('spina.pages.done_changing_order')} do
-      = icon('random')
-      = t('spina.pages.change_order')
 
   .breadcrumbs= render_breadcrumbs seperator: '<div class="divider"></div>'
 

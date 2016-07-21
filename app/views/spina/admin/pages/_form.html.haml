@@ -14,11 +14,9 @@
                 = link_to t("languages.#{locale}"), "?locale=#{locale}", style: ('font-weight: 600' if @locale.to_s == locale.to_s)
 
     #header_actions
-      %button.button.button-primary{type: 'submit'}
+      %button.button.button-primary{type: 'submit', style: 'margin-right: 0'}
         = icon('check')
         =t 'spina.pages.save'
-
-      = link_to t('spina.cancel'), spina.admin_pages_path, class: 'button button-link'
 
     %nav#secondary.tabs
       %ul
