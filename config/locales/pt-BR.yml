@@ -13,9 +13,10 @@ pt-BR:
     ago: atrás
     edit_website: Editar seu site
     logout: Sair
+    main_menu: Menu principal
 
     modal:
-      agree: "Sim, Tenho certeza"
+      agree: "Sim, tenho certeza"
       cancel: "Não, cancelar"
 
     notifications:
@@ -51,6 +52,8 @@ pt-BR:
       skip_to_first_child: encaminhar para a primeira página filha
       invisible_to_search_engines: Seu site não está visível para os sistemas de busca
       invisible_to_search_engines_description: Vá para as preferências para ativar os sistemas de busca
+      rebuild_materialized_path: Reconstruir caminho materializado
+      materialize_path_confirmation: "Você está certo que quer reconstruir o caminho para esta página?"
 
     users:
       new: Novo usuário
@@ -61,6 +64,7 @@ pt-BR:
     photos:
       delete_confirmation: "Tem certeza que deseja remover esta <strong>imagem</strong>?"
       insert_photos: Inserir imagens
+      choose_images: Escolher imagens
       insert_photo: Inserir imagem
       link: "URL da sua imagem:"
       cannot_be_created: "Imagem não pode ser processada:"
@@ -161,6 +165,8 @@ pt-BR:
         menu_title: Título do menu
         menu_title_placeholder: Deixe vazio para utilizar o título da página
         view_template: Modelo de página
+        ancestry: Página pai
+        no_parent: Nenhum pai
 
       spina/user:
         email: Email
@@ -183,3 +189,7 @@ pt-BR:
       zero: "0 novas mensagens"
       one: "1 nova mensagem"
       other: "%{count} novas mensagens"
+
+  languages:
+    en: Inglês
+    nl: Neerlandês
