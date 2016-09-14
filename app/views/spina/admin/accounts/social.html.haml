@@ -1,4 +1,4 @@
-= form_for [spina, :admin, current_account] do |f|
+= form_for [spina, :admin, current_account], url: spina.admin_account_path do |f|
   %header#header
     = render partial: 'spina/admin/shared/breadcrumbs'
 

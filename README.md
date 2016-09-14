@@ -41,7 +41,12 @@ Spina::Theme.register do |theme|
 end
 ```
 
-Check out [config/initializers/themes/default.rb](https://github.com/denkGroot/Spina/blob/master/lib/generators/spina/templates/config/initializers/themes/default.rb) for an example.
+And theme sections, structures, layouts, view_layouts and layout_parts
+has been normalised.
+
+Check out [config/initializers/themes/demo.rb](https://github.com/denkGroot/Spina/blob/master/lib/generators/spina/templates/config/initializers/themes/demo.rb) for an example.
+
+Add new migrations `rake spina:install:migrations` and `rake db:migrate`
 
 ## Upgrading from 0.7 to 0.8
 
