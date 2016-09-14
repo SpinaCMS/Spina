@@ -26,6 +26,10 @@ The installer will help you setup your first user.
 
 Then start `rails s` and access your admin panel at `/admin`.
 
+## Upgrading from 0.9 to 0.10
+
+When upgrading to Spina 0.10 it's essential to update spina-template to version 0.4 or higher. Otherwise layout issues will occur.
+
 ## Upgrading from 0.8 to 0.9
 
 Theme configuration changed to:
