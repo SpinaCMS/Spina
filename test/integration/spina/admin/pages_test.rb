@@ -21,7 +21,7 @@ module Spina
 
       test "create new page without title" do
         post "/admin/pages", params: {page: {title: nil}}
-        assert_select '#error_explanation'
+        assert_select '.field_with_errors'
       end
 
       test "create concept page" do
