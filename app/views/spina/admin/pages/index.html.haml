@@ -23,13 +23,13 @@
             = icon('chevron-left')
 
           - current_theme.new_page_templates.each_with_index do |template, index|
-            .slide-title{class: ('active' if index == 0), data: {target: "#slide-#{template[1].parameterize}"}}= template[1]
+            .slide-title{class: ('active' if index == 0), data: {target: "#slide-#{template[0].parameterize}"}}= template[1]
 
           %a.next.icon-only{href: '#'}
             = icon('chevron-right')
 
         - current_theme.new_page_templates.each_with_index do |template, index|
-          .slide{class: ('active' if index == 0), id: "slide-#{template[1].parameterize}"}
+          .slide{class: ('active' if index == 0), id: "slide-#{template[0].parameterize}"}
             %p= template[2]
 
             %p.muted= template[3]
