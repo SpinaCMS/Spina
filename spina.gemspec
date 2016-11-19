@@ -30,10 +30,11 @@ Gem::Specification.new do |s|
   s.add_dependency 'filters_spam'
   s.add_dependency 'ancestry'
   s.add_dependency 'breadcrumbs_on_rails'
-  s.add_dependency 'spina-template'
   s.add_dependency 'turbolinks', '~> 5'
   s.add_dependency 'kaminari'
   s.add_dependency 'globalize'
   s.add_dependency 'activemodel-serializers-xml'
   s.add_dependency 'rack-rewrite', '~> 1.5.0'
+  s.add_dependency 'bourbon'
+  s.add_dependency 'neat'
 end

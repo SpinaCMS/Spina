@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="448px" height="448px" viewBox="0 0 448 448" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
+    <title>edit</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="edit" fill="#000000">
+            <g id="Group">
+                <rect id="Rectangle-path" transform="translate(210.889883, 237.114600) rotate(225.000000) translate(-210.889883, -237.114600) " x="146.847997" y="60.0917977" width="128.083772" height="354.045605"></rect>
+                <path d="M439.723,56.393 L391.608,8.279 C379.885,-3.445 360.05,-2.617 347.304,10.129 L302.102,55.332 L392.671,145.9 L437.873,100.698 C450.616,87.952 451.445,68.116 439.723,56.393 L439.723,56.393 Z" id="Shape"></path>
+                <polygon id="Shape" points="32.021 331.252 0 448 116.737 415.979"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

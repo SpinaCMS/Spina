@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.2 (12043) - http://www.bohemiancoding.com/sketch -->
+    <title>Untitled 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <path d="M208,240 C208,248.836 200.836,256 192,256 L32,256 C23.164,256 16,248.836 16,240 L16,48 C16,39.164 23.164,32 32,32 L32,240 L208,240 L208,240 Z M240,64 L240,208 C240,216.836 232.836,224 224,224 L64,224 C55.164,224 48,216.836 48,208 L48,16 C48,7.164 55.164,0 64,0 L176,0 C180.243,0 184.313,1.686 187.313,4.687 L235.313,52.687 C238.315,55.688 240,59.757 240,64 L240,64 Z M176,64 L224,64 L176,16 L176,64 L176,64 Z M224,72 L176,72 C171.582,72 168,68.418 168,64 L168,16 L64,16 L64,208 L224,208 L224,72 L224,72 Z" id="Shape" fill="#000000" sketch:type="MSShapeGroup"></path>
+    </g>
+</svg>

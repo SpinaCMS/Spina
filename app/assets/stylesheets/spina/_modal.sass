@@ -1,0 +1,162 @@
+#overlay
+  display: none
+  height: 100%
+  left: 0
+  position: fixed
+  top: 0
+  width: 100%
+  z-index: 999
+  @include background-image(radial-gradient(rgba(0, 0, 0, .3), rgba(0, 0, 0, .6)))
+
+.modal
+  background: #fff
+  border-radius: 3px
+  display: none
+  margin: 0 auto
+  max-width: 480px
+  min-height: 100px
+  overflow: hidden
+  position: relative
+  @include animation-duration(.4s)
+
+  @media screen and (max-width: 480px)
+    margin: 0 10px
+
+  &.modal-small
+    width: 320px
+
+  &.modal-medium
+    max-width: 640px
+
+  &.modal-large
+    max-width: none
+    width: 80%
+
+    footer a
+      padding: 18px 0
+
+  header h3
+    border-radius: 2px 2px 0 0
+    color: #232323
+    font-size: 18px
+    font-weight: 500
+    margin: 0
+    padding: 20px
+
+  header.big-header h2
+    color: #333
+    font-size: 36px
+    font-weight: 400
+    margin: 0
+    padding-top: 48px
+    text-align: center
+
+  header.big-header h3
+    line-height: 24px
+    padding: 46px
+    text-align: center
+
+    @media screen and (max-width: 480px)
+      padding: 30px 20px
+
+  header.big-header p
+    color: #333
+    font-size: 18px
+    font-weight: 400
+    margin: 0
+    margin-top: 9px
+    padding-bottom: 48px
+    text-align: center
+
+    strong
+      font-weight: 600
+
+  header h3 strong
+    color: #000
+    font-weight: 600
+
+  header a[data-dismiss="modal"]
+    color: #d6d6d6
+    float: right
+    font-size: 12px
+    padding: 6px 10px
+    text-decoration: none
+    @include transition(color .2s ease-out)
+
+    i.icon
+      font-size: 8px
+
+  header a[data-dismiss="modal"]:hover
+    color: #999
+
+  section
+    overflow: scroll
+    padding: 20px
+    background: white
+
+    .col
+      float: left
+      width: 33%
+      padding: 10px
+
+      h3
+        font-size: 16px
+        font-weight: bold
+        line-height: 26px
+
+      p
+        line-height: 22px
+
+      pre
+        font-size: 12px
+        background: #ddd
+        border: 1px solid #bbb
+        padding: 10px
+        border-radius: 5px
+        margin-bottom: 20px
+        color: #444
+        line-height: 20px
+        font-family: Consolas, Courier, monospace
+
+    &.section-divided
+      border-top: 1px solid #eee
+
+    footer
+      clear: both
+      margin: -20px
+
+    table
+      color: #333
+      font-size: 15px
+      line-height: 24px
+
+      th
+        font-weight: 600
+        padding-right: 24px
+        text-align: left
+
+      td
+        font-weight: 400
+
+    table.table-centered
+      margin: 0 auto
+
+  footer
+    border-top: 1px solid #eee
+
+  footer a, footer button
+    background: none
+    color: #999
+    display: inline-block
+    font-size: 13px
+    font-weight: 600
+    padding: 12px 0
+    text-align: center
+    width: 49%
+    @include transition(color .2s ease-out)
+
+  footer a.primary, footer a:hover, footer button.primary, footer button:hover
+    color: #000
+
+  footer a.primary:hover, footer button.primary:hover
+    color: $primary-color

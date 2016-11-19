@@ -1,0 +1,177 @@
+// Sortable lists
+
+.dd
+  margin: -20px
+  overflow: hidden
+  position: relative
+
+  & > .dd-list > .dd-item:first-child
+    border-top: none
+
+.dd-item-inner.dd-handle
+  cursor: move
+
+.dd-item-inner .sortable-link
+  @include transform(translateX(-26px))
+  @include transition(all .2s ease)
+
+.dd-item-inner.dd-handle .sortable-link
+  @include transform(translateX(0))
+
+.dd-item-inner:before
+  @extend .icon, .icon-bars
+  color: #ccc
+  display: inline-block
+  height: 18px
+  opacity: 0
+  vertical-align: middle
+  width: 26px
+  @include transform(translateX(-26px))
+  @include transition(all .2s ease)
+
+.dd-item-inner.dd-handle:before
+  opacity: 1
+  @include transform(translateX(0))
+
+.dd-list
+  list-style: none
+  margin: 0
+  padding: 0
+  position: relative
+
+  .dd-placeholder
+    position: relative
+
+    &:after
+      border: 1px dashed #ddd
+      content: " "
+      display: block
+      height: 100%
+      margin-left: 0px
+      top: 0px
+      width: 100%
+      @include box-sizing(border-box)
+
+  .dd-list
+    background: tint(#f5f5fa, 50%)
+    border-top: 1px solid #ddd
+
+    .dd-placeholder
+      background: tint(#f5f5fa, 50%)
+
+      &:after
+        margin-left: 40px
+
+    .dd-item:last-child
+      border-bottom: none
+    
+    .dd-item
+      padding-left: 20px
+
+    .dd-list
+      background: tint(#f5f5fa, 0%)
+      margin-left: -20px
+
+      .dd-item
+        padding-left: 60px
+
+      .dd-placeholder
+        background: tint(#f5f5fa, 0%)
+
+        &:after
+          margin-left: 90px
+
+.dd-collapsed .dd-list
+  display: none
+
+.dd-item
+  border-bottom: 1px solid #ddd
+
+.dd-item, .dd-empty, .dd-placeholder
+  margin: 0
+  padding: 0
+  position: relative
+
+.dd-placeholder, .dd-empty
+  background: #fcfcfc
+  margin: 0
+  padding: 0
+  @include box-sizing(border-box)
+
+.dd-empty
+  background: blue
+  min-height: 100px
+
+.dd-item-inner
+  padding: 10px 20px
+  text-decoration: none
+
+  a
+    margin: 0
+
+  a.sortable-link, a.sortable-link:hover
+    color: $primary-color
+    font-size: 13px
+    font-weight: 600
+    padding-left: 0
+
+    small
+      font-size: 13px
+      font-weight: 400
+      margin-left: 13px
+
+  .pull-right a
+    opacity: 0
+    @include transform(translateX(50px))
+    @include transition(all .4s ease)
+
+  &:hover .pull-right a
+    opacity: 1
+    @include transform(translateX(10px))
+
+.dd-dragel
+  pointer-events: none
+  position: absolute
+  z-index: 9999
+
+  & > .dd-item .dd-handle
+    margin-top: 0
+
+.dd-item > button
+  background: transparent
+  border: 0
+  cursor: pointer
+  display: none
+  float: left
+  font-size: 9px
+  height: 52px
+  line-height: 52px
+  overflow: hidden
+  margin-left: 10px
+  padding: 0
+  position: relative
+  text-align: center
+  text-indent: 100%
+  white-space: nowrap
+  width: 30px
+  z-index: 1
+
+  &:before
+    @extend .icon, .icon-plus
+    color: $primary-color
+    display: block
+    line-height: 52px !important
+    position: absolute
+    text-align: center
+    text-indent: 0
+    width: 100%
+
+  &[data-action="collapse"]:before
+    @extend .icon, .icon-min
+    color: $primary-color
+    display: block
+    line-height: 52px !important
+    position: absolute
+    text-align: center
+    text-indent: 0
+    width: 100%

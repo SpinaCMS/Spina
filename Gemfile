@@ -8,7 +8,6 @@ group :development, :test do
   gem 'letter_opener'
   gem 'brakeman'
   gem 'globalize', github: 'globalize/globalize'
-  gem 'spina-template', github: 'denkGroot/Spina-template'
   gem 'rails-controller-testing'
   gem 'bcrypt'
   gem 'minitest-reporters'
@@ -16,5 +15,4 @@ group :development, :test do
   gem 'guard-minitest'
   gem 'codeclimate-test-reporter', require: nil
   gem 'figaro'
-  gem 'appraisal'
 end

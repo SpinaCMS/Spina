@@ -14,7 +14,6 @@ Spina is a CMS built upon the Rails framework. This guide is designed for develo
 To start using Spina CMS simply add the following lines to your Gemfile:
 
 ```ruby
-gem 'spina-template'
 gem 'spina'
 ```
 
@@ -25,6 +24,10 @@ Make sure you run the installer to get started.
 The installer will help you setup your first user.
 
 Then start `rails s` and access your admin panel at `/admin`.
+
+## Upgrading from 0.10 to 0.11
+
+The spina-template gem is merged into the spina gem. You don't have to use the original spina-template gem anymore.
 
 ## Upgrading from 0.9 to 0.10
 

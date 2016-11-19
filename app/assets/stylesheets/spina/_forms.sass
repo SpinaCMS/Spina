@@ -1,0 +1,830 @@
+// Horizontal form
+.horizontal-form
+  .horizontal-form-group
+    border-bottom: 1px solid #eee
+    margin: 0 -20px
+    padding: 20px 20px
+    @include display(flex)
+
+    &:first-child
+      margin-top: -20px
+
+    &:last-child
+      border-bottom: none
+      margin-bottom: -20px
+
+  .horizontal-form-label
+    color: #333
+    font-size: 13px
+    font-weight: 600
+    line-height: 18px
+    padding-right: 20px
+    width: 240px
+    @include justify-content(center)
+    @include display(flex)
+    @include flex-direction(column)
+
+    small
+      color: #666
+      display: block
+      font-size: 13px
+      font-weight: normal
+
+  .horizontal-form-content
+    @include flex(1)
+    @include align-self(flex-start)
+
+  .image
+    border-radius: 5px
+    display: inline-block
+    height: 120px
+    overflow: hidden
+    width: 120px
+
+    img
+      display: block
+      height: 100%
+      width: 100%
+
+// Sidebar form
+.sidebar-form
+  margin: 0 auto
+  max-width: 960px
+  @include display(flex)
+  
+.sidebar-form-content
+  @include flex(1)
+
+  .well
+    margin-right: 20px
+    padding-bottom: 0
+    padding-top: 0
+
+.sidebar-form-sidebar
+  width: 320px
+
+.sidebar-form-group
+  border-bottom: 1px solid #eee
+  margin: 0 -20px
+  padding: 0 20px
+  @include display(flex)
+
+  &:last-child
+    border-bottom: none
+
+.sidebar-form-label
+  color: #333
+  font-size: 14px
+  font-weight: 600
+  line-height: 50px
+  width: 180px
+
+.sidebar-form-control
+  margin-right: -20px
+  position: relative
+  @include flex(1)
+
+  .switch
+    margin: 10px
+
+  #{$all-text-inputs}, textarea, .text-input
+    background: none
+    border: none
+    border-radius: 0
+    box-shadow: none
+
+    &:disabled
+      background: none
+
+  &[data-form-append]:after
+    content: attr(data-form-append)
+    font-size: 14px
+    font-weight: 600
+    line-height: 50px
+    padding: 0 20px
+    position: absolute
+    right: 0
+    top: 0
+
+  trix-toolbar
+    margin-top: 20px
+
+  trix-editor.text-input
+    padding-left: 0
+
+  #{$all-text-inputs}
+    height: 50px
+
+.sidebar-form-images
+  margin-top: 25px
+
+  &:after
+    clear: both
+    content: " "
+    display: block
+
+.sidebar-form-image
+  background: #ededf2
+  border: 1px solid #e5e5ea
+  border-radius: 2px
+  display: inline-block
+  margin-bottom: 10px
+  margin-right: 10px
+  position: relative
+  width: 100px
+
+  > img
+    border-radius: 2px
+    display: block
+    width: 100%
+
+  .sidebar-form-image-overlay
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, .5))
+    content: " "
+    display: block
+    height: 25%
+    left: 0
+    opacity: 0
+    position: absolute
+    top: 75%
+    width: 100%
+    @include transition(opacity .2s ease)
+
+  &:hover .sidebar-form-image-overlay
+    opacity: 1
+
+  &:first-child
+    width: 320px
+
+  &:nth-child(3n + 1)
+    margin-right: 0
+
+  a
+    opacity: .5
+    padding: 6px
+    position: relative
+    z-index: 1
+    @include transition(opacity .2s ease)
+
+  a img:first-child
+    display: block
+
+  a img:last-child
+    display: none
+
+  input[type="checkbox"]:checked + a img:first-child
+    display: none
+
+  input[type="checkbox"]:checked + a img:last-child
+    display: block
+
+  input[type="checkbox"]:checked + a
+    opacity: 1
+
+  &:first-child a
+    padding: 10px
+
+  &:hover a
+    opacity: 1
+
+  &:not(:first-child) a img
+    height: 75%
+    width: 75%
+
+.sidebar-form-image-dropzone
+  background: #ededf2
+  border: 1px solid #c3c3c3
+  border-radius: 3px
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, .15)
+  color: #666
+  cursor: pointer
+  font-size: 13px
+  margin-bottom: 25px
+  padding: 12px
+  width: 100%
+
+  &:hover
+    background: shade(#ededf2, 2.5%)
+
+  &::-webkit-file-upload-button
+    background: none
+    border: none
+    color: #666
+    cursor: pointer
+    font-size: 13px
+    font-weight: 500
+
+// Form groups
+.form-group
+  margin-bottom: 20px
+
+// Labels
+.form-label
+  color: #333
+  font-size: 14px
+  font-weight: 600
+  line-height: 28px
+
+.form-control
+  position: relative
+
+.form-control[data-form-prepend] input
+  padding-left: 28px
+
+.form-control[data-form-prepend]:before
+  color: #333
+  content: attr(data-form-prepend)
+  font-size: 14px
+  font-weight: 600
+  left: 0
+  line-height: 36px
+  padding: 0 12px
+  position: absolute
+  top: 0
+
+.form-control[data-form-append]:after
+  color: #333
+  content: attr(data-form-append)
+  font-size: 14px
+  font-weight: 600
+  line-height: 36px
+  padding: 0 12px
+  position: absolute
+  right: 0
+  top: 0
+
+// Input groups
+.input-group
+  @include display(flex)
+
+  #{$all-text-inputs}, .text-input, .select-dropdown
+    &:not(:first-child)
+      border-bottom-left-radius: 0
+      border-top-left-radius: 0
+
+    &:not(:last-child)
+      border-bottom-right-radius: 0
+      border-top-right-radius: 0
+      border-right: none
+
+// Inputs
+
+#{$all-text-inputs}, textarea, .text-input
+  border: 1px solid #c3c3c3
+  border-radius: 3px
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .16)
+  color: #333
+  font-size: 14px
+  padding: 10px
+  width: 100%
+  @include transition(border .2s ease)
+
+  &.input-mini
+    width: 75px
+
+  &.input-small
+    width: 100px
+
+  &.input-medium
+    width: 200px
+
+  &.input-large
+    width: 300px
+
+  &.input-rounded
+    border-radius: 20px
+
+  &:after
+    content: " "
+    display: block
+    height: 10px
+    position: absolute
+    top: 0px
+    right: 0px
+    width: 10px
+
+  &.input-search:after
+    content: " "
+    display: block
+    height: 10px
+    width: 10px
+
+  &:disabled
+    background: #ededf2
+
+#{$all-text-inputs-focus}, textarea:focus, .text-input:focus
+  border-color: $primary-color
+  outline: none
+
+textarea
+  min-height: 120px
+  resize: vertical
+
+fieldset
+  border: none
+  padding: 0
+
+// Errors
+
+.field_with_errors
+  #{$all-text-inputs}, textarea
+    border: 1px solid $error-color
+
+  #{$all-text-inputs-focus}, textarea:focus
+    border: 1px solid $danger-color
+
+// Restaurant menu form
+
+.restaurant-menu-form
+  border: 1px solid #c3c3c3
+  border-radius: 3px
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .16)
+  margin-bottom: 12px
+  padding: 10px
+
+  .restaurant-menu-name:after
+    clear: left
+    content: " "
+    display: block
+
+  .restaurant-menu-name input
+    font-size: 18px
+    padding: 10px
+
+  .restaurant-menu-name .remove_fields
+    color: #999
+
+  input
+    border: none
+    box-shadow: none
+    font-family: $font-family-serif
+    font-weight: 600
+    padding: 5px 10px
+
+  small input
+    color: #666
+    font-style: italic
+    font-weight: normal
+    padding-top: 0
+
+  .restaurant-dish-fields
+    margin-bottom: 10px
+
+    &:after
+      clear: left
+      content: " "
+      display: block
+
+    .restaurant-dish-price
+      text-align: right
+
+      .remove_fields
+        color: #999
+        margin-right: 0px
+        opacity: 0
+        @include transition(none)
+
+      input
+        color: #333
+        font-size: 16px
+        font-weight: 600
+        text-align: right
+
+        @include placeholder
+          font-size: 14px
+
+    &:hover .restaurant-dish-price .remove_fields
+      opacity: 1
+
+  .add_fields.button
+    background: #f5f5f5
+    font-size: 13px
+    font-weight: 600
+    text-align: center
+    width: 100%
+
+    &:hover
+      background: #f1f1f1
+
+    i:before
+      font-size: 11px
+      line-height: 13px
+      margin-right: 2px
+
+// Search input
+
+.search-input
+  display: inline-block
+  position: relative
+
+  input
+    padding-left: 30px
+    padding-right: 28px
+
+.search-input:before, .clear-input
+  color: #999
+  @extend .icon, .icon-search
+  display: block
+  font-size: 13px
+  font-weight: 400
+  left: 11px
+  position: absolute
+  top: 13px
+
+.clear-input
+  color: #ccc
+  display: none
+  left: auto
+  padding: 10px 9px
+  right: 0
+  top: 0
+
+  &:before
+    display: none
+
+.clear-input:hover
+  color: #999
+
+input.datepicker
+  background: url(asset-path('spina/datepicker.png')) no-repeat center right
+
+// Switch
+
+.switch
+  background: #e9e9e9
+  border-radius: 23px
+  display: block
+  height: 29px
+  margin-bottom: 0
+  padding: 3px
+  position: relative
+  width: 46px
+  @include transition(background .4s ease)
+
+  .knob
+    background: #fff
+    border-radius: 23px
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .3)
+    display: inline-block
+    height: 23px
+    position: absolute
+    width: 23px
+
+  &.activated, &.active
+    background: $success-color
+
+  &.active .knob
+    @include transform(translate3d(17px, 0, 0))
+
+// Checkboxes
+
+.checkbox, .radio
+  display: inline-block
+
+  input[type="checkbox"], input[type="radio"]
+    display: none
+
+  label
+    color: #333
+    cursor: pointer
+    display: inline-block
+    font-size: 14px
+    font-weight: 600
+    height: 16px
+    padding-left: 24px
+    position: relative
+    white-space: nowrap
+    width: 16px
+
+  label:before
+    background: #fff
+    border: 1px solid #c3c3c3
+    border-radius: 4px
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .16)
+    content: ""
+    display: inline-block
+    height: 14px
+    left: 0
+    margin-right: 10px
+    position: absolute
+    top: 0
+    width: 14px
+
+  label:after
+    content: "j"
+    color: #666
+    font-family: $icon-font
+    font-size: 16px
+    font-weight: normal
+    left: 2px
+    line-height: 18px
+    text-align: center
+    top: -2px
+    opacity: 0
+    position: absolute
+    @include transition(opacity .1s ease)
+
+  input[type="checkbox"]:checked + label:after, input[type="radio"]:checked + label:after
+    opacity: 1
+
+.radio
+  margin: 6px 0
+
+  label:before
+    border-radius: 8px
+
+// Select boxes
+
+.select-dropdown
+  background: #fff
+  border: 1px solid #c3c3c3
+  border-radius: 3px
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .16)
+  display: inline-block
+  font-family: $font-family
+  line-height: 28px
+  margin: 0
+  overflow: hidden
+  padding: 0
+  position: relative
+  @extend .icon, .icon-caret-down
+  @include transition(border .2s ease)
+
+  &:hover
+    // background: #f5f5f5
+    border: 1px solid $primary-color
+
+  &:before
+    color: #666
+    font-size: 14px
+    font-weight: normal
+    line-height: 28px
+    position: absolute
+    right: 8px
+    top: 2px
+    z-index: 1
+
+  select
+    background-color: transparent
+    background-image: none
+    border: none
+    box-shadow: none
+    color: #666
+    cursor: pointer
+    display: inline-block
+    font-family: $font-family
+    font-size: 13px
+    font-weight: 600
+    line-height: 16px
+    margin: 0
+    outline: none
+    padding: 8px 36px 8px 10px
+    position: relative
+    width: 115%
+    z-index: 2
+    @include appearance(none)
+
+// Structure form
+
+.structure-form
+  margin-left: -20px
+  position: relative
+  @include display(flex)
+
+  .structure-form-menu
+    box-sizing: content-box
+    min-width: 260px
+
+    label
+      display: block
+      font-size: 13px
+      padding: 12px 20px
+      text-transform: none
+
+    ul
+      border-right: 1px solid #ddd
+      position: relative
+
+    ul:before, ul:after
+      content: " "
+      height: 40px
+      position: absolute
+      right: -1px
+      top: -40px
+      width: 1px
+      @include linear-gradient(rgba(255, 255, 255, 0), #ddd)
+
+    ul:after
+      bottom: -40px
+      top: auto
+      @include linear-gradient(bottom, rgba(255, 255, 255, 0), #ddd)
+
+    ul li
+      overflow: hidden
+
+    ul li .structure-item-remove
+      color: #999
+      float: right
+
+    ul li a, ul li.sortable-placeholder
+      color: #333
+      cursor: pointer
+      display: block
+      font-weight: 600
+      font-size: 13px
+      height: 50px
+      line-height: 50px
+      outline: none
+      padding-left: 20px
+
+      &:hover
+        background: #f9f9f9
+
+      i
+        color: #ddd
+        font-size: 16px
+        margin-right: 8px
+        vertical-align: middle
+
+    ul li.sortable-placeholder
+      background: #f9f9f9
+
+    ul li.active a
+      color: $primary-color
+
+    ul li.active
+      margin-right: -1px
+      position: relative
+
+      a
+        background: #fff
+
+      &:before
+        border-bottom: 1px solid #ddd
+        border-bottom-right-radius: 3px
+        border-right: 1px solid #ddd
+        content: " "
+        height: 10px
+        position: absolute
+        right: 0px
+        top: -10px
+        width: 100%
+
+      &:after
+        bottom: -10px
+        border-right: 1px solid #ddd
+        border-top: 1px solid #d5d5d5
+        border-top-right-radius: 3px
+        box-shadow: inset 0 1px 2px rgba(0, 0, 0, .075)
+        content: " "
+        height: 10px
+        right: 0px
+        position: absolute
+        width: 100%
+
+  .structure-form-content
+    padding-left: 12px
+    width: 100%
+
+    .structure-form-pane
+      display: none
+
+      &.active
+        display: block
+
+  .add_structure
+    float: right
+    margin-top: 12px
+    outline: none
+
+  .structure-form-part
+    padding: 5px 0
+
+// Custom file input
+
+.new_document
+  line-height: 52px
+
+  .customfile
+    cursor: pointer
+    height: 100%
+    overflow: hidden
+    position: relative
+    text-align: left
+    width: 100%
+
+    &:before
+      color: #bbb
+      display: block
+      font-weight: 400
+      padding: 6px 0
+      @extend .icon, .icon-upload-outline:before
+      font-size: 28px
+      vertical-align: middle
+      @include transition(color .2s ease)
+
+    &:after
+      color: #bbb
+      @extend .icon, .icon-refresh:before
+      display: none
+      font-size: 36px
+      @include animation("rotate" 2s linear infinite)
+
+  .customfile.loading
+    &:before
+      display: none
+
+    &:after
+      display: block
+
+  .customfile:hover:before
+    color: #333
+
+  .customfile-feedback
+    display: none
+
+  .customfile-input
+    background: transparent
+    border: 0
+    cursor: pointer !important
+    display: block
+    height: 100%
+    left: -100% !important
+    opacity: 0
+    position: absolute
+    top: 0 !important
+    width: 200%
+    z-index: 9
+
+  .customfile-button
+    display: none
+
+.media_picker
+  border-radius: 3px
+  color: #333
+  display: block
+  margin-top: 2px
+  position: relative
+
+  .image
+    @include transition(all .3s ease)
+
+  &:hover .button
+    background: tint(#efefef, 20%)
+
+  &:active .button
+    background: shade(#efefef, 10%)
+
+  &:before
+    background: rgba(255, 255, 255, .5)
+    content: ""
+    height: 100%
+    left: 0
+    opacity: 0
+    position: absolute
+    text-align: center
+    top: 0
+    width: 100%
+    @include transition(opacity .2s ease)
+
+  .placeholder
+    color: #666
+    font-size: 13px
+    font-weight: 600
+    line-height: 36px
+    margin-bottom: 2px
+    position: absolute
+    right: 0px
+
+    span
+      border: 5px solid #fff
+      margin-top: -5px
+      margin-right: -5px
+
+    span:before
+      display: inline-block
+      margin-right: 6px
+      vertical-align: middle
+
+.media_picker:hover .image
+  box-shadow: 0 0 20px rgba(0, 0, 0, .2)
+
+ul.sortable-grid
+  margin: -8px
+
+  .image, .sortable-placeholder
+    border-radius: 5px
+    cursor: move
+    display: block
+    float: left
+    height: 120px
+    margin: 8px
+    overflow: hidden
+    width: 120px
+    @include transition(box-shadow .3s ease)
+
+    &:hover
+      box-shadow: 0 0 20px rgba(0, 0, 0, .2)
+
+  .sortable-placeholder
+    background: #f5f5f5

@@ -1,0 +1,60 @@
+// Notifications
+
+aside#notifications
+  bottom: 0
+  padding: 16px
+  position: fixed
+  right: 0
+  z-index: 100
+
+.notification
+  background: $primary-color
+  border-radius: 3px
+  color: #fff
+  font-size: 16px
+  line-height: 24px
+  margin-top: 16px
+  padding: 16px 0
+  position: relative
+  width: 400px
+  @include animation-duration(.4s)
+  @include align-items(center)
+  @include display(flex)
+
+  .notification-message
+    @include flex(1)
+
+  .icon
+    text-align: center
+    width: 50px
+
+  a
+    color: #000
+    display: block
+    font-size: 11px
+    opacity: .2
+    text-align: center
+    width: 50px
+
+    &:hover
+      color: #000
+      opacity: .4
+
+  strong
+    font-weight: 600
+
+  small
+    display: block
+    font-size: 13px
+    font-weight: normal
+    margin-top: -4px
+    opacity: .6
+
+  &.notification-error
+    background: $error-color
+
+  &.notification-danger
+    background: $danger-color
+
+  &.notification-success
+    background: $success-color
