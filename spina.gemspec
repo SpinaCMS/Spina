@@ -27,7 +27,6 @@ Gem::Specification.new do |s|
   s.add_dependency 'carrierwave'
   s.add_dependency 'mini_magick'
   s.add_dependency 'cancancan'
-  s.add_dependency 'filters_spam'
   s.add_dependency 'ancestry'
   s.add_dependency 'breadcrumbs_on_rails'
   s.add_dependency 'turbolinks', '~> 5'
