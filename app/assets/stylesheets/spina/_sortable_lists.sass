@@ -44,13 +44,13 @@
 
     &:after
       border: 1px dashed #ddd
+      box-sizing: border-box
       content: " "
       display: block
       height: 100%
       margin-left: 0px
       top: 0px
       width: 100%
-      @include box-sizing(border-box)
 
   .dd-list
     background: tint(#f5f5fa, 50%)
@@ -94,9 +94,9 @@
 
 .dd-placeholder, .dd-empty
   background: #fcfcfc
+  box-sizing: border-box
   margin: 0
   padding: 0
-  @include box-sizing(border-box)
 
 .dd-empty
   background: blue
