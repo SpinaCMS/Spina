@@ -8,7 +8,7 @@ module Spina
     private
 
     def current_ability
-      @current_ability ||= Ability.new(current_user)
+      @current_ability ||= Ability.new(current_spina_user)
     end
 
     def current_theme
@@ -16,10 +16,10 @@ module Spina
     end
     helper_method :current_theme
 
-    def current_user
-      @current_user ||= Spina::User.where(id: session[:user_id]).first if session[:user_id]
+    def current_spina_user
+      @current_spina_user ||= Spina::User.where(id: session[:user_id]).first if session[:user_id]
     end
-    helper_method :current_user
+    helper_method :current_spina_user
 
     def current_account
       @current_account ||= Account.first

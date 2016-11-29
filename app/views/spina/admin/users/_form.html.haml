@@ -12,7 +12,7 @@
   - if @user.errors.any?
     - content_for :notification_alert do
       .notification.notification-error{data: {icon: 'm'}}
-        %p 
+        %p
           = Spina::User.human_attribute_name :cannot_be_created
           %small
             - @user.errors.full_messages.each do |msg|
@@ -54,5 +54,5 @@
         .horizontal-form-content
           = f.check_box :admin, data: {switch: 'true'}
 
-  - unless @user.new_record? || @user == current_user
+  - unless @user.new_record? || @user == current_spina_user
     .pull-right= link_to t('spina.permanently_delete'), spina.admin_user_path(@user), method: :delete, data: {confirm: t('spina.users.delete_confirmation', user: @user)}, class: 'button button-link button-danger'

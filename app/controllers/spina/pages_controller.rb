@@ -4,7 +4,7 @@ module Spina
 
     before_action :set_locale
     before_action :rewrite_page, only: [:show]
-    before_action :current_user_can_view_page?, except: [:robots]
+    before_action :current_spina_user_can_view_page?, except: [:robots]
 
     def homepage
       render_with_template(page)
@@ -47,10 +47,10 @@ module Spina
         File.join(*segments)
       end
 
-      def current_user_can_view_page?
+      def current_spina_user_can_view_page?
         raise ActiveRecord::RecordNotFound if page.nil? || !page.live?
 
-        current_user.present?
+        current_spina_user.present?
       end
 
       def should_skip_to_first_child?

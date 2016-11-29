@@ -1,4 +1,4 @@
-- if current_user.present?
+- if current_spina_user.present?
   #admin_bar
     = link_to t('spina.edit_website'), spina.admin_root_url, data: {icon: 'q', :"no-turbolink" => true}, class: 'button button-hollow button-round button-small'
     = link_to t('spina.logout'), spina.admin_logout_path, data: {icon: 'h'}, class: 'button button-hollow button-round button-small'
