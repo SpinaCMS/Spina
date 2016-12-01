@@ -68,6 +68,7 @@ en:
       insert_photo: Insert image
       link: "URL of your image:"
       cannot_be_created: "Image could not be processed:"
+      upload_image: "Upload an image"
 
     wysiwyg:
       paragraph: Paragraph
