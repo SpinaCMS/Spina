@@ -38,4 +38,6 @@ toggleSwitch = (e) ->
     checkbox.removeClass('deactivated')
     input.prop("checked", true)
 
+  input.trigger('change')
+
   return false
