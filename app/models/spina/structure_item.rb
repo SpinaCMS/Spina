@@ -1,7 +1,7 @@
 module Spina
   class StructureItem < ApplicationRecord
     before_validation :ensure_position
-    belongs_to :structure
+    belongs_to :structure, optional: true
     has_many :structure_parts, dependent: :destroy
 
     scope :sorted_by_structure, -> { order('position') }

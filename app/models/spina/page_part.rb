@@ -3,7 +3,7 @@ module Spina
     include Part
 
     belongs_to :page, inverse_of: :page_parts
-    belongs_to :page_partable, polymorphic: true
+    belongs_to :page_partable, polymorphic: true, optional: true
 
     accepts_nested_attributes_for :page_partable, allow_destroy: true
 

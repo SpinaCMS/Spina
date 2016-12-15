@@ -2,8 +2,8 @@ module Spina
   class StructurePart < ApplicationRecord
     include Part
 
-    belongs_to :structure_item
-    belongs_to :structure_partable, polymorphic: true
+    belongs_to :structure_item, optional: true
+    belongs_to :structure_partable, polymorphic: true, optional: true
 
     accepts_nested_attributes_for :structure_partable, allow_destroy: true
 
