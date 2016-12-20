@@ -1,6 +1,6 @@
-%tr
+%tr{style: "background: #{'#fafafd' if page.depth == 1}#{'#f5f5fa' if page.depth == 2}#{'#fff' if page.depth == 0}"}
   %td{style: 'width: 30px'}= check_box_tag 'navigation[page_ids][]', page.id, @navigation.page_ids.include?(page.id)
-  %td{style: "font-weight: 600; padding-left: #{10 * page.depth}px"}= page.title
+  %td{style: "font-weight: 600; padding-left: #{10 * page.depth + 4}px"}= page.title
 
 - if page.children.any?
   = render partial: 'page', collection: page.children.sorted
