@@ -1,6 +1,6 @@
-%li
-  = check_box_tag 'navigation[page_ids][]', page.id, @navigation.page_ids.include?(page.id), id: dom_id(page)
-  = label_tag dom_id(page), page.title
+%tr
+  %td{style: 'width: 30px'}= check_box_tag 'navigation[page_ids][]', page.id, @navigation.page_ids.include?(page.id)
+  %td{style: "font-weight: 600; padding-left: #{10 * page.depth}px"}= page.title
 
-  - if page.children.any?
-    %ul= render partial: 'page', collection: page.children.sorted
+- if page.children.any?
+  = render partial: 'page', collection: page.children.sorted

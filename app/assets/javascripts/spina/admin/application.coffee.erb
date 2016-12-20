@@ -53,7 +53,15 @@ $(document).on 'page:restore', -> NProgress.remove()
 # Scaffold
 $(document).on 'click', '.table-clickable tbody tr', (e) ->
   $row = $(this).closest('tr')
-  $row.find('a.table-link:first')[0].click()
+  link = $row.find('a.table-link:first')[0]
+  if link
+    link.click()
+  else
+    checkbox = $(this).find('input[type="checkbox"]:first, input[type="radio"]:first')
+
+    if checkbox.length > 0
+      checkbox.prop("checked", !checkbox.prop("checked"))
+      e.stopPropagation()
 
 $(document).on 'click', '.table-clickable tbody tr td', (e) ->
   checkbox = $(this).find('input[type="checkbox"]:first, input[type="radio"]:first')

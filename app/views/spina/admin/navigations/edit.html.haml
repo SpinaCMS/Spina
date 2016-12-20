@@ -6,16 +6,14 @@
       = button_tag t('spina.save'), class: 'button button-primary'
     .breadcrumbs= render_breadcrumbs separator: '<div class="divider"></div>'
   
+
+  .well
+    .table-container
+      %table.table.table-clickable
+        %tbody= render partial: 'page', collection: Spina::Page.sorted.roots
+
   .well
     .horizontal-form
-      .horizontal-form-group
-        .horizontal-form-label
-          = Spina::Navigation.human_attribute_name :pages
-          %small= Spina::Navigation.human_attribute_name :pages_description
-
-        .horizontal-form-content
-          %ul= render partial: 'page', collection: Spina::Page.sorted.roots
-
       .horizontal-form-group
         .horizontal-form-label
           = Spina::Navigation.human_attribute_name :auto_add_pages
