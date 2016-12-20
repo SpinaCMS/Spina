@@ -1,0 +1,7 @@
+%li.dd-item{data: {id: navigation_item_nested_list.id}}
+  %div.dd-item-inner
+    = render partial: 'spina/admin/pages/page', object: navigation_item_nested_list.page
+
+  - if navigation_item_nested_list.children.present?
+    %ol.dd-list
+      = render partial: 'navigation_item_nested_list', collection: navigation_item_nested_list.children.sorted

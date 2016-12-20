@@ -7,6 +7,7 @@ nl:
     close: Sluiten
     choose_from_library: Kies uit bibliotheek
     edit: Bewerken
+    save: Opslaan
     delete: Verwijderen
     permanently_delete: Definitief verwijderen
     delete_confirmation: "Weet je zeker dat je <strong>%{subject}</strong> wilt verwijderen?"
@@ -30,6 +31,7 @@ nl:
 
     website:
       title: Je website
+      all_pages: Alle pagina's
       pages: Pagina's
       pages_description: "Alle pagina's op je website"
       media_library: Mediabibliotheek
@@ -162,6 +164,13 @@ nl:
         menu_title: Menu titel
         menu_title_placeholder: Leeglaten om de titel van de pagina over te nemen
         view_template: Pagina template
+
+      spina/navigation:
+        label: Label
+        auto_add_pages: Automatisch aanvullen
+        auto_add_pages_description:  Nieuwe pagina's worden automatisch toegevoegd aan deze navigatie
+        pages: Pagina's
+        pages_description: Selecteer de pagina's die in deze navigatie getoond worden
 
       spina/user:
         email: Emailadres

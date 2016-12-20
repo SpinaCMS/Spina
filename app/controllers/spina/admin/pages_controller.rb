@@ -1,7 +1,6 @@
 module Spina
   module Admin
     class PagesController < AdminController
-
       before_action :set_breadcrumb
       before_action :set_tabs, only: [:new, :create, :edit, :update]
       before_action :set_locale
@@ -20,6 +19,7 @@ module Spina
         end
         add_breadcrumb I18n.t('spina.pages.new')
         @page_parts = current_theme.page_parts.map { |page_part| @page.page_part(page_part) }
+        render layout: 'spina/admin/admin'
       end
 
       def create
@@ -37,6 +37,7 @@ module Spina
         @page = Page.find(params[:id])
         add_breadcrumb @page.title
         @page_parts = current_theme.page_parts.map { |page_part| @page.page_part(page_part) }
+        render layout: 'spina/admin/admin'
       end
 
       def update

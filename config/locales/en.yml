@@ -4,6 +4,7 @@ en:
     close: Close
     choose_from_library: Choose from library
     edit: Edit
+    save: Save
     delete: Delete
     permanently_delete: Permanently delete
     delete_confirmation: "Are you sure you want to delete <strong>%{subject}</strong>?"
@@ -28,6 +29,7 @@ en:
     website:
       title: Your website
       pages: Pages
+      all_pages: All pages
       pages_description: "All pages on your website"
       media_library: Media library
       media_library_description: "Here's where you'll find all of your images and documents"
@@ -168,6 +170,13 @@ en:
         view_template: Page template
         ancestry: Parent page
         no_parent: No parent
+
+      spina/navigation:
+        label: Label
+        auto_add_pages: Automatically add pages
+        auto_add_pages_description: New pages are added automatically to this navigation
+        pages: Pages
+        pages_description: Select the pages you want to use in this navigation
 
       spina/user:
         email: Email

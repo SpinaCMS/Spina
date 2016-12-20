@@ -1,53 +1,35 @@
-- content_for(:permanent_notice) do
-  - unless current_account.robots_allowed?
-    .permanent-notice.permanent-notice-info
-      = icon('search')
-      %p
-        =t 'spina.pages.invisible_to_search_engines'
-        %small=t 'spina.pages.invisible_to_search_engines_description'
+- content_for(:header_actions) do
+  %span{data: {dropdown: true}}
+    = link_to spina.new_admin_page_path(params: {view_template: 'show'}), class: 'button button-primary', style: 'margin-right: 0', data: {trigger: ('dropdown' if current_theme.new_page_templates.size > 1), target: '#create_page_dropdown'} do
+      = icon('plus')
+      = t('spina.pages.new')
 
-%header#header
-  #header_actions
-    = link_to '#pages_list', class: 'button sort-switch', data: {change_order: t('spina.pages.change_order'), done_changing_order: t('spina.pages.done_changing_order')} do
-      = icon('random')
-      = t('spina.pages.change_order')
-
-    %span{data: {dropdown: true}}
-      = link_to spina.new_admin_page_path(params: {view_template: 'show'}), class: 'button button-primary', style: 'margin-right: 0', data: {trigger: ('dropdown' if current_theme.new_page_templates.size > 1), target: '#create_page_dropdown'} do
-        = icon('plus')
-        = t('spina.pages.new')
-
-      .sliding-dropdown#create_page_dropdown.align-right
-        .slide-controls
-          %a.previous.muted.icon-only{href: '#'}
-            = icon('chevron-left')
-
-          - current_theme.new_page_templates.each_with_index do |template, index|
-            .slide-title{class: ('active' if index == 0), data: {target: "#slide-#{template[0].parameterize}"}}= template[1]
-
-          %a.next.icon-only{href: '#'}
-            = icon('chevron-right')
+    .sliding-dropdown#create_page_dropdown.align-right
+      .slide-controls
+        %a.previous.muted.icon-only{href: '#'}
+          = icon('chevron-left')
 
         - current_theme.new_page_templates.each_with_index do |template, index|
-          .slide{class: ('active' if index == 0), id: "slide-#{template[0].parameterize}"}
-            %p= template[2]
+          .slide-title{class: ('active' if index == 0), data: {target: "#slide-#{template[0].parameterize}"}}= template[1]
 
-            %p.muted= template[3]
+        %a.next.icon-only{href: '#'}
+          = icon('chevron-right')
 
-            .slide-dots
-              - current_theme.new_page_templates.each_with_index do |template2, index2|
-                .slide-dot{class: ('active' if index2 == index)}
+      - current_theme.new_page_templates.each_with_index do |template, index|
+        .slide{class: ('active' if index == 0), id: "slide-#{template[0].parameterize}"}
+          %p= template[2]
 
-            = link_to spina.new_admin_page_path(params: {view_template: template[0]}), class: 'button button-primary' do
-              = icon('pencil-outline')
-              = t('spina.pages.create_page', template: template[1])
+          %p.muted= template[3]
 
-  .breadcrumbs= render_breadcrumbs seperator: '<div class="divider"></div>'
+          .slide-dots
+            - current_theme.new_page_templates.each_with_index do |template2, index2|
+              .slide-dot{class: ('active' if index2 == index)}
 
-.filters
-  
+          = link_to spina.new_admin_page_path(params: {view_template: template[0]}), class: 'button button-primary' do
+            = icon('pencil-outline')
+            = t('spina.pages.create_page', template: template[1])
 
 .well
   .dd#pages_list{data: {:"sort-url" => spina.sort_admin_pages_url }}
     %ol.dd-list
-      = render partial: 'page', collection: @pages.roots
+      = render partial: 'page_nested_list', collection: @pages.roots

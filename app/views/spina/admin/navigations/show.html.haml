@@ -1,0 +1,7 @@
+- content_for(:header_actions) do
+  = link_to t('spina.edit', label: @navigation.label), spina.edit_admin_navigation_path(@navigation), class: 'button'
+
+.well
+  .dd#pages_list{data: {:"sort-url" => spina.sort_admin_navigation_url(@navigation) }}
+    %ol.dd-list
+      = render partial: 'navigation_item_nested_list', collection: @navigation.navigation_items.roots

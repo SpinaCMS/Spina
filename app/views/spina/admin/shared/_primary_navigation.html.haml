@@ -1,13 +1,13 @@
 %nav#primary.transformed
   %ul
-    %li{class: ('active' if (%w[pages photos attachments] + Spina::Plugin.all.map { |plugin| plugin.namespace if current_theme.plugins.include?(plugin.name) }).include? controller_name)}
+    %li{class: ('active' if (%w[pages photos attachments navigations] + Spina::Plugin.all.map { |plugin| plugin.namespace if current_theme.plugins.include?(plugin.name) }).include? controller_name)}
       = link_to spina.admin_pages_path do
         = icon('home')
         = t('spina.website.title')
         = icon('caret-right')
 
       %ul
-        %li{class: ('active' if current_admin_path.start_with?('/pages'))}
+        %li{class: ('active' if current_admin_path.start_with?('/pages') || current_admin_path.start_with?('/navigations'))}
           = link_to t('spina.website.pages'), spina.admin_pages_path
         %li{class: ('active' if current_admin_path.start_with?('/photos', '/attachments'))}
           = link_to t('spina.website.media_library'), spina.admin_photos_path
