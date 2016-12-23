@@ -253,6 +253,53 @@
   right: 0
   top: 0
 
+// Form checkbox
+
+.form-checkbox
+  label
+    display: block
+    font-size: 13px
+    font-weight: 600
+    line-height: 20px
+    position: relative
+
+  input[type="checkbox"]
+    display: none
+
+  input[type="checkbox"] + label:before
+    background: transparent
+    border: 1px dashed shade(#e6e6ec, 20%)
+    border-radius: 3px
+    content: " "
+    display: inline-block
+    height: 20px
+    margin-right: 10px
+    vertical-align: middle
+    width: 20px
+    @include transition(all .2s ease)
+
+  input[type="checkbox"]:checked + label:before
+    background: tint($primary-color, 10%)
+    border-color: transparent
+
+  input[type="checkbox"] + label:after
+    color: #fff
+    font-size: 10px
+    height: 20px
+    left: 0px
+    line-height: 20px
+    position: absolute
+    text-align: center
+    top: 0px
+    vertical-align: middle
+    width: 20px
+    @extend .icon, .icon-large-check:before
+    @include transform(scale(0))
+    @include transition(all .2s ease)
+
+  input[type="checkbox"]:checked + label:after
+    @include transform(scale(1))
+
 // Input groups
 .input-group
   @include display(flex)
