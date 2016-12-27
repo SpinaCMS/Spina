@@ -17,7 +17,7 @@ module Spina
     end
 
     def content
-      self.partable.try(:content) || self.partable
+      self.partable.try(:content)
     end
 
     def partable_attributes=(attributes)

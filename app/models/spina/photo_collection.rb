@@ -8,6 +8,10 @@ module Spina
     attr_reader :photo_tokens, :photo_positions
     accepts_nested_attributes_for :photos, allow_destroy: true
 
+    def content
+      self
+    end
+
     def photo_tokens=(ids)
       self.photo_ids = ids.split(",")
     end
