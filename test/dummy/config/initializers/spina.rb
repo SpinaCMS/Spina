@@ -3,6 +3,8 @@ Spina.configure do |config|
   config.locales = [:en, :nl]
   # Run `rake spina:update_translations` after you add any new locale.
 
+  config.pages_controller = 'pages'
+
   # Important Note
   # ==============
 
