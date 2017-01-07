@@ -47,6 +47,18 @@ module Spina
         current_spina_user.present?
       end
 
+      def should_skip_to_first_child?
+        page.skip_to_first_child && first_live_child
+      end
+
+      def first_live_child
+        page.children.sorted.live.first
+      end
+
+      def render_with_template(page)
+        render layout: "#{current_theme.name.parameterize.underscore}/#{page.layout_template || 'application'}", template: "#{current_theme.name.parameterize.underscore}/pages/#{page.view_template || 'show'}"
+      end
+
       def render_404
         render file: "#{Rails.root}/public/404.html", status: 404
       end
