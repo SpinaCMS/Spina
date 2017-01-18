@@ -11,10 +11,11 @@
 
 Spina is a CMS built upon the Rails framework. This guide is designed for developers with experience using Ruby on Rails.
 
-To start using Spina CMS simply add the following lines to your Gemfile:
+To start using Spina CMS add the following lines to your Gemfile:
 
 ```ruby
-gem 'spina'
+gem 'globalize', git: 'https://github.com/globalize/globalize'
+gem 'spina', git: 'https://github.com/denkGroot/Spina'
 ```
 
 Make sure you run the installer to get started.
