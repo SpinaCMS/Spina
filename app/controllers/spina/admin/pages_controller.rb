@@ -29,7 +29,7 @@ module Spina
           redirect_to spina.edit_admin_page_url(@page)
         else
           @page_parts = @page.page_parts
-          render :new
+          render :new, layout: 'spina/admin/admin'
         end
       end
 
@@ -53,7 +53,7 @@ module Spina
           else
             format.html do
               @page_parts = @page.page_parts
-              render :edit
+              render :edit, layout: 'spina/admin/admin'
             end
           end
         end
