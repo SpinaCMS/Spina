@@ -26,12 +26,14 @@ button, input[type="submit"], input[type="button"]
 
   &:active, &.button-active, &.button-shaded, &.button-shaded:active
     background: shade(#efefef, 10%)
+    @include transform(scale(0.95))
 
   &:focus
     outline: none
 
   &.button-primary
     background: $primary-color
+    // box-shadow: 0 0 20px tint($primary-color, 50%)
     color: #fff
 
     &:hover
@@ -42,6 +44,7 @@ button, input[type="submit"], input[type="button"]
 
     &:active, &.button-active, &.button-shaded, &.button-shaded:active
       background: shade($primary-color, 20%)
+      // box-shadow: 0 0 10px tint($primary-color, 50%)
 
   &.button-success
     background: $success-color
@@ -295,6 +298,7 @@ button, input[type="submit"], input[type="button"]
     .previous, .next
       color: #666
       font-size: 12px
+      outline: none
       padding: 0 12px
       position: absolute
       top: 0px

@@ -79,6 +79,7 @@ nav#primary
     font-weight: 600
     line-height: 54px
     opacity: .5
+    outline: none
     padding: 0 20px
     position: relative
 
@@ -131,16 +132,16 @@ nav#primary
       opacity: .5
 
   &.animated > ul
-    @include transition(background .2s ease)
+    @include transition(background .3s ease)
 
     & > li > a
-      @include transition(all .2s ease)
+      @include transition(all .3s ease)
 
       .icon
-        @include transition(all .2s ease)
+        @include transition(all .3s ease)
 
     li.active ul 
-      @include transition(all .2s ease)
+      @include transition(all .3s ease)
 
   &.transformed > ul
     background: rgba(0, 0, 0, .4)

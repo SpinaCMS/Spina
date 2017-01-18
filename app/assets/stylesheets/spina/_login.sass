@@ -9,9 +9,18 @@
   margin: 50px auto
   max-width: 280px
 
-  .notification
-    padding: 0px
+  .failed-to-login
+    color: $danger-color
+    margin-bottom: 20px
     text-align: center
+    @include animation-delay(.1s)
+
+  .login-fields input
+    &:first-child
+      @include animation-delay(.2s)
+
+    &:last-child
+      @include animation-delay(.4s)
 
   img
     display: block
@@ -27,9 +36,9 @@
     padding: 12px 14px
     width: 100%
 
-
   button
     padding: 12px 14px
+    @include animation-delay(.6s)
     
     &:before
       font-size: 26px

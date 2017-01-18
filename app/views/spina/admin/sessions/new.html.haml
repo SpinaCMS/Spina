@@ -1,9 +1,12 @@
 = form_tag spina.admin_sessions_path, id: "login_wrapper" do
-  = image_tag 'spina/admin/spina.png'
+  = image_tag 'spina/admin/spina.png', class: 'animated fadeInDown'
   - if flash[:alert].present?
-    .notification.notification-danger
+    .failed-to-login.animated.fadeInDown
       .icon.icon-cross
       = flash[:alert]
-  = text_field_tag :email, params[:email], placeholder: Spina::User.human_attribute_name(:email), autofocus: true
-  = password_field_tag :password, nil, placeholder: Spina::User.human_attribute_name(:password)
-  = button_tag t('spina.login'), class: 'button button-primary', data: {icon: '3'}
+
+  .login-fields
+    = text_field_tag :email, params[:email], placeholder: Spina::User.human_attribute_name(:email), autofocus: true, class: "animated fadeInDown"
+    = password_field_tag :password, nil, placeholder: Spina::User.human_attribute_name(:password), class: "animated fadeInDown"
+
+  = button_tag t('spina.login'), class: 'button button-primary animated fadeInDown', data: {icon: '3'}

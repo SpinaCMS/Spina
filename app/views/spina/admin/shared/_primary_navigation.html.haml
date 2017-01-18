@@ -1,4 +1,4 @@
-%nav#primary.transformed
+%nav#primary.transformed{data: {turbolinks_permanent: true}}
   %ul
     %li{class: ('active' if (%w[pages photos attachments navigations] + Spina::Plugin.all.map { |plugin| plugin.namespace if current_theme.plugins.include?(plugin.name) }).include? controller_name)}
       = link_to spina.admin_pages_path do
@@ -57,3 +57,4 @@
     %li.bottom
       = link_to spina.admin_logout_path, data: {turbolinks: false} do
         = icon('power-off')
+        =t 'spina.logout'
