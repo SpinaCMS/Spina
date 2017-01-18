@@ -23,7 +23,6 @@
 #= require spina/morris
 #= require spina/wysihtml5_parser_rules
 #= require spina/wysihtml5
-#= require spina/nprogress
 #= require spina/trix
 
 # Own code
@@ -44,11 +43,6 @@
 
 #= require ./trix
 #= require ./infinite_scroll
-
-# Nprogress
-$(document).on 'page:fetch', -> NProgress.start()
-$(document).on 'page:change', -> NProgress.done()
-$(document).on 'page:restore', -> NProgress.remove()
 
 # Scaffold
 $(document).on 'click', '.table-clickable tbody tr', (e) ->

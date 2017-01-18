@@ -35,7 +35,6 @@
 
 // Plugins
 @import spina/morris
-@import spina/nprogress
 @import spina/wysihtml5
 @import spina/farbtastic
 
@@ -57,6 +56,7 @@ nav#primary
   overflow: hidden
   position: fixed
   width: 300px
+  z-index: 5
   @include linear-gradient(#3b3f74, #7a76ad)
 
   & > ul
@@ -169,20 +169,38 @@ nav#secondary
     display: inline-block
     font-size: 12px
     font-weight: 700
-    line-height: 28px
-    padding: 0 16px
+    line-height: 34px
     opacity: .5
+    outline: none
+    padding: 0 16px
+    position: relative
     text-transform: uppercase
+
+    &:after
+      background-color: $primary-color
+      bottom: 0px
+      content: " "
+      height: 3px
+      left: 0px
+      opacity: 0
+      position: absolute
+      width: 100%
+      @include transform(scale(0))
 
   ul li a:hover
     opacity: 1
 
   ul li.active a
-    border-bottom: 3px solid $primary-color
     cursor: default
     opacity: 1
     margin: 0 16px
     padding: 0
+
+    &:after
+      opacity: 1
+      @include transform(scale(1))
+      @include transition(all .2s ease)
+      @include transition-delay(.05s)
 
   ul li:first-child a
     margin-left: 0
@@ -508,3 +526,7 @@ hr.divider
 
 .text-right
   text-align: right
+
+// Turbolinks
+.turbolinks-progress-bar
+  background-color: $primary-color
