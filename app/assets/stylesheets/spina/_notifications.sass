@@ -22,10 +22,12 @@ aside#notifications
   @include display(flex)
 
   .notification-message
+    overflow: hidden
     @include flex(1)
 
   .icon
     text-align: center
+    min-width: 50px
     width: 50px
 
   a

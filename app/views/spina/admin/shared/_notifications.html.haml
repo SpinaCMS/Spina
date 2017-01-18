@@ -25,3 +25,5 @@
         %small= flash[:success_small].try(:html_safe)
       = link_to '#', data: {close_notification: true} do
         = icon('cross')
+
+  = yield(:notifications) if content_for?(:notifications)
