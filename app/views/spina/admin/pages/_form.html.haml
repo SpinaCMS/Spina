@@ -1,3 +1,13 @@
+- if @page.errors.any?
+  - content_for :notifications do
+    .notification.notification-danger.animated.fadeInRight
+      = icon('exclamation')
+      .notification-message
+        =t 'spina.notifications.alert'
+        %small= @page.errors.full_messages.join('<br />').html_safe
+      = link_to '#', data: {close_notification: true} do
+        = icon('cross')
+
 = form_for [spina, :admin, @page], multipart: true, html: {autocomplete: "off"} do |f|
   %header#header
     .breadcrumbs= render_breadcrumbs separator: '<div class="divider"></div>'
@@ -26,13 +36,8 @@
 
   = hidden_field_tag :locale, @locale
 
-  - content_for :notification_alert do
-    = error_explanation!(@page)
-
   - Globalize.with_locale(@locale) do
     - @tabs.each do |tab|
-      - if @page.errors.any?
-        = @page.errors.full_messages
       = render "spina/admin/pages/form_#{tab}", f: f
 
     - unless @page.new_record? || !@page.deletable
