@@ -1,26 +1,6 @@
 module Spina
   module ApplicationHelper
 
-    def markdown(text)
-      sha = Digest::SHA1.hexdigest(text.to_s)
-      Rails.cache.fetch sha do
-        renderer = Redcarpet::Render::HTML.new(hard_wrap: true, filter_html: false)
-        options = {
-          autolink: true,
-          no_intra_emphasis: true,
-          fenced_code_blocks: true,
-          lax_spacing: true,
-          strikethrough: true,
-          superscript: true
-        }
-        html = Redcarpet::Markdown.new(renderer, options).render(text.to_s)
-
-        html.gsub!(/\[vimeo\s+(\d*)\]/, '<figure class="video"><iframe src="http://player.vimeo.com/video/\1?portrait=0&title=0&byline=0" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></figure>')
-        html.gsub!(/\[button\s+(.*)\](.*)\[\/button\]/, '<a href="\1" class="button">\2</a>')
-        html.html_safe
-      end
-    end
-
     def link_to_add_fields(name, f, association)
       new_object = f.object.send(association).klass.new
       id = new_object.object_id
