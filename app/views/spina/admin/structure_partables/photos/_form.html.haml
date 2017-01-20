@@ -1,5 +1,5 @@
 = link_to spina.photo_select_admin_photos_path(f.object_name, selected_photo_id: f.object.structure_partable.try(:id)), remote: true, class: "media_picker" do
-  .placeholder.pull-right
+  .placeholder
     %span.button.button-small.button-round{data: {icon: 'U'}}=t 'spina.pages.photo_picker'
   - if f.object.structure_partable && f.object.structure_partable.file.present?
     .image

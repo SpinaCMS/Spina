@@ -2,7 +2,7 @@
   = f.object.title
 .horizontal-form-content
   = link_to spina.photo_select_admin_photos_path(f.object_name, selected_photo_id: f.object.page_partable.try(:id)), remote: true, class: 'media_picker clearfix' do
-    .placeholder.pull-right
+    .placeholder
       %span.button.button-small.button-round
         %i.icon.icon-dots
         =t 'spina.pages.photo_picker'
