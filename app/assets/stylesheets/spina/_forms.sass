@@ -51,7 +51,7 @@
   margin: 0 auto
   max-width: 960px
   @include display(flex)
-  
+
 .sidebar-form-content
   @include flex(1)
 
@@ -306,7 +306,7 @@
 
   #{$all-text-inputs}, .text-input, .select-dropdown
     @include flex(1)
-    
+
     &:not(:first-child)
       border-bottom-left-radius: 0
       border-top-left-radius: 0
@@ -814,6 +814,7 @@ input.datepicker
   display: block
   margin-top: 2px
   position: relative
+  text-align: right
 
   .image
     @include transition(all .3s ease)
@@ -842,8 +843,6 @@ input.datepicker
     font-weight: 600
     line-height: 36px
     margin-bottom: 2px
-    position: absolute
-    right: 0px
 
     span
       border: 5px solid #fff
