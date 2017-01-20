@@ -13,7 +13,7 @@
 
       = f.fields_for :page_partable do |ff|
         - ff.object.page_part = f.object
-        = link_to_add_fields ff, :structure_items do
+        = link_to_add_structure_item_fields ff, :structure_items do
           = icon('plus')
 
     .structure-form-content
