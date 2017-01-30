@@ -43,7 +43,7 @@ module Spina
 
       def destroy
         @user = User.find(params[:id])
-        @user.destroy unless @user == current_user
+        @user.destroy unless @user == current_spina_user
         redirect_to admin_users_url
       end
 
