@@ -12,5 +12,4 @@
       = render "spina/admin/structure_partables/#{ partable_type_partial_namespace(ff.object.structure_partable_type) }/form", f: ff
 
   = f.hidden_field :_destroy
-  = link_to t('spina.delete'), '#', class: 'remove-structure-item-fields button button-mini button-link pull-right'
-
+  = link_to t('spina.delete'), '#', class: 'remove_structure_item_fields button button-mini button-link pull-right'
