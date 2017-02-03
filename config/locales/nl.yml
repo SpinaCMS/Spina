@@ -57,6 +57,7 @@ nl:
       skip_to_first_child: doorsturen naar 1<sup>e</sup> subpagina
       invisible_to_search_engines: Je website is niet zichtbaar voor zoekmachines
       invisible_to_search_engines_description: Bij voorkeuren voor Statistieken en zoekmachines kun je dit activeren.
+      saving: <i></i> Opslaan...
 
     users:
       new: Nieuwe gebruiker

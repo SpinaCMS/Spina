@@ -56,6 +56,7 @@ en:
       invisible_to_search_engines_description: Go to your preferences to activate search engines.
       rebuild_materialized_path: Rebuild materialized path
       materialize_path_confirmation: "Are you sure you want to rebuild the path for this page?"
+      saving: Saving...
 
     users:
       new: New user
