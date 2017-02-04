@@ -4,7 +4,7 @@
       .item.item-small.item-uploader
         = form_for [spina, :admin, @photo], html: {multipart: true} do |f|
           = f.label :file, t('spina.photos.upload_image')
-          = f.file_field :file, data: {customfileinput: true}
+          = f.file_field :files, multiple: true, data: {customfileinput: true}
 
       = form_tag spina.insert_photo_admin_photos_path(params[:page_part_id]), remote: true, class: 'gallery-prepend-image' do
         = hidden_field_tag :hidden_field_id, @hidden_field_id

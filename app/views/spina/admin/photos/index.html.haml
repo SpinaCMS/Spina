@@ -4,7 +4,7 @@
       = form_for [spina, :admin, @photo], html: {multipart: true} do |f|
         = hidden_field_tag :media_library, value: true
         = f.label :file, t('spina.photos.upload_image')
-        = f.file_field :file, data: {customfileinput: true}
+        = f.file_field :files, multiple: true, data: {customfileinput: true}
 
     .gallery-prepend-image
       .infinite-scroll

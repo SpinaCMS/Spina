@@ -4,7 +4,7 @@ $.fn.uploadPhoto = ->
     dataType: "script"
     singleFileUploads: true
     dropZone: $(this).find('.photo-field')
-    maxNumberOfFiles: 1
+    # maxNumberOfFiles: 1
     add: (e, data) ->
       types = /(\.|\/)(gif|jpe?g|png)$/i
       file = data.files[0]
