@@ -58,6 +58,9 @@ $(document).on 'click', 'form .add_structure', (event) ->
 
   $link.find('a').click()
 
+  # Fire event
+  $structureForm.trigger('spina:structure_added')
+
   event.preventDefault()
 
 $(document).on 'click', 'form .remove_structure_item_fields', (event) ->
