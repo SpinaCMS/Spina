@@ -10,9 +10,11 @@ module Spina
   PLUGINS = []
   THEMES = []
 
-  config_accessor :backend_path, :storage, :max_page_depth, :locales
+  config_accessor :backend_path, :disable_frontend_routes, :storage, :max_page_depth, :locales
 
   self.backend_path = 'admin'
+
+  self.disable_frontend_routes = false
 
   self.storage = :file
 

@@ -68,14 +68,16 @@ Spina::Engine.routes.draw do
   # Robots.txt
   get '/robots', to: 'pages#robots', constraints: { format: 'txt' }
 
-  # Frontend
-  root to: "pages#homepage"
+  unless Spina.config.disable_frontend_routes
+    # Frontend
+    root to: "pages#homepage"
 
-  # Pages
-  get '/:locale/*id' => 'pages#show', constraints: {locale: /#{Spina.config.locales.join('|')}/ }
-  get '/:locale/' => 'pages#homepage', constraints: {locale: /#{Spina.config.locales.join('|')}/ }
-  get '/*id' => 'pages#show', as: "page", controller: 'pages', constraints: lambda { |request|
-    !(Rails.env.development? && request.env['PATH_INFO'].starts_with?('/rails/') || request.env['PATH_INFO'].starts_with?("/#{Spina.config.backend_path}") || request.env['PATH_INFO'].starts_with?('/attachments/'))
-  }
+    # Pages
+    get '/:locale/*id' => 'pages#show', constraints: {locale: /#{Spina.config.locales.join('|')}/ }
+    get '/:locale/' => 'pages#homepage', constraints: {locale: /#{Spina.config.locales.join('|')}/ }
+    get '/*id' => 'pages#show', as: "page", controller: 'pages', constraints: lambda { |request|
+      !(Rails.env.development? && request.env['PATH_INFO'].starts_with?('/rails/') || request.env['PATH_INFO'].starts_with?("/#{Spina.config.backend_path}") || request.env['PATH_INFO'].starts_with?('/attachments/'))
+    }
+  end
 
 end
