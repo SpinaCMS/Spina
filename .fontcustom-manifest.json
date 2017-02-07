@@ -1,0 +1,270 @@
+{
+  "checksum": {
+    "previous": "b0449bbbcbd7737b13af5cd16c36e5d9f60da279dcb87623a3c50b01f54bf0ed",
+    "current": "b0449bbbcbd7737b13af5cd16c36e5d9f60da279dcb87623a3c50b01f54bf0ed"
+  },
+  "fonts": [
+    "app/assets/fonts/spina/ics_spina.ttf",
+    "app/assets/fonts/spina/ics_spina.svg",
+    "app/assets/fonts/spina/ics_spina.woff",
+    "app/assets/fonts/spina/ics_spina.eot"
+  ],
+  "glyphs": {
+    "barchart": {
+      "codepoint": 61696,
+      "source": "app/assets/icons/spina/barchart.svg"
+    },
+    "bars": {
+      "codepoint": 61697,
+      "source": "app/assets/icons/spina/bars.svg"
+    },
+    "bold": {
+      "codepoint": 61698,
+      "source": "app/assets/icons/spina/bold.svg"
+    },
+    "brush": {
+      "codepoint": 61699,
+      "source": "app/assets/icons/spina/brush.svg"
+    },
+    "camera": {
+      "codepoint": 61700,
+      "source": "app/assets/icons/spina/camera.svg"
+    },
+    "caret-down": {
+      "codepoint": 61701,
+      "source": "app/assets/icons/spina/caret-down.svg"
+    },
+    "caret-left": {
+      "codepoint": 61702,
+      "source": "app/assets/icons/spina/caret-left.svg"
+    },
+    "caret-right": {
+      "codepoint": 61703,
+      "source": "app/assets/icons/spina/caret-right.svg"
+    },
+    "caret-up": {
+      "codepoint": 61704,
+      "source": "app/assets/icons/spina/caret-up.svg"
+    },
+    "cart": {
+      "codepoint": 61705,
+      "source": "app/assets/icons/spina/cart.svg"
+    },
+    "chart-outline": {
+      "codepoint": 61706,
+      "source": "app/assets/icons/spina/chart-outline.svg"
+    },
+    "check": {
+      "codepoint": 61707,
+      "source": "app/assets/icons/spina/check.svg"
+    },
+    "chevron-down": {
+      "codepoint": 61708,
+      "source": "app/assets/icons/spina/chevron-down.svg"
+    },
+    "chevron-left": {
+      "codepoint": 61709,
+      "source": "app/assets/icons/spina/chevron-left.svg"
+    },
+    "chevron-right": {
+      "codepoint": 61710,
+      "source": "app/assets/icons/spina/chevron-right.svg"
+    },
+    "chevron-up": {
+      "codepoint": 61711,
+      "source": "app/assets/icons/spina/chevron-up.svg"
+    },
+    "code": {
+      "codepoint": 61712,
+      "source": "app/assets/icons/spina/code.svg"
+    },
+    "cog": {
+      "codepoint": 61713,
+      "source": "app/assets/icons/spina/cog.svg"
+    },
+    "cog-outline": {
+      "codepoint": 61714,
+      "source": "app/assets/icons/spina/cog-outline.svg"
+    },
+    "comment": {
+      "codepoint": 61715,
+      "source": "app/assets/icons/spina/comment.svg"
+    },
+    "cross": {
+      "codepoint": 61716,
+      "source": "app/assets/icons/spina/cross.svg"
+    },
+    "customer-outline": {
+      "codepoint": 61717,
+      "source": "app/assets/icons/spina/customer-outline.svg"
+    },
+    "document": {
+      "codepoint": 61718,
+      "source": "app/assets/icons/spina/document.svg"
+    },
+    "dots": {
+      "codepoint": 61719,
+      "source": "app/assets/icons/spina/dots.svg"
+    },
+    "exclamation": {
+      "codepoint": 61720,
+      "source": "app/assets/icons/spina/exclamation.svg"
+    },
+    "eye": {
+      "codepoint": 61721,
+      "source": "app/assets/icons/spina/eye.svg"
+    },
+    "filter": {
+      "codepoint": 61722,
+      "source": "app/assets/icons/spina/filter.svg"
+    },
+    "home": {
+      "codepoint": 61723,
+      "source": "app/assets/icons/spina/home.svg"
+    },
+    "image": {
+      "codepoint": 61724,
+      "source": "app/assets/icons/spina/image.svg"
+    },
+    "inbox-outline": {
+      "codepoint": 61725,
+      "source": "app/assets/icons/spina/inbox-outline.svg"
+    },
+    "info": {
+      "codepoint": 61726,
+      "source": "app/assets/icons/spina/info.svg"
+    },
+    "italic": {
+      "codepoint": 61727,
+      "source": "app/assets/icons/spina/italic.svg"
+    },
+    "large-check": {
+      "codepoint": 61728,
+      "source": "app/assets/icons/spina/large-check.svg"
+    },
+    "link": {
+      "codepoint": 61729,
+      "source": "app/assets/icons/spina/link.svg"
+    },
+    "list-ul": {
+      "codepoint": 61730,
+      "source": "app/assets/icons/spina/list-ul.svg"
+    },
+    "mail": {
+      "codepoint": 61731,
+      "source": "app/assets/icons/spina/mail.svg"
+    },
+    "mail-outline": {
+      "codepoint": 61732,
+      "source": "app/assets/icons/spina/mail-outline.svg"
+    },
+    "media-library": {
+      "codepoint": 61733,
+      "source": "app/assets/icons/spina/media-library.svg"
+    },
+    "megaphone": {
+      "codepoint": 61734,
+      "source": "app/assets/icons/spina/megaphone.svg"
+    },
+    "min": {
+      "codepoint": 61735,
+      "source": "app/assets/icons/spina/min.svg"
+    },
+    "pages": {
+      "codepoint": 61736,
+      "source": "app/assets/icons/spina/pages.svg"
+    },
+    "pencil": {
+      "codepoint": 61737,
+      "source": "app/assets/icons/spina/pencil.svg"
+    },
+    "pencil-outline": {
+      "codepoint": 61738,
+      "source": "app/assets/icons/spina/pencil-outline.svg"
+    },
+    "picture-o": {
+      "codepoint": 61739,
+      "source": "app/assets/icons/spina/picture-o.svg"
+    },
+    "plus": {
+      "codepoint": 61740,
+      "source": "app/assets/icons/spina/plus.svg"
+    },
+    "power-off": {
+      "codepoint": 61741,
+      "source": "app/assets/icons/spina/power-off.svg"
+    },
+    "preview": {
+      "codepoint": 61742,
+      "source": "app/assets/icons/spina/preview.svg"
+    },
+    "product-outline": {
+      "codepoint": 61743,
+      "source": "app/assets/icons/spina/product-outline.svg"
+    },
+    "random": {
+      "codepoint": 61744,
+      "source": "app/assets/icons/spina/random.svg"
+    },
+    "refresh": {
+      "codepoint": 61745,
+      "source": "app/assets/icons/spina/refresh.svg"
+    },
+    "search": {
+      "codepoint": 61746,
+      "source": "app/assets/icons/spina/search.svg"
+    },
+    "shop": {
+      "codepoint": 61747,
+      "source": "app/assets/icons/spina/shop.svg"
+    },
+    "social-outline": {
+      "codepoint": 61748,
+      "source": "app/assets/icons/spina/social-outline.svg"
+    },
+    "trash": {
+      "codepoint": 61749,
+      "source": "app/assets/icons/spina/trash.svg"
+    },
+    "upload-outline": {
+      "codepoint": 61750,
+      "source": "app/assets/icons/spina/upload-outline.svg"
+    },
+    "users-outline": {
+      "codepoint": 61751,
+      "source": "app/assets/icons/spina/users-outline.svg"
+    }
+  },
+  "options": {
+    "autowidth": false,
+    "config": "config/fontcustom.yml",
+    "css_selector": ".icon-{{glyph}}",
+    "debug": false,
+    "font_ascent": 448,
+    "font_descent": 64,
+    "font_design_size": 32,
+    "font_em": 512,
+    "font_name": "ics_spina",
+    "force": false,
+    "input": {
+      "templates": "lib/spina/fontcustom",
+      "vectors": "app/assets/icons/spina"
+    },
+    "no_hash": true,
+    "output": {
+      "css": "app/assets/stylesheets/spina",
+      "fonts": "app/assets/fonts/spina",
+      "preview": "app/assets/icons/spina/preview"
+    },
+    "preprocessor_path": null,
+    "quiet": false,
+    "templates": [
+      "_ics_spina.scss",
+      "preview"
+    ]
+  },
+  "templates": [
+    "app/assets/stylesheets/spina/_ics_spina.scss",
+    "app/assets/icons/spina/preview/ics_spina-preview.html"
+  ]
+}
