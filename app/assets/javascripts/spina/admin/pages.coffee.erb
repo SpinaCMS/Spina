@@ -74,6 +74,12 @@ $(document).on 'click', 'form .remove_structure_item_fields', (event) ->
   $pane.hide()
   event.preventDefault()
 
+$(document).on 'change', '.structure-form-pane .structure-form-part:first-child input', (event) ->
+  value = $(this).val()
+  $pane = $(this).parents('.structure-form-pane')
+  $link = $("a[href='##{$pane.attr('id')}']")
+  $link.html("<i class='icon icon-bars'></i> #{value}")
+
 # Sort pages
 $(document).on 'click', '.sort-switch', (event) ->
   $($(this).attr('href') + ' .dd-item-inner').toggleClass('dd-handle')
