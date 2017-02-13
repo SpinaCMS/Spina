@@ -43,9 +43,9 @@ module Spina
       def update
         I18n.locale = params[:locale] || I18n.default_locale
         @page = Page.find(params[:id])
-        add_breadcrumb @page.title
         respond_to do |format|
           if @page.update_attributes(page_params)
+            add_breadcrumb @page.title
             @page.touch
             I18n.locale = I18n.default_locale
             format.html { redirect_to spina.edit_admin_page_url(@page, params: {locale: @locale}) }
