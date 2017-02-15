@@ -18,7 +18,7 @@ module Spina
           @page.view_template = params[:view_template]
         end
         add_breadcrumb I18n.t('spina.pages.new')
-        @page_parts = current_theme.page_parts.map { |page_part| @page.page_part(page_part) }
+        @page_parts = @page.view_template_page_parts(current_theme).map { |part| @page.page_part(part) }
         render layout: 'spina/admin/admin'
       end
 
@@ -36,7 +36,7 @@ module Spina
       def edit
         @page = Page.find(params[:id])
         add_breadcrumb @page.title
-        @page_parts = current_theme.page_parts.map { |page_part| @page.page_part(page_part) }
+        @page_parts = @page.view_template_page_parts(current_theme).map { |part| @page.page_part(part) }
         render layout: 'spina/admin/admin'
       end
 
