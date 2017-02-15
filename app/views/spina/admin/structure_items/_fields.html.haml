@@ -1,6 +1,6 @@
 .structure-form-pane{class: ('active' if f.options[:child_index] == 0), id: "structure_form_pane_#{f.object.id}"}
-  / Strucure parts
-  = f.fields_for :structure_parts do |ff|
+  / Structure parts
+  = f.fields_for :structure_parts, build_structure_parts(f.object.structure.try(:page_part).try(:name), f.object) do |ff|
     .structure-form-part
       = render "spina/admin/structure_partables/#{ partable_type_partial_namespace(ff.object.structure_partable_type) }/form", f: ff
 
