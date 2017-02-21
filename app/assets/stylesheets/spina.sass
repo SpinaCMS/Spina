@@ -110,7 +110,7 @@ nav#primary
     padding-top: 20px
     position: absolute
     top: 0
-    width: 100%
+    width: calc(100% - 80px)
     z-index: 1
     @include linear-gradient(#3b3f74, #7a76ad)
     @include transform(translateX(100%))
@@ -130,6 +130,36 @@ nav#primary
 
     &:hover
       opacity: .5
+
+  ul li ul li
+    position: relative
+
+  ul li ul li[data-badge]:after
+    background: rgba(255, 255, 255, .4)
+    border-radius: 9px
+    color: #3b3f74
+    content: attr(data-badge)
+    display: block
+    font-size: 12px
+    font-weight: 600
+    height: 18px
+    line-height: 18px
+    min-width: 24px
+    padding: 0 8px
+    position: absolute
+    right: 20px
+    text-align: center
+    top: 50%
+    vertical-align: middle
+    z-index: 1
+    @include transform(translateY(-50%))
+
+  ul li ul li[data-badge] a
+    z-index: 2
+
+  ul li ul li.active[data-badge], ul li ul li:hover[data-badge]
+    &:after
+      background: rgba(255, 255, 255, .9)
 
   &.animated > ul
     @include transition(background .3s ease)
