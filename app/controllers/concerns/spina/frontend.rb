@@ -52,7 +52,7 @@ module Spina
       end
 
       def render_with_template(page)
-        if Spina.api_mode
+        if Spina.api_mode && page.name != "homepage"
           render json: page
           return
         end
