@@ -10,7 +10,7 @@ module Spina
 
       test "new page form" do
         get "/admin/pages/new"
-        assert_select '#new_page'
+        assert_select '#page_form'
       end
 
       test "create new page" do
