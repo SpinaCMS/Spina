@@ -17,11 +17,11 @@ module Spina
     end
 
     test 'structure_item_2 content' do
-      assert_equal nil, @structure_item_2.content(@structure_part_1.name)
+      assert_nil @structure_item_2.content(@structure_part_1.name)
     end
 
     test 'structure_item_1 position' do
-      assert_equal nil, @structure_item_1.position
+      assert_nil @structure_item_1.position
       @structure_item_1.save!
       refute_nil @structure_item_1.position
     end
