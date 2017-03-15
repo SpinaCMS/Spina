@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.description = 'CMS'
   s.licenses    = ['MIT']
 
-  s.files = Dir['{app,config,db,lib}/**/*'] + ['Rakefile', 'README.md']
+  s.files = Dir['{app,config,db,lib,vendor}/**/*'] + ['Rakefile', 'README.md']
   # s.test_files = Dir['test/**/*']
 
   s.add_dependency 'rails', '>= 5.0'
@@ -32,7 +32,6 @@ Gem::Specification.new do |s|
   s.add_dependency 'turbolinks', '~> 5'
   s.add_dependency 'kaminari'
   s.add_dependency 'globalize', '~> 5.1.0.beta1'
-  # s.add_dependency 'activemodel-serializers-xml'
   s.add_dependency 'rack-rewrite', '~> 1.5.0'
   s.add_dependency 'bourbon'
   s.add_dependency 'neat'
