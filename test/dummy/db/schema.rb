@@ -86,7 +86,7 @@ ActiveRecord::Schema.define(version: 20161223093220) do
     t.string   "ancestry"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.index ["page_id", "navigation_id"], name: "index_spina_navigation_items_on_page_id_and_navigation_id", unique: true, using: :btree
+    t.index ["page_id", "navigation_id"], name: "index_spina_gation_items_on_page_id_and_navigation_id", unique: true, using: :btree
   end
 
   create_table "spina_navigations", force: :cascade do |t|

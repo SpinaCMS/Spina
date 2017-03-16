@@ -86,7 +86,6 @@ module Spina
             when 'Spina::Photo' then part.partable.remote_file_url = 'https://unsplash.it/300/200?random'
             when 'Spina::PhotoCollection'
               5.times { part.partable.photos.build(remote_file_url: 'https://unsplash.it/300/200?random') }
-            when 'Spina::Color' then part.partable.content = '#6865b4'
             end
           end
           page.save
