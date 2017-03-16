@@ -147,6 +147,8 @@ ready = ->
 
   # Datepicker
   if $('.datepicker').length > 0
-    $('.datepicker').datepicker()
+    $('.datepicker').datepicker
+      dateFormat: "dd-mm-yy"
+      firstDay: 1
 
 $(document).on 'turbolinks:load', ready
