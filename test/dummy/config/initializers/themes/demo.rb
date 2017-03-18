@@ -31,10 +31,6 @@
     name:           'structure',
     title:          'Structure',
     partable_type:  'Spina::Structure'
-  }, {
-    name:           'color',
-    title:          'Color',
-    partable_type:  'Spina::Color'
   }]
 
   theme.structures = [{
@@ -54,10 +50,6 @@
     name:           'line',
     title:          'Line',
     partable_type:  'Spina::Line'
-  }, {
-    name:           'color',
-    title:          'Color',
-    partable_type:  'Spina::Color'
   }]
 
   theme.view_templates = [{
@@ -73,7 +65,7 @@
     name: 'demo',
     title: 'Demo',
     description: 'Contains examples of every page part',
-    page_parts: ['line', 'text', 'photo', 'photo_collection', 'attachment', 'attachment_collection', 'structure', 'color']
+    page_parts: ['line', 'text', 'photo', 'photo_collection', 'attachment', 'attachment_collection', 'structure']
   }]
 
   theme.custom_pages = [{
