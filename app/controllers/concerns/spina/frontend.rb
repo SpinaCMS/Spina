@@ -52,6 +52,10 @@ module Spina
       end
 
       def render_with_template(page)
+        if Spina.api_mode && page.name != "homepage"
+          render json: page
+          return
+        end
         render layout: "#{current_theme.name.parameterize.underscore}/#{page.layout_template || 'application'}", template: "#{current_theme.name.parameterize.underscore}/pages/#{page.view_template || 'show'}"
       end
 
