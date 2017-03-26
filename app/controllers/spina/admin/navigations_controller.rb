@@ -5,19 +5,20 @@ module Spina
 
       before_action :set_breadcrumb, except: [:show]
 
-      load_and_authorize_resource class: Navigation
-
       def show
+        @navigation = Navigation.find(params[:id])
         add_breadcrumb t('spina.website.pages')
       end
 
       def edit
+        @navigation = Navigation.find(params[:id])
         add_breadcrumb @navigation.label, spina.admin_navigation_path(@navigation)
         add_breadcrumb t('spina.edit')
         render layout: 'spina/admin/admin'
       end
 
       def update
+        @navigation = Navigation.find(params[:id])
         if @navigation.update_attributes(navigation_params)
           redirect_to spina.admin_navigation_path(@navigation)
         else

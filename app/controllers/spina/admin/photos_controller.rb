@@ -3,8 +3,6 @@ module Spina
     class PhotosController < AdminController
       before_action :set_breadcrumbs
 
-      authorize_resource class: Photo
-
       layout "spina/admin/media_library"
 
       def index

@@ -2,8 +2,6 @@ module Spina
   module Admin
     class AccountsController < AdminController
 
-      authorize_resource class: Account
-
       def edit
         add_breadcrumb I18n.t('spina.preferences.account'), spina.edit_admin_account_path
       end

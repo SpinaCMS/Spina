@@ -18,6 +18,11 @@ module Spina
       def authorize_user
         redirect_to spina.admin_login_url, flash: {information: I18n.t('spina.notifications.login')} unless current_user
       end
+
+      def authorize_admin
+        render status: 401 unless current_user.admin?
+      end
+
     end
   end
 end

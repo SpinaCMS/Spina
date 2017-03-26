@@ -6,7 +6,6 @@ PATH
       bcrypt
       bourbon
       breadcrumbs_on_rails
-      cancancan
       carrierwave
       coffee-rails
       globalize (~> 5.1.0.beta1)
@@ -70,7 +69,6 @@ GEM
       thor (~> 0.19)
     breadcrumbs_on_rails (3.0.1)
     builder (3.2.3)
-    cancancan (1.16.0)
     carrierwave (1.0.0)
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)

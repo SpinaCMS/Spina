@@ -5,8 +5,6 @@ module Spina
       before_action :set_tabs, only: [:new, :create, :edit, :update]
       before_action :set_locale
 
-      authorize_resource class: Page
-
       def index
         redirect_to admin_pages_path unless current_admin_path.starts_with?('/pages')
         @pages = Page.active.sorted.roots

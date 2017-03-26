@@ -3,8 +3,6 @@ module Spina
     class AttachmentsController < AdminController
       before_action :set_breadcrumbs
 
-      authorize_resource class: Attachment
-
       layout "spina/admin/media_library"
 
       def index

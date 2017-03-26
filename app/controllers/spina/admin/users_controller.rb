@@ -2,8 +2,7 @@ module Spina
   module Admin
     class UsersController < AdminController
       before_action :set_breadcrumbs
-
-      authorize_resource class: User
+      before_action :authorize_admin, except: [:index]
 
       def index
         @users = User.all
@@ -49,13 +48,13 @@ module Spina
 
       private
 
-      def set_breadcrumbs
-        add_breadcrumb I18n.t('spina.preferences.users'), spina.admin_users_path
-      end
+        def set_breadcrumbs
+          add_breadcrumb I18n.t('spina.preferences.users'), spina.admin_users_path
+        end
 
-      def user_params
-        params.require(:user).permit(:admin, :email, :name, :password_digest, :password, :password_confirmation, :last_logged_in)
-      end
+        def user_params
+          params.require(:user).permit(:admin, :email, :name, :password_digest, :password, :password_confirmation, :last_logged_in)
+        end
 
     end
   end
