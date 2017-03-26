@@ -42,7 +42,10 @@ module Spina
 
     def bootstrap_website
       theme_config = ::Spina::Theme.find_by_name(theme)
-      bootstrap_pages(theme_config) if theme_config
+      if theme_config
+        bootstrap_pages(theme_config) 
+        bootstrap_navigations(theme_config)
+      end
     end
 
     def bootstrap_pages(theme)
@@ -51,9 +54,15 @@ module Spina
       activate_used_view_templates(theme)
     end
 
+    def bootstrap_navigations(theme)
+      theme.navigations.each_with_index do |navigation, index|
+        Navigation.where(name: navigation[:name]).first_or_create.update_attributes(navigation.merge(position: index))
+      end
+    end
+
     def find_or_create_custom_pages(theme)
       theme.custom_pages.each do |page|
-        Page.by_name(page[:name])
+        Page.where(name: page[:name])
             .first_or_create(title: page[:title])
             .update_columns(view_template: page[:view_template], deletable: page[:deletable])
       end
