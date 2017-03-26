@@ -2,9 +2,9 @@
 .horizontal-form
   .horizontal-form-group
     border-bottom: 1px solid #eee
+    display: flex
     margin: 0 -20px
     padding: 20px 20px
-    @include display(flex)
 
     &:first-child
       margin-top: -20px
@@ -15,14 +15,14 @@
 
   .horizontal-form-label
     color: #333
+    display: flex
+    flex-direction: column
     font-size: 13px
     font-weight: 600
+    justify-content: center
     line-height: 18px
     padding-right: 20px
     width: 240px
-    @include justify-content(center)
-    @include display(flex)
-    @include flex-direction(column)
 
     small
       color: #666
@@ -31,8 +31,8 @@
       font-weight: normal
 
   .horizontal-form-content
-    @include flex(1)
-    @include align-self(flex-start)
+    align-self: flex-start
+    flex: 1
 
   .image
     border-radius: 5px
@@ -48,12 +48,12 @@
 
 // Sidebar form
 .sidebar-form
+  display: flex
   margin: 0 auto
   max-width: 960px
-  @include display(flex)
 
 .sidebar-form-content
-  @include flex(1)
+  flex: 1
 
   .well
     margin-right: 20px
@@ -65,9 +65,9 @@
 
 .sidebar-form-group
   border-bottom: 1px solid #eee
+  display: flex
   margin: 0 -20px
   padding: 0 20px
-  @include display(flex)
 
   &:last-child
     border-bottom: none
@@ -80,9 +80,9 @@
   width: 180px
 
 .sidebar-form-control
+  flex: 1
   margin-right: -20px
   position: relative
-  @include flex(1)
 
   .switch
     margin: 10px
@@ -147,8 +147,8 @@
     opacity: 0
     position: absolute
     top: 75%
+    transition: opacity .2s ease
     width: 100%
-    @include transition(opacity .2s ease)
 
   &:hover .sidebar-form-image-overlay
     opacity: 1
@@ -164,7 +164,7 @@
     padding: 6px
     position: relative
     z-index: 1
-    @include transition(opacity .2s ease)
+    transition: opacity .2s ease
 
   a img:first-child
     display: block
@@ -275,9 +275,9 @@
     display: inline-block
     height: 20px
     margin-right: 10px
+    transition: all .2s ease
     vertical-align: middle
     width: 20px
-    @include transition(all .2s ease)
 
   input[type="checkbox"]:checked + label:before
     background: tint($primary-color, 10%)
@@ -292,21 +292,21 @@
     position: absolute
     text-align: center
     top: 0px
+    transform: scale(0)
+    transition: all .2s ease
     vertical-align: middle
     width: 20px
     @extend .icon, .icon-large-check:before
-    @include transform(scale(0))
-    @include transition(all .2s ease)
 
   input[type="checkbox"]:checked + label:after
-    @include transform(scale(1))
+    transform: scale(1)
 
 // Input groups
 .input-group
-  @include display(flex)
+  display: flex
 
   #{$all-text-inputs}, .text-input, .select-dropdown
-    @include flex(1)
+    flex: 1
 
     &:not(:first-child)
       border-bottom-left-radius: 0
@@ -326,8 +326,8 @@
   color: #333
   font-size: 14px
   padding: 10px
+  transition: border .2s ease
   width: 100%
-  @include transition(border .2s ease)
 
   &.input-mini
     width: 75px
@@ -430,8 +430,8 @@ input.datepicker
   margin-bottom: 0
   padding: 3px
   position: relative
+  transition: background .4s ease
   width: 46px
-  @include transition(background .4s ease)
 
   .knob
     background: #fff
@@ -446,7 +446,7 @@ input.datepicker
     background: $success-color
 
   &.active .knob
-    @include transform(translate3d(17px, 0, 0))
+    transform: translate3d(17px, 0, 0)
 
 // Checkboxes
 
@@ -492,9 +492,9 @@ input.datepicker
     line-height: 18px
     text-align: center
     top: -2px
+    transition: opacity .1s ease
     opacity: 0
     position: absolute
-    @include transition(opacity .1s ease)
 
   input[type="checkbox"]:checked + label:after, input[type="radio"]:checked + label:after
     opacity: 1
@@ -519,8 +519,8 @@ input.datepicker
   overflow: hidden
   padding: 0
   position: relative
+  transition: border .2s ease
   @extend .icon, .icon-caret-down
-  @include transition(border .2s ease)
 
   &:hover
     // background: #f5f5f5
@@ -537,6 +537,7 @@ input.datepicker
     z-index: 1
 
   select
+    appearance: none
     background-color: transparent
     background-image: none
     border: none
@@ -554,14 +555,13 @@ input.datepicker
     position: relative
     width: 115%
     z-index: 2
-    @include appearance(none)
 
 // Structure form
 
 .structure-form
+  display: flex
   margin-left: -20px
   position: relative
-  @include display(flex)
 
   .structure-form-menu
     box-sizing: content-box
@@ -578,18 +578,18 @@ input.datepicker
       position: relative
 
     ul:before, ul:after
+      background: linear-gradient(rgba(255, 255, 255, 0), #ddd)
       content: " "
       height: 40px
       position: absolute
       right: -1px
       top: -40px
       width: 1px
-      @include linear-gradient(rgba(255, 255, 255, 0), #ddd)
 
     ul:after
+      background: linear-gradient(bottom, rgba(255, 255, 255, 0), #ddd)
       bottom: -40px
       top: auto
-      @include linear-gradient(bottom, rgba(255, 255, 255, 0), #ddd)
 
     ul li
       overflow: hidden
@@ -692,15 +692,15 @@ input.datepicker
       padding: 6px 0
       @extend .icon, .icon-upload-outline:before
       font-size: 28px
+      transition: color .2s ease
       vertical-align: middle
-      @include transition(color .2s ease)
 
     &:after
+      animation: "rotate" 2s linear infinite
       color: #bbb
       @extend .icon, .icon-refresh:before
       display: none
       font-size: 36px
-      @include animation("rotate" 2s linear infinite)
 
   .customfile.loading
     &:before
@@ -744,7 +744,7 @@ input.datepicker
   position: relative
 
   .image
-    @include transition(all .3s ease)
+    transition: all .3s ease
 
   &:hover .button
     background: tint(#efefef, 20%)
@@ -761,8 +761,8 @@ input.datepicker
     position: absolute
     text-align: center
     top: 0
+    transition: opacity .2s ease
     width: 100%
-    @include transition(opacity .2s ease)
 
   .placeholder
     color: #666
@@ -797,8 +797,8 @@ ul.sortable-grid
     height: 120px
     margin: 8px
     overflow: hidden
+    transition: box-shadow .3s ease
     width: 120px
-    @include transition(box-shadow .3s ease)
 
     &:hover
       box-shadow: 0 0 20px rgba(0, 0, 0, .2)

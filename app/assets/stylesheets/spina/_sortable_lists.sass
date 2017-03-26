@@ -12,11 +12,11 @@
   cursor: move
 
 .dd-item-inner .sortable-link
-  @include transform(translateX(-26px))
-  @include transition(all .2s ease)
+  transform: translateX(-26px)
+  transition: all .2s ease
 
 .dd-item-inner.dd-handle .sortable-link
-  @include transform(translateX(0))
+  transform: translateX(0)
 
 .dd-item-inner:before
   @extend .icon, .icon-bars
@@ -24,14 +24,14 @@
   display: inline-block
   height: 18px
   opacity: 0
+  transform: translateX(-26px)
+  transition: all .2s ease
   vertical-align: middle
   width: 26px
-  @include transform(translateX(-26px))
-  @include transition(all .2s ease)
 
 .dd-item-inner.dd-handle:before
   opacity: 1
-  @include transform(translateX(0))
+  transform: translateX(0)
 
 .dd-list
   list-style: none
@@ -122,12 +122,12 @@
 
   .pull-right a
     opacity: 0
-    @include transform(translateX(50px))
-    @include transition(all .4s ease)
+    transform: translateX(50px)
+    transition: all .4s ease
 
   &:hover .pull-right a
     opacity: 1
-    @include transform(translateX(10px))
+    transform: translateX(10px)
 
 .dd-dragel
   pointer-events: none

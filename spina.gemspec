@@ -32,5 +32,4 @@ Gem::Specification.new do |s|
   s.add_dependency 'kaminari'
   s.add_dependency 'globalize', '~> 5.1.0.beta1'
   s.add_dependency 'rack-rewrite', '~> 1.5.0'
-  s.add_dependency 'bourbon'
 end

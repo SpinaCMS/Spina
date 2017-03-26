@@ -1,12 +1,12 @@
 .wizard-steps
+  display: flex
   margin: 30px 0 54px 0
-  @include display(flex)
 
   .wizard-step
-    @include display(flex)
+    display: flex
 
     &:not(:last-child)
-      @include flex(1)
+      flex: 1
 
   .wizard-step-circle
     background: #e7e7ee
@@ -36,7 +36,7 @@
       left: 0
       position: absolute
       top: 56px
-      @include transform(translateX(-50%))
+      transform: translateX(-50%)
 
     i.icon
       color: #dddde5
@@ -52,12 +52,12 @@
     background: #e7e7ee
     border-bottom: 1px solid #d6d6db
     border-top: 1px solid #d6d6db
+    flex: 1
     height: 12px
     margin: 0 -1px
     margin-top: 18px
     position: relative
     z-index: 3
-    @include flex(1)
 
   .wizard-step.done
     .wizard-step-circle:before

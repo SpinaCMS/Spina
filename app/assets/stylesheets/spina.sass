@@ -1,6 +1,3 @@
-// Frameworks
-@import bourbon
-
 // Configuration
 @import spina/configuration
 
@@ -51,12 +48,12 @@ body
 
 // Primary navigation
 nav#primary
+  background: linear-gradient(#3b3f74, #7a76ad)
   height: 100%
   overflow: hidden
   position: fixed
   width: 300px
   z-index: 5
-  @include linear-gradient(#3b3f74, #7a76ad)
 
   & > ul
     height: 100%
@@ -104,15 +101,15 @@ nav#primary
     opacity: 1
 
   ul li ul
+    background: linear-gradient(#3b3f74, #7a76ad)
     bottom: 0
     left: 80px
     padding-top: 20px
     position: absolute
     top: 0
+    transform: translateX(100%)
     width: calc(100% - 80px)
     z-index: 1
-    @include linear-gradient(#3b3f74, #7a76ad)
-    @include transform(translateX(100%))
 
     li a
       line-height: 40px
@@ -149,9 +146,9 @@ nav#primary
     right: 20px
     text-align: center
     top: 50%
+    transform: translateY(-50%)
     vertical-align: middle
     z-index: 1
-    @include transform(translateY(-50%))
 
   ul li ul li[data-badge] a
     z-index: 2
@@ -161,30 +158,30 @@ nav#primary
       background: rgba(255, 255, 255, .9)
 
   &.animated > ul
-    @include transition(background .3s ease)
+    transition: background .3s ease
 
     & > li > a
-      @include transition(all .3s ease)
+      transition: all .3s ease
 
       .icon
-        @include transition(all .3s ease)
+        transition: all .3s ease
 
     li.active ul
-      @include transition(all .3s ease)
+      transition: all .3s ease
 
   &.transformed > ul
     background: rgba(0, 0, 0, .4)
 
     & > li > a
       color: transparent
-      @include transform(translateX(-10px))
+      transform: translateX(-10px)
 
       .icon
         color: #f5f5fa
-        @include transform(translateX(10px))
+        transform: translateX(10px)
 
     li.active ul
-      @include transform(translateX(0%))
+      transform: translateX(0%)
 
 // Secondary navigation
 nav#secondary
@@ -214,8 +211,8 @@ nav#secondary
       left: 0px
       opacity: 0
       position: absolute
+      transform: scale(0)
       width: 100%
-      @include transform(scale(0))
 
   ul li a:hover
     opacity: 1
@@ -228,9 +225,9 @@ nav#secondary
 
     &:after
       opacity: 1
-      @include transform(scale(1))
-      @include transition(all .2s ease)
-      @include transition-delay(.05s)
+      transform: scale(1)
+      transition: all .2s ease
+      transition-delay: .05s
 
   ul li:first-child a
     margin-left: 0
@@ -525,8 +522,10 @@ hr.divider
 .pull-right
   float: right
 
-.clearfix
-  @include clearfix()
+.clearfix:after
+  clear: both
+  content: " "
+  display: block
 
 .spina-logo
   bottom: 0px
@@ -534,7 +533,7 @@ hr.divider
   padding: 20px
   position: fixed
   right: 0px
-  @include transition(opacity .2s ease)
+  transition: opacity .2s ease
 
   &:hover
     opacity: 1

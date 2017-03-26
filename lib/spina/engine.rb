@@ -1,6 +1,5 @@
 require 'haml-rails'
 require 'sass-rails'
-require 'bourbon'
 require 'coffee-rails'
 require 'jquery-rails'
 require 'jquery-fileupload-rails'

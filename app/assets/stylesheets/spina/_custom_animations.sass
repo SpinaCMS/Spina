@@ -1,61 +1,61 @@
-@include keyframes("flyIn")
+@keyframes "flyIn"
   0%
     opacity: 0
-    @include transform(scale(.9))
+    transform: scale(.9)
   100%
     opacity: 1
-    @include transform(scale(1))
+    transform: scale(1)
 
 .animated.flyIn
-  @include animation("flyIn" .4s ease)
+  animation: "flyIn" .4s ease
 
-@include keyframes("flyOut")
+@keyframes "flyOut"
   0%
     opacity: 1
-    @include transform(scale(1))
+    transform: scale(1)
   100%
     opacity: 0
-    @include transform(scale(.9))
+    transform: scale(.9)
 
 .animated.flyOut
-  @include animation("flyOut" .4s ease)
+  animation: "flyOut" .4s ease
 
-@include keyframes("small-shake")
+@keyframes "small-shake"
   0%, 100%
-    @include transform(translateX(0))
+    transform: translateX(0)
   20%, 60%
-    @include transform(translateX(7px))
+    transform: translateX(7px)
   40%, 80%
-    @include transform(translateX(-7px))
+    transform: translateX(-7px)
 
 .animated.small-shake
-  @include animation("small-shake" .6s ease-in)
+  animation: "small-shake" .6s ease-in
 
-@include keyframes("switchon")
+@keyframes "switchon"
   0%
-    @include transform(translate3d(0, 0, 0))
+    transform: translate3d(0, 0, 0)
   50%
     width: 32px
-    @include transform(translate3d(0, 0, 0))
+    transform: translate3d(0, 0, 0)
   100%
     width: 23px
-    @include transform(translate3d(17px, 0, 0))
+    transform: translate3d(17px, 0, 0)
 
-@include keyframes("switchoff")
+@keyframes "switchoff"
   0%
-    @include transform(translate3d(17px, 0, 0))
+    transform: translate3d(17px, 0, 0)
   100%
-    @include transform(translate3d(0, 0, 0))
+    transform: translate3d(0, 0, 0)
 
 .deactivated .knob
-  @include animation("switchoff" .2s ease)
+  animation: "switchoff" .2s ease
 
 .activated .knob
-  @include animation("switchon" .4s)
-  @include animation-fill-mode(forwards)
+  animation: "switchon" .4s
+  animation-fill-mode: forwards
 
-@include keyframes("rotate")
+@keyframes "rotate"
   0%
-    @include transform(rotate(0deg))
+    transform: rotate(0deg)
   100%
-    @include transform(rotate(360deg))
+    transform: rotate(360deg)

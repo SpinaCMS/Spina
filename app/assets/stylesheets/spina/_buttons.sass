@@ -15,7 +15,7 @@ button, input[type="submit"], input[type="button"]
   outline: none
   padding: 8px 16px
   text-decoration: none
-  @include transition(all .3s ease)
+  transition: all .3s ease
 
   &:hover
     background: shade(#efefef, 5%)
@@ -26,7 +26,7 @@ button, input[type="submit"], input[type="button"]
 
   &:active, &.button-active, &.button-shaded, &.button-shaded:active
     background: shade(#efefef, 10%)
-    @include transform(scale(0.95))
+    transform: scale(0.95)
 
   &:focus
     outline: none
@@ -123,14 +123,14 @@ button, input[type="submit"], input[type="button"]
     background: #999 !important
 
   &.button-saving:before
+    animation: rotate 3.0s linear infinite
     display: inline-block
-    @include animation(rotate 3.0s linear infinite)
 
-@include keyframes(rotate)
+@keyframes rotate
   from
-    @include transform(rotate(0deg))
+    transform: rotate(0deg)
   to
-    @include transform(rotate(360deg))
+    transform: rotate(360deg)
 
 .pull-right .button
   margin: 0 0 4px 4px
@@ -213,11 +213,11 @@ button, input[type="submit"], input[type="button"]
     z-index: 999
 
     &.animated
+      animation-duration: .3s
       display: block
-      @include animation-duration(.3s)
 
     &.no-animation
-      @include animation(none)
+      animation: none
 
   ul:before, .sliding-dropdown:before
     content: ""

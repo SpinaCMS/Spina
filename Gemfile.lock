@@ -4,7 +4,6 @@ PATH
     spina (0.11.1)
       ancestry
       bcrypt
-      bourbon
       breadcrumbs_on_rails
       carrierwave
       coffee-rails
@@ -64,9 +63,6 @@ GEM
     ansi (1.5.0)
     arel (7.1.4)
     bcrypt (3.1.11)
-    bourbon (4.3.3)
-      sass (~> 3.4)
-      thor (~> 0.19)
     breadcrumbs_on_rails (3.0.1)
     builder (3.2.3)
     carrierwave (1.0.0)

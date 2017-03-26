@@ -36,17 +36,17 @@
       position: relative
       width: 100%
       z-index: 1
-      @include transition(all .2s ease)
+      transition: all .2s ease
 
     .overlay
+      background: linear-gradient(top, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, .75))
+      background-size: 200%
       height: 100%
       position: absolute
       text-align: center
+      transition: all .2s ease
       width: 100%
       z-index: 2
-      @include linear-gradient(top, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, .75))
-      background-size: 200%
-      @include transition(all .2s ease)
 
       input
         display: none
@@ -60,11 +60,11 @@
         letter-spacing: 2px
         line-height: 26px
         text-transform: uppercase
+        transition: all .2s ease
+        transform: translateY(100%)
         padding: 0 12px
         position: absolute
         z-index: 3
-        @include transition(all .2s ease)
-        @include transform(translateY(100%))
       
       a.edit-photo-link
         left: 0px
@@ -78,7 +78,7 @@
 
         a
           opacity: 1
-          @include transform(translateY(0%))
+          transform: translateY(0%)
 
     form
       height: 100%
@@ -108,8 +108,8 @@
     line-height: 150px
     margin: 8px
     position: relative
+    transition: all .3s ease
     width: 150px
-    @include transition(all .3s ease)
 
     input
       display: none
@@ -121,13 +121,13 @@
     box-shadow: 0 0 20px rgba(0, 0, 0, .4)
 
   .item.selected:before
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1))
     content: " "
     height: 100%
     position: absolute
     top: 0px
     width: 100%
     z-index: 2
-    @include linear-gradient(135deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1))
 
   .item.selected:after
     color: #95e995
@@ -188,12 +188,13 @@
       display: block
       font-weight: normal
       line-height: 130px
+      transition: color .2s ease
       vertical-align: middle
       @extend .icon, .icon-upload-outline
       font-size: 42px
-      @include transition(color .2s ease)
 
     &:after
+      animation: "rotate" 2s linear infinite
       color: #bbb
       display: block
       font-weight: normal
@@ -202,7 +203,6 @@
       @extend .icon, .icon-refresh:before
       display: none
       font-size: 42px
-      @include animation("rotate" 2s linear infinite)
 
   .customfile.loading
     &:before
@@ -245,5 +245,5 @@
     position: absolute
     text-align: center
     text-transform: lowercase
+    transition: color .2s ease
     width: 100%
-    @include transition(color .2s ease)

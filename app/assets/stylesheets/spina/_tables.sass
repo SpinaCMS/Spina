@@ -142,18 +142,18 @@ table.table.table-form
 .progress-bar
   border: 1px solid #9f9f9f
   border-radius: 6px
+  display: flex
   height: 12px
   overflow: hidden
   position: relative
-  @include display(flex)
-  @include transition(all .2s ease)
+  transition: all .2s ease
 
 .progress-bar-divider
   border-left: 1px solid #9f9f9f
+  flex: 1
   height: 10px
   opacity: .5
   position: relative
-  @include flex(1)
 
   &:first-child  
     border: none
@@ -178,16 +178,16 @@ table.table.table-form
   text-align: center
   text-transform: uppercase
   top: 2px
+  transition: all .2s ease
   width: 100%
-  @include transition(all .2s ease)
 
 tr:hover .progress
   .progress-bar
-    @include transform(translateY(-6px))
+    transform: translateY(-6px)
 
   .progress-label
     opacity: 1
-    @include transform(translateY(9px))
+    transform: translateY(9px)
 
 .progress-bar-primary
   & .progress-bar
@@ -232,7 +232,7 @@ tr:hover .progress
 
 .table-clickable
   tbody tr
-    @include transition(background .1s ease)
+    transition: background .1s ease
 
   tbody tr:hover
     background: #f5f5fa
@@ -283,10 +283,10 @@ tr:hover .progress
 
 // Information tables
 .information-tables
-  @include display(flex)
+  display: flex
 
   .information-table
-    @include flex(1)
+    flex: 1
 
     th, td
       color: #333
