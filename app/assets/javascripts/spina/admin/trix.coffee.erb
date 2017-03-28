@@ -41,7 +41,7 @@ class Spina.TrixAttachment
     image_id = $(this).parent().data('trix-id')
     window.prev_image_class = $(this).attr('class')
     window.prev_image_alt = $(this).attr('alt')
-    $.get("<%= Spina::Engine.routes.url_helpers.wysihtml5_photo_options_admin_photos_path %>/?editor_id=#{editor_id}&image_id=#{image_id}")
+    $.get("<%= Spina::Engine.routes.url_helpers.photo_options_admin_photos_path %>/?editor_id=#{editor_id}&image_id=#{image_id}")
 
   @setPhotoOptions: (e) ->
     editor_id = $(e.target).closest('section').data('editor-id')

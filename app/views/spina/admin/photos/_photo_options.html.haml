@@ -2,8 +2,8 @@
   %header
     %h3
       Photo Options
-  %section.photo-options{ data: { 'editor-id' => @editor_id,
-                                  'image-id' => @image_id }}
+
+  %section.photo-options{data: {editor_id: @editor_id, image_id: @image_id}}
     %button.img-style{ data: {option: 'normal', active: 'false' }}
       = image_tag 'spina/image_no_wrap.png'
     %button.img-style{ data: {option: 'wrapped', active: 'false' }}

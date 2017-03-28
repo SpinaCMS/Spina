@@ -91,7 +91,7 @@ module Spina
         @photo = Photo.find(params[:photo_id])
       end
 
-      def wysihtml5_photo_options
+      def photo_options
         @editor_id = params[:editor_id]
         @image_id = params[:image_id]
       end
