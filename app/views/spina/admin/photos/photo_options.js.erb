@@ -4,7 +4,7 @@ $('section.photo-options').css('max-height', '');
 var $active_element = $('.photo-options .img-style[data-option=' + window.prev_image_class + ']');
 $active_element.attr('data-active', 'true');
 $active_element.data('active', 'true');
-$('.photo-options .alt-tag').val(window.prev_image_alt);
+$('.photo-options input[name="alt_text"]').val(window.prev_image_alt);
 
 $('.photo-options .img-style').on( "click", function() {
   $('.photo-options .img-style').attr('data-active', 'false');

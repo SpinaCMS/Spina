@@ -44,11 +44,12 @@ class Spina.TrixAttachment
     $.get("<%= Spina::Engine.routes.url_helpers.photo_options_admin_photos_path %>/?editor_id=#{editor_id}&image_id=#{image_id}")
 
   @setPhotoOptions: (e) ->
-    editor_id = $(e.target).closest('section').data('editor-id')
-    image_id = $(e.target).closest('section').data('image-id')
+    $photo_options = $(e.target).parents('.modal').find('.photo-options')
+    editor_id = $photo_options.attr('data-editor-id')
+    image_id = $photo_options.attr('data-image-id')
     image_url = $("##{editor_id} [data-trix-id=#{image_id}] img").attr('src')
-    image_class = $(e.target).prevAll('[data-active=true]').data('option')
-    alt_text = $(e.target).prevAll('.input-group-inline').find('.alt-tag').val()
+    image_class = $photo_options.find('.img-style[data-active=true]').attr('data-option')
+    alt_text = $photo_options.find('input[name="alt_text"]').val()
     element = document.getElementById(editor_id)
     element.editor.deleteInDirection("backward")
     element.editor.insertHTML "<img src='#{ image_url }' alt='#{alt_text}' class='#{image_class}'/>"
@@ -62,4 +63,4 @@ $(document).on 'photo-insert', 'trix-editor', Spina.TrixAttachment.photoInsert
 
 $(document).on 'click', 'trix-editor img', Spina.TrixAttachment.openPhotoOptions
 
-$(document).on 'click', '.photo-options button.save', Spina.TrixAttachment.setPhotoOptions
+$(document).on 'click', '.modal-photo-options button[type="submit"]', Spina.TrixAttachment.setPhotoOptions

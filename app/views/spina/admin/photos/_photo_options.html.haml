@@ -1,15 +1,23 @@
-.modal.modal-medium
+.modal.modal-photo-options
   %header
-    %h3
-      Photo Options
+    = link_to '#', data: {dismiss: 'modal'} do
+      = icon('cross')
+
+    %h3=t 'spina.photos.photo_options'
 
   %section.photo-options{data: {editor_id: @editor_id, image_id: @image_id}}
+    .form-label=t 'spina.photos.document_flow'
+
     %button.img-style{ data: {option: 'normal', active: 'false' }}
       = image_tag 'spina/image_no_wrap.png'
     %button.img-style{ data: {option: 'wrapped', active: 'false' }}
       = image_tag 'spina/image_wrap.png'
-    .input-group-inline
-      %input.alt-tag
-      %label Alt Text
-    %button.button.button-primary.save{ data: { dismiss: 'modal' }}
-      Save
+
+    .form-label=t 'spina.photos.alt_text'
+    .form-control= text_field_tag :alt_text, nil, placeholder: t('spina.photos.alt_text')
+
+  %footer
+    = link_to t('spina.cancel'), '#', data: {dismiss: 'modal'}
+    %button.primary{type: 'submit', data: {dismiss: 'modal'}}
+      = icon('check')
+      =t 'spina.save'

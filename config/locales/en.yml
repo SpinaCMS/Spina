@@ -72,6 +72,9 @@ en:
       link: "URL of your image:"
       cannot_be_created: "Image could not be processed:"
       upload_image: "Upload an image"
+      photo_options: Photo options
+      document_flow: Document flow
+      alt_text: Alt text
 
     wysiwyg:
       paragraph: Paragraph
