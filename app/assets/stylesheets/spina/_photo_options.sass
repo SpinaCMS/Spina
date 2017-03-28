@@ -1,0 +1,25 @@
+section.photo-options
+  background: $light-gray
+  text-align: center
+  .input-group-inline
+    position: relative
+    input
+      margin-bottom: 15px
+      padding-right: 60px
+    label
+      position: absolute
+      top: 10px
+      right: 0
+  button.img-style
+    width: 20%
+    background-color: white
+    margin: 0 10px
+    margin-bottom: 15px
+    transition: background-color 0.3s ease
+    &:hover, &[data-active='true']
+      background-color: lighten($success-color, 20%)
+    &:focus
+      outline: none
+    img
+      width: 100%
+      height: auto

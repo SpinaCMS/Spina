@@ -91,6 +91,11 @@ module Spina
         @photo = Photo.find(params[:photo_id])
       end
 
+      def wysihtml5_photo_options
+        @editor_id = params[:editor_id]
+        @image_id = params[:image_id]
+      end
+
       def wysihtml5_select
         @photos = Photo.sorted.page(params[:page])
         @photo = Photo.new

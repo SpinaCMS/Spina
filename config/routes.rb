@@ -48,6 +48,7 @@ Spina::Engine.routes.draw do
 
     resources :photos do
       collection do
+        get 'wysihtml5_photo_options' => 'photos#wysihtml5_photo_options', as: :wysihtml5_photo_options
         get 'wysihtml5_select/:object_id' => 'photos#wysihtml5_select', as: :wysihtml5_select
         post 'wysihtml5_insert/:object_id' => 'photos#wysihtml5_insert', as: :wysihtml5_insert
         get 'photo_select/:page_part_id' => 'photos#photo_select', as: :photo_select
