@@ -34,9 +34,25 @@ class Spina.TrixAttachment
     $.get("<%= Spina::Engine.routes.url_helpers.wysihtml5_select_admin_photos_path('') %>/#{editor_id}")
 
   @photoInsert: (e, url) ->
-    length = this.editor.getDocument().toString().length
-    this.editor.setSelectedRange(length - 1)
-    this.editor.insertHTML "<img src='#{ url }' />"
+    this.editor.insertHTML "<img src='#{ url }' alt='' class='normal' />"
+
+  @openPhotoOptions: (e) ->
+    editor_id = $(this).closest('trix-editor').attr('id')
+    image_id = $(this).parent().data('trix-id')
+    window.prev_image_class = $(this).attr('class')
+    window.prev_image_alt = $(this).attr('alt')
+    $.get("<%= Spina::Engine.routes.url_helpers.photo_options_admin_photos_path %>/?editor_id=#{editor_id}&image_id=#{image_id}")
+
+  @setPhotoOptions: (e) ->
+    $photo_options = $(e.target).parents('.modal').find('.photo-options')
+    editor_id = $photo_options.attr('data-editor-id')
+    image_id = $photo_options.attr('data-image-id')
+    image_url = $("##{editor_id} [data-trix-id=#{image_id}] img").attr('src')
+    image_class = $photo_options.find('.img-style[data-active=true]').attr('data-option')
+    alt_text = $photo_options.find('input[name="alt_text"]').val()
+    element = document.getElementById(editor_id)
+    element.editor.deleteInDirection("backward")
+    element.editor.insertHTML "<img src='#{ image_url }' alt='#{alt_text}' class='#{image_class}'/>"
 
 document.addEventListener 'trix-file-accept', (e) ->
   e.preventDefault()
@@ -44,3 +60,7 @@ document.addEventListener 'trix-file-accept', (e) ->
 $(document).on 'click', '.js-trix-photo', Spina.TrixAttachment.photoSelect
 
 $(document).on 'photo-insert', 'trix-editor', Spina.TrixAttachment.photoInsert
+
+$(document).on 'click', 'trix-editor img', Spina.TrixAttachment.openPhotoOptions
+
+$(document).on 'click', '.modal-photo-options button[type="submit"]', Spina.TrixAttachment.setPhotoOptions
