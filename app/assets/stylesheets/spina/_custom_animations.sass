@@ -1,4 +1,4 @@
-@keyframes "flyIn"
+@keyframes flyIn
   0%
     opacity: 0
     transform: scale(.9)
@@ -7,9 +7,9 @@
     transform: scale(1)
 
 .animated.flyIn
-  animation: "flyIn" .4s ease
+  animation: flyIn .4s ease
 
-@keyframes "flyOut"
+@keyframes flyOut
   0%
     opacity: 1
     transform: scale(1)
@@ -18,9 +18,9 @@
     transform: scale(.9)
 
 .animated.flyOut
-  animation: "flyOut" .4s ease
+  animation: flyOut .4s ease
 
-@keyframes "small-shake"
+@keyframes small-shake
   0%, 100%
     transform: translateX(0)
   20%, 60%
@@ -29,9 +29,9 @@
     transform: translateX(-7px)
 
 .animated.small-shake
-  animation: "small-shake" .6s ease-in
+  animation: small-shake .6s ease-in
 
-@keyframes "switchon"
+@keyframes switchon
   0%
     transform: translate3d(0, 0, 0)
   50%
@@ -41,20 +41,20 @@
     width: 23px
     transform: translate3d(17px, 0, 0)
 
-@keyframes "switchoff"
+@keyframes switchoff
   0%
     transform: translate3d(17px, 0, 0)
   100%
     transform: translate3d(0, 0, 0)
 
 .deactivated .knob
-  animation: "switchoff" .2s ease
+  animation: switchoff .2s ease
 
 .activated .knob
-  animation: "switchon" .4s
+  animation: switchon .4s
   animation-fill-mode: forwards
 
-@keyframes "rotate"
+@keyframes rotate
   0%
     transform: rotate(0deg)
   100%
