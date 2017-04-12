@@ -31,7 +31,7 @@ Trix.config.blockAttributes = $.extend Trix.config.blockAttributes, {
 class Spina.TrixAttachment
   @photoSelect: (e) ->
     editor_id = $(this).closest('trix-toolbar').data('trix-editor-id')
-    $.get("<%= Spina::Engine.routes.url_helpers.wysihtml5_select_admin_photos_path('') %>/#{editor_id}")
+    $.get("<%= Spina::Engine.routes.url_helpers.photo_select_admin_photos_path('') %>/#{editor_id}")
 
   @photoInsert: (e, url) ->
     length = this.editor.getDocument().toString().length
