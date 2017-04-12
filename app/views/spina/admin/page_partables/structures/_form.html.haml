@@ -5,9 +5,9 @@
 
       %ul
         - unless f.object.page_partable.nil?
-          - f.object.page_partable.structure_items.sorted_by_structure.each_with_index do |structure_item, index|
-            %li{class: ('active' if index == 0), data: {structure_item_id: structure_item.id}}
-              = link_to "#structure_form_pane_#{structure_item.id}" do
+          - f.object.page_partable.structure_items.sort_by(&:position).each_with_index do |structure_item, index|
+            %li{class: ('active' if index == 0), data: {structure_item_id: structure_item.object_id}}
+              = link_to "#structure_form_pane_#{structure_item.object_id}" do
                 %i.icon.icon-bars.sortable-handle
                 = structure_item.structure_parts.first.try(:structure_partable).try(:content)
 
@@ -18,5 +18,5 @@
 
     .structure-form-content
       = f.fields_for :page_partable do |ff|
-        = ff.fields_for :structure_items, ff.object.structure_items.sorted_by_structure do |fff|
+        = ff.fields_for :structure_items, ff.object.structure_items.sort_by(&:position) do |fff|
           = render 'spina/admin/structure_items/fields', f: fff

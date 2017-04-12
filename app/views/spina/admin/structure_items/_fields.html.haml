@@ -1,4 +1,4 @@
-.structure-form-pane{class: ('active' if f.options[:child_index] == 0), id: "structure_form_pane_#{f.object.id}"}
+.structure-form-pane{class: ('active' if f.options[:child_index] == 0), id: "structure_form_pane_#{f.object.object_id}"}
   / Structure parts
   = f.fields_for :structure_parts, build_structure_parts(f.object.structure.try(:page_part).try(:name), f.object) do |ff|
     .structure-form-part
@@ -10,6 +10,6 @@
     = ff.hidden_field :name
 
   / Hidden field
-  = f.hidden_field :position, placeholder: "Position", class: "structure_form_pane_#{f.object.id}_position"
+  = f.hidden_field :position, placeholder: "Position", class: "structure_form_pane_#{f.object.object_id}_position"
   = f.hidden_field :_destroy
   = link_to t('spina.delete'), '#', class: 'remove_structure_item_fields button button-mini button-link pull-right'
