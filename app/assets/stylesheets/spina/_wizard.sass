@@ -1,0 +1,122 @@
+.wizard-steps
+  display: flex
+  margin: 30px 0 54px 0
+
+  .wizard-step
+    display: flex
+
+    &:not(:last-child)
+      flex: 1
+
+  .wizard-step-circle
+    background: #e7e7ee
+    border: 1px solid #d6d6db
+    border-radius: 24px
+    height: 48px
+    position: relative
+    width: 48px
+
+    &:after
+      background: #fff
+      border: 1px solid #d6d6db
+      border-radius: 20px
+      content: " "
+      display: block
+      height: 40px
+      left: 3px
+      position: absolute
+      top: 3px
+      width: 40px
+
+    .wizard-step-label
+      color: #999
+      font-size: 14px
+      font-weight: 600
+      margin-left: 50%
+      left: 0
+      position: absolute
+      top: 56px
+      transform: translateX(-50%)
+
+    i.icon
+      color: #dddde5
+      font-size: 22px
+      height: 46px
+      line-height: 46px
+      position: absolute
+      text-align: center
+      width: 46px
+      z-index: 1
+
+  .wizard-step-connector
+    background: #e7e7ee
+    border-bottom: 1px solid #d6d6db
+    border-top: 1px solid #d6d6db
+    flex: 1
+    height: 12px
+    margin: 0 -1px
+    margin-top: 18px
+    position: relative
+    z-index: 3
+
+  .wizard-step.done
+    .wizard-step-circle:before
+      color: #fff
+      font-size: 12px
+      height: 46px
+      line-height: 46px
+      text-align: center
+      position: absolute
+      width: 46px
+      z-index: 4
+      @extend .icon-large-check, .icon
+
+    .wizard-step-circle:after
+      background: $primary-color
+      z-index: 3
+
+    &:not(:first-child) .wizard-step-connector:before
+      background: $primary-color
+      border-color: transparent
+      content: " "
+      height: 4px
+      left: -48px
+      margin-right: 4px
+      position: absolute
+      right: 100%
+      top: 3px
+      z-index: 5
+
+    &:not(:last-child) .wizard-step-connector:after
+      background: $primary-color
+      border-radius: 0 2px 2px 0
+      content: " "
+      height: 4px
+      left: -4px
+      position: absolute
+      right: 0px
+      top: 3px
+      z-index: 5
+
+  .wizard-step.error
+    .wizard-step-circle:before
+      color: #fff
+      font-size: 12px
+      height: 46px
+      line-height: 46px
+      text-align: center
+      position: absolute
+      width: 46px
+      z-index: 4
+      @extend .icon-cross, .icon
+
+    .wizard-step-circle:after
+      background: $danger-color
+      z-index: 3
+
+    .wizard-step-label
+      color: $danger-color
+
+  .wizard-step.current
+    .wizard-step-label
+      color: $primary-color
