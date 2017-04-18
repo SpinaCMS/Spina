@@ -64,7 +64,7 @@ module Spina
       theme.custom_pages.each do |page|
         Page.where(name: page[:name])
             .first_or_create(title: page[:title])
-            .update_columns(view_template: page[:view_template], deletable: page[:deletable])
+            .update_attributes(view_template: page[:view_template], deletable: page[:deletable])
       end
     end
 
