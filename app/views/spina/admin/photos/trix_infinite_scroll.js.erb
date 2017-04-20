@@ -1,0 +1,4 @@
+// Append new data
+$("<%=j render partial: 'spina/admin/photos/photo_single_picker', collection: @photos %>").appendTo($(".infinite-scroll"));
+// Update pagination link
+$('.infinite-pagination').html("<%= j link_to_next_page @photos, 'Next', remote: true %>").infiniteScroll()

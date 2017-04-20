@@ -1,0 +1,11 @@
+.modal.modal-large
+  %section
+    .gallery-select.gallery
+      .item.item-uploader
+        = form_for [spina, :admin, @photo], html: {multipart: true} do |f|
+          = f.label :file, t('spina.photos.upload_image')
+          = f.file_field :files, multiple: true, data: {customfileinput: true}
+      = form_tag spina.trix_insert_admin_photos_path(params[:object_id]), remote: true, class: 'gallery-prepend-image' do
+        .infinite-scroll
+          = render partial: 'spina/admin/photos/photo_single_picker', collection: @photos
+        .infinite-pagination= link_to_next_page @photos, 'Next', remote: true

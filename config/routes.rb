@@ -41,6 +41,8 @@ Spina::Engine.routes.draw do
 
     resources :photos do
       collection do
+        get 'trix_select/:object_id' => 'photos#trix_select', as: :trix_select   
+        post 'trix_insert/:object_id' => 'photos#trix_insert', as: :trix_insert
         get 'photo_select/:page_part_id' => 'photos#photo_select', as: :photo_select
         get 'photo_collection_select/:page_part_id' => 'photos#photo_collection_select', as: :photo_collection_select
         post 'insert_photo/:page_part_id' => 'photos#insert_photo', as: :insert_photo

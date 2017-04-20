@@ -87,6 +87,21 @@ module Spina
         @photos = Photo.find(params[:photo_ids]) if params[:photo_ids].present?
       end
 
+      def trix_insert    
+        @photo = Photo.find(params[:photo_id])    
+      end
+ 
+      def trix_select
+        @photos = Photo.sorted.page(params[:page])    
+        @photo = Photo.new    
+    
+        if params[:page].present?   
+          render :trix_infinite_scroll   
+        else    
+          render :trix_select    
+        end   
+      end
+
       private
 
       def set_breadcrumbs
