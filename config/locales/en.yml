@@ -16,6 +16,15 @@ en:
     logout: Logout
     main_menu: Main menu
 
+    forgot_password:
+      new: Forgot password
+      request: Request new password
+      unknown_user: This user does not exist
+      save: Save new password
+      success: You can use your new password
+      mail_subject: Reset your password
+      expired: Your password reset token has expired
+
     modal:
       agree: "Yes, I'm sure"
       cancel: "No, cancel"

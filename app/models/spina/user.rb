@@ -1,6 +1,7 @@
 module Spina
   class User < ApplicationRecord
     has_secure_password
+    has_secure_token :password_reset_token
 
     validates_presence_of :name, :email
     validates_presence_of :password, on: :create

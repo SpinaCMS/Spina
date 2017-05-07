@@ -8,4 +8,5 @@ group :development, :test do
   gem 'pg'
   gem 'simplecov'
   gem 'codeclimate-test-reporter', '~> 1.0.0'
+  gem 'letter_opener'
 end

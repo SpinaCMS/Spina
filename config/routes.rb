@@ -19,6 +19,9 @@ Spina::Engine.routes.draw do
     get "login" => "sessions#new"
     get "logout" => "sessions#destroy"
 
+    # Passwords
+    resources :password_resets
+
     # Media library
     get 'media_library' => 'photos#media_library', as: "media_library"
 

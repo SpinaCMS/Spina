@@ -20,22 +20,11 @@ Dummy::Application.configure do
 
   # ActionMailer Config
 
-  config.action_mailer.default_url_options = { host: 'spina.dev' }
+  config.action_mailer.default_url_options = { host: 'dummy.dev' }
 
   # change to false to prevent email from being sent during development
   config.action_mailer.perform_deliveries = true
 
   config.action_mailer.raise_delivery_errors = true
-
-  # GMail configurations
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    address: "smtp.gmail.com",
-    port: 587,
-    domain: 'spina.dev',
-    user_name: ENV["TEST_GMAIL_USERNAME"],
-    password: ENV["TEST_GMAIL_PASSWORD"],
-    authentication: 'plain',
-    enable_starttls_auto: true
-  }
+  config.action_mailer.delivery_method = :letter_opener
 end
