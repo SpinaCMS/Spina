@@ -114,7 +114,7 @@ module Spina
       if I18n.locale == I18n.default_locale
         generate_materialized_path.prepend('/')
       else
-        generate_materialized_path.prepend("/#{I18n.locale}/")
+        generate_materialized_path.prepend("/#{I18n.locale}/").gsub(/\/\z/, "")
       end
     end
 
