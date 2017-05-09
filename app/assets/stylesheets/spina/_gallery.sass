@@ -39,8 +39,6 @@
       transition: all .2s ease
 
     .overlay
-      background: linear-gradient(top, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, .75))
-      background-size: 200%
       height: 100%
       position: absolute
       text-align: center
@@ -65,19 +63,38 @@
         padding: 0 12px
         position: absolute
         z-index: 3
-      
+
       a.edit-photo-link
         left: 0px
 
       a.delete-photo-link
         right: 0px
 
+      .photo-name
+        top: 0
+        color: #fff
+        display: block
+        font-size: 12px
+        font-weight: bold
+        left: 0
+        line-height: 15px
+        text-align: left
+        transition: all 0.2s ease
+        transform: translateY(-100%)
+        padding: 10px
+        position: absolute
+        word-break: break-word
+        z-index: 3
+
     &:hover
       .overlay
-        background-size: 100%
+        background: rgba(0, 0, 0, 0.5)
 
         a
           opacity: 1
+          transform: translateY(0%)
+
+        .photo-name
           transform: translateY(0%)
 
     form
@@ -99,7 +116,7 @@
 
   form
     margin: 0
-  
+
   .item
     border-radius: 5px
     cursor: pointer
