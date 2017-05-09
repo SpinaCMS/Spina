@@ -3,7 +3,7 @@ module Spina
     class PasswordResetsController < AdminController
       layout "spina/login"
 
-      skip_before_action :authorize_user
+      skip_before_action :authorize_spina_user
 
       def new
       end

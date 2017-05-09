@@ -33,8 +33,6 @@ PATH
       mini_magick
       rack-rewrite (~> 1.5.0)
       rails (>= 5.0)
-      refile
-      refile-mini_magick
       sass-rails
       turbolinks (~> 5)
 

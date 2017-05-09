@@ -4,7 +4,7 @@ module Spina
 
     rescue_from ActiveRecord::RecordNotFound, with: :render_404
 
-    before_action :current_user_can_view_page?, except: [:robots]
+    before_action :current_spina_user_can_view_page?, except: [:robots]
 
     helper_method :page
 
@@ -14,10 +14,10 @@ module Spina
 
     private
 
-      def current_user_can_view_page?
+      def current_spina_user_can_view_page?
         raise ActiveRecord::RecordNotFound if page.nil? || !page.live?
 
-        current_user.present?
+        current_spina_user.present?
       end
 
       def render_404
