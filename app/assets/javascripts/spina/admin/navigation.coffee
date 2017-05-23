@@ -1,3 +1,10 @@
+ready = ->
+  if $('nav#primary ul li ul li.active').length > 0
+    $('nav#primary > ul > li').removeClass('active')
+    $('nav#primary ul li ul li.active').parents('li').addClass('active')
+
+$(document).on 'turbolinks:load', ready
+
 $(document).on 'click', 'nav#primary a.back-to-main-menu', (e) ->
   $('nav#primary').addClass('animated')
   $('nav#primary').removeClass('transformed')
