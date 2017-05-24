@@ -135,6 +135,8 @@ es:
         facebook: Facebook
         twitter: Twitter
         google_plus: Google+
+        linkedin: LinkedIn
+        instagram: Instagram
 
       spina/attachment:
         created_at: Creado en
