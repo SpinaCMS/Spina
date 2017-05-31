@@ -4,8 +4,9 @@ module Spina
   class PageTest < ActiveSupport::TestCase
 
     def setup
-      @homepage = spina_pages(:homepage)
-      @demo = spina_pages(:demo)
+      FactoryGirl.create :account
+      @homepage = FactoryGirl.create :homepage
+      @demo = FactoryGirl.create :demo_page
     end
 
     test 'homepage custom_page?' do

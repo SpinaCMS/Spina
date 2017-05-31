@@ -1,5 +1,0 @@
-bram:
-  name: Bram
-  email: bram@denkgroot.com
-  password_digest: <%= BCrypt::Password.create("password", cost: 4) %>
-  admin: true
