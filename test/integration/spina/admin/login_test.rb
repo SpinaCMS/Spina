@@ -5,13 +5,15 @@ module Spina
     class LoginTest < ActionDispatch::IntegrationTest
       setup do
         @routes = Engine.routes
+        FactoryGirl.create :account
+        @user = FactoryGirl.create :user
       end
 
       test "login and browse pages" do
         get "/admin/login"
         assert_response :success
 
-        post "/admin/sessions", params: {email: spina_users(:bram).email, password: "password"}
+        post "/admin/sessions", params: {email: @user.email, password: "password"}
         follow_redirect!
         assert_equal '/admin', path
 
@@ -23,7 +25,7 @@ module Spina
       test "login with wrong password" do
         get "/admin/login"
         assert_response :success
-        post "/admin/sessions", params: {email: spina_users(:bram).email, password: "wrongpassword"}
+        post "/admin/sessions", params: {email: @user.email, password: "wrongpassword"}
         assert_equal '/admin/sessions', path
         assert_nil assigns(:pages)
       end

@@ -4,8 +4,7 @@ module Spina
   class PagesControllerTest < ActionController::TestCase
     setup do
       @routes = Engine.routes
-      @current_account ||= Account.first
-      @current_account.theme = "demo"
+      @current_account = FactoryGirl.create :account
     end
 
     test "visit homepage" do

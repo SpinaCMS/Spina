@@ -3,7 +3,17 @@ require 'test_helper'
 module Spina
   class PagesTest < ActionDispatch::IntegrationTest
     setup do
+      I18n.locale = :en
       @routes = Engine.routes
+      FactoryGirl.create :account
+      @homepage = Spina::Page.find_by(name: 'homepage')
+      FactoryGirl.create :page_translation,
+        spina_page_id: @homepage.id, title: 'Beginpagina',
+        materialized_path: '/nl', locale: 'nl'
+      @about_page = FactoryGirl.create :about_page
+      FactoryGirl.create :page_translation,
+        spina_page_id: @about_page.id, title: 'Over ons',
+        materialized_path: '/nl/over-ons', locale: 'nl'
     end
 
     test "view homepage" do

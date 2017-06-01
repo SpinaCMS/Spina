@@ -5,7 +5,8 @@ module Spina
     class LogoutTest < ActionDispatch::IntegrationTest
       setup do
         @routes = Engine.routes
-        post "/admin/sessions", params: {email: spina_users(:bram).email, password: "password"}
+        @user = FactoryGirl.create :user
+        post "/admin/sessions", params: {email: @user.email, password: "password"}
       end
 
       test "logout and redirect to homepage" do
