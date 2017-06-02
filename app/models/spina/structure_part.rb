@@ -2,6 +2,7 @@ module Spina
   class StructurePart < ApplicationRecord
     include Part
     include PhotoCollectable
+    include Optionable
 
     belongs_to :structure_item, optional: true
     belongs_to :structure_partable, polymorphic: true, optional: true
