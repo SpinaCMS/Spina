@@ -1,6 +1,7 @@
 module Spina
   class PagePart < ApplicationRecord
     include Part
+    include Optionable
 
     belongs_to :page, inverse_of: :page_parts
     belongs_to :page_partable, polymorphic: true, optional: true

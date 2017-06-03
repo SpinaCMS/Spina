@@ -25,11 +25,13 @@ module Spina
         structure = current_theme.structures.find { |structure| structure[:name] == name }
         return item.structure_parts unless structure.present?
         structure[:structure_parts].map do |structure_part|
+          options = structure_part[:options]
           part = item.structure_parts.where(name: structure_part[:name]).first
           if part.nil?
             part = item.structure_parts.build(structure_part)
             part.structure_partable = structure_part[:partable_type].constantize.new
           end
+          part.options = options
           part
         end
       end
@@ -55,6 +57,10 @@ module Spina
           page_menu_title = page.depth.zero? ? page.menu_title : " #{page.menu_title}".indent(page.depth, '-')
           [page_menu_title, page.id]
         end.compact
+      end
+
+      def option_label(part, value)
+        t(['options',part.name,value].compact.join('.'))
       end
 
     end

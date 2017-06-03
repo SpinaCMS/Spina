@@ -26,7 +26,7 @@ module Spina
         if @page.save
           redirect_to spina.edit_admin_page_url(@page)
         else
-          @page_parts = @page.page_parts
+          @page_parts = @page.view_template_page_parts(current_theme).map { |part| @page.page_part(part) }
           render :new, layout: 'spina/admin/admin'
         end
       end
@@ -50,7 +50,7 @@ module Spina
             format.js
           else
             format.html do
-              @page_parts = @page.page_parts
+              @page_parts = @page.view_template_page_parts(current_theme).map { |part| @page.page_part(part) }
               render :edit, layout: 'spina/admin/admin'
             end
           end
