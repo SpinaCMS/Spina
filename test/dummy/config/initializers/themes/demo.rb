@@ -37,6 +37,7 @@
     partable_type:  'Spina::Option',
     options: {
       values: ['val1', 'val2']
+    }
   }]
 
   theme.structures = [{
