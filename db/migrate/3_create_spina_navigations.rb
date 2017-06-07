@@ -1,4 +1,4 @@
-class CreateSpinaNavigations < ActiveRecord::Migration
+class CreateSpinaNavigations < ActiveRecord::Migration[4.2]
   def change
     create_table "spina_navigations", force: :cascade do |t|
       t.string "name", null: false
