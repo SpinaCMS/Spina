@@ -72,6 +72,13 @@ ActiveRecord::Schema.define(version: 20170507153143) do
     t.datetime "updated_at"
   end
 
+  create_table "spina_links", force: :cascade do |t|
+    t.integer  "page_id",     null: false
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "spina_navigation_items", force: :cascade do |t|
     t.integer  "page_id",                   null: false
     t.integer  "navigation_id",             null: false
