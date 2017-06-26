@@ -30,12 +30,12 @@ module Spina
       end
 
       def page_by_locale(locale)
-        @page_by_locale ||= Page.with_translations(locale).find_by!(materialized_path: spina_request_path)
+        Page.with_translations(locale).find_by!(materialized_path: spina_request_path)
       end
 
       def page
-        current_page = page_by_locale(I18n.locale) || page_by_locale(I18n.default_locale)
-        @page ||= (action_name == 'homepage') ? Page.find_by!(name: 'homepage') : current_page
+        @current_page ||= page_by_locale(I18n.locale) || page_by_locale(I18n.default_locale)
+        @page ||= (action_name == 'homepage') ? Page.find_by!(name: 'homepage') : @current_page
       end
 
       def spina_request_path
