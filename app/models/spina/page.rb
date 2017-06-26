@@ -16,6 +16,7 @@ module Spina
     before_validation :ancestry_is_nil
     before_validation :set_materialized_path
     after_save :save_children
+    after_save :touch_navigations
     after_save :rewrite_rule
     after_create :add_to_navigation
 
@@ -105,6 +106,10 @@ module Spina
     end
 
     private
+
+    def touch_navigations
+      navigations.update_all(updated_at: Time.zone.now)
+    end
 
     def rewrite_rule
       RewriteRule.create(old_path: old_path, new_path: materialized_path) if old_path != materialized_path

@@ -30,7 +30,7 @@ module Spina
       end
 
       def page_by_locale(locale)
-        Page.with_translations(locale).find_by!(materialized_path: spina_request_path)
+        @page_by_locale ||= Page.with_translations(locale).find_by!(materialized_path: spina_request_path)
       end
 
       def page
