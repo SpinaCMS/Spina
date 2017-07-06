@@ -139,6 +139,9 @@ pt-BR:
         facebook: Facebook
         twitter: Twitter
         google_plus: Google+
+        instagram: Instagram
+        youtube: YouTube
+        linkedin: LinkedIn
 
       spina/attachment:
         created_at: Criado em
