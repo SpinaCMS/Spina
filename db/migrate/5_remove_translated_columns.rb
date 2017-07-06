@@ -1,4 +1,4 @@
-class RemoveTranslatedColumns < ActiveRecord::Migration
+class RemoveTranslatedColumns < ActiveRecord::Migration[5.0]
   def change
     remove_column :spina_lines, :content
     remove_column :spina_texts, :content
