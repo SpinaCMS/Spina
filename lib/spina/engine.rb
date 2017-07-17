@@ -23,6 +23,8 @@ module Spina
     config.to_prepare do
       [Rails.root].flatten.map { |p| Dir[p.join('app', 'decorators', '**', '*_decorator.rb')]}.flatten.uniq.each do |decorator|
         Rails.configuration.cache_classes ? require(decorator) : load(decorator)
+
+      Spina::ApplicationController.helper Rails.application.helpers
       end
     end
 
