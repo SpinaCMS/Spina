@@ -20,6 +20,10 @@ module Spina
       self.partable.try(:content)
     end
 
+    def value
+      self.partable.try(:value)
+    end
+
     def partable_attributes=(attributes)
       if self.partable.present?
         self.partable.assign_attributes(attributes)
