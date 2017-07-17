@@ -1,5 +1,7 @@
 module Spina
   class StructureItem < ApplicationRecord
+    include Spina::Partable
+
     before_validation :ensure_position
     belongs_to :structure, optional: true
     has_many :structure_parts, dependent: :destroy
@@ -9,12 +11,14 @@ module Spina
     validates_presence_of :position
     accepts_nested_attributes_for :structure_parts, allow_destroy: true
 
-    def has_content?(structure_part)
-      content(structure_part).present?
+    alias_attribute :parts, :structure_parts
+
+    def has_content?(options)
+      content(options).present?
     end
 
-    def content(structure_part)
-      structure_parts.find_by(name: structure_part).try(:content)
+    def content(options)
+      part(options).try(:content)
     end
 
     def ensure_position
