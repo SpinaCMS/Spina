@@ -24,7 +24,7 @@ module Spina
         @page = Page.new(page_params)
         add_breadcrumb I18n.t('spina.pages.new')
         if @page.save
-          redirect_to spina.edit_admin_page_url(@page)
+          redirect_to spina.edit_admin_page_url(@page), notice: t('spina.pages.saved')
         else
           @page_parts = @page.view_template_page_parts(current_theme).map { |part| @page.page_part(part) }
           render :new, layout: 'spina/admin/admin'
@@ -46,7 +46,7 @@ module Spina
             add_breadcrumb @page.title
             @page.touch
             I18n.locale = I18n.default_locale
-            format.html { redirect_to spina.edit_admin_page_url(@page, params: {locale: @locale}) }
+            format.html { redirect_to spina.edit_admin_page_url(@page, params: {locale: @locale}), notice: t('spina.pages.saved') }
             format.js
           else
             format.html do

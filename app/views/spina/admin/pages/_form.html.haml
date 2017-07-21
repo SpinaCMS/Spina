@@ -8,7 +8,7 @@
       = link_to '#', data: {close_notification: true} do
         = icon('cross')
 
-= form_for [spina, :admin, @page], html: {id: 'page_form', autocomplete: "off", data: {remote: @page.persisted?}} do |f|
+= form_for [spina, :admin, @page], html: {id: 'page_form', autocomplete: "off"} do |f|
   %header#header
     .breadcrumbs= render_breadcrumbs separator: '<div class="divider"></div>'
     - unless @page.new_record?

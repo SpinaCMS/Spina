@@ -3,12 +3,15 @@
 .horizontal-form-content
   = f.fields_for :structure_partable, f.object.structure_partable do |ff|
     = link_to spina.photo_collection_select_admin_photos_path(ff.object_name, selected_photo_ids: ff.object.photo_ids), remote: true, class: 'media_picker clearfix' do
-      .placeholder.pull-right
-        %span.button.button-small.button-round{data: {icon: 'U'}}=t 'spina.pages.photos_picker'
-    .photo-collection
-      - if ff.object.photos.sorted_by_photo_collection.any?
-        = render 'spina/admin/photos/photo_collection', photos: ff.object.photos.sorted_by_photo_collection
-      - elsif ff.object.photos.any?
-        = render 'spina/admin/photos/photo_collection', photos: ff.object.photos
-    = ff.hidden_field :photo_tokens, value: ff.object.photo_ids.join(",")
-    = ff.hidden_field :photo_positions, value: ff.object.photos.sorted_by_photo_collection.pluck(:photo_id).join(","), class: 'photo-positions'
+      .placeholder
+        %span.button.button-small.button-round
+          %i.icon.icon-dots
+          =t 'spina.pages.photos_picker'
+
+      .photo-collection
+        - if ff.object.photos.sorted_by_photo_collection.any?
+          = render 'spina/admin/photos/photo_collection', photos: ff.object.photos.sorted_by_photo_collection
+        - elsif ff.object.photos.any?
+          = render 'spina/admin/photos/photo_collection', photos: ff.object.photos
+      = ff.hidden_field :photo_tokens, value: ff.object.photo_ids.join(",")
+      = ff.hidden_field :photo_positions, value: ff.object.photos.sorted_by_photo_collection.pluck(:photo_id).join(","), class: 'photo-positions'
