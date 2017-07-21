@@ -10,12 +10,13 @@ module Spina
       include ActionView::Helpers::UrlHelper
       include ActiveSupport::Configurable
 
-      config_accessor :list_tag, :list_class, :li, :list_wrapper, :list_item_tag, :list_item_css, :selected_css, :current_css, :first_css, :last_css, :list_tag_with_child_css, :list_item_with_child_css
+      config_accessor :list_tag, :list_class, :li, :list_wrapper, :list_item_tag, :list_item_css, :selected_css, :current_css, :first_css, :last_css, :list_tag_with_child_css, :list_item_with_child_css, :list_item_link_css
 
       self.list_tag = :ul
       self.list_class = 'nav'
       self.list_item_tag = :li
       self.list_item_css = nil
+      self.list_item_link_css = nil
       self.list_wrapper = false
       self.selected_css = 'active'
       self.current_css = 'current'
@@ -63,7 +64,7 @@ module Spina
       def render_menu_item(menu_item, index, menu_items_length)
         content_tag(list_item_tag, class: menu_item_css(menu_item[0], index, menu_items_length, !menu_item[1].empty?)) do
           buffer = ActiveSupport::SafeBuffer.new
-          buffer << link_to(menu_item[0].menu_title, menu_item[0].full_materialized_path)
+          buffer << link_to(menu_item[0].menu_title, menu_item[0].full_materialized_path, class: list_item_link_css)
           buffer << render_list_wrapper(menu_item[1])
           buffer
         end
