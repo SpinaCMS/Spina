@@ -14,11 +14,11 @@ module Spina
     end
 
     test 'structure_item content' do
-      assert_equal @partable.content, @item.content(name: @structure_part.name)
+      assert_equal @partable.content, @item.content(@structure_part.name)
     end
 
     test 'structure item unable to receive content for unassociated part' do
-      assert_nil @item_2.content(name: @structure_part.name)
+      assert_nil @item_2.content(@structure_part.name)
     end
 
     test 'structure_item position' do
