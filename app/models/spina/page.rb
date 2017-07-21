@@ -59,15 +59,6 @@ module Spina
       read_attribute(:seo_title).blank? ? title : read_attribute(:seo_title)
     end
 
-    def has_content?(page_part)
-      content(page_part).present?
-    end
-
-    def content(page_part)
-      page_part = page_parts.where(name: page_part).first
-      page_part.try(:content)
-    end
-
     def live?
       !draft? && active?
     end
