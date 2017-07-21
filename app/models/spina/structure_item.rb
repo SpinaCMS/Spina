@@ -13,14 +13,6 @@ module Spina
 
     alias_attribute :parts, :structure_parts
 
-    def has_content?(options)
-      content(options).present?
-    end
-
-    def content(options)
-      part(options).try(:content)
-    end
-
     def ensure_position
       self.position ||= Time.now.to_i
     end

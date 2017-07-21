@@ -12,6 +12,16 @@ module Spina
         end
         part
       end
+
+      def has_content?(name)
+        content(name).present?
+      end
+
+      def content(name)
+        part = parts.find_by(name: name)
+        part.try(:content)
+      end
+
     end
   end
 end
