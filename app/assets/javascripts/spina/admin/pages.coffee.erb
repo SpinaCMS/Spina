@@ -30,20 +30,8 @@ show_page_parts = (page_parts) ->
   for page_part in page_parts
     $('.horizontal-form-group.page-part[data-name=' + page_part + ']').show()
 
-# Dynamically add and remove fields in a nested form
-$(document).on 'click', 'form .add_structure_item_fields', (event) ->
-  time = new Date().getTime()
-  regexp = new RegExp($(this).data('id'), 'g')
-  $(this).before($(this).data('fields').replace(regexp, time))
-  event.preventDefault()
-
-$(document).on 'click', 'form .remove_fields', (event) ->
-  $(this).prev('input[type=hidden]').val('1')
-  $(this).closest('fieldset').slideUp()
-  event.preventDefault()
-
 # Dynamically add and remove structures
-$(document).on 'click', 'form .add_structure', (event) ->
+$(document).on 'click', 'form .add_structure_item_fields', (event) ->
   $structureForm = $(this).parents('.structure-form')
 
   time = new Date().getTime()

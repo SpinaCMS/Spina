@@ -2,14 +2,19 @@ module Spina
   module Admin
     module PagesHelper
       def link_to_add_structure_item_fields(f, association, &block)
-        item = f.object.send(association).klass.new
+        item = build_structure_item(f.object)
         fields = f.fields_for(association, item, child_index: item.object_id) do |builder|
-          build_structure_parts(f.object.page_part.name, item)
           render("spina/admin/structure_items/fields", f: builder)
         end
-        link_to '#', class: "add_structure button button-link", data: {id: item.object_id, fields: fields.gsub("\n", "")} do
+        link_to '#', class: "add_structure_item_fields button button-link", data: {id: item.object_id, fields: fields.gsub("\n", "")} do
           icon('plus')
         end
+      end
+
+      def build_structure_item(object)
+        item = object.structure_items.new
+        build_structure_parts(object.page_part.name, item)
+        item
       end
 
       def build_structure_parts(name, item)
