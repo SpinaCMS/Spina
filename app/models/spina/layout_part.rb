@@ -1,6 +1,7 @@
 module Spina
   class LayoutPart < ApplicationRecord
     include Part
+    include Optionable
 
     belongs_to :account
     belongs_to :layout_partable, polymorphic: true
