@@ -38,3 +38,10 @@
         .select-dropdown.page-template{data: {page_parts: @page.view_template_config(current_theme)[:page_parts]}}
           - options = options_for_select(current_theme.view_templates.map { |template| [template[:title], template[:name], {'data-page-parts' => template[:page_parts]}] }, @page.view_template)
           = f.select :view_template, options
+
+    .horizontal-form-group
+      .horizontal-form-label
+        = Spina::Page.human_attribute_name :ancestry
+      .horizontal-form-content
+        .select-dropdown.ancestry
+          = f.select :parent_id, page_ancestry_options(f.object), include_blank: Spina::Page.human_attribute_name(:no_parent)
