@@ -46,7 +46,7 @@ module Spina
           content_tag(list_item_tag, class: menu_item_css(menu_item[0])) do
             buffer = ActiveSupport::SafeBuffer.new
             buffer << link_to(menu_item[0].menu_title, menu_item[0].materialized_path)
-            buffer << render_menu_items(menu_item[1])
+            buffer << render_menu_items(menu_item[1]) if menu_item[1].present?
             buffer
           end
         end
