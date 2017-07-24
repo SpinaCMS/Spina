@@ -1,7 +1,8 @@
 module Spina
   class Account < ApplicationRecord
+    include Partable
+    
     serialize :preferences
-    include Spina::Partable
 
     mount_uploader :logo, LogoUploader
 

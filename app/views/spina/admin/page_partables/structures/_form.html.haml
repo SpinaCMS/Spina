@@ -4,12 +4,11 @@
       %label= f.object.title
 
       %ul
-        - unless f.object.page_partable.nil?
-          - f.object.page_partable.structure_items.sort_by(&:position).each_with_index do |structure_item, index|
-            %li{class: ('active' if index == 0), data: {structure_item_id: structure_item.object_id}}
-              = link_to "#structure_form_pane_#{structure_item.object_id}" do
-                %i.icon.icon-bars.sortable-handle
-                = structure_item.structure_parts.first.try(:structure_partable).try(:content)
+        - f.object.page_partable.structure_items.sort_by(&:position).each_with_index do |structure_item, index|
+          %li{class: ('active' if index == 0), data: {structure_item_id: structure_item.object_id}}
+            = link_to "#structure_form_pane_#{structure_item.object_id}" do
+              %i.icon.icon-bars.sortable-handle
+              = structure_item.structure_parts.first.try(:structure_partable).try(:content)
 
       = f.fields_for :page_partable do |ff|
         - ff.object.page_part = f.object

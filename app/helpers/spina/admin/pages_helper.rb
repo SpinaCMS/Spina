@@ -1,9 +1,10 @@
 module Spina
   module Admin
     module PagesHelper
-      def link_to_add_structure_item_fields(f, association, &block)
-        item = build_structure_item(f.object)
-        fields = f.fields_for(association, item, child_index: item.object_id) do |builder|
+      def link_to_add_structure_item_fields(f, &block)
+        item = StructureItem.new
+        fields = f.fields_for(:structure_items, item, child_index: item.object_id) do |builder|
+          build_structure_parts(f.object.page_part.name, item)
           render("spina/admin/structure_items/fields", f: builder)
         end
         link_to '#', class: "add_structure_item_fields button button-link", data: {id: item.object_id, fields: fields.gsub("\n", "")} do
@@ -11,23 +12,13 @@ module Spina
         end
       end
 
-      def build_structure_item(object)
-        item = object.structure_items.new
-        build_structure_parts(object.page_part.name, item)
-        item
-      end
-
       def build_structure_parts(name, item)
         structure = current_theme.structures.find { |structure| structure[:name] == name }
         return item.parts unless structure.present?
-        structure[:structure_parts].map do |structure_part|
-          options = structure_part[:options]
-          part = item.parts.where(name: structure_part[:name]).first
-          if part.nil?
-            part = item.parts.build(structure_part)
-            part.structure_partable = structure_part[:partable_type].constantize.new
-          end
-          part.options = options
+        structure[:structure_parts].map do |attributes|
+          part = item.parts.where(name: attributes[:name]).first_or_initialize(attributes)
+          part.partable = part.partable_type.constantize.new if part.partable.blank?
+          part.options = attributes[:options]
           part
         end
       end

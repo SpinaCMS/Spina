@@ -1,6 +1,6 @@
 module Spina
   class Page < ApplicationRecord
-    include Spina::Partable
+    include Partable
 
     # Stores the old path when generating a new materialized_path
     attr_accessor :old_path

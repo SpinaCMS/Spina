@@ -4,5 +4,4 @@
   = f.fields_for :structure_partable, f.object.structure_partable do |ff|
     .select-dropdown
       = ff.label :value, f.object.title
-      = ff.select :value, f.object.options[:values].map{|o| [option_label(f.object, o), o]},
-      prompt: true
+      = ff.select :value, f.object.options[:values].map{|o| [option_label(f.object, o), o]}, prompt: true

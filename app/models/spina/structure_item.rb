@@ -1,6 +1,6 @@
 module Spina
   class StructureItem < ApplicationRecord
-    include Spina::Partable
+    include Partable
 
     before_validation :ensure_position
     belongs_to :structure, optional: true

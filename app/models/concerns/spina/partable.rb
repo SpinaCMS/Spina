@@ -3,13 +3,10 @@ module Spina
     extend ActiveSupport::Concern
 
     included do
-      def part(part)
-        options = part[:options] || {}
-        part = parts.where(name: part[:name]).first || parts.build(part)
-        part.options = options unless part.options
-        if part.partable_type.present?
-          part.partable = part.partable_type.constantize.new unless part.partable.present?
-        end
+      def part(attributes)
+        part = parts.where(name: attributes[:name]).first_or_initialize(attributes)
+        part.partable = part.partable_type.constantize.new if part.partable.blank?
+        part.options = attributes[:options]
         part
       end
 
