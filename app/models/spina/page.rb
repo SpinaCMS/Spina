@@ -90,10 +90,6 @@ module Spina
       theme.page_parts.select { |page_part| page_part[:name].in? view_template_config(theme)[:page_parts] }
     end
 
-    def full_materialized_path
-      File.join(Spina::Engine.routes.url_helpers.root_path, materialized_path)
-    end
-
     private
 
       def rewrite_rule
