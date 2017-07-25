@@ -96,6 +96,18 @@
     &:disabled
       background: none
 
+  &[data-form-prepend]
+    padding-left: 14px
+
+  &[data-form-prepend]:before
+    content: attr(data-form-prepend)
+    font-size: 14px
+    font-weight: 600
+    left: 10px
+    line-height: 50px
+    position: absolute
+    top: 0
+
   &[data-form-append]:after
     content: attr(data-form-append)
     font-size: 14px
