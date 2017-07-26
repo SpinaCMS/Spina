@@ -16,25 +16,8 @@ module Spina
       end
 
       def create
-        if photo_params[:files].present?
-          @photos = photo_params[:files].map do |file|
-            Photo.create!(file: file)
-          end
-          respond_to do |format|
-            format.js do
-              render :create_multiple
-            end
-          end
-        else
-          @photo = Photo.create!(photo_params)
-          respond_to do |format|
-            format.js do
-              render params[:media_library] ? :create : :create_and_select
-            end
-            format.json do
-              render json: { file_url: @photo.file_url }
-            end
-          end
+        @photos = photo_params[:files].map do |file|
+          Photo.create!(file: file)
         end
       end
 
@@ -109,7 +92,7 @@ module Spina
       end
 
       def photo_params
-        params.require(:photo).permit(:file, files: [])
+        params.require(:photo).permit(files: [])
       end
 
     end
