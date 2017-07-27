@@ -1,4 +1,4 @@
-= form_for @settings, url: admin_settings_path do |f|
+= form_for @setting, url: admin_settings_path do |f|
   %header#header
     = render partial: 'spina/admin/shared/breadcrumbs'
 
@@ -10,4 +10,4 @@
   .well
     .horizontal-form
       - plugin.settings.each do |key, value|
-        .horizontal-form-group= render "#{value}_field", f: f, attribute: key
+        .horizontal-form-group= render "#{value.is_a?(Hash) ? value.first.first : value}_field", f: f, attribute: key

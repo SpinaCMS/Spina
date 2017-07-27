@@ -18,6 +18,7 @@ module Spina
     private
 
     def map_data_type(type)
+      type = type.is_a?(Hash) ? type.first.first : type
       case type
       when :wysiwyg then :text
       else type
@@ -52,7 +53,7 @@ module Spina
         raise 'Missing plugin name' if plugin.name.nil?
         raise 'Missing plugin namespace' if plugin.namespace.nil?
 
-        unless plugin.settings.nil?
+        if plugin.settings.present?
           plugin.create_setting_class!
         end
 

@@ -10,7 +10,7 @@ module Spina
       end
 
       def update
-        if @settings.update_attributes(settings_params)
+        if @setting.update_attributes(settings_params)
           redirect_to spina.admin_edit_settings_path(plugin.namespace)
         else
           add_breadcrumb t("spina.#{plugin.namespace}.title")
@@ -30,10 +30,16 @@ module Spina
       helper_method :plugin
 
       def find_or_set_settings
-        @settings = setting_class.first_or_create do |setting|
-          plugin.settings.keys.each do |attribute|
-            setting[attribute] = nil
+        @setting = setting_class.first_or_create do |setting|
+          plugin.settings.each do |attribute, type|
+            setting.send("#{attribute}=", (type.is_a?(Hash) ? type.first.last : nil))
           end
+        end
+        plugin.settings.keys.reject do |x|
+          @setting.preferences.keys.map(&:to_sym).include? x
+        end.each do |key|
+          value = plugin.settings[key].is_a?(Hash) ? plugin.settings[key].first.last : nil
+          @setting.send("#{key}=", value)
         end
       end
 
