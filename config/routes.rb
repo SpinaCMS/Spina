@@ -12,6 +12,13 @@ Spina::Engine.routes.draw do
       end
     end
 
+    ::Spina::Plugin.all.each do |plugin|
+      unless plugin.settings.nil?
+        get "/settings/:plugin", to: "settings#edit", as: :edit_settings
+        patch "/settings/:plugin", to: "settings#update", as: :settings
+      end
+    end
+
     resources :users
 
     # Sessions
@@ -44,7 +51,7 @@ Spina::Engine.routes.draw do
 
     resources :photos do
       collection do
-        get 'trix_select/:object_id' => 'photos#trix_select', as: :trix_select   
+        get 'trix_select/:object_id' => 'photos#trix_select', as: :trix_select
         post 'trix_insert/:object_id' => 'photos#trix_insert', as: :trix_insert
         get 'photo_select/:page_part_id' => 'photos#photo_select', as: :photo_select
         get 'photo_collection_select/:page_part_id' => 'photos#photo_collection_select', as: :photo_collection_select

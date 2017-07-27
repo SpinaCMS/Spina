@@ -16,6 +16,10 @@ en:
     logout: Logout
     main_menu: Main menu
 
+    settings:
+      title: Settings
+      save: Save Settings
+
     forgot_password:
       new: Forgot password
       request: Request new password

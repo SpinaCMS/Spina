@@ -11,6 +11,7 @@ require 'breadcrumbs_on_rails'
 require 'kaminari'
 require 'globalize'
 require 'rack-rewrite'
+require 'jsonb_accessor'
 
 module Spina
   class Engine < ::Rails::Engine
@@ -29,6 +30,5 @@ module Spina
       # Load helpers from main application
       Spina::ApplicationController.helper Rails.application.helpers
     end
-
   end
 end
