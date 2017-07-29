@@ -1,0 +1,8 @@
+.horizontal-form-label
+  = f.object.title
+= f.fields_for :page_partable, f.object.page_partable do |ff|
+  .horizontal-form-content
+    .select-dropdown
+      = ff.select :page_id, Spina::Page.live.map {|o| [o.title, o.id]}, prompt: true
+  .horizontal-form-content
+    = ff.text_field :title, placeholder: "#{t 'spina.pages.page_part'} #{f.object.name.downcase}"
