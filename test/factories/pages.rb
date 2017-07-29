@@ -5,7 +5,7 @@ FactoryGirl.define do
 
     factory :homepage do
       name 'homepage'
-      title 'Hompage'
+      title 'Homepage'
       deletable false
     end
 

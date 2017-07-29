@@ -6,7 +6,7 @@ module Spina
       I18n.locale = :en
       @routes = Engine.routes
       FactoryGirl.create :account
-      @homepage = Spina::Page.find_by(name: 'homepage')
+      @homepage = FactoryGirl.create :homepage
       FactoryGirl.create :page_translation,
         spina_page_id: @homepage.id, title: 'Beginpagina',
         materialized_path: '/nl', locale: 'nl'
