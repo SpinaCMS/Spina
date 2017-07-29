@@ -44,6 +44,7 @@ module Spina
               end until theme.in? themes
 
       account.update_attribute(:theme, theme)
+      Spina::ThemeActivator.new(theme).activate!
     end
 
     def copy_template_files
@@ -66,10 +67,6 @@ module Spina
       password = ask("Create a temporary password: [#{password}]").presence || password
       @temporary_password = password
       User.create name: 'admin', email: email, password: password, admin: true
-    end
-
-    def bootstrap_spina
-      rake 'spina:bootstrap'
     end
 
     def feedback

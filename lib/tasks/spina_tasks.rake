@@ -1,8 +1,12 @@
 namespace :spina do
 
-  desc "Generate all pages based on the theme config"
+  desc "Make sure everything is in place and your theme can be activated"
   task bootstrap: :environment do
-    Spina::Account.first.save
+    # Get theme from Account model
+    account = Spina::Account.first
+
+    # Activate the theme and generate pages
+    Spina::ThemeActivator.new(account.theme).activate!
   end
 
   desc "Update translations after adding locales"
