@@ -9,7 +9,7 @@
 
 # Getting Started
 
-Spina is a CMS built upon the Rails framework. This guide is designed for developers with experience using Ruby on Rails.
+Spina is a CMS for Rails 5.1. This guide is designed for developers with experience using Ruby on Rails.
 
 To start using Spina CMS add the following line to your Gemfile:
 
@@ -23,7 +23,14 @@ Make sure you run the installer to get started.
 
 The installer will help you setup your first user.
 
-Then start `rails s` and access your admin panel at `/admin`.
+Then start `rails s` and access Spina at `/admin`.
+
+## Upgrading from 0.11 to 0.12
+
+Just run the new migrations.
+
+    rails spina:install:migrations
+    rails db:migrate
 
 ## Upgrading from 0.10 to 0.11
 
@@ -67,7 +74,7 @@ Spina.configure do |config| # NEW
 
 The installer generates a few initializers that contain necessary configuration for Spina.
 
-In the initializers folder there's a new folder named `themes`. Inside you will find a configuration file named `default.rb`. This file contains all of your theme-specific settings. You can define multiple Page parts, Layout parts, View templates and Custom pages.
+In the initializers folder there's a new folder named `themes`. Inside you will find a configuration file named `default.rb`. This file contains all of your theme-specific settings. You can define multiple Page parts, View templates and Custom pages.
 
 ## Page parts
 
@@ -173,12 +180,6 @@ Finally, let's go to `views/default/pages/show.html.erb` and add the following:
 ```
 
 We have successfully added another textbox! Restart your server and load up the admin section again. You should see another text box below the content box.
-
-## Layout parts
-
-Sometimes you need editable content that's not specific to a view template but to your theme as a whole. You can use the following parts in your layout.
-
-- `Spina::Line`
 
 ## View templates
 
