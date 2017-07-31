@@ -15,6 +15,7 @@ module Spina
         get :edit, params: { plugin: 'spina_test' }
         assert_template :edit
         assert assigns(:setting).is_a?(Spina::SpinaTest::Setting)
+        assert assigns(:setting).test_setting == '<div></div>'
       end
 
       test 'updating updates the settings' do
