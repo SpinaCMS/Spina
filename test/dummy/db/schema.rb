@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170724115131) do
+ActiveRecord::Schema.define(version: 7) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,7 +68,6 @@ ActiveRecord::Schema.define(version: 20170724115131) do
   end
 
   create_table "spina_lines", force: :cascade do |t|
-    t.string   "content"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -124,16 +123,12 @@ ActiveRecord::Schema.define(version: 20170724115131) do
   end
 
   create_table "spina_pages", force: :cascade do |t|
-    t.string   "title"
-    t.string   "menu_title"
-    t.string   "description"
     t.boolean  "show_in_menu",        default: true
     t.string   "slug"
     t.boolean  "deletable",           default: true
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "name"
-    t.string   "seo_title"
     t.boolean  "skip_to_first_child", default: false
     t.string   "view_template"
     t.string   "layout_template"
@@ -141,7 +136,6 @@ ActiveRecord::Schema.define(version: 20170724115131) do
     t.string   "link_url"
     t.string   "ancestry"
     t.integer  "position"
-    t.string   "materialized_path"
     t.boolean  "active",              default: true
   end
 
@@ -167,6 +161,14 @@ ActiveRecord::Schema.define(version: 20170724115131) do
     t.string   "new_path"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "spina_settings", force: :cascade do |t|
+    t.string   "plugin"
+    t.jsonb    "preferences", default: {}
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["plugin"], name: "index_spina_settings_on_plugin", using: :btree
   end
 
   create_table "spina_structure_items", force: :cascade do |t|
@@ -205,7 +207,6 @@ ActiveRecord::Schema.define(version: 20170724115131) do
   end
 
   create_table "spina_texts", force: :cascade do |t|
-    t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

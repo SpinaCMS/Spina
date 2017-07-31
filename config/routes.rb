@@ -12,12 +12,8 @@ Spina::Engine.routes.draw do
       end
     end
 
-    ::Spina::Plugin.all.each do |plugin|
-      unless plugin.settings.nil?
-        get "/settings/:plugin", to: "settings#edit", as: :edit_settings
-        patch "/settings/:plugin", to: "settings#update", as: :settings
-      end
-    end
+    get "/settings/:plugin", to: "settings#edit", as: :edit_settings
+    patch "/settings/:plugin", to: "settings#update", as: :settings
 
     resources :users
 
