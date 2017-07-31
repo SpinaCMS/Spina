@@ -1,13 +1,13 @@
 PATH
   remote: .
   specs:
-    spina (0.11.1)
+    spina (0.12.0)
       ancestry
       bcrypt
       breadcrumbs_on_rails
       carrierwave
       coffee-rails
-      globalize (~> 5.1.0.beta1)
+      globalize (~> 5.1.0.beta2)
       haml-rails
       jquery-fileupload-rails
       jquery-rails
@@ -157,6 +157,8 @@ GEM
       builder
       minitest (>= 5.0)
       ruby-progressbar
+    mocha (1.2.1)
+      metaclass (~> 0.0.1)
     nio4r (2.1.0)
     nokogiri (1.8.0)
       mini_portile2 (~> 2.2.0)
