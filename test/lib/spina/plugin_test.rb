@@ -22,7 +22,7 @@ end
 module Spina
   class PluginTest < ActionDispatch::IntegrationTest
     setup do
-      @plugin = ::Spina::Plugin.find_by_name('spina_test')
+      @plugin = ::Spina::Plugin.find_by(namespace: 'spina_test')
     end
 
     test 'registration must have a name' do

@@ -25,7 +25,7 @@ module Spina
       end
 
       def plugin
-        Spina::Plugin.find_by_name(params[:plugin])
+        Spina::Plugin.find_by(namespace: params[:plugin])
       end
       helper_method :plugin
 

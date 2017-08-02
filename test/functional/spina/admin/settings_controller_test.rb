@@ -7,7 +7,7 @@ module Spina
         @routes = ::Spina::Engine.routes
         @account = FactoryGirl.create :account
         @user = FactoryGirl.create :user
-        @plugin = ::Spina::Plugin.find_by_name('spina_test')
+        @plugin = ::Spina::Plugin.find_by(namespace: 'spina_test')
         @controller.stubs(:current_spina_user).returns(@user)
       end
 

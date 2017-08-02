@@ -43,8 +43,14 @@ module Spina
         ::Spina::PLUGINS
       end
 
-      def find_by_name(name)
-        all.find { |plugin| plugin.name == name }
+      def find_by(opts={})
+        all.find do |plugin|
+          matches = true
+          opts.each do |key, value|
+            matches = false unless plugin.send(key) == value
+          end
+          plugin if matches
+        end
       end
 
       def register
