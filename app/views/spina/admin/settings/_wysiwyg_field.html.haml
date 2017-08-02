@@ -1,0 +1,4 @@
+.horizontal-form-label
+  = f.label attribute, t("spina.#{plugin.namespace}.settings.#{attribute}")
+.horizontal-form-content
+  = render 'spina/admin/shared/rich_text_field', f: f, field: attribute
