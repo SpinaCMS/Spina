@@ -21,7 +21,7 @@ module Spina
       private
 
       def setting_class
-        "spina/#{params[:plugin]}/setting".classify.constantize
+        "spina/#{plugin.namespace}/setting".classify.constantize
       end
 
       def plugin
