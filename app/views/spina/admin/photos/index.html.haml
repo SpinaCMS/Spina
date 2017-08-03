@@ -6,6 +6,14 @@
         = f.label :file, t('spina.photos.upload_image')
         = f.file_field :files, multiple: true, data: {customfileinput: true}
 
+    - @media_folders.each do |media_folder|
+      = link_to media_folder_admin_photos_path(media_folder), class: 'item media-folder' do
+        .media-folder-thumbnail{data: {badge: media_folder.photos.count}}
+          - if media_folder.photos.any?
+            = image_tag media_folder.photos.last.file.thumb
+          .media-folder-shadow
+        .media-folder-name= media_folder.name
+
     .gallery-prepend-image
       .infinite-scroll
         = render partial: 'spina/admin/photos/photo', collection: @photos

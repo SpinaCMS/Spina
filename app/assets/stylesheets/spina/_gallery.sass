@@ -264,3 +264,76 @@
     text-transform: lowercase
     transition: color .2s ease
     width: 100%
+
+// Media folders
+
+.item.media-folder
+  align-items: center
+  background: #e5e5f0
+  border: 1px solid #d5d4e6
+  display: flex
+  flex-direction: column
+  justify-content: center
+  line-height: 20px
+
+  &:hover
+    .media-folder-thumbnail
+      transform: rotate(-4deg)
+    .media-folder-thumbnail:after
+      transform: translateY(-10px) translateX(30px)
+    .media-folder-shadow:before
+      transform: rotate(12deg)
+    .media-folder-shadow:after
+      transform: rotate(6deg)
+
+.media-folder-thumbnail
+  position: relative
+  transform-origin: center bottom
+  transition: transform .4s ease
+  width: 70px
+
+  &[data-badge]:after
+    background: #6b699f
+    border: 3px solid #e5e5f0
+    border-radius: 12px
+    color: #fff
+    content: attr(data-badge)
+    display: block
+    font-size: 10px
+    font-weight: bold
+    height: 24px
+    line-height: 18px
+    position: absolute
+    right: -8px
+    text-align: center
+    transition: transform .4s ease
+    top: -8px
+    width: 24px
+    z-index: 1
+
+  .media-folder-shadow:before, .media-folder-shadow:after
+    background: rgba(107, 105, 159, .25)
+    border-radius: 5px
+    content: " "
+    display: block
+    height: 70px
+    left: 0px
+    position: absolute
+    transform-origin: center bottom
+    transition: transform .4s ease
+    top: 0px
+    width: 70px
+    z-index: 0
+
+  .media-folder-shadow:after
+    background: rgba(107, 105, 159, .5)
+
+  img
+    border-radius: 5px
+    position: relative
+    width: 100%
+
+.media-folder-name
+  color: #4d4f81
+  font-size: 14px
+  font-weight: 600
