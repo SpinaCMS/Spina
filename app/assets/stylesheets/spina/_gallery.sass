@@ -19,6 +19,7 @@
     margin: 8px
     overflow: hidden
     position: relative
+    transition: transform .3s ease
     width: 150px
     z-index: 3
 
@@ -86,16 +87,22 @@
         word-break: break-word
         z-index: 3
 
-    &:hover
-      .overlay
-        background: rgba(0, 0, 0, 0.5)
+    // &:hover
+    //   .overlay
+    //     background: rgba(0, 0, 0, 0.5)
 
-        a
-          opacity: 1
-          transform: translateY(0%)
+    //     a
+    //       opacity: 1
+    //       transform: translateY(0%)
 
-        .photo-name
-          transform: translateY(0%)
+    //     .photo-name
+    //       transform: translateY(0%)
+
+    &.dropping:not(.media-folder)
+      transform: scale(0.8)
+
+    &.dropped:not(.media-folder)
+      transform: scale(0)
 
     form
       height: 100%
@@ -276,7 +283,7 @@
   justify-content: center
   line-height: 20px
 
-  &:hover
+  &:hover, &.dropping
     .media-folder-thumbnail
       transform: rotate(-4deg)
     .media-folder-thumbnail:after

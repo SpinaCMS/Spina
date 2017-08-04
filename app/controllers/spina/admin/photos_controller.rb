@@ -19,6 +19,12 @@ module Spina
         @photos = @media_folder.photos.sorted.page(params[:page])
       end
 
+      def add_to_media_folder
+        @media_folder = MediaFolder.find(params[:id])
+        @media_folder.photos << Photo.find(params[:photo_id])
+        render json: @media_folder
+      end
+
       def media_library
         redirect_to spina.admin_photos_path
       end
@@ -32,7 +38,7 @@ module Spina
       def destroy
         @photo = Photo.find(params[:id])
         @photo.destroy
-        redirect_to spina.admin_photos_url
+        redirect_back fallback_location: spina.admin_photos_url
       end
 
       def photo_select
