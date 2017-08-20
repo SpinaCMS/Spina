@@ -1,3 +1,6 @@
+- content_for(:header_actions) do
+  = link_to t('spina.photos.delete_folder'), spina.admin_media_folder_path(@media_folder), class: 'button button-danger button-link', style: "margin-right: 0", data: {method: :delete, confirm: t('spina.delete_confirmation', subject: @media_folder.name)}
+
 .gallery-container
   .gallery
     .item

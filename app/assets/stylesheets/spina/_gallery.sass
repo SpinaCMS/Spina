@@ -87,16 +87,19 @@
         word-break: break-word
         z-index: 3
 
-    // &:hover
-    //   .overlay
-    //     background: rgba(0, 0, 0, 0.5)
+    &.ui-draggable:not(.ui-draggable-disabled):hover
+      cursor: move
 
-    //     a
-    //       opacity: 1
-    //       transform: translateY(0%)
+    &.ui-draggable-disabled:hover
+      .overlay
+        background: rgba(0, 0, 0, 0.5)
 
-    //     .photo-name
-    //       transform: translateY(0%)
+        a
+          opacity: 1
+          transform: translateY(0%)
+
+        .photo-name
+          transform: translateY(0%)
 
     &.dropping:not(.media-folder)
       transform: scale(0.8)
@@ -294,6 +297,7 @@
       transform: rotate(6deg)
 
 .media-folder-thumbnail
+  height: 70px
   position: relative
   transform-origin: center bottom
   transition: transform .4s ease
@@ -344,3 +348,7 @@
   color: #4d4f81
   font-size: 14px
   font-weight: 600
+  height: 16px
+  line-height: 16px
+  margin-top: 6px
+  text-align: center

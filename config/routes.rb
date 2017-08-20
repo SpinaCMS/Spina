@@ -45,6 +45,8 @@ Spina::Engine.routes.draw do
       end
     end
 
+    resources :media_folders
+
     resources :photos do
       collection do
         get 'trix_select/:object_id' => 'photos#trix_select', as: :trix_select
