@@ -140,15 +140,22 @@
   border: 1px solid #e5e5ea
   border-radius: 2px
   display: inline-block
+  height: 100px
   margin-bottom: 10px
   margin-right: 10px
+  overflow: hidden
   position: relative
   width: 100px
 
   > img
     border-radius: 2px
     display: block
-    width: 100%
+    left: 50%
+    max-height: 100%
+    max-width: 100%
+    position: absolute
+    top: 50%
+    transform: translateY(-50%) translateX(-50%)
 
   .sidebar-form-image-overlay
     background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, .5))
@@ -166,6 +173,7 @@
     opacity: 1
 
   &:first-child
+    height: 240px
     width: 320px
 
   &:nth-child(3n + 1)
