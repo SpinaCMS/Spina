@@ -1,6 +1,8 @@
 module Spina
   class DefaultStoreUploader < CarrierWave::Uploader::Base
 
+    storage :fog
+
     def store_dir
       case ::Spina.config.storage
       when :s3
