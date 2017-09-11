@@ -233,3 +233,5 @@ Spina is released under the [MIT license](LICENSE.md).
 Some parts of Spina are heavily influenced by the wonderful Refinery CMS. Credits to [the Refinery  team](http://www.refinerycms.com/about).
 
 All icons in Spina were made by Brent Jackson [Geomicons](http://jxnblk.com/geomicons-wired/).
+
+<a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/n3qdKPpzFkR4DpvJRPKKPRaZ/denkGroot/Spina'>  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/n3qdKPpzFkR4DpvJRPKKPRaZ/denkGroot/Spina.svg' /></a>
