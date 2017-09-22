@@ -1,5 +1,5 @@
 // Configuration
-$primary-color: <%= Spina.config.primary_color %>
+$primary-color: <%= Spina.config.primary_color ? Spina.config.primary_color : '#6865b4' %>
 $primary-color-dark: darken($primary-color, 21.4)
 $primary-color-light: lighten($primary-color, 5.5)
 
