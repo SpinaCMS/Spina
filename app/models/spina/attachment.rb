@@ -15,6 +15,10 @@ module Spina
       file.file.try(:filename)
     end
 
+    def content
+      self
+    end
+
     alias_method :old_update_attributes, :update_attributes
     def update_attributes(attributes)
       if attributes["_destroy"] == "1" && attributes["file"].blank?
