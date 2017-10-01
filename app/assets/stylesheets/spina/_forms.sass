@@ -776,6 +776,34 @@ input.datepicker
   .customfile-button
     display: none
 
+.document-select
+  ul
+    margin: -20px -20px 20px -20px
+
+  .item
+    border-top: 1px solid #efefef
+    cursor: pointer
+    line-height: 1
+    margin: 0
+    position: relative
+    width: 100%
+
+    label
+      display: block
+      font-size: 0.875rem
+      margin: 0
+      padding: 20px
+
+    input[type="checkbox"],
+    input[type="radio"]
+      left: 0
+      opacity: 0
+      position: absolute
+      top: 0
+
+      &:checked + label
+        background: #f5f5fa
+
 .media_picker
   background: #f9f9f9
   border: 1px solid #d5d5d5
