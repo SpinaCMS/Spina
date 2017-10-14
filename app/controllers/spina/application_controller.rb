@@ -3,8 +3,6 @@ module Spina
 
     protect_from_forgery with: :exception
 
-    include ApplicationHelper
-
     private
 
     def current_theme

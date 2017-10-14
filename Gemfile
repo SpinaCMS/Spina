@@ -10,4 +10,5 @@ group :development, :test do
   gem 'codeclimate-test-reporter', '~> 1.0.0'
   gem 'letter_opener'
   gem 'pry-rails'
+  gem 'mocha'
 end

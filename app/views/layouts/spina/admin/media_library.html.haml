@@ -1,5 +1,8 @@
 - content_for :application do
   %header#header
+    #header_actions
+      = yield(:header_actions)
+
     = render partial: 'spina/admin/shared/breadcrumbs'
 
     %nav#secondary.tabs

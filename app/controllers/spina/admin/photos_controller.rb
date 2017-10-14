@@ -7,8 +7,22 @@ module Spina
 
       def index
         add_breadcrumb I18n.t('spina.website.photos'), spina.admin_photos_path
-        @photos = Photo.sorted.page(params[:page])
+        @media_folders = MediaFolder.order(:name)
+        @photos = Photo.sorted.where(media_folder_id: nil).page(params[:page])
         @photo = Photo.new
+      end
+
+      def media_folder
+        add_breadcrumb I18n.t('spina.website.photos'), spina.admin_photos_path
+        @media_folder = MediaFolder.find(params[:id])
+        add_breadcrumb @media_folder.name
+        @photos = @media_folder.photos.sorted.page(params[:page])
+      end
+
+      def add_to_media_folder
+        @media_folder = MediaFolder.find(params[:id])
+        @media_folder.photos << Photo.find(params[:photo_id])
+        render json: @media_folder
       end
 
       def media_library
@@ -16,42 +30,15 @@ module Spina
       end
 
       def create
-        if photo_params[:files].present?
-          @photos = photo_params[:files].map do |file|
-            Photo.create!(file: file)
-          end
-          respond_to do |format|
-            format.js do
-              render :create_multiple
-            end
-          end
-        else
-          @photo = Photo.create!(photo_params)
-          respond_to do |format|
-            format.js do
-              render params[:media_library] ? :create : :create_and_select
-            end
-            format.json do
-              render json: { file_url: @photo.file_url }
-            end
-          end
+        @photos = photo_params[:files].map do |file|
+          Photo.create!(file: file, media_folder_id: photo_params[:media_folder_id])
         end
       end
 
       def destroy
         @photo = Photo.find(params[:id])
         @photo.destroy
-        redirect_to spina.admin_photos_url
-      end
-
-      def enhance
-        @photo = Photo.find(params[:id])
-        @photo.remote_file_url = params[:new_image]
-        @photo.save
-      end
-
-      def link
-        @photo = Photo.find(params[:id])
+        redirect_back fallback_location: spina.admin_photos_url
       end
 
       def photo_select
@@ -109,7 +96,7 @@ module Spina
       end
 
       def photo_params
-        params.require(:photo).permit(:file, files: [])
+        params.require(:photo).permit(:media_folder_id, files: [])
       end
 
     end

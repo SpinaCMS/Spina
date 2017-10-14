@@ -48,6 +48,9 @@
           - if current_theme.plugins.include? plugin.name
             - if lookup_context.exists? "spina/admin/hooks/#{ plugin.namespace }/_settings_secondary_navigation"
               = render "spina/admin/hooks/#{ plugin.namespace }/settings_secondary_navigation", plugin: plugin
+          - if plugin.settings.present?
+            %li{class: ('active' if controller_name == 'settings' and params[:plugin] == plugin.namespace)}
+              = link_to t("spina.#{plugin.namespace}.title"), spina.admin_edit_settings_path(plugin.namespace)
 
         %li
           = link_to '#', class: 'back-to-main-menu' do

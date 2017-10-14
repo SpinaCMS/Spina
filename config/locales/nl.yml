@@ -2,6 +2,8 @@ nl:
   languages:
     nl: Nederlands
     en: Engels
+    de: Duits
+    fr: Frans
   spina:
     cancel: Annuleren
     close: Sluiten

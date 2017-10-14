@@ -34,8 +34,8 @@ module Spina
       end
 
       def page
-        @current_page ||= page_by_locale(I18n.locale) || page_by_locale(I18n.default_locale)
-        @page ||= (action_name == 'homepage') ? Page.find_by!(name: 'homepage') : @current_page
+        current_page = page_by_locale(I18n.locale) || page_by_locale(I18n.default_locale)
+        @page ||= (action_name == 'homepage') ? Page.find_by!(name: 'homepage') : current_page
       end
 
       def spina_request_path

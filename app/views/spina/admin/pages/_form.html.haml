@@ -8,12 +8,12 @@
       = link_to '#', data: {close_notification: true} do
         = icon('cross')
 
-= form_for [spina, :admin, @page], html: {id: 'page_form', autocomplete: "off", data: {remote: @page.persisted?}} do |f|
+= form_for [spina, :admin, @page], html: {id: 'page_form', autocomplete: "off"} do |f|
   %header#header
     .breadcrumbs= render_breadcrumbs separator: '<div class="divider"></div>'
     - unless @page.new_record?
       - if Spina.config.locales.size > 1
-        %div{style: 'display: inline-block; margin-left: 12px; top: -4px', data: {dropdown: true}}
+        %div{style: 'display: inline-block; margin-left: 12px; position: absolute', data: {dropdown: true}}
           = link_to '#', class: 'button button-link button-round button-small', data: {trigger: 'dropdown', target: '#locales'} do
             = icon('comment')
             = @locale.upcase

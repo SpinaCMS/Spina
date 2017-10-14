@@ -16,6 +16,10 @@ en:
     logout: Logout
     main_menu: Main menu
 
+    settings:
+      title: Settings
+      save: Save Settings
+
     forgot_password:
       new: Forgot password
       request: Request new password
@@ -66,6 +70,7 @@ en:
       rebuild_materialized_path: Rebuild materialized path
       materialize_path_confirmation: "Are you sure you want to rebuild the path for this page?"
       saving: Saving...
+      saved: Page saved
 
     users:
       new: New user
@@ -81,6 +86,10 @@ en:
       link: "URL of your image:"
       cannot_be_created: "Image could not be processed:"
       upload_image: "Upload an image"
+      organize: Organize images
+      done_organizing: Done organizing
+      new_folder: New folder
+      delete_folder: Delete folder
 
     wysiwyg:
       paragraph: Paragraph
@@ -180,6 +189,9 @@ en:
         view_template: Page template
         ancestry: Parent page
         no_parent: No parent
+
+      spina/media_folder:
+        name: Name
 
       spina/navigation:
         label: Label

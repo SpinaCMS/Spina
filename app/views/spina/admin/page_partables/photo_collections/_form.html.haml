@@ -8,10 +8,10 @@
           %i.icon.icon-dots
           =t 'spina.pages.photos_picker'
 
-    .photo-collection
-      - if ff.object.photos.sorted_by_photo_collection.any?
-        = render 'spina/admin/photos/photo_collection', photos: ff.object.photos.sorted_by_photo_collection
-      - elsif ff.object.photos.any?
-        = render 'spina/admin/photos/photo_collection', photos: ff.object.photos
-    = ff.hidden_field :photo_tokens, value: ff.object.photo_ids.join(",")
-    = ff.hidden_field :photo_positions, value: ff.object.photos.sorted_by_photo_collection.pluck(:photo_id).join(","), class: 'photo-positions'
+      .photo-collection
+        - if ff.object.photos.sorted_by_photo_collection.any?
+          = render 'spina/admin/photos/photo_collection', photos: ff.object.photos.sorted_by_photo_collection
+        - elsif ff.object.photos.any?
+          = render 'spina/admin/photos/photo_collection', photos: ff.object.photos
+      = ff.hidden_field :photo_tokens, value: ff.object.photo_ids.join(",")
+      = ff.hidden_field :photo_positions, value: ff.object.photos.sorted_by_photo_collection.pluck(:photo_id).join(","), class: 'photo-positions'

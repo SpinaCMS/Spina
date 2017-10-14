@@ -11,6 +11,7 @@ require 'breadcrumbs_on_rails'
 require 'kaminari'
 require 'globalize'
 require 'rack-rewrite'
+require 'jsonb_accessor'
 
 module Spina
   class Engine < ::Rails::Engine
@@ -21,10 +22,13 @@ module Spina
     config.assets.paths << config.root.join('vendor', 'assets')
 
     config.to_prepare do
+      # Require decorators from main application
       [Rails.root].flatten.map { |p| Dir[p.join('app', 'decorators', '**', '*_decorator.rb')]}.flatten.uniq.each do |decorator|
         Rails.configuration.cache_classes ? require(decorator) : load(decorator)
       end
-    end
 
+      # Load helpers from main application
+      Spina::ApplicationController.helper Rails.application.helpers
+    end
   end
 end

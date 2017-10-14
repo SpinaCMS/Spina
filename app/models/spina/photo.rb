@@ -2,6 +2,8 @@ module Spina
   class Photo < ApplicationRecord
     mount_uploader :file, PhotoUploader
 
+    belongs_to :media_folder, optional: true
+
     has_many :page_parts, as: :page_partable
     has_many :structure_parts, as: :structure_partable
     has_many :photo_collections_photos
