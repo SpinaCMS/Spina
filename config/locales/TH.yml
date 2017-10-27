@@ -235,8 +235,8 @@ es:
 
   misc:
     messages:
-      zero: "0 ข้อความ
-      one: "1 ข้อความ
+      zero: "0 ข้อความ"
+      one: "1 ข้อความ"
       other: "%{count} ข้อความใหม่"
 
   languages:
