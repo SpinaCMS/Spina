@@ -1,6 +1,6 @@
 module Spina
   class NavigationItem < ApplicationRecord
-    belongs_to :navigation
+    belongs_to :navigation, touch: true
     belongs_to :page
 
     has_ancestry orphan_strategy: :adopt

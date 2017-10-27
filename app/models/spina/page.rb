@@ -24,6 +24,7 @@ module Spina
 
     # Save children to update all materialized_paths
     after_save :save_children
+    after_save :touch_navigations
 
     # Create a 301 redirect if materialized_path changed
     after_save :rewrite_rule
@@ -91,6 +92,10 @@ module Spina
     end
 
     private
+
+      def touch_navigations
+        navigations.update_all(updated_at: Time.zone.now)
+      end
 
       def rewrite_rule
         RewriteRule.create(old_path: old_path, new_path: materialized_path) if old_path != materialized_path

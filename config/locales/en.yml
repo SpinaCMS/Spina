@@ -86,6 +86,10 @@ en:
       link: "URL of your image:"
       cannot_be_created: "Image could not be processed:"
       upload_image: "Upload an image"
+      organize: Organize images
+      done_organizing: Done organizing
+      new_folder: New folder
+      delete_folder: Delete folder
 
     wysiwyg:
       paragraph: Paragraph
@@ -185,6 +189,9 @@ en:
         view_template: Page template
         ancestry: Parent page
         no_parent: No parent
+
+      spina/media_folder:
+        name: Name
 
       spina/navigation:
         label: Label

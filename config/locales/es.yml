@@ -4,6 +4,7 @@ es:
     close: Cerrar
     choose_from_library: Elegir de la biblioteca
     edit: Editar
+    save: Guardar
     delete: Eliminar
     permanently_delete: Eliminar permanentemente
     delete_confirmation: "Seguro que quieres eliminar <strong>%{subject}</strong>?"
@@ -13,6 +14,20 @@ es:
     ago: ago
     edit_website: Editar sitio
     logout: Cerrar sesión
+    main_menu: Menú principal
+
+    settings:
+      title: Configuraciones
+      save: Guardar configuraciones
+
+    forgot_password:
+      new: Olvido su contraseña
+      request: Solicitar nueva contraseña
+      unknown_user: Este usuario no existe
+      save: Guardar nueva contraseña
+      success: Puede utilizar su nueva contraseña
+      mail_subject: Restablecer su contraseña
+      expired: Tu token para restablecer la contraseña ha expirado
 
     modal:
       agree: "Si, estoy seguro"
@@ -51,6 +66,10 @@ es:
       skip_to_first_child: omitir hasta la primera página hija
       invisible_to_search_engines: Tu sitio es invisible para los motores de búsqueda
       invisible_to_search_engines_description: Ingresa a preferencias para activar los motores de búsqueda.
+      rebuild_materialized_path: Recontruir ruta materializada
+      materialize_path_confirmation: "Estás seguro de que quieres reconstruir la ruta para esta página?"
+      saving: Guardando...
+      saved: Página guardada
 
     users:
       new: Nuevo usuario
@@ -61,12 +80,18 @@ es:
     photos:
       delete_confirmation: "Seguro que deseas eliminar ésta <strong>imagen</strong>?"
       insert_photos: Insertar imágenes
+      choose_images: Seleccionar imágenes
       insert_photo: Insertar imagen
       link: "URL de tu imagen:"
       cannot_be_created: "Tu imagen no puede ser procesada:"
+      upload_image: Subir una imagen
+      organize: Organizar imágenes
+      done_organizing: Terminar la organización
+      new_folder: Nueva carpeta
+      delete_folder: Borrar carpeta
 
     wysiwyg:
-      paragraph: Parágrafo
+      paragraph: Párrafo
       heading_1: Encabezado 1
       heading_2: Encabezado 2
       heading_3: Encabezado 3
@@ -161,6 +186,8 @@ es:
         menu_title: Título de navegación
         menu_title_placeholder: Deja en blanco para usar el título de la página
         view_template: Plantilla de página
+        ancestry: Página padre
+        no_parent: No página padre
 
       spina/user:
         email: Correo electrónico
@@ -178,8 +205,38 @@ es:
         role: Rol
         last_logged_in: Último inicio de sesión
 
+      spina/media_folder:
+        name: Nombre
+
+      spina/navigation:
+        label: Etiqueta
+        auto_add_pages: Agregar páginas automáticamente
+        auto_add_pages_description: Páginas nuevas son agregadas automáticamente a esta navegación
+        pages: Páginas
+        pages_description: Seleccione las páginas que quiere usar en esta navegación
+      
+      spina/user:
+        email: Email
+        password: Contraseña
+        name: Nombre
+        name_placeholder: Nombre
+        email: Email
+        email_description: Su email debe ser único
+        password: Contraseña
+        password_description: Deje vacío para conservar su contraseña
+        password_confirmation: Confirmar contraseña
+        admin: Administrador
+        user: Usuario
+        admin_description: Los administradores pueden crear usuarios
+        role: Rol
+        last_logged_in: Entró por última vez
+
   misc:
     messages:
       zero: "0 mensajes nuevos"
       one: "1 mensaje nuevo"
       other: "%{count} mensajes nuevos"
+
+  languages:
+    en: Inglés
+    nl: Holandés
