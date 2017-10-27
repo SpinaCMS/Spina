@@ -86,14 +86,14 @@ es:
       link: "URL ของรูปของคุณ:"
       cannot_be_created: "ภาพของคุณไม่สามารถประมวลผลได้:"
       upload_image: อัปโหลดรูปภาพ
-       organize: จัดระเบียบรูปภาพ
+      organize: จัดระเบียบรูปภาพ
       done_organizing: เสร็จสิ้นองค์กร
       new_folder: โฟลเดอร์ใหม่
       delete_folder: ลบโฟลเดอร์
 
     wysiwyg:
       paragraph: Párrafo
-         heading_1: ส่วนหัว 1
+      heading_1: ส่วนหัว 1
       heading_2: ส่วนหัว 2
       heading_3: ส่วนหัว 3
       quote: อ้างอิง
@@ -156,8 +156,8 @@ es:
         theme: ธีม
         logo: Logo
         google_analytics: Google Analytics
-        google_site_verification: Verficación de sitio de Google
-        robots_allowed: Visible en motores de búsqueda
+        google_site_verification: ตรวจสอบไซต์
+        robots_allowed:ยอมรับ
         facebook: Facebook
         twitter: Twitter
         google_plus: Google+
@@ -240,5 +240,5 @@ es:
       other: "%{count} ข้อความใหม่"
 
   languages:
-    en: ภาษาอัฃกฤษ
+    en: ภาษาอังกฤษ
     nl: Holandés
