@@ -64,7 +64,7 @@ pl:
       save: Zapisz stronę
       concept: Szkic
       show_in_menu: niewidoczna
-      skip_to_first_child: ustaw na pierwszym miejscu
+      skip_to_first_child: ustawione na pierwszym miejscu
       invisible_to_search_engines: Witryna jest niewidoczna dla wyszukiwarek
       invisible_to_search_engines_description: Przejdź do preferencji aby zmienić widoczność dla wyszukiwarek.
       rebuild_materialized_path: Przebuduj adres
@@ -177,8 +177,8 @@ pl:
         description_placeholder: Krótki opis strony
         draft: Szkic
         draft_description: Przydatne kiedy strona nie jest jeszcze gotowa
-        skip_to_first_child: Wyżej
-        skip_to_first_child_description: Na górę
+        skip_to_first_child: Pierwsza
+        skip_to_first_child_description: Ustaw jako pierwszą w kolejności
         link_url: Przekierowanie
         link_url_description: Przekierowanie na adres URL
         link_url_placeholder: 'n.p. http://www.example.com'
