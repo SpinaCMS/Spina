@@ -210,7 +210,7 @@ es:
         name: ชื่อ
 
       
-      spina / navigation:
+      spina/navigation:
       label: ป้ายกำกับ
       auto_add_pages: เพิ่มหน้าเว็บโดยอัตโนมัติ
       auto_add_pages_description: เพจใหม่จะถูกเพิ่มลงในการนำทางนี้โดยอัตโนมัติ
