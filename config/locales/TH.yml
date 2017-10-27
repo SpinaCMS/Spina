@@ -1,0 +1,244 @@
+es:
+  Thai:
+    cancel: ยกเลิก
+    close: ปิด
+    choose_from_library: เลือกจากไลบารี
+    edit: แก้ไข
+    save: บันทึก
+    delete: ลบ
+    permanently_delete: ลบอย่างถาวร
+    delete_confirmation: "แน่ใจว่าคุณต้องการลบ <strong>%{subject}</strong>?"
+    login:ล็อกอิน
+    preview_website: เว็บไซต์ตัวอย่าง
+    search: ค้นหา
+    ago: ส.ค.
+    edit_website: แก้ไขเว็บไซต์
+    logout: ลงชื่อออก
+    main_menu: เมนูหลัก
+
+    settings:
+      title: หัวข้อ
+      save: บันทึก
+
+    forgot_password:
+      new:  ลืมรหัสผ่าน
+      request: ขอรหัสผ่านใหม่
+      unknown_user: ไม่มีผู้ใช้รายนี้
+      save: บันทึกรหัสผ่านใหม่
+      success: คุณสามารถใช้รหัสผ่านใหม่ได้
+      mail_subject: รีเซ็ตรหัสผ่านของคุณ
+      expired: โทเค็นของคุณเพื่อรีเซ็ตรหัสผ่านหมดอายุแล้ว
+
+    modal:
+      agree:  "ใช่ฉันแน่ใจ"
+      cancel: "ไม่ยกเลิก"
+
+    notifications:
+      information: ข้อมูล
+      alert: อ้าว!เกิดข้อผิดพลาด
+     login: คุณต้องเข้าสู่ระบบก่อน
+
+      wrong_username_or_password: อีเมลหรือรหัสผ่านไม่ถูกต้อง
+
+    website:
+      title: ไซต์ของคุณ
+      pages: pages
+      pages_description: "ทุกหน้าในเว็บไซต์ของคุณ"
+      media_library: มีเดียไลบรารี
+      media_library_description: "คุณจะพบภาพและเอกสารทั้งหมดของคุณ"
+      documents: เอกสาร
+      photos: รูปภาพ
+
+    pages:
+      new: หน้าใหม่
+      create_page: "สร้างหน้าใหม่ %{template}"
+      change_order: เปลี่ยนออเดอร์
+      done_changing_order:  การสั่งซื้อเสร็จสิ้น
+      page_content: เนื้อหา
+      page_seo: เครื่องมือค้นหา
+      advanced: ขั้นสูง
+      page_part: ส่วนของหน้า
+      photos_picker: เลือกรูปภาพ
+      photo_picker: เลือกรูปภาพ
+      delete_confirmation: "คุณแน่ใจหรือว่าต้องการลบหน้า <strong>%{subject}</strong>?"
+      save: บันทึกหน้า
+      concept: concept
+      show_in_menu: มองไม่เห็น
+      skip_to_first_child: ข้ามไปที่หน้าแรก
+      invisible_to_search_engines:เว็บไซต์ของคุณไม่สามารถใช้งานได้กับเครื่องมือค้นหา
+      invisible_to_search_engines_description: ป้อนการตั้งค่าเพื่อเปิดใช้งานเครื่องมือค้นหา
+      rebuild_materialized_path: กำหนดเส้นทางที่สร้างขึ้นใหม่
+      materialize_path_confirmation: ""คุณแน่ใจหรือว่าต้องการสร้างเส้นทางสำหรับหน้านี้ใหม่"
+      saving: กำลังบันทึก
+      saved: บันทึกเสร็จสิ้น
+
+    users:
+      new: ผู้ใช้ใหม่
+      save: บันทึกผู้ใช้
+      delete_confirmation: "คุณแน่ใจหรือไม่ว่าต้องการลบผู้ใช้ <strong>%{user}</strong>?"
+      cannot_be_created: ไม่สามารถสร้างได้
+
+    photos:
+      delete_confirmation: "คุณแน่ใจหรือว่าต้องการลบภาพ <strong> นี้ </ strong>?"
+      insert_photos: แทรกรูปภาพ
+      select_images: เลือกรูปภาพ
+      insert_photo: แทรกรูปภาพ
+      link: "URL ของรูปของคุณ:"
+      cannot_be_created: "ภาพของคุณไม่สามารถประมวลผลได้:"
+      upload_image: อัปโหลดรูปภาพ
+       organize: จัดระเบียบรูปภาพ
+      done_organizing: เสร็จสิ้นองค์กร
+      new_folder: โฟลเดอร์ใหม่
+      delete_folder: ลบโฟลเดอร์
+
+    wysiwyg:
+      paragraph: Párrafo
+         heading_1: ส่วนหัว 1
+      heading_2: ส่วนหัว 2
+      heading_3: ส่วนหัว 3
+      quote: อ้างอิง
+      insert_link: แทรกลิงค์
+
+    preferences:
+      title: การกำหนดลักษณะ
+      account: ทั่วไป
+      account_description: ความชอบส่วนบุคคล
+     account_save: บันทึกการตั้งค่า
+      style: สไตล์
+      style_description: เลือกธีมที่เหมาะกับแบรนด์ของคุณ
+      style_save: บันทึกสไตล์
+      users: ผู้ใช้
+     users_description: จัดการผู้ใช้และผู้ดูแลระบบ
+      social_media: เครือข่ายทางสังคม
+      social_media_description: บัญชี Facebook และ Twitter
+      social_media_save: บันทึกเครือข่ายสังคมออนไลน์
+      Analytics: Analytics และเครื่องมือค้นหา
+      analytics_description: เชื่อมโยงบัญชีของคุณเพื่อการวิเคราะห์แบบเรียลไทม์
+      analytics_save: บันทึกการตั้งค่า
+      domain_name_settings: การกำหนดค่าโดเมน
+      domain_name_settings_description: ตั้งค่าโดเมนของคุณเอง
+
+    attachments:
+      insert: 'แทรกเอกสาร'
+      insert_multiple: 'แทรกเอกสาร'
+
+    media_library:
+      photos: รูปภาพ
+      attachments: เอกสาร
+
+  activerecord:
+    models:
+      spina/page:
+        one: เพจ
+        other: หลายๆหน้า
+      spina/user:
+        one: เพจ
+        other: หลายๆหน้า
+      spina/photo:
+        one: รูปภาพ
+        other: รูปภาพ
+      spina/attachment:
+        one: เอกสาร
+        other: เอกสาร
+
+    attributes:
+      spina/account:
+        name: ชื่อไซต์
+        address: ที่อยู่
+        postal_code: รหัสไปรษณีย์
+        city: เมือง
+        phone: โทรศัพท์
+        email: อีเมล
+        kvk_identifier: การค้่า
+        kvk_identifier_description: การค้่า
+        vat_identifier: VAT
+        vat_identifier_description: VAT
+        theme: ธีม
+        logo: Logo
+        google_analytics: Google Analytics
+        google_site_verification: Verficación de sitio de Google
+        robots_allowed: Visible en motores de búsqueda
+        facebook: Facebook
+        twitter: Twitter
+        google_plus: Google+
+
+      spina/attachment:
+        created_at: สร้าง
+        name: ชื่อ
+        size: ขนาด
+
+      spina/page:
+         title: ชื่อเรื่อง
+        title_placeholder: ชื่อเรื่องของหน้า
+        seo_title: SEO <title>
+        seo_title_placeholder: ชื่อนี้ใช้ใน <title> -tag
+         description: Meta description
+        description_description: คำอธิบายนี้จะปรากฏในผลการค้นหา
+        description_placeholder: คำอธิบายโดยย่อของหน้าเว็บของคุณ
+        draft: แนวคิด
+        draft_description: เหมาะสำหรับเมื่อหน้าเว็บของคุณยังไม่เสร็จสมบูรณ์
+        skip_to_first_child: ส่งใหม่
+        skip_to_first_child_description: ส่งต่อไปยังลูกสาวหน้าแรก
+        link_url: เปลี่ยนเส้นทาง
+        link_url_description: ส่งต่อไปยัง URL
+        link_url_placeholder: เช่น http://www.example.com/
+        show_in_menu: แสดงในการนำทาง
+        show_in_menu_description: "ถ้าหน้านี้ถูกปิดใช้งานจะไม่ปรากฏในการนำทางของคุณ"
+        menu_title: ชื่อการนำทาง
+        menu_title_placeholder: เว้นว่างไว้เพื่อใช้ชื่อหน้า
+        view_template: เทมเพลตของเพจ
+        ancestry: หน้าแรก
+        no_parent: ไม่มีเพจระดับบน
+
+      spina/user:
+        email: อีเมล
+        password: รหัสผ่าน
+        name: ชื่อ
+        name_placeholder: ชื่อ
+        อีเมล: อีเมล
+        email_description: อีเมลของคุณต้องไม่ซ้ำใคร
+        password: รหัสผ่าน
+        password_description: เว้นว่างไว้เพื่อเก็บรหัสผ่าน
+        password_confirmation: ยืนยันรหัสผ่าน
+        admin: ผู้ดูแลระบบ
+        user: ผู้ใช้
+        admin_description: ผู้ดูแลระบบสามารถสร้างผู้ใช้
+        role: บทบาท
+        last_logged_in: เข้าสู่ระบบครั้งล่าสุด
+      
+      spina/media_folder:
+        name: ชื่อ
+
+      
+      spina / navigation:
+      label: ป้ายกำกับ
+      auto_add_pages: เพิ่มหน้าเว็บโดยอัตโนมัติ
+      auto_add_pages_description: เพจใหม่จะถูกเพิ่มลงในการนำทางนี้โดยอัตโนมัติ
+      pages: Pages
+      pages_description: เลือกหน้าเว็บที่คุณต้องการใช้ในการนำทางนี้
+      
+      spina/user:
+        email: Email
+        password: รหัสผ่าน
+        name: ชื่อ
+        name_placeholder: Nombre
+        email: Email
+        email_description: อีเมลของคุณต้องไม่ซ้ำใคร
+        password:รหัสผ่าน
+        password_description: ปล่อยให้ว่างเพื่อเก็บรหัสผ่านของคุณ
+        password_confirmation:  ยืนยันรหัสผ่าน
+        admin: ผู้ดูแลระบบ
+        user: ผู้ใช้
+        admin_description:  ผู้ดูแลระบบสามารถสร้างผู้ใช้
+        role: บทบาท
+        last_logged_in: ป้อนเป็นครั้งสุดท้าย
+
+  misc:
+    messages:
+      zero: "0 ข้อความ
+      one: "1 ข้อความ
+      other: "%{count} ข้อความใหม่"
+
+  languages:
+    en: ภาษาอัฃกฤษ
+    nl: Holandés
