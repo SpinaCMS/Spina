@@ -8,7 +8,7 @@ es:
     delete: ลบ
     permanently_delete: ลบอย่างถาวร
     delete_confirmation: "แน่ใจว่าคุณต้องการลบ <strong>%{subject}</strong>?"
-    login:ล็อกอิน
+    login: ล็อกอิน
     preview_website: เว็บไซต์ตัวอย่าง
     search: ค้นหา
     ago: ส.ค.
@@ -65,10 +65,10 @@ es:
       concept: concept
       show_in_menu: มองไม่เห็น
       skip_to_first_child: ข้ามไปที่หน้าแรก
-      invisible_to_search_engines:เว็บไซต์ของคุณไม่สามารถใช้งานได้กับเครื่องมือค้นหา
+      invisible_to_search_engines: เว็บไซต์ของคุณไม่สามารถใช้งานได้กับเครื่องมือค้นหา
       invisible_to_search_engines_description: ป้อนการตั้งค่าเพื่อเปิดใช้งานเครื่องมือค้นหา
       rebuild_materialized_path: กำหนดเส้นทางที่สร้างขึ้นใหม่
-      materialize_path_confirmation: ""คุณแน่ใจหรือว่าต้องการสร้างเส้นทางสำหรับหน้านี้ใหม่"
+      materialize_path_confirmation: "คุณแน่ใจหรือว่าต้องการสร้างเส้นทางสำหรับหน้านี้ใหม่"
       saving: กำลังบันทึก
       saved: บันทึกเสร็จสิ้น
 
@@ -224,7 +224,7 @@ es:
         name_placeholder: Nombre
         email: Email
         email_description: อีเมลของคุณต้องไม่ซ้ำใคร
-        password:รหัสผ่าน
+        password: รหัสผ่าน
         password_description: ปล่อยให้ว่างเพื่อเก็บรหัสผ่านของคุณ
         password_confirmation:  ยืนยันรหัสผ่าน
         admin: ผู้ดูแลระบบ
