@@ -36,8 +36,7 @@ th:
     notifications:
       information: ข้อมูล
       alert: อ้าว!เกิดข้อผิดพลาด
-     login: คุณต้องเข้าสู่ระบบก่อน
-
+      login: คุณต้องเข้าสู่ระบบก่อน
       wrong_username_or_password: อีเมลหรือรหัสผ่านไม่ถูกต้อง
 
     website:
@@ -103,12 +102,12 @@ th:
       title: การกำหนดลักษณะ
       account: ทั่วไป
       account_description: ความชอบส่วนบุคคล
-     account_save: บันทึกการตั้งค่า
+      account_save: บันทึกการตั้งค่า
       style: สไตล์
       style_description: เลือกธีมที่เหมาะกับแบรนด์ของคุณ
       style_save: บันทึกสไตล์
       users: ผู้ใช้
-     users_description: จัดการผู้ใช้และผู้ดูแลระบบ
+      users_description: จัดการผู้ใช้และผู้ดูแลระบบ
       social_media: เครือข่ายทางสังคม
       social_media_description: บัญชี Facebook และ Twitter
       social_media_save: บันทึกเครือข่ายสังคมออนไลน์
@@ -136,10 +135,10 @@ th:
         other: หลายๆหน้า
       spina/photo:
         one: รูปภาพ
-        other: รูปภาพ
+        other: รูปภาพหลายๆ
       spina/attachment:
         one: เอกสาร
-        other: เอกสาร
+        other: เอกสารหลายๆ
 
     attributes:
       spina/account:
@@ -168,11 +167,11 @@ th:
         size: ขนาด
 
       spina/page:
-         title: ชื่อเรื่อง
+        title: ชื่อเรื่อง
         title_placeholder: ชื่อเรื่องของหน้า
         seo_title: SEO <title>
         seo_title_placeholder: ชื่อนี้ใช้ใน <title> -tag
-         description: Meta description
+        description: Meta description
         description_description: คำอธิบายนี้จะปรากฏในผลการค้นหา
         description_placeholder: คำอธิบายโดยย่อของหน้าเว็บของคุณ
         draft: แนวคิด
