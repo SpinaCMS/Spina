@@ -1,0 +1,223 @@
+sv:
+  spina:
+    cancel: Avbryt
+    close: Stäng
+    choose_from_library: Välj från bibliotek
+    edit: Ändra
+    save: Spara
+    delete: Radera
+    permanently_delete: Radera permanent
+    delete_confirmation: Är du säker på att du vill radera <strong>%{subject}</strong>?"
+    login: Logga in
+    preview_website: Förhandsvisa hemsida
+    search: Sök...
+    ago: sen
+    edit_website: Ändra din hemsida
+    logout: Logga ut
+    main_menu: Huvudmeny
+
+    settings:
+      title: Inställningar
+      save: Spara inställningar
+
+    forgot_password:
+      new: Glömt lösenord
+      request: Begär nytt lösenord
+      unknown_user: Denna användare finns inte
+      save: Spara nytt lösenord
+      success: Du kan använda ditt nya lösenord
+      mail_subject: Återställ ditt lösenord
+      expired: Din lösenordsomställning har gått ut
+
+    modal:
+      agree: "Ja, jag är säker"
+      cancel: "Nej, avbryt"
+
+    notifications:
+      information: Information
+      alert: Oops! Något gick fel
+      login: Du måste logga in först
+      wrong_username_or_password: Fel mail eller lösenord
+
+    website:
+      title: Din hemsida
+      pages: Sidor
+      all_pages: Alla sidor
+      pages_description: "Alla sidor på din hemsida"
+      media_library: Mediebibliotek
+      media_library_description: "Här finns alla dina bilder och dokument"
+      documents: Dokument
+      photos: Bilder
+
+    pages:
+      new: Ny sida
+      create_page: "ny %{template}"
+      change_order: Ändra ordning
+      done_changing_order: Klar med att ändra ordning
+      page_content: Innehåll
+      page_seo: Sökmotorer
+      advanced: Avancerat
+      page_part: Sidsektion
+      photos_picker: Välj bilder
+      photo_picker: Välj bild
+      delete_confirmation: "Är du säker på att du vill radera sidan <strong>%{subject}</strong>?"
+      save: Spara sida
+      concept: utkast
+      show_in_menu: osynlig
+      skip_to_first_child: gå till första undersida
+      invisible_to_search_engines: Din hemsida är osynlig för sökmotorer
+      invisible_to_search_engines_description: Gå till inställningar för att aktivera sökmotorer.
+      rebuild_materialized_path: Bygg om materialiserade sökvägar
+      materialize_path_confirmation: "Är du säker på att du vill bygga om sökvägen för denna sida?"
+      saving: Sparar...
+      saved: Sida sparad
+
+    users:
+      new: Ny användare
+      save: Spara användare
+      delete_confirmation: "Är du säker på att du vill ta bort användaren <strong>%{user}</strong>?"
+      cannot_be_created: Användaren kunde inte sparas
+
+    photos:
+      delete_confirmation: "Är du säker på att du vill ta bort bilden <strong>image</strong>?"
+      insert_photos: Välj bilder
+      choose_images: Välj bilder
+      insert_photo: Infoga bild
+      link: "URL till din bild:"
+      cannot_be_created: "Bilden kunde inte behandlas:"
+      upload_image: "Ladda up en bild"
+      organize: Organisera bilder
+      done_organizing: Klar med organisering
+      new_folder: Ny mapp
+      delete_folder: Radera mapp
+
+    wysiwyg:
+      paragraph: Paragraf
+      heading_1: Rubrik 1
+      heading_2: Rubrik 2
+      heading_3: Rubrik 3
+      quote: Citat
+      insert_link: Infoga länk
+
+    preferences:
+      title: Inställningar
+      account: Allmänt
+      account_description: Personliga inställningar
+      account_save: Spara inställningar
+      style: Stilning
+      style_description: Välj ett tema som passar ditt märke
+      style_save: Spara stilning
+      users: Användare
+      users_description: Hantera användare och administratörer
+      social_media: Social media
+      social_media_description: Facebook och Twitter-konton
+      social_media_save: Spara social media
+      analytics: Analys och sök
+      analytics_description: Länka ditt konto för realtidsanalys
+      analytics_save: Spara inställningar
+      domain_name_settings: Domäninställningar
+      domain_name_settings_description: Ställ in din egen domän
+
+    attachments:
+      insert: 'Infoga dokument'
+      insert_multiple: 'Infoga dokument'
+
+    media_library:
+      photos: Bilder
+      attachments: Dokument
+
+  activerecord:
+    models:
+      spina/page:
+        one: Sida
+        other: Sidor
+      spina/user:
+        one: Användare
+        other: Användare
+      spina/photo:
+        one: Bild
+        other: Bilder
+      spina/attachment:
+        one: Dokument
+        other: Dokument
+
+    attributes:
+      spina/account:
+        name: Hemsidenamn
+        address: Adress
+        postal_code: Postkod
+        city: Stad
+        phone: Telefon
+        email: Email
+        kvk_identifier: Handelskammare
+        kvk_identifier_description: Handelskammare
+        vat_identifier: moms
+        vat_identifier_description: moms
+        theme: Hemsidetema
+        logo: Logo
+        google_analytics: Google Analytics
+        google_site_verification: Google Site Verification
+        robots_allowed: Synlig i sökmotorer
+        facebook: Facebook
+        twitter: Twitter
+        google_plus: Google+
+
+      spina/attachment:
+        created_at: Skapad
+        name: Filnamn
+        size: Storlek
+
+      spina/page:
+        title: Titel
+        title_placeholder: Sidtitel
+        seo_title: SEO <title>
+        seo_title_placeholder: Denna titel används i <title>-taggen
+        description: Metabeskrivning
+        description_description: Denna beskrivning visas i dina sökresultat
+        description_placeholder: Kort beskrivning av din sida
+        draft: Utkast
+        draft_description: Bra för när din sida inte är klar
+        skip_to_first_child: Framåt
+        skip_to_first_child_description: gå till första undersida
+        link_url: Dirigera om sida
+        link_url_description: Dirigera om sida till URL
+        link_url_placeholder: t.ex. http://www.example.com/
+        show_in_menu: Visa i navigering
+        show_in_menu_description: "Denna sida visas inte i navigeringen om detta är avstängt"
+        menu_title: Navigeringstitel
+        menu_title_placeholder: Lämna tom för att använda sidotiteln
+        view_template: Sidmall
+        ancestry: Föräldersida
+        no_parent: Ingen förälder
+
+      spina/media_folder:
+        name: Namn
+
+      spina/navigation:
+        label: Etikett
+        auto_add_pages: Lägg automatiskt till sidor
+        auto_add_pages_description: Nya sidor läggs automatiskt till denna navigering
+        pages: Sidor
+        pages_description: Välj sidorna du vill använda i denna navigering
+
+      spina/user:
+        email: Email
+        password: Lösenord
+        name: Namn
+        name_placeholder: Namn
+        email: Email
+        email_description: Din email måste vara unik
+        password: Lösenord
+        password_description: Lämna tom för att behålla ditt lösenord
+        password_confirmation: Bekräfta lösenord
+        admin: Administratör
+        user: Användare
+        admin_description: Administratörer kan skapa användare
+        role: Roll
+        last_logged_in: Senast inloggad
+
+  misc:
+    messages:
+      zero: "0 nya meddelanden"
+      one: "1 nytt meddelande"
+      other: "%{count} nya meddelanden"

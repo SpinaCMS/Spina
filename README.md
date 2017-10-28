@@ -2,10 +2,12 @@
 
 [Visit the website](http://www.spinacms.com)
 
-[![CircleCI](https://img.shields.io/circleci/project/github/denkGroot/Spina.svg)](https://circleci.com/gh/denkGroot/Spina)
+[![Backers on Open Collective](https://opencollective.com/Spina/backers/badge.svg)](#backers) [![Sponsors on Open Collective](https://opencollective.com/Spina/sponsors/badge.svg)](#sponsors) [![CircleCI](https://img.shields.io/circleci/project/github/denkGroot/Spina.svg)](https://circleci.com/gh/denkGroot/Spina)
 [![Code Climate](https://codeclimate.com/github/denkGroot/Spina/badges/gpa.svg)](https://codeclimate.com/github/denkGroot/Spina)
 [![Test Coverage](https://codeclimate.com/github/denkGroot/Spina/badges/coverage.svg)](https://codeclimate.com/github/denkGroot/Spina/coverage)
 [![Slack](https://slack-spinacms.herokuapp.com/badge.svg)](https://slack-spinacms.herokuapp.com)
+
+<a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/n3qdKPpzFkR4DpvJRPKKPRaZ/denkGroot/Spina'>  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/n3qdKPpzFkR4DpvJRPKKPRaZ/denkGroot/Spina.svg' /></a>
 
 # Getting Started
 
@@ -223,6 +225,33 @@ You can define custom pages for your theme that will be generated when bootstrap
 # Contributing
 
 Check our [Contributing Guide](CONTRIBUTING.md) for instructions on how to help the project.
+
+<a href="graphs/contributors"><img src="https://opencollective.com/Spina/contributors.svg?width=890" /></a>
+
+
+# Backers
+
+Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com/Spina#backer)]
+
+<a href="https://opencollective.com/Spina#backers" target="_blank"><img src="https://opencollective.com/Spina/backers.svg?width=890"></a>
+
+
+# Sponsors
+
+Support this project by becoming a sponsor. Your logo will show up here with a link to your website. [[Become a sponsor](https://opencollective.com/Spina#sponsor)]
+
+<a href="https://opencollective.com/Spina/sponsor/0/website" target="_blank"><img src="https://opencollective.com/Spina/sponsor/0/avatar.svg"></a>
+<a href="https://opencollective.com/Spina/sponsor/1/website" target="_blank"><img src="https://opencollective.com/Spina/sponsor/1/avatar.svg"></a>
+<a href="https://opencollective.com/Spina/sponsor/2/website" target="_blank"><img src="https://opencollective.com/Spina/sponsor/2/avatar.svg"></a>
+<a href="https://opencollective.com/Spina/sponsor/3/website" target="_blank"><img src="https://opencollective.com/Spina/sponsor/3/avatar.svg"></a>
+<a href="https://opencollective.com/Spina/sponsor/4/website" target="_blank"><img src="https://opencollective.com/Spina/sponsor/4/avatar.svg"></a>
+<a href="https://opencollective.com/Spina/sponsor/5/website" target="_blank"><img src="https://opencollective.com/Spina/sponsor/5/avatar.svg"></a>
+<a href="https://opencollective.com/Spina/sponsor/6/website" target="_blank"><img src="https://opencollective.com/Spina/sponsor/6/avatar.svg"></a>
+<a href="https://opencollective.com/Spina/sponsor/7/website" target="_blank"><img src="https://opencollective.com/Spina/sponsor/7/avatar.svg"></a>
+<a href="https://opencollective.com/Spina/sponsor/8/website" target="_blank"><img src="https://opencollective.com/Spina/sponsor/8/avatar.svg"></a>
+<a href="https://opencollective.com/Spina/sponsor/9/website" target="_blank"><img src="https://opencollective.com/Spina/sponsor/9/avatar.svg"></a>
+
+
 
 # License
 

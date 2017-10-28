@@ -4,22 +4,12 @@
     %h3= t('spina.attachments.insert_multiple')
 
   %section
-    -# = form_for [spina, :admin, @attachment], html: {multipart: true} do |f|
-    -#   = f.file_field :file, data: {customfileinput: true}
-
-    = form_tag spina.insert_collection_admin_attachments_path(params[:page_part_id]), remote: true, class: 'gallery-prepend-attachment', style: 'margin-bottom: 0' do
-      .table-container
-        %table.table.table-clickable
-          %thead
-            %tr
-              %th
-              %th= Spina::Attachment.human_attribute_name(:name)
-          %tbody
-            - @attachments.each do |attachment|
-              %tr
-                %td= check_box_tag 'attachment_ids[]', attachment.id, attachment.id.in?(@selected_attachment_ids)
-                %td= attachment.name
-
+    = form_tag spina.insert_collection_admin_attachments_path(params[:page_part_id]), remote: true, class: 'document-select' do
+      %ul
+        - @attachments.each do |attachment|
+          %li.item
+            = check_box_tag 'attachment_ids[]', attachment.id, attachment.id.in?(@selected_attachment_ids), id: "attachment_id_#{attachment.id}"
+            = label_tag "attachment_id_#{attachment.id}", attachment.name
       %footer
         = link_to t('spina.cancel'), "#", data: {dismiss: 'modal'}
         = button_tag t('spina.attachments.insert_multiple'), type: 'submit', class: 'primary', data: {icon: 't '}

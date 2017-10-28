@@ -10,7 +10,7 @@
         .infinite-scroll
           = render partial: 'spina/admin/photos/photo_multi_picker', collection: @photos
 
-        .infinite-pagination= link_to_next_page @photos, 'Next', params: params.slice(:selected_photo_ids), remote: true
+        .infinite-pagination= link_to_next_page @photos, 'Next', params: params.slice(:selected_photo_ids).permit(:selected_photo_ids), remote: true
 
         .gallery-select-action-bar
           .pull-right
