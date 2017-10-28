@@ -201,8 +201,6 @@ en:
         pages_description: Select the pages you want to use in this navigation
 
       spina/user:
-        email: Email
-        password: Password
         name: Name
         name_placeholder: Name
         email: Email
