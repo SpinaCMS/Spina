@@ -31,17 +31,17 @@ th:
 
     modal:
       agree:  "ใช่ฉันแน่ใจ"
-      cancel: "ไม่ยกเลิก"
+      cancel: "ยกเลิก"
 
     notifications:
       information: ข้อมูล
-      alert: อ้าว!เกิดข้อผิดพลาด
+      alert: เกิดข้อผิดพลาด
       login: คุณต้องเข้าสู่ระบบก่อน
       wrong_username_or_password: อีเมลหรือรหัสผ่านไม่ถูกต้อง
 
     website:
       title: ไซต์ของคุณ
-      pages: pages
+      pages: หน้าเว็บ
       pages_description: "ทุกหน้าในเว็บไซต์ของคุณ"
       media_library: มีเดียไลบรารี
       media_library_description: "คุณจะพบภาพและเอกสารทั้งหมดของคุณ"
@@ -59,10 +59,10 @@ th:
       page_part: ส่วนของหน้า
       photos_picker: เลือกรูปภาพ
       photo_picker: เลือกรูปภาพ
-      delete_confirmation: "คุณแน่ใจหรือว่าต้องการลบหน้า <strong>%{subject}</strong>?"
+      delete_confirmation: "คุณแน่ใจหรือว่าต้องการลบ <strong>%{subject}</strong>?"
       save: บันทึกหน้า
-      concept: concept
-      show_in_menu: มองไม่เห็น
+      concept: แนวคิด
+      show_in_menu: แสดงเมนู
       skip_to_first_child: ข้ามไปที่หน้าแรก
       invisible_to_search_engines: เว็บไซต์ของคุณไม่สามารถใช้งานได้กับเครื่องมือค้นหา
       invisible_to_search_engines_description: ป้อนการตั้งค่าเพื่อเปิดใช้งานเครื่องมือค้นหา
@@ -91,7 +91,7 @@ th:
       delete_folder: ลบโฟลเดอร์
 
     wysiwyg:
-      paragraph: Párrafo
+      paragraph: ย่อหน้า
       heading_1: ส่วนหัว 1
       heading_2: ส่วนหัว 2
       heading_3: ส่วนหัว 3
@@ -153,7 +153,7 @@ th:
         vat_identifier: VAT
         vat_identifier_description: VAT
         theme: ธีม
-        logo: Logo
+        logo: เครื่องหมาย
         google_analytics: Google Analytics
         google_site_verification: ตรวจสอบไซต์
         robots_allowed: ยอมรับ
@@ -177,11 +177,11 @@ th:
         draft: แนวคิด
         draft_description: เหมาะสำหรับเมื่อหน้าเว็บของคุณยังไม่เสร็จสมบูรณ์
         skip_to_first_child: ส่งใหม่
-        skip_to_first_child_description: ส่งต่อไปยังลูกสาวหน้าแรก
+        skip_to_first_child_description: ส่งต่อไปยังหน้าแรก
         link_url: เปลี่ยนเส้นทาง
         link_url_description: ส่งต่อไปยัง URL
         link_url_placeholder: เช่น http://www.example.com/
-        show_in_menu: แสดงในการนำทาง
+        show_in_menu: แสดงเมนู
         show_in_menu_description: "ถ้าหน้านี้ถูกปิดใช้งานจะไม่ปรากฏในการนำทางของคุณ"
         menu_title: ชื่อการนำทาง
         menu_title_placeholder: เว้นว่างไว้เพื่อใช้ชื่อหน้า
@@ -195,7 +195,7 @@ th:
         name: ชื่อ
         name_placeholder: ชื่อ
         อีเมล: อีเมล
-        email_description: อีเมลของคุณต้องไม่ซ้ำใคร
+        email_description: อีเมลนี้มีการใช้งานแล้ว
         password: รหัสผ่าน
         password_description: เว้นว่างไว้เพื่อเก็บรหัสผ่าน
         password_confirmation: ยืนยันรหัสผ่าน
@@ -213,7 +213,7 @@ th:
       label: ป้ายกำกับ
       auto_add_pages: เพิ่มหน้าเว็บโดยอัตโนมัติ
       auto_add_pages_description: เพจใหม่จะถูกเพิ่มลงในการนำทางนี้โดยอัตโนมัติ
-      pages: Pages
+      pages: หน้าเว็บ
       pages_description: เลือกหน้าเว็บที่คุณต้องการใช้ในการนำทางนี้
       
       spina/user:
