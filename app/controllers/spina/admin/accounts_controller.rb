@@ -7,11 +7,8 @@ module Spina
       end
 
       def update
-        if current_account.update_attributes(account_params)
-          redirect_to :back
-        else
-          redirect_to :back
-        end
+        current_account.update_attributes(account_params)
+        redirect_back fallback_location: spina.edit_admin_account_path
       end
 
       def analytics

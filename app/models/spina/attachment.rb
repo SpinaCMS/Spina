@@ -6,13 +6,17 @@ module Spina
 
     attr_accessor :_destroy
 
-    scope :sorted, -> { order('created_at DESC') }
+    scope :sorted, -> { order('file ASC') }
     scope :file_attached, -> { where('file IS NOT NULL') }
 
     mount_uploader :file, FileUploader
 
     def name
       file.file.try(:filename)
+    end
+
+    def content
+      self
     end
 
     alias_method :old_update_attributes, :update_attributes

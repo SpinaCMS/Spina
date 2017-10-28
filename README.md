@@ -2,14 +2,16 @@
 
 [Visit the website](http://www.spinacms.com)
 
-[![CircleCI](https://img.shields.io/circleci/project/github/denkGroot/Spina.svg)](https://circleci.com/gh/denkGroot/Spina)
+[![Backers on Open Collective](https://opencollective.com/Spina/backers/badge.svg)](#backers) [![Sponsors on Open Collective](https://opencollective.com/Spina/sponsors/badge.svg)](#sponsors) [![CircleCI](https://img.shields.io/circleci/project/github/denkGroot/Spina.svg)](https://circleci.com/gh/denkGroot/Spina)
 [![Code Climate](https://codeclimate.com/github/denkGroot/Spina/badges/gpa.svg)](https://codeclimate.com/github/denkGroot/Spina)
 [![Test Coverage](https://codeclimate.com/github/denkGroot/Spina/badges/coverage.svg)](https://codeclimate.com/github/denkGroot/Spina/coverage)
 [![Slack](https://slack-spinacms.herokuapp.com/badge.svg)](https://slack-spinacms.herokuapp.com)
 
+<a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/n3qdKPpzFkR4DpvJRPKKPRaZ/denkGroot/Spina'>  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/n3qdKPpzFkR4DpvJRPKKPRaZ/denkGroot/Spina.svg' /></a>
+
 # Getting Started
 
-Spina is a CMS built upon the Rails framework. This guide is designed for developers with experience using Ruby on Rails.
+Spina is a CMS for Rails 5.1. This guide is designed for developers with experience using Ruby on Rails.
 
 To start using Spina CMS add the following line to your Gemfile:
 
@@ -23,7 +25,14 @@ Make sure you run the installer to get started.
 
 The installer will help you setup your first user.
 
-Then start `rails s` and access your admin panel at `/admin`.
+Then start `rails s` and access Spina at `/admin`.
+
+## Upgrading from 0.11 to 0.12
+
+Just run the new migrations.
+
+    rails spina:install:migrations
+    rails db:migrate
 
 ## Upgrading from 0.10 to 0.11
 
@@ -67,7 +76,7 @@ Spina.configure do |config| # NEW
 
 The installer generates a few initializers that contain necessary configuration for Spina.
 
-In the initializers folder there's a new folder named `themes`. Inside you will find a configuration file named `default.rb`. This file contains all of your theme-specific settings. You can define multiple Page parts, Layout parts, View templates and Custom pages.
+In the initializers folder there's a new folder named `themes`. Inside you will find a configuration file named `default.rb`. This file contains all of your theme-specific settings. You can define multiple Page parts, View templates and Custom pages.
 
 ## Page parts
 
@@ -174,12 +183,6 @@ Finally, let's go to `views/default/pages/show.html.erb` and add the following:
 
 We have successfully added another textbox! Restart your server and load up the admin section again. You should see another text box below the content box.
 
-## Layout parts
-
-Sometimes you need editable content that's not specific to a view template but to your theme as a whole. You can use the following parts in your layout.
-
-- `Spina::Line`
-
 ## View templates
 
 Each theme typically has a few different view templates which make up your website. By default Spina generates a *homepage* and *show* template.
@@ -222,6 +225,33 @@ You can define custom pages for your theme that will be generated when bootstrap
 # Contributing
 
 Check our [Contributing Guide](CONTRIBUTING.md) for instructions on how to help the project.
+
+<a href="graphs/contributors"><img src="https://opencollective.com/Spina/contributors.svg?width=890" /></a>
+
+
+# Backers
+
+Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com/Spina#backer)]
+
+<a href="https://opencollective.com/Spina#backers" target="_blank"><img src="https://opencollective.com/Spina/backers.svg?width=890"></a>
+
+
+# Sponsors
+
+Support this project by becoming a sponsor. Your logo will show up here with a link to your website. [[Become a sponsor](https://opencollective.com/Spina#sponsor)]
+
+<a href="https://opencollective.com/Spina/sponsor/0/website" target="_blank"><img src="https://opencollective.com/Spina/sponsor/0/avatar.svg"></a>
+<a href="https://opencollective.com/Spina/sponsor/1/website" target="_blank"><img src="https://opencollective.com/Spina/sponsor/1/avatar.svg"></a>
+<a href="https://opencollective.com/Spina/sponsor/2/website" target="_blank"><img src="https://opencollective.com/Spina/sponsor/2/avatar.svg"></a>
+<a href="https://opencollective.com/Spina/sponsor/3/website" target="_blank"><img src="https://opencollective.com/Spina/sponsor/3/avatar.svg"></a>
+<a href="https://opencollective.com/Spina/sponsor/4/website" target="_blank"><img src="https://opencollective.com/Spina/sponsor/4/avatar.svg"></a>
+<a href="https://opencollective.com/Spina/sponsor/5/website" target="_blank"><img src="https://opencollective.com/Spina/sponsor/5/avatar.svg"></a>
+<a href="https://opencollective.com/Spina/sponsor/6/website" target="_blank"><img src="https://opencollective.com/Spina/sponsor/6/avatar.svg"></a>
+<a href="https://opencollective.com/Spina/sponsor/7/website" target="_blank"><img src="https://opencollective.com/Spina/sponsor/7/avatar.svg"></a>
+<a href="https://opencollective.com/Spina/sponsor/8/website" target="_blank"><img src="https://opencollective.com/Spina/sponsor/8/avatar.svg"></a>
+<a href="https://opencollective.com/Spina/sponsor/9/website" target="_blank"><img src="https://opencollective.com/Spina/sponsor/9/avatar.svg"></a>
+
+
 
 # License
 

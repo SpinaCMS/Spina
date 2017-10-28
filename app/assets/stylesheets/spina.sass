@@ -47,7 +47,7 @@ body
 
 // Primary navigation
 nav#primary
-  background: linear-gradient(#3b3f74, #7a76ad)
+  background: linear-gradient($primary-color-dark, $primary-color-light)
   height: 100%
   overflow: hidden
   position: fixed
@@ -100,7 +100,7 @@ nav#primary
     opacity: 1
 
   ul li ul
-    background: linear-gradient(#3b3f74, #7a76ad)
+    background: linear-gradient($primary-color-dark, $primary-color-light)
     bottom: 0
     left: 80px
     padding-top: 20px
@@ -132,7 +132,7 @@ nav#primary
   ul li ul li[data-badge]:after
     background: rgba(255, 255, 255, .4)
     border-radius: 9px
-    color: #3b3f74
+    color: $primary-color-dark
     content: attr(data-badge)
     display: block
     font-size: 12px

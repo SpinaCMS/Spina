@@ -1,3 +1,13 @@
+- content_for(:header_actions) do
+  - if @media_folders.any?
+    = link_to '#', class: 'button organize-switch', data: {organize_images: t('spina.photos.organize'), done_organizing: t('spina.photos.done_organizing')} do
+      = icon('random')
+      = t('spina.photos.organize')
+
+  = link_to spina.new_admin_media_folder_path, class: 'button button-primary', style: 'margin-right: 0; margin-left: 4px', data: {remote: true} do
+    = icon('plus')
+    =t 'spina.photos.new_folder'
+
 .gallery-container
   .gallery
     .item
@@ -5,6 +15,16 @@
         = hidden_field_tag :media_library, value: true
         = f.label :file, t('spina.photos.upload_image')
         = f.file_field :files, multiple: true, data: {customfileinput: true}
+
+    - @media_folders.each do |media_folder|
+      = link_to media_folder_admin_photos_path(media_folder), class: 'item media-folder', data: {add_to_media_folder_url: add_to_media_folder_admin_photos_url(media_folder)} do
+        .media-folder-thumbnail{data: {badge: media_folder.photos.count}}
+          - if media_folder.photos.any?
+            = image_tag media_folder.photos.last.file.thumb
+          - else
+            = image_tag 'spina/media_folder_placeholder.png'
+          .media-folder-shadow
+        .media-folder-name= media_folder.name
 
     .gallery-prepend-image
       .infinite-scroll
