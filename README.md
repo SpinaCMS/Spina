@@ -19,7 +19,7 @@ To start using Spina CMS add the following line to your Gemfile:
 gem 'spina'
 ```
 
-Make sure you run the installer to get started.
+First run the installer to get started:
 
     rails g spina:install
 
