@@ -60,6 +60,7 @@ nl:
       invisible_to_search_engines: Je website is niet zichtbaar voor zoekmachines
       invisible_to_search_engines_description: Bij voorkeuren voor Statistieken en zoekmachines kun je dit activeren.
       saving: <i></i> Opslaan...
+      saved: Pagina opgeslagen
 
     users:
       new: Nieuwe gebruiker
