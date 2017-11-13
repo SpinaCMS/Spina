@@ -3,8 +3,9 @@ module Spina
     extend ActiveSupport::Concern
 
     included do
+      rescue_from ActiveRecord::RecordNotFound, with: :redirect_or_render_404
+      
       before_action :set_locale
-      before_action :rewrite_page, only: [:show]
     end
 
     def show
@@ -21,12 +22,6 @@ module Spina
 
       def set_locale
         I18n.locale = params[:locale] || I18n.default_locale
-      end
-
-      def rewrite_page
-        if page.nil? && rule = RewriteRule.find_by(old_path: "/" + params[:id])
-          redirect_to rule.new_path, status: :moved_permanently
-        end
       end
 
       def page_by_locale(locale)
@@ -49,6 +44,18 @@ module Spina
 
       def first_live_child
         page.children.sorted.live.first
+      end
+
+      def redirect_or_render_404
+        if rule = RewriteRule.find_by(old_path: spina_request_path)
+          redirect_to rule.new_path, status: :moved_permanently
+        else
+          render_404
+        end
+      end
+
+      def render_404
+        render file: "#{Rails.root}/public/404.html", status: 404
       end
 
       def render_with_template(page)
