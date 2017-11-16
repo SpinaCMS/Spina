@@ -7,21 +7,21 @@ th:
     save: บันทึก
     delete: ลบ
     permanently_delete: ลบอย่างถาวร
-    delete_confirmation: "แน่ใจว่าคุณต้องการลบ <strong>%{subject}</strong>?"
-    login: ล็อกอิน
-    preview_website: เว็บไซต์ตัวอย่าง
+    delete_confirmation: "คุณแน่ใจหรือไม่ว่าต้องการลบ <strong>%{subject}</strong>?"
+    login: ลงชื่อเข้าใช้
+    preview_website: ตัวอย่างเว็บไซต์
     search: ค้นหา
-    ago: ส.ค.
+    ago: อายุ
     edit_website: แก้ไขเว็บไซต์
     logout: ลงชื่อออก
     main_menu: เมนูหลัก
 
     settings:
-      title: หัวข้อ
+      title: การตั้งค่า
       save: บันทึก
 
     forgot_password:
-      new:  ลืมรหัสผ่าน
+      new: ลืมรหัสผ่าน
       request: ขอรหัสผ่านใหม่
       unknown_user: ไม่มีผู้ใช้รายนี้
       save: บันทึกรหัสผ่านใหม่
@@ -30,8 +30,8 @@ th:
       expired: โทเค็นของคุณเพื่อรีเซ็ตรหัสผ่านหมดอายุแล้ว
 
     modal:
-      agree:  "ใช่ฉันแน่ใจ"
-      cancel: "ไม่ยกเลิก"
+      agree:  "ตกลง"
+      cancel: "ยกเลิก"
 
     notifications:
       information: ข้อมูล
@@ -41,10 +41,11 @@ th:
 
     website:
       title: ไซต์ของคุณ
-      pages: pages
+      pages: หน้าเพจ
+      all_pages: หน้าเพจทั้งหมด
       pages_description: "ทุกหน้าในเว็บไซต์ของคุณ"
       media_library: มีเดียไลบรารี
-      media_library_description: "คุณจะพบภาพและเอกสารทั้งหมดของคุณ"
+      media_library_description: "คุณจะพบรูปภาพและเอกสารทั้งหมดของคุณ"
       documents: เอกสาร
       photos: รูปภาพ
 
@@ -59,9 +60,9 @@ th:
       page_part: ส่วนของหน้า
       photos_picker: เลือกรูปภาพ
       photo_picker: เลือกรูปภาพ
-      delete_confirmation: "คุณแน่ใจหรือว่าต้องการลบหน้า <strong>%{subject}</strong>?"
+      delete_confirmation: "คุณแน่ใจหรือไม่ว่าต้องการลบหน้านี้ <strong>%{subject}</strong>?"
       save: บันทึกหน้า
-      concept: concept
+      concept: คอนเซ็ปท์
       show_in_menu: มองไม่เห็น
       skip_to_first_child: ข้ามไปที่หน้าแรก
       invisible_to_search_engines: เว็บไซต์ของคุณไม่สามารถใช้งานได้กับเครื่องมือค้นหา
@@ -74,24 +75,24 @@ th:
     users:
       new: ผู้ใช้ใหม่
       save: บันทึกผู้ใช้
-      delete_confirmation: "คุณแน่ใจหรือไม่ว่าต้องการลบผู้ใช้ <strong>%{user}</strong>?"
-      cannot_be_created: ไม่สามารถสร้างได้
+      delete_confirmation: "คุณแน่ใจหรือไม่ว่าต้องการลบผู้ใช้นี้ <strong>%{user}</strong>?"
+      cannot_be_created: ไม่สามารถบันทึกการสร้างได้
 
     photos:
-      delete_confirmation: "คุณแน่ใจหรือว่าต้องการลบภาพ <strong> นี้ </ strong>?"
-      insert_photos: แทรกรูปภาพ
+      delete_confirmation: "คุณแน่ใจหรือไม่ว่าต้องการลบ <strong> รูปภาพนี้ </strong>?"
+      insert_photos: แทรกหลายรูปภาพ
       select_images: เลือกรูปภาพ
       insert_photo: แทรกรูปภาพ
-      link: "URL ของรูปของคุณ:"
-      cannot_be_created: "ภาพของคุณไม่สามารถประมวลผลได้:"
+      link: "URL รูปภาพของคุณ:"
+      cannot_be_created: "รูปภาพของคุณไม่สามารถประมวลผลได้:"
       upload_image: อัปโหลดรูปภาพ
       organize: จัดระเบียบรูปภาพ
-      done_organizing: เสร็จสิ้นองค์กร
+      done_organizing: เสร็จสิ้นการจัดรูปภาพ
       new_folder: โฟลเดอร์ใหม่
       delete_folder: ลบโฟลเดอร์
 
     wysiwyg:
-      paragraph: Párrafo
+      paragraph: ย่อหน้า
       heading_1: ส่วนหัว 1
       heading_2: ส่วนหัว 2
       heading_3: ส่วนหัว 3
@@ -111,7 +112,7 @@ th:
       social_media: เครือข่ายทางสังคม
       social_media_description: บัญชี Facebook และ Twitter
       social_media_save: บันทึกเครือข่ายสังคมออนไลน์
-      Analytics: Analytics และเครื่องมือค้นหา
+      Analytics: วิเคราะห์และเครื่องมือค้นหา
       analytics_description: เชื่อมโยงบัญชีของคุณเพื่อการวิเคราะห์แบบเรียลไทม์
       analytics_save: บันทึกการตั้งค่า
       domain_name_settings: การกำหนดค่าโดเมน
@@ -128,33 +129,33 @@ th:
   activerecord:
     models:
       spina/page:
-        one: เพจ
-        other: หลายๆหน้า
+        one: หน้าเพจ
+        other: หลายๆหน้าเพจ
       spina/user:
-        one: เพจ
-        other: หลายๆหน้า
+        one: ผู้ใช้
+        other: หลายๆผู้ใช้
       spina/photo:
         one: รูปภาพ
-        other: รูปภาพหลายๆ
+        other: หลายๆรูปภาพ
       spina/attachment:
         one: เอกสาร
-        other: เอกสารหลายๆ
+        other: หลายๆเอกสาร
 
     attributes:
       spina/account:
-        name: ชื่อไซต์
+        name: ชื่อเว็บไซต์
         address: ที่อยู่
         postal_code: รหัสไปรษณีย์
         city: เมือง
         phone: โทรศัพท์
         email: อีเมล
-        kvk_identifier: การค้่า
-        kvk_identifier_description: การค้่า
-        vat_identifier: VAT
-        vat_identifier_description: VAT
+        kvk_identifier: การค้า
+        kvk_identifier_description: คำอธิบายทางการค้า
+        vat_identifier: ภาษีมูลค่าเพิ่ม
+        vat_identifier_description: คำอธิบายภาษีมูลค่าเพิ่ม
         theme: ธีม
-        logo: Logo
-        google_analytics: Google Analytics
+        logo: โลโก้
+        google_analytics: วิเคราะห์ทาง Google
         google_site_verification: ตรวจสอบไซต์
         robots_allowed: ยอมรับ
         facebook: Facebook
@@ -171,18 +172,18 @@ th:
         title_placeholder: ชื่อเรื่องของหน้า
         seo_title: SEO <title>
         seo_title_placeholder: ชื่อนี้ใช้ใน <title> -tag
-        description: Meta description
-        description_description: คำอธิบายนี้จะปรากฏในผลการค้นหา
+        description: คำอธิบาย meta
+        description_description: คำอธิบายนี้จะปรากฏในผลลัพธ์การค้นหา
         description_placeholder: คำอธิบายโดยย่อของหน้าเว็บของคุณ
-        draft: แนวคิด
-        draft_description: เหมาะสำหรับเมื่อหน้าเว็บของคุณยังไม่เสร็จสมบูรณ์
+        draft: การร่าง
+        draft_description: เหมาะสำหรับหน้าเว็บของคุณที่ยังไม่เสร็จสมบูรณ์
         skip_to_first_child: ส่งใหม่
-        skip_to_first_child_description: ส่งต่อไปยังลูกสาวหน้าแรก
-        link_url: เปลี่ยนเส้นทาง
+        skip_to_first_child_description: ส่งต่อไปยังหน้าแรก
+        link_url: เปลี่ยนหน้า
         link_url_description: ส่งต่อไปยัง URL
         link_url_placeholder: เช่น http://www.example.com/
-        show_in_menu: แสดงในการนำทาง
-        show_in_menu_description: "ถ้าหน้านี้ถูกปิดใช้งานจะไม่ปรากฏในการนำทางของคุณ"
+        show_in_menu: แสดงการนำทาง
+        show_in_menu_description: "ถ้าหน้านี้ถูกปิดใช้งานจะไม่ปรากฏการนำทางของคุณ"
         menu_title: ชื่อการนำทาง
         menu_title_placeholder: เว้นว่างไว้เพื่อใช้ชื่อหน้า
         view_template: เทมเพลตของเพจ
@@ -204,33 +205,32 @@ th:
         admin_description: ผู้ดูแลระบบสามารถสร้างผู้ใช้
         role: บทบาท
         last_logged_in: เข้าสู่ระบบครั้งล่าสุด
-      
+
       spina/media_folder:
         name: ชื่อ
 
-      
       spina/navigation:
-      label: ป้ายกำกับ
-      auto_add_pages: เพิ่มหน้าเว็บโดยอัตโนมัติ
-      auto_add_pages_description: เพจใหม่จะถูกเพิ่มลงในการนำทางนี้โดยอัตโนมัติ
-      pages: Pages
-      pages_description: เลือกหน้าเว็บที่คุณต้องการใช้ในการนำทางนี้
-      
+        label: เครื่องหมายป้ายกำกับ
+        auto_add_pages: เพิ่มหน้าเพจโดยอัตโนมัติ
+        auto_add_pages_description: เพจใหม่จะถูกเพิ่มลงในการนำทางนี้โดยอัตโนมัติ
+        pages: หน้าเพจ
+        pages_description: เลือกหน้าเพจที่คุณต้องการใช้ในการนำทางนี้
+
       spina/user:
-        email: Email
+        email: อีเมล
         password: รหัสผ่าน
         name: ชื่อ
-        name_placeholder: Nombre
-        email: Email
-        email_description: อีเมลของคุณต้องไม่ซ้ำใคร
+        name_placeholder: ชื่อ
+        email: อีเมล
+        email_description: อีเมลของคุณต้องไม่ซ้ำ
         password: รหัสผ่าน
-        password_description: ปล่อยให้ว่างเพื่อเก็บรหัสผ่านของคุณ
+        password_description: ปล่อยว่างเพื่อเก็บรหัสผ่านของคุณ
         password_confirmation:  ยืนยันรหัสผ่าน
         admin: ผู้ดูแลระบบ
         user: ผู้ใช้
-        admin_description:  ผู้ดูแลระบบสามารถสร้างผู้ใช้
+        admin_description:  ผู้ดูแลระบบสามารถสร้างผู้ใช้ได้
         role: บทบาท
-        last_logged_in: ป้อนเป็นครั้งสุดท้าย
+        last_logged_in: ป้อนครั้งสุดท้าย
 
   misc:
     messages:
