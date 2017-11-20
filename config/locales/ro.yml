@@ -1,0 +1,225 @@
+ro:
+  spina:
+    cancel: Anulare
+    close: Închide
+    choose_from_library: Alege din bibliotecă
+    edit: Editează
+    save: Salvează
+    delete: Ștergere
+    permanently_delete: Șterge definitiv
+    delete_confirmation: "Sunteți sigur că doriți să ștergeți <strong>%{subject}</strong>?"
+    login: Login
+    preview_website: Previzualizare website
+    search: Caută...
+    ago: acum
+    edit_website: Editează website-ul tău
+    logout: Logout
+    main_menu: Meniu principal
+
+    settings:
+      title: Setări
+      save: Salvează setări
+
+    forgot_password:
+      new: Am uitat parola
+      request: Cere parolă nouă
+      unknown_user: Acest utilizator nu există
+      save: Salvează parola nouă
+      success: Îți poți folosi parola nouă
+      mail_subject: Resetează parola
+      expired: Token-ul de resetare a parolei a expirat
+
+    modal:
+      agree: "Da, sunt sigur"
+      cancel: "Nu, anulare"
+
+    notifications:
+      information: Informație
+      alert: Ups! Ceva nu a mers bine
+      login: Trebuie să vă autentificați întâi
+      wrong_username_or_password: Email-ul sau parola sunt greșite
+
+    website:
+      title: Website-ul tău
+      pages: Pagini
+      all_pages: Toate paginile
+      pages_description: "Toate paginile din website"
+      media_library: Bibliotecă media
+      media_library_description: "Aici găsești toate imaginile și documentele tale"
+      documents: Documente
+      photos: Imagini
+
+    pages:
+      new: Pagină nouă
+      create_page: "%{template} nou"
+      change_order: Schimbă ordinea
+      done_changing_order: Ordine terminată
+      page_content: Conținut
+      page_seo: Motoare de căutare
+      advanced: Avansat
+      page_part: Secțiune pagină
+      photos_picker: Alege imagini
+      photo_picker: Alege imagine
+      delete_confirmation: "Sunteți sigur că doriți ștergerea paginii <strong>%{subject}</strong>?"
+      save: Salvează pagina
+      concept: ciornă
+      show_in_menu: invizibil
+      skip_to_first_child: redirecționare către prima pagină copil
+      invisible_to_search_engines: Website-ul nu este vizibil motoarelor de căutare
+      invisible_to_search_engines_description: Mergeți în preferințe pentru activarea motoarele de căutare.
+      rebuild_materialized_path: Reconstruiți calea
+      materialize_path_confirmation: "Sunteți sigur că doriți să reconstruiți calea pentru această pagină?"
+      saving: Salvare...
+      saved: Pagină salvată
+
+    users:
+      new: Utilizator nou
+      save: Salvare utilizator
+      delete_confirmation: "Sunteți sigur că doriți ștergerea utilizatorului <strong>%{user}</strong>?"
+      cannot_be_created: Utilizatorul nu poate fi salvat
+
+    photos:
+      delete_confirmation: "Sunteți sigur că doriți să ștergeți această <strong>imagine</strong>?"
+      insert_photos: Alege imagini
+      choose_images: Alege imagini
+      insert_photo: Inserează imagine
+      link: "URL-ul imaginii:"
+      cannot_be_created: "Imaginea nu a putut fi procesată:"
+      upload_image: "Încarcă o imagine"
+      organize: Organizează imagini
+      done_organizing: Organizare terminată
+      new_folder: Director nou
+      delete_folder: Ștergere director
+
+    wysiwyg:
+      paragraph: Paragraf
+      heading_1: Subtitlu 1
+      heading_2: Subtitlu 2
+      heading_3: Subtitlu 3
+      quote: Citat
+      insert_link: Inserează link
+
+    preferences:
+      title: Preferințe
+      account: General
+      account_description: Preferințe personale
+      account_save: Salvează preferințe
+      style: Stil
+      style_description: Alege o temă potrivită brand-ului tău
+      style_save: Salvează stiluri
+      users: Utilizatori
+      users_description: Gestionare utilizatori și administratori
+      social_media: Rețele sociale
+      social_media_description: Conturi de Facebook și Twitter
+      social_media_save: Salvează rețelele sociale
+      analytics: Analytics și căutare
+      analytics_description: Conectați-vă contul pentru analytics în timp real
+      analytics_save: Salvează valori
+      domain_name_settings: Setări domeniu
+      domain_name_settings_description: Setează domeniul tău
+
+    attachments:
+      insert: 'Inserează document'
+      insert_multiple: 'Inserează documente'
+
+    media_library:
+      photos: Imagini
+      attachments: Documente
+
+  activerecord:
+    models:
+      spina/page:
+        one: Pagină
+        other: Pagini
+      spina/user:
+        one: Utilizator
+        other: Utilizatori
+      spina/photo:
+        one: Imagine
+        other: Imagini
+      spina/attachment:
+        one: Document
+        other: Documente
+
+    attributes:
+      spina/account:
+        name: Nume website
+        address: Adresă
+        postal_code: Cod poștal
+        city: Oraș
+        phone: Telefon
+        email: Email
+        kvk_identifier: Cod de identificare fiscală
+        kvk_identifier_description: Cod de identificare fiscală
+        vat_identifier: TVA
+        vat_identifier_description: TVA
+        theme: Temă website
+        logo: Logo
+        google_analytics: Google Analytics
+        google_site_verification: Google Site Verification
+        robots_allowed: Vizibl în motoarele de căutare
+        facebook: Facebook
+        twitter: Twitter
+        google_plus: Google+
+
+      spina/attachment:
+        created_at: Creat la
+        name: Nume fișier
+        size: Dimensiune
+
+      spina/page:
+        title: Titlu
+        title_placeholder: Titlul paginii
+        seo_title: SEO <title>
+        seo_title_placeholder: Acest titlu este folosit în tag-ul <title>
+        description: Descriere Meta
+        description_description: Această descriere va apărea în rezultatele căutării
+        description_placeholder: Scurtă descriere a paginii
+        draft: Ciornă
+        draft_description: Potrivit pentru paginile care nu sunt finalizate
+        skip_to_first_child: Redirecționare
+        skip_to_first_child_description: Redirecționează către prima pagină copil
+        link_url: Redirectare pagină
+        link_url_description: Către URL
+        link_url_placeholder: "ex: http://www.example.com/"
+        show_in_menu: Arată în navigare
+        show_in_menu_description: "Când nu este setat, pagina nu va fi afișată in navigare"
+        menu_title: Titlul navigării
+        menu_title_placeholder: Lăsați necompletat pentru a folosi titlul paginii
+        view_template: Template pagină
+        ancestry: Pagina părinte
+        no_parent: Fără părinte
+
+      spina/media_folder:
+        name: Nume
+
+      spina/navigation:
+        label: Etichetă
+        auto_add_pages: Adaugă automat pagini
+        auto_add_pages_description: Paginile noi sunt adăugate automat acestei navigări
+        pages: Pagini
+        pages_description: Selectați paginile pe care le doriți în această navigare
+
+      spina/user:
+        name: Nume
+        name_placeholder: Nume
+        email: Email
+        email_description: Email-ul trebuie să fie unic
+        password: Parolă
+        password_description: Lăsați necompletat pentru a păstra parola
+        password_confirmation: Confirmare parolă
+        admin: Administrator
+        user: Utilizator
+        admin_description: Administratorii pot crea utilizatori
+        role: Rol
+        last_logged_in: Ultima dată autentificat
+
+  misc:
+    messages:
+      zero: "0 mesaje noi"
+      one: "1 mesaj nou"
+      other: "%{count} mesaje noi"
+
+  languages:
+    en: Engleză
+    nl: Olandeză
