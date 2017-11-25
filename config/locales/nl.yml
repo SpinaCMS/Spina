@@ -74,6 +74,7 @@ nl:
       insert_photo: Afbeelding invoegen
       link: "De link naar de afbeelding is:"
       cannot_be_created: "Foto kon niet worden verwerkt:"
+      delete: Verwijderen
 
     wysiwyg:
       paragraph: Paragraaf

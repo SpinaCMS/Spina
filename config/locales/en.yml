@@ -90,6 +90,7 @@ en:
       done_organizing: Done organizing
       new_folder: New folder
       delete_folder: Delete folder
+      delete: Delete
 
     wysiwyg:
       paragraph: Paragraph
