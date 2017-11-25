@@ -1,5 +1,7 @@
 source "http://rubygems.org"
 
+gem 'rails', git: 'https://github.com/rails/rails.git', branch: :master
+
 gemspec
 
 group :development, :test do

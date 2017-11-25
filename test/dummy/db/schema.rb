@@ -10,10 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 8) do
+ActiveRecord::Schema.define(version: 2017_11_25_205502) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "active_storage_attachments", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "record_type", null: false
+    t.bigint "record_id", null: false
+    t.bigint "blob_id", null: false
+    t.datetime "created_at", null: false
+    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
+    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+  end
+
+  create_table "active_storage_blobs", force: :cascade do |t|
+    t.string "key", null: false
+    t.string "filename", null: false
+    t.string "content_type"
+    t.text "metadata"
+    t.bigint "byte_size", null: false
+    t.string "checksum", null: false
+    t.datetime "created_at", null: false
+    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
 
   create_table "spina_accounts", id: :serial, force: :cascade do |t|
     t.string "name"
@@ -68,6 +89,7 @@ ActiveRecord::Schema.define(version: 8) do
   end
 
   create_table "spina_lines", id: :serial, force: :cascade do |t|
+    t.string "content"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -129,12 +151,16 @@ ActiveRecord::Schema.define(version: 8) do
   end
 
   create_table "spina_pages", id: :serial, force: :cascade do |t|
+    t.string "title"
+    t.string "menu_title"
+    t.string "description"
     t.boolean "show_in_menu", default: true
     t.string "slug"
     t.boolean "deletable", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
+    t.string "seo_title"
     t.boolean "skip_to_first_child", default: false
     t.string "view_template"
     t.string "layout_template"
@@ -142,6 +168,7 @@ ActiveRecord::Schema.define(version: 8) do
     t.string "link_url"
     t.string "ancestry"
     t.integer "position"
+    t.string "materialized_path"
     t.boolean "active", default: true
   end
 
@@ -160,8 +187,6 @@ ActiveRecord::Schema.define(version: 8) do
     t.string "file"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "media_folder_id"
-    t.index ["media_folder_id"], name: "index_spina_photos_on_media_folder_id"
   end
 
   create_table "spina_rewrite_rules", id: :serial, force: :cascade do |t|
@@ -215,6 +240,7 @@ ActiveRecord::Schema.define(version: 8) do
   end
 
   create_table "spina_texts", id: :serial, force: :cascade do |t|
+    t.text "content"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -227,8 +253,6 @@ ActiveRecord::Schema.define(version: 8) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.datetime "last_logged_in"
-    t.string "password_reset_token"
-    t.datetime "password_reset_sent_at"
   end
 
 end
