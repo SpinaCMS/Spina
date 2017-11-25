@@ -1,1 +1,1 @@
-Rails.application.config.assets.precompile += %w(spina/spina.png spina/admin/spina.png spina/spina_small.png spina/media_folder_placeholder.png)
+Rails.application.config.assets.precompile += %w(spina/spina.png spina/spina-large.png spina/media_folder_placeholder.png)
