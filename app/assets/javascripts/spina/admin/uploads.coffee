@@ -12,7 +12,7 @@ $.fn.uploadPhoto = ->
         $(this).find('.customfile').addClass('loading')
         data.submit()
       else
-        alert("#{file.name} is geen gif-, jpeg- of png-bestand")
+        alert("#{file.name} is not gif-, jpeg- or png- file")
     done: (e, data) ->
       $(this).find('.customfile').removeClass('loading')
 
@@ -30,6 +30,6 @@ $.fn.uploadDocument = ->
         $(this).find('.customfile').addClass('loading')
         data.submit()
       else
-        alert("#{file.name} is geen pdf-, word-, txt- of rtf-bestand")
+        alert("#{file.name} is not pdf-, word-, txt- or rtf- file")
     done: (e, data) ->
       $(this).find('.customfile').removeClass('loading')

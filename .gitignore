@@ -12,3 +12,4 @@ test/dummy/app/assets/fonts/
 test/dummy/config/application.yml
 coverage/*
 *.gemfile.lock
+.idea/*
