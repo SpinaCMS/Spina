@@ -7,6 +7,10 @@
     name:           'text',
     title:          'Text',
     partable_type:  'Spina::Text'
+  }, {
+    name: 'image',
+    title: 'Image',
+    partable_type: 'Spina::Image'  
   }]
 
   theme.view_templates = [{
@@ -18,7 +22,7 @@
     title:        'Default',
     description:  'A simple page',
     usage:        'Use for your content',
-    page_parts:   ['text']
+    page_parts:   ['image', 'text']
   }]
 
   theme.custom_pages = [{

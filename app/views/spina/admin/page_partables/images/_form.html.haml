@@ -1,0 +1,14 @@
+.horizontal-form-label
+  = f.object.title
+.horizontal-form-content
+  = link_to spina.image_select_admin_images_path(f.object_name, selected_image_id: f.object.page_partable.try(:id)), remote: true, class: 'media_picker clearfix' do
+    .placeholder
+      %span.button.button-small.button-round
+        %i.icon.icon-dots
+        =t 'spina.pages.image_picker'
+
+    - if f.object.page_partable.file.attached?
+      .image
+        = image_tag f.object.page_partable.file.variant(resize: "150x150")
+
+    = f.hidden_field :page_partable_id

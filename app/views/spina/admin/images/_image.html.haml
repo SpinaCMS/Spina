@@ -1,0 +1,14 @@
+.item
+  .overlay
+    = link_to spina.admin_image_path(image), method: :delete, class: 'icon-only delete-photo-link', data: {confirm: t('spina.images.delete_confirmation')} do
+      = t('spina.images.delete')
+    %span.photo-name= truncate(image.name, length: 125)
+  = radio_button_tag :photo_id, image.id
+  = check_box_tag 'photo_ids[]', image.id
+  - if image.file.attached?
+    hoi
+    -#= image_tag image.file.variant(resize: "150x150"), id: "photo_#{image.id}"
+
+- if image.file.attached?
+  = image_tag image.file.variant(resize: "150x150")
+

@@ -1,8 +1,8 @@
 source "http://rubygems.org"
 
-gem 'rails', git: 'https://github.com/rails/rails.git', branch: :master
-
 gemspec
+
+gem 'bootsnap', require: false
 
 group :development, :test do
   gem 'rails-controller-testing'
@@ -13,4 +13,5 @@ group :development, :test do
   gem 'letter_opener'
   gem 'pry-rails'
   gem 'mocha'
+  gem 'listen'
 end

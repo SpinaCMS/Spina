@@ -1,5 +1,4 @@
-Spina::Engine.routes.draw do
-
+Spina::Engine.routes.draw do    
   # Backend
   namespace :admin, path: Spina.config.backend_path do
     root to: "pages#index"
@@ -57,6 +56,13 @@ Spina::Engine.routes.draw do
         post 'insert_photo_collection/:page_part_id' => 'photos#insert_photo_collection', as: :insert_photo_collection
         get 'folder/:id' => 'photos#media_folder', as: :media_folder
         put 'folder/:id' => 'photos#add_to_media_folder', as: :add_to_media_folder
+      end
+    end
+
+    resources :images do
+      collection do
+        get 'image_select/:page_part_id' => 'images#photo_select', as: :image_select
+        post 'insert_image' => 'images#insert_image', as: :insert_image
       end
     end
   end
