@@ -29,6 +29,8 @@ module Spina
     # Globalize different languages
     test "view homepage in another language" do
       get "/nl"
+      puts Spina::Page::Translation.last.inspect
+      Rails.logger.info Spina::Page::Translation.last.inspect
       assert_select 'h1', 'Beginpagina'
     end
 
