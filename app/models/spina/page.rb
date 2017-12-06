@@ -48,7 +48,7 @@ module Spina
     end
 
     def save_children
-      self.children.each { |child| child.save }
+      self.children.each(&:save)
     end
 
     def menu_title
