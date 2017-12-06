@@ -1,2 +1,4 @@
 %h1= @page.title
+= Spina::Image.last.file.service_url
+= image_tag Spina::Image.last.file
 = @page.content(:text).try(:html_safe)

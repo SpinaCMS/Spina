@@ -1,5 +1,7 @@
 module Spina
   class User < ApplicationRecord
+    self.table_name = 'spina_users'
+
     has_secure_password
     has_secure_token :password_reset_token
 

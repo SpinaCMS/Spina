@@ -6,7 +6,7 @@ module Spina
       layout "spina/admin/media_library"
 
       def index
-        add_breadcrumb I18n.t('spina.website.images'), spina.admin_images_path
+        add_breadcrumb I18n.t('spina.website.images'), admin_images_path
         @media_folders = MediaFolder.order(:name)
         @images = Image.sorted.where(media_folder_id: nil).with_attached_file.page(params[:page])
         @image = Image.new
@@ -15,13 +15,13 @@ module Spina
       def create
         image = Image.create
         image.file.attach(params[:image][:file])
-        redirect_to spina.admin_images_path
+        redirect_to admin_images_path
       end
 
       private
 
         def set_breadcrumbs
-          add_breadcrumb I18n.t('spina.website.media_library'), spina.admin_media_library_path
+          add_breadcrumb I18n.t('spina.website.media_library'), admin_media_library_path
         end
 
     end

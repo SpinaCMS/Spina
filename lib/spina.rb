@@ -1,4 +1,5 @@
 require 'spina/engine'
+require 'spina/routing'
 require 'spina/plugin'
 require 'spina/theme'
 

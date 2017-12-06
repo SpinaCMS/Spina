@@ -4,14 +4,14 @@
       = icon('random')
       = t('spina.photos.organize')
 
-  = link_to spina.new_admin_media_folder_path, class: 'button button-primary', style: 'margin-right: 0; margin-left: 4px', data: {remote: true} do
+  = link_to new_admin_media_folder_path, class: 'button button-primary', style: 'margin-right: 0; margin-left: 4px', data: {remote: true} do
     = icon('plus')
     =t 'spina.photos.new_folder'
 
 .gallery-container
   .gallery
     .item
-      = form_with model: [spina, :admin, @image], html: {multipart: true} do |f|
+      = form_with model: [:admin, @image], html: {multipart: true} do |f|
         = f.submit
         = hidden_field_tag :media_library, value: true
         -#= f.label :file, t('spina.photos.upload_photo')

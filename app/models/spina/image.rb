@@ -1,5 +1,7 @@
 module Spina
   class Image < ApplicationRecord
+    self.table_name = 'spina_images'
+
     belongs_to :media_folder, optional: true
 
     has_one_attached :file
