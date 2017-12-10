@@ -15,7 +15,7 @@
         = f.submit
         = hidden_field_tag :media_library, value: true
         -#= f.label :file, t('spina.photos.upload_photo')
-        = f.file_field :files, direct_upload: true, multiple: true, data: {direct_upload_url: main_app.rails_direct_uploads_url}
+        = f.file_field :files, multiple: true, data: {direct_upload_url: main_app.rails_direct_uploads_url}
 
     - @media_folders.each do |media_folder|
       = link_to media_folder_admin_photos_path(media_folder), class: 'item media-folder', data: {add_to_media_folder_url: add_to_media_folder_admin_photos_url(media_folder)} do
