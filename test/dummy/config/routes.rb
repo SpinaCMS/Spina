@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
-  # mount Spina::Engine => '/'
-  spina_routes path: "/"
+  root "dummy#show"
+  resources :images
+
+  mount Spina::Engine => '/'
 end

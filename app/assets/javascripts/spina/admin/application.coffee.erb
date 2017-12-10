@@ -5,18 +5,16 @@
 
 # ActiveStorage
 
-#= require activestorage
-
 # Turbolinks
 
 #= require turbolinks
+
+#= require activestorage
 
 # jQuery plugins
 
 #= require spina/jquery.ui
 #= require spina/jquery.nestable
-#= require spina/jquery.customfileinput
-#= require jquery-fileupload/basic
 
 # Misc plugins
 
@@ -105,16 +103,6 @@ ready = ->
   if header = document.getElementById('header')
     headerHeight = header.getBoundingClientRect().height
     $('section#main').css({paddingTop: headerHeight})
-
-  # Custom file
-  $('input[type="file"][data-customfileinput]:visible').each ->
-    $(this).customFileInput()
-
-  # Image upload
-  $('.new_photo').uploadPhoto()
-
-  # Document upload
-  $('.new_document').uploadDocument()
 
   # Login wrapper
   $('#login_wrapper').css('margin-top', $(document).innerHeight() / 8)

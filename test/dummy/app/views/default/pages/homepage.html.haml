@@ -1,4 +1,3 @@
 %h1= @page.title
-= Spina::Image.last.file.service_url
-= image_tag Spina::Image.last.file
+= url_for Spina::Image.last.file.variant(resize: "100x100")
 = @page.content(:text).try(:html_safe)

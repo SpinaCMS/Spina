@@ -1,0 +1,8 @@
+!!!
+%head
+  = javascript_include_tag "spina/admin/application"
+
+%body
+  = form_with model: Spina::Image.new do |f|
+    = f.submit
+    = f.file_field :file, direct_upload: true, multiple: true

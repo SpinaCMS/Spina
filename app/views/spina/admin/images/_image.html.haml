@@ -6,12 +6,5 @@
   = radio_button_tag :photo_id, image.id
   = check_box_tag 'photo_ids[]', image.id
   - if image.file.attached?
-    hoi
-    -#= image_tag image.file.variant(resize: "150x150"), id: "photo_#{image.id}"
-
-- if image.file.attached?
-
-  -#= image_tag main_app.url_for()
-  = polymorphic_url([main_app, image.file.variant(resize: '100x100')])
-
-  -#= image_tag image.file.variant(resize: '100x100')
+    - variant = image.file.variant(resize: '300x300')
+    = image_tag main_app.rails_blob_variation_path(variant.blob.signed_id, variant.variation.key, variant.blob.filename), id: "photo_#{image.id}"

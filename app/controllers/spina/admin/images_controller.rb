@@ -13,9 +13,17 @@ module Spina
       end
 
       def create
-        image = Image.create
-        image.file.attach(params[:image][:file])
+        params[:image][:files].each do |file|
+          image = Image.create
+          image.file.attach(file)
+        end
         redirect_to admin_images_path
+      end
+
+      def destroy
+        @image = Image.find(params[:id])
+        @image.destroy
+        redirect_back fallback_location: spina.admin_images_url
       end
 
       private

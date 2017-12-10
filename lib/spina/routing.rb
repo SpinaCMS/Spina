@@ -3,6 +3,8 @@ class ActionDispatch::Routing::Mapper
   def spina_routes(path: "/")
     # get "/rails/active_storage/blobs/:signed_id/*filename" => "active_storage/blobs#show", as: :rails_service_blob#, internal: true
 
+    resolve("ActiveStorage::Variant") { |variant, options| main_app.route_for(:rails_variant, variant, options) }
+    
     scope module: :spina, as: :spina do
       namespace :admin, path: Spina.config.backend_path do
         root to: "pages#index"

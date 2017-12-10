@@ -1,3 +1,9 @@
+$(document).on 'direct-upload:start', 'input', (e) ->
+  console.log("Uploadedetetet!")
+
+$(document).on 'direct-uploads:end', 'form', (e) ->
+  console.log("KLAAR")
+
 $(document).on 'click', '.organize-switch', (e) ->
   $items = $('.gallery .infinite-scroll .item')
   disabled = $items.draggable('option', 'disabled')
