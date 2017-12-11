@@ -23,6 +23,10 @@
     name: 'structure',
     title: "Structure",
     partable_type: "Spina::Structure"
+  }, {
+    name: 'attachment',
+    title: "Attachment",
+    partable_type: "Spina::Attachment"
   }]
 
   theme.structures = [{
@@ -51,7 +55,7 @@
     title:        'Default',
     description:  'A simple page',
     usage:        'Use for your content',
-    page_parts:   ['image', 'image_collection', 'text', 'line', 'structure']
+    page_parts:   ['image', 'image_collection', 'text', 'line', 'structure', 'attachment']
   }]
 
   theme.custom_pages = [{

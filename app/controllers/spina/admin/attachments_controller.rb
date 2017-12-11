@@ -7,12 +7,15 @@ module Spina
 
       def index
         add_breadcrumb I18n.t('spina.website.documents'), spina.admin_attachments_path
-        @attachments = Attachment.file_attached.sorted
-        @attachment = Attachment.new
+        @attachments = Attachment.sorted
       end
 
       def create
-        @attachment = Attachment.create(attachment_params)
+        @attachments = params[:attachment][:files].map do |file|
+          attachment = Attachment.create(attachment_params)
+          attachment.file.attach(file)
+          attachment
+        end
       end
 
       def destroy
@@ -22,9 +25,12 @@ module Spina
       end
 
       def select
-        @selected_attachment_id = Attachment.find_by(id: params[:selected_attachment_id]).try(:id)
-        @attachments = Attachment.order_by_ids(@selected_attachment_id).file_attached.sorted
-        @attachment = Attachment.new
+        @attachments = Attachment.sorted
+        
+        if params[:selected_ids].present?
+          ids = params[:selected_attachment_id]
+          @attachments = @attachments.order(Arel.sql("CASE WHEN id IN(#{ids}) THEN 0 ELSE 1 END"))
+        end
       end
 
       def insert
@@ -33,7 +39,7 @@ module Spina
 
       def select_collection
         @selected_attachment_ids = Attachment.where(id: params[:selected_attachment_ids]).ids
-        @attachments = Attachment.order_by_ids(@selected_attachment_ids).file_attached.sorted
+        @attachments = Attachment.order_by_ids(@selected_attachment_ids).sorted
         @attachment = Attachment.new
       end
 
