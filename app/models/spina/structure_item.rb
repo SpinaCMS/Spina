@@ -8,6 +8,8 @@ module Spina
 
     scope :sorted_by_structure, -> { order(:position) }
 
+    after_save -> { structure_parts.each(&:save) }
+
     validates_presence_of :position
     accepts_nested_attributes_for :structure_parts, allow_destroy: true
 

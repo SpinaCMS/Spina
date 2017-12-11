@@ -9,6 +9,8 @@ module Spina
 
       validates :name, :title, :partable_type, presence: true
 
+      after_save -> { partable.try(:save) }
+
       scope :sorted, -> { order(:position) }
     end
 

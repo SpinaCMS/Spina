@@ -10,10 +10,16 @@ module Spina
       FactoryGirl.create :page_translation,
         spina_page_id: @homepage.id, title: 'Beginpagina',
         materialized_path: '/nl', locale: 'nl'
+      
       @about_page = FactoryGirl.create :about_page
       FactoryGirl.create :page_translation,
         spina_page_id: @about_page.id, title: 'Over ons',
         materialized_path: '/nl/over-ons', locale: 'nl'
+
+      @demo_page = Spina::Page.find_by(name: 'demo')
+      FactoryGirl.create :page_translation,
+        spina_page_id: @demo_page.id, title: 'Demo',
+        materialized_path: '/nl/demo', locale: 'nl'
     end
 
     test "view homepage" do
