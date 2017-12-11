@@ -13,6 +13,7 @@ module Spina
     validates :name, uniqueness: {scope: :structure_item_id}
 
     alias_attribute :partable, :structure_partable
+    alias_attribute :partable_id, :structure_partable_id
     alias_attribute :partable_type, :structure_partable_type
     alias_method :structure_partable_attributes=, :partable_attributes=
   end

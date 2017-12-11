@@ -44,6 +44,9 @@ module Spina
         @page = Page.find(params[:id])
         respond_to do |format|
           if @page.update_attributes(page_params)
+            @page.page_parts.each do |page_part|
+              page_part.partable.try(:save)
+            end
             add_breadcrumb @page.title
             @page.touch
             I18n.locale = I18n.default_locale

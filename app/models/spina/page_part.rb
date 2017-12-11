@@ -11,6 +11,7 @@ module Spina
     validates :name, uniqueness: {scope: :page_id}
 
     alias_attribute :partable, :page_partable
+    alias_attribute :partable_id, :page_partable_id
     alias_attribute :partable_type, :page_partable_type
     alias_method :page_partable_attributes=, :partable_attributes=
 

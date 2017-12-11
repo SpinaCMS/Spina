@@ -15,6 +15,31 @@
     name: 'image_collection',
     title: 'Image collection',
     partable_type: 'Spina::ImageCollection'
+  }, {
+    name: 'line',
+    title: 'Line',
+    partable_type: 'Spina::Line'  
+  }, {
+    name: 'structure',
+    title: "Structure",
+    partable_type: "Spina::Structure"
+  }]
+
+  theme.structures = [{
+    name: 'structure',
+    structure_parts: [{
+      name:           'title',
+      title:          'Title',
+      partable_type:  'Spina::Line'
+    }, {
+      name:           'description',
+      title:          'Description',
+      partable_type:  'Spina::Text'
+    }, {
+      name: 'photo',
+      title: 'Photo',
+      partable_type: 'Spina::Image'
+    }]
   }]
 
   theme.view_templates = [{
@@ -26,7 +51,7 @@
     title:        'Default',
     description:  'A simple page',
     usage:        'Use for your content',
-    page_parts:   ['image', 'image_collection', 'text']
+    page_parts:   ['image', 'image_collection', 'text', 'line', 'structure']
   }]
 
   theme.custom_pages = [{
