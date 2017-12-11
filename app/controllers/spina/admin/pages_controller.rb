@@ -50,6 +50,9 @@ module Spina
             format.html { redirect_to spina.edit_admin_page_url(@page, params: {locale: @locale}), flash: {success: t('spina.pages.saved')} }
             format.js
           else
+            50.times do
+              Rails.logger.info @page.errors.inspect
+            end
             format.html do
               @page_parts = @page.view_template_page_parts(current_theme).map { |part| @page.part(part) }
               render :edit, layout: 'spina/admin/admin'
