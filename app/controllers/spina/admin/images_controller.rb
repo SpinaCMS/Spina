@@ -25,6 +25,12 @@ module Spina
         redirect_back fallback_location: spina.admin_images_url
       end
 
+      def add_to_media_folder
+        @media_folder = MediaFolder.find(params[:id])
+        @media_folder.images << Image.find(params[:image_id])
+        render json: @media_folder
+      end
+
       private
 
         def set_breadcrumbs

@@ -17,15 +17,7 @@
         = f.label :file, t('spina.images.upload')
         = f.file_field :files, multiple: true, data: {direct_upload_url: main_app.rails_direct_uploads_url, customfileinput: true}
 
-    - @media_folders.each do |media_folder|
-      = link_to media_folder_admin_photos_path(media_folder), class: 'item media-folder', data: {add_to_media_folder_url: add_to_media_folder_admin_photos_url(media_folder)} do
-        .media-folder-thumbnail{data: {badge: media_folder.photos.count}}
-          - if media_folder.photos.any?
-            = image_tag media_folder.photos.last.file.thumb
-          - else
-            = image_tag 'spina/media_folder_placeholder.png'
-          .media-folder-shadow
-        .media-folder-name= media_folder.name
+    = render partial: 'spina/admin/media_folders/media_folder', collection: @media_folders
 
     .gallery-prepend-image
       .infinite-scroll
