@@ -1,0 +1,4 @@
+<% @images.each do |image| %>
+  $item = $("<%=j render partial: 'spina/admin/images/image', object: image %>");
+  $(".gallery-prepend-image .infinite-scroll").prepend($item);
+<% end %>

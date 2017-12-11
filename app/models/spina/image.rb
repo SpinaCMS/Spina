@@ -1,7 +1,5 @@
 module Spina
   class Image < ApplicationRecord
-    self.table_name = 'spina_images'
-
     belongs_to :media_folder, optional: true
 
     has_one_attached :file
@@ -12,7 +10,7 @@ module Spina
     scope :sorted, -> { order('created_at DESC') }
 
     def name
-      "filename"
+      file.filename.to_s
     end
 
     def content

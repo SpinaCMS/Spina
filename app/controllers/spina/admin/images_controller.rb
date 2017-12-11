@@ -13,11 +13,11 @@ module Spina
       end
 
       def create
-        params[:image][:files].each do |file|
+        @images = params[:image][:files].map do |file|
           image = Image.create
           image.file.attach(file)
+          image
         end
-        redirect_to admin_images_path
       end
 
       def destroy

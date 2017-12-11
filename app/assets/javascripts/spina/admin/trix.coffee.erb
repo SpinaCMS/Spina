@@ -31,7 +31,7 @@ Trix.config.blockAttributes = $.extend Trix.config.blockAttributes, {
 class Spina.TrixAttachment
   @photoSelect: (e) ->
     editor_id = $(this).closest('trix-toolbar').data('trix-editor-id')
-    # $.get("Spina::Engine.routes.url_helpers.trix_select_admin_photos_path('')/#{editor_id}")
+    $.get("Spina::Engine.routes.url_helpers.trix_select_admin_photos_path('')/#{editor_id}")
 
   @photoInsert: (e, url) ->
     this.editor.insertHTML "<img src='#{ url }' />"

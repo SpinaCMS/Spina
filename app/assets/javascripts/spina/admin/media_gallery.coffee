@@ -1,8 +1,12 @@
-$(document).on 'direct-upload:start', 'input', (e) ->
-  console.log("Uploadedetetet!")
+$(document).on 'direct-uploads:start', 'form', (e) ->
+  $(this).find('.customfile').addClass('loading')
 
 $(document).on 'direct-uploads:end', 'form', (e) ->
-  console.log("KLAAR")
+  $(this).find('.customfile').removeClass('loading')
+
+$(document).on 'change', 'input[type="file"]', (e) ->
+  $form = $(this).parents('form')
+  $form.find('input[type="submit"]').click()
 
 $(document).on 'click', '.organize-switch', (e) ->
   $items = $('.gallery .infinite-scroll .item')

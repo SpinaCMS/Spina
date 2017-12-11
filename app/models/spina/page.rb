@@ -1,7 +1,5 @@
 module Spina
   class Page < ApplicationRecord
-    self.table_name = 'spina_pages'
-
     include Partable
 
     # Stores the old path when generating a new materialized_path

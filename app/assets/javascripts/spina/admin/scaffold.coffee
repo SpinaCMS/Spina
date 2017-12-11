@@ -1,46 +1,3 @@
-# jQuery
-
-#= require jquery
-#= require jquery_ujs
-
-# ActiveStorage
-
-# Turbolinks
-
-#= require turbolinks
-
-#= require activestorage
-
-# jQuery plugins
-
-#= require spina/jquery.ui
-#= require spina/jquery.nestable
-
-# Misc plugins
-
-#= require spina/sortable
-#= require spina/trix
-
-# Own code
-
-#= require ./switch
-#= require ./modal
-#= require ./tabs
-#= require ./forms
-#= require ./dropdown
-#= require ./galleryselect
-#= require ./uploads
-#= require ./navigation
-#= require ./notifications
-#= require ./media_gallery
-
-#= require ./account
-#= require ./confirm_delete
-#= require ./pages
-
-#= require ./trix
-#= require ./infinite_scroll
-
 # Scaffold
 $(document).on 'click', '.table-clickable tbody tr', (e) ->
   $row = $(this).closest('tr')
@@ -95,8 +52,6 @@ $(document).on 'change', '.dd', ->
   sort_url = $(this).data('sort-url')
   $.post sort_url, { list: serialized }
 
-# Datatables
-
 ready = ->
 
   # Set paddingTop for section#main
@@ -106,6 +61,10 @@ ready = ->
 
   # Login wrapper
   $('#login_wrapper').css('margin-top', $(document).innerHeight() / 8)
+
+  # Custom file
+  $('input[type="file"][data-customfileinput]:visible').each ->
+    $(this).customFileInput()
 
   $(".structure-form-menu ul").sortable
     handle: '.sortable-handle'
