@@ -1,6 +1,6 @@
 .modal.modal-large
   %section
-    .gallery-select.gallery
+    .gallery-select.gallery{data: {multiselect: defined?(multiple) && multiple}}
       .item.item-small.item-uploader
         = form_with model: [:admin, Spina::Image.new], class: 'new_image' do |f|
           = f.submit style: 'display: none'
@@ -9,9 +9,20 @@
 
       = form_with url: admin_media_picker_path, class: 'gallery-prepend-image' do
         = hidden_field_tag :hidden_field_id, params[:hidden_field_id]
+        = check_box_tag :multiple, true, defined?(multiple) && multiple, style: 'display: none'
 
         .infinite-scroll
           = render partial: 'spina/admin/images/image', collection: @images
 
         .infinite-pagination= link_to_next_page @images, 'Next', params: params, remote: true
 
+        - if defined?(multiple) && multiple
+          .gallery-select-action-bar
+            .pull-right
+              = link_to t('spina.cancel'), "#", class: 'button button-link', data: {dismiss: 'modal'}
+              = button_tag type: 'submit', class: 'button button-primary button-large', style: 'margin-bottom: 0px' do
+                = icon('plus')
+                = t('spina.images.choose_images')
+                %span.gallery-select-counter
+                  - if params[:selected_ids].try(:any?)
+                    (#{ params[:selected_ids].count })

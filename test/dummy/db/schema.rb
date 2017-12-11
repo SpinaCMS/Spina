@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2017_12_04_143830) do
+ActiveRecord::Schema.define(version: 2017_12_11_125040) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,6 +66,19 @@ ActiveRecord::Schema.define(version: 2017_12_04_143830) do
     t.string "file"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "spina_image_collections", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "spina_image_collections_images", id: :serial, force: :cascade do |t|
+    t.integer "image_collection_id"
+    t.integer "image_id"
+    t.integer "position"
+    t.index ["image_collection_id"], name: "index_spina_image_collections_images_on_image_collection_id"
+    t.index ["image_id"], name: "index_spina_image_collections_images_on_image_id"
   end
 
   create_table "spina_images", force: :cascade do |t|

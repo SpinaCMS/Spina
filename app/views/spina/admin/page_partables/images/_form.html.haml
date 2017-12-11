@@ -1,7 +1,7 @@
 .horizontal-form-label
   = f.object.title
 .horizontal-form-content
-  = link_to admin_media_picker_path(hidden_field_id: "page_page_parts_attributes_0_page_partable_id"), remote: true, class: 'media_picker clearfix' do
+  = link_to admin_media_picker_path(selected_ids: [f.object.page_partable_id], hidden_field_id: "page_page_parts_attributes_0_page_partable_id"), remote: true, class: 'media_picker clearfix' do
     .placeholder
       %span.button.button-small.button-round
         %i.icon.icon-dots

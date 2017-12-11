@@ -10,8 +10,8 @@ ready = ->
   $('.sortable-grid').sortable().bind 'sortupdate', (e) ->
     position_array = []
     $(e.target).find('li.image').each (index) ->
-      position_array.push $(this).data('photo-id')
-    $(e.target).parents('.horizontal-form-content').find('.photo-positions').val(position_array.join(","))
+      position_array.push $(this).data('image-id')
+    $(e.target).parents('.horizontal-form-content').find('.image-positions').val(position_array.join(","))
 
   $('.structure-form-menu ul').sortable().bind 'sortupdate', (e) ->
     $(e.target).find('li').each (index) ->

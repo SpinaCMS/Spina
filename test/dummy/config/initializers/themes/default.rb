@@ -11,6 +11,10 @@
     name: 'image',
     title: 'Image',
     partable_type: 'Spina::Image'  
+  }, {
+    name: 'image_collection',
+    title: 'Image collection',
+    partable_type: 'Spina::ImageCollection'
   }]
 
   theme.view_templates = [{
@@ -22,7 +26,7 @@
     title:        'Default',
     description:  'A simple page',
     usage:        'Use for your content',
-    page_parts:   ['image', 'text']
+    page_parts:   ['image', 'image_collection', 'text']
   }]
 
   theme.custom_pages = [{

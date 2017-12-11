@@ -8,6 +8,7 @@ module Spina
     has_many :structure_parts, as: :structure_partable
 
     scope :sorted, -> { order('created_at DESC') }
+    scope :sorted_by_image_collection, -> { order('position') }
 
     def name
       file.filename.to_s
