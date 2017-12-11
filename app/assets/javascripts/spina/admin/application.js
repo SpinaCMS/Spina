@@ -30,7 +30,6 @@
 //= require ./forms
 //= require ./dropdown
 //= require ./galleryselect
-//= require ./uploads
 //= require ./navigation
 //= require ./notifications
 //= require ./media_gallery

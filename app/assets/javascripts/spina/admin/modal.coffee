@@ -47,5 +47,7 @@ showModal = (element) ->
   $('#overlay').fadeIn(400)
   modal.show()
 
+  modal.find('input[type="file"][data-customfileinput]').customFileInput()
+
   $('body').addClass('overlay')
   return false

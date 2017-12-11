@@ -94,6 +94,9 @@ en:
 
     images:
       delete_confirmation: "Are you sure you want to delete this <strong>image</strong>?"
+      upload: Upload images
+      choose_images: Choose images
+      choose_image: Choose image
 
     wysiwyg:
       paragraph: Paragraph

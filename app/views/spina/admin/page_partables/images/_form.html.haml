@@ -1,14 +1,14 @@
 .horizontal-form-label
   = f.object.title
 .horizontal-form-content
-  = link_to spina.image_select_admin_images_path(f.object_name, selected_image_id: f.object.page_partable.try(:id)), remote: true, class: 'media_picker clearfix' do
+  = link_to admin_media_picker_path(hidden_field_id: "page_page_parts_attributes_0_page_partable_id"), remote: true, class: 'media_picker clearfix' do
     .placeholder
       %span.button.button-small.button-round
         %i.icon.icon-dots
-        =t 'spina.pages.image_picker'
+        =t 'spina.images.choose_image'
 
     - if f.object.page_partable.file.attached?
       .image
-        = image_tag f.object.page_partable.file.variant(resize: "150x150")
+        = image_tag variant(f.object.page_partable.file, resize: "300x300^", crop: "300x300+0+0")
 
-    = f.hidden_field :page_partable_id
+    = f.hidden_field :page_partable_id, data: {hidden_field_id: "page_page_parts_attributes_0_page_partable_id"}

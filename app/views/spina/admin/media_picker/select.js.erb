@@ -1,0 +1,11 @@
+var hidden_input = $("input[data-hidden-field-id='<%= j params[:hidden_field_id] %>']");
+hidden_input.parents('.media_picker').find('.image').remove();
+
+<% if @image.present? %>
+  hidden_input.parents('.media_picker').append("<%=j render partial: 'spina/admin/images/image', object: @image, locals: {simple: true} %>");
+  console.log(hidden_input);
+  hidden_input.val("<%= @image.id %>");
+<% else %>
+  hidden_input.parents('.media_picker').append("<input type='hidden' type='checkbox' name='<%= j params[:page_part_id] %>[_destroy]' value='1' />")
+<% end %>
+$.hideModal();

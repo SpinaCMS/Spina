@@ -1,0 +1,17 @@
+.modal.modal-large
+  %section
+    .gallery-select.gallery
+      .item.item-small.item-uploader
+        = form_with model: [:admin, Spina::Image.new], class: 'new_image' do |f|
+          = f.submit style: 'display: none'
+          = f.label :file, t('spina.images.upload')
+          = f.file_field :files, multiple: true, data: {direct_upload_url: main_app.rails_direct_uploads_url, customfileinput: true}
+
+      = form_with url: admin_media_picker_path, class: 'gallery-prepend-image' do
+        = hidden_field_tag :hidden_field_id, params[:hidden_field_id]
+
+        .infinite-scroll
+          = render partial: 'spina/admin/images/image', collection: @images
+
+        .infinite-pagination= link_to_next_page @images, 'Next', params: params, remote: true
+

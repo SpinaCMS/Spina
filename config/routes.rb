@@ -59,12 +59,9 @@ Spina::Engine.routes.draw do
       end
     end
 
-    resources :images do
-      collection do
-        get 'image_select/:page_part_id' => 'images#photo_select', as: :image_select
-        post 'insert_image' => 'images#insert_image', as: :insert_image
-      end
-    end
+    resources :images
+    get :media_picker, to: 'media_picker#show'
+    post :media_picker, to: 'media_picker#select'
   end
 
   # Sitemap

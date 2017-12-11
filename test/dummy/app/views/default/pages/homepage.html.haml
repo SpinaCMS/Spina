@@ -1,3 +1,1 @@
 %h1= @page.title
-= url_for Spina::Image.last.file.variant(resize: "100x100")
-= @page.content(:text).try(:html_safe)
