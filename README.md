@@ -7,8 +7,6 @@
 [![Test Coverage](https://codeclimate.com/github/denkGroot/Spina/badges/coverage.svg)](https://codeclimate.com/github/denkGroot/Spina/coverage)
 [![Slack](https://slack-spinacms.herokuapp.com/badge.svg)](https://slack-spinacms.herokuapp.com)
 
-<a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/n3qdKPpzFkR4DpvJRPKKPRaZ/denkGroot/Spina'>  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/n3qdKPpzFkR4DpvJRPKKPRaZ/denkGroot/Spina.svg' /></a>
-
 # Getting Started
 
 Spina is a CMS for Rails 5.1. This guide is designed for developers with experience using Ruby on Rails.
