@@ -25,7 +25,9 @@ module Spina
       end
 
       def page_by_locale(locale)
-        Page.i18n.find_by!(materialized_path: spina_request_path)
+        Mobility.with_locale(locale) do
+          Page.i18n.find_by!(materialized_path: spina_request_path)
+        end
       end
 
       def page
