@@ -4,6 +4,9 @@ gemspec
 
 gem 'bootsnap', require: false
 
+# Mobility 0.4.0.alpha.1 for Rails 5.2 support
+gem 'mobility', git: 'https://github.com/shioyama/mobility.git'
+
 group :development, :test do
   gem 'rails-controller-testing'
   gem 'minitest-reporters'
