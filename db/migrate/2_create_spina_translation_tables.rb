@@ -1,13 +1,43 @@
 class CreateSpinaTranslationTables < ActiveRecord::Migration[4.2]
   def up
-    Spina::Page.create_translation_table! title: :string, menu_title: :string, description: :string, seo_title: :string, materialized_path: :string
-    Spina::Text.create_translation_table! content: :text
-    Spina::Line.create_translation_table! content: :string
+    create_table "spina_page_translations", force: :cascade do |t|
+      t.integer "spina_page_id", null: false
+      t.string "locale", null: false
+      t.string "title"
+      t.string "menu_title"
+      t.string "description"
+      t.string "seo_title"
+      t.string "materialized_path"
+      t.datetime "created_at", null: false
+      t.datetime "updated_at", null: false
+      t.index ["locale"], name: "index_spina_page_translations_on_locale"
+      t.index ["spina_page_id"], name: "index_spina_page_translations_on_spina_page_id"
+    end
+
+    create_table "spina_line_translations", force: :cascade do |t|
+      t.integer "spina_line_id", null: false
+      t.string "locale", null: false
+      t.string "content"
+      t.datetime "created_at", null: false
+      t.datetime "updated_at", null: false
+      t.index ["locale"], name: "index_spina_line_translations_on_locale"
+      t.index ["spina_line_id"], name: "index_spina_line_translations_on_spina_line_id"
+    end
+
+    create_table "spina_text_translations", force: :cascade do |t|
+      t.integer "spina_text_id", null: false
+      t.string "locale", null: false
+      t.text "content"
+      t.datetime "created_at", null: false
+      t.datetime "updated_at", null: false
+      t.index ["locale"], name: "index_spina_text_translations_on_locale"
+      t.index ["spina_text_id"], name: "index_spina_text_translations_on_spina_text_id"
+    end
   end
 
   def down
-    Spina::Page.drop_translation_table!
-    Spina::Text.drop_translation_table!
-    Spina::Line.drop_translation_table!
+    drop_table "spina_page_translations"
+    drop_table "spina_text_translations"
+    drop_table "spina_line_translations"
   end
 end

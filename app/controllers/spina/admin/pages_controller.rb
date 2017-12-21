@@ -103,7 +103,7 @@ module Spina
       end
 
       def page_params
-        params.require(:page).permit!.merge(locale: params[:locale] || I18n.default_locale)
+        params.require(:page).permit!
       end
 
     end

@@ -49,7 +49,7 @@ module Spina
     end
 
     def save_children
-      self.children.each { |child| child.save }
+      self.children.each(&:save)
     end
 
     def menu_title
@@ -75,12 +75,12 @@ module Spina
     def set_materialized_path
       self.old_path = materialized_path
       self.materialized_path = localized_materialized_path
-      self.materialized_path += "-#{self.class.where(materialized_path: materialized_path).count}" if self.class.where(materialized_path: materialized_path).where.not(id: id).count > 0
+      self.materialized_path += "-#{self.class.i18n.where(materialized_path: materialized_path).count}" if self.class.i18n.where(materialized_path: materialized_path).where.not(id: id).count > 0
       materialized_path
     end
 
     def cache_key
-      super + "_" + Globalize.locale.to_s
+      super + "_" + Mobility.locale.to_s
     end
 
     def view_template_config(theme)

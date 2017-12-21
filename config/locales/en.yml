@@ -91,6 +91,7 @@ en:
       done_organizing: Done organizing
       new_folder: New folder
       delete_folder: Delete folder
+      delete: Delete
 
     images:
       delete_confirmation: "Are you sure you want to delete this <strong>image</strong>?"

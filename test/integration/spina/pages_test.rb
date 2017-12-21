@@ -6,13 +6,15 @@ module Spina
       I18n.locale = :en
       @routes = Engine.routes
       FactoryGirl.create :account
+
+      # Create translations for each page
       @homepage = Spina::Page.find_by(name: 'homepage')
       FactoryGirl.create :page_translation,
         spina_page_id: @homepage.id, title: 'Beginpagina',
         materialized_path: '/nl', locale: 'nl'
-      
+        
       @about_page = FactoryGirl.create :about_page
-      FactoryGirl.create :page_translation,
+      page = FactoryGirl.create :page_translation,
         spina_page_id: @about_page.id, title: 'Over ons',
         materialized_path: '/nl/over-ons', locale: 'nl'
 
@@ -32,7 +34,7 @@ module Spina
       assert_select 'h1', 'About'
     end
 
-    # Globalize different languages
+    # Different languages
     test "view homepage in another language" do
       get "/nl"
       assert_select 'h1', 'Beginpagina'

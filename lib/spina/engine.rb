@@ -9,7 +9,8 @@ require 'mini_magick'
 require 'ancestry'
 require 'breadcrumbs_on_rails'
 require 'kaminari'
-require 'globalize'
+require 'mobility'
+require 'rack-rewrite'
 require 'jsonb_accessor'
 
 module Spina

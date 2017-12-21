@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2017_11_25_205502) do
+ActiveRecord::Schema.define(version: 2017_12_21_210105) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -98,12 +98,12 @@ ActiveRecord::Schema.define(version: 2017_11_25_205502) do
     t.integer "account_id"
   end
 
-  create_table "spina_line_translations", force: :cascade do |t|
+  create_table "spina_line_translations", id: :serial, force: :cascade do |t|
     t.integer "spina_line_id", null: false
     t.string "locale", null: false
+    t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "content"
     t.index ["locale"], name: "index_spina_line_translations_on_locale"
     t.index ["spina_line_id"], name: "index_spina_line_translations_on_spina_line_id"
   end
@@ -155,16 +155,16 @@ ActiveRecord::Schema.define(version: 2017_11_25_205502) do
     t.string "page_partable_type"
   end
 
-  create_table "spina_page_translations", force: :cascade do |t|
+  create_table "spina_page_translations", id: :serial, force: :cascade do |t|
     t.integer "spina_page_id", null: false
     t.string "locale", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string "title"
     t.string "menu_title"
     t.string "description"
     t.string "seo_title"
     t.string "materialized_path"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["locale"], name: "index_spina_page_translations_on_locale"
     t.index ["spina_page_id"], name: "index_spina_page_translations_on_spina_page_id"
   end
@@ -245,12 +245,12 @@ ActiveRecord::Schema.define(version: 2017_11_25_205502) do
     t.datetime "updated_at"
   end
 
-  create_table "spina_text_translations", force: :cascade do |t|
+  create_table "spina_text_translations", id: :serial, force: :cascade do |t|
     t.integer "spina_text_id", null: false
     t.string "locale", null: false
+    t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "content"
     t.index ["locale"], name: "index_spina_text_translations_on_locale"
     t.index ["spina_text_id"], name: "index_spina_text_translations_on_spina_text_id"
   end

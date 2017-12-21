@@ -7,8 +7,6 @@
 [![Test Coverage](https://codeclimate.com/github/denkGroot/Spina/badges/coverage.svg)](https://codeclimate.com/github/denkGroot/Spina/coverage)
 [![Slack](https://slack-spinacms.herokuapp.com/badge.svg)](https://slack-spinacms.herokuapp.com)
 
-<a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/n3qdKPpzFkR4DpvJRPKKPRaZ/denkGroot/Spina'>  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/n3qdKPpzFkR4DpvJRPKKPRaZ/denkGroot/Spina.svg' /></a>
-
 # Getting Started
 
 Spina is a CMS for Rails 5.1. This guide is designed for developers with experience using Ruby on Rails.
@@ -26,6 +24,14 @@ First run the installer to get started:
 The installer will help you setup your first user.
 
 Then start `rails s` and access Spina at `/admin`.
+
+## Upgrading from 0.12 to 1.0.0.alpha
+
+Going from 0.12 to 1.0 will introduce a couple of changes. Globalize is replaced by Mobility and later down the road CarrierWave will be replaced by Rails' ActiveStorage. 
+
+Switching to Mobility is fairly straightfoward. 
+- Run `rails g spina:install` to add the `mobility.rb` initializer.
+- Replace instances of `Globalize` with `Mobility` in your own code
 
 ## Upgrading from 0.11 to 0.12
 
