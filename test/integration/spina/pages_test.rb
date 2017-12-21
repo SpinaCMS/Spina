@@ -34,7 +34,7 @@ module Spina
       assert_select 'h1', 'About'
     end
 
-    # Globalize different languages
+    # Different languages
     test "view homepage in another language" do
       get "/nl"
       assert_select 'h1', 'Beginpagina'
