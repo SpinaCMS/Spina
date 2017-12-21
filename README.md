@@ -25,6 +25,14 @@ The installer will help you setup your first user.
 
 Then start `rails s` and access Spina at `/admin`.
 
+## Upgrading from 0.12 to 1.0.0.alpha
+
+Going from 0.12 to 1.0 will introduce a couple of changes. Globalize is replaced by Mobility and later down the road CarrierWave will be replaced by Rails' ActiveStorage. 
+
+Switching to Mobility is fairly straightfoward. 
+- Run `rails g spina:install` to add the `mobility.rb` initializer.
+- Replace instances of `Globalize` with `Mobility` in your own code
+
 ## Upgrading from 0.11 to 0.12
 
 Just run the new migrations.
