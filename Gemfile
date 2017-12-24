@@ -2,8 +2,6 @@ source "http://rubygems.org"
 
 gemspec
 
-gem 'mobility', git: 'https://github.com/shioyama/mobility.git'
-
 group :development, :test do
   gem 'rails-controller-testing'
   gem 'minitest-reporters'
