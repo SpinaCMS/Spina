@@ -34,7 +34,8 @@ module Spina
     validates :title, presence: true
     validates :materialized_path, uniqueness: true
 
-    translates :title, :menu_title, :seo_title, :description, :materialized_path
+    translates :title, :description, :materialized_path
+    translates :menu_title, :seo_title, default: -> { title }
 
     def to_s
       name
@@ -50,14 +51,6 @@ module Spina
 
     def save_children
       self.children.each(&:save)
-    end
-
-    def menu_title
-      read_attribute(:menu_title).blank? ? title : read_attribute(:menu_title)
-    end
-
-    def seo_title
-      read_attribute(:seo_title).blank? ? title : read_attribute(:seo_title)
     end
 
     def live?

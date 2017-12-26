@@ -29,9 +29,9 @@ Gem::Specification.new do |s|
   s.add_dependency 'breadcrumbs_on_rails'
   s.add_dependency 'turbolinks', '~> 5'
   s.add_dependency 'kaminari'
-  s.add_dependency 'mobility'
-  s.add_dependency 'rack-rewrite', '~> 1.5.0'
-  s.add_dependency 'jsonb_accessor', '~> 1.0.0'
+  s.add_dependency 'mobility', '>= 0.3.6'
+  s.add_dependency 'rack-rewrite', '>= 1.5.0'
+  s.add_dependency 'jsonb_accessor', '>= 1.0.0'
 
   s.add_development_dependency 'factory_girl', '~> 4.0'
 end
