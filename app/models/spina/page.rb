@@ -33,7 +33,8 @@ module Spina
     validates :title, presence: true
     validates :materialized_path, uniqueness: true
 
-    translates :title, :menu_title, :seo_title, :description, :materialized_path
+    translates :title, :description, :materialized_path
+    translates :menu_title, :seo_title, default: -> { title }
 
     def to_s
       name
@@ -48,15 +49,7 @@ module Spina
     end
 
     def save_children
-      self.children.each { |child| child.save }
-    end
-
-    def menu_title
-      read_attribute(:menu_title).blank? ? title : read_attribute(:menu_title)
-    end
-
-    def seo_title
-      read_attribute(:seo_title).blank? ? title : read_attribute(:seo_title)
+      self.children.each(&:save)
     end
 
     def live?
@@ -74,12 +67,12 @@ module Spina
     def set_materialized_path
       self.old_path = materialized_path
       self.materialized_path = localized_materialized_path
-      self.materialized_path += "-#{self.class.where(materialized_path: materialized_path).count}" if self.class.where(materialized_path: materialized_path).where.not(id: id).count > 0
+      self.materialized_path += "-#{self.class.i18n.where(materialized_path: materialized_path).count}" if self.class.i18n.where(materialized_path: materialized_path).where.not(id: id).count > 0
       materialized_path
     end
 
     def cache_key
-      super + "_" + Globalize.locale.to_s
+      super + "_" + Mobility.locale.to_s
     end
 
     def view_template_config(theme)

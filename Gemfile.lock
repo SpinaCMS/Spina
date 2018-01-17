@@ -7,14 +7,14 @@ PATH
       breadcrumbs_on_rails
       carrierwave
       coffee-rails
-      globalize (~> 5.1.0.beta2)
       haml-rails
       jquery-fileupload-rails
       jquery-rails
-      jsonb_accessor (~> 1.0.0)
+      jsonb_accessor (>= 1.0.0)
       kaminari
       mini_magick
-      rack-rewrite (~> 1.5.0)
+      mobility (>= 0.3.6)
+      rack-rewrite (>= 1.5.0)
       rails (>= 5.0)
       sass-rails
       turbolinks (~> 5)
@@ -92,10 +92,6 @@ GEM
     ffi (1.9.18)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
-    globalize (5.1.0.beta2)
-      activemodel (>= 4.2, < 5.2)
-      activerecord (>= 4.2, < 5.2)
-      request_store (~> 1.0)
     haml (5.0.4)
       temple (>= 0.8.0)
       tilt
@@ -110,7 +106,8 @@ GEM
       haml (>= 4.0, < 6)
       nokogiri (>= 1.6.0)
       ruby_parser (~> 3.5)
-    i18n (0.8.6)
+    i18n (0.9.1)
+      concurrent-ruby (~> 1.0)
     jquery-fileupload-rails (0.4.7)
       actionpack (>= 3.1)
       railties (>= 3.1)
@@ -151,18 +148,21 @@ GEM
     mime-types-data (3.2016.0521)
     mini_magick (4.8.0)
     mini_mime (1.0.0)
-    mini_portile2 (2.2.0)
+    mini_portile2 (2.3.0)
     minitest (5.10.3)
     minitest-reporters (1.1.14)
       ansi
       builder
       minitest (>= 5.0)
       ruby-progressbar
+    mobility (0.3.6)
+      i18n (>= 0.6.10, < 0.10)
+      request_store (~> 1.0)
     mocha (1.2.1)
       metaclass (~> 0.0.1)
     nio4r (2.1.0)
-    nokogiri (1.8.0)
-      mini_portile2 (~> 2.2.0)
+    nokogiri (1.8.1)
+      mini_portile2 (~> 2.3.0)
     pg (0.20.0)
     pry (0.10.4)
       coderay (~> 1.1.0)
@@ -210,7 +210,7 @@ GEM
     ruby-progressbar (1.8.1)
     ruby_parser (3.10.1)
       sexp_processor (~> 4.9)
-    sass (3.5.3)
+    sass (3.5.4)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
       rb-fsevent (~> 0.9, >= 0.9.4)
@@ -264,4 +264,4 @@ DEPENDENCIES
   spina!
 
 BUNDLED WITH
-   1.16.0
+   1.16.1

@@ -12,6 +12,11 @@ module Spina
       template 'config/initializers/carrierwave.rb'
     end
 
+    def create_mobility_initializer_file
+      return if Rails.env.production?
+      template 'config/initializers/mobility.rb'
+    end
+
     def add_route
       return if Rails.env.production?
       return if Rails.application.routes.routes.detect { |route| route.app.app == Spina::Engine }
