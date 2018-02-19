@@ -341,17 +341,23 @@
 .input-group
   display: flex
 
-  #{$all-text-inputs}, .text-input, .select-dropdown
+  div 
+    #{$all-text-inputs}, .text-input, .select-dropdown
+      height: 100%
+
+  & > div, #{$all-text-inputs}, .text-input, .select-dropdown
     flex: 1
 
     &:not(:first-child)
-      border-bottom-left-radius: 0
-      border-top-left-radius: 0
+      &, #{$all-text-inputs}, .text-input, .select-dropdown
+        border-bottom-left-radius: 0
+        border-top-left-radius: 0
 
     &:not(:last-child)
-      border-bottom-right-radius: 0
-      border-top-right-radius: 0
-      border-right: none
+      &, #{$all-text-inputs}, .text-input, .select-dropdown
+        border-bottom-right-radius: 0
+        border-top-right-radius: 0
+        border-right: none
 
 // Inputs
 
