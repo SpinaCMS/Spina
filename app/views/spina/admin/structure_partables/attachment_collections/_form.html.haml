@@ -6,7 +6,7 @@
       .placeholder
         %span.button.button-small.button-round
           %i.icon.icon-dots
-          =t 'spina.pages.photos_picker'
+          = t('spina.choose_from_library')
 
       - if ff.object.attachments.any?
         - ff.object.attachments.each do |attachment|
