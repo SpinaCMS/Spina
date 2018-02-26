@@ -23,6 +23,7 @@ module Spina
 
       def select
         @selected_attachment_id = Attachment.find_by(id: params[:selected_attachment_id]).try(:id)
+        @hidden_field_id = params[:hidden_field_id]
         @attachments = Attachment.order_by_ids(@selected_attachment_id).file_attached.sorted
         @attachment = Attachment.new
       end
