@@ -341,7 +341,7 @@
 .input-group
   display: flex
 
-  div 
+  div
     #{$all-text-inputs}, .text-input, .select-dropdown
       height: 100%
 
@@ -563,6 +563,9 @@ input.datepicker
   position: relative
   transition: border .2s ease
   @extend .icon, .icon-caret-down
+
+  .field_with_errors
+    display: inline-block
 
   label
     background: #f5f5f5
