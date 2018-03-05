@@ -2,6 +2,7 @@ module Spina
   class Attachment < ApplicationRecord
 
     has_one :page_part, as: :page_partable
+    has_many :structure_parts, as: :structure_partable
     has_and_belongs_to_many :attachment_collections, join_table: 'spina_attachment_collections_attachments'
 
     attr_accessor :_destroy
