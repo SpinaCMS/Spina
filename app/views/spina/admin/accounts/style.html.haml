@@ -6,7 +6,7 @@
       %button.button.button-primary{type: 'submit', data: {icon: 'o'}}
         = icon('check')
         = t('spina.preferences.style_save')
-        
+
   .well
     .horizontal-form
       .horizontal-form-group
@@ -20,7 +20,7 @@
         .horizontal-form-label
           = Spina::Account.human_attribute_name(:logo)
         .horizontal-form-content
-          = image_tag current_account.logo
+          = image_tag current_account.logo.url if current_account.logo.present?
           = f.file_field :logo
 
       = f.fields_for :layout_parts do |ff|
