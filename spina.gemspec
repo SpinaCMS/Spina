@@ -7,8 +7,8 @@ require 'spina/version'
 Gem::Specification.new do |s|
   s.name        = 'spina'
   s.version     = Spina::VERSION
-  s.authors     = ['Bram Jetten', 'Harm de Wit']
-  s.email       = ['bram@denkgroot.com', 'harm@denkgroot.com']
+  s.authors     = ['Bram Jetten']
+  s.email       = ['bram@denkgroot.com']
   s.homepage    = 'http://www.denkgroot.com'
   s.summary     = 'Spina'
   s.description = 'CMS'
@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.files = Dir['{app,config,db,lib,vendor}/**/*'] + ['Rakefile', 'README.md']
   # s.test_files = Dir['test/**/*']
 
-  s.add_dependency 'rails', '>= 5.2.0.beta2'
+  s.add_dependency 'rails', '>= 5.2.0.rc1'
   s.add_dependency 'bcrypt'
   s.add_dependency 'haml-rails'
   s.add_dependency 'sass-rails'

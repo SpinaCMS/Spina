@@ -14,11 +14,11 @@
   }, {
     name:           'photo',
     title:          'Photo',
-    partable_type:  'Spina::Photo'
+    partable_type:  'Spina::Image'
   }, {
     name:           'photo_collection',
     title:          'Photo collection',
-    partable_type:  'Spina::PhotoCollection'
+    partable_type:  'Spina::ImageCollection'
   }, {
     name:           'attachment',
     title:          'Attachment',

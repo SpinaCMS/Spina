@@ -1,7 +1,7 @@
 module Spina
   class Account < ApplicationRecord
     include Partable
-    
+
     serialize :preferences
 
     has_many :layout_parts, dependent: :destroy
@@ -22,16 +22,14 @@ module Spina
 
     def self.serialized_attr_accessor(*args)
       args.each do |method_name|
-        eval "
-          def #{method_name}
-            self.preferences.try(:[], :#{method_name})
-          end
+        define_method method_name do
+          self.preferences.try(:[], method_name.to_sym)
+        end
 
-          def #{method_name}=(value)
-            self.preferences ||= {}
-            self.preferences[:#{method_name}] = value
-          end
-        "
+        define_method "#{method_name}=" do |value|
+          self.preferences ||= {}
+          self.preferences[method_name.to_sym] = value
+        end
       end
     end
 
@@ -42,7 +40,7 @@ module Spina
     def bootstrap_website
       theme_config = ::Spina::Theme.find_by_name(theme)
       if theme_config
-        bootstrap_pages(theme_config) 
+        bootstrap_pages(theme_config)
         bootstrap_navigations(theme_config)
       end
     end

@@ -25,7 +25,7 @@ Spina::Engine.routes.draw do
     resources :password_resets
 
     # Media library
-    get 'media_library' => 'photos#media_library', as: "media_library"
+    get 'media_library' => 'images#index', as: "media_library"
 
     resources :pages do
       post :sort, on: :collection

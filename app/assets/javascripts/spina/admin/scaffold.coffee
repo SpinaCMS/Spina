@@ -1,5 +1,5 @@
 # Scaffold
-$(document).on 'click', '.table-clickable tbody tr', (e) ->
+$(document).on 'click', '.table-clickable tr', (e) ->
   $row = $(this).closest('tr')
   link = $row.find('a.table-link:first')[0]
   if link
@@ -9,19 +9,21 @@ $(document).on 'click', '.table-clickable tbody tr', (e) ->
 
     if checkbox.length > 0
       checkbox.prop("checked", !checkbox.prop("checked"))
+      checkbox.trigger('checked')
       e.stopPropagation()
 
-$(document).on 'click', '.table-clickable tbody tr td', (e) ->
+$(document).on 'click', '.table-clickable tr td', (e) ->
   checkbox = $(this).find('input[type="checkbox"]:first, input[type="radio"]:first')
 
   if checkbox.length > 0
     checkbox.prop("checked", !checkbox.prop("checked"))
+    checkbox.trigger('checked')
     e.stopPropagation()
 
-$(document).on 'click', '.table-clickable tbody .table-link', (e) ->
+$(document).on 'click', '.table-clickable .table-link', (e) ->
   e.stopPropagation()
 
-$(document).on 'click', '.table-clickable tbody tr input', (e) ->
+$(document).on 'click', '.table-clickable tr input', (e) ->
   e.stopPropagation()
 
 # Search inputs

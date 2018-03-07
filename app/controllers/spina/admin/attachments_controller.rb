@@ -25,12 +25,10 @@ module Spina
       end
 
       def select
+        @selected_attachment_id = Attachment.find_by(id: params[:selected_attachment_id]).try(:id)
+        @hidden_field_id = params[:hidden_field_id]
         @attachments = Attachment.sorted
-        
-        if params[:selected_ids].present?
-          ids = params[:selected_attachment_id]
-          @attachments = @attachments.order(Arel.sql("CASE WHEN id IN(#{ids}) THEN 0 ELSE 1 END"))
-        end
+        @attachment = Attachment.new
       end
 
       def insert
@@ -39,7 +37,7 @@ module Spina
 
       def select_collection
         @selected_attachment_ids = Attachment.where(id: params[:selected_attachment_ids]).ids
-        @attachments = Attachment.order_by_ids(@selected_attachment_ids).sorted
+        @attachments = Attachment.sorted
         @attachment = Attachment.new
       end
 
