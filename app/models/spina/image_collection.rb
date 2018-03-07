@@ -3,7 +3,7 @@ module Spina
     include ImageCollectable
 
     has_one :page_part, as: :page_partable
-    has_many :image_collections_images
+    has_many :image_collections_images, autosave: true
     has_many :images, through: :image_collections_images
     has_many :structure_parts, as: :structure_partable
 

@@ -17,7 +17,6 @@ module Spina
       self.image_collections_images.each do |image|
         image.position = positions.index(image.image.try(:id).try(:to_s))
       end
-      logger.info self.image_collections_images.inspect
     end
 
   end
