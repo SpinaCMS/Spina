@@ -24,19 +24,19 @@ namespace :spina do
     end
 
     Spina::PagePart.where(page_partable_type: 'Spina::Photo').all.each do |page_part|
-      image = Spina::Image.find(ids.select{|i| i[0] == page_part.page_partable_id}[1])
+      image = Spina::Image.find_by(id: ids.select{|i| i[0] == page_part.page_partable_id}[1])
       page_part.update_attributes(page_partable: image)
     end
 
     Spina::StructurePart.where(structure_partable_type: 'Spina::Photo').all.each do |structure_part|
-      image = Spina::Image.find(ids.select{|i| i[0] == structure_part.structure_partable_id}[1])
+      image = Spina::Image.find_by(id: ids.select{|i| i[0] == structure_part.structure_partable_id}[1])
       structure_part.update_attributes(structure_partable: image)
     end
 
     Spina::PagePart.where(page_partable_type: 'Spina::PhotoCollection').all.each do |page_part|
       image_collection = Spina::ImageCollection.create
       page_part.partable.photos.each do |photo|
-        image_collection.images << Spina::Image.find(ids.select{|i| i[0] == photo.id}[1])
+        image_collection.images << Spina::Image.find_by(id: ids.select{|i| i[0] == photo.id}[1])
       end
       page_part.update_attributes(page_partable: image_collection)
     end
@@ -44,7 +44,7 @@ namespace :spina do
     Spina::StructurePart.where(structure_partable_type: 'Spina::PhotoCollection').all.each do |structure_part|
       image_collection = Spina::ImageCollection.create
       structure_part.partable.photos.each do |photo|
-        image_collection.images << Spina::Image.find(ids.select{|i| i[0] == photo.id}[1])
+        image_collection.images << Spina::Image.find_by(id: ids.select{|i| i[0] == photo.id}[1])
       end
       structure_part.update_attributes(structure_partable: image_collection)
     end
