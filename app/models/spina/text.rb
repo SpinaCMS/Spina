@@ -1,5 +1,6 @@
 module Spina
   class Text < ApplicationRecord
+    extend Mobility
     translates :content
     
     has_many :page_parts, as: :page_partable
