@@ -1,5 +1,6 @@
 module Spina
   class Page < ApplicationRecord
+    extend Mobility
     include Partable
 
     # Stores the old path when generating a new materialized_path
