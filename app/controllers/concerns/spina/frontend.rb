@@ -48,7 +48,6 @@ module Spina
         File.join(*segments)
       end
 
-
       def should_skip_to_first_child?
         Current.page.skip_to_first_child && first_live_child
       end

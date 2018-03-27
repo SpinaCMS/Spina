@@ -1,27 +1,27 @@
-%h1= page.title
+%h1= current_page.title
 
 %h5 Line
-%p= page_content :line
+%p= content :line
 
 %h5 Content
-!= page_content :text
+!= content :text
 
 %h5 Image
-%p= image_tag page_content(:image).variant(resize: "200x200")
+%p= image_tag content(:image).variant(resize: "200x200")
 
 %h5 Image collection
 
-- if page_has_content?(:image_collection)
+- if has_content?(:image_collection)
   %ul
-    - page_content(:image_collection).images.each do |image|
+    - content(:image_collection).images.each do |image|
       %li
         = image_tag image.variant(resize: '100x100')
 
 %h5 Structure
 
-- if page_has_content?(:structure)
+- if has_content?(:structure)
   %ul
-    - page_content(:structure).structure_items.each do |item|
+    - content(:structure).structure_items.each do |item|
       %li
         %h6 Title
         %p= item.content(:title)
