@@ -12,12 +12,12 @@
     title:          'Text',
     partable_type:  'Spina::Text'
   }, {
-    name:           'photo',
-    title:          'Photo',
+    name:           'image',
+    title:          'Image',
     partable_type:  'Spina::Image'
   }, {
-    name:           'photo_collection',
-    title:          'Photo collection',
+    name:           'image_collection',
+    title:          'Image collection',
     partable_type:  'Spina::ImageCollection'
   }, {
     name:           'attachment',
@@ -79,7 +79,7 @@
     name: 'demo',
     title: 'Demo',
     description: 'Contains examples of every page part',
-    page_parts: ['line', 'text', 'photo', 'photo_collection', 'attachment', 'attachment_collection', 'option', 'structure']
+    page_parts: ['line', 'text', 'image', 'image_collection', 'attachment', 'attachment_collection', 'option', 'structure']
   }]
 
   theme.custom_pages = [{
