@@ -1,9 +1,11 @@
 module Spina
   module ImagesHelper
 
+    # We wrap some Rails logic inside our own helper method
+    # because the resolve directive in ActiveStorage's routes
+    # doesn't work outside the main app in 5.2.0.rc2
     def variant(file, options)
-      variant = file.variant(options)
-      main_app.rails_blob_variation_path(variant.blob.signed_id, variant.variation.key, variant.blob.filename)
+      file.variant(options).processed.service_url
     end
 
   end
