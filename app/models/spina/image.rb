@@ -15,7 +15,11 @@ module Spina
     end
 
     def content
-      file if file.attached?
+      self if file.attached?
+    end
+ 
+    def variant(options)
+      file.variant(options).processed.service_url
     end
 
   end

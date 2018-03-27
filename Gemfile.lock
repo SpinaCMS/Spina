@@ -12,7 +12,7 @@ PATH
       jsonb_accessor (>= 1.0.0)
       kaminari
       mini_magick
-      mobility (>= 0.3.6)
+      mobility (>= 0.5.1)
       rack-rewrite (>= 1.5.0)
       rails (>= 5.2.0.rc2)
       sass-rails
@@ -93,7 +93,7 @@ GEM
     erubi (1.7.1)
     erubis (2.7.0)
     execjs (2.7.0)
-    factory_girl (4.9.0)
+    factory_bot (4.8.2)
       activesupport (>= 3.0.0)
     ffi (1.9.18)
     globalid (0.4.1)
@@ -266,7 +266,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   codeclimate-test-reporter (~> 1.0.0)
-  factory_girl (~> 4.0)
+  factory_bot
   letter_opener
   listen
   minitest-reporters
