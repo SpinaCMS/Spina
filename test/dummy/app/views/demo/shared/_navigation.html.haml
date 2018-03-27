@@ -1,5 +1,3 @@
-- pages = current_spina_user.present? ? Spina::Page.active : Spina::Page.live
-- menu = Spina::Pages::MenuPresenter.new(pages.in_menu.arrange(order: :position), self, current_page)
-- menu.list_class = 'nav'
-- menu.list_item_css = 'nav-item'
-= menu.to_html
+.nav
+  - Spina::Page.live.all.each do |page|
+    .nav-item{class: ('active' if page == current_page)}= link_to page.menu_title, page.materialized_path
