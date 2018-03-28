@@ -7,11 +7,6 @@ module Spina
       template 'config/initializers/spina.rb'
     end
 
-    def create_carrierwave_initializer_file
-      return if Rails.env.production?
-      template 'config/initializers/carrierwave.rb'
-    end
-
     def create_mobility_initializer_file
       return if Rails.env.production?
       template 'config/initializers/mobility.rb'
