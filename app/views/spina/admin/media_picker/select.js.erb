@@ -4,6 +4,10 @@ hidden_input.parents('.media_picker').find('.image').remove();
 <% if @image.present? %>
   hidden_input.parents('.media_picker').append("<%=j render partial: 'spina/admin/images/image', object: @image, locals: {simple: true} %>");
   hidden_input.val("<%= @image.id %>");
+
+  // Trix editor
+  $('#<%= params[:trix_editor_id] %>').trigger('image-insert', '<%= @image.variant(resize: "800x800") %>');
+  $.hideModal();
 <% end %>
 
 <% if @images.present? %>

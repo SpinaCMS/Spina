@@ -16,7 +16,7 @@
         %div{style: 'display: inline-block; margin-left: 12px; position: absolute', data: {dropdown: true}}
           = link_to '#', class: 'button button-link button-round button-small', data: {trigger: 'dropdown', target: '#locales'} do
             = icon('comment')
-            = @locale.upcase
+            =t "languages.#{@locale}"
 
           %ul#locales
             - Spina.config.locales.each do |locale|

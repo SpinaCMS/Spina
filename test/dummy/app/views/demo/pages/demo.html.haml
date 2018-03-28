@@ -7,23 +7,21 @@
 != content :text
 
 %h5 Image
+
 %p= image_tag content(:image).variant(resize: "200x200")
 
 %h5 Image collection
 
-- if has_content?(:image_collection)
-  %ul
-    - content(:image_collection).images.each do |image|
-      %li
-        = image_tag image.variant(resize: '100x100')
+%ul
+  - content(:image_collection).images.each do |image|
+    %li= image_tag image.variant(resize: '100x100')
 
 %h5 Structure
 
-- if has_content?(:structure)
-  %ul
-    - content(:structure).structure_items.each do |item|
-      %li
-        %h6 Title
-        %p= item.content(:title)
-        %h6 Description
-        = item.content(:description).try(:html_safe)
+%ul
+  - content(:structure).structure_items.each do |item|
+    %li
+      %h6 Title
+      %p= item.content(:title)
+      %h6 Description
+      != item.content(:description)

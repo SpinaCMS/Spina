@@ -1,5 +1,7 @@
 module Spina
   class Image < ApplicationRecord
+    PLACEHOLDER = "https://placehold.it/100x100.png"
+
     belongs_to :media_folder, optional: true
 
     has_one_attached :file
@@ -11,15 +13,15 @@ module Spina
     scope :sorted_by_image_collection, -> { order('position') }
 
     def name
-      file.filename.to_s
+      file.try(:filename).to_s
     end
 
     def content
-      self if file.attached?
+      self
     end
  
     def variant(options)
-      file.variant(options).processed.service_url
+      file.attached? ? file.variant(options).processed.service_url : PLACEHOLDER
     end
 
   end
