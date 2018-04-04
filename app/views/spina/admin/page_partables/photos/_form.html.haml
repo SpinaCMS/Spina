@@ -9,6 +9,6 @@
 
     - if f.object.page_partable && f.object.page_partable.file.present?
       .image
-        = image_tag f.object.page_partable.file.thumb
+        = image_tag f.object.page_partable.file.thumb.url
 
     = f.hidden_field :page_partable_id
