@@ -1,7 +1,5 @@
 module Spina
   class Image < ApplicationRecord
-    PLACEHOLDER = "https://placehold.it/100x100.png"
-
     belongs_to :media_folder, optional: true
 
     has_one_attached :file
@@ -20,9 +18,5 @@ module Spina
       self
     end
  
-    def variant(options)
-      file.attached? ? file.variant(options).processed.service_url : PLACEHOLDER
-    end
-
   end
 end
