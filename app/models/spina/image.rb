@@ -15,8 +15,8 @@ module Spina
     end
 
     def content
-      file if file.attached?
+      self
     end
-
+ 
   end
 end

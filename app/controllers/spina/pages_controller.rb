@@ -1,4 +1,4 @@
- module Spina
+module Spina
   class PagesController < Spina::ApplicationController
     include Spina::Frontend
 

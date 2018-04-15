@@ -4,11 +4,11 @@ module Spina
   class StructureItemTest < ActiveSupport::TestCase
 
     def setup
-      @structure_part = FactoryGirl.create :structure_part
+      @structure_part = FactoryBot.create :structure_part
       @item = @structure_part.structure_item
       @partable = @structure_part.structure_partable
 
-      @structure_part_2 = FactoryGirl.create :structure_part
+      @structure_part_2 = FactoryBot.create :structure_part
       @item_2 = @structure_part_2.structure_item
       @partable_2 = @structure_part_2.structure_partable
     end
