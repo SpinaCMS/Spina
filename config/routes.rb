@@ -32,6 +32,8 @@ Spina::Engine.routes.draw do
       post :sort, on: :collection
     end
 
+    resources :resources, only: [:show]
+
     resources :navigations do
       post :sort, on: :member
     end

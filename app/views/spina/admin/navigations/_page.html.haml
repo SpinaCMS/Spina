@@ -5,4 +5,4 @@
       = label_tag page.title
 
 - if page.children.any?
-  = render partial: 'page', collection: page.children.sorted
+  = render partial: 'page', collection: page.children.sorted.where(resource: nil)

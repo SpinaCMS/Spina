@@ -45,3 +45,10 @@
       .horizontal-form-content
         .select-dropdown.ancestry
           = f.select :parent_id, page_ancestry_options(f.object), include_blank: Spina::Page.human_attribute_name(:no_parent)
+
+    .horizontal-form-group
+      .horizontal-form-label
+        = Spina::Page.human_attribute_name :resource
+      .horizontal-form-content
+        .select-dropdown
+          = f.select :resource_id, Spina::Resource.pluck(:label, :id), include_blank: Spina::Page.human_attribute_name(:no_resource)

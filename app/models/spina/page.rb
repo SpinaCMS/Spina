@@ -18,6 +18,9 @@ module Spina
     has_many :navigation_items, dependent: :destroy
     has_many :navigations, through: :navigation_items
 
+    # Pages can belong to a resource
+    belongs_to :resource, optional: true
+
     scope :active, -> { where(active: true) }
     scope :sorted, -> { order(:position) }
     scope :live, -> { active.where(draft: false) }

@@ -10,7 +10,7 @@
   .well
     .table-container
       %table.table.table-clickable
-        %tbody= render partial: 'page', collection: Spina::Page.sorted.roots
+        %tbody= render partial: 'page', collection: Spina::Page.sorted.roots.where(resource: nil)
 
   .well
     .horizontal-form
