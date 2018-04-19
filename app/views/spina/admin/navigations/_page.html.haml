@@ -4,5 +4,5 @@
       = check_box_tag 'navigation[page_ids][]', page.id, @navigation.page_ids.include?(page.id)
       = label_tag page.title
 
-- if page.children.any?
-  = render partial: 'page', collection: page.children.sorted.where(resource: nil)
+- if page.children.regular_pages.any?
+  = render partial: 'page', collection: page.children.sorted.regular_pages

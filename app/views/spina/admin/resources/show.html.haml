@@ -1,5 +1,5 @@
 - content_for(:header_actions) do
-  = link_to spina.new_admin_page_path(params: {resource_id: @resource.id, view_template: 'landings_page'}), class: 'button icon-only', style: 'margin-right: 0' do
+  = link_to spina.new_admin_page_path(params: {resource_id: @resource.id, view_template: @resource.view_template.presence || 'show'}), class: 'button icon-only', style: 'margin-right: 0' do
     = icon('plus')
 
 .well

@@ -7,12 +7,12 @@ module Spina
       def index
         add_breadcrumb I18n.t('spina.website.pages'), spina.admin_pages_path
         redirect_to admin_pages_path unless current_admin_path.starts_with?('/pages')
-        @pages = Page.active.sorted.roots.where(resource: nil)
+        @pages = Page.active.sorted.roots.regular_pages
       end
 
       def new
         @resource = Resource.find_by(id: params[:resource_id])
-        @page = Page.new(resource: @resource)
+        @page = Page.new(resource: @resource, parent: @resource.parent_page)
         add_index_breadcrumb
         if current_theme.new_page_templates.any? { |template| template[0] == params[:view_template] }
           @page.view_template = params[:view_template]
