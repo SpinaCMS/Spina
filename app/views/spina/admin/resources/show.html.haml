@@ -5,4 +5,6 @@
 .well
   .dd#pages_list
     %ol.dd-list
-      = render partial: 'spina/admin/pages/page_nested_list', collection: @resource.pages
+      - @resource.pages.each do |page|
+        %li.dd-item
+          .dd-item-inner= render partial: 'spina/admin/pages/page', object: page
