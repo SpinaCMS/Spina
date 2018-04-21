@@ -37,7 +37,7 @@ module Spina
 
       def page_ancestry_options(page)
         pages = Spina::Page.active.regular_pages
-        pages = pages.where.not(id: page.subtree.ids) unless page.new_record?
+        pages = pages.where.not(id: page.subtree.ids) unless page.new_record? || !page.methods.include?(:subtree)
 
         flatten_nested_hash(pages.arrange(order: :position)).map do |page|
           next if page.depth >= Spina.config.max_page_depth - 1
