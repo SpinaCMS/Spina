@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2017_12_21_210105) do
+ActiveRecord::Schema.define(version: 20180417114925) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -184,6 +184,8 @@ ActiveRecord::Schema.define(version: 2017_12_21_210105) do
     t.string "ancestry"
     t.integer "position"
     t.boolean "active", default: true
+    t.integer "resource_id"
+    t.index ["resource_id"], name: "index_spina_pages_on_resource_id"
   end
 
   create_table "spina_photo_collections", force: :cascade do |t|
@@ -203,6 +205,17 @@ ActiveRecord::Schema.define(version: 2017_12_21_210105) do
     t.datetime "updated_at", null: false
     t.integer "media_folder_id"
     t.index ["media_folder_id"], name: "index_spina_photos_on_media_folder_id"
+  end
+
+  create_table "spina_resources", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "label"
+    t.string "view_template"
+    t.integer "parent_page_id"
+    t.string "order_by"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["parent_page_id"], name: "index_spina_resources_on_parent_page_id"
   end
 
   create_table "spina_rewrite_rules", force: :cascade do |t|

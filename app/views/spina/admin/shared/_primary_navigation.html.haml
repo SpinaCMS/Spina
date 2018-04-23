@@ -1,20 +1,25 @@
 %nav#primary.transformed{data: {turbolinks_permanent: true}}
   %ul
-    %li{class: ('active' if (%w[pages images attachments navigations] + Spina::Plugin.all.map { |plugin| plugin.namespace if current_theme.plugins.include?(plugin.name) }).include? controller_name)}
+    %li{class: ('active' if (%w[pages photos attachments navigations resources] + Spina::Plugin.all.map { |plugin| plugin.namespace if current_theme.plugins.include?(plugin.name) }).include? controller_name)}
       = link_to spina.admin_pages_path do
         = icon('home')
         = t('spina.website.title')
         = icon('caret-right')
 
       %ul
-        %li{class: ('active' if current_admin_path.start_with?('/pages') || current_admin_path.start_with?('/navigations'))}
+        %li{class: ('active' if (current_admin_path.start_with?('/pages') || current_admin_path.start_with?('/navigations')) && @page&.resource.blank?)}
           = link_to t('spina.website.pages'), spina.admin_pages_path
         %li{class: ('active' if current_admin_path.start_with?('/images', '/attachments'))}
           = link_to t('spina.website.media_library'), spina.admin_images_path
+
         - Spina::Plugin.all.each do |plugin|
           - if current_theme.plugins.include? plugin.name
             - if lookup_context.exists? "spina/admin/hooks/#{ plugin.namespace }/_website_secondary_navigation"
               = render "spina/admin/hooks/#{ plugin.namespace }/website_secondary_navigation", plugin: plugin
+
+        - Spina::Resource.order(:label).each do |resource|
+          %li{class: ('active' if (@resource || @page&.resource) == resource)}= link_to resource.label, spina.admin_resource_path(resource)
+
         %li
           = link_to '#', class: 'back-to-main-menu' do
             = icon('caret-left')
