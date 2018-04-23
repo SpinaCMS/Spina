@@ -72,6 +72,9 @@ en:
       saving: Saving...
       saved: Page saved
 
+    resources:
+      edit: Edit resource
+
     users:
       new: New user
       save: Save user
@@ -169,6 +172,7 @@ en:
         size: Size
 
       spina/page:
+        created_at: Created at
         title: Title
         title_placeholder: Page title
         seo_title: SEO <title>
@@ -190,6 +194,12 @@ en:
         view_template: Page template
         ancestry: Parent page
         no_parent: No parent
+
+      spina/resource:
+        label: Label
+        order_by: Order by
+        view_template: Default view template
+        parent_page: Parent page
 
       spina/media_folder:
         name: Name
