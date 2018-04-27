@@ -12,6 +12,7 @@ require 'kaminari'
 require 'mobility'
 require 'rack-rewrite'
 require 'jsonb_accessor'
+require 'babosa'
 
 module Spina
   class Engine < ::Rails::Engine
