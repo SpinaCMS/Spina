@@ -152,6 +152,7 @@ zh-CN:
         facebook: Facebook
         twitter: Twitter
         google_plus: Google+
+        facebook_pixel: Facebook Pixel
 
       spina/attachment:
         created_at: 创建于
