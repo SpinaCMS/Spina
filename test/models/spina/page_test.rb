@@ -25,5 +25,21 @@ module Spina
       assert_equal false, @demo.live?
     end
 
+    test 'url_title' do
+      page = FactoryGirl.build(:page, title: 'Some long title')
+      assert_equal page.url_title, 'some-long-title'
+    end
+
+    test 'url_title with specific locale' do
+      Spina.config.transliterations = %i(latin bulgarian)
+      page = FactoryGirl.build(:page, title: 'Тест страница')
+      assert_equal page.url_title, 'test-stranica'
+    end
+
+    test 'url_title without valid title' do
+      page = FactoryGirl.build(:page, title: nil)
+      page.save(validate: false)
+      assert_equal page.url_title, "page-#{page.id}"
+    end
   end
 end

@@ -47,7 +47,9 @@ module Spina
     end
 
     def url_title
-      title.try(:parameterize)
+      title.try(:to_s).try(:to_slug).try(:normalize,
+        transliterations: Spina.config.transliterations
+      ) || "page-#{id}"
     end
 
     def custom_page?
