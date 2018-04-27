@@ -32,6 +32,7 @@ module Spina
                                         :postal_code, :preferences, :google_analytics,
                                         :google_site_verification, :facebook, :twitter, :google_plus,
                                         :kvk_identifier, :theme, :vat_identifier, :robots_allowed,
+                                        :facebook_pixel,
                                         layout_parts_attributes:
                                           [:id, :layout_partable_type, :layout_partable_id,
                                             :name, :title, :position, :content, :page_id,
