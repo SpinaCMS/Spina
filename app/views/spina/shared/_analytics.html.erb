@@ -1,3 +1,5 @@
+<% return if current_account.google_analytics.blank? %>
+
 <script type="text/javascript">
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', '<%= current_account.google_analytics %>']);
