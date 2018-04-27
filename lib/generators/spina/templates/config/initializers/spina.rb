@@ -20,4 +20,9 @@ Spina.configure do |config|
 
   # Base css color for Spina
   config.primary_color = '#6865b4'
+
+  # Set provided transliterations for normalizing url slugs
+  # %i( bulgarian cyrillic danish german greek latin macedonian norwegian 
+  #     romanian russian serbian spanish swedish ukrainian vietnamese)
+  config.transliterations = %i(latin)
 end
