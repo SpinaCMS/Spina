@@ -77,10 +77,6 @@ module Spina
 
       private
 
-      def set_locale
-        @locale = params[:locale] || I18n.default_locale
-      end
-
       def add_index_breadcrumb
         if @page.resource.present?
           add_breadcrumb @page.resource.label, spina.admin_resource_path(@page.resource)
