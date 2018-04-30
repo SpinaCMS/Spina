@@ -4,6 +4,7 @@ module Spina
       layout 'spina/admin/pages'
 
       before_action :set_breadcrumb, except: [:show]
+      before_action :set_locale
 
       def show
         @navigation = Navigation.find(params[:id])
@@ -18,6 +19,7 @@ module Spina
       end
 
       def update
+        I18n.locale = params[:locale] || I18n.default_locale
         @navigation = Navigation.find(params[:id])
         if @navigation.update_attributes(navigation_params)
           redirect_to spina.admin_navigation_path(@navigation)
@@ -54,7 +56,7 @@ module Spina
         end
 
         def navigation_params
-          params.require(:navigation).permit(:auto_add_pages, page_ids: [])
+          params.require(:navigation).permit(:label, :auto_add_pages, page_ids: [])
         end
     end
   end
