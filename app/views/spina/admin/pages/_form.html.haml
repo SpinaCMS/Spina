@@ -12,16 +12,7 @@
   %header#header
     .breadcrumbs= render_breadcrumbs separator: '<div class="divider"></div>'
     - unless @page.new_record?
-      - if Spina.config.locales.size > 1
-        %div{style: 'display: inline-block; margin-left: 12px; position: absolute', data: {dropdown: true}}
-          = link_to '#', class: 'button button-link button-round button-small', data: {trigger: 'dropdown', target: '#locales'} do
-            = icon('comment')
-            = @locale.upcase
-
-          %ul#locales
-            - Spina.config.locales.each do |locale|
-              %li
-                = link_to t("languages.#{locale}"), "?locale=#{locale}", style: ('font-weight: 600' if @locale.to_s == locale.to_s)
+      = render partial: 'spina/admin/shared/locale_navigation', locals: {locale: @locale}
 
     #header_actions
       %button.button.button-primary{type: 'submit', style: 'margin-right: 0', data: {disable_with: t('spina.pages.saving')}}
