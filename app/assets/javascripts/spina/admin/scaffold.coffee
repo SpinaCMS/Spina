@@ -8,17 +8,22 @@ $(document).on 'click', '.table-clickable tr', (e) ->
     checkbox = $(this).find('input[type="checkbox"]:first, input[type="radio"]:first')
 
     if checkbox.length > 0
+
+      # Get shifty
+      if !checkbox.prop("checked") && e.shiftKey
+        $firstRow = $('.table-clickable tr input[type="checkbox"]:checked:first').closest('tr')
+
+        if $firstRow.index() < $row.index()
+          $firstRow.nextUntil($row).each ->
+            $(this).find('input[type="checkbox"]:first').prop("checked", true)
+        else
+          $firstRow.prevUntil($row).each ->
+            $(this).find('input[type="checkbox"]:first').prop("checked", true)
+        document.getSelection().removeAllRanges()
+
       checkbox.prop("checked", !checkbox.prop("checked"))
       checkbox.trigger('checked')
       e.stopPropagation()
-
-$(document).on 'click', '.table-clickable tr td', (e) ->
-  checkbox = $(this).find('input[type="checkbox"]:first, input[type="radio"]:first')
-
-  if checkbox.length > 0
-    checkbox.prop("checked", !checkbox.prop("checked"))
-    checkbox.trigger('checked')
-    e.stopPropagation()
 
 $(document).on 'click', '.table-clickable .table-link', (e) ->
   e.stopPropagation()
