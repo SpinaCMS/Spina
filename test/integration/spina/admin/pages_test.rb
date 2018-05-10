@@ -5,8 +5,8 @@ module Spina
     class PagesTest < ActionDispatch::IntegrationTest
       setup do
         @routes = Engine.routes
-        @account = FactoryGirl.create :account
-        @user = FactoryGirl.create :user
+        @account = FactoryBot.create :account
+        @user = FactoryBot.create :user
         post "/admin/sessions", params: {email: @user.email, password: "password"}
       end
 
