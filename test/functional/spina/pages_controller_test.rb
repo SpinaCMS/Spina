@@ -4,7 +4,7 @@ module Spina
   class PagesControllerTest < ActionController::TestCase
     setup do
       @routes = Engine.routes
-      @current_account = FactoryGirl.create :account
+      @current_account = FactoryBot.create :account
     end
 
     test "visit homepage" do
