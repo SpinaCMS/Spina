@@ -10,6 +10,11 @@ module Spina
         @media_folders = MediaFolder.order(:name)
         @photos = Photo.sorted.where(media_folder_id: nil).page(params[:page])
         @photo = Photo.new
+
+        respond_to do |format|
+          format.js
+          format.html
+        end
       end
 
       def media_folder
@@ -17,6 +22,11 @@ module Spina
         @media_folder = MediaFolder.find(params[:id])
         add_breadcrumb @media_folder.name
         @photos = @media_folder.photos.sorted.page(params[:page])
+
+        respond_to do |format|
+          format.js { render :index }
+          format.html
+        end
       end
 
       def add_to_media_folder

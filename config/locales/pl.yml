@@ -73,7 +73,7 @@ pl:
       saved: Strona zapisana
 
     users:
-      new: Nowy Użyktownik
+      new: Nowy Użytkownik
       save: Zapisz użytkownika
       delete_confirmation: 'Czy na pewno usunąć użytkownika <strong>%{user}</strong>?'
       cannot_be_created: Nie można usunąć użytkownika

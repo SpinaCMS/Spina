@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :structure_part, class: Spina::StructurePart do
     structure_item
     association :structure_partable, factory: :line

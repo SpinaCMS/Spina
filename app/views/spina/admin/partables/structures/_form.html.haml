@@ -4,7 +4,7 @@
       %label= f.object.title
 
       %ul
-        - f.object.partable.structure_items.sort_by(&:position).each_with_index do |structure_item, index|
+        - f.object.page_partable.structure_items.sort_by{|item|item.position.to_i}.each_with_index do |structure_item, index|
           %li{class: ('active' if index == 0), data: {structure_item_id: structure_item.object_id}}
             = link_to "#structure_form_pane_#{structure_item.object_id}" do
               %i.icon.icon-bars.sortable-handle
@@ -16,6 +16,6 @@
           = icon('plus')
 
     .structure-form-content
-      = f.fields_for :partable do |ff|
-        = ff.fields_for :structure_items, ff.object.structure_items.sort_by(&:position) do |fff|
+      = f.fields_for :page_partable do |ff|
+        = ff.fields_for :structure_items, ff.object.structure_items.sort_by{|item|item.position.to_i} do |fff|
           = render 'spina/admin/structure_items/fields', f: fff

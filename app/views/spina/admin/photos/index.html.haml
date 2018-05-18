@@ -20,7 +20,7 @@
       = link_to media_folder_admin_photos_path(media_folder), class: 'item media-folder', data: {add_to_media_folder_url: add_to_media_folder_admin_photos_url(media_folder)} do
         .media-folder-thumbnail{data: {badge: media_folder.photos.count}}
           - if media_folder.photos.any?
-            = image_tag media_folder.photos.last.file.thumb
+            = image_tag media_folder.photos.last.file.thumb.url
           - else
             = image_tag 'spina/media_folder_placeholder.png'
           .media-folder-shadow

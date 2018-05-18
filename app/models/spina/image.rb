@@ -11,12 +11,12 @@ module Spina
     scope :sorted_by_image_collection, -> { order('position') }
 
     def name
-      file.filename.to_s
+      file.try(:filename).to_s
     end
 
     def content
-      file if file.attached?
+      self
     end
-
+ 
   end
 end

@@ -7,6 +7,11 @@
 
 //= require turbolinks
 
+// Stimulus
+
+//= require spina/stimulus.umd
+//= require_tree ./controllers
+
 // File Upload
 
 //= require activestorage

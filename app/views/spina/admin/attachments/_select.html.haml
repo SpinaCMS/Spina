@@ -5,6 +5,8 @@
 
   %section
     = form_tag spina.insert_admin_attachments_path(params[:page_part_id]), remote: true, class: 'document-select' do
+      = hidden_field_tag :hidden_field_id, @hidden_field_id
+
       %ul
         - @attachments.each do |attachment|
           %li.item
