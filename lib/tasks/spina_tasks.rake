@@ -15,39 +15,63 @@ namespace :spina do
 
   desc "Change Photo model into Image"
   task photo_to_image: :environment do
-    ids = []
-
-    Spina::Photo.all.each do |photo|
+    Spina::Photo.find_each do |photo|
       image = Spina::Image.create(media_folder_id: photo.media_folder_id)
       image.file.attach(io: photo.file.sanitized_file.file, filename: photo.name)
-      ids << [photo.id, image.id]
+      photo.update_column(:image_id, image.id)
     end
 
-    Spina::PagePart.where(page_partable_type: 'Spina::Photo').all.each do |page_part|
-      image = Spina::Image.find_by(id: ids.find{|i| i[0] == page_part.page_partable_id}.try(:[], 1))
-      page_part.update_attributes(page_partable: image)
-    end
-
-    Spina::StructurePart.where(structure_partable_type: 'Spina::Photo').all.each do |structure_part|
-      image = Spina::Image.find_by(id: ids.find{|i| i[0] == structure_part.structure_partable_id}.try(:[], 1))
-      structure_part.update_attributes(structure_partable: image)
-    end
-
-    Spina::PagePart.where(page_partable_type: 'Spina::PhotoCollection').all.each do |page_part|
-      image_collection = Spina::ImageCollection.create
-      page_part.partable.photos.each do |photo|
-        image_collection.images << Spina::Image.find_by(id: ids.find{|i| i[0] == photo.id}.try(:[], 1))
+    Spina::PagePart.where(page_partable_type: 'Spina::Photo').find_each do |page_part|
+      if page_part.page_partable.present?
+        page_part.update_columns(
+          page_partable_type: 'Spina::Image',
+          page_partable_id: page_part.page_partable.image_id
+        )
+      else
+        page_part.update_column(:page_partable_type, 'Spina::Image')
       end
-      page_part.update_attributes(page_partable: image_collection)
     end
 
-    Spina::StructurePart.where(structure_partable_type: 'Spina::PhotoCollection').all.each do |structure_part|
-      image_collection = Spina::ImageCollection.create
-      structure_part.partable.photos.each do |photo|
-        image_collection.images << Spina::Image.find_by(id: ids.find{|i| i[0] == photo.id}.try(:[], 1))
+    Spina::StructurePart.where(structure_partable_type: 'Spina::Photo').find_each do |structure_part|
+      if structure_part.structure_partable.present?
+        structure_part.update_columns(
+          structure_partable_type: 'Spina::Image',
+          structure_partable_id: structure_part.structure_partable.image_id
+        )
+      else
+        structure_part.update_column(:structure_partable_type, 'Spina::Image')
       end
-      structure_part.update_attributes(structure_partable: image_collection)
     end
+
+    Spina::PagePart.where(page_partable_type: 'Spina::PhotoCollection').find_each do |page_part|
+      if page_part.partable.present?
+        image_collection = Spina::ImageCollection.create
+        page_part.partable.photos.each do |photo|
+          image_collection.images << Spina::Image.find(photo.image_id)
+        end
+        page_part.update_columns(
+          page_partable_type: 'Spina::ImageCollection',
+          page_partable_id: image_collection.id
+        )
+      else
+        page_part.update_column :page_partable_type, 'Spina::ImageCollection'
+      end
+    end
+
+    Spina::StructurePart.where(structure_partable_type: 'Spina::PhotoCollection').find_each do |structure_part|
+      if structure_part.partable.present?
+        image_collection = Spina::ImageCollection.create
+        structure_part.partable.photos.each do |photo|
+          image_collection.images << Spina::Image.find(photo.image_id)
+        end
+        structure_part.update_columns(
+          structure_partable_type: 'Spina::ImageCollection',
+          structure_partable_id: image_collection.id
+        )
+      else
+        structure_part.update_column :structure_partable_type, 'Spina::PhotoCollection'
+      end
+    end
+    exit 0
   end
-
 end
