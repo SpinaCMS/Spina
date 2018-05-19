@@ -21,6 +21,8 @@
           %li{class: ('active' if (@resource || @page&.resource) == resource)}= link_to resource.label, spina.admin_resource_path(resource)
 
         %li
+          = link_to t('spina.preview_website'), spina.root_path, data: { turbolinks: false }
+        %li
           = link_to '#', class: 'back-to-main-menu' do
             = icon('caret-left')
             =t 'spina.main_menu'
