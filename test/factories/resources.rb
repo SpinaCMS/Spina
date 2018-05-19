@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :resource, class: Spina::Resource do
 
     factory :breweries do
