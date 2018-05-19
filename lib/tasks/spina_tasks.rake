@@ -72,6 +72,5 @@ namespace :spina do
         structure_part.update_column :structure_partable_type, 'Spina::PhotoCollection'
       end
     end
-    exit 0
   end
 end
