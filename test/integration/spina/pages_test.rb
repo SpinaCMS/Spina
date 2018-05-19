@@ -12,7 +12,6 @@ module Spina
       FactoryBot.create :page_translation,
         spina_page_id: @homepage.id, title: 'Beginpagina',
         materialized_path: '/nl', locale: 'nl'
-
       @about_page = FactoryBot.create :about_page
       page = FactoryBot.create :page_translation,
         spina_page_id: @about_page.id, title: 'Over ons',

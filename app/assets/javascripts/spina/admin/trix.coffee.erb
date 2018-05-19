@@ -29,16 +29,16 @@ Trix.config.blockAttributes = $.extend Trix.config.blockAttributes, {
 }
 
 class Spina.TrixAttachment
-  @photoSelect: (e) ->
+  @imageSelect: (e) ->
     editor_id = $(this).closest('trix-toolbar').data('trix-editor-id')
-    $.get("<%= Spina::Engine.routes.url_helpers.trix_select_admin_photos_path('') %>/#{editor_id}")
+    $.get("<%= Spina::Engine.routes.url_helpers.admin_media_picker_path %>" + "?trix_editor_id=#{editor_id}")
 
-  @photoInsert: (e, url) ->
+  @imageInsert: (e, url) ->
     this.editor.insertHTML "<img src='#{ url }' />"
 
 document.addEventListener 'trix-file-accept', (e) ->
   e.preventDefault()
 
-$(document).on 'click', '.js-trix-photo', Spina.TrixAttachment.photoSelect
+$(document).on 'click', '.js-trix-image', Spina.TrixAttachment.imageSelect
 
-$(document).on 'photo-insert', 'trix-editor', Spina.TrixAttachment.photoInsert
+$(document).on 'image-insert', 'trix-editor', Spina.TrixAttachment.imageInsert

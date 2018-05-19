@@ -1,0 +1,8 @@
+<% @images.each do |image| %>
+  $item = $("<%=j render partial: 'spina/admin/images/image', object: image %>");
+  $(".gallery-prepend-image .infinite-scroll").prepend($item);
+<% end %>
+
+$('.gallery .new-image-form').html("<%=j render 'form' %>").find('input[type="file"]').each(function() {
+  $(this).customFileInput();
+});

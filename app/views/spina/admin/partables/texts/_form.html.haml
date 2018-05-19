@@ -1,0 +1,5 @@
+.horizontal-form-label
+  = f.object.title
+.horizontal-form-content
+  = f.fields_for :partable, f.object.partable do |ff|
+    = render 'spina/admin/shared/rich_text_field', f: ff, field: :content

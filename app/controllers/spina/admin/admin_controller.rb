@@ -16,7 +16,7 @@ module Spina
       end
 
       def authorize_spina_user
-        redirect_to spina.admin_login_url, flash: {information: I18n.t('spina.notifications.login')} unless current_spina_user
+        redirect_to admin_login_path, flash: {information: I18n.t('spina.notifications.login')} unless current_spina_user
       end
 
       def authorize_admin

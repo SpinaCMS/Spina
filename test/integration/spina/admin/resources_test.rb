@@ -5,9 +5,9 @@ module Spina
     class ResourcesTest < ActionDispatch::IntegrationTest
       setup do
         @routes = Engine.routes
-        @account = FactoryGirl.create :account
-        @user = FactoryGirl.create :user
-        @breweries = FactoryGirl.create :breweries
+        @account = FactoryBot.create :account
+        @user = FactoryBot.create :user
+        @breweries = FactoryBot.create :breweries
         post "/admin/sessions", params: {email: @user.email, password: "password"}
       end
 

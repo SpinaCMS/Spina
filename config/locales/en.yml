@@ -48,6 +48,7 @@ en:
       media_library_description: "Here's where you'll find all of your images and documents"
       documents: Documents
       photos: Images
+      images: Images
 
     pages:
       new: New page
@@ -94,6 +95,12 @@ en:
       new_folder: New folder
       delete_folder: Delete folder
       delete: Delete
+
+    images:
+      delete_confirmation: "Are you sure you want to delete this <strong>image</strong>?"
+      upload: Upload images
+      choose_images: Choose images
+      choose_image: Choose image
 
     wysiwyg:
       paragraph: Paragraph

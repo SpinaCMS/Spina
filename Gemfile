@@ -2,6 +2,8 @@ source "http://rubygems.org"
 
 gemspec
 
+gem 'bootsnap', require: false
+
 group :development, :test do
   gem 'rails-controller-testing'
   gem 'minitest-reporters'
@@ -11,4 +13,5 @@ group :development, :test do
   gem 'letter_opener'
   gem 'pry-rails'
   gem 'mocha'
+  gem 'listen'
 end

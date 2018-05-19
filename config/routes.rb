@@ -1,5 +1,4 @@
-Spina::Engine.routes.draw do
-
+Spina::Engine.routes.draw do  
   # Backend
   namespace :admin, path: Spina.config.backend_path do
     root to: "pages#index"
@@ -26,7 +25,7 @@ Spina::Engine.routes.draw do
     resources :password_resets
 
     # Media library
-    get 'media_library' => 'photos#media_library', as: "media_library"
+    get 'media_library' => 'images#index', as: "media_library"
 
     resources :pages do
       post :sort, on: :collection
@@ -53,14 +52,17 @@ Spina::Engine.routes.draw do
       collection do
         get 'trix_select/:object_id' => 'photos#trix_select', as: :trix_select
         post 'trix_insert/:object_id' => 'photos#trix_insert', as: :trix_insert
-        get 'photo_select/:page_part_id' => 'photos#photo_select', as: :photo_select
-        get 'photo_collection_select/:page_part_id' => 'photos#photo_collection_select', as: :photo_collection_select
-        post 'insert_photo/:page_part_id' => 'photos#insert_photo', as: :insert_photo
-        post 'insert_photo_collection/:page_part_id' => 'photos#insert_photo_collection', as: :insert_photo_collection
-        get 'folder/:id' => 'photos#media_folder', as: :media_folder
-        put 'folder/:id' => 'photos#add_to_media_folder', as: :add_to_media_folder
       end
     end
+
+    resources :images do
+      collection do
+        get 'folder/:id' => 'images#media_folder', as: :media_folder
+        put 'folder/:id' => 'images#add_to_media_folder', as: :add_to_media_folder
+      end
+    end
+    get :media_picker, to: 'media_picker#show'
+    post :media_picker, to: 'media_picker#select'
   end
 
   # Sitemap
