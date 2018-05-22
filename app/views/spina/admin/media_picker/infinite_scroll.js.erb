@@ -1,0 +1,5 @@
+// Append new data
+$("<%=j render partial: 'spina/admin/images/image', collection: @images %>").appendTo($(".infinite-scroll"))
+
+// Update pagination link
+$('.infinite-pagination').html("<%= j link_to_next_page @images, 'Next', remote: true %>").infiniteScroll()

@@ -1,4 +1,4 @@
-Spina::Engine.routes.draw do  
+Spina::Engine.routes.draw do
   # Backend
   namespace :admin, path: Spina.config.backend_path do
     root to: "pages#index"
