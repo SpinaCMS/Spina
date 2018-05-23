@@ -1,13 +1,14 @@
 {
   "checksum": {
-    "previous": "76158a909a15f01682c59bf93797ff7dcc006135b11c6c1005b4728aa5d60c65",
-    "current": "76158a909a15f01682c59bf93797ff7dcc006135b11c6c1005b4728aa5d60c65"
+    "previous": "a76e98698a465d2e0331eecdf54e8a0cfc15e19b18f78430498ed433629ed40d",
+    "current": "a76e98698a465d2e0331eecdf54e8a0cfc15e19b18f78430498ed433629ed40d"
   },
   "fonts": [
     "app/assets/fonts/spina/ics_spina.ttf",
     "app/assets/fonts/spina/ics_spina.svg",
     "app/assets/fonts/spina/ics_spina.woff",
-    "app/assets/fonts/spina/ics_spina.eot"
+    "app/assets/fonts/spina/ics_spina.eot",
+    "app/assets/fonts/spina/ics_spina.woff2"
   ],
   "glyphs": {
     "barchart": {
@@ -109,6 +110,10 @@
     "exclamation": {
       "codepoint": 61720,
       "source": "app/assets/icons/spina/exclamation.svg"
+    },
+    "export": {
+      "codepoint": 61753,
+      "source": "app/assets/icons/spina/export.svg"
     },
     "eye": {
       "codepoint": 61721,
@@ -242,6 +247,8 @@
   "options": {
     "autowidth": false,
     "config": "config/fontcustom.yml",
+    "copyright": "",
+    "css3": false,
     "css_selector": ".icon-{{glyph}}",
     "debug": false,
     "font_ascent": 448,

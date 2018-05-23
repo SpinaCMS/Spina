@@ -20,7 +20,6 @@
         - Spina::Resource.order(:label).each do |resource|
           %li{class: ('active' if (@resource || @page&.resource) == resource)}= link_to resource.label, spina.admin_resource_path(resource)
 
-        %li= link_to t('spina.preview_website'), '/', data: { turbolinks: false }
         %li
           = link_to '#', class: 'back-to-main-menu' do
             = icon('caret-left')
