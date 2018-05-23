@@ -2,7 +2,6 @@ class Spina.InfiniteScroll
   @init: (link) ->
     $(window).off('scroll.infiniteScroll')
     $('#main, #overlay section').off('scroll.infiniteScroll')
-
     $link = $(link)
     if (url = $link.find('a').attr('href'))
       $(window).on 'scroll.infiniteScroll', => @loadNextPage($link)

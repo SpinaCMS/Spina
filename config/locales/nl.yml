@@ -41,6 +41,16 @@ nl:
       media_library_description: "Hier staan al je afbeeldingen, video's en documenten"
       documents: Documenten
       photos: Afbeeldingen
+      images: Afbeeldingen
+
+    images:
+      delete: Verwijderen
+      upload: kies een bestand
+      choose_image: Kies afbeelding
+
+    forgot_password:
+      new: Wachtwoord vergeten
+      request: Wachtwoord aanvragen
 
     pages:
       new: Nieuwe pagina
@@ -79,6 +89,9 @@ nl:
       link: "De link naar de afbeelding is:"
       cannot_be_created: "Foto kon niet worden verwerkt:"
       delete: Verwijderen
+      done_organizing: Klaar met slepen
+      organize: Organiseren
+      new_folder: Nieuwe folder
 
     wysiwyg:
       paragraph: Paragraaf
@@ -114,6 +127,7 @@ nl:
     media_library:
       photos: Afbeeldingen
       attachments: Documenten
+      images: Afbeeldingen
 
   activerecord:
     models:
