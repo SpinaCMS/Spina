@@ -15,6 +15,7 @@ nl:
     delete_confirmation: "Weet je zeker dat je <strong>%{subject}</strong> wilt verwijderen?"
     login: Aanmelden
     preview_website: Bekijk je website
+    visit_page: Bekijk pagina
     search: Zoeken...
     ago: geleden
     edit_website: Bewerk je website

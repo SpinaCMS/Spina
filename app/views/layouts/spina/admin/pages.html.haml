@@ -15,7 +15,11 @@
 
       = yield(:header_actions) if content_for?(:header_actions)
 
-    .breadcrumbs= render_breadcrumbs separator: '<div class="divider"></div>'
+    .breadcrumbs
+      = render_breadcrumbs separator: '<div class="divider"></div>'
+      = link_to '/', class: 'button button-small button-hollow', target: :blank do
+        =t 'spina.preview_website'
+        %i.icon.icon-export{style: "margin-left: 4px; margin-right: 0"}
 
     %nav#secondary.tabs
       %ul

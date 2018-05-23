@@ -10,18 +10,25 @@
 
 = form_for [spina, :admin, @page], html: {id: 'page_form', autocomplete: "off"} do |f|
   %header#header
-    .breadcrumbs= render_breadcrumbs separator: '<div class="divider"></div>'
-    - unless @page.new_record?
-      - if Spina.config.locales.size > 1
-        %div{style: 'display: inline-block; margin-left: 12px; position: absolute', data: {dropdown: true}}
-          = link_to '#', class: 'button button-link button-round button-small', data: {trigger: 'dropdown', target: '#locales'} do
-            = icon('comment')
-            =t "languages.#{@locale}"
+    .breadcrumbs
+      = render_breadcrumbs separator: '<div class="divider"></div>'
+      %span{style: 'margin-left: 10px'}
+        - unless @page.new_record?
+          - if Spina.config.locales.size > 1
+            %div{style: "display: inline-block", data: {dropdown: true}}
+              = link_to '#', class: 'button button-hollow button-small', style: 'margin-left: 0; margin-right: 0', data: {trigger: 'dropdown', target: '#locales'} do
+                = icon('comment')
+                =t "languages.#{@locale}"
+                %i.icon.icon-chevron-down{style: 'font-size: 9px; margin-right: 0'}
 
-          %ul#locales
-            - Spina.config.locales.each do |locale|
-              %li
-                = link_to t("languages.#{locale}"), "?locale=#{locale}", style: ('font-weight: 600' if @locale.to_s == locale.to_s)
+              %ul#locales
+                - Spina.config.locales.each do |locale|
+                  %li
+                    = link_to t("languages.#{locale}"), "?locale=#{locale}", style: ('font-weight: 600' if @locale.to_s == locale.to_s)
+
+        = link_to @page.materialized_path, target: :blank, class: 'button button-hollow button-small', style: 'margin-left: 0' do
+          =t 'spina.visit_page'
+          %i.icon.icon-export{style: 'margin-left: 4px; margin-right: 0'}
 
     #header_actions
       %button.button.button-primary{type: 'submit', style: 'margin-right: 0', data: {disable_with: t('spina.pages.saving')}}
