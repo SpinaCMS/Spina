@@ -1,1 +1,3 @@
 language: ruby
+notifications:
+  slack: spinacms:pEcHb40Gd0UWHWdooU2JG6OZ
