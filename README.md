@@ -7,6 +7,10 @@
 [![Test Coverage](https://codeclimate.com/github/SpinaCMS/Spina/badges/coverage.svg)](https://codeclimate.com/github/SpinaCMS/Spina/coverage)
 [![Slack](https://slack-spinacms.herokuapp.com/badge.svg)](https://slack-spinacms.herokuapp.com)
 
+[![View performance data on Skylight](https://badges.skylight.io/status/0kzPHGlfswAw.svg)](https://oss.skylight.io/app/applications/0kzPHGlfswAw)
+[![View performance data on Skylight](https://badges.skylight.io/problem/0kzPHGlfswAw.svg)](https://oss.skylight.io/app/applications/0kzPHGlfswAw)
+[![View performance data on Skylight](https://badges.skylight.io/typical/0kzPHGlfswAw.svg)](https://oss.skylight.io/app/applications/0kzPHGlfswAw)
+
 # Getting Started
 
 Spina is a CMS for Rails 5.2. This guide is designed for developers with experience using Ruby on Rails.
