@@ -27,7 +27,15 @@ Then start `rails s` and access Spina at `/admin`.
 
 ## Upgrading from 0.X to 1.0
 
-Run the migrations. The last migration will run a rake task that changes all instances of `Spina::Photo` to `Spina::Image`. After this change, all images will be handled by ActiveStorage.
+Because upgrading 1.0 means switching to ActiveStorage, we've created a complementary gem to make the upgrade process easier.
+
+`gem 'spina-upgrade', git: 'https://github.com/SpinaCMS/spina-upgrade'`
+
+After installing this gem, make sure you setup ActiveStorage. Then you can run the upgrade command to migrate all `Spina::Photo` records to `Spina::Image`. Images will be reuploaded using ActiveStorage, so depending on your storage this could take a while.
+
+`rails g spina:upgrade`
+
+Replace `Spina::Photo` with `Spina::Image` where necessary and make sure that you edit every `image_tag`.
 
 ## Upgrading from 0.12 to 0.12.1
 
