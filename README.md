@@ -2,7 +2,7 @@
 
 [Visit the website](http://www.spinacms.com)
 
-[![Backers on Open Collective](https://opencollective.com/Spina/backers/badge.svg)](#backers) [![Sponsors on Open Collective](https://opencollective.com/Spina/sponsors/badge.svg)](#sponsors) ![Travis branch](https://img.shields.io/travis/SpinaCMS/Spina/master.svg)
+[![Build Status](https://travis-ci.com/SpinaCMS/Spina.svg?branch=master)](https://travis-ci.com/SpinaCMS/Spina)
 [![Code Climate](https://codeclimate.com/github/denkGroot/Spina/badges/gpa.svg)](https://codeclimate.com/github/denkGroot/Spina)
 [![Test Coverage](https://codeclimate.com/github/denkGroot/Spina/badges/coverage.svg)](https://codeclimate.com/github/denkGroot/Spina/coverage)
 [![Slack](https://slack-spinacms.herokuapp.com/badge.svg)](https://slack-spinacms.herokuapp.com)
