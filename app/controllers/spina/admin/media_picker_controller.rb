@@ -3,11 +3,13 @@ module Spina
     class MediaPickerController < AdminController
 
       def show
-        @images = Image.sorted.page(params[:page])
+        @images = Image.page(params[:page])
 
         if params[:selected_ids].present?
           ids = params[:selected_ids].map(&:to_i).join(', ')
-          @images = @images.order(Arel.sql("CASE WHEN id IN(#{ids}) THEN 0 ELSE 1 END"))
+          @images = @images.order(Arel.sql("CASE WHEN id IN(#{ids}) THEN 0 ELSE 1 END, created_at DESC"))
+        else
+          @images = @images.sorted
         end
 
         render params[:page].present? ? :infinite_scroll : :show
