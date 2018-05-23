@@ -1,3 +1,10 @@
 language: ruby
+
+addons:
+  postgresql: '9.6'
+
+before_script:
+  - bundle exec rails db:setup
+
 notifications:
   slack: spinacms:pEcHb40Gd0UWHWdooU2JG6OZ
