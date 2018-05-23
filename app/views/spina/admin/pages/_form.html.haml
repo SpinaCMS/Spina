@@ -27,8 +27,7 @@
                     = link_to t("languages.#{locale}"), "?locale=#{locale}", style: ('font-weight: 600' if @locale.to_s == locale.to_s)
 
         = link_to @page.materialized_path, target: :blank, class: 'button button-hollow button-small', style: 'margin-left: 0' do
-          =t 'spina.visit_page'
-          %i.icon.icon-export{style: 'margin-left: 4px; margin-right: 0'}
+          %i.icon.icon-export{style: 'margin: 0'}
 
     #header_actions
       %button.button.button-primary{type: 'submit', style: 'margin-right: 0', data: {disable_with: t('spina.pages.saving')}}
