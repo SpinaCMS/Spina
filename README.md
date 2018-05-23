@@ -3,8 +3,8 @@
 [Visit the website](http://www.spinacms.com)
 
 [![Build Status](https://travis-ci.com/SpinaCMS/Spina.svg?branch=master)](https://travis-ci.com/SpinaCMS/Spina)
-[![Code Climate](https://codeclimate.com/github/denkGroot/Spina/badges/gpa.svg)](https://codeclimate.com/github/denkGroot/Spina)
-[![Test Coverage](https://codeclimate.com/github/denkGroot/Spina/badges/coverage.svg)](https://codeclimate.com/github/denkGroot/Spina/coverage)
+[![Code Climate](https://codeclimate.com/github/SpinaCMS/Spina/badges/gpa.svg)](https://codeclimate.com/github/SpinaCMS/Spina)
+[![Test Coverage](https://codeclimate.com/github/SpinaCMS/Spina/badges/coverage.svg)](https://codeclimate.com/github/SpinaCMS/Spina/coverage)
 [![Slack](https://slack-spinacms.herokuapp.com/badge.svg)](https://slack-spinacms.herokuapp.com)
 
 # Getting Started
