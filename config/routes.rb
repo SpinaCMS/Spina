@@ -48,13 +48,6 @@ Spina::Engine.routes.draw do
 
     resources :media_folders
 
-    resources :photos do
-      collection do
-        get 'trix_select/:object_id' => 'photos#trix_select', as: :trix_select
-        post 'trix_insert/:object_id' => 'photos#trix_insert', as: :trix_insert
-      end
-    end
-
     resources :images do
       collection do
         get 'folder/:id' => 'images#media_folder', as: :media_folder
