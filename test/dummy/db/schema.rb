@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180417114925) do
+ActiveRecord::Schema.define(version: 2018_04_17_114925) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -204,6 +204,7 @@ ActiveRecord::Schema.define(version: 20180417114925) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "media_folder_id"
+    t.integer "image_id"
     t.index ["media_folder_id"], name: "index_spina_photos_on_media_folder_id"
   end
 

@@ -13,7 +13,7 @@ module Spina
 
       test "list resources" do
         get "/admin/resources/#{@breweries.id}"
-        assert_select '.breadcrumbs', text: /\ABreweries/
+        assert_select '.breadcrumbs', text: /.*Breweries.*/
       end
 
       test "new resource page" do
@@ -24,7 +24,7 @@ module Spina
       test "create new resource page" do
         post "/admin/pages", params: {page: {title: "Brewery", resource_id: @breweries.id}}
         follow_redirect!
-        assert_select '.breadcrumbs', text: /Brewery\z/
+        assert_select '.breadcrumbs', text: /.*Brewery.*/
         assert_select '.breadcrumbs', text: /\ABreweries/
       end
 
