@@ -14,6 +14,10 @@ module Spina
       file.try(:filename).to_s
     end
 
+    def variant(options)
+      file.attached? ? file.variant(options) : ""
+    end
+
     def content
       self
     end

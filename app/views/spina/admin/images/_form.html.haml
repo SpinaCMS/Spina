@@ -2,4 +2,4 @@
   = f.submit style: 'display: none'
   = hidden_field_tag :media_library, value: true
   = f.label :file, t('spina.images.upload')
-  = f.file_field :files, multiple: true, data: {direct_upload_url: main_app.rails_direct_uploads_url, customfileinput: true}
+  = f.file_field :files, multiple: true, accept: "image/*", data: {direct_upload_url: main_app.rails_direct_uploads_url, customfileinput: true}

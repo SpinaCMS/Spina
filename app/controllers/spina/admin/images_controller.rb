@@ -11,12 +11,21 @@ module Spina
         @images = Image.sorted.where(media_folder_id: nil).with_attached_file.page(params[:page])
       end
 
+      # There's no file validation yet in ActiveStorage
+      # We do two things to reduce errors right now:
+      # 1. We add accept="image/*" to the image form
+      # 2. We destroy the entire record if the uploaded file is not an image
       def create
         @images = params[:image][:files].map do |file|
+          # Create the image and attach the file
           image = Image.create
           image.file.attach(file)
+
+          # Was it not an image after all? DESTROY IT
+          image.destroy and next unless image.file.image?
+
           image
-        end
+        end.compact
       end
 
       def destroy

@@ -8,20 +8,23 @@
 
 %h5 Image
 
-%p= image_tag content(:image).variant(resize: "200x100")
+%p
+  = image_tag main_app.url_for(content(:image).variant(resize: "200x200")), width: 100
 
 %h5 Image collection
 
 %ul
-  - content(:image_collection).images.each do |image|
-    %li= image_tag image.variant(resize: '100x100')
+  - if has_content?(:image_collection)
+    - content(:image_collection).images.each do |image|
+      %li= image_tag main_app.url_for(image.variant(resize: '200x200')), width: 100
 
 %h5 Structure
 
 %ul
-  - content(:structure).structure_items.each do |item|
-    %li
-      %h6 Title
-      %p= item.content(:title)
-      %h6 Description
-      != item.content(:description)
+  - if has_content?(:structure)
+    - content(:structure).structure_items.each do |item|
+      %li
+        %h6 Title
+        %p= item.content(:title)
+        %h6 Description
+        != item.content(:description)
