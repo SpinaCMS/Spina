@@ -33,6 +33,7 @@ module Spina
 
       def insert
         @attachment = Attachment.find(params[:attachment_id])
+        Rails.logger.info "HAHA HA HA #{@attachment.id}"
       end
 
       def select_collection
