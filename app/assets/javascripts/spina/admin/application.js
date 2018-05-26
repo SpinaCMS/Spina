@@ -44,7 +44,6 @@
 //= require ./pages
 
 //= require ./trix
-//= require ./infinite_scroll
 
 // Scaffolding
 
