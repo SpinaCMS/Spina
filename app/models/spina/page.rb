@@ -38,7 +38,6 @@ module Spina
 
     before_validation :set_materialized_path
     validates :title, presence: true
-    validates :materialized_path, uniqueness: true
 
     translates :title, :description, :materialized_path
     translates :menu_title, :seo_title, default: -> { title }
