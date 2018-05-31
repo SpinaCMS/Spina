@@ -255,7 +255,7 @@ You can define custom pages for your theme that will be generated when bootstrap
 
 Check our [Contributing Guide](CONTRIBUTING.md) for instructions on how to help the project.
 
-<a href="graphs/contributors"><img src="https://opencollective.com/Spina/contributors.svg?width=890" /></a>
+<a href="https://github.com/SpinaCMS/Spina/graphs/contributors"><img src="https://opencollective.com/Spina/contributors.svg?width=890" /></a>
 
 
 # Backers
@@ -288,6 +288,6 @@ Spina is released under the [MIT license](LICENSE.md).
 
 # Credits
 
-Some parts of Spina are heavily influenced by the wonderful Refinery CMS. Credits to [the Refinery  team](http://www.refinerycms.com/about).
+Some parts of Spina are heavily influenced by the wonderful Refinery CMS. Credits to [the Refinery  team](https://www.refinerycms.com/).
 
 All icons in Spina were made by Brent Jackson [Geomicons](http://jxnblk.com/geomicons-wired/).
