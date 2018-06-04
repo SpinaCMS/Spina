@@ -11,8 +11,6 @@ class CreateSpinaTables < ActiveRecord::Migration[4.2]
       t.string   "logo"
       t.datetime "created_at",                     null: false
       t.datetime "updated_at",                     null: false
-      t.string   "kvk_identifier"
-      t.string   "vat_identifier"
       t.boolean  "robots_allowed", default: false
     end
 
@@ -78,23 +76,6 @@ class CreateSpinaTables < ActiveRecord::Migration[4.2]
       t.integer  "position"
       t.string   "materialized_path"
       t.boolean  "active",              default: true
-    end
-
-    create_table "spina_photo_collections", force: :cascade do |t|
-      t.datetime "created_at", null: false
-      t.datetime "updated_at", null: false
-    end
-
-    create_table "spina_photo_collections_photos", force: :cascade do |t|
-      t.integer "photo_collection_id"
-      t.integer "photo_id"
-      t.integer "position"
-    end
-
-    create_table "spina_photos", force: :cascade do |t|
-      t.string   "file"
-      t.datetime "created_at", null: false
-      t.datetime "updated_at", null: false
     end
 
     create_table "spina_structure_items", force: :cascade do |t|

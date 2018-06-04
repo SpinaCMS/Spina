@@ -1,3 +1,1 @@
-<% unless @attachment.new_record? %>
-  $(".table-prepend-document").prepend("<%= j render partial: 'spina/admin/attachments/attachment', object: @attachment %>");
-<% end %>
+$(".table-prepend-document").prepend("<%= j render partial: 'spina/admin/attachments/attachment', collection: @attachments %>");

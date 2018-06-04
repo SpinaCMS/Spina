@@ -1,3 +1,0 @@
-.item{ class: ('selected' if photo_single_picker.id == @selected_photo_id) }
-  = radio_button_tag :photo_id, photo_single_picker.id, photo_single_picker.id == @selected_photo_id
-  = image_tag photo_single_picker.file.thumb.url, id: "photo_#{photo_single_picker.id}"

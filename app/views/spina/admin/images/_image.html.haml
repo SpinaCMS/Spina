@@ -1,0 +1,10 @@
+.item.image{class: ('selected' if image.id.to_s.try(:in?, params[:selected_ids].to_a))}
+  - unless defined?(simple) && simple
+    .overlay
+      = link_to admin_image_path(image), method: :delete, class: 'icon-only delete-photo-link', data: {confirm: t('spina.images.delete_confirmation')} do
+        = t('spina.images.delete')
+      %span.photo-name= truncate(image.name, length: 125)
+    = radio_button_tag :image_id, image.id
+    = check_box_tag 'image_ids[]', image.id, image.id.to_s.try(:in?, params[:selected_ids].to_a)
+    
+  = image_tag main_app.url_for(image.variant(resize: '300x300^', crop: "300x300+0+0"))

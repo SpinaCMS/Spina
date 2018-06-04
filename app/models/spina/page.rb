@@ -31,13 +31,13 @@ module Spina
     # Save children to update all materialized_paths
     after_save :save_children
     after_save :touch_navigations
+    after_save -> { page_parts.each(&:save) }
 
     # Create a 301 redirect if materialized_path changed
     after_save :rewrite_rule
 
     before_validation :set_materialized_path
     validates :title, presence: true
-    validates :materialized_path, uniqueness: true
 
     translates :title, :description, :materialized_path
     translates :menu_title, :seo_title, default: -> { title }

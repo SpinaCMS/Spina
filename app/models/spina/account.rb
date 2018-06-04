@@ -4,8 +4,6 @@ module Spina
 
     serialize :preferences
 
-    mount_uploader :logo, LogoUploader
-
     has_many :layout_parts, dependent: :destroy
     accepts_nested_attributes_for :layout_parts, allow_destroy: true
 

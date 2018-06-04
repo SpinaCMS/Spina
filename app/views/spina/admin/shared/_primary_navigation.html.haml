@@ -9,9 +9,8 @@
       %ul
         %li{class: ('active' if (current_admin_path.start_with?('/pages') || current_admin_path.start_with?('/navigations')) && @page&.resource.blank?)}
           = link_to t('spina.website.pages'), spina.admin_pages_path
-
-        %li{class: ('active' if current_admin_path.start_with?('/photos', '/attachments'))}
-          = link_to t('spina.website.media_library'), spina.admin_photos_path
+        %li{class: ('active' if current_admin_path.start_with?('/images', '/attachments'))}
+          = link_to t('spina.website.media_library'), spina.admin_images_path
 
         - Spina::Plugin.all.each do |plugin|
           - if current_theme.plugins.include? plugin.name

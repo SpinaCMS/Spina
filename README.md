@@ -2,14 +2,18 @@
 
 [Visit the website](http://www.spinacms.com)
 
-[![Backers on Open Collective](https://opencollective.com/Spina/backers/badge.svg)](#backers) [![Sponsors on Open Collective](https://opencollective.com/Spina/sponsors/badge.svg)](#sponsors) [![CircleCI](https://img.shields.io/circleci/project/github/denkGroot/Spina.svg)](https://circleci.com/gh/denkGroot/Spina)
-[![Code Climate](https://codeclimate.com/github/denkGroot/Spina/badges/gpa.svg)](https://codeclimate.com/github/denkGroot/Spina)
-[![Test Coverage](https://codeclimate.com/github/denkGroot/Spina/badges/coverage.svg)](https://codeclimate.com/github/denkGroot/Spina/coverage)
+[![Build Status](https://travis-ci.com/SpinaCMS/Spina.svg?branch=master)](https://travis-ci.com/SpinaCMS/Spina)
+[![Code Climate](https://codeclimate.com/github/SpinaCMS/Spina/badges/gpa.svg)](https://codeclimate.com/github/SpinaCMS/Spina)
+[![Test Coverage](https://codeclimate.com/github/SpinaCMS/Spina/badges/coverage.svg)](https://codeclimate.com/github/SpinaCMS/Spina/coverage)
 [![Slack](https://slack-spinacms.herokuapp.com/badge.svg)](https://slack-spinacms.herokuapp.com)
+
+[![View performance data on Skylight](https://badges.skylight.io/status/0kzPHGlfswAw.svg)](https://oss.skylight.io/app/applications/0kzPHGlfswAw)
+[![View performance data on Skylight](https://badges.skylight.io/problem/0kzPHGlfswAw.svg)](https://oss.skylight.io/app/applications/0kzPHGlfswAw)
+[![View performance data on Skylight](https://badges.skylight.io/typical/0kzPHGlfswAw.svg)](https://oss.skylight.io/app/applications/0kzPHGlfswAw)
 
 # Getting Started
 
-Spina is a CMS for Rails 5.1. This guide is designed for developers with experience using Ruby on Rails.
+Spina is a CMS for Rails 5.2. This guide is designed for developers with experience using Ruby on Rails.
 
 To start using Spina CMS add the following line to your Gemfile:
 
@@ -25,22 +29,32 @@ The installer will help you setup your first user.
 
 Then start `rails s` and access Spina at `/admin`.
 
-## Upgrading from 0.13 to 1.0.0.alpha
+## Upgrading from 0.X to 1.0
 
-Going from 0.13 to 1.0 will introduce a couple of changes. Globalize is replaced by Mobility and later down the road CarrierWave will be replaced by Rails' ActiveStorage. 
+Because upgrading 1.0 means switching to ActiveStorage, we've created a complementary gem to make the upgrade process easier.
 
-Switching to Mobility is fairly straightfoward. 
-- Run `rails g spina:install` to add the `mobility.rb` initializer.
-- Replace instances of `Globalize` with `Mobility` in your own code
+`gem 'spina-upgrade', git: 'https://github.com/SpinaCMS/spina-upgrade'`
 
-## Upgrading from 0.12 to 0.13
+After installing this gem, make sure you setup ActiveStorage. Then you can run the upgrade command to migrate all `Spina::Photo` records to `Spina::Image`. Images will be reuploaded using ActiveStorage, so depending on your storage this could take a while.
 
-Simply run the new migrations
+`rails g spina:upgrade`
+
+Replace `Spina::Photo` with `Spina::Image` where necessary and make sure that you edit every `image_tag`.
+
+## Upgrading from 0.12 to 0.12.1
+
+First run the new migrations
 
     rails spina:install:migrations
     rails db:migrate
 
 This will create a table for the `Spina::Resource` model.
+
+Globalize is replaced by Mobility. Switching to Mobility is fairly straightfoward.
+- Run `rails g spina:install` to add the `mobility.rb` initializer.
+- Replace instances of `Globalize` with `Mobility` in your own code
+
+This is the last release before Spina switches to Rails 5.2 and ActiveStorage.
 
 ## Upgrading from 0.11 to 0.12
 
@@ -99,8 +113,8 @@ A page in Spina has many Page parts. By default these page parts can be one of t
 
 - `Spina::Line`
 - `Spina::Text`
-- `Spina::Photo`
-- `Spina::PhotoCollection`
+- `Spina::Image`
+- `Spina::ImageCollection`
 - `Spina::Structure`
 - `Spina::Option`
 
@@ -241,7 +255,7 @@ You can define custom pages for your theme that will be generated when bootstrap
 
 Check our [Contributing Guide](CONTRIBUTING.md) for instructions on how to help the project.
 
-<a href="graphs/contributors"><img src="https://opencollective.com/Spina/contributors.svg?width=890" /></a>
+<a href="https://github.com/SpinaCMS/Spina/graphs/contributors"><img src="https://opencollective.com/Spina/contributors.svg?width=890" /></a>
 
 
 # Backers
@@ -274,6 +288,6 @@ Spina is released under the [MIT license](LICENSE.md).
 
 # Credits
 
-Some parts of Spina are heavily influenced by the wonderful Refinery CMS. Credits to [the Refinery  team](http://www.refinerycms.com/about).
+Some parts of Spina are heavily influenced by the wonderful Refinery CMS. Credits to [the Refinery  team](https://www.refinerycms.com/).
 
 All icons in Spina were made by Brent Jackson [Geomicons](http://jxnblk.com/geomicons-wired/).

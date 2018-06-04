@@ -15,7 +15,10 @@
 
       = yield(:header_actions) if content_for?(:header_actions)
 
-    .breadcrumbs= render_breadcrumbs separator: '<div class="divider"></div>'
+    .breadcrumbs
+      = render_breadcrumbs separator: '<div class="divider"></div>'
+      = link_to '/', class: 'button button-small button-hollow', target: :blank do
+        %i.icon.icon-export{style: "margin: 0"}
 
     %nav#secondary.tabs
       %ul
