@@ -8,7 +8,6 @@ class CreateSpinaTables < ActiveRecord::Migration[4.2]
       t.string   "phone"
       t.string   "email"
       t.text     "preferences"
-      t.string   "logo"
       t.datetime "created_at",                     null: false
       t.datetime "updated_at",                     null: false
       t.boolean  "robots_allowed", default: false
