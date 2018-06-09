@@ -66,7 +66,7 @@ module Spina
           update_child_pages_position(parent_node)
           update_page_position(parent_node, parent_pos, nil)
         end
-        render nothing: true
+        head :ok
       end
 
       def destroy
