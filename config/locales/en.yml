@@ -101,6 +101,7 @@ en:
       upload: Upload images
       choose_images: Choose images
       choose_image: Choose image
+      remove_image: Remove image
 
     wysiwyg:
       paragraph: Paragraph

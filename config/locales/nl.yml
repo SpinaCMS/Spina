@@ -47,6 +47,7 @@ nl:
       delete: Verwijderen
       upload: kies een bestand
       choose_image: Kies afbeelding
+      remove_image: Verwijder afbeelding
 
     forgot_password:
       new: Wachtwoord vergeten

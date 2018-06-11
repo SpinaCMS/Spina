@@ -1,5 +1,6 @@
 let hidden_input = $("input[data-hidden-field-id='<%= j params[:hidden_field_id] %>']");
 hidden_input.parents('.media_picker').find('.image').remove();
+hidden_input.val("");
 
 <% if @image.present? %>
   hidden_input.parents('.media_picker').append("<%=j render partial: 'spina/admin/images/image', object: @image, locals: {simple: true} %>");

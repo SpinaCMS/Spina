@@ -31,7 +31,7 @@ module Spina
           update_child_pages_position(parent_node)
           update_navigation_item_position(parent_node[:id], parent_pos, nil)
         end
-        render nothing: true
+        head :ok
       end
 
       private

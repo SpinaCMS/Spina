@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    spina (1.0.0)
+    spina (1.0.3)
       ancestry
       bcrypt
       breadcrumbs_on_rails
@@ -157,7 +157,7 @@ GEM
       builder
       minitest (>= 5.0)
       ruby-progressbar
-    mobility (0.7.0)
+    mobility (0.7.5)
       i18n (>= 0.6.10, < 1.1)
       request_store (~> 1.0)
     mocha (1.5.0)
