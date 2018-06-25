@@ -46,6 +46,10 @@ module Spina
       name
     end
 
+    def page_id
+      id
+    end
+
     def url_title
       title.try(:parameterize)
     end
