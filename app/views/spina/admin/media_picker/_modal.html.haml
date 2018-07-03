@@ -4,7 +4,7 @@
       .item.item-small.item-uploader.new-image-form
         = render partial: 'spina/admin/images/form'
 
-      = form_with url: admin_media_picker_path, class: 'gallery-prepend-image' do
+      = form_with url: admin_media_picker_path, class: 'gallery-prepend-image', html: {'data-remote': true} do
         = hidden_field_tag :hidden_field_id, params[:hidden_field_id]
         = hidden_field_tag :trix_editor_id, params[:trix_editor_id]
         = check_box_tag :multiple, true, defined?(multiple) && multiple, style: 'display: none'
