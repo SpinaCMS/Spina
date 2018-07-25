@@ -40,8 +40,8 @@ module Spina
     def bootstrap_website
       theme_config = ::Spina::Theme.find_by_name(theme)
       if theme_config
-        bootstrap_pages(theme_config)
         bootstrap_navigations(theme_config)
+        bootstrap_pages(theme_config)
       end
     end
 
