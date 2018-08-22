@@ -59,7 +59,7 @@ module Spina
     end
 
     def create_user
-      return if User.exists? && !no?('A user already exists. Skip? [Yn]')
+      return if ::Spina::User.exists? && !no?('A user already exists. Skip? [Yn]')
       email = 'admin@domain.com'
       email = ask("Please enter an email address for your first user: [#{email}]").presence || email
       password = 'password'
