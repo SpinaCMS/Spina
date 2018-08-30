@@ -3,6 +3,7 @@ module Spina
     class PagesController < AdminController
       before_action :set_tabs, only: [:new, :create, :edit, :update]
       before_action :set_locale
+      before_action :set_page, only: [:edit, :update, :destroy]
 
       def index
         add_breadcrumb I18n.t('spina.website.pages'), spina.admin_pages_path
@@ -34,8 +35,7 @@ module Spina
         end
       end
 
-      def edit
-        @page = Page.find(params[:id])
+      def edit        
         add_index_breadcrumb
         add_breadcrumb @page.title
         @page_parts = @page.view_template_page_parts(current_theme).map { |part| @page.part(part) }
@@ -43,8 +43,7 @@ module Spina
       end
 
       def update
-        I18n.locale = params[:locale] || I18n.default_locale
-        @page = Page.find(params[:id])
+        I18n.locale = params[:locale] || I18n.default_locale        
         respond_to do |format|
           if @page.update_attributes(page_params)
             add_breadcrumb @page.title
@@ -69,8 +68,7 @@ module Spina
         head :ok
       end
 
-      def destroy
-        @page = Page.find(params[:id])
+      def destroy        
         @page.destroy
         redirect_to spina.admin_pages_url
       end
@@ -110,6 +108,9 @@ module Spina
         params.require(:page).permit!
       end
 
+      def set_page
+        @page = Page.find(params[:id])
+      end
     end
   end
 end
