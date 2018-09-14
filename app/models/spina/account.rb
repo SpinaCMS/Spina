@@ -33,7 +33,9 @@ module Spina
       end
     end
 
-    serialized_attr_accessor :google_analytics, :google_site_verification, :facebook, :twitter, :google_plus, :theme
+    serialized_attr_accessor :google_analytics, :google_site_verification, 
+                             :facebook, :twitter, :google_plus, :theme, 
+                             :facebook_pixel
 
     private
 
