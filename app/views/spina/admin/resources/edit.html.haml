@@ -46,4 +46,4 @@
           = Spina::Resource.human_attribute_name :parent_page
         .horizontal-form-content
           .select-dropdown
-            = f.select :parent_page_id, page_ancestry_options(f.object), include_blank: Spina::Resource.human_attribute_name(:no_parent)
+            = f.select :parent_page_id, page_ancestry_options(Spina::Page.new), include_blank: Spina::Resource.human_attribute_name(:no_parent)
