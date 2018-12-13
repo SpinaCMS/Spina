@@ -25,7 +25,7 @@
 // Misc Plugins
 
 //= require spina/sortable
-//= require spina/trix
+//= require trix
 
 // Spina's code
 

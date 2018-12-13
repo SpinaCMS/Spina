@@ -1,26 +1,108 @@
 trix-toolbar
-  margin-bottom: 6px
+  .trix-button-group
+    border: 0
 
-  .button-group
-    margin-right: 10px
+    &:not(:first-child)
+      margin-left: 10px
 
-  .button.trix-active
-    background: $primary-color
-    color: #fff
+  .trix-button
+    @extend .button
+    border-bottom: 0
+    border-radius: 0
+    margin: 0
 
-  .trix-dialog__link-fields
-    clear: both
-    
-  .trix-dialog__link-fields input
-    margin-top: 6px
+    &:disabled
+      color: rgba(0, 0, 0, .6)
 
-  .trix-dialog__link-fields .button-group input
-    margin-top: 10px
+    &:not(:first-child)
+      border-left: 0
+
+    &:first-child
+      border-top-left-radius: 3px
+      border-bottom-left-radius: 3px
+
+    &:last-child
+      border-top-right-radius: 3px
+      border-bottom-right-radius: 3px
+
+    &.trix-active
+      background: $primary-color
+      color: #fff
+
+  .trix-button--text
+    padding-left: 12px
+    padding-right: 12px
+
+  .trix-button--icon
+    padding: 18px 16px
+
+    &::before
+      background: none
+      font-family: 'Font Awesome 5 Free'
+      display: inline-block
+      font-weight: 900
+      line-height: 36px
+      opacity: 1
+      text-indent: 0
+
+    &.trix-button--icon-bold
+      &::before
+        content: "\f032"
+
+    &.trix-button--icon-italic
+      &::before
+        content: "\f033"
+
+    &.trix-button--icon-strike
+      &::before
+        content: "\f0cc"
+
+    &.trix-button--icon-link
+      &::before
+        content: "\f0c1"
+
+    &.trix-button--icon-image
+      &::before
+        content: "\f03e"
+
+    &.trix-button--icon-quote
+      &::before
+        content: "\f10e"
+
+    &.trix-button--icon-code
+      &::before
+        content: "\f121"
+
+    &.trix-button--icon-bullet-list
+      &::before
+        content: "\f0ca"
+
+    &.trix-button--icon-number-list
+      &::before
+        content: "\f0cb"
+
+    &.trix-button--icon-decrease-nesting-level
+      &::before
+        content: "\f03b"
+
+    &.trix-button--icon-increase-nesting-level
+      &::before
+        content: "\f03c"
+
+    &.trix-button--icon-undo
+      &::before
+        content: "\f2ea"
+
+    &.trix-button--icon-redo
+      &::before
+        content: "\f2f9"
+
+  .trix-dialog
+    border-top-color: $primary-color
+    border-radius: 3px
 
 trix-editor
-  font-size: 16px
   line-height: 18px
-  font-weight: normal
   min-height: 100px
 
   h1, h2, h3, h4, h5, h6
@@ -88,15 +170,11 @@ trix-editor
     padding-left: 20px
 
   figure.attachment
-    margin-bottom: 12px
-    margin-top: 12px
-    max-width: 200px
-    overflow: hidden
-
-    figcaption, .attachment__remove
+    .attachment__metadata
       display: none
 
-    img
-      border-radius: 3px
-      display: block
-      width: 100%
+  textarea
+    min-height: 0
+    border-radius: 0
+    box-shadow: none
+    font-size: 16px
