@@ -7,7 +7,7 @@ hidden_input.val("");
   hidden_input.val("<%= @image.id %>");
 
   // Trix editor
-  $('#<%= params[:trix_editor_id] %>').trigger('image-insert', '<%= main_app.url_for(@image.variant(resize: "800x800")) %>');
+  $('trix-editor[toolbar="<%= params[:trix_toolbar_id] %>"').trigger('image-insert', '<%= main_app.url_for(@image.file) %>');
   $.hideModal();
 <% end %>
 
