@@ -1,19 +1,24 @@
 # Page parts
 
 A page in Spina has many Page parts. By default these page parts can be one of the following:
+
 - Spina::Line
 - Spina::Text
 - Spina::Image
 - Spina::ImageCollection
 - Spina::Structure
 - Spina::Option
+
 These are the building blocks of your view templates. You can have an unlimited number of page parts in a page. We prefer to keep the number of parts to a minimum so that managing your pages won't become too complex.
 
 Spina uses an initializer to create the basic building blocks of your page. There are three steps to add a new building block or page part to your app:
-Set up a new page part in the initializer
-Set the new initializer into a view template
-Add it to the view
-*Create a new page part*
+
+- Set up a new page part in the initializer
+- Set the new initializer into a view template
+- Add it to the view
+
+**Create a new page part**
+
 When you install Spina, you will see the following in config/initializers/themes/default.rb
 
 ```
@@ -66,7 +71,8 @@ theme.page_parts = [{
 }]
 ```
 
-*Add it to the view template*
+**Add it to the view template**
+
 Now, we need to update the self.view_templates hash next. These view templates provide customization for the different views you might want. For example, you may have a 'blog' view or an 'about' view which add different page parts. For this example we will add the portfolio part into the 'Default' view template.
 
 ```
@@ -83,7 +89,8 @@ theme.view_templates = [{
 }]
 ```
 
-*Add it to the view*
+**Add it to the view**
+
 Finally, let's go to views/default/pages/show.html.erb and add the following:
 
 ```
