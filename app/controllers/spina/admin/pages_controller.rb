@@ -3,7 +3,7 @@ module Spina
     class PagesController < AdminController
       before_action :set_tabs, only: [:new, :create, :edit, :update]
       before_action :set_locale
-      before_action :set_page, only: [:edit, :update, :destroy]
+      before_action :set_page, only: [:edit, :update, :destroy, :children]
 
       def index
         add_breadcrumb I18n.t('spina.website.pages'), spina.admin_pages_path
@@ -13,7 +13,7 @@ module Spina
 
       def new
         @resource = Resource.find_by(id: params[:resource_id])
-        @page = Page.new(resource: @resource, parent: @resource&.parent_page)
+        @page = Page.new(resource: @resource, parent: Page.find_by(id: params[:parent_id]) || @resource&.parent_page)
         add_index_breadcrumb
         if current_theme.new_page_templates.any? { |template| template[0] == params[:view_template] }
           @page.view_template = params[:view_template]
@@ -66,6 +66,11 @@ module Spina
           update_page_position(parent_node, parent_pos, nil)
         end
         head :ok
+      end
+
+      def children
+        @children = @page.children.active.sorted
+        render layout: false
       end
 
       def destroy        
