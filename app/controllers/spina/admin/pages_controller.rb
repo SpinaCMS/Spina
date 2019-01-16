@@ -42,18 +42,17 @@ module Spina
         render layout: 'spina/admin/admin'
       end
 
-      def update
-        I18n.locale = params[:locale] || I18n.default_locale        
+      def update 
         respond_to do |format|
+          Mobility.locale = @locale
           if @page.update_attributes(page_params)
-            add_breadcrumb @page.title
             @page.touch
-            I18n.locale = I18n.default_locale
             format.html { redirect_to spina.edit_admin_page_url(@page, params: {locale: @locale}), flash: {success: t('spina.pages.saved')} }
             format.js
           else
             format.html do
               @page_parts = @page.view_template_page_parts(current_theme).map { |part| @page.part(part) }
+              Mobility.locale = I18n.default_locale
               render :edit, layout: 'spina/admin/admin'
             end
           end
