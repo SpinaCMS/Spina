@@ -36,7 +36,7 @@ module Spina
       end
 
       def page
-        @page = if action_name == 'homepage'
+        @page ||= if action_name == 'homepage'
           Page.find_by!(name: 'homepage')
         else 
           page_by_locale(I18n.locale) || page_by_locale(I18n.default_locale)

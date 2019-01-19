@@ -61,7 +61,7 @@ module Spina
       end
 
       def scoped_collection(collection)
-        scoped = collection.regular_pages.active.in_menu.sorted
+        scoped = collection.regular_pages.active.in_menu.sorted.includes(:translations)
         include_drafts ? scoped : scoped.live
       end
 
