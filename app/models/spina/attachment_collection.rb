@@ -12,6 +12,10 @@ module Spina
       self
     end
 
+    def content_as_json
+      attachment_ids
+    end
+
     def attachment_tokens=(ids)
       self.attachment_ids = ids.split(",")
     end

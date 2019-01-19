@@ -8,6 +8,10 @@ module Spina
       I18n.t(['options',part.name,value].compact.join('.'))
     end
 
+    def content_as_json
+      value
+    end
+
     private
 
     def part

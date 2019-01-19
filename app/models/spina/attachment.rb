@@ -18,6 +18,10 @@ module Spina
       file if file.attached?
     end
 
+    def content_as_json
+      id
+    end
+
     alias_method :old_update_attributes, :update_attributes
     def update_attributes(attributes)
       if attributes["_destroy"] == "1" && attributes["file"].blank?

@@ -22,6 +22,10 @@ module Spina
       (partable || partable_type.constantize.new).content
     end
 
+    def content_as_json
+      (partable || partable_type.constantize.new).content_as_json
+    end
+
     def value
       partable.try(:value)
     end

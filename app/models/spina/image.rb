@@ -22,6 +22,10 @@ module Spina
       self
     end
 
+    def content_as_json
+      id
+    end
+
     def thumbnail(size = '100x100', modifier = '^')
       variant(
         combine_options: {

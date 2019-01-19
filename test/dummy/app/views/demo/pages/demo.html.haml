@@ -8,21 +8,20 @@
 
 %h5 Image
 
-- if has_content?(:image)
-  %p= image_tag content(:image).variant(resize: "200x200")
+= spina_image_tag(content(:image), resize: "200x200")
 
 %h5 Image collection
 
 %ul
-  - content(:image_collection)&.images&.each do |image|
-    %li= image_tag image.variant(resize: '100x100')
+  - content(:image_collection)&.each do |image|
+    %li= spina_image_tag(image, resize: '100x100')
 
 %h5 Structure
 
 %ul
-  - content(:structure)&.structure_items&.each do |item|
+  - content(:structure)&.each do |item|
     %li
       %h6 Title
-      %p= item.content(:title)
+      %p= item["title"]
       %h6 Description
-      != item.content(:description)
+      != item["description"]

@@ -13,6 +13,10 @@ module Spina
       self
     end
 
+    def content_as_json
+      image_ids
+    end
+
     alias_method :old_update_attributes, :update_attributes
     def update_attributes(attributes)
       self.images.clear if attributes.reject{|key,value| key == "id" }.blank?

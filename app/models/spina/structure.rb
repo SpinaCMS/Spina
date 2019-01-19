@@ -10,5 +10,10 @@ module Spina
     def content
       self
     end
+
+    def content_as_json
+      structure_items.map(&:content_as_json)
+    end
+
   end
 end

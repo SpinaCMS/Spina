@@ -18,5 +18,11 @@ module Spina
     def ensure_position
       self.position ||= Time.now.to_i
     end
+
+    def content_as_json
+      structure_parts.map do |structure_part|
+        { structure_part.name => structure_part.content_as_json }
+      end.inject(:merge)
+    end
   end
 end

@@ -28,6 +28,9 @@ module Spina
     scope :live, -> { active.where(draft: false) }
     scope :in_menu, -> { where(show_in_menu: true) }
 
+    # Cache it in the content column
+    before_save :store_content_as_json
+
     # Save children to update all materialized_paths
     after_save :save_children
     after_save :touch_navigations
@@ -39,7 +42,7 @@ module Spina
     before_validation :set_materialized_path
     validates :title, presence: true
 
-    translates :title, :description, :materialized_path
+    translates :title, :description, :materialized_path, :content_as_json
     translates :menu_title, :seo_title, default: -> { title }
 
     def to_s
@@ -94,7 +97,17 @@ module Spina
       theme.page_parts.select { |page_part| page_part[:name].in? view_template_config(theme)[:page_parts] }
     end
 
+    def content(name)
+      content_as_json[name.to_s]
+    end
+
     private
+
+      def store_content_as_json
+        self.content_as_json = parts.map do |part|
+          { part.name => part.content_as_json }
+        end.inject(:merge)
+      end
 
       def touch_navigations
         navigations.update_all(updated_at: Time.zone.now)
