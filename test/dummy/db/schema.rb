@@ -163,7 +163,7 @@ ActiveRecord::Schema.define(version: 2019_01_19_190900) do
     t.string "materialized_path"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.jsonb "content_as_json", default: "{}"
+    t.jsonb "content", default: "{}"
     t.index ["locale"], name: "index_spina_page_translations_on_locale"
     t.index ["spina_page_id"], name: "index_spina_page_translations_on_spina_page_id"
   end

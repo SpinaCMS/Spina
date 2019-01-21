@@ -11,7 +11,7 @@ module Spina
 
     def spina_image_tag(image_id, variant_options = {})
       image = Spina::Image.find_by(id: image_id)
-      image_tag(main_app.url_for(image.variant(variant_options)))
+      image_tag(main_app.url_for(image.variant(variant_options))) if image
     end
 
     def current_page

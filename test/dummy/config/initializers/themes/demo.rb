@@ -12,6 +12,54 @@
     title:          'Text',
     partable_type:  'Spina::Text'
   }, {
+    name:           'text2',
+    title:          'Text',
+    partable_type:  'Spina::Text'
+  }, {
+    name:           'text3',
+    title:          'Text',
+    partable_type:  'Spina::Text'
+  }, {
+    name:           'text4',
+    title:          'Text',
+    partable_type:  'Spina::Text'
+  }, {
+    name:           'text5',
+    title:          'Text',
+    partable_type:  'Spina::Text'
+  }, {
+    name:           'text6',
+    title:          'Text',
+    partable_type:  'Spina::Text'
+  }, {
+    name:           'text7',
+    title:          'Text',
+    partable_type:  'Spina::Text'
+  }, {
+    name:           'text8',
+    title:          'Text',
+    partable_type:  'Spina::Text'
+  }, {
+    name:           'text9',
+    title:          'Text',
+    partable_type:  'Spina::Text'
+  }, {
+    name:           'text10',
+    title:          'Text',
+    partable_type:  'Spina::Text'
+  }, {
+    name:           'text11',
+    title:          'Text',
+    partable_type:  'Spina::Text'
+  }, {
+    name:           'text12',
+    title:          'Text',
+    partable_type:  'Spina::Text'
+  }, {
+    name:           'text13',
+    title:          'Text',
+    partable_type:  'Spina::Text'
+  }, {
     name:           'image',
     title:          'Image',
     partable_type:  'Spina::Image'
@@ -79,7 +127,7 @@
     name: 'demo',
     title: 'Demo',
     description: 'Contains examples of every page part',
-    page_parts: ['line', 'text', 'image', 'image_collection', 'attachment', 'attachment_collection', 'option', 'structure']
+    page_parts: ['line', 'text', 'image', 'image_collection', 'attachment', 'attachment_collection', 'option', 'structure', 'text2', 'text3', 'text4', 'text5', 'text6', 'text7', 'text8', 'text9', 'text10', 'text11', 'text12', 'text13']
   }]
 
   theme.custom_pages = [{

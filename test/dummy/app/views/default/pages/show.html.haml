@@ -1,4 +1,2 @@
 %h1= @page.title
 = @page.content(:text).try(:html_safe)
-
-= image_tag variant(@page.content(:image), resize: '500x500')
