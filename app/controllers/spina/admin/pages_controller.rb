@@ -19,7 +19,9 @@ module Spina
           @page.view_template = params[:view_template]
         end
         add_breadcrumb I18n.t('spina.pages.new')
-        @page_parts = @page.view_template_page_parts(current_theme).map { |part| @page.part(part) }
+        # @page_parts = @page.view_template_page_parts(current_theme).map { |part| @page.part(part) }
+
+        @parts = @page.view_template_parts(current_theme).map{|part| @page.part(part)}
         render layout: 'spina/admin/admin'
       end
 
@@ -38,7 +40,8 @@ module Spina
       def edit        
         add_index_breadcrumb
         add_breadcrumb @page.title
-        @page_parts = @page.view_template_page_parts(current_theme).map { |part| @page.part(part) }
+        # @page_parts = @page.view_template_page_parts(current_theme).map { |part| @page.part(part) }
+        @parts = @page.view_template_parts(current_theme).map{|part| @page.part(part)}
         render layout: 'spina/admin/admin'
       end
 
@@ -53,7 +56,7 @@ module Spina
             format.js
           else
             format.html do
-              @page_parts = @page.view_template_page_parts(current_theme).map { |part| @page.part(part) }
+              # @page_parts = @page.view_template_page_parts(current_theme).map { |part| @page.part(part) }
               render :edit, layout: 'spina/admin/admin'
             end
           end

@@ -1,0 +1,6 @@
+.horizontal-form-group
+  .horizontal-form-label
+    = field
+  .horizontal-form-content
+    = f.hidden_field "#{field}[partable_type]", value: "Spina::Parts::Line"
+    = f.text_field "#{field}[value]", value: object.content[field]["value"]

@@ -1,0 +1,27 @@
+- image = Spina::Parts::Image.new(field)
+- image.value = object.content[field]["value"]
+
+.horizontal-form-group
+  .horizontal-form-label
+    = field
+  .horizontal-form-content
+    = f.fields_for field do |ff|
+      = ff.hidden_field "partable_type", value: "Spina::Parts::Image"
+
+      = link_to admin_media_picker_path(selected_ids: [object.content[field]["value"]], hidden_field_id: "#{field}_input"), remote: true, class: 'media_picker clearfix' do
+        = ff.hidden_field "value", value: object.content[field]["value"], data: {hidden_field_id: "#{field}_input"}
+        .placeholder
+          %span.button.button-small.button-round
+            %i.icon.icon-dots
+            =t 'spina.images.choose_image'
+
+          - if image.content.attached?
+            %br/
+
+            %span.button.button-small.button-round{data: {action: "click->image-form#remove", target: "image-form.button"}}
+              %i.icon.icon-trash
+              =t 'spina.images.remove_image'
+
+        - if image.content.attached?
+          .image{data: {target: 'image-form.image'}}
+            = image_tag variant(image.content, resize: "300x300^", crop: "300x300+0+0")

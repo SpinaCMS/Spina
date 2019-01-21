@@ -10,8 +10,15 @@ module Spina
       #   part
       # end
 
+      def get_part(name)
+        part = content[name.to_s]["partable_type"].constantize.new(name.to_s)
+        part.value = content[name.to_s]["value"]
+        part
+      end
+
       def part(attributes)
-        attributes
+        matches = attributes.match(/\A(.*):(.*)\z/)
+        Spina::Part.new(matches[1], matches[2])
       end
 
       def has_content?(name)

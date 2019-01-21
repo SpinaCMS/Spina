@@ -3,141 +3,28 @@
   theme.name = 'demo'
   theme.title = 'Demo theme'
 
-  theme.page_parts = [{
-    name:           'line',
-    title:          'Line',
-    partable_type:  'Spina::Line'
-  }, {
-    name:           'text',
-    title:          'Text',
-    partable_type:  'Spina::Text'
-  }, {
-    name:           'text2',
-    title:          'Text',
-    partable_type:  'Spina::Text'
-  }, {
-    name:           'text3',
-    title:          'Text',
-    partable_type:  'Spina::Text'
-  }, {
-    name:           'text4',
-    title:          'Text',
-    partable_type:  'Spina::Text'
-  }, {
-    name:           'text5',
-    title:          'Text',
-    partable_type:  'Spina::Text'
-  }, {
-    name:           'text6',
-    title:          'Text',
-    partable_type:  'Spina::Text'
-  }, {
-    name:           'text7',
-    title:          'Text',
-    partable_type:  'Spina::Text'
-  }, {
-    name:           'text8',
-    title:          'Text',
-    partable_type:  'Spina::Text'
-  }, {
-    name:           'text9',
-    title:          'Text',
-    partable_type:  'Spina::Text'
-  }, {
-    name:           'text10',
-    title:          'Text',
-    partable_type:  'Spina::Text'
-  }, {
-    name:           'text11',
-    title:          'Text',
-    partable_type:  'Spina::Text'
-  }, {
-    name:           'text12',
-    title:          'Text',
-    partable_type:  'Spina::Text'
-  }, {
-    name:           'text13',
-    title:          'Text',
-    partable_type:  'Spina::Text'
-  }, {
-    name:           'image',
-    title:          'Image',
-    partable_type:  'Spina::Image'
-  }, {
-    name:           'image_collection',
-    title:          'Image collection',
-    partable_type:  'Spina::ImageCollection'
-  }, {
-    name:           'attachment',
-    title:          'Attachment',
-    partable_type:  'Spina::Attachment'
-  }, {
-    name:           'attachment_collection',
-    title:          'Attachment collection',
-    partable_type:  'Spina::AttachmentCollection'
-  }, {
-    name:           'structure',
-    title:          'Structure',
-    partable_type:  'Spina::Structure'
-  }, {
-    name:           'option',
-    title:          'Option',
-    partable_type:  'Spina::Option',
-    options: {
-      values: ['val1', 'val2']
-    }
-  }]
-
   theme.structures = [{
-    name: 'structure',
-    structure_parts: [{
-      name:           'title',
-      title:          'Title',
-      partable_type:  'Spina::Line'
-    }, {
-      name:           'description',
-      title:          'Description',
-      partable_type:  'Spina::Text'
-    }, {
-      name:           'alignment',
-      title:          'Alignment',
-      partable_type:  'Spina::Option',
-      options: {
-        values: ['left', 'right', 'center']
-      }
-    }]
-  }]
-
-  theme.layout_parts = [{
-    name:           'line',
-    title:          'Line',
-    partable_type:  'Spina::Line'
+    name: 'faq',
+    parts: ['title:line', 'description:text']
   }]
 
   theme.view_templates = [{
     name: 'homepage',
-    title: 'Homepage',
-    page_parts: ['text'],
+    parts: ['description:text']
   }, {
     name: 'show',
-    title: 'Default',
-    usage: 'Use for your content',
-    page_parts: ['text']
+    parts: ['text:text']
   }, {
     name: 'demo',
-    title: 'Demo',
-    description: 'Contains examples of every page part',
-    page_parts: ['line', 'text', 'image', 'image_collection', 'attachment', 'attachment_collection', 'option', 'structure', 'text2', 'text3', 'text4', 'text5', 'text6', 'text7', 'text8', 'text9', 'text10', 'text11', 'text12', 'text13']
+    parts: ['heading:line', 'description:text', 'header_image:image', 'faq:structure']
   }]
 
   theme.custom_pages = [{
     name:           'homepage',
-    title:          'Homepage',
     deletable:      false,
     view_template:  'homepage'
   }, {
     name:           'demo',
-    title:          'Demo',
     deletable:      true,
     view_template:  'demo'
   }]

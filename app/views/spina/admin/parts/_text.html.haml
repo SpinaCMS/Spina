@@ -1,0 +1,8 @@
+.horizontal-form-group
+  .horizontal-form-label
+    = field
+  .horizontal-form-content
+    = f.fields_for field do |ff|
+      = ff.hidden_field "partable_type", value: "Spina::Parts::Text"
+      = ff.hidden_field "value", id: "#{field}_input", value: object.content[field]["value"]
+      %trix-editor.text-input.trix-content{input: "#{field}_input"}

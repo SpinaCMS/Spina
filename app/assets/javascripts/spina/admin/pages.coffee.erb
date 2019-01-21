@@ -3,9 +3,9 @@ ready = ->
     $('.dd').nestable
       maxDepth: "<%= Spina.config.max_page_depth %>"
 
-  if $('.page-template').length > 0
-    page_parts = $('.page-template').data('page-parts')
-    show_page_parts(page_parts)
+  # if $('.page-template').length > 0
+  # page_parts = $('.page-template').data('page-parts')
+  # show_page_parts(page_parts)
 
   $('.sortable-grid').sortable().bind 'sortupdate', (e) ->
     position_array = []

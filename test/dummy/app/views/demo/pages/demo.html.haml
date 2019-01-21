@@ -1,27 +1,11 @@
 %h1= current_page.title
 
 %h5 Line
-%p= content :line
+= content :heading
 
 %h5 Content
-!= content :text
+!= content :description
 
 %h5 Image
 
-= spina_image_tag(content(:image), resize: "200x200")
-
-%h5 Image collection
-
-%ul
-  - content(:image_collection)&.each do |image|
-    %li= spina_image_tag(image, resize: '100x100')
-
-%h5 Structure
-
-%ul
-  - content(:structure)&.each do |item|
-    %li
-      %h6 Title
-      %p= item["title"]
-      %h6 Description
-      != item["description"]
+= image_tag main_app.url_for(content(:header_image).variant(resize: '200x200'))
