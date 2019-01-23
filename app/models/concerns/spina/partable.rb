@@ -11,6 +11,7 @@ module Spina
       # end
 
       def get_part(name)
+        return nil unless content[name.to_s]
         part = content[name.to_s]["partable_type"].constantize.new(name.to_s)
         part.value = content[name.to_s]["value"]
         part

@@ -1,4 +1,6 @@
 let hidden_input = $("input[data-hidden-field-id='<%= j params[:hidden_field_id] %>']");
+let image_url = $("input[data-hidden-field-url='image_url']");
+let thumb_url = $("input[data-hidden-field-url='thumb_url']");
 hidden_input.parents('.media_picker').find('.image').remove();
 hidden_input.val("");
 
@@ -6,6 +8,8 @@ hidden_input.val("");
   hidden_input.parents('.media_picker').append("<%=j render partial: 'spina/admin/images/image', object: @image, locals: {simple: true} %>");
   hidden_input.val("<%= @image.id %>");
 
+  image_url.val("<%=j main_app.url_for(@image.file) %>")
+  thumb_url.val("<%=j main_app.url_for(@image.file.variant(resize: '300x300')) %>")
   // Trix editor
   //$('trix-editor[toolbar="<%= params[:trix_toolbar_id] %>"').trigger('image-insert', '<%= main_app.url_for(@image.file) %>');
   $.hideModal();

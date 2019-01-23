@@ -8,20 +8,23 @@
     = f.fields_for field do |ff|
       = ff.hidden_field "partable_type", value: "Spina::Parts::Image"
 
-      = link_to admin_media_picker_path(selected_ids: [object.content[field]["value"]], hidden_field_id: "#{field}_input"), remote: true, class: 'media_picker clearfix' do
-        = ff.hidden_field "value", value: object.content[field]["value"], data: {hidden_field_id: "#{field}_input"}
+      = link_to admin_media_picker_path(selected_ids: [object.content[field]["value"]["id"]], hidden_field_id: "#{field}_input"), remote: true, class: 'media_picker clearfix' do
+        = ff.hidden_field "[value][id]", value: object.content[field]["value"]["id"], data: {hidden_field_id: "#{field}_input"}
+
+        - image.image_urls.each do |image_url|
+          = ff.text_field "[value][#{image_url}]", value: object.content[field]["value"][image_url], data: {hidden_field_url: image_url}, placeholder: image_url
+
         .placeholder
           %span.button.button-small.button-round
             %i.icon.icon-dots
             =t 'spina.images.choose_image'
 
-          - if image.content.attached?
-            %br/
+          / - if image.content.attached?
+          /   %br/
 
-            %span.button.button-small.button-round{data: {action: "click->image-form#remove", target: "image-form.button"}}
-              %i.icon.icon-trash
-              =t 'spina.images.remove_image'
+          / %span.button.button-small.button-round{data: {action: "click->image-form#remove", target: "image-form.button"}}
+          /   %i.icon.icon-trash
+          /   =t 'spina.images.remove_image'
 
-        - if image.content.attached?
-          .image{data: {target: 'image-form.image'}}
-            = image_tag variant(image.content, resize: "300x300^", crop: "300x300+0+0")
+        .image{data: {target: 'image-form.image'}}
+          = image_tag image.thumbnail_url
