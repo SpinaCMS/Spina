@@ -94,4 +94,9 @@
     view_template:  'demo'
   }]
 
+  theme.resources = [{
+    name: 'blogposts',
+    label: "Blogposts"
+  }]
+
 end
