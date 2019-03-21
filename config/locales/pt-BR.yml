@@ -48,6 +48,7 @@ pt-BR:
       media_library_description: "Aqui é onde você vai encontrar todas as suas imagens e documentos"
       documents: Documentos
       photos: Imagens
+      images: Imagens
 
     pages:
       new: Nova página
@@ -79,6 +80,20 @@ pt-BR:
       cannot_be_created: O usuário não pode ser salvo
 
     photos:
+      delete_confirmation: "Tem certeza que deseja remover esta <strong>imagem</strong>?"
+      insert_photos: Inserir imagens
+      choose_images: Escolher imagens
+      insert_photo: Inserir imagem
+      link: "URL da sua imagem:"
+      cannot_be_created: "Imagem não pôde ser processada:"
+      upload_image: "Enviar uma imagem"
+      organize: Organizar imagens
+      done_organizing: Concluir organização
+      new_folder: Nova pasta
+      delete_folder: Excluir pasta
+      delete: Excluir
+
+    images:
       delete_confirmation: "Tem certeza que deseja remover esta <strong>imagem</strong>?"
       insert_photos: Inserir imagens
       choose_images: Escolher imagens
@@ -125,6 +140,7 @@ pt-BR:
 
     media_library:
       photos: Imagens
+      images: Imagens
       attachments: Documentos
 
   activerecord:
