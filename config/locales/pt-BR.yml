@@ -4,6 +4,7 @@ pt-BR:
     close: Fechar
     choose_from_library: Escolher da biblioteca
     edit: Editar
+    save: Salvar
     delete: Remover
     permanently_delete: Remover permanentemente
     delete_confirmation: "Tem certeza que deseja remover <strong>%{subject}</strong>?"
@@ -14,6 +15,19 @@ pt-BR:
     edit_website: Editar seu site
     logout: Sair
     main_menu: Menu principal
+
+    settings:
+      title: Configurações
+      save: Salvar Configurações
+
+    forgot_password:
+      new: Esqueci a senha
+      request: Receber nova senha
+      unknown_user: Este usuário não existe
+      save: Salvar nova senha
+      success: Você já pode usar sua nova senha
+      mail_subject: Resetar sua senha
+      expired: O token para resetar sua senha expirou
 
     modal:
       agree: "Sim, tenho certeza"
@@ -28,6 +42,7 @@ pt-BR:
     website:
       title: Seu site
       pages: Páginas
+      all_pages: Todas as páginas
       pages_description: "Todas as páginas no seu site"
       media_library: Biblioteca de mídia
       media_library_description: "Aqui é onde você vai encontrar todas as suas imagens e documentos"
@@ -54,6 +69,8 @@ pt-BR:
       invisible_to_search_engines_description: Vá para as preferências para ativar os sistemas de busca
       rebuild_materialized_path: Reconstruir caminho materializado
       materialize_path_confirmation: "Você está certo que quer reconstruir o caminho para esta página?"
+      saving: Salvando...
+      saved: Página salva
 
     users:
       new: Novo usuário
@@ -67,10 +84,16 @@ pt-BR:
       choose_images: Escolher imagens
       insert_photo: Inserir imagem
       link: "URL da sua imagem:"
-      cannot_be_created: "Imagem não pode ser processada:"
+      cannot_be_created: "Imagem não pôde ser processada:"
+      upload_image: "Enviar uma imagem"
+      organize: Organizar imagens
+      done_organizing: Concluir organização
+      new_folder: Nova pasta
+      delete_folder: Excluir pasta
+      delete: Excluir
 
     wysiwyg:
-      paragraph: Paragráfo
+      paragraph: Parágrafo
       heading_1: Cabeçalho 1
       heading_2: Cabeçalho 2
       heading_3: Cabeçalho 3
@@ -171,9 +194,17 @@ pt-BR:
         ancestry: Página pai
         no_parent: Nenhum pai
 
+      spina/media_folder:
+        name: Nome
+
+      spina/navigation:
+        label: Etiqueta
+        auto_add_pages: Adicionar páginas automaticamente
+        auto_add_pages_description: Novas páginas são adicionadas automaticamente para esta navegação
+        pages: Páginas
+        pages_description: Selecione as páginas que você quer usar nesta navegação
+
       spina/user:
-        email: Email
-        password: Senha
         name: Nome
         name_placeholder: Nome
         email: Email

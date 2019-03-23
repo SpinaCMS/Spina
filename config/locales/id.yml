@@ -1,0 +1,228 @@
+id:
+  spina:
+    cancel: Batal
+    close: Tutup
+    choose_from_library: Pilih dari pustaka
+    edit: Ubah
+    save: Simpan
+    delete: Hapus
+    permanently_delete: Hapus Permanen
+    delete_confirmation: "Apakah Anda yakin ingin menghapus <strong>%{subject}</strong>?"
+    login: Login
+    preview_website: Website sebelumnya
+    search: Pencarian...
+    ago: lalu
+    edit_website: Mengubah website
+    logout: Keluar
+    main_menu: Menu utama
+
+    settings:
+      title: Pengaturan
+      save: Simpan Pengaturan
+
+    forgot_password:
+      new: Lupa sandi
+      request: Minta sandi baru
+      unknown_user: Pengguna ini tidak ada
+      save: Simpan sandi baru
+      success: Anda dapat menggunakan sandi baru anda
+      mail_subject: Atur ulang sandi anda
+      expired: Token ubah sandi anda telah kadaluarsa
+
+    modal:
+      agree: "Ya, saya yakin"
+      cancel: "Tidak, batal"
+
+    notifications:
+      information: Informasi
+      alert: Oops! Ada sesuatu yang salah
+      login: Anda harus login dahulu
+      wrong_username_or_password: Salah e-mail atau sandi
+
+    website:
+      title: Website anda
+      pages: Halaman
+      all_pages: Semua halaman
+      pages_description: "Semua halaman pada website anda"
+      media_library: Perpustakaan media
+      media_library_description: "Di sini anda akan menemukan semua gambar dan dokumen anda"
+      documents: Dokumen
+      photos: Gambar
+
+    pages:
+      new: Halaman baru
+      create_page: "Baru %{template}"
+      change_order: Ubah urutan
+      done_changing_order: Selesai mengurutkan
+      page_content: Konten
+      page_seo: Mesin Pencarian
+      advanced: Lanjutan
+      page_part: Bagian halaman
+      photos_picker: Pilih gambar-gambar
+      photo_picker: Pilih gambar
+      delete_confirmation: "Apakah anda yakin ingin menghapus halaman <strong>%{subject}</strong>?"
+      save: Simpan halaman
+      concept: Konsep
+      show_in_menu: tak terlihat
+      skip_to_first_child: maju ke halaman anak pertama
+      invisible_to_search_engines: Website anda tak terlihat di mesin pencarian
+      invisible_to_search_engines_description: Pergi ke preferensi anda untuk mengaktifkan mesin pencari.
+      rebuild_materialized_path: Bangun ulang materialized path
+      materialize_path_confirmation: "Apakah anda yakin ingin membangun ulang path untuk halaman ini?"
+      saving: Menyimpan...
+      saved: Halaman tersimpan
+
+    users:
+      new: Pengguna baru
+      save: Simpan pengguna
+      delete_confirmation: "Apakah anda ingin menghapus pengguna <strong>%{user}</strong>?"
+      cannot_be_created: Pengguna tidak dapat disimpan
+
+    photos:
+      delete_confirmation: "Apakah anda yakin ingin menghapus <strong>gambar</strong> ini?"
+      insert_photos: Pilih gambar
+      choose_images: Pilih gambar
+      insert_photo: Masukkan gambar
+      link: "URL gambar Anda:"
+      cannot_be_created: "Gambar tidak dapat diproses:"
+      upload_image: "Unggah gambar"
+      organize: Mengatur gambar
+      done_organizing: Selesai mengatur
+      new_folder: Direktori baru
+      delete_folder: Hapus direktori
+
+    wysiwyg:
+      paragraph: Paragraf
+      heading_1: Judul 1
+      heading_2: Judul 2
+      heading_3: Judul 3
+      quote: Kutipan
+      insert_link: Masukan tautan
+
+    preferences:
+      title: Preferensi
+      account: Umum
+      account_description: Preferensi personal
+      account_save: Simpan preferensi
+      style: Styling
+      style_description: Pilih tema yang sesuai dengan anda
+      style_save: Simpan styling
+      users: Pengguna
+      users_description: Manajemen penggunda dan administrator
+      social_media: Media sosial
+      social_media_description: Akun Facebook dan Twitter
+      social_media_save: Simpan media sosial
+      analytics: Analisis dan cari
+      analytics_description: Tautkan akun anda dengan analisis waktu sebenarnya
+      analytics_save: Simpan preferensi
+      domain_name_settings: Pengaturan domain
+      domain_name_settings_description: Atur domain anda sendiri
+
+    attachments:
+      insert: 'Masukan dokumen'
+      insert_multiple: 'Masukan dokumen'
+
+    media_library:
+      photos: Gambar
+      attachments: Dokumen
+
+  activerecord:
+    models:
+      spina/page:
+        one: Halaman
+        other: Halaman
+      spina/user:
+        one: Pengguna
+        other: Pengguna
+      spina/photo:
+        one: Gambar
+        other: Gambar
+      spina/attachment:
+        one: Dokumen
+        other: Dokumen
+
+    attributes:
+      spina/account:
+        name: Nama Website
+        address: Alamat
+        postal_code: Kode Pos
+        city: Kota
+        phone: Telepon
+        email: E-mail
+        kvk_identifier: Kamar dagang
+        kvk_identifier_description: Kamar dagang
+        vat_identifier: VAT
+        vat_identifier_description: VAT
+        theme: Tema website
+        logo: Logo
+        google_analytics: Google Analytics
+        google_site_verification: Verifikasi Google Site
+        robots_allowed: Terlihat di mesin pencarian
+        facebook: Facebook
+        twitter: Twitter
+        google_plus: Google+
+
+      spina/attachment:
+        created_at: Dibuat pada
+        name: Nama berkas
+        size: Ukuran
+
+      spina/page:
+        title: Judul
+        title_placeholder: Judul halaman
+        seo_title: SEO <title>
+        seo_title_placeholder: Judul ini digunakan di tag-<title>
+        description: Deskripsi meta
+        description_description: Deskripsi ini akan tampil di hasil pencarian
+        description_placeholder: Deskripsi pendek dari halaman anda
+        draft: Konsep
+        draft_description: Bagus untuk saat halaman anda belum selesai
+        skip_to_first_child: Majukan
+        skip_to_first_child_description: Maju ke halaman anak pertama
+        link_url: Mengalihkan halaman
+        link_url_description: Arahkan ke URL
+        link_url_placeholder: Contoh http://www.example.com/
+        show_in_menu: Tampilkan di navigasi
+        show_in_menu_description: "Ketika dimatikan halaman ini tidak akan muncul di navigasi anda"
+        menu_title: Judul Navigasi
+        menu_title_placeholder: Kosongkan untuk menggunakan judul halaman
+        view_template: Template halaman
+        ancestry: Halaman induk
+        no_parent: Tidak ada induk
+
+      spina/media_folder:
+        name: Nama
+
+      spina/navigation:
+        label: Label
+        auto_add_pages: Otomatis tambah halaman
+        auto_add_pages_description: Halaman baru telah ditambahkan otomatis ke navigasi
+        pages: Halaman
+        pages_description: Pilih halaman yang ingin anda gunakan pada navigasi
+
+      spina/user:
+        email: E-mail
+        password: Sandi
+        name: Nama
+        name_placeholder: Nama
+        email: E-mail
+        email_description: E-mail Anda harus unik
+        password: Sandi
+        password_description: Biarkan kosongkan untuk menyimpan sandi
+        password_confirmation: Konfirmasi sandi
+        admin: Administrator
+        user: Pengguna
+        admin_description: Administrator dapat membuat pengguna
+        role: Peran
+        last_logged_in: Terkahir masuk
+
+  misc:
+    messages:
+      zero: "0 pesan baru"
+      one: "1 pesan baru"
+      other: "%{count} pesan baru"
+
+  languages:
+    en: Inggris
+    nl: Belanda
+    id: Indonesia

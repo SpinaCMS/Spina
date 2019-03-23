@@ -1,0 +1,225 @@
+pl:
+  spina:
+    cancel: Anuluj
+    close: Zamknij
+    choose_from_library: Wybierz z biblioteki
+    edit: Edycja
+    save: Zapisz
+    delete: Usuń
+    permanently_delete: Skasuj
+    delete_confirmation: 'Czy na pewno chcesz usunąć  <strong>%{subject}</strong>?'
+    login: Login
+    preview_website: Pogląd
+    search: Szukaj...
+    ago: temu
+    edit_website: Edytuj Witrynę
+    logout: Wyloguj
+    main_menu: Główne Menu
+
+    settings:
+      title: Ustawienia
+      save: Zapisz Ustawienia
+
+    forgot_password:
+      new: Zapomniane hasło
+      request: Zażądaj nowe hasło
+      unknown_user: Użytkownik nie istnieje
+      save: Zapisz nowe hasło
+      success: Możesz teraz używać nowe hasło
+      mail_subject: Resetuj hasło
+      expired: Ważność tokena do zmiany hasła minęła
+
+    modal:
+      agree: 'Tak'
+      cancel: 'Nie'
+
+    notifications:
+      information: Informacja
+      alert: 'Przepraszamy, coś poszło nie tak'
+      login: Musisz się zalogować
+      wrong_username_or_password: Nieprawidłowy email lub hasło
+
+    website:
+      title: Twoja witryna
+      pages: Strony
+      all_pages: Wszystkie strony
+      pages_description: Wszystkie strony w witrynie
+      media_library: Biblioteka mediów
+      media_library_description: Znajdziesz tu wszystkie obrazki i dokumenty
+      documents: Dokumenty
+      photos: Obrazki
+
+    pages:
+      new: Nowa strona
+      create_page: 'Nowa wg szablonu %{template}'
+      change_order: Zmień kolejność
+      done_changing_order: Gotowe
+      page_content: Zawartość
+      page_seo: Wyszkiwarki
+      advanced: Zaawansowane
+      page_part: Sekcja
+      photos_picker: Wybierz Obrazki
+      photo_picker: Wybierz obrazki
+      delete_confirmation: 'Czy na pewno usunąć stronę <strong>%{subject}</strong>?'
+      save: Zapisz stronę
+      concept: Szkic
+      show_in_menu: niewidoczna
+      skip_to_first_child: ustawione na pierwszym miejscu
+      invisible_to_search_engines: Witryna jest niewidoczna dla wyszukiwarek
+      invisible_to_search_engines_description: Przejdź do preferencji aby zmienić widoczność dla wyszukiwarek.
+      rebuild_materialized_path: Przebuduj adres
+      materialize_path_confirmation: Czy na pewno przebudować adres dla tej strony?
+      saving: Zapisuję...
+      saved: Strona zapisana
+
+    users:
+      new: Nowy Użytkownik
+      save: Zapisz użytkownika
+      delete_confirmation: 'Czy na pewno usunąć użytkownika <strong>%{user}</strong>?'
+      cannot_be_created: Nie można usunąć użytkownika
+
+    photos:
+      delete_confirmation: Czy na pewno usunąć ten <strong>obrazek</strong>?
+      insert_photos: Wybierz obrazki
+      choose_images: Wybierz obrazek
+      insert_photo: Wstaw obrazek
+      link: 'URL obrazka:'
+      cannot_be_created: 'Obrazek nie mógł być przetworzony:'
+      upload_image: Wgraj obrazek
+      organize: Uporządkuj obrazki
+      done_organizing: Gotowe
+      new_folder: Nowy folder
+      delete_folder: Usuń folder
+
+    wysiwyg:
+      paragraph: Paragraf
+      heading_1: Nagłówek H1
+      heading_2: Nagłówek H2
+      heading_3: Nagłówek H3
+      quote: Cytat
+      insert_link: Wstaw link
+
+    preferences:
+      title: Preferencje
+      account: Ogólne
+      account_description: Preferencje osobiste
+      account_save: Zapisz preferencje
+      style: Style
+      style_description: Wybierz szablon
+      style_save: Zapisz style
+      users: Użytkownicy
+      users_description: Zarządzaj użytkownikami i administratorami
+      social_media: Social Media
+      social_media_description: Konta Facebook i Twitter.
+      social_media_save: Zapisz
+      analytics: Statystytki
+      analytics_description: Połącz swoje konto aby uzyskać statystyki w czasie rzeczywistym
+      analytics_save: Zapisz preferencje
+      domain_name_settings: Ustawienia Domeny
+      domain_name_settings_description: Ustaw swoją własną domenę
+
+    attachments:
+      insert: Wstaw dokument
+      insert_multiple: Wstaw dokumenty
+
+    media_library:
+      photos: Obrazki
+      attachments: Dokumenty
+
+  activerecord:
+    models:
+      spina/page:
+        one: Strona
+        other: Strony
+      spina/user:
+        one: Użytkownik
+        other: Użytkownicy
+      spina/photo:
+        one: Obrazek
+        other: Obrazki
+      spina/attachment:
+        one: Dokument
+        other: Dokumenty
+
+    attributes:
+      'spina/account':
+        name: Nazwa witryny internetowej
+        address: Adres
+        postal_code: Kod pocztowy
+        city: Miejscowość
+        phone: Telefon
+        email: E-mail
+        kvk_identifier: Chamber of commerce
+        kvk_identifier_description: Chamber of commerce
+        vat_identifier: VAT
+        vat_identifier_description: VAT
+        theme: Szablon
+        logo: Logo
+        google_analytics: Google Analytics
+        google_site_verification: Google Site Verification
+        robots_allowed: Witryna widoczna dla wyszukiwarek
+        facebook: Facebook
+        twitter: Twitter
+        google_plus: Google+
+
+      spina/attachment:
+        created_at: Utworzono
+        name: Plik
+        size: Rozmiar
+
+      spina/page:
+        title: Tytuł
+        title_placeholder: Tytuł strony
+        seo_title: SEO <title>
+        seo_title_placeholder: Tytuł w tagu <title>
+        description: Opis w Meta description
+        description_description: Opis pokazywany w wynikach wyszukiwarki
+        description_placeholder: Krótki opis strony
+        draft: Szkic
+        draft_description: Przydatne kiedy strona nie jest jeszcze gotowa
+        skip_to_first_child: Pierwsza
+        skip_to_first_child_description: Ustaw jako pierwszą w kolejności
+        link_url: Przekierowanie
+        link_url_description: Przekierowanie na adres URL
+        link_url_placeholder: 'n.p. http://www.example.com'
+        show_in_menu: Pokaż w nawigazji
+        show_in_menu_description: Kiedy jest wyłączone to strona nie będzie pokazana w nawigacji
+        menu_title: Tytuł nawigacji
+        menu_title_placeholder: pozostaw puste jeśli chcesz użyć tytuł strony
+        view_template: Szablon strony
+        ancestry: Strona nadrzędna
+        no_parent: Brak podrzędnych stron
+
+      spina/media_folder:
+        name: Nazwa
+
+      spina/navigation:
+        label: Etykieta
+        auto_add_pages: Automatycznie dodaj strony
+        auto_add_pages_description: Nowe strony są dodawane automatycznie do tej nawigacji
+        pages: Strony
+        pages_description: 'Wybierz stronę, którą chcesz użyć w nawigacji'
+
+      spina/user:
+        name: Nazwa
+        name_placeholder: Nazwa
+        email: E-mail
+        email_description: Musi być unikalny
+        password: Hasło
+        password_description: Pozostaw puste jeśli nie chcesz zmieniać
+        password_confirmation: Powtórz hasło
+        admin: Administrator
+        user: Użytkownik
+        admin_description: Może tworzyć Użytkowników
+        role: Rola
+        last_logged_in: Ostatnio zalogowano
+  misc:
+    messages:
+      zero: 0 nowych wiadomości
+      one: 1 nowa wiadomość
+      other: '%{count} nowych wiadomości'
+
+  languages:
+    en: Angielski
+    nl: Niderlandzki
+    pl: Polski

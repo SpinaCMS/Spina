@@ -1,0 +1,5 @@
+= form_for [:admin, Spina::Image.new], id: 'new_image', class: 'new_image', data: {remote: true} do |f|
+  = f.submit style: 'display: none'
+  = hidden_field_tag :media_library, value: true
+  = f.label :file, t('spina.images.upload')
+  = f.file_field :files, multiple: true, accept: "image/*", data: {direct_upload_url: main_app.rails_direct_uploads_url, customfileinput: true}

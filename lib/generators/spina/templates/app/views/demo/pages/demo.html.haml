@@ -1,30 +1,28 @@
-%h1
-  = @page.title
+%h1= current_page.title
 
 %h5 Line
-%p
-  = @page.content(:line)
+%p= content :line
+
 %h5 Content
-= @page.content(:text).try(:html_safe)
+!= content :text
 
-%h5 Photo
-%p
-  = image_tag @page.content(:photo).try(:file_url)
+%h5 Image
 
-%h5 Photo collection
-- if @page.content(:photo_collection).try(:photos)
-  %ul
-    - @page.content(:photo_collection).photos.each do |photo|
-      %li
-        = image_tag photo.file_url
+- if has_content?(:image)
+  %p= image_tag content(:image).variant(resize: "200x100")
+
+%h5 Image collection
+
+%ul
+  - content(:image_collection)&.images&.each do |image|
+    %li= image_tag image.variant(resize: '100x100')
 
 %h5 Structure
-- if @page.content(:structure).try(:structure_items)
-  %ul
-    - @page.content(:structure).structure_items.each do |item|
-      %li
-        %h6 Title
-        %p
-          = item.content(:title)
-        %h6 Description
-        = item.content(:description).try(:html_safe)
+
+%ul
+  - content(:structure)&.structure_items&.each do |item|
+    %li
+      %h6 Title
+      %p= item.content(:title)
+      %h6 Description
+      != item.content(:description)

@@ -1,9 +1,8 @@
 module Spina
   class Account < ApplicationRecord
-    serialize :preferences
-    include Spina::Partable
+    include Partable
 
-    mount_uploader :logo, LogoUploader
+    serialize :preferences
 
     has_many :layout_parts, dependent: :destroy
     accepts_nested_attributes_for :layout_parts, allow_destroy: true
@@ -23,16 +22,14 @@ module Spina
 
     def self.serialized_attr_accessor(*args)
       args.each do |method_name|
-        eval "
-          def #{method_name}
-            self.preferences.try(:[], :#{method_name})
-          end
+        define_method method_name do
+          self.preferences.try(:[], method_name.to_sym)
+        end
 
-          def #{method_name}=(value)
-            self.preferences ||= {}
-            self.preferences[:#{method_name}] = value
-          end
-        "
+        define_method "#{method_name}=" do |value|
+          self.preferences ||= {}
+          self.preferences[method_name.to_sym] = value
+        end
       end
     end
 
@@ -43,8 +40,9 @@ module Spina
     def bootstrap_website
       theme_config = ::Spina::Theme.find_by_name(theme)
       if theme_config
-        bootstrap_pages(theme_config)
+
         bootstrap_navigations(theme_config)
+        bootstrap_pages(theme_config)
       end
     end
 
@@ -69,11 +67,11 @@ module Spina
     end
 
     def deactivate_unused_view_templates(theme)
-      Page.active.not_by_config_theme(theme).update_all(active: false)
+      Page.active.where.not(view_template: theme.view_templates.map{|h|h[:name]}).update_all(active: false)
     end
 
     def activate_used_view_templates(theme)
-      Page.not_active.by_config_theme(theme).update_all(active: true)
+      Page.where(active: false, view_template: theme.view_templates.map{|h|h[:name]}).update_all(active: true)
     end
 
   end

@@ -8,20 +8,26 @@
       = link_to '#', data: {close_notification: true} do
         = icon('cross')
 
-= form_for [spina, :admin, @page], html: {id: 'page_form', autocomplete: "off", data: {remote: @page.persisted?}} do |f|
+= form_for [spina, :admin, @page], html: {id: 'page_form', autocomplete: "off"} do |f|
   %header#header
-    .breadcrumbs= render_breadcrumbs separator: '<div class="divider"></div>'
-    - unless @page.new_record?
-      - if Spina.config.locales.size > 1
-        %div{style: 'display: inline-block; margin-left: 12px; top: -4px', data: {dropdown: true}}
-          = link_to '#', class: 'button button-link button-round button-small', data: {trigger: 'dropdown', target: '#locales'} do
-            = icon('comment')
-            = @locale.upcase
+    .breadcrumbs
+      = render_breadcrumbs separator: '<div class="divider"></div>'
+      %span{style: 'margin-left: 10px'}
+        - unless @page.new_record?
+          - if Spina.config.locales.size > 1
+            %div{style: "display: inline-block", data: {dropdown: true}}
+              = link_to '#', class: 'button button-hollow button-small', style: 'margin-left: 0; margin-right: 0', data: {trigger: 'dropdown', target: '#locales'} do
+                = icon('comment')
+                =t "languages.#{@locale}"
+                %i.icon.icon-chevron-down{style: 'font-size: 9px; margin-right: 0'}
 
-          %ul#locales
-            - Spina.config.locales.each do |locale|
-              %li
-                = link_to t("languages.#{locale}"), "?locale=#{locale}", style: ('font-weight: 600' if @locale.to_s == locale.to_s)
+              %ul#locales
+                - Spina.config.locales.each do |locale|
+                  %li
+                    = link_to t("languages.#{locale}"), "?locale=#{locale}", style: ('font-weight: 600' if @locale.to_s == locale.to_s)
+
+        = link_to @page.materialized_path, target: :blank, class: 'button button-hollow button-small', style: 'margin-left: 0' do
+          %i.icon.icon-export{style: 'margin: 0'}
 
     #header_actions
       %button.button.button-primary{type: 'submit', style: 'margin-right: 0', data: {disable_with: t('spina.pages.saving')}}
@@ -36,9 +42,9 @@
 
   = hidden_field_tag :locale, @locale
 
-  - Globalize.with_locale(@locale) do
+  - Mobility.with_locale(@locale) do
     - @tabs.each do |tab|
       = render "spina/admin/pages/form_#{tab}", f: f
 
-    - unless @page.new_record? || !@page.deletable
-      .pull-right= link_to t('spina.permanently_delete'), spina.admin_page_path(@page), method: :delete, data: {confirm: t('spina.pages.delete_confirmation', subject: @page.menu_title)}, class: 'button button-link button-danger'
+  - unless @page.new_record? || !@page.deletable
+    .pull-right= link_to t('spina.permanently_delete'), spina.admin_page_path(@page), method: :delete, data: {confirm: t('spina.pages.delete_confirmation', subject: @page.menu_title)}, class: 'button button-link button-danger'

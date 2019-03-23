@@ -1,0 +1,250 @@
+bg:
+  spina:
+    cancel: Спри
+    close: Затвори
+    choose_from_library: Избери от библиотеката
+    edit: Редактирай
+    save: Запази
+    delete: Изтрий
+    permanently_delete: Изтрий завинаги
+    delete_confirmation: "Сигурен ли сте, че искате да изтриете <strong>%{subject}</strong>?"
+    login: Вход
+    preview_website: Преглед на сайта
+    search: Търсене...
+    ago: преди
+    edit_website: Редактирай сайта
+    logout: Изход
+    main_menu: Основно меню
+
+    settings:
+      title: Настройки
+      save: Запази настройките
+
+    forgot_password:
+      new: Забравена парола
+      request: Изискайте нова парола
+      unknown_user: Този потребител не съществува
+      save: Запазете новата парола
+      success: Вече може да използвате новата си парола
+      mail_subject: Искане на нова парола
+      expired: Токена за смяна на парола е изтекъл
+
+    modal:
+      agree: "Да, сигурен съм"
+      cancel: "Не, спри"
+
+    notifications:
+      information: Информация
+      alert: Възникна грешка
+      login: Трябва първо да влезете в системата
+      wrong_username_or_password: Грешен email или парола
+
+    website:
+      title: Вашият сайт
+      pages: Страници
+      all_pages: Всички страници
+      pages_description: "Всички страници на Вашият сайт"
+      media_library: Библиотека с ресурси
+      media_library_description: "Тук ще намерите всички качени изборажения, файлове и документи"
+      documents: Документи
+      photos: Изображения
+
+    pages:
+      new: Нова страница
+      create_page: "Нов %{template}"
+      change_order: Смяна на подредба
+      done_changing_order: Приключено подреждане
+      page_content: Съдържание на страницата
+      page_seo: Търсачки
+      advanced: Разширени
+      page_part: Секция от страницата
+      photos_picker: Изберете изображения
+      photo_picker: Изберете изображение
+      delete_confirmation: "Сигурен ли сте, че желаете да изтриете страницата <strong>%{subject}</strong>?"
+      save: Запис на страницата
+      concept: чернова
+      show_in_menu: невидима
+      skip_to_first_child: изпрати към първата дъщерна страница
+      invisible_to_search_engines: Вашият сайт е невидим за търсачки
+      invisible_to_search_engines_description: Отидете на Настройки за да активирате търсачки.
+      rebuild_materialized_path: Възтановяване на оригинален адрес
+      materialize_path_confirmation: "Сигурен ли сте, че искате да възтановите оригиналния адрес на тази страница?"
+      saving: Запис...
+      saved: Страницата е записана
+
+    resources:
+      edit: Редакция на ресурс
+
+    users:
+      new: Нов потребител
+      save: Запис на потребител
+      delete_confirmation: "Сигурен ли сте, че искате да изтриете потребител <strong>%{user}</strong>?"
+      cannot_be_created: Потребителя неможе да бъде записан
+
+    photos:
+      delete_confirmation: "Сигурен ли сте, че искате да изтриете това изображение <strong>image</strong>?"
+      insert_photos: Изберете изборажения
+      choose_images: Изберете изборажения
+      insert_photo: Изберете изборажение
+      link: "URL на изображението:"
+      cannot_be_created: "Изображението неможе да бъде обработено:"
+      upload_image: "Качване на изображение"
+      organize: Организиране на изображения
+      done_organizing: Запази
+      new_folder: Нова папка
+      delete_folder: Изтриване на папка
+      delete: Изтриване
+
+    wysiwyg:
+      paragraph: Параграф
+      heading_1: Heading 1
+      heading_2: Heading 2
+      heading_3: Heading 3
+      quote: Цитат
+      insert_link: Позтавете линк
+
+    preferences:
+      title: Настройки
+      account: Главни
+      account_description: Лични настройки
+      account_save: Запис на настройки
+      style: Стилове
+      style_description: Изберете тема подходяща за вашия сайт
+      style_save: Запис на стила
+      users: Потребители
+      users_description: Менажиране на потребители и администратори
+      social_media: Социални профили
+      social_media_description: Facebook и Twitter профили
+      social_media_save: Запис на профили
+      analytics: Анализи и търсене
+      analytics_description: Свържете вашият профил с анализи в реално време
+      analytics_save: Запис на настройки
+      domain_name_settings: Настройки на домейн
+      domain_name_settings_description: Конфигурирайте собствен домейн
+
+    attachments:
+      insert: 'Добавете документ'
+      insert_multiple: 'Добавете документи'
+
+    media_library:
+      photos: Изображения
+      attachments: Документи
+
+  activerecord:
+    models:
+      spina/page:
+        one: Страница
+        other: Страници
+      spina/user:
+        one: Потребител
+        other: Потребители
+      spina/photo:
+        one: Изображение
+        other: Изображения
+      spina/attachment:
+        one: Документ
+        other: Документи
+
+    attributes:
+      spina/account:
+        name: Име на сайта
+        address: Адрес
+        postal_code: Пощенски код
+        city: Град
+        phone: Телефон
+        email: Email
+        kvk_identifier: Търговска камара
+        kvk_identifier_description: Търговска камара
+        vat_identifier: Булстат
+        vat_identifier_description: Булстат на юридическото лице представящо сайта
+        theme: Тема на сайта
+        logo: Лого
+        google_analytics: Google Analytics
+        google_site_verification: Google Site Verification
+        robots_allowed: Видим за търсачки и роботи
+        facebook: Facebook
+        twitter: Twitter
+        google_plus: Google+
+
+      spina/attachment:
+        created_at: Създадено на
+        name: Име на файла
+        size: Размер
+
+      spina/page:
+        created_at: Създадена на
+        title: Заглавие
+        title_placeholder: Заглавие на страницата
+        seo_title: SEO <title>
+        seo_title_placeholder: Това заглавие се отпечатва в <title>-tag
+        description: Meta описание
+        description_description: Това описание ще бъде показано в търсачките след индексиране
+        description_placeholder: Кратко описание на страницата
+        draft: Чернова
+        draft_description: Подходяща опция когато страницата не е готова за публикуване
+        skip_to_first_child: Пренасочи
+        skip_to_first_child_description: Пренасочи към първата дъщерна страница
+        link_url: Пренасочване на страницата
+        link_url_description: URL адрес за пренасочване
+        link_url_placeholder: пример http://www.example.com/
+        show_in_menu: Покажи в навигацията
+        show_in_menu_description: "Когато тази опция не е активна, страницата няма да е видима в навигацията"
+        menu_title: Име в навигацията
+        menu_title_placeholder: Ако е оставено празно ще се използва заглавието на страницата
+        view_template: Темплейт на страницата
+        ancestry: Родителска страница
+        no_parent: Няма родителска страница
+
+      spina/resource:
+        label: Етикет
+        order_by: Подреди би
+        view_template: Темплейт по подразбиране
+        parent_page: Родителска страница
+
+      spina/media_folder:
+        name: Име
+
+      spina/navigation:
+        label: Етикет
+        auto_add_pages: Автоматично добавяне на страниците
+        auto_add_pages_description: Новите страници са автоматично добавени към тази навигация
+        pages: Страници
+        pages_description: Посочете страниците, които да бъдат добавени в тази навигация
+
+      spina/user:
+        name: Име
+        name_placeholder: Име
+        email: Email
+        email_description: Посоченият email трябва да бъде уникален
+        password: Парола
+        password_description: Оставете празно за да запазите текущата парола
+        password_confirmation: Потвърждение на паролата
+        admin: Администратор
+        user: Потребител
+        admin_description: Администраторите могат да добавят потребители
+        role: Роля
+        last_logged_in: Последен вход
+
+  misc:
+    messages:
+      zero: "0 нови съобщения"
+      one: "1 ново съобщение"
+      other: "%{count} нови съобщения"
+
+  languages:
+    bg: Български
+    de: Немски
+    en: Английски
+    es: Испански
+    fr: Френски
+    id: Индонезийски
+    it: Италиански
+    nl: Холандски
+    pl: Полски
+    pt-BR: Португалски (Бразилски)
+    ro: Румънски
+    ru: Руски
+    sv: Шведски
+    th: Тайландски
+    tr: Турски
+    zh-CN: Китайски (опростен)

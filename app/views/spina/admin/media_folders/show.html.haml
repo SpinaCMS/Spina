@@ -1,0 +1,17 @@
+- content_for(:header_actions) do
+  = link_to t('spina.photos.delete_folder'), spina.admin_media_folder_path(@media_folder), class: 'button button-danger button-link', style: "margin-right: 0", data: {method: :delete, confirm: t('spina.delete_confirmation', subject: @media_folder.name)}
+
+.gallery-container
+  .gallery
+    .item
+      = form_with model: [:admin, Spina::Image.new], id: 'new_image', class: 'new_image' do |f|
+        = f.submit style: 'display: none'
+        = hidden_field_tag :media_library, value: @media_folder.id
+        = f.label :file, t('spina.images.upload')
+        = f.file_field :files, multiple: true, data: {direct_upload_url: main_app.rails_direct_uploads_url, customfileinput: true}
+
+    .gallery-prepend-image
+      .infinite-scroll
+        = render partial: 'spina/admin/images/image', collection: @images
+
+      .infinite-pagination{data: {controller: 'infinite-scroll'}}= link_to_next_page @images, 'Next', remote: true, data: {target: "infinite-scroll.link"}

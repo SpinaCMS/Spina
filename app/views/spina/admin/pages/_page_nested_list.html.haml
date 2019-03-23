@@ -1,7 +1,7 @@
 %li.dd-item{data: {id: page_nested_list.id}}
-  %div.dd-item-inner
+  .dd-item-inner
     = render partial: 'page', object: page_nested_list
 
-  - if page_nested_list.children.active.present?
+  - if page_nested_list.children.active.regular_pages.any?
     %ol.dd-list
-      = render partial: 'page_nested_list', collection: page_nested_list.children.active.sorted
+      = render partial: 'page_nested_list', collection: page_nested_list.children.active.sorted.regular_pages

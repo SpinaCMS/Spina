@@ -7,11 +7,8 @@ module Spina
       end
 
       def update
-        if current_account.update_attributes(account_params)
-          redirect_to :back
-        else
-          redirect_to :back
-        end
+        current_account.update_attributes(account_params)
+        redirect_back fallback_location: spina.edit_admin_account_path
       end
 
       def analytics
@@ -31,7 +28,7 @@ module Spina
       private
 
       def account_params
-        params.require(:account).permit(:address, :city, :email, :logo, :name, :phone,
+        params.require(:account).permit(:address, :city, :email, :name, :phone,
                                         :postal_code, :preferences, :google_analytics,
                                         :google_site_verification, :facebook, :twitter, :google_plus,
                                         :instagram, :youtube, :linkedin,

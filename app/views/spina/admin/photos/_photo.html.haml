@@ -1,8 +1,0 @@
-.item
-  .overlay
-    = link_to spina.admin_photo_path(photo), method: :delete, class: 'icon-only delete-photo-link', data: {confirm: t('spina.photos.delete_confirmation')} do
-      = t('spina.photos.delete')
-    %span.photo-name= truncate(photo.name, length: 125)
-  = radio_button_tag :photo_id, photo.id
-  = check_box_tag 'photo_ids[]', photo.id
-  = image_tag photo.file.thumb.url, id: "photo_#{photo.id}"

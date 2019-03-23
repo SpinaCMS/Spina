@@ -2,14 +2,18 @@
 
 [Visit the website](http://www.spinacms.com)
 
-[![CircleCI](https://circleci.com/gh/denkGroot/Spina.svg?style=svg)](https://circleci.com/gh/denkGroot/Spina)
-[![Code Climate](https://codeclimate.com/github/denkGroot/Spina/badges/gpa.svg)](https://codeclimate.com/github/denkGroot/Spina)
-[![Test Coverage](https://codeclimate.com/github/denkGroot/Spina/badges/coverage.svg)](https://codeclimate.com/github/denkGroot/Spina/coverage)
+[![Build Status](https://travis-ci.com/SpinaCMS/Spina.svg?branch=master)](https://travis-ci.com/SpinaCMS/Spina)
+[![Code Climate](https://codeclimate.com/github/SpinaCMS/Spina/badges/gpa.svg)](https://codeclimate.com/github/SpinaCMS/Spina)
+[![Test Coverage](https://codeclimate.com/github/SpinaCMS/Spina/badges/coverage.svg)](https://codeclimate.com/github/SpinaCMS/Spina/coverage)
 [![Slack](https://slack-spinacms.herokuapp.com/badge.svg)](https://slack-spinacms.herokuapp.com)
+
+[![View performance data on Skylight](https://badges.skylight.io/status/0kzPHGlfswAw.svg)](https://oss.skylight.io/app/applications/0kzPHGlfswAw)
+[![View performance data on Skylight](https://badges.skylight.io/problem/0kzPHGlfswAw.svg)](https://oss.skylight.io/app/applications/0kzPHGlfswAw)
+[![View performance data on Skylight](https://badges.skylight.io/typical/0kzPHGlfswAw.svg)](https://oss.skylight.io/app/applications/0kzPHGlfswAw)
 
 # Getting Started
 
-Spina is a CMS built upon the Rails framework. This guide is designed for developers with experience using Ruby on Rails.
+Spina is a CMS for Rails 5.2. This guide is designed for developers with experience using Ruby on Rails.
 
 To start using Spina CMS add the following line to your Gemfile:
 
@@ -17,13 +21,47 @@ To start using Spina CMS add the following line to your Gemfile:
 gem 'spina'
 ```
 
-Make sure you run the installer to get started.
+First run the installer to get started:
 
     rails g spina:install
 
 The installer will help you setup your first user.
 
-Then start `rails s` and access your admin panel at `/admin`.
+Then start `rails s` and access Spina at `/admin`.
+
+## Upgrading from 0.X to 1.0
+
+Because upgrading 1.0 means switching to ActiveStorage, we've created a complementary gem to make the upgrade process easier.
+
+`gem 'spina-upgrade', git: 'https://github.com/SpinaCMS/spina-upgrade'`
+
+After installing this gem, make sure you setup ActiveStorage. Then you can run the upgrade command to migrate all `Spina::Photo` records to `Spina::Image`. Images will be reuploaded using ActiveStorage, so depending on your storage this could take a while.
+
+`rails g spina:upgrade`
+
+Replace `Spina::Photo` with `Spina::Image` where necessary and make sure that you edit every `image_tag`.
+
+## Upgrading from 0.12 to 0.12.1
+
+First run the new migrations
+
+    rails spina:install:migrations
+    rails db:migrate
+
+This will create a table for the `Spina::Resource` model.
+
+Globalize is replaced by Mobility. Switching to Mobility is fairly straightfoward.
+- Run `rails g spina:install` to add the `mobility.rb` initializer.
+- Replace instances of `Globalize` with `Mobility` in your own code
+
+This is the last release before Spina switches to Rails 5.2 and ActiveStorage.
+
+## Upgrading from 0.11 to 0.12
+
+Just run the new migrations.
+
+    rails spina:install:migrations
+    rails db:migrate
 
 ## Upgrading from 0.10 to 0.11
 
@@ -67,7 +105,7 @@ Spina.configure do |config| # NEW
 
 The installer generates a few initializers that contain necessary configuration for Spina.
 
-In the initializers folder there's a new folder named `themes`. Inside you will find a configuration file named `default.rb`. This file contains all of your theme-specific settings. You can define multiple Page parts, Layout parts, View templates and Custom pages.
+In the initializers folder there's a new folder named `themes`. Inside you will find a configuration file named `default.rb`. This file contains all of your theme-specific settings. You can define multiple Page parts, View templates and Custom pages.
 
 ## Page parts
 
@@ -75,8 +113,8 @@ A page in Spina has many Page parts. By default these page parts can be one of t
 
 - `Spina::Line`
 - `Spina::Text`
-- `Spina::Photo`
-- `Spina::PhotoCollection`
+- `Spina::Image`
+- `Spina::ImageCollection`
 - `Spina::Structure`
 - `Spina::Option`
 
@@ -174,12 +212,6 @@ Finally, let's go to `views/default/pages/show.html.erb` and add the following:
 
 We have successfully added another textbox! Restart your server and load up the admin section again. You should see another text box below the content box.
 
-## Layout parts
-
-Sometimes you need editable content that's not specific to a view template but to your theme as a whole. You can use the following parts in your layout.
-
-- `Spina::Line`
-
 ## View templates
 
 Each theme typically has a few different view templates which make up your website. By default Spina generates a *homepage* and *show* template.
@@ -223,12 +255,39 @@ You can define custom pages for your theme that will be generated when bootstrap
 
 Check our [Contributing Guide](CONTRIBUTING.md) for instructions on how to help the project.
 
+<a href="https://github.com/SpinaCMS/Spina/graphs/contributors"><img src="https://opencollective.com/Spina/contributors.svg?width=890" /></a>
+
+
+# Backers
+
+Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com/Spina#backer)]
+
+<a href="https://opencollective.com/Spina#backers" target="_blank"><img src="https://opencollective.com/Spina/backers.svg?width=890"></a>
+
+
+# Sponsors
+
+Support this project by becoming a sponsor. Your logo will show up here with a link to your website. [[Become a sponsor](https://opencollective.com/Spina#sponsor)]
+
+<a href="https://opencollective.com/Spina/sponsor/0/website" target="_blank"><img src="https://opencollective.com/Spina/sponsor/0/avatar.svg"></a>
+<a href="https://opencollective.com/Spina/sponsor/1/website" target="_blank"><img src="https://opencollective.com/Spina/sponsor/1/avatar.svg"></a>
+<a href="https://opencollective.com/Spina/sponsor/2/website" target="_blank"><img src="https://opencollective.com/Spina/sponsor/2/avatar.svg"></a>
+<a href="https://opencollective.com/Spina/sponsor/3/website" target="_blank"><img src="https://opencollective.com/Spina/sponsor/3/avatar.svg"></a>
+<a href="https://opencollective.com/Spina/sponsor/4/website" target="_blank"><img src="https://opencollective.com/Spina/sponsor/4/avatar.svg"></a>
+<a href="https://opencollective.com/Spina/sponsor/5/website" target="_blank"><img src="https://opencollective.com/Spina/sponsor/5/avatar.svg"></a>
+<a href="https://opencollective.com/Spina/sponsor/6/website" target="_blank"><img src="https://opencollective.com/Spina/sponsor/6/avatar.svg"></a>
+<a href="https://opencollective.com/Spina/sponsor/7/website" target="_blank"><img src="https://opencollective.com/Spina/sponsor/7/avatar.svg"></a>
+<a href="https://opencollective.com/Spina/sponsor/8/website" target="_blank"><img src="https://opencollective.com/Spina/sponsor/8/avatar.svg"></a>
+<a href="https://opencollective.com/Spina/sponsor/9/website" target="_blank"><img src="https://opencollective.com/Spina/sponsor/9/avatar.svg"></a>
+
+
+
 # License
 
 Spina is released under the [MIT license](LICENSE.md).
 
 # Credits
 
-Some parts of Spina are heavily influenced by the wonderful Refinery CMS. Credits to [the Refinery  team](http://www.refinerycms.com/about).
+Some parts of Spina are heavily influenced by the wonderful Refinery CMS. Credits to [the Refinery  team](https://www.refinerycms.com/).
 
 All icons in Spina were made by Brent Jackson [Geomicons](http://jxnblk.com/geomicons-wired/).

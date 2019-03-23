@@ -1,0 +1,4 @@
+%ol.dd-list
+  - @children.each do |child|
+    %li.dd-item
+      .dd-item-inner= render partial: "page", object: child

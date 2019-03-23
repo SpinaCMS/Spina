@@ -1,6 +1,0 @@
-<% if @photo.new_record? %>
-  alert("<%= I18n.t 'spina.photos.cannot_be_created' %> <%= j @photo.errors.full_messages.join(', ').html_safe %>");
-<% else %>
-  $item = $("<%=j render partial: 'spina/admin/photos/photo', object: @photo %>");
-  $(".gallery-prepend-image .infinite-scroll").prepend($item);
-<% end %>

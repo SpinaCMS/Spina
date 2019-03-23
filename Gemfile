@@ -1,6 +1,8 @@
-source "http://rubygems.org"
+source "https://rubygems.org"
 
 gemspec
+
+gem 'bootsnap', require: false
 
 group :development, :test do
   gem 'rails-controller-testing'
@@ -10,4 +12,6 @@ group :development, :test do
   gem 'codeclimate-test-reporter', '~> 1.0.0'
   gem 'letter_opener'
   gem 'pry-rails'
+  gem 'mocha'
+  gem 'listen'
 end

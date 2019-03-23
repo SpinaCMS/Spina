@@ -1,0 +1,21 @@
+.horizontal-form-label
+  = f.object.title
+.horizontal-form-content{data: {controller: "image-form"}}
+  = link_to admin_media_picker_path(selected_ids: [f.object.partable_id], hidden_field_id: "media_picker_#{f.object.object_id}"), remote: true, class: 'media_picker clearfix' do
+    .placeholder
+      %span.button.button-small.button-round
+        %i.icon.icon-dots
+        =t 'spina.images.choose_image'
+
+      - if f.object.partable.file.attached?
+        %br/
+
+        %span.button.button-small.button-round{data: {action: "click->image-form#remove", target: "image-form.button"}}
+          %i.icon.icon-trash
+          =t 'spina.images.remove_image'
+
+    - if f.object.partable.file.attached?
+      .image{data: {target: 'image-form.image'}}
+        = image_tag variant(f.object.partable.file, resize: "300x300^", crop: "300x300+0+0")
+
+    = f.hidden_field :partable_id, data: {hidden_field_id: "media_picker_#{f.object.object_id}", target: 'image-form.field'}

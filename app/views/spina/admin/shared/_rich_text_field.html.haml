@@ -1,35 +1,4 @@
 
 - object_id = (f.object.persisted? ? f.object.object_id : "new_association_#{f.object.object_id}").to_s + "_#{field}"
 = f.hidden_field field, id: "#{object_id}_input"
-
-%trix-toolbar.clearfix{ id: "#{object_id}_toolbar", data: { trix_editor_id: "#{object_id}_editor" }}
-  .button-groups
-    .button-group.pull-left
-      %button.button.button-small{ type: 'button', tabindex: -1, title: 'Bold', data: { trix_attribute: 'bold', trix_key: 'b' }}
-        .icon.icon-bold
-      %button.button.button-small{ type: 'button', tabindex: -1, title: 'Italic', data: { trix_attribute: 'italic', trix_key: 'i' }}
-        .icon.icon-italic
-      %button.button.button-small{ type: 'button', tabindex: -1, title: 'Bullets', data: { trix_attribute: 'bullet' }}
-        .icon.icon-list-ul
-      %button.button.button-small{ type: 'button', tabindex: -1, title: 'Link', data: { trix_action: 'link', trix_attribute: 'href', trix_key: 'k' }}
-        .icon.icon-link
-      %button.button.button-small.js-trix-photo{ type: 'button', tabindex: -1, title: 'Photo', data: { trix_action: 'photo', trix_attribute: 'photo' }}
-        .icon.icon-picture-o
-
-    .button-group.pull-left
-      %button.button.button-small{ type: 'button', tabindex: -1, title: 'h1', data: { trix_attribute: 'heading1' }} H1
-      %button.button.button-small{ type: 'button', tabindex: -1, title: 'h1', data: { trix_attribute: 'heading2' }} H2
-      %button.button.button-small{ type: 'button', tabindex: -1, title: 'h2', data: { trix_attribute: 'heading3' }} H3
-      %button.button.button-small{ type: 'button', tabindex: -1, title: 'h3', data: { trix_attribute: 'heading4' }} H4
-      %button.button.button-small{ type: 'button', tabindex: -1, title: 'h4', data: { trix_attribute: 'heading5' }} H5
-      %button.button.button-small{ type: 'button', tabindex: -1, title: 'h5', data: { trix_attribute: 'heading6' }} H6
-
-  .dialogs
-    .dialog.link_dialog{ data: { trix_attribute: 'href', trix_dialog: 'href'}}
-      .link_url_fields
-        %input{type: 'text', name: 'href', placeholder: 'Enter a URL…', required: true}
-        .button-group
-          %input.button{type: 'button', tabindex: -1, value: 'Link', data: { trix_method: 'setAttribute'}}
-          %input.button{type: 'button', tabindex: -1, value: 'Unlink', data: { trix_method: 'removeAttribute'}}
-
-%trix-editor.text-input{input: "#{object_id}_input", toolbar: "#{object_id}_toolbar", id: "#{object_id}_editor"}
+%trix-editor.text-input.trix-content{ input: "#{object_id}_input" }

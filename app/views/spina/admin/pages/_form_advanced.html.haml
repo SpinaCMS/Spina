@@ -1,47 +1,57 @@
-#advanced.tab-content.well
+#advanced.tab-content
   .horizontal-form
-    .horizontal-form-group
-      .horizontal-form-label
-        = Spina::Page.human_attribute_name :draft
-        %small= Spina::Page.human_attribute_name :draft_description
-      .horizontal-form-content
-        = f.check_box :draft, data: {switch: true}
+    .well
+      .horizontal-form-group
+        .horizontal-form-label
+          = Spina::Page.human_attribute_name :draft
+          %small= Spina::Page.human_attribute_name :draft_description
+        .horizontal-form-content
+          = f.check_box :draft, data: {switch: true}
+      .horizontal-form-group
+        .horizontal-form-label
+          = Spina::Page.human_attribute_name :show_in_menu
+          %small= Spina::Page.human_attribute_name :show_in_menu_description
+        .horizontal-form-content
+          = f.check_box :show_in_menu, data: {switch: true}
+      .horizontal-form-group
+        .horizontal-form-label
+          = Spina::Page.human_attribute_name :menu_title
+        .horizontal-form-content
+          = f.text_field :menu_title, placeholder: Spina::Page.human_attribute_name(:show_in_menu_placeholder), value: f.object.menu_title(fallback: false, default: nil)
+      .horizontal-form-group
+        .horizontal-form-label
+          = Spina::Page.human_attribute_name :skip_to_first_child
+          %small= Spina::Page.human_attribute_name :skip_to_first_child_description
+        .horizontal-form-content
+          = f.check_box :skip_to_first_child, data: {switch: true}
 
-    .horizontal-form-group
-      .horizontal-form-label
-        = Spina::Page.human_attribute_name :skip_to_first_child
-        %small= Spina::Page.human_attribute_name :skip_to_first_child_description
-      .horizontal-form-content
-        = f.check_box :skip_to_first_child, data: {switch: true}
-    .horizontal-form-group
-      .horizontal-form-label
-        = Spina::Page.human_attribute_name :link_url
-        %small= Spina::Page.human_attribute_name :link_url_description
-      .horizontal-form-content
-        = f.text_field :link_url, placeholder: Spina::Page.human_attribute_name(:link_url_placeholder)
-    .horizontal-form-group
-      .horizontal-form-label
-        = Spina::Page.human_attribute_name :show_in_menu
-        %small= Spina::Page.human_attribute_name :show_in_menu_description
-      .horizontal-form-content
-        = f.check_box :show_in_menu, data: {switch: true}
-    .horizontal-form-group
-      .horizontal-form-label
-        = Spina::Page.human_attribute_name :menu_title
-      .horizontal-form-content
-        = f.text_field :menu_title, placeholder: Spina::Page.human_attribute_name(:show_in_menu_placeholder), value: f.object.read_attribute(:menu_title)
+    .well
+      .horizontal-form-group
+        .horizontal-form-label
+          = Spina::Page.human_attribute_name :link_url
+          %small= Spina::Page.human_attribute_name :link_url_description
+        .horizontal-form-content
+          = f.text_field :link_url, placeholder: Spina::Page.human_attribute_name(:link_url_placeholder)
 
-    .horizontal-form-group{style: ('display: none' if @page.custom_page?)}
-      .horizontal-form-label
-        = Spina::Page.human_attribute_name :view_template
-      .horizontal-form-content
-        .select-dropdown.page-template{data: {page_parts: @page.view_template_config(current_theme)[:page_parts]}}
-          - options = options_for_select(current_theme.view_templates.map { |template| [template[:title], template[:name], {'data-page-parts' => template[:page_parts]}] }, @page.view_template)
-          = f.select :view_template, options
+    .well
+      .horizontal-form-group
+        .horizontal-form-label
+          = Spina::Page.human_attribute_name :ancestry
+        .horizontal-form-content
+          .select-dropdown.ancestry
+            = f.select :parent_id, page_ancestry_options(f.object), include_blank: Spina::Page.human_attribute_name(:no_parent)
 
-    .horizontal-form-group{style: ('display: none' if @page.custom_page?)}
-      .horizontal-form-label
-        = Spina::Page.human_attribute_name :ancestry
-      .horizontal-form-content
-        .select-dropdown.ancestry
-          = f.select :parent_id, page_ancestry_options(f.object), include_blank: Spina::Page.human_attribute_name(:no_parent)
+      .horizontal-form-group{style: ('display: none' if @page.custom_page?)}
+        .horizontal-form-label
+          = Spina::Page.human_attribute_name :view_template
+        .horizontal-form-content
+          .select-dropdown.page-template{data: {page_parts: @page.view_template_config(current_theme)[:page_parts]}}
+            - options = options_for_select(current_theme.view_templates.map { |template| [template[:title], template[:name], {'data-page-parts' => template[:page_parts]}] }, @page.view_template)
+            = f.select :view_template, options
+
+      .horizontal-form-group
+        .horizontal-form-label
+          = Spina::Page.human_attribute_name :resource
+        .horizontal-form-content
+          .select-dropdown
+            = f.select :resource_id, Spina::Resource.order(:label).pluck(:label, :id), include_blank: t('spina.website.pages')

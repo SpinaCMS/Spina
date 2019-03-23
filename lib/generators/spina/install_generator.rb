@@ -7,9 +7,9 @@ module Spina
       template 'config/initializers/spina.rb'
     end
 
-    def create_carrierwave_initializer_file
+    def create_mobility_initializer_file
       return if Rails.env.production?
-      template 'config/initializers/carrierwave.rb'
+      template 'config/initializers/mobility.rb'
     end
 
     def add_route
@@ -28,14 +28,14 @@ module Spina
     end
 
     def create_account
-      return if Account.exists? && !no?('An account already exists. Skip? [Yn]')
-      name = Account.first.try(:name) || 'MySite'
+      return if ::Spina::Account.exists? && !no?('An account already exists. Skip? [Yn]')
+      name = ::Spina::Account.first.try(:name) || 'MySite'
       name = ask("What would you like to name your website? [#{name}]").presence || name
-      account = Account.first_or_create.update_attribute(:name, name)
+      account = ::Spina::Account.first_or_create.update_attribute(:name, name)
     end
 
     def set_theme
-      account = Account.first
+      account = ::Spina::Account.first
       return if account.theme.present? && !no?("Theme '#{account.theme} is set. Skip? [Yn]")
 
       theme = begin
@@ -47,7 +47,7 @@ module Spina
     end
 
     def copy_template_files
-      theme = Account.first.theme
+      theme = ::Spina::Account.first.theme
       if theme.in? ['default', 'demo']
         template "config/initializers/themes/#{theme}.rb"
         directory "app/assets/stylesheets/#{theme}"
@@ -59,13 +59,13 @@ module Spina
     end
 
     def create_user
-      return if User.exists? && !no?('A user already exists. Skip? [Yn]')
+      return if ::Spina::User.exists? && !no?('A user already exists. Skip? [Yn]')
       email = 'admin@domain.com'
       email = ask("Please enter an email address for your first user: [#{email}]").presence || email
       password = 'password'
       password = ask("Create a temporary password: [#{password}]").presence || password
       @temporary_password = password
-      User.create name: 'admin', email: email, password: password, admin: true
+      ::Spina::User.create name: 'admin', email: email, password: password, admin: true
     end
 
     def bootstrap_spina
@@ -79,9 +79,9 @@ module Spina
       puts '    Restart your server and visit http://localhost:3000 in your browser!'
       puts "    The admin backend is located at http://localhost:3000/#{Spina.config.backend_path}."
       puts
-      puts "    Site name      :  #{Account.first.name}"
-      puts "    Active theme   :  #{Account.first.theme}"
-      puts "    User email     :  #{User.first.email}"
+      puts "    Site name      :  #{::Spina::Account.first.name}"
+      puts "    Active theme   :  #{::Spina::Account.first.theme}"
+      puts "    User email     :  #{::Spina::User.first.email}"
       puts "    User password  :  #{@temporary_password}"
       puts
     end

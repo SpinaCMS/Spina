@@ -2,6 +2,8 @@ nl:
   languages:
     nl: Nederlands
     en: Engels
+    de: Duits
+    fr: Frans
   spina:
     cancel: Annuleren
     close: Sluiten
@@ -13,6 +15,7 @@ nl:
     delete_confirmation: "Weet je zeker dat je <strong>%{subject}</strong> wilt verwijderen?"
     login: Aanmelden
     preview_website: Bekijk je website
+    visit_page: Bekijk pagina
     search: Zoeken...
     ago: geleden
     edit_website: Bewerk je website
@@ -38,6 +41,17 @@ nl:
       media_library_description: "Hier staan al je afbeeldingen, video's en documenten"
       documents: Documenten
       photos: Afbeeldingen
+      images: Afbeeldingen
+
+    images:
+      delete: Verwijderen
+      upload: kies een bestand
+      choose_image: Kies afbeelding
+      remove_image: Verwijder afbeelding
+
+    forgot_password:
+      new: Wachtwoord vergeten
+      request: Wachtwoord aanvragen
 
     pages:
       new: Nieuwe pagina
@@ -58,6 +72,10 @@ nl:
       invisible_to_search_engines: Je website is niet zichtbaar voor zoekmachines
       invisible_to_search_engines_description: Bij voorkeuren voor Statistieken en zoekmachines kun je dit activeren.
       saving: <i></i> Opslaan...
+      saved: Pagina opgeslagen
+
+    resources:
+      edit: Bewerken
 
     users:
       new: Nieuwe gebruiker
@@ -71,6 +89,10 @@ nl:
       insert_photo: Afbeelding invoegen
       link: "De link naar de afbeelding is:"
       cannot_be_created: "Foto kon niet worden verwerkt:"
+      delete: Verwijderen
+      done_organizing: Klaar met slepen
+      organize: Organiseren
+      new_folder: Nieuwe folder
 
     wysiwyg:
       paragraph: Paragraaf
@@ -106,6 +128,7 @@ nl:
     media_library:
       photos: Afbeeldingen
       attachments: Documenten
+      images: Afbeeldingen
 
   activerecord:
     models:
@@ -152,10 +175,15 @@ nl:
         size: Grootte
 
       spina/page:
+        created_at: Aangemaakt op
+        ancestry: Bovenliggende pagina
         title: Titel
         title_placeholder: Titel van de pagina
         seo_title: SEO <title>
         seo_title_placeholder: Deze titel komt in de <title>-tag van de broncode te staan
+        link_url: Doorverwijzing
+        link_url_description: Doorverwijzen naar URL
+        link_url_placeholder: bijv. https://www.google.nl/
         description: SEO Beschrijving
         description_description: De beschrijving wordt weergegeven bij resultaten van zoekmachines
         description_placeholder: Een korte beschrijving van de pagina
@@ -168,6 +196,13 @@ nl:
         menu_title: Menu titel
         menu_title_placeholder: Leeglaten om de titel van de pagina over te nemen
         view_template: Pagina template
+        resource: Weergeven in
+
+      spina/resource:
+        label: Label
+        order_by: Sorteer overzicht
+        view_template: Standaard pagina template
+        parent_page: Bovenliggende pagina
 
       spina/navigation:
         label: Label

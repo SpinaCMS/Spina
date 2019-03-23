@@ -4,25 +4,45 @@ fr:
     close: Fermer
     choose_from_library: Choisir parmi la bibliothèque
     edit: Editer
+    save: Enregistrer
     delete: Supprimer
     permanently_delete: Supprimer définitivement
-    delete_confirmation: "Êtes vous sûr de vouloir supprimer : <strong>%{subject}</strong>?"
+    delete_confirmation: "Êtes-vous sûr de vouloir supprimer : <strong>%{subject}</strong> ?"
     login: Connexion
     preview_website: Aperçu du site
     search: Rechercher...
     ago: Il y a
-    edit_website: Editer votre site
+    edit_website: Éditer votre site
     logout: Déconnexion
+    main_menu: Menu principal
+
+    settings:
+      title: Paramètres
+      save: Enregistrer les paramètres
+
+    forgot_password:
+      new: Mot de passe oublié
+      request: Réinitialiser
+      unknown_user: Cet utilisateur n'existe pas
+      save: Enregistrer le nouveau mot de passe
+      success: Vous pouvez utiliser votre nouveau mot de passe
+      mail_subject: Réinitialiser votre mot de passe
+      expired: Votre jeton pour réinitialiser votre mot de passe a expiré
+
+    modal:
+      agree: "Oui, je suis sûr"
+      cancel: "Non, annuler"
 
     notifications:
       information: Information
-      alert: Oops! Quelque à mal fonctionner
-      login: Vous devez vous identifier avant
+      alert: Oups! Quelque chose a mal fonctionné
+      login: Vous devez d'abord vous identifier
       wrong_username_or_password: Mauvais email ou mot de passe
 
     website:
       title: Votre site
       pages: Pages
+      all_pages: Toutes les pages
       pages_description: "Toutes les pages de votre site"
       media_library: Bibliothèque de médias
       media_library_description: "Voici où vous trouverez toutes vos images et documents"
@@ -35,47 +55,58 @@ fr:
       change_order: Changer l'ordre
       done_changing_order: Changement d'ordre effectué
       page_content: Contenu
-      page_seo: Les moteurs de recherche
+      page_seo: Moteurs de recherche
       advanced: Avancé
       page_part: Section de page
       photos_picker: Choisir des images
       photo_picker: Choisir une image
-      delete_confirmation: "Êtes vous sûr de vouloir supprimer la page :  <strong>%{subject}</strong>?"
+      delete_confirmation: "Êtes-vous sûr de vouloir supprimer la page :  <strong>%{subject}</strong> ?"
       save: Sauvegarder la page
-      concept: concept
+      concept: brouillon
       show_in_menu: invisible
-      skip_to_first_child: forward to first child page
+      skip_to_first_child: Renvoyer vers la première page enfant
       invisible_to_search_engines: Votre site n'apparait pas sur les moteurs de recherche
-      invisible_to_search_engines_description: Aller dans vos preferences pour activer l'indexation sur les moteurs de recherche.
+      invisible_to_search_engines_description: Allez dans vos préférences pour activer l'indexation sur les moteurs de recherche.
+      rebuild_materialized_path: Reconstruire le chemin matérialisé
+      materialize_path_confirmation: "Êtes-vous sûr de vouloir reconstruire le chemin pour cette page ?"
+      saving: Enregistrement...
+      saved: Page enregistrée
 
     users:
       new: Nouvel utilisateur
       save: Sauvegarder l'utilisateur
-      delete_confirmation: "Êtes vous sûr de vouloir supprimer l'utilisateur :  <strong>%{user}</strong>?"
+      delete_confirmation: "Êtes-vous sûr de vouloir supprimer l'utilisateur :  <strong>%{user}</strong> ?"
       cannot_be_created: L'utilisateur ne peut pas être sauvegarder
 
     photos:
-      delete_confirmation: "Êtes vous sûr de vouloir supprimer cette <strong>image</strong>?"
+      delete_confirmation: "Êtes-vous sûr de vouloir supprimer cette <strong>image</strong> ?"
       insert_photos: Insérer des images
+      choose_images: Choisir des images
       insert_photo: Insérer une image
       link: "URL de votre image:"
-      cannot_be_created: "L'image n'a pas pu être traitée:"
+      cannot_be_created: "L'image n'a pas pu être traitée :"
+      upload_image: "Envoyer une image"
+      organize: Organiser les images
+      done_organizing: Organisation faite
+      new_folder: Nouveau dossier
+      delete_folder: Supprimer dossier
+      delete: Supprimer
 
     wysiwyg:
       paragraph: Paragraphe
-      heading_1: Header 1
-      heading_2: Header 2
-      heading_3: Header 3
+      heading_1: Titre 1
+      heading_2: Titre 2
+      heading_3: Titre 3
       quote: Citation
       insert_link: Insérer un lien
 
     preferences:
       title: Préférences
-      account: General
+      account: Général
       account_description: Les préférences personnelles
       account_save: Sauvegarder les préférences
       style: Style
-      style_description: Choissiser un theme qui vous correspond
+      style_description: Choissiser un thème qui vous correspond
       style_save: Sauvegarder le style
       users: Utilisateurs
       users_description: Gérer les utilisateurs et les administrateurs
@@ -83,7 +114,7 @@ fr:
       social_media_description: Comptes Facebook et Twitter
       social_media_save: Sauvegarder les Réseaux sociaux
       analytics: Analytics et moteurs de recherche
-      analytics_description: Connecter votre compte pour faire de l'analyse en temps réel
+      analytics_description: Connectez votre compte pour faire de l'analyse en temps réel
       analytics_save: Sauvegarder vos préférences
       domain_name_settings: Paramètres de domaine
       domain_name_settings_description: Configuration de votre nom de domaine
@@ -119,8 +150,8 @@ fr:
         city: Ville
         phone: Téléphone
         email: Email
-        kvk_identifier: Chambre de commerce
-        kvk_identifier_description: Chambre de commerce
+        kvk_identifier: SIRET
+        kvk_identifier_description: SIRET
         vat_identifier: VAT
         vat_identifier_description: VAT
         theme: Thème du site
@@ -136,27 +167,39 @@ fr:
         linkedin: LinkedIn
 
       spina/attachment:
-        created_at: Créer à
+        created_at: Créé le
         name: Nom du fichier
         size: Taille
 
       spina/page:
         title: Titre
         title_placeholder: Titre de la page
-        seo_title: SEO <title>
-        seo_title_placeholder: Ce titre est utilisé dans les tag <title>
+        seo_title: Balise SEO <title>
+        seo_title_placeholder: Ce titre est utilisé dans a balise <title>
         description: Meta description
-        description_description: Cette description sera affiché dans les résultats de recherche
+        description_description: Cette description sera affichée dans les résultats de recherche
         description_placeholder: Petite description de votre page
-        draft: Concept
-        draft_description: Idéal lorsque votre page est pas tout à fait fin
-        skip_to_first_child: Transmettre
-        skip_to_first_child_description: Transmettre la premiere page enfant
-        show_in_menu: Afficher dans le menu
-        show_in_menu_description: "Si désactivé cette page ne ​​sera pas affiché dans votre menu"
-        menu_title: Titre du menu
-        menu_title_placeholder: Laisser vide pour utiliser le titre de la page
+        draft: Brouillon
+        draft_description: Idéal lorsque votre page n'est pas tout à fait terminée
+        skip_to_first_child: Renvoyer
+        skip_to_first_child_description: Renvoyer vers la première page enfant
+        show_in_menu: Afficher dans la navigation
+        show_in_menu_description: "Si désactivé cette page ne ​​sera pas affichée dans la navigation"
+        menu_title: Titre dans la navigation
+        menu_title_placeholder: Laissez vide pour utiliser le titre de la page
         view_template: Modèle de page
+        ancestry: Page parente
+        no_parent: Pas de parent
+
+      spina/media_folder:
+        name: Nom
+
+      spina/navigation:
+        label: Étiquette
+        auto_add_pages: Ajouter les pages automatiquement
+        auto_add_pages_description: Les nouvelles pages seront ajoutées automatiquement à cette navigation
+        pages: Pages
+        pages_description: Sélectionnez les pages que vous voulez utiliser dans cette navigation
 
       spina/user:
         email: Email
@@ -179,3 +222,8 @@ fr:
       zero: "0 nouveau message"
       one: "1 nouveau message"
       other: "%{count} nouveaux messages"
+
+  languages:
+    en: Anglais
+    nl: Néerlandais
+    fr: Français
