@@ -114,17 +114,10 @@ module Spina
 
       def generate_materialized_path
         if root?
-          name == 'homepage' ? '' : "#{path_fragment}"
+          name == 'homepage' ? '' : "#{url_title}"
         else
-          ancestors.collect(&:url_title).append(path_fragment).join('/')
+          ancestors.collect(&:url_title).append(url_title).join('/')
         end
-      end
-
-      def path_fragment
-        # We only invoke this when the title is set
-        return if title.nil?
-        return url_title if url_title.present?
-        title.gsub(" ", "-")
       end
 
   end
