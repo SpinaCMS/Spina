@@ -163,7 +163,7 @@ GEM
     mobility (0.8.7)
       i18n (>= 0.6.10, < 2)
       request_store (~> 1.0)
-    mocha (1.7.0)
+    mocha (1.8.0)
       metaclass (~> 0.0.1)
     msgpack (1.2.6)
     nio4r (2.3.1)
