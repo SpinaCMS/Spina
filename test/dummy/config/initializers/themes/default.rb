@@ -65,13 +65,8 @@
     view_template:  'homepage'
   }]
 
-  theme.navigations = [{
-    name: 'mobile',
-    label: 'Mobile'  
-  }, {
-    name: 'main',
-    label: 'Main navigation',
-    auto_add_pages: true
-  }]
+  theme.navigations = []
+  
+  theme.resources = []
 
 end

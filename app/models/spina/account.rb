@@ -43,6 +43,13 @@ module Spina
 
         bootstrap_navigations(theme_config)
         bootstrap_pages(theme_config)
+        bootstrap_resources(theme_config)
+      end
+    end
+
+    def bootstrap_navigations(theme)
+      theme.navigations.each_with_index do |navigation, index|
+        Navigation.where(name: navigation[:name]).first_or_create.update_attributes(navigation.merge(position: index))
       end
     end
 
@@ -52,9 +59,9 @@ module Spina
       activate_used_view_templates(theme)
     end
 
-    def bootstrap_navigations(theme)
-      theme.navigations.each_with_index do |navigation, index|
-        Navigation.where(name: navigation[:name]).first_or_create.update_attributes(navigation.merge(position: index))
+    def bootstrap_resources(theme)
+      theme.resources.each do |resource|
+        Resource.where(name: resource[:name]).first_or_create.update_attributes(resource)
       end
     end
 
