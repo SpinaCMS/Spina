@@ -17,4 +17,6 @@ $(document).on 'click', '.gallery .item:not(.item-uploader)', ->
     gallery.find('.item input').prop('checked', false)
     $(this).addClass('selected') unless checked
     $(this).find('input').prop('checked', !checked)
-    $(this).closest('form').submit()
+
+    if gallery.data('trix') == undefined
+      $(this).closest('form').submit()  

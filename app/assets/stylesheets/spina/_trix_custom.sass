@@ -178,3 +178,45 @@ trix-editor
     border-radius: 0
     box-shadow: none
     font-size: 16px
+
+  .trix-attachment-spina-image
+    display: block
+    margin-bottom: 30px
+    position: relative
+
+    img
+      display: block
+
+    &:before, &:after
+      align-items: center
+      background: rgba(255, 255, 255, .925)
+      bottom: 0px
+      border-radius: 3px
+      border: 1px solid #ccc
+      box-shadow: 0 10px 15px rgba(0, 0, 0, .2)
+      color: #666
+      content: attr(data-alt)
+      display: flex
+      font-size: 13px
+      font-style: italic
+      line-height: 16px
+      left: 50%
+      max-width: 50%
+      min-height: 24px
+      padding: 5px 10px
+      position: absolute
+      text-align: center
+      transform: translateX(-50%) translateY(50%)
+      width: auto
+
+    &:before
+      background: none
+      border: none
+      box-shadow: none
+      color: #333
+      content: attr(data-class)
+      left: auto
+      font-style: normal
+      font-weight: 500
+      right: 0px
+      transform: translateY(100%)

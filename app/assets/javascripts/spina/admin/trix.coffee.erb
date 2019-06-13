@@ -90,8 +90,17 @@ class Spina.TrixAttachment
     toolbar_id = $(this).closest('trix-toolbar').attr('id')
     $.get("<%= Spina::Engine.routes.url_helpers.admin_media_picker_path %>" + "?trix_toolbar_id=#{toolbar_id}")
 
-  @imageInsert: (e, url) ->
-    this.editor.insertHTML "<img src='#{ url }' />"
+  @imageInsert: (e, url, alt = "", custom_class = "") ->
+    custom_class_label = ""
+    alt_label = ""
+    alt_label = "✍️ #{alt}" if alt != ""
+    custom_class_label = "🎨 .#{custom_class}" if custom_class != ""
+
+
+    attachment = new Trix.Attachment({content: "<span class='trix-attachment-spina-image #{custom_class}' data-class='#{custom_class_label}' data-alt='#{alt_label}'>
+      <img src='#{url}' alt='#{alt}' />
+    </span>"})
+    this.editor.insertAttachment(attachment)
 
 document.addEventListener 'trix-file-accept', (e) ->
   e.preventDefault()

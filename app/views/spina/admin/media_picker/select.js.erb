@@ -6,9 +6,11 @@ hidden_input.val("");
   hidden_input.parents('.media_picker').append("<%=j render partial: 'spina/admin/images/image', object: @image, locals: {simple: true} %>");
   hidden_input.val("<%= @image.id %>");
 
-  // Trix editor
-  $('trix-editor[toolbar="<%= params[:trix_toolbar_id] %>"').trigger('image-insert', '<%= main_app.url_for(@image.file) %>');
-  $.hideModal();
+  <% if params[:trix_toolbar_id].present? %>
+    // Trix editor
+    $('trix-editor[toolbar="<%= params[:trix_toolbar_id] %>"]').trigger('image-insert', ["<%= main_app.url_for(@image.file) %>", "<%= params[:alt] %>", "<%= params[:custom_class] %>"]);
+    $.hideModal();
+  <% end %>
 <% end %>
 
 <% if @images.present? %>
