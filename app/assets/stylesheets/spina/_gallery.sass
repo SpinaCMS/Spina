@@ -119,12 +119,15 @@
   display: block
 
 .gallery-select
+  display: flex
+  flex: 1
   margin: -8px
 
-  &.gallery-select-multiple
+  &[data-multiselect]
     padding-bottom: 70px
 
   form
+    display: flex
     margin: 0
 
   .item
@@ -191,7 +194,7 @@
     border-top: 1px solid #e5e5e5
     bottom: 0px
     clear: both
-    margin: 0 -12px
+    left: 0px
     padding: 12px
     position: absolute
     width: 100%
@@ -200,6 +203,24 @@
     input[type="text"]
       display: inline-block
       max-width: 200px
+
+// Gallery Select with sidebar
+.gallery-select-sidebar
+  border-left: 1px solid #ccc
+  display: flex
+  flex-direction: column
+  margin: -12px
+  margin-left: 20px
+  padding: 20px
+  max-width: 400px
+  min-width: 400px
+
+.gallery-select-sidebar-form
+  flex: 1
+
+.gallery-select-sidebar-actions
+  display: flex
+  justify-content: flex-end
 
 // Customfile
 

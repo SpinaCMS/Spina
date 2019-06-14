@@ -102,6 +102,8 @@ en:
       choose_images: Choose images
       choose_image: Choose image
       remove_image: Remove image
+      insert_image: Insert image
+      image_attributes: Image attributes
 
     wysiwyg:
       paragraph: Paragraph

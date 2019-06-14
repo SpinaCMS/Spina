@@ -1,7 +1,7 @@
 .modal.modal-large
   %section
     .gallery-select.gallery{data: {multiselect: defined?(multiple) && multiple, trix: params[:trix_toolbar_id].present?}}
-      .item.item-small.item-uploader.new-image-form
+      .item.item-small.item-uploader.new-image-form{style: "position: absolute"}
         = render partial: 'spina/admin/images/form'
 
       = form_with url: admin_media_picker_path, class: 'gallery-prepend-image', html: {'data-remote': true} do
@@ -18,16 +18,26 @@
           %span{ data: { target: 'infinite-scroll.link' } }
 
         - if params[:trix_toolbar_id].present?
-          .gallery-select-action-bar
-            
-            = text_field_tag :alt, nil, placeholder: "Alt text"
-            = text_field_tag :custom_class, nil, placeholder: "Custom clas"
+          .gallery-select-sidebar
+            .gallery-select-sidebar-form
+              %h3=t 'spina.images.image_attributes'
+              .form-group
+                .form-label Alt text
+                .form-control= text_field_tag :alt, nil, placeholder: "Alt text"
 
-            .pull-right
+              / .form-group
+              /   .form-label Custom class
+              /   .form-control= text_field_tag :custom_class, nil, placeholder: "Custom clas"
+
+              .form-group
+                .form-label Link to URL
+                .form-control= text_field_tag :link_to_url, nil, placeholder: "URL"
+
+            .gallery-select-sidebar-actions
               = link_to t('spina.cancel'), "#", class: 'button button-link', data: {dismiss: 'modal'}
               = button_tag type: 'submit', class: 'button button-primary button-large', style: 'margin-bottom: 0px' do
                 = icon('check')
-                = t('spina.images.choose_image')
+                = t('spina.images.insert_image')
 
         - if defined?(multiple) && multiple
           .gallery-select-action-bar

@@ -8,7 +8,7 @@ hidden_input.val("");
 
   <% if params[:trix_toolbar_id].present? %>
     // Trix editor
-    $('trix-editor[toolbar="<%= params[:trix_toolbar_id] %>"]').trigger('image-insert', ["<%= main_app.url_for(@image.file) %>", "<%= params[:alt] %>", "<%= params[:custom_class] %>"]);
+    $('trix-editor[toolbar="<%= params[:trix_toolbar_id] %>"]').trigger('image-insert', ["<%= main_app.url_for(@image.file) %>", "<%= params[:alt] %>", "<%= params[:link_to_url] %>"]);
     $.hideModal();
   <% end %>
 <% end %>
