@@ -203,7 +203,7 @@ theme.view_templates = [{
 
 Finally, let's go to `views/default/pages/show.html.erb` and add the following:
 
-```ruby
+```erb
 <h1><%= @page.title %></h1>
 
 <%= @page.content(:text).try(:html_safe) %>
