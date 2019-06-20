@@ -20,7 +20,6 @@
         - if params[:trix_toolbar_id].present?
           .gallery-select-sidebar
             .gallery-select-sidebar-form
-              %h3=t 'spina.images.image_attributes'
               .form-group
                 .form-label Alt text
                 .form-control= text_field_tag :alt, nil, placeholder: "Alt text"
