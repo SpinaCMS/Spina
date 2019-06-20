@@ -123,6 +123,18 @@
   flex: 1
   margin: -8px
 
+  .infinite-scroll
+    display: flex
+    flex-wrap: wrap
+    margin: -15px
+    overflow: scroll
+    padding: 15px
+
+    .item
+      flex: 1
+      height: auto
+      min-width: 130px
+
   &[data-multiselect]
     padding-bottom: 70px
 
@@ -206,14 +218,15 @@
 
 // Gallery Select with sidebar
 .gallery-select-sidebar
-  border-left: 1px solid #ccc
+  box-shadow: 0 0 15px rgba(0, 0, 0, .15)
+  border-left: 1px solid #e5e5e5
   display: flex
   flex-direction: column
   margin: -12px
   margin-left: 20px
   padding: 20px
-  max-width: 400px
-  min-width: 400px
+  max-width: 300px
+  min-width: 300px
 
 .gallery-select-sidebar-form
   flex: 1

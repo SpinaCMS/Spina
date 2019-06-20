@@ -180,6 +180,7 @@ trix-editor
     font-size: 16px
 
   .trix-attachment-spina-image
+    cursor: default
     display: block
     margin-bottom: 40px
     position: relative
@@ -203,7 +204,7 @@ trix-editor
       color: #666
       content: attr(data-label)
       display: block
-      font-size: 15px
+      font-size: 13px
       font-style: italic
       line-height: 16px
       left: 0px
@@ -213,6 +214,14 @@ trix-editor
       white-space: nowrap
       width: auto
 
-  figure[data-trix-mutable] .trix-attachment-spina-image:before
-    background: $primary-color
-    color: white
+  figure[data-trix-mutable] 
+    .trix-attachment-spina-image:before
+      background: $primary-color
+      color: white
+
+    &.attachment img
+      box-shadow: 0 0 15px rgba(0, 0, 0, .15)
+
+  .trix-button--remove
+    border: none
+    box-shadow: 0 0 5px rgba(0, 0, 0, .15)
