@@ -3,7 +3,7 @@ module Spina
     class MediaPickerController < AdminController
 
       def show
-        @images = Image.page(params[:page]).per(5)
+        @images = Image.page(params[:page])
 
         if params[:selected_ids].present?
           ids = params[:selected_ids].map(&:to_i).join(', ')

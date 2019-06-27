@@ -118,22 +118,34 @@
   content: ""
   display: block
 
+// Boxed grid layout
+=flex-wrap-fix($flex-basis, $max-viewport-width: 3440px)
+  flex-grow: 1
+  flex-basis: $flex-basis
+  max-width: 100%
+  
+  $multiplier: 1
+  $current-width: 0px
+  
+  @while $current-width < $max-viewport-width
+    $current-width: $current-width + $flex-basis
+    $multiplier: $multiplier + 1
+    
+    @media (min-width: $flex-basis * $multiplier)
+      max-width: percentage(1 / $multiplier)
+
 .gallery-select
   display: flex
   flex: 1
-  margin: -8px
+  margin: -20px
 
   .infinite-scroll
     display: flex
     flex-wrap: wrap
-    margin: -15px
-    overflow: scroll
-    padding: 15px
+    margin: -8px
 
     .item
-      flex: 1
-      height: auto
-      min-width: 130px
+      +flex-wrap-fix(300px)
 
   &[data-multiselect]
     padding-bottom: 70px
@@ -144,19 +156,40 @@
 
   .item
     border-radius: 5px
+    box-shadow: none !important
     cursor: pointer
     display: inline
-    height: 150px
-    line-height: 150px
-    margin: 8px
+    height: auto
+    line-height: auto
+    margin: 0
+    padding: 8px
     position: relative
     transition: all .3s ease
-    width: 150px
+
+    .overlay
+      border-radius: 5px
+      height: calc(100% - 16px) !important
+      left: 8px
+      top: 8px
+      width: calc(100% - 16px) !important
+
+    &.selected:before
+      border-radius: 5px
+      height: calc(100% - 16px) !important
+      left: 8px !important
+      top: 8px !important
+      width: calc(100% - 16px) !important
+
+    &.selected:after
+      top: 50% !important
+      transform: translateY(-50%) !important
+      width: calc(100% - 16px) !important
 
     input
       display: none
 
     img
+      border-radius: 5px
       display: block
 
   .item:not(.item-uploader):hover
@@ -222,8 +255,6 @@
   border-left: 1px solid #e5e5e5
   display: flex
   flex-direction: column
-  margin: -12px
-  margin-left: 20px
   padding: 20px
   max-width: 300px
   min-width: 300px

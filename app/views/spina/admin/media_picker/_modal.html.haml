@@ -1,21 +1,20 @@
 .modal.modal-large
   %section
     .gallery-select.gallery{data: {multiselect: defined?(multiple) && multiple, trix: params[:trix_toolbar_id].present?}}
-      .item.item-small.item-uploader.new-image-form{style: "position: absolute"}
-        = render partial: 'spina/admin/images/form'
-
+      / = render partial: 'spina/admin/images/form'
       = form_with url: admin_media_picker_path, class: 'gallery-prepend-image', html: {'data-remote': true} do
         = hidden_field_tag :hidden_field_id, params[:hidden_field_id]
         = hidden_field_tag :trix_toolbar_id, params[:trix_toolbar_id]
         = check_box_tag :multiple, true, defined?(multiple) && multiple, style: 'display: none'
 
-        .infinite-scroll
-          = render partial: 'spina/admin/images/image', collection: @images
+        %div{style: "overflow: scroll; padding: 20px"}
+          .infinite-scroll
+            = render partial: 'spina/admin/images/image', collection: @images
 
-        .infinite-pagination{data: { controller: 'infinite-scroll' } }
-          = link_to_next_page @images, 'Next', params: params, remote: true,
-            data: { target: 'infinite-scroll.link' }
-          %span{ data: { target: 'infinite-scroll.link' } }
+          .infinite-pagination{data: { controller: 'infinite-scroll' } }
+            = link_to_next_page @images, 'Next', params: params, remote: true,
+              data: { target: 'infinite-scroll.link' }
+            %span{ data: { target: 'infinite-scroll.link' } }
 
         - if params[:trix_toolbar_id].present?
           .gallery-select-sidebar
@@ -23,10 +22,6 @@
               .form-group
                 .form-label Alt text
                 .form-control= text_field_tag :alt, nil, placeholder: "Alt text"
-
-              / .form-group
-              /   .form-label Custom class
-              /   .form-control= text_field_tag :custom_class, nil, placeholder: "Custom clas"
 
               .form-group
                 .form-label Link to URL
