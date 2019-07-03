@@ -19,11 +19,10 @@
 
         - if defined?(multiple) && multiple
           .gallery-select-action-bar
-            .pull-right
-              = link_to t('spina.cancel'), "#", class: 'button button-link', data: {dismiss: 'modal'}
-              = button_tag type: 'submit', class: 'button button-primary button-large', style: 'margin-bottom: 0px' do
-                = icon('plus')
-                = t('spina.images.choose_images')
-                %span.gallery-select-counter
-                  - if params[:selected_ids].try(:any?)
-                    (#{ params[:selected_ids].count })
+            = link_to t('spina.cancel'), "#", class: 'button button-link', data: {dismiss: 'modal'}
+            = button_tag type: 'submit', class: 'button button-primary button-large', style: 'margin-bottom: 0px' do
+              = icon('plus')
+              = t('spina.images.choose_images')
+              %span.gallery-select-counter
+                - if params[:selected_ids].try(:any?)
+                  (#{ params[:selected_ids].count })
