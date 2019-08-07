@@ -90,8 +90,22 @@ class Spina.TrixAttachment
     toolbar_id = $(this).closest('trix-toolbar').attr('id')
     $.get("<%= Spina::Engine.routes.url_helpers.admin_media_picker_path %>" + "?trix_toolbar_id=#{toolbar_id}")
 
-  @imageInsert: (e, url) ->
-    this.editor.insertHTML "<img src='#{ url }' />"
+  @imageInsert: (e, url, alt = "", link_to_url = "") ->
+    labels = []
+    labels.push "✍️ #{alt}" if alt != ""
+    labels.push "🔗 #{link_to_url}" if link_to_url != ""
+    label = labels.join("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;")
+
+    if link_to_url != ""
+      attachment = new Trix.Attachment({content: "<a href='#{link_to_url}' class='trix-attachment-spina-image' data-label='#{label}'>
+        <img src='#{url}' alt='#{alt}' />
+      </a>"})
+    else
+      attachment = new Trix.Attachment({content: "<span class='trix-attachment-spina-image' data-label='#{label}'>
+        <img src='#{url}' alt='#{alt}' />
+      </span>"})
+
+    this.editor.insertAttachment(attachment)
 
 document.addEventListener 'trix-file-accept', (e) ->
   e.preventDefault()
@@ -99,3 +113,6 @@ document.addEventListener 'trix-file-accept', (e) ->
 $(document).on 'click', '[data-trix-attribute="image"]', Spina.TrixAttachment.imageSelect
 
 $(document).on 'image-insert', 'trix-editor', Spina.TrixAttachment.imageInsert
+
+$(document).on 'click', 'a.trix-attachment-spina-image', (e) ->
+  e.preventDefault() 
