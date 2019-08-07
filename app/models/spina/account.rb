@@ -33,13 +33,14 @@ module Spina
       end
     end
 
-    serialized_attr_accessor :google_analytics, :google_site_verification, :facebook, :twitter, :google_plus, :theme
+    serialized_attr_accessor :google_analytics, :google_site_verification, :facebook, :twitter, :instagram, :youtube, :linkedin, :google_plus, :theme
 
     private
 
     def bootstrap_website
       theme_config = ::Spina::Theme.find_by_name(theme)
       if theme_config
+
         bootstrap_navigations(theme_config)
         bootstrap_pages(theme_config)
         bootstrap_resources(theme_config)

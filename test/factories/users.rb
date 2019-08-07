@@ -1,9 +1,9 @@
 FactoryBot.define do
   factory :user, class: Spina::User do
-    name  'Bram'
-    email 'bram@denkgroot.com'
-    password 'password'
+    name  { 'Bram' }
+    email { 'bram@denkgroot.com' }
+    password { 'password' }
     password_confirmation { password }
-    admin true
+    admin { true }
   end
 end

@@ -34,6 +34,7 @@
           .gallery-select-action-bar
             = link_to t('spina.cancel'), "#", class: 'button button-link', data: {dismiss: 'modal'}
             = button_tag type: 'submit', class: 'button button-primary button-large', style: 'margin-bottom: 0px' do
+
               - if defined?(multiple) && multiple
                 = icon('plus')
                 = t('spina.images.choose_images')
