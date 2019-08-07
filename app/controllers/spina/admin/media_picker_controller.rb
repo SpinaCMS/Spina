@@ -17,7 +17,7 @@ module Spina
 
       def select
         if params[:multiple]
-          @images = Image.where(id: params[:image_ids])
+          @images = Image.where(id: params[:image_ids].split("-"))
         else 
           @image = Image.find(params[:image_id])
         end
