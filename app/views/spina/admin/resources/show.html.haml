@@ -9,6 +9,16 @@
 .well
   .dd#pages_list
     %ol.dd-list
-      - @resource.pages.each do |page|
-        %li.dd-item
-          .dd-item-inner= render partial: 'spina/admin/pages/page', object: page
+      - (@resource.parent_page.try(:children) || @resource.pages.roots).each do |page|
+        %li.dd-item{data: {controller: "page-collapse", url: spina.children_admin_page_path(page)}}
+          .dd-item-inner
+            - if page.children.any?
+              = button_tag class: 'collapse-link', data: {action: "page-collapse#expand", target: 'page-collapse.expandLink'} do
+                = icon('plus')
+
+              = button_tag class: 'collapse-link', style: 'display: none', data: {action: "page-collapse#collapse", target: 'page-collapse.collapseLink'} do
+                = icon('min')
+
+            = render partial: 'spina/admin/pages/page', object: page
+
+          %div{data: {target: 'page-collapse.list'}}
