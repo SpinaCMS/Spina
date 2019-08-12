@@ -5,17 +5,12 @@ module Spina
     # because the resolve directive in ActiveStorage's routes
     # doesn't work outside the main app in 5.2.0.rc2
     def variant(image, options)
-      if image.attached?
-        if image.content_type.include?('svg')
-          main_app.url_for(image)
-        else
-          variant = image.variant(options)
-          main_app.rails_blob_representation_path(variant.blob.signed_id, variant.variation.key, variant.blob.filename)
-        end
+      if image.attached? && image.variable?
+        variant = image.variant(options)
+        main_app.rails_blob_representation_path(variant.blob.signed_id, variant.variation.key, variant.blob.filename)
       else
         "https://placehold.it/100x100.png"
       end
     end
-
   end
 end

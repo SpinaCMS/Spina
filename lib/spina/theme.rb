@@ -1,7 +1,7 @@
 module Spina
   class Theme
 
-    attr_accessor :name, :title, :page_parts, :structures, :view_templates, :layout_parts, :custom_pages, :plugins, :public_theme, :config, :navigations
+    attr_accessor :name, :title, :page_parts, :structures, :view_templates, :layout_parts, :custom_pages, :plugins, :public_theme, :config, :navigations, :resources
 
     class << self
 
@@ -32,6 +32,7 @@ module Spina
       @view_templates   = []
       @custom_pages     = []
       @navigations      = []
+      @resources        = []
       @public_theme = false
     end
 

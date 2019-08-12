@@ -1,7 +1,7 @@
 module Spina
   class Text < ApplicationRecord
     extend Mobility
-    translates :content
+    translates :content, fallbacks: true
     
     has_many :page_parts, as: :page_partable
     has_many :layout_parts, as: :layout_partable

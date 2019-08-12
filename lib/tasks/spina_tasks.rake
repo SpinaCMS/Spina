@@ -8,8 +8,14 @@ namespace :spina do
   desc "Update translations after adding locales"
   task update_translations: :environment do
     Spina.locales.each do |locale|
-      I18n.locale = locale
-      Spina::Page.find_each(&:save!)
+      Mobility.with_locale(locale) do
+
+        Spina::Page.all.order(:id).each do |page|
+          page.title = page.title(fallback: Mobility.new_fallbacks[locale])
+          page.save
+        end
+
+      end
     end
   end
 
