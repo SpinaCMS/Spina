@@ -4,7 +4,7 @@ module Spina
 
     included do
       rescue_from ActiveRecord::RecordNotFound, with: :redirect_or_render_404
-      
+
       before_action :set_locale
       before_action :set_current_page
     end
@@ -38,7 +38,7 @@ module Spina
       def page
         @page = if action_name == 'homepage'
           Page.find_by!(name: 'homepage')
-        else 
+        else
           page_by_locale(I18n.locale) || page_by_locale(I18n.default_locale)
         end
       end
@@ -65,7 +65,7 @@ module Spina
       end
 
       def render_404
-        render file: "#{Rails.root}/public/404.html", status: 404
+        render file: "/404", status: 404
       end
 
       def render_with_template(page)
