@@ -20,6 +20,7 @@ module Spina
 
     config.autoload_paths += %W( #{config.root}/lib )
     config.assets.paths << config.root.join('vendor', 'assets')
+    config.action_controller.include_all_helpers = true
 
     config.to_prepare do
       # Load helpers from main application
