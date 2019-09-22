@@ -13,7 +13,7 @@ module Spina
       if should_skip_to_first_child?
         redirect_to first_live_child.try(:materialized_path) and return
       elsif page.link_url.present?
-        redirect_to Current.page.link_url and return
+        redirect_to Spina::Current.page.link_url and return
       end
 
       render_with_template(page)
@@ -26,7 +26,7 @@ module Spina
       end
 
       def set_current_page
-        Current.page = page
+        Spina::Current.page = page
       end
 
       def page_by_locale(locale)
@@ -49,11 +49,11 @@ module Spina
       end
 
       def should_skip_to_first_child?
-        Current.page.skip_to_first_child && first_live_child
+        Spina::Current.page.skip_to_first_child && first_live_child
       end
 
       def first_live_child
-        Current.page.children.sorted.live.first
+        Spina::Current.page.children.sorted.live.first
       end
 
       def redirect_or_render_404
@@ -69,7 +69,7 @@ module Spina
       end
 
       def render_with_template(page)
-        render layout: "#{current_theme.name.parameterize.underscore}/#{page.layout_template || 'application'}", template: "#{current_theme.name.parameterize.underscore}/pages/#{Current.page.view_template || 'show'}"
+        render layout: "#{current_theme.name.parameterize.underscore}/#{page.layout_template || 'application'}", template: "#{current_theme.name.parameterize.underscore}/pages/#{Spina::Current.page.view_template || 'show'}"
       end
 
   end

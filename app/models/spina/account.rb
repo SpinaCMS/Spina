@@ -33,15 +33,23 @@ module Spina
       end
     end
 
-    serialized_attr_accessor :google_analytics, :google_site_verification, :facebook, :twitter, :google_plus, :theme
+    serialized_attr_accessor :google_analytics, :google_site_verification, :facebook, :twitter, :instagram, :youtube, :linkedin, :google_plus, :theme
 
     private
 
     def bootstrap_website
       theme_config = ::Spina::Theme.find_by_name(theme)
       if theme_config
-        bootstrap_pages(theme_config)
+
         bootstrap_navigations(theme_config)
+        bootstrap_pages(theme_config)
+        bootstrap_resources(theme_config)
+      end
+    end
+
+    def bootstrap_navigations(theme)
+      theme.navigations.each_with_index do |navigation, index|
+        Navigation.where(name: navigation[:name]).first_or_create.update_attributes(navigation.merge(position: index))
       end
     end
 
@@ -51,9 +59,9 @@ module Spina
       activate_used_view_templates(theme)
     end
 
-    def bootstrap_navigations(theme)
-      theme.navigations.each_with_index do |navigation, index|
-        Navigation.where(name: navigation[:name]).first_or_create.update_attributes(navigation.merge(position: index))
+    def bootstrap_resources(theme)
+      theme.resources.each do |resource|
+        Resource.where(name: resource[:name]).first_or_create.update_attributes(resource)
       end
     end
 

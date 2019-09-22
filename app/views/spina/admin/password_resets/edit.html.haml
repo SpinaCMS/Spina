@@ -1,5 +1,5 @@
 = form_for @user, url: spina.admin_password_reset_path(params[:id]), html: {id: "login_wrapper"} do |f|
-  = image_tag 'spina/spina-large.png', class: 'animated fadeInDown'
+  = image_tag 'spina/spina.svg', class: 'animated fadeInDown', width: 72, height: 54
   - if @user.errors.any?
     .failed-to-login.animated.fadeInDown
       .icon.icon-cross

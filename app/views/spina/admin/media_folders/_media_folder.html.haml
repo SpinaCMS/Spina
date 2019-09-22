@@ -3,6 +3,6 @@
     - if media_folder.images.any?
       = image_tag variant(media_folder.images.last.file, resize: '144x144^', crop: "144x144+0+0")
     - else
-      = image_tag 'spina/media_folder_placeholder.png'
+      = image_tag 'spina/media_folder_placeholder.svg'
     .media-folder-shadow
   .media-folder-name= media_folder.name

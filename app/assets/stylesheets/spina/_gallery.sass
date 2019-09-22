@@ -8,6 +8,38 @@
       input[type="radio"], input[type="checkbox"]
         display: none
 
+.gallery-select-container
+  display: flex
+  width: 100%
+
+  .gallery-select
+    flex: 1
+    max-height: 100%
+    overflow: scroll
+
+  .gallery-select-sidebar
+    border-left: 1px solid #ddd
+    box-shadow: 0 0 15px rgba(0, 0, 0, .15)
+    margin: -20px -20px -20px 0
+    padding: 20px
+    width: 300px
+
+.gallery-select-sidebar form
+  display: flex
+  flex-direction: column
+  height: 100%
+  justify-content: space-between
+
+.gallery-select-action-bar
+  align-items: center
+  display: flex
+
+  .button
+    margin-bottom: 0
+
+  button
+    margin-right: 0
+
 .gallery
   margin: 20px 0
 
@@ -110,7 +142,7 @@
     form
       height: 100%
 
-.gallery form .item .overlay a
+.gallery-select .item .overlay a
   display: none
 
 .gallery:after
@@ -119,7 +151,7 @@
   display: block
 
 .gallery-select
-  margin: -8px
+  margin: 0
 
   &.gallery-select-multiple
     padding-bottom: 70px
@@ -187,15 +219,16 @@
       opacity: .7
 
   .gallery-select-action-bar
+    align-items: center
     background: #fff
     border-top: 1px solid #e5e5e5
-    bottom: 0px
-    clear: both
-    margin: 0 -12px
-    padding: 12px
-    position: absolute
-    width: 100%
-    z-index: 3
+    display: flex
+    justify-content: flex-end
+    margin-top: 12px
+    padding: 12px 12px 0
+
+    .button
+      margin: 0 0 0 4px
 
 // Customfile
 

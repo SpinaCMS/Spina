@@ -14,7 +14,7 @@
       let $link = $(this.linkTarget)
 
       // If the link has an actual href
-      if ($link.attr('href').length > 0) {
+      if ($link.attr('href')) {
         // If the window scrolls
         $(window).on('scroll.infiniteScroll', this.loadNextPage($link))
 
@@ -35,6 +35,6 @@
         $.getScript(link.attr('href'))
       }
     }
-    
+
   })
 })()
