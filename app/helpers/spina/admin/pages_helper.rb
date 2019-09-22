@@ -1,6 +1,12 @@
 module Spina
   module Admin
     module PagesHelper
+      def self.included klass
+        klass.class_eval do
+          include Spina::ImagesHelper
+        end
+      end
+
       def link_to_add_structure_item_fields(f, &block)
         item = StructureItem.new
         fields = f.fields_for(:structure_items, item, child_index: item.object_id) do |builder|
