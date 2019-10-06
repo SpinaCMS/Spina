@@ -18,6 +18,7 @@ Gem::Specification.new do |s|
   # s.test_files = Dir['test/**/*']
 
   s.add_dependency 'rails', '>= 6.0'
+  s.add_dependency 'pg'
   s.add_dependency 'bcrypt'
   s.add_dependency 'haml-rails'
   s.add_dependency 'sass-rails'
@@ -32,11 +33,4 @@ Gem::Specification.new do |s|
   s.add_dependency 'rack-rewrite', '>= 1.5.0'
   s.add_dependency 'jsonb_accessor', '>= 1.0.0'
   s.add_dependency 'font_awesome5_rails'
-
-  # Development dependencies
-  s.add_development_dependency 'pg'
-  s.add_development_dependency 'letter_opener'
-  s.add_development_dependency 'pry-rails'
-  s.add_development_dependency 'mocha'
-  s.add_development_dependency 'listen'
 end

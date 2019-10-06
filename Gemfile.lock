@@ -13,6 +13,7 @@ PATH
       kaminari
       mini_magick
       mobility (>= 0.8.8)
+      pg
       rack-rewrite (>= 1.5.0)
       rails (>= 6.0)
       sass-rails
@@ -148,9 +149,6 @@ GEM
       addressable (~> 2.3)
     letter_opener (1.7.0)
       launchy (~> 2.2)
-    listen (3.2.0)
-      rb-fsevent (~> 0.10, >= 0.10.3)
-      rb-inotify (~> 0.9, >= 0.9.10)
     loofah (2.3.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -220,9 +218,6 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.20.3, < 2.0)
     rake (13.0.0)
-    rb-fsevent (0.10.3)
-    rb-inotify (0.10.0)
-      ffi (~> 1.0)
     request_store (1.4.1)
       rack (>= 1.4)
     ruby-progressbar (1.10.1)
@@ -272,10 +267,8 @@ DEPENDENCIES
   codeclimate-test-reporter (~> 1.0.0)
   factory_bot
   letter_opener
-  listen
   minitest-reporters
   mocha
-  pg
   pry-rails
   rails-controller-testing
   simplecov
