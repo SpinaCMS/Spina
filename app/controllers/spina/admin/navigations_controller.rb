@@ -17,7 +17,7 @@ module Spina
       end
 
       def update        
-        if @navigation.update_attributes(navigation_params)
+        if @navigation.update(navigation_params)
           redirect_to spina.admin_navigation_path(@navigation)
         else
           render :edit

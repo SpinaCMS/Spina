@@ -31,13 +31,6 @@
     name:           'structure',
     title:          'Structure',
     partable_type:  'Spina::Structure'
-  }, {
-    name:           'option',
-    title:          'Option',
-    partable_type:  'Spina::Option',
-    options: {
-      values: ['val1', 'val2']
-    }
   }]
 
   theme.structures = [{
@@ -50,13 +43,6 @@
       name:           'description',
       title:          'Description',
       partable_type:  'Spina::Text'
-    }, {
-      name:           'alignment',
-      title:          'Alignment',
-      partable_type:  'Spina::Option',
-      options: {
-        values: ['left', 'right', 'center']
-      }
     }]
   }]
 
@@ -79,7 +65,7 @@
     name: 'demo',
     title: 'Demo',
     description: 'Contains examples of every page part',
-    page_parts: ['line', 'text', 'image', 'image_collection', 'attachment', 'attachment_collection', 'option', 'structure']
+    page_parts: ['line', 'text', 'image', 'image_collection', 'attachment', 'attachment_collection', 'structure']
   }]
 
   theme.custom_pages = [{
@@ -94,9 +80,6 @@
     view_template:  'demo'
   }]
 
-  theme.resources = [{
-    name: 'blogposts',
-    label: "Blogposts"
-  }]
+  theme.plugins = ['reviews']
 
 end

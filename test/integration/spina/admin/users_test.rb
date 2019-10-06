@@ -4,6 +4,8 @@ module Spina
   module Admin
     class UsersTest < ActionDispatch::IntegrationTest
       setup do
+        host! "dummy.test"
+
         @routes = Engine.routes
         @account = FactoryBot.create :account
         @user = FactoryBot.create :user

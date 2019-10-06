@@ -1,17 +1,12 @@
 source "https://rubygems.org"
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gemspec
 
-gem 'bootsnap', require: false
-
-group :development, :test do
+group :test do
+  gem 'factory_bot'
   gem 'rails-controller-testing'
   gem 'minitest-reporters'
-  gem 'pg'
   gem 'simplecov'
   gem 'codeclimate-test-reporter', '~> 1.0.0'
-  gem 'letter_opener'
-  gem 'pry-rails'
-  gem 'mocha'
-  gem 'listen'
 end

@@ -19,7 +19,7 @@ module Spina
 
       def scope_pages_to_parent_page
         pages.roots.each do |root_page|
-          root_page.update_attributes(parent: parent_page)
+          root_page.update(parent: parent_page)
         end
       end
 
