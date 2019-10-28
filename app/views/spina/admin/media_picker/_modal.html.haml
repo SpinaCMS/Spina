@@ -6,7 +6,11 @@
           = render partial: 'spina/admin/images/form'
 
         - if @media_folder.present?
-
+          = link_to spina.admin_media_picker_path(request.query_parameters.merge(media_folder_id: nil)), class: 'item media-folder', data: {remote: true} do
+            .media-folder-thumbnail
+              = image_tag 'spina/media_folder_placeholder.svg'
+              .media-folder-shadow
+            .media-folder-name=t "spina.images.back"
         - else
           - @media_folders.each do |media_folder|
             = link_to spina.admin_media_picker_path({media_folder_id: media_folder.id}.merge(request.query_parameters)), class: 'item media-folder', data: {remote: true} do

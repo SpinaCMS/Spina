@@ -102,6 +102,7 @@ en:
       choose_images: Choose images
       choose_image: Choose image
       remove_image: Remove image
+      back: Back
 
     wysiwyg:
       paragraph: Paragraph
