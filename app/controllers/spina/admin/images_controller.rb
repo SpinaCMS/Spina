@@ -18,7 +18,7 @@ module Spina
       def create
         @images = params[:image][:files].map do |file|
           # Create the image and attach the file
-          image = Image.create
+          image = Image.create(media_folder_id: params[:media_library])
           image.file.attach(file)
 
           # Was it not an image after all? DESTROY IT

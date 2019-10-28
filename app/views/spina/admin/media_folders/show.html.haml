@@ -6,7 +6,7 @@
     .item
       = form_with model: [:admin, Spina::Image.new], id: 'new_image', class: 'new_image' do |f|
         = f.submit style: 'display: none'
-        = hidden_field_tag :media_library, value: @media_folder.id
+        = hidden_field_tag :media_library, @media_folder.id
         = f.label :file, t('spina.images.upload')
         = f.file_field :files, multiple: true, data: {direct_upload_url: main_app.rails_direct_uploads_url, customfileinput: true}
 
