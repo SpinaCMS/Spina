@@ -29,7 +29,7 @@ ready = ->
   $('.media-folder').droppable(
     drop: (event, ui) ->
       url = $(this).attr('data-add-to-media-folder-url')
-      image_id = $(ui.draggable).find('input[type="radio"]').val()
+      image_id = $(ui.draggable).attr('data-image-id')
 
       $.ajax
         url: url,
