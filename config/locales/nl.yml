@@ -48,6 +48,7 @@ nl:
       upload: kies een bestand
       choose_image: Kies afbeelding
       remove_image: Verwijder afbeelding
+      back: Terug
 
     forgot_password:
       new: Wachtwoord vergeten
