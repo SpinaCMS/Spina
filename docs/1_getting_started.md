@@ -1,6 +1,6 @@
 # Getting started
 
-Spina is a CMS for Rails 5.2. This guide is designed for developers with experience using Ruby on Rails.
+Spina is a CMS for Rails 6.0. This guide is designed for developers with experience using Ruby on Rails.
 
 [youtube nxRfd93QqBA]
 
