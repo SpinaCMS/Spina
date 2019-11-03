@@ -1,5 +1,5 @@
 # Prerequisites
 
-- Ruby on Rails 5.2+
+- Ruby on Rails 6.0+
 - PostgreSQL
 - ActiveStorage

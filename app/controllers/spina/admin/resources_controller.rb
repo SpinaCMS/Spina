@@ -14,7 +14,7 @@ module Spina
       end
 
       def update        
-        if @resource.update_attributes(resource_params)
+        if @resource.update(resource_params)
           redirect_to spina.admin_resource_path(@resource)
         else
           render :edit

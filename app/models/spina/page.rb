@@ -60,7 +60,7 @@ module Spina
     end
 
     def save_children
-      self.children.each(&:save)
+      children.each(&:save)
     end
 
     def live?
@@ -68,17 +68,17 @@ module Spina
     end
 
     def previous_sibling
-      self.siblings.where('position < ?', self.position).sorted.last
+      siblings.where('position < ?', position).sorted.last
     end
 
     def next_sibling
-      self.siblings.where('position > ?', self.position).sorted.first
+      siblings.where('position > ?', position).sorted.first
     end
 
     def set_materialized_path
       self.old_path = materialized_path
       self.materialized_path = localized_materialized_path
-      self.materialized_path = localized_materialized_path + "-#{self.class.i18n.where(materialized_path: materialized_path).count}" if self.class.i18n.where(materialized_path: materialized_path).where.not(id: id).count > 0
+      self.materialized_path = localized_materialized_path + "-#{Page.i18n.where(materialized_path: materialized_path).count}" if Page.i18n.where(materialized_path: materialized_path).where.not(id: id).count > 0
       materialized_path
     end
 
@@ -102,7 +102,7 @@ module Spina
       end
 
       def rewrite_rule
-        RewriteRule.where(old_path: old_path).first_or_create.update_attributes(new_path: materialized_path) if old_path != materialized_path
+        RewriteRule.where(old_path: old_path).first_or_create.update(new_path: materialized_path) if old_path != materialized_path
       end
 
       def localized_materialized_path

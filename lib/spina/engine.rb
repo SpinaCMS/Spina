@@ -19,7 +19,6 @@ module Spina
     isolate_namespace Spina
 
     config.autoload_paths += %W( #{config.root}/lib )
-    config.assets.paths << config.root.join('vendor', 'assets')
 
     config.to_prepare do
       # Load helpers from main application

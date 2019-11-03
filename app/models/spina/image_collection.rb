@@ -13,10 +13,10 @@ module Spina
       self
     end
 
-    alias_method :old_update_attributes, :update_attributes
-    def update_attributes(attributes)
+    alias_method :old_update, :update
+    def update(attributes)
       self.images.clear if attributes.reject{|key,value| key == "id" }.blank?
-      old_update_attributes(attributes)
+      old_update(attributes)
     end
 
   end

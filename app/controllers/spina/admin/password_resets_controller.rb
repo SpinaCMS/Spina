@@ -13,7 +13,7 @@ module Spina
 
         if user.present?
           user.regenerate_password_reset_token
-          user.update_attributes!(password_reset_sent_at: Time.zone.now)
+          user.touch(:password_reset_sent_at)
           UserMailer.forgot_password(user).deliver_now
           redirect_to admin_login_path, flash: {success: t('spina.forgot_password.instructions_sent')}
         else
@@ -31,7 +31,7 @@ module Spina
 
         if @user.password_reset_sent_at < 2.hours.ago
           redirect_to new_admin_password_reset_path, flash: {alert: t('spina.forgot_password.expired')}
-        elsif @user.update_attributes(user_params)
+        elsif @user.update(user_params)
           redirect_to admin_login_path, flash: {success: t('spina.forgot_password.success')}
         else
           render :edit

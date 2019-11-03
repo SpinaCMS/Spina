@@ -7,7 +7,7 @@ module Spina
       end
 
       def update
-        current_account.update_attributes(account_params)
+        current_account.update(account_params)
         redirect_back fallback_location: spina.edit_admin_account_path
       end
 
