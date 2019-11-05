@@ -15,7 +15,11 @@ module Spina
     end
 
     def variant(options)
-      file.attached? ? file.variant(options) : ""
+      return "" unless file.attached?
+      return file if file.content_type.include?('svg')
+      return file unless file.variable?
+
+      file.variant(options)
     end
 
     def content

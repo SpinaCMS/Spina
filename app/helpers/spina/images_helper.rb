@@ -12,6 +12,5 @@ module Spina
         "https://placehold.it/100x100.png"
       end
     end
-
   end
 end
