@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    spina (1.1.0)
+    spina (1.1.1)
       ancestry
       bcrypt
       breadcrumbs_on_rails
