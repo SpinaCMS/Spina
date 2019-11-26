@@ -280,8 +280,6 @@ Support this project by becoming a sponsor. Your logo will show up here with a l
 <a href="https://opencollective.com/Spina/sponsor/8/website" target="_blank"><img src="https://opencollective.com/Spina/sponsor/8/avatar.svg"></a>
 <a href="https://opencollective.com/Spina/sponsor/9/website" target="_blank"><img src="https://opencollective.com/Spina/sponsor/9/avatar.svg"></a>
 
-
-
 # License
 
 Spina is released under the [MIT license](LICENSE.md).
@@ -291,3 +289,13 @@ Spina is released under the [MIT license](LICENSE.md).
 Some parts of Spina are heavily influenced by the wonderful Refinery CMS. Credits to [the Refinery  team](https://www.refinerycms.com/).
 
 All icons in Spina were made by Brent Jackson [Geomicons](http://jxnblk.com/geomicons-wired/).
+
+The font used in Spina's admin panel is called Metropolis and was created by Chris Simpson [Metropolis](https://github.com/chrismsimpson/Metropolis)
+
+    Copyright (c) 2015, Chris Simpson <chris@victoryonemedia.com>.
+
+    This Font Software is licensed under the SIL Open Font License, Version 1.1.
+    This license is copied below, and is also available with a FAQ at:
+    http://scripts.sil.org/OFL
+
+    Version 2.0 - 18 March 2012
