@@ -42,6 +42,7 @@ es:
     website:
       title: Tu sitio
       pages: Páginas
+      all_pages: Todas las páginas
       pages_description: "Todas las páginas de tu sitio"
       media_library: Biblioteca de medios
       media_library_description: "Aquí encontrarás todas tus imágenes y documentos"
