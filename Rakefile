@@ -1,3 +1,5 @@
+require_relative 'config/application'
+
 begin
   require 'bundler/setup'
 rescue LoadError
@@ -30,3 +32,5 @@ Rake::TestTask.new(:test) do |t|
 end
 
 task :default => :test
+
+Rails.application.load_tasks
