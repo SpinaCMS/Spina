@@ -92,6 +92,7 @@ en:
       upload_image: "Upload an image"
       organize: Organize images
       done_organizing: Done organizing
+      rename_folder: Rename folder
       new_folder: New folder
       delete_folder: Delete folder
       delete: Delete

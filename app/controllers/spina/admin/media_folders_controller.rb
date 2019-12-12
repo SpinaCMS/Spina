@@ -7,6 +7,10 @@ module Spina
         @media_folder = MediaFolder.new
       end
 
+      def edit
+        @media_folder = MediaFolder.find(params[:id])
+      end
+
       def show
         add_breadcrumb I18n.t('spina.website.media_library'), admin_media_library_path
         add_breadcrumb I18n.t('spina.website.images'), spina.admin_images_path
@@ -19,6 +23,12 @@ module Spina
         @media_folder = MediaFolder.new(media_folder_params)
         @media_folder.save
         redirect_to spina.admin_images_path
+      end
+
+      def update
+        @media_folder = MediaFolder.find(params[:id])
+        @media_folder.update(media_folder_params)
+        redirect_to spina.admin_media_folder_path(@media_folder)
       end
 
       def destroy
