@@ -27,11 +27,6 @@ bg:
         created_at: Създадено на
         name: Име на файла
         size: Размер
-      spina/inquiries:
-        email: 
-        message: 
-        name: 
-        phone: 
       spina/media_folder:
         name: Име
       spina/navigation:
@@ -86,7 +81,6 @@ bg:
       spina/attachment:
         one: Документ
         other: Документи
-      spina/inquiry: 
       spina/page:
         one: Страница
         other: Страници
@@ -133,19 +127,6 @@ bg:
       remove_image: 
       upload: 
       upload_image: 
-    inquiries:
-      all: 
-      all_description: 
-      delete_confirmation: 
-      empty: 
-      empty_inbox: 
-      empty_spam: 
-      inbox: 
-      inbox_description: 
-      mark_as_read: 
-      no_spam: 
-      spam: 
-      title: 
     languages:
       bg: Български
       de: Немски

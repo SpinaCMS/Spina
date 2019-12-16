@@ -27,11 +27,6 @@ th:
         created_at: สร้าง
         name: ชื่อ
         size: ขนาด
-      spina/inquiries:
-        email: 
-        message: 
-        name: 
-        phone: 
       spina/media_folder:
         name: ชื่อ
       spina/navigation:
@@ -86,7 +81,6 @@ th:
       spina/attachment:
         one: เอกสาร
         other: หลายๆเอกสาร
-      spina/inquiry: 
       spina/page:
         one: หน้าเพจ
         other: หลายๆหน้าเพจ
@@ -133,19 +127,6 @@ th:
       remove_image: 
       upload: 
       upload_image: 
-    inquiries:
-      all: 
-      all_description: 
-      delete_confirmation: 
-      empty: 
-      empty_inbox: 
-      empty_spam: 
-      inbox: 
-      inbox_description: 
-      mark_as_read: 
-      no_spam: 
-      spam: 
-      title: 
     languages:
       bg: 
       de: 

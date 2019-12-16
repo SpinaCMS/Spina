@@ -27,11 +27,6 @@ en:
         created_at: Created at
         name: Filename
         size: Size
-      spina/inquiries:
-        email: 
-        message: 
-        name: 
-        phone: 
       spina/media_folder:
         name: Name
       spina/navigation:
@@ -54,7 +49,7 @@ en:
         menu_title: Navigation title
         menu_title_placeholder: Leave empty to use the page title
         no_parent: No parent
-        resource: 
+        resource: Resource
         seo_title: SEO <title>
         seo_title_placeholder: This title is used in the <title>-tag
         show_in_menu: Show in navigation
@@ -86,7 +81,6 @@ en:
       spina/attachment:
         one: Document
         other: Documents
-      spina/inquiry: 
       spina/page:
         one: Page
         other: Pages
@@ -118,57 +112,44 @@ en:
       unknown_user: This user does not exist
     images:
       back: Back
-      cannot_be_created: 
+      cannot_be_created: Cannot be created
       choose_image: Choose image
       choose_images: Choose images
-      delete: 
+      delete: Delete
       delete_confirmation: Are you sure you want to delete this <strong>image</strong>?
-      delete_folder: 
-      done_organizing: 
-      insert_photo: 
-      insert_photos: 
-      link: 
-      new_folder: 
-      organize: 
+      delete_folder: Delete folder
+      done_organizing: Done organizing
+      insert_photo: Insert photo
+      insert_photos: Insert photos
+      link: Link
+      new_folder: New folder
+      organize: Organize
       remove_image: Remove image
       upload: Upload images
-      upload_image: 
-    inquiries:
-      all: 
-      all_description: 
-      delete_confirmation: 
-      empty: 
-      empty_inbox: 
-      empty_spam: 
-      inbox: 
-      inbox_description: 
-      mark_as_read: 
-      no_spam: 
-      spam: 
-      title: 
+      upload_image: Upload image
     languages:
-      bg: 
-      de: 
+      bg: Bulgarian
+      de: German
       en: English
-      es: 
-      fr: 
-      id: 
-      it: 
+      es: Spanish
+      fr: French
+      id: Indonesian
+      it: Italian
       nl: Dutch
-      pl: 
-      pt-BR: 
-      ro: 
-      ru: 
-      sv: 
-      th: 
-      tr: 
-      zh-CN: 
+      pl: Polish
+      pt-BR: Brazilian Portuguese
+      ro: Romanian
+      ru: Russian
+      sv: Swedish
+      th: Thai
+      tr: Turkish
+      zh-CN: Simplified Chinese
     login: Login
     logout: Logout
     main_menu: Main menu
     media_library:
       attachments: Documents
-      images: 
+      images: Images
       photos: Images
     modal:
       agree: Yes, I'm sure
@@ -213,10 +194,10 @@ en:
       link: 'URL of your image:'
       new_folder: New folder
       organize: Organize images
-      select_images: 
+      select_images: Select images
       upload_image: Upload an image
     preferences:
-      Analytics: 
+      Analytics: Analytics
       account: General
       account_description: Personal preferences
       account_save: Save preferences
@@ -247,7 +228,7 @@ en:
       delete_confirmation: Are you sure you want to delete the user <strong>%{user}</strong>?
       new: New user
       save: Save user
-    visit_page: 
+    visit_page: Visit page
     website:
       all_pages: All pages
       documents: Documents

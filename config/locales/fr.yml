@@ -27,11 +27,6 @@ fr:
         created_at: Créé le
         name: Nom du fichier
         size: Taille
-      spina/inquiries:
-        email: 
-        message: 
-        name: 
-        phone: 
       spina/media_folder:
         name: Nom
       spina/navigation:
@@ -86,7 +81,6 @@ fr:
       spina/attachment:
         one: Document
         other: Documents
-      spina/inquiry: 
       spina/page:
         one: Page
         other: Pages
@@ -133,19 +127,6 @@ fr:
       remove_image: 
       upload: 
       upload_image: 
-    inquiries:
-      all: 
-      all_description: 
-      delete_confirmation: 
-      empty: 
-      empty_inbox: 
-      empty_spam: 
-      inbox: 
-      inbox_description: 
-      mark_as_read: 
-      no_spam: 
-      spam: 
-      title: 
     languages:
       bg: 
       de: 

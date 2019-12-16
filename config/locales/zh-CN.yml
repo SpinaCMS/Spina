@@ -27,11 +27,6 @@ zh-CN:
         created_at: 创建于
         name: 文件名
         size: 大小
-      spina/inquiries:
-        email: 邮箱
-        message: 消息
-        name: 发件人
-        phone: 电话
       spina/media_folder:
         name: 
       spina/navigation:
@@ -86,9 +81,6 @@ zh-CN:
       spina/attachment:
         one: 文档
         other: 所有文档
-      spina/inquiry:
-        one: 消息
-        other: 所有消息
       spina/page:
         one: 页面
         other: 所有页面
@@ -135,19 +127,6 @@ zh-CN:
       remove_image: 
       upload: 
       upload_image: 
-    inquiries:
-      all: 所有消息
-      all_description: 所有消息
-      delete_confirmation: 是否确定删除 <strong>%{subject}'s</strong>?
-      empty: 没有收到任何消息
-      empty_inbox: 没有新消息
-      empty_spam: 没有垃圾邮件
-      inbox: 收件箱
-      inbox_description: 有新消息
-      mark_as_read: 标为已读
-      no_spam: 不是垃圾邮件
-      spam: 垃圾邮件
-      title: 消息
     languages:
       bg: 
       de: 

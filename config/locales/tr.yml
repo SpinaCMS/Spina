@@ -27,11 +27,6 @@ tr:
         created_at: Oluşturulma zamanı
         name: Dosya adı
         size: Boyut
-      spina/inquiries:
-        email: 
-        message: 
-        name: 
-        phone: 
       spina/media_folder:
         name: 
       spina/navigation:
@@ -86,7 +81,6 @@ tr:
       spina/attachment:
         one: Belge
         other: Belgeler
-      spina/inquiry: 
       spina/page:
         one: Sayfa
         other: Sayfalar
@@ -133,19 +127,6 @@ tr:
       remove_image: 
       upload: 
       upload_image: 
-    inquiries:
-      all: 
-      all_description: 
-      delete_confirmation: 
-      empty: 
-      empty_inbox: 
-      empty_spam: 
-      inbox: 
-      inbox_description: 
-      mark_as_read: 
-      no_spam: 
-      spam: 
-      title: 
     languages:
       bg: 
       de: 
