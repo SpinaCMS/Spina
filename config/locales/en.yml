@@ -1,249 +1,248 @@
 en:
-  spina:
-    cancel: Cancel
-    close: Close
-    choose_from_library: Choose from library
-    edit: Edit
-    save: Save
-    delete: Delete
-    permanently_delete: Permanently delete
-    delete_confirmation: "Are you sure you want to delete <strong>%{subject}</strong>?"
-    login: Login
-    preview_website: Preview website
-    search: Search...
-    ago: ago
-    edit_website: Edit your website
-    logout: Logout
-    main_menu: Main menu
-
-    settings:
-      title: Settings
-      save: Save Settings
-
-    forgot_password:
-      new: Forgot password
-      request: Request new password
-      unknown_user: This user does not exist
-      save: Save new password
-      success: You can use your new password
-      mail_subject: Reset your password
-      expired: Your password reset token has expired
-
-    modal:
-      agree: "Yes, I'm sure"
-      cancel: "No, cancel"
-
-    notifications:
-      information: Information
-      alert: Oops! Something went wrong
-      login: You have to login first
-      wrong_username_or_password: Wrong email or password
-
-    website:
-      title: Your website
-      pages: Pages
-      all_pages: All pages
-      pages_description: "All pages on your website"
-      media_library: Media library
-      media_library_description: "Here's where you'll find all of your images and documents"
-      documents: Documents
-      photos: Images
-      images: Images
-
-    pages:
-      new: New page
-      create_page: "new %{template}"
-      change_order: Change order
-      done_changing_order: Done ordering
-      page_content: Content
-      page_seo: Search engines
-      advanced: Advanced
-      page_part: Page section
-      photos_picker: Choose images
-      photo_picker: Choose image
-      delete_confirmation: "Are you sure you want to delete the page <strong>%{subject}</strong>?"
-      save: Save page
-      concept: draft
-      show_in_menu: invisible
-      skip_to_first_child: forward to first child page
-      invisible_to_search_engines: Your website is invisible to search engines
-      invisible_to_search_engines_description: Go to your preferences to activate search engines.
-      rebuild_materialized_path: Rebuild materialized path
-      materialize_path_confirmation: "Are you sure you want to rebuild the path for this page?"
-      saving: Saving...
-      saved: Page saved
-
-    resources:
-      edit: Edit resource
-
-    users:
-      new: New user
-      save: Save user
-      delete_confirmation: "Are you sure you want to delete the user <strong>%{user}</strong>?"
-      cannot_be_created: The user cannot be saved
-
-    photos:
-      delete_confirmation: "Are you sure you want to delete this <strong>image</strong>?"
-      insert_photos: Choose images
-      choose_images: Choose images
-      insert_photo: Insert image
-      link: "URL of your image:"
-      cannot_be_created: "Image could not be processed:"
-      upload_image: "Upload an image"
-      organize: Organize images
-      done_organizing: Done organizing
-      rename_folder: Rename folder
-      new_folder: New folder
-      delete_folder: Delete folder
-      delete: Delete
-
-    images:
-      delete_confirmation: "Are you sure you want to delete this <strong>image</strong>?"
-      upload: Upload images
-      choose_images: Choose images
-      choose_image: Choose image
-      remove_image: Remove image
-      back: Back
-
-    wysiwyg:
-      paragraph: Paragraph
-      heading_1: Heading 1
-      heading_2: Heading 2
-      heading_3: Heading 3
-      quote: Quote
-      insert_link: Insert link
-
-    preferences:
-      title: Preferences
-      account: General
-      account_description: Personal preferences
-      account_save: Save preferences
-      style: Styling
-      style_description: Choose a theme that fits your brand
-      style_save: Save styling
-      users: Users
-      users_description: Manage users and administrators
-      social_media: Social media
-      social_media_description: Facebook and Twitter accounts
-      social_media_save: Save social media
-      analytics: Analytics and search
-      analytics_description: Link your account with for real-time analytics
-      analytics_save: Save preferences
-      domain_name_settings: Domain settings
-      domain_name_settings_description: Setup your own custom domain
-
-    attachments:
-      insert: 'Insert document'
-      insert_multiple: 'Insert documents'
-
-    media_library:
-      photos: Images
-      attachments: Documents
-
   activerecord:
-    models:
-      spina/page:
-        one: Page
-        other: Pages
-      spina/user:
-        one: User
-        other: Users
-      spina/photo:
-        one: Image
-        other: Images
-      spina/attachment:
-        one: Document
-        other: Documents
-
     attributes:
       spina/account:
-        name: Website name
         address: Address
-        postal_code: Postal code
         city: City
-        phone: Phone
         email: Email
+        facebook: Facebook
+        google_analytics: Google Analytics
+        google_plus: Google+
+        google_site_verification: Google Site Verification
+        instagram: Instagram
         kvk_identifier: Chamber of commerce
         kvk_identifier_description: Chamber of commerce
+        linkedin: LinkedIn
+        logo: Logo
+        name: Website name
+        phone: Phone
+        postal_code: Postal code
+        robots_allowed: Visible in search engines
+        theme: Theme website
+        twitter: Twitter
         vat_identifier: VAT
         vat_identifier_description: VAT
-        theme: Theme website
-        logo: Logo
-        google_analytics: Google Analytics
-        google_site_verification: Google Site Verification
-        robots_allowed: Visible in search engines
-        facebook: Facebook
-        twitter: Twitter
-        google_plus: Google+
-        instagram: Instagram
         youtube: YouTube
-        linkedin: LinkedIn
-
       spina/attachment:
         created_at: Created at
         name: Filename
         size: Size
-
+      spina/media_folder:
+        name: Name
+      spina/navigation:
+        auto_add_pages: Automatically add pages
+        auto_add_pages_description: New pages are added automatically to this navigation
+        label: Label
+        pages: Pages
+        pages_description: Select the pages you want to use in this navigation
       spina/page:
+        ancestry: Parent page
         created_at: Created at
-        title: Title
-        title_placeholder: Page title
-        seo_title: SEO <title>
-        seo_title_placeholder: This title is used in the <title>-tag
         description: Meta description
         description_description: This description will be shown in search results
         description_placeholder: Short description of your page
         draft: Draft
         draft_description: Great for when your page is not quite finished
-        skip_to_first_child: Forward
-        skip_to_first_child_description: Forward to first child page
         link_url: Page Redirect
         link_url_description: Forward to URL
         link_url_placeholder: e.g. http://www.example.com/
-        show_in_menu: Show in navigation
-        show_in_menu_description: "When turned off this page won't be shown in your navigation"
         menu_title: Navigation title
         menu_title_placeholder: Leave empty to use the page title
-        view_template: Page template
-        ancestry: Parent page
         no_parent: No parent
-
+        resource: Resource
+        seo_title: SEO <title>
+        seo_title_placeholder: This title is used in the <title>-tag
+        show_in_menu: Show in navigation
+        show_in_menu_description: When turned off this page won't be shown in your navigation
+        skip_to_first_child: Forward
+        skip_to_first_child_description: Forward to first child page
+        title: Title
+        title_placeholder: Page title
+        view_template: Page template
       spina/resource:
         label: Label
         order_by: Order by
-        view_template: Default view template
         parent_page: Parent page
-
-      spina/media_folder:
-        name: Name
-
-      spina/navigation:
-        label: Label
-        auto_add_pages: Automatically add pages
-        auto_add_pages_description: New pages are added automatically to this navigation
-        pages: Pages
-        pages_description: Select the pages you want to use in this navigation
-
+        view_template: Default view template
       spina/user:
-        name: Name
-        name_placeholder: Name
+        admin: Administrator
+        admin_description: Administrators can create users
         email: Email
         email_description: Your email must be unique
-        password: Password
-        password_description: Leave blank to keep password
-        password_confirmation: Confirm password
-        admin: Administrator
-        user: User
-        admin_description: Administrators can create users
-        role: Role
         last_logged_in: Last logged in
-
-  misc:
-    messages:
-      zero: "0 new messages"
-      one: "1 new message"
-      other: "%{count} new messages"
-
-  languages:
-    en: English
-    nl: Dutch
+        name: Name
+        name_placeholder: Name
+        password: Password
+        password_confirmation: Confirm password
+        password_description: Leave blank to keep password
+        role: Role
+        user: User
+    models:
+      spina/attachment:
+        one: Document
+        other: Documents
+      spina/page:
+        one: Page
+        other: Pages
+      spina/photo:
+        one: Image
+        other: Images
+      spina/user:
+        one: User
+        other: Users
+  spina:
+    ago: ago
+    attachments:
+      insert: Insert document
+      insert_multiple: Insert documents
+    cancel: Cancel
+    choose_from_library: Choose from library
+    close: Close
+    delete: Delete
+    delete_confirmation: Are you sure you want to delete <strong>%{subject}</strong>?
+    edit: Edit
+    edit_website: Edit your website
+    forgot_password:
+      expired: Your password reset token has expired
+      mail_subject: Reset your password
+      new: Forgot password
+      request: Request new password
+      save: Save new password
+      success: You can use your new password
+      unknown_user: This user does not exist
+    images:
+      back: Back
+      cannot_be_created: Cannot be created
+      choose_image: Choose image
+      choose_images: Choose images
+      delete: Delete
+      delete_confirmation: Are you sure you want to delete this <strong>image</strong>?
+      delete_folder: Delete folder
+      done_organizing: Done organizing
+      insert_photo: Insert photo
+      insert_photos: Insert photos
+      link: Link
+      new_folder: New folder
+      organize: Organize
+      remove_image: Remove image
+      upload: Upload images
+      upload_image: Upload image
+    languages:
+      bg: Bulgarian
+      de: German
+      en: English
+      es: Spanish
+      fr: French
+      id: Indonesian
+      it: Italian
+      nl: Dutch
+      pl: Polish
+      pt-BR: Brazilian Portuguese
+      ro: Romanian
+      ru: Russian
+      sv: Swedish
+      th: Thai
+      tr: Turkish
+      zh-CN: Simplified Chinese
+    login: Login
+    logout: Logout
+    main_menu: Main menu
+    media_library:
+      attachments: Documents
+      images: Images
+      photos: Images
+    modal:
+      agree: Yes, I'm sure
+      cancel: No, cancel
+    notifications:
+      alert: Oops! Something went wrong
+      information: Information
+      login: You have to login first
+      wrong_username_or_password: Wrong email or password
+    pages:
+      advanced: Advanced
+      change_order: Change order
+      concept: draft
+      create_page: new %{template}
+      delete_confirmation: Are you sure you want to delete the page <strong>%{subject}</strong>?
+      done_changing_order: Done ordering
+      invisible_to_search_engines: Your website is invisible to search engines
+      invisible_to_search_engines_description: Go to your preferences to activate search engines.
+      materialize_path_confirmation: Are you sure you want to rebuild the path for this page?
+      new: New page
+      page_content: Content
+      page_part: Page section
+      page_seo: Search engines
+      photo_picker: Choose image
+      photos_picker: Choose images
+      rebuild_materialized_path: Rebuild materialized path
+      save: Save page
+      saved: Page saved
+      saving: Saving...
+      show_in_menu: invisible
+      skip_to_first_child: forward to first child page
+    permanently_delete: Permanently delete
+    photos:
+      cannot_be_created: 'Image could not be processed:'
+      choose_images: Choose images
+      delete: Delete
+      delete_confirmation: Are you sure you want to delete this <strong>image</strong>?
+      delete_folder: Delete folder
+      done_organizing: Done organizing
+      insert_photo: Insert image
+      insert_photos: Choose images
+      link: 'URL of your image:'
+      new_folder: New folder
+      organize: Organize images
+      select_images: Select images
+      upload_image: Upload an image
+    preferences:
+      Analytics: Analytics
+      account: General
+      account_description: Personal preferences
+      account_save: Save preferences
+      analytics: Analytics and search
+      analytics_description: Link your account with for real-time analytics
+      analytics_save: Save preferences
+      domain_name_settings: Domain settings
+      domain_name_settings_description: Setup your own custom domain
+      social_media: Social media
+      social_media_description: Facebook and Twitter accounts
+      social_media_save: Save social media
+      style: Styling
+      style_description: Choose a theme that fits your brand
+      style_save: Save styling
+      title: Preferences
+      users: Users
+      users_description: Manage users and administrators
+    preview_website: Preview website
+    resources:
+      edit: Edit resource
+    save: Save
+    search: Search...
+    settings:
+      save: Save Settings
+      title: Settings
+    users:
+      cannot_be_created: The user cannot be saved
+      delete_confirmation: Are you sure you want to delete the user <strong>%{user}</strong>?
+      new: New user
+      save: Save user
+    visit_page: Visit page
+    website:
+      all_pages: All pages
+      documents: Documents
+      images: Images
+      media_library: Media library
+      media_library_description: Here's where you'll find all of your images and documents
+      pages: Pages
+      pages_description: All pages on your website
+      photos: Images
+      title: Your website
+    wysiwyg:
+      heading_1: Heading 1
+      heading_2: Heading 2
+      heading_3: Heading 3
+      insert_link: Insert link
+      paragraph: Paragraph
+      quote: Quote

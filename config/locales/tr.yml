@@ -1,185 +1,248 @@
 tr:
-  spina:
-    cancel: İptal
-    close: Kapat
-    choose_from_library: Kütüphaneden seç
-    edit: Düzenle
-    delete: Sil
-    permanently_delete: Sil
-    delete_confirmation: "<strong>%{subject}</strong> silmek istediğinizden emin misiniz?"
-    login: Giriş
-    preview_website: Siteye gözat
-    search: Ara...
-    ago: önce
-    edit_website: Siteyi düzenle
-    logout: Çıkış
-
-    modal:
-      agree: "Evet, eminim"
-      cancel: "Hayır, iptal"
-
-    notifications:
-      information: Bilgi
-      alert: Oops! Yanlış giden bir şey var
-      login: Öncelikle giriş yapmalısınız
-      wrong_username_or_password: Hatalı email ya da parola
-
-    website:
-      title: Siteniz
-      pages: Sayfalar
-      pages_description: "Sitenizdeki tüm sayfalar"
-      media_library: Ortam kütüphanesi
-      media_library_description: "Tüm resim ve belgeleriniz"
-      documents: Belgeler
-      photos: Resimler
-
-    pages:
-      new: Yeni sayfa
-      create_page: "Yeni %{template}"
-      change_order: Sıralamayı değiştir
-      done_changing_order: Sıralama bitti
-      page_content: İçerik
-      page_seo: Arama motorları
-      advanced: Gelişmiş
-      page_part: Sayfa bölümü
-      photos_picker: Çoklu resim seç
-      photo_picker: Resim seç
-      delete_confirmation: "<strong>%{subject}</strong> sayfasını silmek istediğinizden emin misiniz?"
-      save: Sayfayı kaydet
-      concept: taslak
-      show_in_menu: görünmez
-      skip_to_first_child: ilk sıraya gönder
-      invisible_to_search_engines: Siteniz arama motorlarına görünmez durumda
-      invisible_to_search_engines_description: Seçenekler bölümünden arama motorlarını aktif ediniz.
-
-    users:
-      new: Yeni kullanıcı
-      save: Kullanıcıyı kaydet
-      delete_confirmation: "<strong>%{user}</strong> kullanıcısını silmek istediğinizden emin misiniz?"
-      cannot_be_created: Kullanıcı kaydedilemiyor
-
-    photos:
-      delete_confirmation: "Bu <strong>resmi</strong> silmek istediğinizden emin misiniz?"
-      insert_photos: Çoklu resim ekle
-      insert_photo: Resim ekle
-      link: "Resim linki:"
-      cannot_be_created: "Resim işlenemedi:"
-
-    wysiwyg:
-      paragraph: Paragraf
-      heading_1: Başlık 1
-      heading_2: Başlık 2
-      heading_3: Başlık 3
-      quote: Alıntıla
-      insert_link: Link ekle
-
-    preferences:
-      title: Seçenekler
-      account: Genel
-      account_description: Kişisel seçenekleriniz
-      account_save: Seçenekleri kaydet
-      style: Görünüm
-      style_description: Size uyan bir tema seçin
-      style_save: Görünümü kaydet
-      users: Kullanıcılar
-      users_description: Kullanıcı ve yöneticileri yönetin
-      social_media: Sosyal medya
-      social_media_description: Sosyal medya hesaplarınız
-      social_media_save: Sosyal medyayı kaydet
-      analytics: Analitik ve arama motorları
-      analytics_description: Gerçek zamanlı analitik için hesabınızı bağlayın
-      analytics_save: Seçenekleri kaydet
-      domain_name_settings: Alan adı ayarları
-      domain_name_settings_description: Kendi alan adınızı ayarlayın
-
-    attachments:
-      insert: 'Belge ekle'
-      insert_multiple: 'Çoklu belge ekle'
-
-    media_library:
-      photos: Resimler
-      attachments: Belgeler
-
   activerecord:
-    models:
-      spina/page:
-        one: Sayfa
-        other: Sayfalar
-      spina/user:
-        one: Kullanıcı
-        other: Kullanıcılar
-      spina/photo:
-        one: Resim
-        other: Resimler
-      spina/attachment:
-        one: Belge
-        other: Belgeler
-
     attributes:
       spina/account:
-        name: Site adı
         address: Adres
-        postal_code: Posta kodu
         city: Şehir
-        phone: Telefon
         email: Eposta
+        facebook: Facebook
+        google_analytics: Google Analitik
+        google_plus: Google+
+        google_site_verification: Google Site Doğrulama
+        instagram: Instagram
         kvk_identifier: Ticaret odası kaydı
         kvk_identifier_description: Ticaret odası kaydı
+        linkedin: LinkedIn
+        logo: Logo
+        name: Site adı
+        phone: Telefon
+        postal_code: Posta kodu
+        robots_allowed: Arama motorlarına görünsün
+        theme: Tema
+        twitter: Twitter
         vat_identifier: KDV
         vat_identifier_description: KDV
-        theme: Tema
-        logo: Logo
-        google_analytics: Google Analitik
-        google_site_verification: Google Site Doğrulama
-        robots_allowed: Arama motorlarına görünsün
-        facebook: Facebook
-        twitter: Twitter
-        google_plus: Google+
-        instagram: Instagram
         youtube: YouTube
-        linkedin: LinkedIn
-
       spina/attachment:
         created_at: Oluşturulma zamanı
         name: Dosya adı
         size: Boyut
-
+      spina/media_folder:
+        name: 
+      spina/navigation:
+        auto_add_pages: 
+        auto_add_pages_description: 
+        label: 
+        pages: 
+        pages_description: 
       spina/page:
-        title: Başlık
-        title_placeholder: Sayfa başlığı
-        seo_title: SEO <title>
-        seo_title_placeholder: <title> etiletinde kullanılacak başlık
+        ancestry: 
+        created_at: 
         description: Meta tanımı
         description_description: Arama motorlarında görünecektir
         description_placeholder: Sayfanız hakkında kısa açıklama
         draft: Taslak
         draft_description: Sayfanız henüz hazır değilse seçilecek en iyi seçenek
-        skip_to_first_child: Öne çıkar
-        skip_to_first_child_description: İlk sıraya yerleştir
-        show_in_menu: Sitede görünsün
-        show_in_menu_description: "Bu seçeneği kapattığınızda sayfanız sitede görünmez"
+        link_url: 
+        link_url_description: 
+        link_url_placeholder: 
         menu_title: Menü başlığı
         menu_title_placeholder: Sayfa başlığını kullanmak için boş bırakın
+        no_parent: 
+        resource: 
+        seo_title: SEO <title>
+        seo_title_placeholder: "<title> etiletinde kullanılacak başlık"
+        show_in_menu: Sitede görünsün
+        show_in_menu_description: Bu seçeneği kapattığınızda sayfanız sitede görünmez
+        skip_to_first_child: Öne çıkar
+        skip_to_first_child_description: İlk sıraya yerleştir
+        title: Başlık
+        title_placeholder: Sayfa başlığı
         view_template: Sayfa şablonu
-
+      spina/resource:
+        label: 
+        order_by: 
+        parent_page: 
+        view_template: 
       spina/user:
-        email: Eposta
-        password: Parola
-        name: Ad
-        name_placeholder: Ad
+        admin: Yönetici
+        admin_description: Yöneticiler kullanıcı oluşturabilirler
         email: Eposta
         email_description: Eposta adresiniz benzersiz olmalıdır
-        password: Parola
-        password_description: Şu anki parolanızı kullanmak içinboş bırakın
-        password_confirmation: Parola tekrar
-        admin: Yönetici
-        user: Kullanıcı
-        admin_description: Yöneticiler kullanıcı oluşturabilirler
-        role: Rol
         last_logged_in: Son bağlanma
-
-  misc:
-    messages:
-      zero: "Hiç mesaj yok"
-      one: "1 yeni mesaj"
-      other: "%{count} yeni mesaj"
+        name: Ad
+        name_placeholder: Ad
+        password: Parola
+        password_confirmation: Parola tekrar
+        password_description: Şu anki parolanızı kullanmak içinboş bırakın
+        role: Rol
+        user: Kullanıcı
+    models:
+      spina/attachment:
+        one: Belge
+        other: Belgeler
+      spina/page:
+        one: Sayfa
+        other: Sayfalar
+      spina/photo:
+        one: Resim
+        other: Resimler
+      spina/user:
+        one: Kullanıcı
+        other: Kullanıcılar
+  spina:
+    ago: önce
+    attachments:
+      insert: Belge ekle
+      insert_multiple: Çoklu belge ekle
+    cancel: İptal
+    choose_from_library: Kütüphaneden seç
+    close: Kapat
+    delete: Sil
+    delete_confirmation: "<strong>%{subject}</strong> silmek istediğinizden emin misiniz?"
+    edit: Düzenle
+    edit_website: Siteyi düzenle
+    forgot_password:
+      expired: 
+      mail_subject: 
+      new: 
+      request: 
+      save: 
+      success: 
+      unknown_user: 
+    images:
+      back: 
+      cannot_be_created: 
+      choose_image: 
+      choose_images: 
+      delete: 
+      delete_confirmation: 
+      delete_folder: 
+      done_organizing: 
+      insert_photo: 
+      insert_photos: 
+      link: 
+      new_folder: 
+      organize: 
+      remove_image: 
+      upload: 
+      upload_image: 
+    languages:
+      bg: 
+      de: 
+      en: 
+      es: 
+      fr: 
+      id: 
+      it: 
+      nl: 
+      pl: 
+      pt-BR: 
+      ro: 
+      ru: 
+      sv: 
+      th: 
+      tr: 
+      zh-CN: 
+    login: Giriş
+    logout: Çıkış
+    main_menu: 
+    media_library:
+      attachments: Belgeler
+      images: 
+      photos: Resimler
+    modal:
+      agree: Evet, eminim
+      cancel: Hayır, iptal
+    notifications:
+      alert: Oops! Yanlış giden bir şey var
+      information: Bilgi
+      login: Öncelikle giriş yapmalısınız
+      wrong_username_or_password: Hatalı email ya da parola
+    pages:
+      advanced: Gelişmiş
+      change_order: Sıralamayı değiştir
+      concept: taslak
+      create_page: Yeni %{template}
+      delete_confirmation: "<strong>%{subject}</strong> sayfasını silmek istediğinizden emin misiniz?"
+      done_changing_order: Sıralama bitti
+      invisible_to_search_engines: Siteniz arama motorlarına görünmez durumda
+      invisible_to_search_engines_description: Seçenekler bölümünden arama motorlarını aktif ediniz.
+      materialize_path_confirmation: 
+      new: Yeni sayfa
+      page_content: İçerik
+      page_part: Sayfa bölümü
+      page_seo: Arama motorları
+      photo_picker: Resim seç
+      photos_picker: Çoklu resim seç
+      rebuild_materialized_path: 
+      save: Sayfayı kaydet
+      saved: 
+      saving: 
+      show_in_menu: görünmez
+      skip_to_first_child: ilk sıraya gönder
+    permanently_delete: Sil
+    photos:
+      cannot_be_created: 'Resim işlenemedi:'
+      choose_images: 
+      delete: 
+      delete_confirmation: Bu <strong>resmi</strong> silmek istediğinizden emin misiniz?
+      delete_folder: 
+      done_organizing: 
+      insert_photo: Resim ekle
+      insert_photos: Çoklu resim ekle
+      link: 'Resim linki:'
+      new_folder: 
+      organize: 
+      select_images: 
+      upload_image: 
+    preferences:
+      Analytics: 
+      account: Genel
+      account_description: Kişisel seçenekleriniz
+      account_save: Seçenekleri kaydet
+      analytics: Analitik ve arama motorları
+      analytics_description: Gerçek zamanlı analitik için hesabınızı bağlayın
+      analytics_save: Seçenekleri kaydet
+      domain_name_settings: Alan adı ayarları
+      domain_name_settings_description: Kendi alan adınızı ayarlayın
+      social_media: Sosyal medya
+      social_media_description: Sosyal medya hesaplarınız
+      social_media_save: Sosyal medyayı kaydet
+      style: Görünüm
+      style_description: Size uyan bir tema seçin
+      style_save: Görünümü kaydet
+      title: Seçenekler
+      users: Kullanıcılar
+      users_description: Kullanıcı ve yöneticileri yönetin
+    preview_website: Siteye gözat
+    resources:
+      edit: 
+    save: 
+    search: Ara...
+    settings:
+      save: 
+      title: 
+    users:
+      cannot_be_created: Kullanıcı kaydedilemiyor
+      delete_confirmation: "<strong>%{user}</strong> kullanıcısını silmek istediğinizden emin misiniz?"
+      new: Yeni kullanıcı
+      save: Kullanıcıyı kaydet
+    visit_page: 
+    website:
+      all_pages: 
+      documents: Belgeler
+      images: 
+      media_library: Ortam kütüphanesi
+      media_library_description: Tüm resim ve belgeleriniz
+      pages: Sayfalar
+      pages_description: Sitenizdeki tüm sayfalar
+      photos: Resimler
+      title: Siteniz
+    wysiwyg:
+      heading_1: Başlık 1
+      heading_2: Başlık 2
+      heading_3: Başlık 3
+      insert_link: Link ekle
+      paragraph: Paragraf
+      quote: Alıntıla
