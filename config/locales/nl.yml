@@ -1,235 +1,267 @@
 nl:
-  languages:
-    nl: Nederlands
-    en: Engels
-    de: Duits
-    fr: Frans
-  spina:
-    cancel: Annuleren
-    close: Sluiten
-    choose_from_library: Kies uit bibliotheek
-    edit: Bewerken
-    save: Opslaan
-    delete: Verwijderen
-    permanently_delete: Definitief verwijderen
-    delete_confirmation: "Weet je zeker dat je <strong>%{subject}</strong> wilt verwijderen?"
-    login: Aanmelden
-    preview_website: Bekijk je website
-    visit_page: Bekijk pagina
-    search: Zoeken...
-    ago: geleden
-    edit_website: Bewerk je website
-    logout: Uitloggen
-    main_menu: Hoofdmenu
-
-    modal:
-      agree: "Ja, dat weet ik zeker"
-      cancel: "Nee, annuleren"
-
-    notifications:
-      information: Informatie
-      alert: Oeps! Er is iets mis gegaan
-      login: Je zult eerst moeten inloggen
-      wrong_username_or_password: Email of wachtwoord is onjuist
-
-    website:
-      title: Je website
-      all_pages: Alle pagina's
-      pages: Pagina's
-      pages_description: "Alle pagina's op je website"
-      media_library: Mediabibliotheek
-      media_library_description: "Hier staan al je afbeeldingen, video's en documenten"
-      documents: Documenten
-      photos: Afbeeldingen
-      images: Afbeeldingen
-
-    images:
-      delete: Verwijderen
-      upload: kies een bestand
-      choose_image: Kies afbeelding
-      remove_image: Verwijder afbeelding
-      back: Terug
-
-    forgot_password:
-      new: Wachtwoord vergeten
-      request: Wachtwoord aanvragen
-
-    pages:
-      new: Nieuwe pagina
-      create_page: "%{template} invullen"
-      change_order: Volgorde wijzigen
-      done_changing_order: Klaar met slepen
-      page_content: Inhoud
-      page_seo: Zoekmachines
-      advanced: Geavanceerd
-      page_part: Paginasectie
-      photos_picker: Foto's kiezen
-      photo_picker: Foto kiezen
-      delete_confirmation: "Weet je zeker dat je de pagina <strong>%{subject}</strong> wilt verwijderen?"
-      save: Pagina opslaan
-      concept: concept
-      show_in_menu: onzichtbaar
-      skip_to_first_child: doorsturen naar 1<sup>e</sup> subpagina
-      invisible_to_search_engines: Je website is niet zichtbaar voor zoekmachines
-      invisible_to_search_engines_description: Bij voorkeuren voor Statistieken en zoekmachines kun je dit activeren.
-      saving: <i></i> Opslaan...
-      saved: Pagina opgeslagen
-
-    resources:
-      edit: Bewerken
-
-    users:
-      new: Nieuwe gebruiker
-      save: Gebruiker opslaan
-      delete_confirmation: "Weet je zeker dat je de gebruiker <strong>%{user}</strong> wilt verwijderen?"
-      cannot_be_created: De gebruiker kan niet worden opgeslagen
-
-    photos:
-      delete_confirmation: "Weet je zeker dat je deze <strong>foto</strong> wilt verwijderen?"
-      insert_photos: Afbeeldingen invoegen
-      insert_photo: Afbeelding invoegen
-      link: "De link naar de afbeelding is:"
-      cannot_be_created: "Foto kon niet worden verwerkt:"
-      delete: Verwijderen
-      done_organizing: Klaar met slepen
-      organize: Organiseren
-      new_folder: Nieuwe folder
-
-    wysiwyg:
-      paragraph: Paragraaf
-      heading_1: Kop 1
-      heading_2: Kop 2
-      heading_3: Kop 3
-      quote: Quote
-      insert_link: Link invoegen
-
-    preferences:
-      title: Voorkeuren
-      account: Algemene gegevens
-      account_description: Persoonlijke instellingen
-      account_save: Gegevens opslaan
-      style: Vormgeving
-      style_description: Kies het thema en huisstijl dat bij jouw bedrijf past
-      style_save: Vormgeving opslaan
-      users: Gebruikers
-      users_description: Beheer gebruikers en beheerders
-      social_media: Social media
-      social_media_description: Facebook en Twitter accounts
-      social_media_save: Social media opslaan
-      analytics: Google Analytics
-      analytics_description: Koppel je account voor real-time statistieken
-      analytics_save: Voorkeuren opslaan
-      domain_name_settings: Eigen domein instellen
-      domain_name_settings_description: Zorg dat je bereikbaar bent via je eigen domeinnaam
-
-    attachments:
-      insert: 'Document toevoegen'
-      insert_multiple: 'Documenten toevoegen'
-
-    media_library:
-      photos: Afbeeldingen
-      attachments: Documenten
-      images: Afbeeldingen
-
   activerecord:
-    models:
-      spina/page:
-        one: Pagina
-        other: Pagina's
-      spina/user:
-        one: Gebruiker
-        other: Gebruikers
-      spina/photo:
-        one: Afbeelding
-        other: Afbeeldingen
-      spina/attachment:
-        one: Document
-        other: Documenten
-
     attributes:
       spina/account:
-        name: Naam website
         address: Adres
-        postal_code: Postcode
         city: Plaats
-        phone: Telefoonnummer
         email: Emailadres
+        facebook: Facebook
+        google_analytics: Universal Analytics Code
+        google_plus: Google+
+        google_site_verification: Google Site Verification
+        instagram: Instagram
         kvk_identifier: KvK-nummer
         kvk_identifier_description: Het is verplicht je KvK-nummer te vermelden op je website
+        linkedin: LinkedIn
+        logo: Logo
+        name: Naam website
+        phone: Telefoonnummer
+        postal_code: Postcode
+        robots_allowed: Zichtbaar in Google
+        theme: Layout website
+        twitter: Twitter
         vat_identifier: BTW-nummer
         vat_identifier_description: Het is verplicht je BTW-nummer te vermelden op je website
-        theme: Layout website
-        logo: Logo
-        google_analytics: Universal Analytics Code
-        google_site_verification: Google Site Verification
-        robots_allowed: Zichtbaar in Google
-        facebook: Facebook
-        twitter: Twitter
-        google_plus: Google+
-        instagram: Instagram
         youtube: YouTube
-        linkedin: LinkedIn
-
       spina/attachment:
         created_at: Aangemaakt op
         name: Bestandsnaam
         size: Grootte
-
+      spina/inquiries:
+        email: 
+        message: 
+        name: 
+        phone: 
+      spina/media_folder:
+        name: 
+      spina/navigation:
+        auto_add_pages: Automatisch aanvullen
+        auto_add_pages_description: Nieuwe pagina's worden automatisch toegevoegd aan deze navigatie
+        label: Label
+        pages: Pagina's
+        pages_description: Selecteer de pagina's die in deze navigatie getoond worden
       spina/page:
-        created_at: Aangemaakt op
         ancestry: Bovenliggende pagina
-        title: Titel
-        title_placeholder: Titel van de pagina
-        seo_title: SEO <title>
-        seo_title_placeholder: Deze titel komt in de <title>-tag van de broncode te staan
-        link_url: Doorverwijzing
-        link_url_description: Doorverwijzen naar URL
-        link_url_placeholder: bijv. https://www.google.nl/
+        created_at: Aangemaakt op
         description: SEO Beschrijving
         description_description: De beschrijving wordt weergegeven bij resultaten van zoekmachines
         description_placeholder: Een korte beschrijving van de pagina
         draft: Concept
         draft_description: Handig wanneer de pagina nog niet helemaal af is
-        skip_to_first_child: Doorsturen
-        skip_to_first_child_description: Doorsturen naar eerste onderliggende pagina
-        show_in_menu: In menu weergeven
-        show_in_menu_description: Als dit uit staat komt de pagina niet voor in het menu
+        link_url: Doorverwijzing
+        link_url_description: Doorverwijzen naar URL
+        link_url_placeholder: bijv. https://www.google.nl/
         menu_title: Menu titel
         menu_title_placeholder: Leeglaten om de titel van de pagina over te nemen
-        view_template: Pagina template
+        no_parent: 
         resource: Weergeven in
-
+        seo_title: SEO <title>
+        seo_title_placeholder: Deze titel komt in de <title>-tag van de broncode te staan
+        show_in_menu: In menu weergeven
+        show_in_menu_description: Als dit uit staat komt de pagina niet voor in het menu
+        skip_to_first_child: Doorsturen
+        skip_to_first_child_description: Doorsturen naar eerste onderliggende pagina
+        title: Titel
+        title_placeholder: Titel van de pagina
+        view_template: Pagina template
       spina/resource:
         label: Label
         order_by: Sorteer overzicht
-        view_template: Standaard pagina template
         parent_page: Bovenliggende pagina
-
-      spina/navigation:
-        label: Label
-        auto_add_pages: Automatisch aanvullen
-        auto_add_pages_description:  Nieuwe pagina's worden automatisch toegevoegd aan deze navigatie
-        pages: Pagina's
-        pages_description: Selecteer de pagina's die in deze navigatie getoond worden
-
+        view_template: Standaard pagina template
       spina/user:
-        email: Emailadres
-        password: Wachtwoord
-        name: Naam
-        name_placeholder: Naam
+        admin: Beheerder
+        admin_description: Beheerders kunnen gebruikers aanmaken
         email: Emailadres
         email_description: Gebruik een uniek emailadres
-        password: Wachtwoord
-        password_description: Leeglaten om niet te veranderen
-        password_confirmation: Wachtwoord bevestigen
-        admin: Beheerder
-        user: Gebruiker
-        admin_description: Beheerders kunnen gebruikers aanmaken
-        role: Rol
         last_logged_in: Laatst ingelogd
-
-  misc:
-    messages:
-      zero: "0 nieuwe berichten"
-      one: "1 nieuw bericht"
-      other: "%{count} nieuwe berichten"
+        name: Naam
+        name_placeholder: Naam
+        password: Wachtwoord
+        password_confirmation: Wachtwoord bevestigen
+        password_description: Leeglaten om niet te veranderen
+        role: Rol
+        user: Gebruiker
+    models:
+      spina/attachment:
+        one: Document
+        other: Documenten
+      spina/inquiry: 
+      spina/page:
+        one: Pagina
+        other: Pagina's
+      spina/photo:
+        one: Afbeelding
+        other: Afbeeldingen
+      spina/user:
+        one: Gebruiker
+        other: Gebruikers
+  spina:
+    ago: geleden
+    attachments:
+      insert: Document toevoegen
+      insert_multiple: Documenten toevoegen
+    cancel: Annuleren
+    choose_from_library: Kies uit bibliotheek
+    close: Sluiten
+    delete: Verwijderen
+    delete_confirmation: Weet je zeker dat je <strong>%{subject}</strong> wilt verwijderen?
+    edit: Bewerken
+    edit_website: Bewerk je website
+    forgot_password:
+      expired: 
+      mail_subject: 
+      new: Wachtwoord vergeten
+      request: Wachtwoord aanvragen
+      save: 
+      success: 
+      unknown_user: 
+    images:
+      back: Terug
+      cannot_be_created: 
+      choose_image: Kies afbeelding
+      choose_images: 
+      delete: Verwijderen
+      delete_confirmation: 
+      delete_folder: 
+      done_organizing: 
+      insert_photo: 
+      insert_photos: 
+      link: 
+      new_folder: 
+      organize: 
+      remove_image: Verwijder afbeelding
+      upload: kies een bestand
+      upload_image: 
+    inquiries:
+      all: 
+      all_description: 
+      delete_confirmation: 
+      empty: 
+      empty_inbox: 
+      empty_spam: 
+      inbox: 
+      inbox_description: 
+      mark_as_read: 
+      no_spam: 
+      spam: 
+      title: 
+    languages:
+      bg: 
+      de: Duits
+      en: Engels
+      es: 
+      fr: Frans
+      id: 
+      it: 
+      nl: Nederlands
+      pl: 
+      pt-BR: 
+      ro: 
+      ru: 
+      sv: 
+      th: 
+      tr: 
+      zh-CN: 
+    login: Aanmelden
+    logout: Uitloggen
+    main_menu: Hoofdmenu
+    media_library:
+      attachments: Documenten
+      images: Afbeeldingen
+      photos: Afbeeldingen
+    modal:
+      agree: Ja, dat weet ik zeker
+      cancel: Nee, annuleren
+    notifications:
+      alert: Oeps! Er is iets mis gegaan
+      information: Informatie
+      login: Je zult eerst moeten inloggen
+      wrong_username_or_password: Email of wachtwoord is onjuist
+    pages:
+      advanced: Geavanceerd
+      change_order: Volgorde wijzigen
+      concept: concept
+      create_page: "%{template} invullen"
+      delete_confirmation: Weet je zeker dat je de pagina <strong>%{subject}</strong> wilt verwijderen?
+      done_changing_order: Klaar met slepen
+      invisible_to_search_engines: Je website is niet zichtbaar voor zoekmachines
+      invisible_to_search_engines_description: Bij voorkeuren voor Statistieken en zoekmachines kun je dit activeren.
+      materialize_path_confirmation: 
+      new: Nieuwe pagina
+      page_content: Inhoud
+      page_part: Paginasectie
+      page_seo: Zoekmachines
+      photo_picker: Foto kiezen
+      photos_picker: Foto's kiezen
+      rebuild_materialized_path: 
+      save: Pagina opslaan
+      saved: Pagina opgeslagen
+      saving: "<i></i> Opslaan..."
+      show_in_menu: onzichtbaar
+      skip_to_first_child: doorsturen naar 1<sup>e</sup> subpagina
+    permanently_delete: Definitief verwijderen
+    photos:
+      cannot_be_created: 'Foto kon niet worden verwerkt:'
+      choose_images: 
+      delete: Verwijderen
+      delete_confirmation: Weet je zeker dat je deze <strong>foto</strong> wilt verwijderen?
+      delete_folder: 
+      done_organizing: Klaar met slepen
+      insert_photo: Afbeelding invoegen
+      insert_photos: Afbeeldingen invoegen
+      link: 'De link naar de afbeelding is:'
+      new_folder: Nieuwe folder
+      organize: Organiseren
+      select_images: 
+      upload_image: 
+    preferences:
+      Analytics: 
+      account: Algemene gegevens
+      account_description: Persoonlijke instellingen
+      account_save: Gegevens opslaan
+      analytics: Google Analytics
+      analytics_description: Koppel je account voor real-time statistieken
+      analytics_save: Voorkeuren opslaan
+      domain_name_settings: Eigen domein instellen
+      domain_name_settings_description: Zorg dat je bereikbaar bent via je eigen domeinnaam
+      social_media: Social media
+      social_media_description: Facebook en Twitter accounts
+      social_media_save: Social media opslaan
+      style: Vormgeving
+      style_description: Kies het thema en huisstijl dat bij jouw bedrijf past
+      style_save: Vormgeving opslaan
+      title: Voorkeuren
+      users: Gebruikers
+      users_description: Beheer gebruikers en beheerders
+    preview_website: Bekijk je website
+    resources:
+      edit: Bewerken
+    save: Opslaan
+    search: Zoeken...
+    settings:
+      save: 
+      title: 
+    users:
+      cannot_be_created: De gebruiker kan niet worden opgeslagen
+      delete_confirmation: Weet je zeker dat je de gebruiker <strong>%{user}</strong> wilt verwijderen?
+      new: Nieuwe gebruiker
+      save: Gebruiker opslaan
+    visit_page: Bekijk pagina
+    website:
+      all_pages: Alle pagina's
+      documents: Documenten
+      images: Afbeeldingen
+      media_library: Mediabibliotheek
+      media_library_description: Hier staan al je afbeeldingen, video's en documenten
+      pages: Pagina's
+      pages_description: Alle pagina's op je website
+      photos: Afbeeldingen
+      title: Je website
+    wysiwyg:
+      heading_1: Kop 1
+      heading_2: Kop 2
+      heading_3: Kop 3
+      insert_link: Link invoegen
+      paragraph: Paragraaf
+      quote: Quote

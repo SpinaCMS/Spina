@@ -18,13 +18,13 @@
             %div{style: "display: inline-block", data: {dropdown: true}}
               = link_to '#', class: 'button button-hollow button-small', style: 'margin-left: 0; margin-right: 0', data: {trigger: 'dropdown', target: '#locales'} do
                 = icon('comment')
-                =t "languages.#{@locale}"
+                =t "spina.languages.#{@locale}"
                 %i.icon.icon-chevron-down{style: 'font-size: 9px; margin-right: 0'}
 
               %ul#locales
                 - Spina.config.locales.each do |locale|
                   %li
-                    = link_to t("languages.#{locale}"), "?locale=#{locale}", style: ('font-weight: 600' if @locale.to_s == locale.to_s).to_s
+                    = link_to t("spina.languages.#{locale}"), "?locale=#{locale}", style: ('font-weight: 600' if @locale.to_s == locale.to_s).to_s
 
         = link_to @page.materialized_path, target: :blank, class: 'button button-hollow button-small', style: 'margin-left: 0' do
           %i.icon.icon-export{style: 'margin: 0'}
