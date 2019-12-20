@@ -49,7 +49,7 @@ it:
         menu_title: Titolo menù
         menu_title_placeholder: Lasciare vuoto per usare il titolo della pagina
         no_parent: Nessun parente
-        resource: 
+        resource: Risorse
         seo_title: "<title> SEO"
         seo_title_placeholder: Questo titolo è usato nel <title>-tag
         show_in_menu: Mostra nel menù
@@ -112,44 +112,44 @@ it:
       unknown_user: Questo utente non esiste
     images:
       back: Indietro
-      cannot_be_created: 
+      cannot_be_created: Non può essere creato
       choose_image: Scegli immagine
       choose_images: Scegli immagini
-      delete: 
+      delete: Cancella
       delete_confirmation: Sei sicuro di voler cancellare questa <strong> immagine </strong>?
-      delete_folder: 
-      done_organizing: 
-      insert_photo: 
-      insert_photos: 
-      link: 
-      new_folder: 
-      organize: 
-      remove_image: 
+      delete_folder: Cancella cartella
+      done_organizing: Fine riordinare
+      insert_photo: Inserisci foto
+      insert_photos: Inserisci foto
+      link: Link
+      new_folder: Nuova cartella
+      organize: Organizza
+      remove_image: Rimuovi immagine
       upload: Carica immagini
-      upload_image: 
+      upload_image: Carica immagine
     languages:
-      bg: 
-      de: 
+      bg: Bulgaro
+      de: Tedesco
       en: Inglese
-      es: 
-      fr: 
-      id: 
-      it: 
-      nl: 
-      pl: 
-      pt-BR: 
-      ro: 
-      ru: 
-      sv: 
-      th: 
-      tr: 
-      zh-CN: 
+      es: Spagnolo
+      fr: Francese
+      id: Indonesiano
+      it: Italiano
+      nl: Olandese
+      pl: Polacco
+      pt-BR: Portoghese Braziliano
+      ro: Rumeno
+      ru: Russo
+      sv: Svedese
+      th: Thailandase
+      tr: Turco
+      zh-CN: Cinese semplificato
     login: Login
     logout: Logout
     main_menu: Menu primario
     media_library:
       attachments: Documenti
-      images: 
+      images: Immagini
       photos: Immagini
     modal:
       agree: Si, sono sicuro
@@ -168,36 +168,36 @@ it:
       done_changing_order: Ordinamento fatto
       invisible_to_search_engines: Il tuo sito è nascosto ai motori di ricerca
       invisible_to_search_engines_description: Vai alla sezione impostazioni per attivare la visibilità per i motori di ricerca.
-      materialize_path_confirmation: 
+      materialize_path_confirmation: Sei sicuro di voler reimpostare il percorso di questa pagina
       new: Nuova pagina
       page_content: Contenuto
       page_part: Sezione pagina
       page_seo: Motori di ricerca
       photo_picker: Seleziona immagine
       photos_picker: Seleziona immagini
-      rebuild_materialized_path: 
+      rebuild_materialized_path: Ricostruisci path
       save: Salva pagina
-      saved: 
-      saving: 
+      saved: Pagina salvata
+      saving: Salvataggio ...
       show_in_menu: nascosto
       skip_to_first_child: Vai alla prima sottopagina
     permanently_delete: Elimina definitivamente
     photos:
       cannot_be_created: 'L''immagine non può essere processata:'
-      choose_images: 
-      delete: 
+      choose_images: Scegli immagine
+      delete: Cancella
       delete_confirmation: Sei sicuro di voler eliminare questa <strong>immagine</strong>?
-      delete_folder: 
-      done_organizing: 
+      delete_folder: Cancella cartella
+      done_organizing: Fine organizzazione
       insert_photo: Inserisci immagine
       insert_photos: Inserisci immagini
       link: 'URL immagine:'
-      new_folder: 
-      organize: 
-      select_images: 
-      upload_image: 
+      new_folder: Nuova cartella
+      organize: Organizza immagini
+      select_images: Seleziona immagini
+      upload_image: Carica un immagine
     preferences:
-      Analytics: 
+      Analytics: Analytics
       account: Generale
       account_description: Impostazioni personali
       account_save: Salva impostazioni
@@ -217,22 +217,22 @@ it:
       users_description: Gestisci utenti e amministratori
     preview_website: Anteprima sito
     resources:
-      edit: 
-    save: 
+      edit: Modifica risorse
+    save: Salva
     search: Cerca...
     settings:
-      save: 
-      title: 
+      save: Salva impostazioni
+      title: Impostazioni
     users:
       cannot_be_created: L'utente non può essere salvato
       delete_confirmation: Sei sicuro di voler eliminare l'utente <strong>%{user}</strong>?
       new: Nuovo utente
       save: Salva utente
-    visit_page: 
+    visit_page: Visualizza la pagina
     website:
-      all_pages: 
+      all_pages: Tutte le pagine
       documents: Documenti
-      images: 
+      images: Immagini
       media_library: Libreria media
       media_library_description: Qui puoi trovare tutte le tue immagini e i tuoi documenti
       pages: Pagine
