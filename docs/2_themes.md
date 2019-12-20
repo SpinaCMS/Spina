@@ -1,4 +1,4 @@
-# Basics
+# Themes
 
 The installer generates a few initializers that contain necessary configuration for Spina.
 
