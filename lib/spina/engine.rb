@@ -11,7 +11,6 @@ require 'kaminari'
 require 'mobility'
 require 'rack-rewrite'
 require 'jsonb_accessor'
-require 'font_awesome5_rails'
 
 module Spina
   class Engine < ::Rails::Engine
