@@ -2,6 +2,10 @@
 
 ## 1.1
 
+### 1.1.3 (December 25, 2019)
+
+* Added missing icons to Trix editor
+
 ### 1.1.2 (December 20, 2019)
 
 * Change Spina's admin font to Metropolis
