@@ -38,7 +38,7 @@ trix-toolbar
 
     &::before
       background: none
-      font-family: 'Font Awesome 5 Free'
+      font-family: $icon-font
       display: inline-block
       font-weight: 900
       line-height: 36px
@@ -47,55 +47,55 @@ trix-toolbar
 
     &.trix-button--icon-bold
       &::before
-        content: "\f032"
+        @extend .icon-bold:before
 
     &.trix-button--icon-italic
       &::before
-        content: "\f033"
+        @extend .icon-italic:before
 
     &.trix-button--icon-strike
       &::before
-        content: "\f0cc"
+        @extend .icon-strikethrough:before
 
     &.trix-button--icon-link
       &::before
-        content: "\f0c1"
+        @extend .icon-link:before
 
     &.trix-button--icon-image
       &::before
-        content: "\f03e"
+        @extend .icon-image:before
 
     &.trix-button--icon-quote
       &::before
-        content: "\f10e"
+        @extend .icon-quote-right:before
 
     &.trix-button--icon-code
       &::before
-        content: "\f121"
+        @extend .icon-code:before
 
     &.trix-button--icon-bullet-list
       &::before
-        content: "\f0ca"
+        @extend .icon-list:before
 
     &.trix-button--icon-number-list
       &::before
-        content: "\f0cb"
+        @extend .icon-list-ol:before
 
     &.trix-button--icon-decrease-nesting-level
       &::before
-        content: "\f03b"
+        @extend .icon-outdent:before
 
     &.trix-button--icon-increase-nesting-level
       &::before
-        content: "\f03c"
+        @extend .icon-indent:before
 
     &.trix-button--icon-undo
       &::before
-        content: "\f2ea"
+        @extend .icon-undo:before
 
     &.trix-button--icon-redo
       &::before
-        content: "\f2f9"
+        @extend .icon-redo:before
 
   .trix-dialog
     border-top-color: $primary-color
