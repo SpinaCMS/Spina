@@ -1,6 +1,0 @@
-// Append new data
-$("<%=j render partial: 'spina/admin/photos/photo_multi_picker', collection: @photos %>").appendTo($(".infinite-scroll"));
-
-// Update pagination link
-$('.infinite-pagination').html("<%= j link_to_next_page @photos, 'Next', params: params.slice(:selected_photo_ids).permit(:selected_photo_ids), remote: true %>").infiniteScroll()
-

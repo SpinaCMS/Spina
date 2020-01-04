@@ -1,3 +1,16 @@
+$(document).on 'direct-uploads:start', 'form', (e) ->
+  $(this).find('.customfile').addClass('loading')
+
+$(document).on 'direct-uploads:end', 'form', (e) ->
+  $(this).find('.customfile').removeClass('loading')
+
+$(document).on 'direct-upload:progress', 'input', (e) ->
+  console.log(e.detail.progress)
+
+$(document).on 'change', 'input[type="file"]', (e) ->
+  $form = $(this).parents('form')
+  $form.find('input[type="submit"]').click()
+
 $(document).on 'click', '.organize-switch', (e) ->
   $items = $('.gallery .infinite-scroll .item')
   disabled = $items.draggable('option', 'disabled')
@@ -16,22 +29,22 @@ ready = ->
   $('.media-folder').droppable(
     drop: (event, ui) ->
       url = $(this).attr('data-add-to-media-folder-url')
-      photo_id = $(ui.draggable).find('input[type="radio"]').val()
+      image_id = $(ui.draggable).attr('data-image-id')
 
       $.ajax
         url: url,
         type: 'PUT',
         data: {
-          photo_id: photo_id
+          image_id: image_id
         },
         dataType: 'json',
         success: (result) =>
           $(ui.draggable).addClass('dropped').fadeOut()
-          photoCount = parseInt($(this).find('.media-folder-thumbnail').attr('data-badge'))
+          imageCount = parseInt($(this).find('.media-folder-thumbnail').attr('data-badge'))
           imgSrc = $(ui.draggable).find('img').attr('src')
 
           $(this).removeClass('dropping')
-          $(this).find('.media-folder-thumbnail').attr('data-badge', photoCount + 1)
+          $(this).find('.media-folder-thumbnail').attr('data-badge', imageCount + 1)
           $(this).find('.media-folder-thumbnail img').attr('src', imgSrc)
 
     over: (event, ui) ->

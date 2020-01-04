@@ -1,4 +1,6 @@
 // Configuration
+@import spina/trix
+
 @import spina/configuration
 
 // Mixins
@@ -24,7 +26,7 @@
 @import spina/sortable_lists
 @import spina/gallery
 @import spina/login
-@import spina/trix
+@import spina/trix_custom
 @import spina/wizard
 @import spina/notifications
 
@@ -313,12 +315,12 @@ nav#secondary
     opacity: 1
 
   a.ui-datepicker-prev span
-    background: url(asset-path('spina/arrow-left.png')) no-repeat center
+    background: url(asset-path('spina/arrow-left.svg')) no-repeat center
     background-size: 10px 13px
     display: block
 
   a.ui-datepicker-next span
-    background: url(asset-path('spina/arrow-right.png')) no-repeat center
+    background: url(asset-path('spina/arrow-right.svg')) no-repeat center
     background-size: 10px 13px
     display: block
 
@@ -432,7 +434,7 @@ section#main
       color: #999
 
   .divider
-    background: url(asset-path('spina/divider.png'))
+    background: url(asset-path('spina/divider.svg'))
     color: #999
     display: inline-block
     height: 17px

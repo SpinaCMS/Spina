@@ -12,13 +12,13 @@
     title:          'Text',
     partable_type:  'Spina::Text'
   }, {
-    name:           'photo',
-    title:          'Photo',
-    partable_type:  'Spina::Photo'
+    name:           'image',
+    title:          'Image',
+    partable_type:  'Spina::Image'
   }, {
-    name:           'photo_collection',
-    title:          'Photo collection',
-    partable_type:  'Spina::PhotoCollection'
+    name:           'image_collection',
+    title:          'Image collection',
+    partable_type:  'Spina::ImageCollection'
   }, {
     name:           'attachment',
     title:          'Attachment',
@@ -31,13 +31,6 @@
     name:           'structure',
     title:          'Structure',
     partable_type:  'Spina::Structure'
-  }, {
-    name:           'option',
-    title:          'Option',
-    partable_type:  'Spina::Option',
-    options: {
-      values: ['val1', 'val2']
-    }
   }]
 
   theme.structures = [{
@@ -50,13 +43,6 @@
       name:           'description',
       title:          'Description',
       partable_type:  'Spina::Text'
-    }, {
-      name:           'alignment',
-      title:          'Alignment',
-      partable_type:  'Spina::Option',
-      options: {
-        values: ['left', 'right', 'center']
-      }
     }]
   }]
 
@@ -79,7 +65,7 @@
     name: 'demo',
     title: 'Demo',
     description: 'Contains examples of every page part',
-    page_parts: ['line', 'text', 'photo', 'photo_collection', 'attachment', 'attachment_collection', 'option', 'structure']
+    page_parts: ['line', 'text', 'image', 'image_collection', 'attachment', 'attachment_collection', 'structure']
   }]
 
   theme.custom_pages = [{
@@ -93,5 +79,7 @@
     deletable:      true,
     view_template:  'demo'
   }]
+
+  theme.plugins = ['reviews']
 
 end

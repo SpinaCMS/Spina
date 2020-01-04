@@ -1,242 +1,248 @@
 es:
-  spina:
-    cancel: Cancelar
-    close: Cerrar
-    choose_from_library: Elegir de la biblioteca
-    edit: Editar
-    save: Guardar
-    delete: Eliminar
-    permanently_delete: Eliminar permanentemente
-    delete_confirmation: "Seguro que quieres eliminar <strong>%{subject}</strong>?"
-    login: Ingresar
-    preview_website: Previsualizar sitio
-    search: Buscar...
-    ago: ago
-    edit_website: Editar sitio
-    logout: Cerrar sesión
-    main_menu: Menú principal
-
-    settings:
-      title: Configuraciones
-      save: Guardar configuraciones
-
-    forgot_password:
-      new: Olvido su contraseña
-      request: Solicitar nueva contraseña
-      unknown_user: Este usuario no existe
-      save: Guardar nueva contraseña
-      success: Puede utilizar su nueva contraseña
-      mail_subject: Restablecer su contraseña
-      expired: Tu token para restablecer la contraseña ha expirado
-
-    modal:
-      agree: "Si, estoy seguro"
-      cancel: "No, cancelar"
-
-    notifications:
-      information: Información
-      alert: Ups! Algo salió mal
-      login: Primero debes ingresar
-      wrong_username_or_password: Email o password incorrecto
-
-    website:
-      title: Tu sitio
-      pages: Páginas
-      pages_description: "Todas las páginas de tu sitio"
-      media_library: Biblioteca de medios
-      media_library_description: "Aquí encontrarás todas tus imágenes y documentos"
-      documents: Documentos
-      photos: Imágenes
-
-    pages:
-      new: Nueva página
-      create_page: "Nuevo %{template}"
-      change_order: Cambiar orden
-      done_changing_order: Ordenamiento finalizado
-      page_content: Contenido
-      page_seo: Motores de búsqueda
-      advanced: Avanzado
-      page_part: Sección de página
-      photos_picker: Seleccionar imágenes
-      photo_picker: Seleccionar imagen
-      delete_confirmation: "Seguro que quieres eliminar la página <strong>%{subject}</strong>?"
-      save: Guardar página
-      concept: concepto
-      show_in_menu: invisible
-      skip_to_first_child: omitir hasta la primera página hija
-      invisible_to_search_engines: Tu sitio es invisible para los motores de búsqueda
-      invisible_to_search_engines_description: Ingresa a preferencias para activar los motores de búsqueda.
-      rebuild_materialized_path: Recontruir ruta materializada
-      materialize_path_confirmation: "Estás seguro de que quieres reconstruir la ruta para esta página?"
-      saving: Guardando...
-      saved: Página guardada
-
-    users:
-      new: Nuevo usuario
-      save: Guardar usuario
-      delete_confirmation: "Estás seguro que deseas eliminar al usuario <strong>%{user}</strong>?"
-      cannot_be_created: El usuario no puede ser
-
-    photos:
-      delete_confirmation: "Seguro que deseas eliminar ésta <strong>imagen</strong>?"
-      insert_photos: Insertar imágenes
-      choose_images: Seleccionar imágenes
-      insert_photo: Insertar imagen
-      link: "URL de tu imagen:"
-      cannot_be_created: "Tu imagen no puede ser procesada:"
-      upload_image: Subir una imagen
-      organize: Organizar imágenes
-      done_organizing: Terminar la organización
-      new_folder: Nueva carpeta
-      delete_folder: Borrar carpeta
-
-    wysiwyg:
-      paragraph: Párrafo
-      heading_1: Encabezado 1
-      heading_2: Encabezado 2
-      heading_3: Encabezado 3
-      quote: Cita
-      insert_link: Insertar enlace
-
-    preferences:
-      title: Preferencias
-      account: General
-      account_description: Preferencias personales
-      account_save: Guardar preferencias
-      style: Estilos
-      style_description: Selecciona un tema que se ajuste a tu marca
-      style_save: Guardar estilos
-      users: Usuarios
-      users_description: Administrar usuarios y administradores
-      social_media: Redes sociales
-      social_media_description: Cuentas de Facebook y Twitter
-      social_media_save: Guardar redes sociales
-      analytics: Analíticas y motores de búsqueda
-      analytics_description: Enlaza tu cuenta para analíticas en tiempo real
-      analytics_save: Guardar preferencias
-      domain_name_settings: Configuración de dominio
-      domain_name_settings_description: Configura tu propio dominio
-
-    attachments:
-      insert: 'Insertar documento'
-      insert_multiple: 'Insertar documentos'
-
-    media_library:
-      photos: Imágenes
-      attachments: Documentos
-
   activerecord:
-    models:
-      spina/page:
-        one: Página
-        other: Páginas
-      spina/user:
-        one: Usuario
-        other: Usuarios
-      spina/photo:
-        one: Imagen
-        other: Imágenes
-      spina/attachment:
-        one: Documento
-        other: Documentos
-
     attributes:
       spina/account:
-        name: Nombre del sitio
         address: Dirección
-        postal_code: Código postal
         city: Ciudad
-        phone: Teléfono
         email: Correo electrónico
+        facebook: Facebook
+        google_analytics: Google Analytics
+        google_plus: Google+
+        google_site_verification: Verficación de sitio de Google
+        instagram: Instagram
         kvk_identifier: Cámara de comercio
         kvk_identifier_description: Cámara de comercio
+        linkedin: LinkedIn
+        logo: Logo
+        name: Nombre del sitio
+        phone: Teléfono
+        postal_code: Código postal
+        robots_allowed: Visible en motores de búsqueda
+        theme: Tema del sitio
+        twitter: Twitter
         vat_identifier: VAT
         vat_identifier_description: VAT
-        theme: Tema del sitio
-        logo: Logo
-        google_analytics: Google Analytics
-        google_site_verification: Verficación de sitio de Google
-        robots_allowed: Visible en motores de búsqueda
-        facebook: Facebook
-        twitter: Twitter
-        google_plus: Google+
-
+        youtube: YouTube
       spina/attachment:
         created_at: Creado en
         name: Nombre del archivo
         size: Tamaño
-
+      spina/media_folder:
+        name: Nombre
+      spina/navigation:
+        auto_add_pages: Agregar páginas automáticamente
+        auto_add_pages_description: Páginas nuevas son agregadas automáticamente a esta navegación
+        label: Etiqueta
+        pages: Páginas
+        pages_description: Seleccione las páginas que quiere usar en esta navegación
       spina/page:
-        title: Título
-        title_placeholder: Título de la página
-        seo_title: SEO <title>
-        seo_title_placeholder: Este título es usado en <title>-tag
+        ancestry: Página padre
+        created_at: 
         description: Meta description
         description_description: Esta descripción se mostrará en los resultados de búsqueda
         description_placeholder: Descripción corta de tu página
         draft: Concepto
         draft_description: Ideal para cuando tu página no está del todo terminada
-        skip_to_first_child: Reenviar
-        skip_to_first_child_description: Reenviar a la primera página hija
         link_url: Redireccionar página
         link_url_description: Reenviar a URL
         link_url_placeholder: e.g. http://www.example.com/
-        show_in_menu: Mostrar en navegación
-        show_in_menu_description: "Si se desactiva esta página no será mostrada en tu navegación"
         menu_title: Título de navegación
         menu_title_placeholder: Deja en blanco para usar el título de la página
-        view_template: Plantilla de página
-        ancestry: Página padre
         no_parent: No página padre
-
+        resource: 
+        seo_title: SEO <title>
+        seo_title_placeholder: Este título es usado en <title>-tag
+        show_in_menu: Mostrar en navegación
+        show_in_menu_description: Si se desactiva esta página no será mostrada en tu navegación
+        skip_to_first_child: Reenviar
+        skip_to_first_child_description: Reenviar a la primera página hija
+        title: Título
+        title_placeholder: Título de la página
+        view_template: Plantilla de página
+      spina/resource:
+        label: 
+        order_by: 
+        parent_page: 
+        view_template: 
       spina/user:
-        email: Correo electrónico
-        password: Contraseña
-        name: Nombre
-        name_placeholder: Nombre
-        email: Correo electrónico
-        email_description: Tu correo debe ser único
-        password: Contraseña
-        password_description: Deja en blanco para conservar la contraseña
-        password_confirmation: Confirmar contraseña
         admin: Administrador
-        user: Usuario
         admin_description: Los administradores pueden crear usuarios
-        role: Rol
-        last_logged_in: Último inicio de sesión
-
-      spina/media_folder:
-        name: Nombre
-
-      spina/navigation:
-        label: Etiqueta
-        auto_add_pages: Agregar páginas automáticamente
-        auto_add_pages_description: Páginas nuevas son agregadas automáticamente a esta navegación
-        pages: Páginas
-        pages_description: Seleccione las páginas que quiere usar en esta navegación
-      
-      spina/user:
-        email: Email
-        password: Contraseña
-        name: Nombre
-        name_placeholder: Nombre
         email: Email
         email_description: Su email debe ser único
-        password: Contraseña
-        password_description: Deje vacío para conservar su contraseña
-        password_confirmation: Confirmar contraseña
-        admin: Administrador
-        user: Usuario
-        admin_description: Los administradores pueden crear usuarios
-        role: Rol
         last_logged_in: Entró por última vez
-
-  misc:
-    messages:
-      zero: "0 mensajes nuevos"
-      one: "1 mensaje nuevo"
-      other: "%{count} mensajes nuevos"
-
-  languages:
-    en: Inglés
-    nl: Holandés
+        name: Nombre
+        name_placeholder: Nombre
+        password: Contraseña
+        password_confirmation: Confirmar contraseña
+        password_description: Deje vacío para conservar su contraseña
+        role: Rol
+        user: Usuario
+    models:
+      spina/attachment:
+        one: Documento
+        other: Documentos
+      spina/page:
+        one: Página
+        other: Páginas
+      spina/photo:
+        one: Imagen
+        other: Imágenes
+      spina/user:
+        one: Usuario
+        other: Usuarios
+  spina:
+    ago: ago
+    attachments:
+      insert: Insertar documento
+      insert_multiple: Insertar documentos
+    cancel: Cancelar
+    choose_from_library: Elegir de la biblioteca
+    close: Cerrar
+    delete: Eliminar
+    delete_confirmation: Seguro que quieres eliminar <strong>%{subject}</strong>?
+    edit: Editar
+    edit_website: Editar sitio
+    forgot_password:
+      expired: Tu token para restablecer la contraseña ha expirado
+      mail_subject: Restablecer su contraseña
+      new: Olvido su contraseña
+      request: Solicitar nueva contraseña
+      save: Guardar nueva contraseña
+      success: Puede utilizar su nueva contraseña
+      unknown_user: Este usuario no existe
+    images:
+      back: 
+      cannot_be_created: 
+      choose_image: 
+      choose_images: 
+      delete: 
+      delete_confirmation: 
+      delete_folder: 
+      done_organizing: 
+      insert_photo: 
+      insert_photos: 
+      link: 
+      new_folder: 
+      organize: 
+      remove_image: 
+      upload: 
+      upload_image: 
+    languages:
+      bg: 
+      de: 
+      en: Inglés
+      es: 
+      fr: 
+      id: 
+      it: 
+      nl: Holandés
+      pl: 
+      pt-BR: 
+      ro: 
+      ru: 
+      sv: 
+      th: 
+      tr: 
+      zh-CN: 
+    login: Ingresar
+    logout: Cerrar sesión
+    main_menu: Menú principal
+    media_library:
+      attachments: Documentos
+      images: 
+      photos: Imágenes
+    modal:
+      agree: Si, estoy seguro
+      cancel: No, cancelar
+    notifications:
+      alert: Ups! Algo salió mal
+      information: Información
+      login: Primero debes ingresar
+      wrong_username_or_password: Email o password incorrecto
+    pages:
+      advanced: Avanzado
+      change_order: Cambiar orden
+      concept: concepto
+      create_page: Nuevo %{template}
+      delete_confirmation: Seguro que quieres eliminar la página <strong>%{subject}</strong>?
+      done_changing_order: Ordenamiento finalizado
+      invisible_to_search_engines: Tu sitio es invisible para los motores de búsqueda
+      invisible_to_search_engines_description: Ingresa a preferencias para activar los motores de búsqueda.
+      materialize_path_confirmation: Estás seguro de que quieres reconstruir la ruta para esta página?
+      new: Nueva página
+      page_content: Contenido
+      page_part: Sección de página
+      page_seo: Motores de búsqueda
+      photo_picker: Seleccionar imagen
+      photos_picker: Seleccionar imágenes
+      rebuild_materialized_path: Recontruir ruta materializada
+      save: Guardar página
+      saved: Página guardada
+      saving: Guardando...
+      show_in_menu: invisible
+      skip_to_first_child: omitir hasta la primera página hija
+    permanently_delete: Eliminar permanentemente
+    photos:
+      cannot_be_created: 'Tu imagen no puede ser procesada:'
+      choose_images: Seleccionar imágenes
+      delete: 
+      delete_confirmation: Seguro que deseas eliminar ésta <strong>imagen</strong>?
+      delete_folder: Borrar carpeta
+      done_organizing: Terminar la organización
+      insert_photo: Insertar imagen
+      insert_photos: Insertar imágenes
+      link: 'URL de tu imagen:'
+      new_folder: Nueva carpeta
+      organize: Organizar imágenes
+      select_images: 
+      upload_image: Subir una imagen
+    preferences:
+      Analytics: 
+      account: General
+      account_description: Preferencias personales
+      account_save: Guardar preferencias
+      analytics: Analíticas y motores de búsqueda
+      analytics_description: Enlaza tu cuenta para analíticas en tiempo real
+      analytics_save: Guardar preferencias
+      domain_name_settings: Configuración de dominio
+      domain_name_settings_description: Configura tu propio dominio
+      social_media: Redes sociales
+      social_media_description: Cuentas de Facebook y Twitter
+      social_media_save: Guardar redes sociales
+      style: Estilos
+      style_description: Selecciona un tema que se ajuste a tu marca
+      style_save: Guardar estilos
+      title: Preferencias
+      users: Usuarios
+      users_description: Administrar usuarios y administradores
+    preview_website: Previsualizar sitio
+    resources:
+      edit: 
+    save: Guardar
+    search: Buscar...
+    settings:
+      save: Guardar configuraciones
+      title: Configuraciones
+    users:
+      cannot_be_created: El usuario no puede ser
+      delete_confirmation: Estás seguro que deseas eliminar al usuario <strong>%{user}</strong>?
+      new: Nuevo usuario
+      save: Guardar usuario
+    visit_page: 
+    website:
+      all_pages: Todas las páginas
+      documents: Documentos
+      images: 
+      media_library: Biblioteca de medios
+      media_library_description: Aquí encontrarás todas tus imágenes y documentos
+      pages: Páginas
+      pages_description: Todas las páginas de tu sitio
+      photos: Imágenes
+      title: Tu sitio
+    wysiwyg:
+      heading_1: Encabezado 1
+      heading_2: Encabezado 2
+      heading_3: Encabezado 3
+      insert_link: Insertar enlace
+      paragraph: Párrafo
+      quote: Cita

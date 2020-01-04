@@ -1,9 +1,9 @@
 module Spina
   class Railtie < Rails::Railtie
-    initializer "spina.configure_rails_initialization" do
-      Rails.application.middleware.insert_before(Rack::Runtime, Rack::Rewrite) do
-        r301 %r{^/(.*)/$}, '/$1'
-      end
+
+    initializer "spina.assets.precompile" do |app|
+      app.config.assets.precompile += %w(spina_manifest.js)
     end
+
   end
 end

@@ -1,0 +1,8 @@
+.item.image{class: ('selected' if image.id.to_s.try(:in?, params[:selected_ids].to_a)), data: {action: "click->gallery-select#select", image_id: image.id}}
+  - unless defined?(simple) && simple
+    .overlay
+      = link_to admin_image_path(image), method: :delete, class: 'icon-only delete-photo-link', data: {confirm: t('spina.images.delete_confirmation')} do
+        = t('spina.images.delete')
+      %span.photo-name= truncate(image.name, length: 125)
+
+  = image_tag variant(image.file, resize: '300x300^', crop: "300x300+0+0")

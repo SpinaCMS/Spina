@@ -1,0 +1,22 @@
+- content_for(:header_actions) do
+  - if @media_folders.any?
+    = link_to '#', class: 'button organize-switch', data: {organize_images: t('spina.photos.organize'), done_organizing: t('spina.photos.done_organizing')} do
+      = icon('random')
+      = t('spina.photos.organize')
+
+  = link_to new_admin_media_folder_path, class: 'button button-primary', style: 'margin-right: 0; margin-left: 4px', data: {remote: true} do
+    = icon('plus')
+    =t 'spina.photos.new_folder'
+
+.gallery-container
+  .gallery
+    .item.new-image-form
+      = render 'form'
+
+    = render partial: 'spina/admin/media_folders/media_folder', collection: @media_folders
+
+    .gallery-prepend-image
+      .infinite-scroll
+        = render partial: 'spina/admin/images/image', collection: @images
+
+      .infinite-pagination{data: {controller: 'infinite-scroll'}}= link_to_next_page @images, 'Next', remote: true, data: {target: "infinite-scroll.link"}

@@ -1,0 +1,5 @@
+- if images.present?
+  %ul.sortable-grid
+    - images.each do |image|
+      %li.image{data: {image_id: image.id}}
+        = image_tag variant(image.file, resize: '300x300^', crop: "300x300+0+0")

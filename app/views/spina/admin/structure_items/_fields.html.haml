@@ -2,7 +2,7 @@
   / Structure parts
   = f.fields_for :structure_parts, build_structure_parts(f.object.structure.try(:page_part).try(:name), f.object) do |ff|
     .structure-form-part
-      = render "spina/admin/structure_partables/#{partable_type_partial_namespace(ff.object.structure_partable_type)}/form", f: ff
+      = render "spina/admin/partables/#{partable_type_partial_namespace(ff.object.structure_partable_type)}/form", f: ff
 
     = ff.hidden_field :id
     = ff.hidden_field :title

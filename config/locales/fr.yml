@@ -1,226 +1,248 @@
 fr:
-  spina:
-    cancel: Annuler
-    close: Fermer
-    choose_from_library: Choisir parmi la bibliothèque
-    edit: Editer
-    save: Enregistrer
-    delete: Supprimer
-    permanently_delete: Supprimer définitivement
-    delete_confirmation: "Êtes-vous sûr de vouloir supprimer : <strong>%{subject}</strong> ?"
-    login: Connexion
-    preview_website: Aperçu du site
-    search: Rechercher...
-    ago: Il y a
-    edit_website: Éditer votre site
-    logout: Déconnexion
-    main_menu: Menu principal
-
-    settings:
-      title: Paramètres
-      save: Enregistrer les paramètres
-
-    forgot_password:
-      new: Mot de passe oublié
-      request: Réinitialiser
-      unknown_user: Cet utilisateur n'existe pas
-      save: Enregistrer le nouveau mot de passe
-      success: Vous pouvez utiliser votre nouveau mot de passe
-      mail_subject: Réinitialiser votre mot de passe
-      expired: Votre jeton pour réinitialiser votre mot de passe a expiré
-
-    modal:
-      agree: "Oui, je suis sûr"
-      cancel: "Non, annuler"
-
-    notifications:
-      information: Information
-      alert: Oups! Quelque chose a mal fonctionné
-      login: Vous devez d'abord vous identifier
-      wrong_username_or_password: Mauvais email ou mot de passe
-
-    website:
-      title: Votre site
-      pages: Pages
-      all_pages: Toutes les pages
-      pages_description: "Toutes les pages de votre site"
-      media_library: Bibliothèque de médias
-      media_library_description: "Voici où vous trouverez toutes vos images et documents"
-      documents: Documents
-      photos: Images
-
-    pages:
-      new: Nouvelle page
-      create_page: "Nouvelle page %{template}"
-      change_order: Changer l'ordre
-      done_changing_order: Changement d'ordre effectué
-      page_content: Contenu
-      page_seo: Moteurs de recherche
-      advanced: Avancé
-      page_part: Section de page
-      photos_picker: Choisir des images
-      photo_picker: Choisir une image
-      delete_confirmation: "Êtes-vous sûr de vouloir supprimer la page :  <strong>%{subject}</strong> ?"
-      save: Sauvegarder la page
-      concept: brouillon
-      show_in_menu: invisible
-      skip_to_first_child: Renvoyer vers la première page enfant
-      invisible_to_search_engines: Votre site n'apparait pas sur les moteurs de recherche
-      invisible_to_search_engines_description: Allez dans vos préférences pour activer l'indexation sur les moteurs de recherche.
-      rebuild_materialized_path: Reconstruire le chemin matérialisé
-      materialize_path_confirmation: "Êtes-vous sûr de vouloir reconstruire le chemin pour cette page ?"
-      saving: Enregistrement...
-      saved: Page enregistrée
-
-    users:
-      new: Nouvel utilisateur
-      save: Sauvegarder l'utilisateur
-      delete_confirmation: "Êtes-vous sûr de vouloir supprimer l'utilisateur :  <strong>%{user}</strong> ?"
-      cannot_be_created: L'utilisateur ne peut pas être sauvegarder
-
-    photos:
-      delete_confirmation: "Êtes-vous sûr de vouloir supprimer cette <strong>image</strong> ?"
-      insert_photos: Insérer des images
-      choose_images: Choisir des images
-      insert_photo: Insérer une image
-      link: "URL de votre image:"
-      cannot_be_created: "L'image n'a pas pu être traitée :"
-      upload_image: "Envoyer une image"
-      organize: Organiser les images
-      done_organizing: Organisation faite
-      new_folder: Nouveau dossier
-      delete_folder: Supprimer dossier
-      delete: Supprimer
-
-    wysiwyg:
-      paragraph: Paragraphe
-      heading_1: Titre 1
-      heading_2: Titre 2
-      heading_3: Titre 3
-      quote: Citation
-      insert_link: Insérer un lien
-
-    preferences:
-      title: Préférences
-      account: Général
-      account_description: Les préférences personnelles
-      account_save: Sauvegarder les préférences
-      style: Style
-      style_description: Choissiser un thème qui vous correspond
-      style_save: Sauvegarder le style
-      users: Utilisateurs
-      users_description: Gérer les utilisateurs et les administrateurs
-      social_media: Réseaux sociaux
-      social_media_description: Comptes Facebook et Twitter
-      social_media_save: Sauvegarder les Réseaux sociaux
-      analytics: Analytics et moteurs de recherche
-      analytics_description: Connectez votre compte pour faire de l'analyse en temps réel
-      analytics_save: Sauvegarder vos préférences
-      domain_name_settings: Paramètres de domaine
-      domain_name_settings_description: Configuration de votre nom de domaine
-
-    attachments:
-      insert: 'Insérer un document'
-      insert_multiple: 'Insérer des documents'
-
-    media_library:
-      photos: Images
-      attachments: Documents
-
   activerecord:
-    models:
-      spina/page:
-        one: Page
-        other: Pages
-      spina/user:
-        one: Utilisateur
-        other: Utilisateurs
-      spina/photo:
-        one: Image
-        other: Images
-      spina/attachment:
-        one: Document
-        other: Documents
-
     attributes:
       spina/account:
-        name: Nom du site
         address: Addresse
-        postal_code: Code postal
         city: Ville
-        phone: Téléphone
         email: Email
+        facebook: Facebook
+        google_analytics: Google Analytics
+        google_plus: Google+
+        google_site_verification: Google Site Verification
+        instagram: Instagram
         kvk_identifier: SIRET
         kvk_identifier_description: SIRET
+        linkedin: LinkedIn
+        logo: Logo
+        name: Nom du site
+        phone: Téléphone
+        postal_code: Code postal
+        robots_allowed: Visible dans les moteurs de recherche
+        theme: Thème du site
+        twitter: Twitter
         vat_identifier: VAT
         vat_identifier_description: VAT
-        theme: Thème du site
-        logo: Logo
-        google_analytics: Google Analytics
-        google_site_verification: Google Site Verification
-        robots_allowed: Visible dans les moteurs de recherche
-        facebook: Facebook
-        twitter: Twitter
-        google_plus: Google+
-
+        youtube: YouTube
       spina/attachment:
         created_at: Créé le
         name: Nom du fichier
         size: Taille
-
+      spina/media_folder:
+        name: Nom
+      spina/navigation:
+        auto_add_pages: Ajouter les pages automatiquement
+        auto_add_pages_description: Les nouvelles pages seront ajoutées automatiquement à cette navigation
+        label: Étiquette
+        pages: Pages
+        pages_description: Sélectionnez les pages que vous voulez utiliser dans cette navigation
       spina/page:
-        title: Titre
-        title_placeholder: Titre de la page
-        seo_title: Balise SEO <title>
-        seo_title_placeholder: Ce titre est utilisé dans a balise <title>
+        ancestry: Page parente
+        created_at: 
         description: Meta description
         description_description: Cette description sera affichée dans les résultats de recherche
         description_placeholder: Petite description de votre page
         draft: Brouillon
         draft_description: Idéal lorsque votre page n'est pas tout à fait terminée
-        skip_to_first_child: Renvoyer
-        skip_to_first_child_description: Renvoyer vers la première page enfant
-        show_in_menu: Afficher dans la navigation
-        show_in_menu_description: "Si désactivé cette page ne ​​sera pas affichée dans la navigation"
+        link_url: 
+        link_url_description: 
+        link_url_placeholder: 
         menu_title: Titre dans la navigation
         menu_title_placeholder: Laissez vide pour utiliser le titre de la page
-        view_template: Modèle de page
-        ancestry: Page parente
         no_parent: Pas de parent
-
-      spina/media_folder:
-        name: Nom
-
-      spina/navigation:
-        label: Étiquette
-        auto_add_pages: Ajouter les pages automatiquement
-        auto_add_pages_description: Les nouvelles pages seront ajoutées automatiquement à cette navigation
-        pages: Pages
-        pages_description: Sélectionnez les pages que vous voulez utiliser dans cette navigation
-
+        resource: 
+        seo_title: Balise SEO <title>
+        seo_title_placeholder: Ce titre est utilisé dans a balise <title>
+        show_in_menu: Afficher dans la navigation
+        show_in_menu_description: Si désactivé cette page ne ​​sera pas affichée dans la navigation
+        skip_to_first_child: Renvoyer
+        skip_to_first_child_description: Renvoyer vers la première page enfant
+        title: Titre
+        title_placeholder: Titre de la page
+        view_template: Modèle de page
+      spina/resource:
+        label: 
+        order_by: 
+        parent_page: 
+        view_template: 
       spina/user:
-        email: Email
-        password: Mot de passe
-        name: Nom
-        name_placeholder: Nom
+        admin: Administrateur
+        admin_description: Les administrateurs peuvent créer des utilisateurs
         email: Email
         email_description: Votre email doit être unique
-        password: Mot de passe
-        password_description: Laisser vide pour garder le mot de passe
-        password_confirmation: Confirmer le mot de passe
-        admin: Administrateur
-        user: Utilisateur
-        admin_description: Les administrateurs peuvent créer des utilisateurs
-        role: Rôle
         last_logged_in: Dernière connexion
-
-  misc:
-    messages:
-      zero: "0 nouveau message"
-      one: "1 nouveau message"
-      other: "%{count} nouveaux messages"
-
-  languages:
-    en: Anglais
-    nl: Néerlandais
-    fr: Français
+        name: Nom
+        name_placeholder: Nom
+        password: Mot de passe
+        password_confirmation: Confirmer le mot de passe
+        password_description: Laisser vide pour garder le mot de passe
+        role: Rôle
+        user: Utilisateur
+    models:
+      spina/attachment:
+        one: Document
+        other: Documents
+      spina/page:
+        one: Page
+        other: Pages
+      spina/photo:
+        one: Image
+        other: Images
+      spina/user:
+        one: Utilisateur
+        other: Utilisateurs
+  spina:
+    ago: Il y a
+    attachments:
+      insert: Insérer un document
+      insert_multiple: Insérer des documents
+    cancel: Annuler
+    choose_from_library: Choisir parmi la bibliothèque
+    close: Fermer
+    delete: Supprimer
+    delete_confirmation: 'Êtes-vous sûr de vouloir supprimer : <strong>%{subject}</strong> ?'
+    edit: Editer
+    edit_website: Éditer votre site
+    forgot_password:
+      expired: Votre jeton pour réinitialiser votre mot de passe a expiré
+      mail_subject: Réinitialiser votre mot de passe
+      new: Mot de passe oublié
+      request: Réinitialiser
+      save: Enregistrer le nouveau mot de passe
+      success: Vous pouvez utiliser votre nouveau mot de passe
+      unknown_user: Cet utilisateur n'existe pas
+    images:
+      back: 
+      cannot_be_created: 
+      choose_image: 
+      choose_images: 
+      delete: 
+      delete_confirmation: 
+      delete_folder: 
+      done_organizing: 
+      insert_photo: 
+      insert_photos: 
+      link: 
+      new_folder: 
+      organize: 
+      remove_image: 
+      upload: 
+      upload_image: 
+    languages:
+      bg: 
+      de: 
+      en: Anglais
+      es: 
+      fr: Français
+      id: 
+      it: 
+      nl: Néerlandais
+      pl: 
+      pt-BR: 
+      ro: 
+      ru: 
+      sv: 
+      th: 
+      tr: 
+      zh-CN: 
+    login: Connexion
+    logout: Déconnexion
+    main_menu: Menu principal
+    media_library:
+      attachments: Documents
+      images: 
+      photos: Images
+    modal:
+      agree: Oui, je suis sûr
+      cancel: Non, annuler
+    notifications:
+      alert: Oups! Quelque chose a mal fonctionné
+      information: Information
+      login: Vous devez d'abord vous identifier
+      wrong_username_or_password: Mauvais email ou mot de passe
+    pages:
+      advanced: Avancé
+      change_order: Changer l'ordre
+      concept: brouillon
+      create_page: Nouvelle page %{template}
+      delete_confirmation: 'Êtes-vous sûr de vouloir supprimer la page :  <strong>%{subject}</strong> ?'
+      done_changing_order: Changement d'ordre effectué
+      invisible_to_search_engines: Votre site n'apparait pas sur les moteurs de recherche
+      invisible_to_search_engines_description: Allez dans vos préférences pour activer l'indexation sur les moteurs de recherche.
+      materialize_path_confirmation: Êtes-vous sûr de vouloir reconstruire le chemin pour cette page ?
+      new: Nouvelle page
+      page_content: Contenu
+      page_part: Section de page
+      page_seo: Moteurs de recherche
+      photo_picker: Choisir une image
+      photos_picker: Choisir des images
+      rebuild_materialized_path: Reconstruire le chemin matérialisé
+      save: Sauvegarder la page
+      saved: Page enregistrée
+      saving: Enregistrement...
+      show_in_menu: invisible
+      skip_to_first_child: Renvoyer vers la première page enfant
+    permanently_delete: Supprimer définitivement
+    photos:
+      cannot_be_created: 'L''image n''a pas pu être traitée :'
+      choose_images: Choisir des images
+      delete: Supprimer
+      delete_confirmation: Êtes-vous sûr de vouloir supprimer cette <strong>image</strong> ?
+      delete_folder: Supprimer dossier
+      done_organizing: Organisation faite
+      insert_photo: Insérer une image
+      insert_photos: Insérer des images
+      link: 'URL de votre image:'
+      new_folder: Nouveau dossier
+      organize: Organiser les images
+      select_images: 
+      upload_image: Envoyer une image
+    preferences:
+      Analytics: 
+      account: Général
+      account_description: Les préférences personnelles
+      account_save: Sauvegarder les préférences
+      analytics: Analytics et moteurs de recherche
+      analytics_description: Connectez votre compte pour faire de l'analyse en temps réel
+      analytics_save: Sauvegarder vos préférences
+      domain_name_settings: Paramètres de domaine
+      domain_name_settings_description: Configuration de votre nom de domaine
+      social_media: Réseaux sociaux
+      social_media_description: Comptes Facebook et Twitter
+      social_media_save: Sauvegarder les Réseaux sociaux
+      style: Style
+      style_description: Choissiser un thème qui vous correspond
+      style_save: Sauvegarder le style
+      title: Préférences
+      users: Utilisateurs
+      users_description: Gérer les utilisateurs et les administrateurs
+    preview_website: Aperçu du site
+    resources:
+      edit: 
+    save: Enregistrer
+    search: Rechercher...
+    settings:
+      save: Enregistrer les paramètres
+      title: Paramètres
+    users:
+      cannot_be_created: L'utilisateur ne peut pas être sauvegarder
+      delete_confirmation: 'Êtes-vous sûr de vouloir supprimer l''utilisateur :  <strong>%{user}</strong> ?'
+      new: Nouvel utilisateur
+      save: Sauvegarder l'utilisateur
+    visit_page: 
+    website:
+      all_pages: Toutes les pages
+      documents: Documents
+      images: 
+      media_library: Bibliothèque de médias
+      media_library_description: Voici où vous trouverez toutes vos images et documents
+      pages: Pages
+      pages_description: Toutes les pages de votre site
+      photos: Images
+      title: Votre site
+    wysiwyg:
+      heading_1: Titre 1
+      heading_2: Titre 2
+      heading_3: Titre 3
+      insert_link: Insérer un lien
+      paragraph: Paragraphe
+      quote: Citation

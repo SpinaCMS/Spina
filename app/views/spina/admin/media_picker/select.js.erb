@@ -1,0 +1,31 @@
+let hidden_input = $("input[data-hidden-field-id='<%= j params[:hidden_field_id] %>']");
+hidden_input.parents('.media_picker').find('.image').remove();
+hidden_input.val("");
+
+<% if @image.present? %>
+  hidden_input.parents('.media_picker').append("<%=j render partial: 'spina/admin/images/image', object: @image, locals: {simple: true} %>");
+  hidden_input.val("<%= @image.id %>");
+
+  // Trix editor
+  <% if params[:trix_toolbar_id].present? %>
+    $('trix-editor[toolbar="<%= params[:trix_toolbar_id] %>"]').trigger('image-insert', ["<%= main_app.url_for(@image.file) %>", "<%= params[:alt] %>", "<%= params[:link_to_url] %>"]);
+     $.hideModal();
+  <% end %>
+<% end %>
+
+<% if @images.present? %>
+  let image_collection = $("<%= j render partial: 'spina/admin/image_collections/image_collection', locals: {images: @images} %>");
+  hidden_input.parents('.horizontal-form-content').find('.image-collection').html(image_collection);
+  hidden_input.val("<%= @images.map(&:id).join(',') %>");
+<% end %>
+
+$('.sortable-grid').sortable().bind('sortupdate', function(e) {
+  position_array = [];
+  $(e.target).find('li.image').each(function(index) {
+    position_array.push($(this).data('image-id'));
+  });
+  $(e.target).parents('.horizontal-form-content').find('.images-positions').val(position_array.join(","));
+});
+$('.sortable-grid').trigger('sortupdate');
+
+$.hideModal();

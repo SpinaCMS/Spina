@@ -13,4 +13,4 @@
       = ff.hidden_field :name
 
       .horizontal-form-group.page-part{data: {name: ff.object.name}}
-        = render "spina/admin/page_partables/#{ partable_type_partial_namespace(ff.object.page_partable_type) }/form", f: ff
+        = render "spina/admin/partables/#{ partable_type_partial_namespace(ff.object.page_partable_type) }/form", f: ff

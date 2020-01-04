@@ -4,9 +4,11 @@ module Spina
   module Admin
     class PagesTest < ActionDispatch::IntegrationTest
       setup do
+        host! "dummy.test"
+
         @routes = Engine.routes
-        @account = FactoryGirl.create :account
-        @user = FactoryGirl.create :user
+        @account = FactoryBot.create :account
+        @user = FactoryBot.create :user
         post "/admin/sessions", params: {email: @user.email, password: "password"}
       end
 
@@ -18,7 +20,7 @@ module Spina
       test "create new page" do
         post "/admin/pages", params: {page: {title: "A new page"}}
         follow_redirect!
-        assert_select '.breadcrumbs', text: /A\snew\spage\z/
+        assert_select '.breadcrumbs', text: /.*A\snew\spage.*/
       end
 
       test "create new page without title" do
@@ -29,7 +31,7 @@ module Spina
       test "create concept page" do
         post "/admin/pages", params: {page: {title: "A new page", draft: true}}
         follow_redirect!
-        assert_select '.breadcrumbs', text: /A\snew\spage\z/
+        assert_select '.breadcrumbs', text: /.*A\snew\spage.*/
         get "/admin/pages"
         assert_select '.dd-item-inner small', text: '(draft)'
       end

@@ -1,4 +1,4 @@
- module Spina
+module Spina
   class PagesController < Spina::ApplicationController
     include Spina::Frontend
 
@@ -13,9 +13,7 @@
     private
 
       def current_spina_user_can_view_page?
-        raise ActiveRecord::RecordNotFound if page.nil? || !page.live?
-
-        current_spina_user.present?
+        raise ActiveRecord::RecordNotFound unless current_spina_user.present? || page.live?
       end
 
   end

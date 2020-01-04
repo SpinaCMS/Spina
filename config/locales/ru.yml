@@ -1,203 +1,256 @@
 ru:
-  spina:
-    cancel: Отмена
-    close: Закрыть
-    choose_from_library: Выбрать из библиотеки
-    edit: Редактировать
-    delete: Удалить
-    permanently_delete: Удалить навсегда
-    delete_confirmation: "Вы уверены, что хотите удалить <strong>%{subject}</strong>?"
-    login: Логин
-    preview_website: Предварительный просмотр сайта
-    search: Поиск...
-    ago: назад
-    edit_website: Редактировать сайт
-    logout: Выход
-    main_menu: Главное меню
-
-    modal:
-      agree: "Да, я уверен"
-      cancel: "Нет, отменить"
-
-    notifications:
-      information: Информация
-      alert: Упс! Что-то пошло не так
-      login: Вы должны войти
-      wrong_username_or_password: Неправильная почта или пароль
-
-    website:
-      title: Ваш сайт
-      pages: Страницы
-      pages_description: "Все страницы вашего сайта"
-      media_library: Медиа библиотека
-      media_library_description: "Здесь вы найдете все ваши изображения и документы"
-      documents: Документы
-      photos: Изображения
-
-    pages:
-      new: Новая страница
-      create_page: "Создать %{template}"
-      change_order: Изменить порядок
-      done_changing_order: Порядок изменен
-      page_content: Контент
-      page_seo: Поисковые системы
-      advanced: Дополнительно
-      page_part: Раздел страницы
-      photos_picker: Выбрать изображения
-      photo_picker: Выбрать изображение
-      delete_confirmation: "Вы уверены, что хотите удалить страницу <strong>%{subject}</strong>?"
-      save: Сохранить страницу
-      concept: Концепция
-      show_in_menu: Невидимый
-      skip_to_first_child: Переход на страницу ребенка
-      invisible_to_search_engines: Ваш сайт не виден для поисковых машин
-      invisible_to_search_engines_description: "Перейти к вашим параметрам, чтобы активировать поисковые системы."
-      rebuild_materialized_path: Rebuild materialized path
-      materialize_path_confirmation: "Are you sure you want to rebuild the path for this page?"
-
-    users:
-      new: Новый пользователь
-      save: Сохранить пользователя
-      delete_confirmation: "Вы уверены, что хотите удалить пользователя <strong>%{user}</strong>?"
-      cannot_be_created: Пользователь не сохранен
-
-    photos:
-      delete_confirmation: "Вы уверены, что хотите удалить <strong>image</strong>?"
-      insert_photos: Вставить изображения
-      choose_images: Выбрать изображения
-      insert_photo: Вставить изображение
-      link: "URL изображения:"
-      cannot_be_created: "Изображение не может быть обработано:"
-
-    wysiwyg:
-      paragraph: Параграф
-      heading_1: Заголовок 1
-      heading_2: Заголовок 2
-      heading_3: Заголовок 3
-      quote: Цитата
-      insert_link: Вставить ссылку
-
-    preferences:
-      title: Параметры
-      account: Общее
-      account_description: Персональные параметры
-      account_save: Сохранить параметры
-      style: Дизайн
-      style_description: Выберите тему
-      style_save: Сохранить параметры стиля
-      users: Пользователи
-      users_description: Управление пользователями и администраторами
-      social_media: Социальные сети
-      social_media_description: Facebook и Twitter аккаунты
-      social_media_save: Сохранить социальные сети
-      analytics: Аналитика и поисковые системы
-      analytics_description: Ссылка на аккаунт аналитики
-      analytics_save: Сохранить настройки
-      domain_name_settings: Настройки домена
-      domain_name_settings_description: Настройка вашего домена
-
-    attachments:
-      insert: 'Вставить документ'
-      insert_multiple: 'Вставить документы'
-
-    media_library:
-      photos: Изображения
-      attachments: Документы
-
   activerecord:
-    models:
-      spina/page:
-        one: Страница
-        few: Страницы
-        many: Страниц
-        other: Страниц
-      spina/user:
-        one: Пользователь
-        few: Пользователея
-        many: Пользователей
-        other: Пользователей
-      spina/photo:
-        one: Изображение
-        few: Изображения
-        many: Изображений
-        other: Изображений
-      spina/attachment:
-        one: Документ
-        few: Документа
-        many: Документов
-        other: Документов
-
     attributes:
       spina/account:
-        name: Название сайта
         address: Адрес
-        postal_code: Почтовый индекс
         city: Город
-        phone: Телефон
         email: Почта
+        facebook: Facebook
+        google_analytics: Google Analytics
+        google_plus: Google+
+        google_site_verification: Google Site Verification
+        instagram: Instagram
         kvk_identifier: Торговая палата
         kvk_identifier_description: Торговая палата
+        linkedin: LinkedIn
+        logo: Логотип
+        name: Название сайта
+        phone: Телефон
+        postal_code: Почтовый индекс
+        robots_allowed: Видимость для поисковых систем
+        theme: Тема сайта
+        twitter: Twitter
         vat_identifier: НДС
         vat_identifier_description: НДС
-        theme: Тема сайта
-        logo: Логотип
-        google_analytics: Google Analytics
-        google_site_verification: Google Site Verification
-        robots_allowed: Видимость для поисковых систем
-        facebook: Facebook
-        twitter: Twitter
-        google_plus: Google+
-
+        youtube: YouTube
       spina/attachment:
         created_at: Создан в
         name: Название файла
         size: Размер
-
+      spina/media_folder:
+        name: 
+      spina/navigation:
+        auto_add_pages: 
+        auto_add_pages_description: 
+        label: 
+        pages: 
+        pages_description: 
       spina/page:
-        title: Заголовок
-        title_placeholder: Заголовок страницы
-        seo_title: SEO <title>
-        seo_title_placeholder: Это название используется в <title>-tag
+        ancestry: Parent page
+        created_at: 
         description: Мета описание
         description_description: Это описание будет показано в результатах поиска
         description_placeholder: Краткое описание вашей страницы
         draft: Концепт
         draft_description: Ваша страница не совсем завершена
-        skip_to_first_child: Перенаправление
-        skip_to_first_child_description: Переход на страницу ребенка
         link_url: Перенаправление на страницу
         link_url_description: Перейти на URL
         link_url_placeholder: Например http://www.example.com/
-        show_in_menu: Показать в навигации
-        show_in_menu_description: "При выключении эта страница не будет показана в навигации"
         menu_title: Навигация
-        menu_title_placeholder: "Оставьте пустым, чтобы использовать заголовок страницы"
-        view_template: Шаблон страницы
-        ancestry: Parent page
+        menu_title_placeholder: Оставьте пустым, чтобы использовать заголовок страницы
         no_parent: No parent
-
+        resource: 
+        seo_title: SEO <title>
+        seo_title_placeholder: Это название используется в <title>-tag
+        show_in_menu: Показать в навигации
+        show_in_menu_description: При выключении эта страница не будет показана в навигации
+        skip_to_first_child: Перенаправление
+        skip_to_first_child_description: Переход на страницу ребенка
+        title: Заголовок
+        title_placeholder: Заголовок страницы
+        view_template: Шаблон страницы
+      spina/resource:
+        label: 
+        order_by: 
+        parent_page: 
+        view_template: 
       spina/user:
-        email: Почта
-        password: Пароль
-        name: Имя
-        name_placeholder: Имя
+        admin: Администратор
+        admin_description: Администраторы могут создавать пользователей
         email: Почта
         email_description: Адрес вашей электронной почты должен быть уникален
-        password: Пароль
-        password_description: "Оставьте пустым, чтобы сохранить пароль"
-        password_confirmation: Подтвердить пароль
-        admin: Администратор
-        user: Пользователь
-        admin_description: Администраторы могут создавать пользователей
-        role: Роль
         last_logged_in: Последний вход был
-
-  misc:
-    messages:
-      zero: "0 новых сообщений"
-      one: "1 новое сообщение"
-      other: "%{count} новых сообщений"
-
-  languages:
-    en: Английский
-    nl: Голландский
+        name: Имя
+        name_placeholder: Имя
+        password: Пароль
+        password_confirmation: Подтвердить пароль
+        password_description: Оставьте пустым, чтобы сохранить пароль
+        role: Роль
+        user: Пользователь
+    models:
+      spina/attachment:
+        few: Документа
+        many: Документов
+        one: Документ
+        other: Документов
+      spina/page:
+        few: Страницы
+        many: Страниц
+        one: Страница
+        other: Страниц
+      spina/photo:
+        few: Изображения
+        many: Изображений
+        one: Изображение
+        other: Изображений
+      spina/user:
+        few: Пользователея
+        many: Пользователей
+        one: Пользователь
+        other: Пользователей
+  spina:
+    ago: назад
+    attachments:
+      insert: Вставить документ
+      insert_multiple: Вставить документы
+    cancel: Отмена
+    choose_from_library: Выбрать из библиотеки
+    close: Закрыть
+    delete: Удалить
+    delete_confirmation: Вы уверены, что хотите удалить <strong>%{subject}</strong>?
+    edit: Редактировать
+    edit_website: Редактировать сайт
+    forgot_password:
+      expired: 
+      mail_subject: 
+      new: 
+      request: 
+      save: 
+      success: 
+      unknown_user: 
+    images:
+      back: 
+      cannot_be_created: 
+      choose_image: 
+      choose_images: 
+      delete: 
+      delete_confirmation: 
+      delete_folder: 
+      done_organizing: 
+      insert_photo: 
+      insert_photos: 
+      link: 
+      new_folder: 
+      organize: 
+      remove_image: 
+      upload: 
+      upload_image: 
+    languages:
+      bg: 
+      de: 
+      en: Английский
+      es: 
+      fr: 
+      id: 
+      it: 
+      nl: Голландский
+      pl: 
+      pt-BR: 
+      ro: 
+      ru: 
+      sv: 
+      th: 
+      tr: 
+      zh-CN: 
+    login: Логин
+    logout: Выход
+    main_menu: Главное меню
+    media_library:
+      attachments: Документы
+      images: 
+      photos: Изображения
+    modal:
+      agree: Да, я уверен
+      cancel: Нет, отменить
+    notifications:
+      alert: Упс! Что-то пошло не так
+      information: Информация
+      login: Вы должны войти
+      wrong_username_or_password: Неправильная почта или пароль
+    pages:
+      advanced: Дополнительно
+      change_order: Изменить порядок
+      concept: Концепция
+      create_page: Создать %{template}
+      delete_confirmation: Вы уверены, что хотите удалить страницу <strong>%{subject}</strong>?
+      done_changing_order: Порядок изменен
+      invisible_to_search_engines: Ваш сайт не виден для поисковых машин
+      invisible_to_search_engines_description: Перейти к вашим параметрам, чтобы активировать поисковые системы.
+      materialize_path_confirmation: Are you sure you want to rebuild the path for this page?
+      new: Новая страница
+      page_content: Контент
+      page_part: Раздел страницы
+      page_seo: Поисковые системы
+      photo_picker: Выбрать изображение
+      photos_picker: Выбрать изображения
+      rebuild_materialized_path: Rebuild materialized path
+      save: Сохранить страницу
+      saved: 
+      saving: 
+      show_in_menu: Невидимый
+      skip_to_first_child: Переход на страницу ребенка
+    permanently_delete: Удалить навсегда
+    photos:
+      cannot_be_created: 'Изображение не может быть обработано:'
+      choose_images: Выбрать изображения
+      delete: 
+      delete_confirmation: Вы уверены, что хотите удалить <strong>image</strong>?
+      delete_folder: 
+      done_organizing: 
+      insert_photo: Вставить изображение
+      insert_photos: Вставить изображения
+      link: 'URL изображения:'
+      new_folder: 
+      organize: 
+      select_images: 
+      upload_image: 
+    preferences:
+      Analytics: 
+      account: Общее
+      account_description: Персональные параметры
+      account_save: Сохранить параметры
+      analytics: Аналитика и поисковые системы
+      analytics_description: Ссылка на аккаунт аналитики
+      analytics_save: Сохранить настройки
+      domain_name_settings: Настройки домена
+      domain_name_settings_description: Настройка вашего домена
+      social_media: Социальные сети
+      social_media_description: Facebook и Twitter аккаунты
+      social_media_save: Сохранить социальные сети
+      style: Дизайн
+      style_description: Выберите тему
+      style_save: Сохранить параметры стиля
+      title: Параметры
+      users: Пользователи
+      users_description: Управление пользователями и администраторами
+    preview_website: Предварительный просмотр сайта
+    resources:
+      edit: 
+    save: 
+    search: Поиск...
+    settings:
+      save: 
+      title: 
+    users:
+      cannot_be_created: Пользователь не сохранен
+      delete_confirmation: Вы уверены, что хотите удалить пользователя <strong>%{user}</strong>?
+      new: Новый пользователь
+      save: Сохранить пользователя
+    visit_page: 
+    website:
+      all_pages: 
+      documents: Документы
+      images: 
+      media_library: Медиа библиотека
+      media_library_description: Здесь вы найдете все ваши изображения и документы
+      pages: Страницы
+      pages_description: Все страницы вашего сайта
+      photos: Изображения
+      title: Ваш сайт
+    wysiwyg:
+      heading_1: Заголовок 1
+      heading_2: Заголовок 2
+      heading_3: Заголовок 3
+      insert_link: Вставить ссылку
+      paragraph: Параграф
+      quote: Цитата

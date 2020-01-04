@@ -10,7 +10,7 @@ module Spina
       end
 
       def update
-        if @setting.update_attributes(settings_params)
+        if @setting.update(settings_params)
           redirect_to spina.admin_edit_settings_path(plugin.namespace)
         else
           add_breadcrumb t("spina.#{plugin.namespace}.title")

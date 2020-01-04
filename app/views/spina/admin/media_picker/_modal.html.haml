@@ -1,0 +1,63 @@
+.modal.modal-large
+  %section{style: "display: flex"}
+    .gallery-select-container{data: {controller: "gallery-select"}}
+      .gallery-select.gallery.gallery-prepend-image{data: {multiselect: defined?(multiple) && multiple}}
+        .item.item-small.item-uploader.new-image-form
+          = render partial: 'spina/admin/images/form'
+
+        - if @media_folder.present?
+          = link_to spina.admin_media_picker_path(request.query_parameters.merge(media_folder_id: nil)), class: 'item media-folder', data: {remote: true} do
+            .media-folder-thumbnail
+              = image_tag 'spina/media_folder_placeholder.svg'
+              .media-folder-shadow
+            .media-folder-name=t "spina.images.back"
+        - else
+          - @media_folders.each do |media_folder|
+            = link_to spina.admin_media_picker_path({media_folder_id: media_folder.id}.merge(request.query_parameters)), class: 'item media-folder', data: {remote: true} do
+              .media-folder-thumbnail{data: {badge: media_folder.images.count}}
+                - if media_folder.images.any?
+                  = image_tag variant(media_folder.images.last.file, resize: '144x144^', crop: "144x144+0+0")
+                - else
+                  = image_tag 'spina/media_folder_placeholder.svg'
+                .media-folder-shadow
+              .media-folder-name= media_folder.name
+
+        .infinite-scroll
+          = render partial: 'spina/admin/images/image', collection: @images
+
+        .infinite-pagination{data: { controller: 'infinite-scroll' } }
+          = link_to_next_page @images, 'Next', params: params, remote: true,
+            data: { target: 'infinite-scroll.link' }
+          %span{ data: { target: 'infinite-scroll.link' } }
+
+      .gallery-select-sidebar
+        = form_with url: admin_media_picker_path, html: {'data-remote': true} do
+          .gallery-select-form-fields
+            = hidden_field_tag :image_id, params[:selected_ids]&.first, data: {target: 'gallery-select.singleImage'}
+            = hidden_field_tag :image_ids, params[:selected_ids]&.join("-"), data: {target: 'gallery-select.multipleImages'}
+            = hidden_field_tag :hidden_field_id, params[:hidden_field_id]
+            = hidden_field_tag :trix_toolbar_id, params[:trix_toolbar_id]
+            = check_box_tag :multiple, true, defined?(multiple) && multiple, style: 'display: none', data: {target: 'gallery-select.multiple'}
+
+            - if params[:trix_toolbar_id].present?
+              .form-group
+                .form-label Alt text
+                .form-control= text_field_tag :alt, nil, placeholder: "Alt"
+
+              .form-group
+                .form-label Link to URL
+                .form-control= text_field_tag :link_to_url, nil, placeholder: "URL"
+
+          .gallery-select-action-bar
+            = link_to t('spina.cancel'), "#", class: 'button button-link', data: {dismiss: 'modal'}
+            = button_tag type: 'submit', class: 'button button-primary button-large', style: 'margin-bottom: 0px' do
+
+              - if defined?(multiple) && multiple
+                = icon('plus')
+                = t('spina.images.choose_images')
+                %span.gallery-select-counter{data: {target: "gallery-select.counter"}}
+                  - if params[:selected_ids].try(:any?)
+                    (#{ params[:selected_ids].count })
+              - else
+                = icon('check')
+                =t 'spina.images.choose_image'

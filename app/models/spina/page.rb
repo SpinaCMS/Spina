@@ -18,6 +18,11 @@ module Spina
     has_many :navigation_items, dependent: :destroy
     has_many :navigations, through: :navigation_items
 
+    # Pages can belong to a resource
+    belongs_to :resource, optional: true
+
+    scope :regular_pages, ->  { where(resource: nil) }
+    scope :resource_pages, -> { where.not(resource: nil) }
     scope :active, -> { where(active: true) }
     scope :sorted, -> { order(:position) }
     scope :live, -> { active.where(draft: false) }
@@ -26,19 +31,24 @@ module Spina
     # Save children to update all materialized_paths
     after_save :save_children
     after_save :touch_navigations
+    after_save -> { page_parts.each(&:save) }
 
     # Create a 301 redirect if materialized_path changed
     after_save :rewrite_rule
 
     before_validation :set_materialized_path
     validates :title, presence: true
-    validates :materialized_path, uniqueness: true
 
-    translates :title, :description, :materialized_path
+    translates :title, fallbacks: true
+    translates :description, :materialized_path
     translates :menu_title, :seo_title, default: -> { title }
 
     def to_s
       name
+    end
+
+    def page_id
+      id
     end
 
     def url_title
@@ -50,7 +60,7 @@ module Spina
     end
 
     def save_children
-      self.children.each(&:save)
+      children.each(&:save)
     end
 
     def live?
@@ -58,17 +68,17 @@ module Spina
     end
 
     def previous_sibling
-      self.siblings.where('position < ?', self.position).sorted.last
+      siblings.where('position < ?', position).sorted.last
     end
 
     def next_sibling
-      self.siblings.where('position > ?', self.position).sorted.first
+      siblings.where('position > ?', position).sorted.first
     end
 
     def set_materialized_path
       self.old_path = materialized_path
       self.materialized_path = localized_materialized_path
-      self.materialized_path += "-#{self.class.i18n.where(materialized_path: materialized_path).count}" if self.class.i18n.where(materialized_path: materialized_path).where.not(id: id).count > 0
+      self.materialized_path = localized_materialized_path + "-#{Page.i18n.where(materialized_path: materialized_path).count}" if Page.i18n.where(materialized_path: materialized_path).where.not(id: id).count > 0
       materialized_path
     end
 
@@ -92,7 +102,7 @@ module Spina
       end
 
       def rewrite_rule
-        RewriteRule.where(old_path: old_path).first_or_create.update_attributes(new_path: materialized_path) if old_path != materialized_path
+        RewriteRule.where(old_path: old_path).first_or_create.update(new_path: materialized_path) if old_path != materialized_path
       end
 
       def localized_materialized_path

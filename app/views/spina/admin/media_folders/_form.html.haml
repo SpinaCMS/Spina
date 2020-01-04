@@ -2,9 +2,12 @@
   %header
     = link_to '#', data: {dismiss: "modal"} do
       = icon('cross')
-    %h3=t 'spina.photos.new_folder'
+    - if @media_folder.new_record?
+      %h3=t 'spina.photos.new_folder'
+    - else
+      %h3=t 'spina.photos.rename_folder'
 
-  = form_for [spina, :admin, @media_folder] do |f|
+  = form_with model: [spina, :admin, @media_folder] do |f|
     %section
       = f.text_field :name, placeholder: Spina::MediaFolder.human_attribute_name(:name)
     %footer

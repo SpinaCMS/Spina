@@ -8,6 +8,38 @@
       input[type="radio"], input[type="checkbox"]
         display: none
 
+.gallery-select-container
+  display: flex
+  width: 100%
+
+  .gallery-select
+    flex: 1
+    max-height: 100%
+    overflow: scroll
+
+  .gallery-select-sidebar
+    border-left: 1px solid #ddd
+    box-shadow: 0 0 15px rgba(0, 0, 0, .15)
+    margin: -20px -20px -20px 0
+    padding: 20px
+    width: 300px
+
+.gallery-select-sidebar form
+  display: flex
+  flex-direction: column
+  height: 100%
+  justify-content: space-between
+
+.gallery-select-action-bar
+  align-items: center
+  display: flex
+
+  .button
+    margin-bottom: 0
+
+  button
+    margin-right: 0
+
 .gallery
   margin: 20px 0
 
@@ -81,7 +113,7 @@
         line-height: 15px
         text-align: left
         transition: all 0.2s ease
-        transform: translateY(-100%)
+        opacity: 0
         padding: 10px
         position: absolute
         word-break: break-word
@@ -90,7 +122,7 @@
     &.ui-draggable:not(.ui-draggable-disabled):hover
       cursor: move
 
-    &.ui-draggable-disabled:hover
+    &.ui-draggable-disabled:hover, &:not(.ui-draggable):hover
       .overlay
         background: rgba(0, 0, 0, 0.5)
 
@@ -99,7 +131,7 @@
           transform: translateY(0%)
 
         .photo-name
-          transform: translateY(0%)
+          opacity: 1
 
     &.dropping:not(.media-folder)
       transform: scale(0.8)
@@ -110,7 +142,7 @@
     form
       height: 100%
 
-.gallery form .item .overlay a
+.gallery-select .item .overlay a
   display: none
 
 .gallery:after
@@ -119,7 +151,7 @@
   display: block
 
 .gallery-select
-  margin: -8px
+  margin: 0
 
   &.gallery-select-multiple
     padding-bottom: 70px
@@ -187,15 +219,16 @@
       opacity: .7
 
   .gallery-select-action-bar
+    align-items: center
     background: #fff
     border-top: 1px solid #e5e5e5
-    bottom: 0px
-    clear: both
-    margin: 0 -12px
-    padding: 12px
-    position: absolute
-    width: 100%
-    z-index: 3
+    display: flex
+    justify-content: flex-end
+    margin-top: 12px
+    padding: 12px 12px 0
+
+    .button
+      margin: 0 0 0 4px
 
 // Customfile
 
@@ -241,7 +274,7 @@
   &:hover .customfile:before
     color: #333
 
-  &:hover .new_photo label
+  &:hover .new_photo label, &:hover .new_image label
     color: #333
 
   .customfile-feedback
@@ -263,7 +296,7 @@
   .customfile-button
     display: none
 
-  .new_photo label
+  .new_photo label, .new_image label
     color: #999
     font-size: 13px
     font-weight: 600

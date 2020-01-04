@@ -4,9 +4,11 @@ module Spina
   module Admin
     class LoginTest < ActionDispatch::IntegrationTest
       setup do
+        host! "dummy.test"
+        
         @routes = Engine.routes
-        FactoryGirl.create :account
-        @user = FactoryGirl.create :user
+        FactoryBot.create :account
+        @user = FactoryBot.create :user
       end
 
       test "login and browse pages" do

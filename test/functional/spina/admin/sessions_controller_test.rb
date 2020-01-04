@@ -5,7 +5,7 @@ module Spina
     class SessionsControllerTest < ActionController::TestCase
       setup do
         @routes = ::Spina::Engine.routes
-        @user = FactoryGirl.create :user
+        @user = FactoryBot.create :user
       end
 
       test "login renders the correct layout" do

@@ -1,6 +1,6 @@
 module Spina
   class MediaFolder < ApplicationRecord
-    has_many :photos, dependent: :nullify
+    has_many :images, dependent: :nullify
 
     validates :name, presence: true, uniqueness: true
   end

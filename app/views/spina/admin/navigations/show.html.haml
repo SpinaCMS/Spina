@@ -4,4 +4,4 @@
 .well
   .dd#pages_list{data: {:"sort-url" => spina.sort_admin_navigation_url(@navigation) }}
     %ol.dd-list
-      = render partial: 'navigation_item_nested_list', collection: @navigation.navigation_items.roots
+      = render partial: 'navigation_item_nested_list', collection: @navigation.navigation_items.roots.sorted

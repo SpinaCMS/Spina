@@ -1,5 +1,5 @@
 = form_tag spina.admin_password_resets_path, method: :post, id: "login_wrapper" do
-  = image_tag 'spina/spina-large.png'
+  = image_tag 'spina/spina.svg', width: 72, height: 54
   - if flash[:alert].present?
     .failed-to-login.animated.fadeInDown
       .icon.icon-cross

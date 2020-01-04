@@ -16,12 +16,6 @@
           .select-dropdown.account-theme{data: {layout_parts: current_theme.layout_parts.map{|layout_part| layout_part[:name]}}}
             - options = options_for_select(::Spina::Theme.all.map { |theme| [theme.name, theme.name, {'data-layout-parts' => theme.layout_parts.map{|layout_part| layout_part[:name] }}] }, current_account.theme)
             = f.select :theme, options
-      .horizontal-form-group
-        .horizontal-form-label
-          = Spina::Account.human_attribute_name(:logo)
-        .horizontal-form-content
-          = image_tag current_account.logo.url if current_account.logo.present?
-          = f.file_field :logo
 
       = f.fields_for :layout_parts do |ff|
         .horizontal-form-group.layout-part{data: {name: ff.object.name}}

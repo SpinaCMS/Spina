@@ -1,0 +1,227 @@
+trix-toolbar
+  .trix-button-group
+    border: 0
+
+    &:not(:first-child)
+      margin-left: 10px
+
+  .trix-button
+    @extend .button
+    border-bottom: 0
+    border-radius: 0
+    margin: 0
+
+    &:disabled
+      color: rgba(0, 0, 0, .6)
+
+    &:not(:first-child)
+      border-left: 0
+
+    &:first-child
+      border-top-left-radius: 3px
+      border-bottom-left-radius: 3px
+
+    &:last-child
+      border-top-right-radius: 3px
+      border-bottom-right-radius: 3px
+
+    &.trix-active
+      background: $primary-color
+      color: #fff
+
+  .trix-button--text
+    padding-left: 12px
+    padding-right: 12px
+
+  .trix-button--icon
+    padding: 18px 16px
+
+    &::before
+      background: none
+      font-family: $icon-font
+      display: inline-block
+      font-weight: 900
+      line-height: 36px
+      opacity: 1
+      text-indent: 0
+
+    &.trix-button--icon-bold
+      &::before
+        @extend .icon-bold:before
+
+    &.trix-button--icon-italic
+      &::before
+        @extend .icon-italic:before
+
+    &.trix-button--icon-strike
+      &::before
+        @extend .icon-strikethrough:before
+
+    &.trix-button--icon-link
+      &::before
+        @extend .icon-link:before
+
+    &.trix-button--icon-image
+      &::before
+        @extend .icon-image:before
+
+    &.trix-button--icon-quote
+      &::before
+        @extend .icon-quote-right:before
+
+    &.trix-button--icon-code
+      &::before
+        @extend .icon-code:before
+
+    &.trix-button--icon-bullet-list
+      &::before
+        @extend .icon-list:before
+
+    &.trix-button--icon-number-list
+      &::before
+        @extend .icon-list-ol:before
+
+    &.trix-button--icon-decrease-nesting-level
+      &::before
+        @extend .icon-outdent:before
+
+    &.trix-button--icon-increase-nesting-level
+      &::before
+        @extend .icon-indent:before
+
+    &.trix-button--icon-undo
+      &::before
+        @extend .icon-undo:before
+
+    &.trix-button--icon-redo
+      &::before
+        @extend .icon-redo:before
+
+  .trix-dialog
+    border-top-color: $primary-color
+    border-radius: 3px
+
+trix-editor
+  line-height: 18px
+  min-height: 100px
+
+  h1, h2, h3, h4, h5, h6
+    padding-left: 24px
+    position: relative
+
+    &:after
+      color: #ccc
+      content: "H1"
+      font-size: 12px
+      font-weight: bold
+      left: 0px
+      line-height: inherit
+      position: absolute
+      top: 0px
+
+  h1, h2, h3, h4, h5, h6
+    font-size: 24px
+    font-weight: 600
+    line-height: 38px
+
+  h2
+    font-size: 22px
+    line-height: 34px
+
+  h3
+    font-size: 20px
+    line-height: 30px
+
+  h4
+    font-size: 18px
+    line-height: 26px
+
+  h5
+    font-size: 16px
+    line-height: 22px
+
+  h6
+    font-size: 14px
+    line-height: 18px
+
+  h2:after
+    content: "H2"
+
+  h3:after
+    content: "H3"
+
+  h4:after
+    content: "H4"
+
+  h5:after
+    content: "H5"
+
+  h6:after
+    content: "H6"
+
+  a
+    text-decoration: underline
+
+  p
+    margin: 0
+
+  ul
+    list-style: disc
+    padding-left: 20px
+
+  figure.attachment
+    .attachment__metadata
+      display: none
+
+  textarea
+    min-height: 0
+    border-radius: 0
+    box-shadow: none
+    font-size: 16px
+
+  .trix-attachment-spina-image
+    cursor: default
+    display: block
+    margin-bottom: 40px
+    position: relative
+
+    &[data-label=""]
+      margin-bottom: 0px
+
+      &:before
+        display: none
+
+    img
+      border-radius: 4px
+      display: block
+      max-height: 150px
+      max-width: 200px
+
+    &:before
+      background: #eee
+      border-radius: 40px
+      bottom: -36px
+      color: #666
+      content: attr(data-label)
+      display: block
+      font-size: 13px
+      font-style: italic
+      line-height: 16px
+      left: 0px
+      padding: 6px 12px
+      position: absolute
+      text-align: left
+      white-space: nowrap
+      width: auto
+
+  figure[data-trix-mutable] 
+    .trix-attachment-spina-image:before
+      background: $primary-color
+      color: white
+
+    &.attachment img
+      box-shadow: 0 0 15px rgba(0, 0, 0, .15)
+
+  .trix-button--remove
+    border: none
+    box-shadow: 0 0 5px rgba(0, 0, 0, .15) 

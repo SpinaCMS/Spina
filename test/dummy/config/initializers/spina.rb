@@ -3,8 +3,6 @@ Spina.configure do |config|
   config.locales = [:en, :nl]
   # Run `rake spina:update_translations` after you add any new locale.
 
-  config.pages_controller = 'pages'
-
   # Important Note
   # ==============
 
@@ -19,4 +17,7 @@ Spina.configure do |config|
 
   # Note that you might need to remove cached asset after changing this value
   # config.max_page_depth = 5
+
+  # Base css color for Spina
+  config.primary_color = '#6865b4'
 end
