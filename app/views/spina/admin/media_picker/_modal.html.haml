@@ -48,6 +48,19 @@
                 .form-label Link to URL
                 .form-control= text_field_tag :link_to_url, nil, placeholder: "URL"
 
+              .form-group
+                .form-label Image Alignment
+                .radio
+                  .form-control
+                    = radio_button_tag :alignment, :center
+                    = label_tag 'alignment_center', 'full width'
+                  .form-control
+                    = radio_button_tag :alignment, :left
+                    = label_tag 'alignment_left', 'left'
+                  .form-control
+                    = radio_button_tag :alignment, :right
+                    = label_tag 'alignment_right', 'right'
+
           .gallery-select-action-bar
             = link_to t('spina.cancel'), "#", class: 'button button-link', data: {dismiss: 'modal'}
             = button_tag type: 'submit', class: 'button button-primary button-large', style: 'margin-bottom: 0px' do

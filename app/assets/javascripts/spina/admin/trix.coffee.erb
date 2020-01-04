@@ -90,19 +90,22 @@ class Spina.TrixAttachment
     toolbar_id = $(this).closest('trix-toolbar').attr('id')
     $.get("<%= Spina::Engine.routes.url_helpers.admin_media_picker_path %>" + "?trix_toolbar_id=#{toolbar_id}")
 
-  @imageInsert: (e, url, alt = "", link_to_url = "") ->
+  @imageInsert: (e,url, alignment = "", alt = "", link_to_url = "", orientation = "") ->
     labels = []
     labels.push "✍️ #{alt}" if alt != ""
     labels.push "🔗 #{link_to_url}" if link_to_url != ""
     label = labels.join("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;")
 
+    if alignment != ""
+      cssClass = "position-#{alignment}"
+
     if link_to_url != ""
       attachment = new Trix.Attachment({content: "<a href='#{link_to_url}' class='trix-attachment-spina-image' data-label='#{label}'>
-        <img src='#{url}' alt='#{alt}' />
+        <img src='#{url}' alt='#{alt}' #{cssClass} data-orientation='#{orientation}' />
       </a>"})
     else
       attachment = new Trix.Attachment({content: "<span class='trix-attachment-spina-image' data-label='#{label}'>
-        <img src='#{url}' alt='#{alt}' />
+        <img src='#{url}' alt='#{alt}' class='#{cssClass}' data-orientation='#{orientation}' />
       </span>"})
 
     this.editor.insertAttachment(attachment)

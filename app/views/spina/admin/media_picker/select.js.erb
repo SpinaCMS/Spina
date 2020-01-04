@@ -8,7 +8,17 @@ hidden_input.val("");
 
   // Trix editor
   <% if params[:trix_toolbar_id].present? %>
-    $('trix-editor[toolbar="<%= params[:trix_toolbar_id] %>"]').trigger('image-insert', ["<%= main_app.url_for(@image.file) %>", "<%= params[:alt] %>", "<%= params[:link_to_url] %>"]);
+    <% if @image.file.analyzed? %>
+      <% orientation = @image.file.metadata[:width] < @image.file.metadata[:height] ? 'portrait' : 'landscape' %>
+    <% end %>
+
+    $('trix-editor[toolbar="<%= params[:trix_toolbar_id] %>"]').trigger('image-insert', [
+      "<%= main_app.url_for(@image.file) %>",
+      "<%= params[:alignment] %>",
+      "<%= params[:alt] %>",
+      "<%= params[:link_to_url] %>",
+      "<%= orientation %>"
+    ]);
      $.hideModal();
   <% end %>
 <% end %>
