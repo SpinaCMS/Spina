@@ -1,7 +1,6 @@
 require 'spina'
 require 'haml-rails'
 require 'sass-rails'
-require 'coffee-rails'
 require 'jquery-rails'
 require 'turbolinks'
 require 'mini_magick'

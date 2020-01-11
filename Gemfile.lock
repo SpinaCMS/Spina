@@ -5,7 +5,6 @@ PATH
       ancestry
       bcrypt
       breadcrumbs_on_rails
-      coffee-rails
       haml-rails
       jquery-rails
       jsonb_accessor (>= 1.0.0)
@@ -87,19 +86,11 @@ GEM
     codeclimate-test-reporter (1.0.9)
       simplecov (<= 0.13)
     coderay (1.1.2)
-    coffee-rails (5.0.0)
-      coffee-script (>= 2.2.0)
-      railties (>= 5.2.0)
-    coffee-script (2.4.1)
-      coffee-script-source
-      execjs
-    coffee-script-source (1.12.2)
     concurrent-ruby (1.1.5)
     crass (1.0.5)
     docile (1.1.5)
     erubi (1.9.0)
     erubis (2.7.0)
-    execjs (2.7.0)
     factory_bot (5.1.1)
       activesupport (>= 4.2.0)
     ffi (1.11.3)
