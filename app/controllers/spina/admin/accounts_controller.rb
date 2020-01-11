@@ -11,10 +11,6 @@ module Spina
         redirect_back fallback_location: spina.edit_admin_account_path
       end
 
-      def analytics
-        add_breadcrumb I18n.t('spina.preferences.analytics'), spina.analytics_admin_account_path
-      end
-
       def social
         add_breadcrumb I18n.t('spina.preferences.social_media'), spina.social_admin_account_path
       end
@@ -29,10 +25,10 @@ module Spina
 
       def account_params
         params.require(:account).permit(:address, :city, :email, :name, :phone,
-                                        :postal_code, :preferences, :google_analytics,
-                                        :google_site_verification, :facebook, :twitter, :google_plus,
+                                        :postal_code, :preferences,
+                                        :facebook, :twitter, :google_plus,
                                         :instagram, :youtube, :linkedin,
-                                        :kvk_identifier, :theme, :vat_identifier, :robots_allowed,
+                                        :kvk_identifier, :theme, :vat_identifier,
                                         layout_parts_attributes:
                                           [:id, :layout_partable_type, :layout_partable_id,
                                             :name, :title, :position, :content, :page_id,

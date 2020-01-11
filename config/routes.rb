@@ -6,7 +6,6 @@ Spina::Engine.routes.draw do
     resource :account do
       member do
         get :style
-        get :analytics
         get :social
       end
     end
@@ -61,9 +60,6 @@ Spina::Engine.routes.draw do
 
   # Sitemap
   resource :sitemap
-
-  # Robots.txt
-  get '/robots', to: 'pages#robots', constraints: { format: 'txt' }
 
   unless Spina.config.disable_frontend_routes
     # Frontend

@@ -46,8 +46,6 @@
             = link_to t('spina.preferences.users'), spina.admin_users_path
         %li{class: ('active' if params[:action] == 'social')}
           = link_to t('spina.preferences.social_media'), spina.social_admin_account_path
-        %li{class: ('active' if params[:action] == 'analytics')}
-          = link_to t('spina.preferences.analytics'), spina.analytics_admin_account_path
 
         - Spina::Plugin.all.each do |plugin|
           - if current_theme.plugins.include? plugin.name

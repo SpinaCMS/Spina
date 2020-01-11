@@ -6,9 +6,7 @@ it:
         city: Città
         email: Email
         facebook: Facebook
-        google_analytics: Google Analytics
         google_plus: Google+
-        google_site_verification: Google Site Verification
         instagram: Instagram
         kvk_identifier: Camera di commercio
         kvk_identifier_description: Camera di commercio
@@ -17,7 +15,6 @@ it:
         name: Nome sito
         phone: Telefono
         postal_code: CAP
-        robots_allowed: Visibile ai motori di ricerca
         theme: Tema sito
         twitter: Twitter
         vat_identifier: Partita IVA
@@ -197,13 +194,9 @@ it:
       select_images: Seleziona immagini
       upload_image: Carica un immagine
     preferences:
-      Analytics: Analytics
       account: Generale
       account_description: Impostazioni personali
       account_save: Salva impostazioni
-      analytics: Analytics e motori di ricerca
-      analytics_description: Collega il tuo account per gli analytics in tempo reale
-      analytics_save: Salva impostazioni
       domain_name_settings: Impostazioni di dominio
       domain_name_settings_description: Imposta il tuo dominio
       social_media: Social media

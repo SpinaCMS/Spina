@@ -10,7 +10,6 @@ class CreateSpinaTables < ActiveRecord::Migration[4.2]
       t.text     "preferences"
       t.datetime "created_at",                     null: false
       t.datetime "updated_at",                     null: false
-      t.boolean  "robots_allowed", default: false
     end
 
     create_table "spina_attachment_collections", force: :cascade do |t|

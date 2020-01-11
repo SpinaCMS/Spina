@@ -6,9 +6,7 @@ de:
         city: Stadt
         email: E-Mail
         facebook: Facebook
-        google_analytics: Google Analytics
         google_plus: Google+
-        google_site_verification: Google Site Verification
         instagram: Instagram
         kvk_identifier: Handelskammer
         kvk_identifier_description: Handelskammer
@@ -17,7 +15,6 @@ de:
         name: Name der Webseite
         phone: Telefon
         postal_code: PLZ
-        robots_allowed: Sichtbar für Suchmaschinen
         theme: Webseite Theme
         twitter: Twitter
         vat_identifier: USt-IdNr
@@ -37,7 +34,7 @@ de:
         pages_description: Wähle die Seiten aus, die du in diesem Menü verwenden willst
       spina/page:
         ancestry: Elternseite
-        created_at: 
+        created_at:
         description: Meta Beschreibung
         description_description: Diese Beschreibung wird in den Suchergebnissen angezeigt
         description_placeholder: Kurze Beschreibung deiner Seite
@@ -49,7 +46,7 @@ de:
         menu_title: Menü-Titel
         menu_title_placeholder: Leer lassen um den Seiten-Titel zu verwenden
         no_parent: Kein Eltern Element
-        resource: 
+        resource:
         seo_title: SEO <title>
         seo_title_placeholder: Dieser Titel wird im <title>-tag verwendet
         show_in_menu: In der Navigation anzeigen
@@ -60,10 +57,10 @@ de:
         title_placeholder: Seiten-Titel
         view_template: Seiten-Template
       spina/resource:
-        label: 
-        order_by: 
-        parent_page: 
-        view_template: 
+        label:
+        order_by:
+        parent_page:
+        view_template:
       spina/user:
         admin: Administrator
         admin_description: Administratoren können Benutzer anlegen
@@ -111,45 +108,45 @@ de:
       success: Du kannst dein neues Passwort verwenden
       unknown_user: Dieser Nutzer existiert nicht
     images:
-      back: 
-      cannot_be_created: 
-      choose_image: 
-      choose_images: 
-      delete: 
-      delete_confirmation: 
-      delete_folder: 
-      done_organizing: 
-      insert_photo: 
-      insert_photos: 
-      link: 
-      new_folder: 
-      organize: 
-      remove_image: 
-      upload: 
-      upload_image: 
+      back:
+      cannot_be_created:
+      choose_image:
+      choose_images:
+      delete:
+      delete_confirmation:
+      delete_folder:
+      done_organizing:
+      insert_photo:
+      insert_photos:
+      link:
+      new_folder:
+      organize:
+      remove_image:
+      upload:
+      upload_image:
     languages:
-      bg: 
-      de: 
+      bg:
+      de:
       en: Englisch
-      es: 
-      fr: 
-      id: 
-      it: 
+      es:
+      fr:
+      id:
+      it:
       nl: Holländisch
-      pl: 
-      pt-BR: 
-      ro: 
-      ru: 
-      sv: 
-      th: 
-      tr: 
-      zh-CN: 
+      pl:
+      pt-BR:
+      ro:
+      ru:
+      sv:
+      th:
+      tr:
+      zh-CN:
     login: Login
     logout: Logout
     main_menu: Hauptmenü
     media_library:
       attachments: Dokumente
-      images: 
+      images:
       photos: Bilder
     modal:
       agree: Ja, ich bin sicher
@@ -185,7 +182,7 @@ de:
     photos:
       cannot_be_created: 'Bild kann nicht verarbeitet werden:'
       choose_images: Wähle Bilder aus
-      delete: 
+      delete:
       delete_confirmation: Bist du sicher, dass du das Bild <strong>%{image}</strong> löschen möchtest?
       delete_folder: Lösche Ordner
       done_organizing: Organisieren abgeschlossen
@@ -194,16 +191,12 @@ de:
       link: 'URL des Bildes:'
       new_folder: Neuer Ordner
       organize: Organisiere Bilder
-      select_images: 
+      select_images:
       upload_image: Bild hochladen
     preferences:
-      Analytics: 
       account: Allgemein
       account_description: Persönliche Einstellungen
       account_save: Einstellungen speichern
-      analytics: Analytics und Suchmaschinen
-      analytics_description: Vernetzte deinen Account für real-time Analysen
-      analytics_save: Einstellungen speichern
       domain_name_settings: Domain Einstellungen
       domain_name_settings_description: Richte deine Domain ein
       social_media: Social Media
@@ -217,7 +210,7 @@ de:
       users_description: Benutzer und Administratoren verwalten
     preview_website: Vorschau der Webseite
     resources:
-      edit: 
+      edit:
     save: Speichern
     search: Suchen...
     settings:
@@ -228,11 +221,11 @@ de:
       delete_confirmation: Bist du sicher, dass du den Benutzer <strong>%{user}</strong> löschen möchtest?
       new: Neuer Benutzer
       save: Benutzer speichern
-    visit_page: 
+    visit_page:
     website:
       all_pages: Alle Seiten
       documents: Dokumente
-      images: 
+      images:
       media_library: Medien-Bibliothek
       media_library_description: Hier findest du alle deine Bilder und Dokumente
       pages: Seiten

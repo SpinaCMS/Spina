@@ -6,23 +6,20 @@ bg:
         city: Град
         email: Email
         facebook: Facebook
-        google_analytics: Google Analytics
         google_plus: Google+
-        google_site_verification: Google Site Verification
-        instagram: 
+        instagram:
         kvk_identifier: Търговска камара
         kvk_identifier_description: Търговска камара
-        linkedin: 
+        linkedin:
         logo: Лого
         name: Име на сайта
         phone: Телефон
         postal_code: Пощенски код
-        robots_allowed: Видим за търсачки и роботи
         theme: Тема на сайта
         twitter: Twitter
         vat_identifier: Булстат
         vat_identifier_description: Булстат на юридическото лице представящо сайта
-        youtube: 
+        youtube:
       spina/attachment:
         created_at: Създадено на
         name: Име на файла
@@ -49,7 +46,7 @@ bg:
         menu_title: Име в навигацията
         menu_title_placeholder: Ако е оставено празно ще се използва заглавието на страницата
         no_parent: Няма родителска страница
-        resource: 
+        resource:
         seo_title: SEO <title>
         seo_title_placeholder: Това заглавие се отпечатва в <title>-tag
         show_in_menu: Покажи в навигацията
@@ -111,22 +108,22 @@ bg:
       success: Вече може да използвате новата си парола
       unknown_user: Този потребител не съществува
     images:
-      back: 
-      cannot_be_created: 
-      choose_image: 
-      choose_images: 
-      delete: 
-      delete_confirmation: 
-      delete_folder: 
-      done_organizing: 
-      insert_photo: 
-      insert_photos: 
-      link: 
-      new_folder: 
-      organize: 
-      remove_image: 
-      upload: 
-      upload_image: 
+      back:
+      cannot_be_created:
+      choose_image:
+      choose_images:
+      delete:
+      delete_confirmation:
+      delete_folder:
+      done_organizing:
+      insert_photo:
+      insert_photos:
+      link:
+      new_folder:
+      organize:
+      remove_image:
+      upload:
+      upload_image:
     languages:
       bg: Български
       de: Немски
@@ -149,7 +146,7 @@ bg:
     main_menu: Основно меню
     media_library:
       attachments: Документи
-      images: 
+      images:
       photos: Изображения
     modal:
       agree: Да, сигурен съм
@@ -194,16 +191,12 @@ bg:
       link: 'URL на изображението:'
       new_folder: Нова папка
       organize: Организиране на изображения
-      select_images: 
+      select_images:
       upload_image: Качване на изображение
     preferences:
-      Analytics: 
       account: Главни
       account_description: Лични настройки
       account_save: Запис на настройки
-      analytics: Анализи и търсене
-      analytics_description: Свържете вашият профил с анализи в реално време
-      analytics_save: Запис на настройки
       domain_name_settings: Настройки на домейн
       domain_name_settings_description: Конфигурирайте собствен домейн
       social_media: Социални профили
@@ -228,11 +221,11 @@ bg:
       delete_confirmation: Сигурен ли сте, че искате да изтриете потребител <strong>%{user}</strong>?
       new: Нов потребител
       save: Запис на потребител
-    visit_page: 
+    visit_page:
     website:
       all_pages: Всички страници
       documents: Документи
-      images: 
+      images:
       media_library: Библиотека с ресурси
       media_library_description: Тук ще намерите всички качени изборажения, файлове и документи
       pages: Страници

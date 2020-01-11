@@ -6,23 +6,20 @@ sv:
         city: Stad
         email: Email
         facebook: Facebook
-        google_analytics: Google Analytics
         google_plus: Google+
-        google_site_verification: Google Site Verification
-        instagram: 
+        instagram:
         kvk_identifier: Handelskammare
         kvk_identifier_description: Handelskammare
-        linkedin: 
+        linkedin:
         logo: Logo
         name: Hemsidenamn
         phone: Telefon
         postal_code: Postkod
-        robots_allowed: Synlig i sökmotorer
         theme: Hemsidetema
         twitter: Twitter
         vat_identifier: moms
         vat_identifier_description: moms
-        youtube: 
+        youtube:
       spina/attachment:
         created_at: Skapad
         name: Filnamn
@@ -37,7 +34,7 @@ sv:
         pages_description: Välj sidorna du vill använda i denna navigering
       spina/page:
         ancestry: Föräldersida
-        created_at: 
+        created_at:
         description: Metabeskrivning
         description_description: Denna beskrivning visas i dina sökresultat
         description_placeholder: Kort beskrivning av din sida
@@ -49,7 +46,7 @@ sv:
         menu_title: Navigeringstitel
         menu_title_placeholder: Lämna tom för att använda sidotiteln
         no_parent: Ingen förälder
-        resource: 
+        resource:
         seo_title: SEO <title>
         seo_title_placeholder: Denna titel används i <title>-taggen
         show_in_menu: Visa i navigering
@@ -60,10 +57,10 @@ sv:
         title_placeholder: Sidtitel
         view_template: Sidmall
       spina/resource:
-        label: 
-        order_by: 
-        parent_page: 
-        view_template: 
+        label:
+        order_by:
+        parent_page:
+        view_template:
       spina/user:
         admin: Administratör
         admin_description: Administratörer kan skapa användare
@@ -111,45 +108,45 @@ sv:
       success: Du kan använda ditt nya lösenord
       unknown_user: Denna användare finns inte
     images:
-      back: 
-      cannot_be_created: 
-      choose_image: 
-      choose_images: 
-      delete: 
-      delete_confirmation: 
-      delete_folder: 
-      done_organizing: 
-      insert_photo: 
-      insert_photos: 
-      link: 
-      new_folder: 
-      organize: 
-      remove_image: 
-      upload: 
-      upload_image: 
+      back:
+      cannot_be_created:
+      choose_image:
+      choose_images:
+      delete:
+      delete_confirmation:
+      delete_folder:
+      done_organizing:
+      insert_photo:
+      insert_photos:
+      link:
+      new_folder:
+      organize:
+      remove_image:
+      upload:
+      upload_image:
     languages:
-      bg: 
-      de: 
-      en: 
-      es: 
-      fr: 
-      id: 
-      it: 
-      nl: 
-      pl: 
-      pt-BR: 
-      ro: 
-      ru: 
-      sv: 
-      th: 
-      tr: 
-      zh-CN: 
+      bg:
+      de:
+      en:
+      es:
+      fr:
+      id:
+      it:
+      nl:
+      pl:
+      pt-BR:
+      ro:
+      ru:
+      sv:
+      th:
+      tr:
+      zh-CN:
     login: Logga in
     logout: Logga ut
     main_menu: Huvudmeny
     media_library:
       attachments: Dokument
-      images: 
+      images:
       photos: Bilder
     modal:
       agree: Ja, jag är säker
@@ -185,7 +182,7 @@ sv:
     photos:
       cannot_be_created: 'Bilden kunde inte behandlas:'
       choose_images: Välj bilder
-      delete: 
+      delete:
       delete_confirmation: Är du säker på att du vill ta bort bilden <strong>image</strong>?
       delete_folder: Radera mapp
       done_organizing: Klar med organisering
@@ -194,16 +191,12 @@ sv:
       link: 'URL till din bild:'
       new_folder: Ny mapp
       organize: Organisera bilder
-      select_images: 
+      select_images:
       upload_image: Ladda up en bild
     preferences:
-      Analytics: 
       account: Allmänt
       account_description: Personliga inställningar
       account_save: Spara inställningar
-      analytics: Analys och sök
-      analytics_description: Länka ditt konto för realtidsanalys
-      analytics_save: Spara inställningar
       domain_name_settings: Domäninställningar
       domain_name_settings_description: Ställ in din egen domän
       social_media: Social media
@@ -217,7 +210,7 @@ sv:
       users_description: Hantera användare och administratörer
     preview_website: Förhandsvisa hemsida
     resources:
-      edit: 
+      edit:
     save: Spara
     search: Sök...
     settings:
@@ -228,11 +221,11 @@ sv:
       delete_confirmation: Är du säker på att du vill ta bort användaren <strong>%{user}</strong>?
       new: Ny användare
       save: Spara användare
-    visit_page: 
+    visit_page:
     website:
       all_pages: Alla sidor
       documents: Dokument
-      images: 
+      images:
       media_library: Mediebibliotek
       media_library_description: Här finns alla dina bilder och dokument
       pages: Sidor

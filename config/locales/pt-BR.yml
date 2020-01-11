@@ -6,9 +6,7 @@ pt-BR:
         city: Cidade
         email: Email
         facebook: Facebook
-        google_analytics: Google Analytics
         google_plus: Google+
-        google_site_verification: Verificação do Google Site
         instagram: Instagram
         kvk_identifier: Câmara de Comércio
         kvk_identifier_description: Câmara de Comércio
@@ -17,7 +15,6 @@ pt-BR:
         name: Nome do site
         phone: Telefone
         postal_code: Caixa Postal
-        robots_allowed: Visível para sistemas de busca
         theme: Tema do site
         twitter: Twitter
         vat_identifier: VAT
@@ -37,7 +34,7 @@ pt-BR:
         pages_description: Selecione as páginas que você quer usar nesta navegação
       spina/page:
         ancestry: Página pai
-        created_at: 
+        created_at:
         description: Meta descrição
         description_description: Esta descrição será exibida nos resultados de busca
         description_placeholder: Descrição resumida da sua página
@@ -49,7 +46,7 @@ pt-BR:
         menu_title: Título do menu
         menu_title_placeholder: Deixe vazio para utilizar o título da página
         no_parent: Nenhum pai
-        resource: 
+        resource:
         seo_title: SEO <title>
         seo_title_placeholder: Este título é utilizado na tag <title>
         show_in_menu: Mostrar no menu de navegação
@@ -60,10 +57,10 @@ pt-BR:
         title_placeholder: Título da página
         view_template: Modelo de página
       spina/resource:
-        label: 
-        order_by: 
-        parent_page: 
-        view_template: 
+        label:
+        order_by:
+        parent_page:
+        view_template:
       spina/user:
         admin: Administrador
         admin_description: Administradores podem criar usuários
@@ -111,9 +108,9 @@ pt-BR:
       success: Você já pode usar sua nova senha
       unknown_user: Este usuário não existe
     images:
-      back: 
+      back:
       cannot_be_created: 'Imagem não pôde ser processada:'
-      choose_image: 
+      choose_image:
       choose_images: Escolher imagens
       delete: Excluir
       delete_confirmation: Tem certeza que deseja remover esta <strong>imagem</strong>?
@@ -124,26 +121,26 @@ pt-BR:
       link: 'URL da sua imagem:'
       new_folder: Nova pasta
       organize: Organizar imagens
-      remove_image: 
-      upload: 
+      remove_image:
+      upload:
       upload_image: Enviar uma imagem
     languages:
-      bg: 
-      de: 
+      bg:
+      de:
       en: Inglês
-      es: 
-      fr: 
-      id: 
-      it: 
+      es:
+      fr:
+      id:
+      it:
       nl: Neerlandês
-      pl: 
-      pt-BR: 
-      ro: 
-      ru: 
-      sv: 
-      th: 
-      tr: 
-      zh-CN: 
+      pl:
+      pt-BR:
+      ro:
+      ru:
+      sv:
+      th:
+      tr:
+      zh-CN:
     login: Login
     logout: Sair
     main_menu: Menu principal
@@ -194,16 +191,12 @@ pt-BR:
       link: 'URL da sua imagem:'
       new_folder: Nova pasta
       organize: Organizar imagens
-      select_images: 
+      select_images:
       upload_image: Enviar uma imagem
     preferences:
-      Analytics: 
       account: Gerais
       account_description: Preferências pessoais
       account_save: Salvar preferências
-      analytics: Analytics e sistemas de busca
-      analytics_description: Vincule sua conta para análise em tempo real
-      analytics_save: Salvar preferências
       domain_name_settings: Configurações de domínio
       domain_name_settings_description: Configurar seu próprio domínio
       social_media: Social media
@@ -217,7 +210,7 @@ pt-BR:
       users_description: Gerenciar usuários e administradores
     preview_website: Pré-visualizar site
     resources:
-      edit: 
+      edit:
     save: Salvar
     search: Buscar...
     settings:
@@ -228,7 +221,7 @@ pt-BR:
       delete_confirmation: Tem certeza que deseja remover o usuário <strong>%{user}</strong>?
       new: Novo usuário
       save: Salvar usuário
-    visit_page: 
+    visit_page:
     website:
       all_pages: Todas as páginas
       documents: Documentos

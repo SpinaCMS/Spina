@@ -6,9 +6,7 @@ en:
         city: City
         email: Email
         facebook: Facebook
-        google_analytics: Google Analytics
         google_plus: Google+
-        google_site_verification: Google Site Verification
         instagram: Instagram
         kvk_identifier: Chamber of commerce
         kvk_identifier_description: Chamber of commerce
@@ -17,7 +15,6 @@ en:
         name: Website name
         phone: Phone
         postal_code: Postal code
-        robots_allowed: Visible in search engines
         theme: Theme website
         twitter: Twitter
         vat_identifier: VAT
@@ -197,13 +194,9 @@ en:
       select_images: Select images
       upload_image: Upload an image
     preferences:
-      Analytics: Analytics
       account: General
       account_description: Personal preferences
       account_save: Save preferences
-      analytics: Analytics and search
-      analytics_description: Link your account with for real-time analytics
-      analytics_save: Save preferences
       domain_name_settings: Domain settings
       domain_name_settings_description: Setup your own custom domain
       social_media: Social media

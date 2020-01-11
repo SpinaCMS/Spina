@@ -6,23 +6,20 @@ th:
         city: เมือง
         email: อีเมล
         facebook: Facebook
-        google_analytics: วิเคราะห์ทาง Google
         google_plus: Google+
-        google_site_verification: ตรวจสอบไซต์
-        instagram: 
+        instagram:
         kvk_identifier: การค้า
         kvk_identifier_description: คำอธิบายทางการค้า
-        linkedin: 
+        linkedin:
         logo: โลโก้
         name: ชื่อเว็บไซต์
         phone: โทรศัพท์
         postal_code: รหัสไปรษณีย์
-        robots_allowed: ยอมรับ
         theme: ธีม
         twitter: Twitter
         vat_identifier: ภาษีมูลค่าเพิ่ม
         vat_identifier_description: คำอธิบายภาษีมูลค่าเพิ่ม
-        youtube: 
+        youtube:
       spina/attachment:
         created_at: สร้าง
         name: ชื่อ
@@ -37,7 +34,7 @@ th:
         pages_description: เลือกหน้าเพจที่คุณต้องการใช้ในการนำทางนี้
       spina/page:
         ancestry: หน้าแรก
-        created_at: 
+        created_at:
         description: คำอธิบาย meta
         description_description: คำอธิบายนี้จะปรากฏในผลลัพธ์การค้นหา
         description_placeholder: คำอธิบายโดยย่อของหน้าเว็บของคุณ
@@ -49,7 +46,7 @@ th:
         menu_title: ชื่อการนำทาง
         menu_title_placeholder: เว้นว่างไว้เพื่อใช้ชื่อหน้า
         no_parent: ไม่มีเพจระดับบน
-        resource: 
+        resource:
         seo_title: SEO <title>
         seo_title_placeholder: ชื่อนี้ใช้ใน <title> -tag
         show_in_menu: แสดงการนำทาง
@@ -60,10 +57,10 @@ th:
         title_placeholder: ชื่อเรื่องของหน้า
         view_template: เทมเพลตของเพจ
       spina/resource:
-        label: 
-        order_by: 
-        parent_page: 
-        view_template: 
+        label:
+        order_by:
+        parent_page:
+        view_template:
       spina/user:
         admin: ผู้ดูแลระบบ
         admin_description: ผู้ดูแลระบบสามารถสร้างผู้ใช้ได้
@@ -111,45 +108,45 @@ th:
       success: คุณสามารถใช้รหัสผ่านใหม่ได้
       unknown_user: ไม่มีผู้ใช้รายนี้
     images:
-      back: 
-      cannot_be_created: 
-      choose_image: 
-      choose_images: 
-      delete: 
-      delete_confirmation: 
-      delete_folder: 
-      done_organizing: 
-      insert_photo: 
-      insert_photos: 
-      link: 
-      new_folder: 
-      organize: 
-      remove_image: 
-      upload: 
-      upload_image: 
+      back:
+      cannot_be_created:
+      choose_image:
+      choose_images:
+      delete:
+      delete_confirmation:
+      delete_folder:
+      done_organizing:
+      insert_photo:
+      insert_photos:
+      link:
+      new_folder:
+      organize:
+      remove_image:
+      upload:
+      upload_image:
     languages:
-      bg: 
-      de: 
+      bg:
+      de:
       en: ภาษาอังกฤษ
-      es: 
-      fr: 
-      id: 
-      it: 
+      es:
+      fr:
+      id:
+      it:
       nl: ไทย
-      pl: 
-      pt-BR: 
-      ro: 
-      ru: 
-      sv: 
-      th: 
-      tr: 
-      zh-CN: 
+      pl:
+      pt-BR:
+      ro:
+      ru:
+      sv:
+      th:
+      tr:
+      zh-CN:
     login: ลงชื่อเข้าใช้
     logout: ลงชื่อออก
     main_menu: เมนูหลัก
     media_library:
       attachments: เอกสาร
-      images: 
+      images:
       photos: รูปภาพ
     modal:
       agree: ตกลง
@@ -184,8 +181,8 @@ th:
     permanently_delete: ลบอย่างถาวร
     photos:
       cannot_be_created: 'รูปภาพของคุณไม่สามารถประมวลผลได้:'
-      choose_images: 
-      delete: 
+      choose_images:
+      delete:
       delete_confirmation: คุณแน่ใจหรือไม่ว่าต้องการลบ <strong> รูปภาพนี้ </strong>?
       delete_folder: ลบโฟลเดอร์
       done_organizing: เสร็จสิ้นการจัดรูปภาพ
@@ -197,13 +194,9 @@ th:
       select_images: เลือกรูปภาพ
       upload_image: อัปโหลดรูปภาพ
     preferences:
-      Analytics: วิเคราะห์และเครื่องมือค้นหา
       account: ทั่วไป
       account_description: ความชอบส่วนบุคคล
       account_save: บันทึกการตั้งค่า
-      analytics: 
-      analytics_description: เชื่อมโยงบัญชีของคุณเพื่อการวิเคราะห์แบบเรียลไทม์
-      analytics_save: บันทึกการตั้งค่า
       domain_name_settings: การกำหนดค่าโดเมน
       domain_name_settings_description: ตั้งค่าโดเมนของคุณเอง
       social_media: เครือข่ายทางสังคม
@@ -217,7 +210,7 @@ th:
       users_description: จัดการผู้ใช้และผู้ดูแลระบบ
     preview_website: ตัวอย่างเว็บไซต์
     resources:
-      edit: 
+      edit:
     save: บันทึก
     search: ค้นหา
     settings:
@@ -228,11 +221,11 @@ th:
       delete_confirmation: คุณแน่ใจหรือไม่ว่าต้องการลบผู้ใช้นี้ <strong>%{user}</strong>?
       new: ผู้ใช้ใหม่
       save: บันทึกผู้ใช้
-    visit_page: 
+    visit_page:
     website:
       all_pages: หน้าเพจทั้งหมด
       documents: เอกสาร
-      images: 
+      images:
       media_library: มีเดียไลบรารี
       media_library_description: คุณจะพบรูปภาพและเอกสารทั้งหมดของคุณ
       pages: หน้าเพจ

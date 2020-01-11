@@ -6,9 +6,7 @@ nl:
         city: Plaats
         email: Emailadres
         facebook: Facebook
-        google_analytics: Universal Analytics Code
         google_plus: Google+
-        google_site_verification: Google Site Verification
         instagram: Instagram
         kvk_identifier: KvK-nummer
         kvk_identifier_description: Het is verplicht je KvK-nummer te vermelden op je website
@@ -17,7 +15,6 @@ nl:
         name: Naam website
         phone: Telefoonnummer
         postal_code: Postcode
-        robots_allowed: Zichtbaar in Google
         theme: Layout website
         twitter: Twitter
         vat_identifier: BTW-nummer
@@ -197,13 +194,9 @@ nl:
       select_images: Kies afbeeldingen
       upload_image: Upload een afbeelding
     preferences:
-      Analytics: Analytics
       account: Algemene gegevens
       account_description: Persoonlijke instellingen
       account_save: Gegevens opslaan
-      analytics: Google Analytics
-      analytics_description: Koppel je account voor real-time statistieken
-      analytics_save: Voorkeuren opslaan
       domain_name_settings: Eigen domein instellen
       domain_name_settings_description: Zorg dat je bereikbaar bent via je eigen domeinnaam
       social_media: Social media

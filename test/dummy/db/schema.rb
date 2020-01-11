@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(version: 2019_10_06_142245) do
     t.text "preferences"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "robots_allowed", default: false
   end
 
   create_table "spina_attachment_collections", id: :serial, force: :cascade do |t|
