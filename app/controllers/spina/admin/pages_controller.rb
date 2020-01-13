@@ -42,7 +42,7 @@ module Spina
         render layout: 'spina/admin/admin'
       end
 
-      def update 
+      def update
         respond_to do |format|
           Mobility.locale = @locale
           if @page.update(page_params)
