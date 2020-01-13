@@ -28,16 +28,16 @@ ru:
         name: Название файла
         size: Размер
       spina/media_folder:
-        name: 
+        name:
       spina/navigation:
-        auto_add_pages: 
-        auto_add_pages_description: 
-        label: 
-        pages: 
-        pages_description: 
+        auto_add_pages:
+        auto_add_pages_description:
+        label:
+        pages:
+        pages_description:
       spina/page:
         ancestry: Parent page
-        created_at: 
+        created_at:
         description: Мета описание
         description_description: Это описание будет показано в результатах поиска
         description_placeholder: Краткое описание вашей страницы
@@ -49,7 +49,7 @@ ru:
         menu_title: Навигация
         menu_title_placeholder: Оставьте пустым, чтобы использовать заголовок страницы
         no_parent: No parent
-        resource: 
+        resource:
         seo_title: SEO <title>
         seo_title_placeholder: Это название используется в <title>-tag
         show_in_menu: Показать в навигации
@@ -60,10 +60,10 @@ ru:
         title_placeholder: Заголовок страницы
         view_template: Шаблон страницы
       spina/resource:
-        label: 
-        order_by: 
-        parent_page: 
-        view_template: 
+        label:
+        order_by:
+        parent_page:
+        view_template:
       spina/user:
         admin: Администратор
         admin_description: Администраторы могут создавать пользователей
@@ -111,53 +111,53 @@ ru:
     edit: Редактировать
     edit_website: Редактировать сайт
     forgot_password:
-      expired: 
-      mail_subject: 
-      new: 
-      request: 
-      save: 
-      success: 
-      unknown_user: 
+      expired:
+      mail_subject:
+      new:
+      request:
+      save:
+      success:
+      unknown_user:
     images:
-      back: 
-      cannot_be_created: 
-      choose_image: 
-      choose_images: 
-      delete: 
-      delete_confirmation: 
-      delete_folder: 
-      done_organizing: 
-      insert_photo: 
-      insert_photos: 
-      link: 
-      new_folder: 
-      organize: 
-      remove_image: 
-      upload: 
-      upload_image: 
+      back:
+      cannot_be_created:
+      choose_image:
+      choose_images:
+      delete:
+      delete_confirmation:
+      delete_folder:
+      done_organizing:
+      insert_photo:
+      insert_photos:
+      link:
+      new_folder:
+      organize:
+      remove_image:
+      upload:
+      upload_image:
     languages:
-      bg: 
-      de: 
+      bg:
+      de:
       en: Английский
-      es: 
-      fr: 
-      id: 
-      it: 
+      es:
+      fr:
+      id:
+      it:
       nl: Голландский
-      pl: 
-      pt-BR: 
-      ro: 
-      ru: 
-      sv: 
-      th: 
-      tr: 
-      zh-CN: 
+      pl:
+      pt-BR:
+      ro:
+      ru:
+      sv:
+      th:
+      tr:
+      zh-CN:
     login: Логин
     logout: Выход
     main_menu: Главное меню
     media_library:
       attachments: Документы
-      images: 
+      images:
       photos: Изображения
     modal:
       agree: Да, я уверен
@@ -185,27 +185,27 @@ ru:
       photos_picker: Выбрать изображения
       rebuild_materialized_path: Rebuild materialized path
       save: Сохранить страницу
-      saved: 
-      saving: 
+      saved:
+      saving:
       show_in_menu: Невидимый
       skip_to_first_child: Переход на страницу ребенка
     permanently_delete: Удалить навсегда
     photos:
       cannot_be_created: 'Изображение не может быть обработано:'
       choose_images: Выбрать изображения
-      delete: 
+      delete:
       delete_confirmation: Вы уверены, что хотите удалить <strong>image</strong>?
-      delete_folder: 
-      done_organizing: 
+      delete_folder:
+      done_organizing:
       insert_photo: Вставить изображение
       insert_photos: Вставить изображения
       link: 'URL изображения:'
-      new_folder: 
-      organize: 
-      select_images: 
-      upload_image: 
+      new_folder:
+      organize:
+      select_images:
+      upload_image:
     preferences:
-      Analytics: 
+      Analytics:
       account: Общее
       account_description: Персональные параметры
       account_save: Сохранить параметры
@@ -217,30 +217,27 @@ ru:
       social_media: Социальные сети
       social_media_description: Facebook и Twitter аккаунты
       social_media_save: Сохранить социальные сети
-      style: Дизайн
-      style_description: Выберите тему
-      style_save: Сохранить параметры стиля
       title: Параметры
       users: Пользователи
       users_description: Управление пользователями и администраторами
     preview_website: Предварительный просмотр сайта
     resources:
-      edit: 
-    save: 
+      edit:
+    save:
     search: Поиск...
     settings:
-      save: 
-      title: 
+      save:
+      title:
     users:
       cannot_be_created: Пользователь не сохранен
       delete_confirmation: Вы уверены, что хотите удалить пользователя <strong>%{user}</strong>?
       new: Новый пользователь
       save: Сохранить пользователя
-    visit_page: 
+    visit_page:
     website:
-      all_pages: 
+      all_pages:
       documents: Документы
-      images: 
+      images:
       media_library: Медиа библиотека
       media_library_description: Здесь вы найдете все ваши изображения и документы
       pages: Страницы

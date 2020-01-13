@@ -209,9 +209,6 @@ it:
       social_media: Social media
       social_media_description: Account Facebook e Twitter
       social_media_save: Salva social media
-      style: Stile
-      style_description: Scegli un tema adatto al tuo brand
-      style_save: Salva stile
       title: Impostazioni
       users: Utenti
       users_description: Gestisci utenti e amministratori

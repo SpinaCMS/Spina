@@ -28,28 +28,28 @@ zh-CN:
         name: 文件名
         size: 大小
       spina/media_folder:
-        name: 
+        name:
       spina/navigation:
-        auto_add_pages: 
-        auto_add_pages_description: 
-        label: 
-        pages: 
-        pages_description: 
+        auto_add_pages:
+        auto_add_pages_description:
+        label:
+        pages:
+        pages_description:
       spina/page:
-        ancestry: 
-        created_at: 
+        ancestry:
+        created_at:
         description: 描述
         description_description: 搜索结果描述
         description_placeholder: 页面简短描述
         draft: 草稿
         draft_description: 页面未完成
-        link_url: 
-        link_url_description: 
-        link_url_placeholder: 
+        link_url:
+        link_url_description:
+        link_url_placeholder:
         menu_title: 导航栏标题
         menu_title_placeholder: 默认显示页面标题
-        no_parent: 
-        resource: 
+        no_parent:
+        resource:
         seo_title: SEO <title>
         seo_title_placeholder: 标签页标题
         show_in_menu: 在导航栏显示
@@ -60,10 +60,10 @@ zh-CN:
         title_placeholder: 页面标题
         view_template: 页面模板
       spina/resource:
-        label: 
-        order_by: 
-        parent_page: 
-        view_template: 
+        label:
+        order_by:
+        parent_page:
+        view_template:
       spina/user:
         admin: 管理员
         admin_description: 管理员可创建用户
@@ -103,53 +103,53 @@ zh-CN:
     edit: 编辑
     edit_website: 编辑你的网站
     forgot_password:
-      expired: 
-      mail_subject: 
-      new: 
-      request: 
-      save: 
-      success: 
-      unknown_user: 
+      expired:
+      mail_subject:
+      new:
+      request:
+      save:
+      success:
+      unknown_user:
     images:
-      back: 
-      cannot_be_created: 
-      choose_image: 
-      choose_images: 
-      delete: 
-      delete_confirmation: 
-      delete_folder: 
-      done_organizing: 
-      insert_photo: 
-      insert_photos: 
-      link: 
-      new_folder: 
-      organize: 
-      remove_image: 
-      upload: 
-      upload_image: 
+      back:
+      cannot_be_created:
+      choose_image:
+      choose_images:
+      delete:
+      delete_confirmation:
+      delete_folder:
+      done_organizing:
+      insert_photo:
+      insert_photos:
+      link:
+      new_folder:
+      organize:
+      remove_image:
+      upload:
+      upload_image:
     languages:
-      bg: 
-      de: 
-      en: 
-      es: 
-      fr: 
-      id: 
-      it: 
-      nl: 
-      pl: 
-      pt-BR: 
-      ro: 
-      ru: 
-      sv: 
-      th: 
-      tr: 
-      zh-CN: 
+      bg:
+      de:
+      en:
+      es:
+      fr:
+      id:
+      it:
+      nl:
+      pl:
+      pt-BR:
+      ro:
+      ru:
+      sv:
+      th:
+      tr:
+      zh-CN:
     login: 登录
     logout: 登出
-    main_menu: 
+    main_menu:
     media_library:
       attachments: 所有文档
-      images: 
+      images:
       photos: 所有图片
     modal:
       agree: 同意
@@ -168,36 +168,36 @@ zh-CN:
       done_changing_order: 完成排序
       invisible_to_search_engines: 对搜索引擎隐身
       invisible_to_search_engines_description: 设置对搜索引擎显隐
-      materialize_path_confirmation: 
+      materialize_path_confirmation:
       new: 新页面
       page_content: 内容
       page_part: 局部页面
       page_seo: 搜索引擎
       photo_picker: 选择图片
       photos_picker: 选择多张图片
-      rebuild_materialized_path: 
+      rebuild_materialized_path:
       save: 保存页面
-      saved: 
-      saving: 
+      saved:
+      saving:
       show_in_menu: 隐藏
       skip_to_first_child: 跳转到首个子页面
     permanently_delete: 永久删除
     photos:
       cannot_be_created: '图片不能被处理:'
-      choose_images: 
-      delete: 
+      choose_images:
+      delete:
       delete_confirmation: 是否确定要删除这张 <strong>图片</strong>?
-      delete_folder: 
-      done_organizing: 
+      delete_folder:
+      done_organizing:
       insert_photo: 插入图片
       insert_photos: 插入多张图片
       link: 图片链接
-      new_folder: 
-      organize: 
-      select_images: 
-      upload_image: 
+      new_folder:
+      organize:
+      select_images:
+      upload_image:
     preferences:
-      Analytics: 
+      Analytics:
       account: 通用
       account_description: 个人设置
       account_save: 保存设置
@@ -209,30 +209,27 @@ zh-CN:
       social_media: 社交网络
       social_media_description: Facebook 及 Twitter 账号
       social_media_save: 保存
-      style: 样式
-      style_description: 选择主题
-      style_save: 保存样式
       title: 设置
       users: 所有用户
       users_description: 管理用户
     preview_website: 预览网站
     resources:
-      edit: 
-    save: 
+      edit:
+    save:
     search: 搜索...
     settings:
-      save: 
-      title: 
+      save:
+      title:
     users:
       cannot_be_created: 无法保存用户
       delete_confirmation: 是否确定删除用户 <strong>%{user}</strong>?
       new: 新建用户
       save: 保存用户
-    visit_page: 
+    visit_page:
     website:
-      all_pages: 
+      all_pages:
       documents: 全部文档
-      images: 
+      images:
       media_library: 媒体库
       media_library_description: 所有图片与文档
       pages: 所有页面

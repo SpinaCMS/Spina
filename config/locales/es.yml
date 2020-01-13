@@ -37,7 +37,7 @@ es:
         pages_description: Seleccione las páginas que quiere usar en esta navegación
       spina/page:
         ancestry: Página padre
-        created_at: 
+        created_at:
         description: Meta description
         description_description: Esta descripción se mostrará en los resultados de búsqueda
         description_placeholder: Descripción corta de tu página
@@ -49,7 +49,7 @@ es:
         menu_title: Título de navegación
         menu_title_placeholder: Deja en blanco para usar el título de la página
         no_parent: No página padre
-        resource: 
+        resource:
         seo_title: SEO <title>
         seo_title_placeholder: Este título es usado en <title>-tag
         show_in_menu: Mostrar en navegación
@@ -60,10 +60,10 @@ es:
         title_placeholder: Título de la página
         view_template: Plantilla de página
       spina/resource:
-        label: 
-        order_by: 
-        parent_page: 
-        view_template: 
+        label:
+        order_by:
+        parent_page:
+        view_template:
       spina/user:
         admin: Administrador
         admin_description: Los administradores pueden crear usuarios
@@ -111,45 +111,45 @@ es:
       success: Puede utilizar su nueva contraseña
       unknown_user: Este usuario no existe
     images:
-      back: 
-      cannot_be_created: 
-      choose_image: 
-      choose_images: 
-      delete: 
-      delete_confirmation: 
-      delete_folder: 
-      done_organizing: 
-      insert_photo: 
-      insert_photos: 
-      link: 
-      new_folder: 
-      organize: 
-      remove_image: 
-      upload: 
-      upload_image: 
+      back:
+      cannot_be_created:
+      choose_image:
+      choose_images:
+      delete:
+      delete_confirmation:
+      delete_folder:
+      done_organizing:
+      insert_photo:
+      insert_photos:
+      link:
+      new_folder:
+      organize:
+      remove_image:
+      upload:
+      upload_image:
     languages:
-      bg: 
-      de: 
+      bg:
+      de:
       en: Inglés
-      es: 
-      fr: 
-      id: 
-      it: 
+      es:
+      fr:
+      id:
+      it:
       nl: Holandés
-      pl: 
-      pt-BR: 
-      ro: 
-      ru: 
-      sv: 
-      th: 
-      tr: 
-      zh-CN: 
+      pl:
+      pt-BR:
+      ro:
+      ru:
+      sv:
+      th:
+      tr:
+      zh-CN:
     login: Ingresar
     logout: Cerrar sesión
     main_menu: Menú principal
     media_library:
       attachments: Documentos
-      images: 
+      images:
       photos: Imágenes
     modal:
       agree: Si, estoy seguro
@@ -185,7 +185,7 @@ es:
     photos:
       cannot_be_created: 'Tu imagen no puede ser procesada:'
       choose_images: Seleccionar imágenes
-      delete: 
+      delete:
       delete_confirmation: Seguro que deseas eliminar ésta <strong>imagen</strong>?
       delete_folder: Borrar carpeta
       done_organizing: Terminar la organización
@@ -194,10 +194,10 @@ es:
       link: 'URL de tu imagen:'
       new_folder: Nueva carpeta
       organize: Organizar imágenes
-      select_images: 
+      select_images:
       upload_image: Subir una imagen
     preferences:
-      Analytics: 
+      Analytics:
       account: General
       account_description: Preferencias personales
       account_save: Guardar preferencias
@@ -209,15 +209,12 @@ es:
       social_media: Redes sociales
       social_media_description: Cuentas de Facebook y Twitter
       social_media_save: Guardar redes sociales
-      style: Estilos
-      style_description: Selecciona un tema que se ajuste a tu marca
-      style_save: Guardar estilos
       title: Preferencias
       users: Usuarios
       users_description: Administrar usuarios y administradores
     preview_website: Previsualizar sitio
     resources:
-      edit: 
+      edit:
     save: Guardar
     search: Buscar...
     settings:
@@ -228,11 +225,11 @@ es:
       delete_confirmation: Estás seguro que deseas eliminar al usuario <strong>%{user}</strong>?
       new: Nuevo usuario
       save: Guardar usuario
-    visit_page: 
+    visit_page:
     website:
       all_pages: Todas las páginas
       documents: Documentos
-      images: 
+      images:
       media_library: Biblioteca de medios
       media_library_description: Aquí encontrarás todas tus imágenes y documentos
       pages: Páginas

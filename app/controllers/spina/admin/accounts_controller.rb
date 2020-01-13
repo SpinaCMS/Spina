@@ -19,12 +19,6 @@ module Spina
         add_breadcrumb I18n.t('spina.preferences.social_media'), spina.social_admin_account_path
       end
 
-      def style
-        add_breadcrumb I18n.t('spina.preferences.style'), spina.style_admin_account_path
-        @themes = ::Spina::Theme.all
-        @layout_parts = current_theme.layout_parts.map { |layout_part| current_account.layout_part(layout_part) }
-      end
-
       private
 
       def account_params
@@ -32,7 +26,7 @@ module Spina
                                         :postal_code, :preferences, :google_analytics,
                                         :google_site_verification, :facebook, :twitter, :google_plus,
                                         :instagram, :youtube, :linkedin,
-                                        :kvk_identifier, :theme, :vat_identifier, :robots_allowed,
+                                        :kvk_identifier, :vat_identifier, :robots_allowed,
                                         layout_parts_attributes:
                                           [:id, :layout_partable_type, :layout_partable_id,
                                             :name, :title, :position, :content, :page_id,

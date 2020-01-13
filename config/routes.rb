@@ -5,7 +5,6 @@ Spina::Engine.routes.draw do
 
     resource :account do
       member do
-        get :style
         get :analytics
         get :social
       end

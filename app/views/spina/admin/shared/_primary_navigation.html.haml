@@ -39,8 +39,6 @@
       %ul
         %li{class: ('active' if params[:action] == 'edit' && params[:controller] == 'spina/admin/accounts')}
           = link_to t('spina.preferences.account'), spina.edit_admin_account_path
-        %li{class: ('active' if params[:action] == 'style')}
-          = link_to t('spina.preferences.style'), spina.style_admin_account_path
         - if current_spina_user.admin?
           %li{class: ('active' if %w[users].include? controller_name)}
             = link_to t('spina.preferences.users'), spina.admin_users_path

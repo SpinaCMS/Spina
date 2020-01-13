@@ -9,10 +9,10 @@ ro:
         google_analytics: Google Analytics
         google_plus: Google+
         google_site_verification: Google Site Verification
-        instagram: 
+        instagram:
         kvk_identifier: Cod de identificare fiscală
         kvk_identifier_description: Cod de identificare fiscală
-        linkedin: 
+        linkedin:
         logo: Logo
         name: Nume website
         phone: Telefon
@@ -22,7 +22,7 @@ ro:
         twitter: Twitter
         vat_identifier: TVA
         vat_identifier_description: TVA
-        youtube: 
+        youtube:
       spina/attachment:
         created_at: Creat la
         name: Nume fișier
@@ -37,7 +37,7 @@ ro:
         pages_description: Selectați paginile pe care le doriți în această navigare
       spina/page:
         ancestry: Pagina părinte
-        created_at: 
+        created_at:
         description: Descriere Meta
         description_description: Această descriere va apărea în rezultatele căutării
         description_placeholder: Scurtă descriere a paginii
@@ -49,7 +49,7 @@ ro:
         menu_title: Titlul navigării
         menu_title_placeholder: Lăsați necompletat pentru a folosi titlul paginii
         no_parent: Fără părinte
-        resource: 
+        resource:
         seo_title: SEO <title>
         seo_title_placeholder: Acest titlu este folosit în tag-ul <title>
         show_in_menu: Arată în navigare
@@ -60,10 +60,10 @@ ro:
         title_placeholder: Titlul paginii
         view_template: Template pagină
       spina/resource:
-        label: 
-        order_by: 
-        parent_page: 
-        view_template: 
+        label:
+        order_by:
+        parent_page:
+        view_template:
       spina/user:
         admin: Administrator
         admin_description: Administratorii pot crea utilizatori
@@ -111,45 +111,45 @@ ro:
       success: Îți poți folosi parola nouă
       unknown_user: Acest utilizator nu există
     images:
-      back: 
-      cannot_be_created: 
-      choose_image: 
-      choose_images: 
-      delete: 
-      delete_confirmation: 
-      delete_folder: 
-      done_organizing: 
-      insert_photo: 
-      insert_photos: 
-      link: 
-      new_folder: 
-      organize: 
-      remove_image: 
-      upload: 
-      upload_image: 
+      back:
+      cannot_be_created:
+      choose_image:
+      choose_images:
+      delete:
+      delete_confirmation:
+      delete_folder:
+      done_organizing:
+      insert_photo:
+      insert_photos:
+      link:
+      new_folder:
+      organize:
+      remove_image:
+      upload:
+      upload_image:
     languages:
-      bg: 
-      de: 
+      bg:
+      de:
       en: Engleză
-      es: 
-      fr: 
-      id: 
-      it: 
+      es:
+      fr:
+      id:
+      it:
       nl: Olandeză
-      pl: 
-      pt-BR: 
-      ro: 
-      ru: 
-      sv: 
-      th: 
-      tr: 
-      zh-CN: 
+      pl:
+      pt-BR:
+      ro:
+      ru:
+      sv:
+      th:
+      tr:
+      zh-CN:
     login: Login
     logout: Logout
     main_menu: Meniu principal
     media_library:
       attachments: Documente
-      images: 
+      images:
       photos: Imagini
     modal:
       agree: Da, sunt sigur
@@ -185,7 +185,7 @@ ro:
     photos:
       cannot_be_created: 'Imaginea nu a putut fi procesată:'
       choose_images: Alege imagini
-      delete: 
+      delete:
       delete_confirmation: Sunteți sigur că doriți să ștergeți această <strong>imagine</strong>?
       delete_folder: Ștergere director
       done_organizing: Organizare terminată
@@ -194,10 +194,10 @@ ro:
       link: 'URL-ul imaginii:'
       new_folder: Director nou
       organize: Organizează imagini
-      select_images: 
+      select_images:
       upload_image: Încarcă o imagine
     preferences:
-      Analytics: 
+      Analytics:
       account: General
       account_description: Preferințe personale
       account_save: Salvează preferințe
@@ -209,15 +209,12 @@ ro:
       social_media: Rețele sociale
       social_media_description: Conturi de Facebook și Twitter
       social_media_save: Salvează rețelele sociale
-      style: Stil
-      style_description: Alege o temă potrivită brand-ului tău
-      style_save: Salvează stiluri
       title: Preferințe
       users: Utilizatori
       users_description: Gestionare utilizatori și administratori
     preview_website: Previzualizare website
     resources:
-      edit: 
+      edit:
     save: Salvează
     search: Caută...
     settings:
@@ -228,11 +225,11 @@ ro:
       delete_confirmation: Sunteți sigur că doriți ștergerea utilizatorului <strong>%{user}</strong>?
       new: Utilizator nou
       save: Salvare utilizator
-    visit_page: 
+    visit_page:
     website:
       all_pages: Toate paginile
       documents: Documente
-      images: 
+      images:
       media_library: Bibliotecă media
       media_library_description: Aici găsești toate imaginile și documentele tale
       pages: Pagini
