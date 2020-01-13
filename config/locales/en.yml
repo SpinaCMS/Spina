@@ -193,6 +193,7 @@ en:
       insert_photos: Choose images
       link: 'URL of your image:'
       new_folder: New folder
+      rename_folder: Rename folder
       organize: Organize images
       select_images: Select images
       upload_image: Upload an image
