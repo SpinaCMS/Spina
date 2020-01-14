@@ -106,10 +106,10 @@ module Spina
       end
 
       def localized_materialized_path
-        if I18n.locale == I18n.default_locale
+        if Mobility.locale == I18n.default_locale
           generate_materialized_path.prepend('/')
         else
-          generate_materialized_path.prepend("/#{I18n.locale}/").gsub(/\/\z/, "")
+          generate_materialized_path.prepend("/#{Mobility.locale}/").gsub(/\/\z/, "")
         end
       end
 
