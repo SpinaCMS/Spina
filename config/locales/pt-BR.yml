@@ -194,6 +194,7 @@ pt-BR:
       link: 'URL da sua imagem:'
       new_folder: Nova pasta
       organize: Organizar imagens
+      rename_folder: 
       select_images: 
       upload_image: Enviar uma imagem
     preferences:

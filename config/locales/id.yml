@@ -194,6 +194,7 @@ id:
       link: 'URL gambar Anda:'
       new_folder: Direktori baru
       organize: Mengatur gambar
+      rename_folder: 
       select_images: 
       upload_image: Unggah gambar
     preferences:

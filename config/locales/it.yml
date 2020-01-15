@@ -194,6 +194,7 @@ it:
       link: 'URL immagine:'
       new_folder: Nuova cartella
       organize: Organizza immagini
+      rename_folder: 
       select_images: Seleziona immagini
       upload_image: Carica un immagine
     preferences:

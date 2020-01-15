@@ -194,6 +194,7 @@ bg:
       link: 'URL на изображението:'
       new_folder: Нова папка
       organize: Организиране на изображения
+      rename_folder: 
       select_images: 
       upload_image: Качване на изображение
     preferences:

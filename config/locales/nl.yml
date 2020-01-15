@@ -194,6 +194,7 @@ nl:
       link: 'De link naar de afbeelding is:'
       new_folder: Nieuwe folder
       organize: Organiseren
+      rename_folder: Folder hernoemen
       select_images: Kies afbeeldingen
       upload_image: Upload een afbeelding
     preferences:
