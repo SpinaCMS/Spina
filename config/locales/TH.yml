@@ -194,6 +194,7 @@ th:
       link: 'URL รูปภาพของคุณ:'
       new_folder: โฟลเดอร์ใหม่
       organize: จัดระเบียบรูปภาพ
+      rename_folder: 
       select_images: เลือกรูปภาพ
       upload_image: อัปโหลดรูปภาพ
     preferences:

@@ -194,6 +194,7 @@ sv:
       link: 'URL till din bild:'
       new_folder: Ny mapp
       organize: Organisera bilder
+      rename_folder: 
       select_images: 
       upload_image: Ladda up en bild
     preferences:

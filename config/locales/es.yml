@@ -194,6 +194,7 @@ es:
       link: 'URL de tu imagen:'
       new_folder: Nueva carpeta
       organize: Organizar imágenes
+      rename_folder: Renombrar carpeta
       select_images: 
       upload_image: Subir una imagen
     preferences:

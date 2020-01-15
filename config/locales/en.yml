@@ -194,6 +194,7 @@ en:
       link: 'URL of your image:'
       new_folder: New folder
       organize: Organize images
+      rename_folder: Rename folder
       select_images: Select images
       upload_image: Upload an image
     preferences:

@@ -194,6 +194,7 @@ ro:
       link: 'URL-ul imaginii:'
       new_folder: Director nou
       organize: Organizează imagini
+      rename_folder: 
       select_images: 
       upload_image: Încarcă o imagine
     preferences:

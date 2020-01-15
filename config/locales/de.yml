@@ -194,6 +194,7 @@ de:
       link: 'URL des Bildes:'
       new_folder: Neuer Ordner
       organize: Organisiere Bilder
+      rename_folder: 
       select_images: 
       upload_image: Bild hochladen
     preferences:

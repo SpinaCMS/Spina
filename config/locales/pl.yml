@@ -194,6 +194,7 @@ pl:
       link: 'URL obrazka:'
       new_folder: Nowy folder
       organize: Uporządkuj obrazki
+      rename_folder: 
       select_images: 
       upload_image: Wgraj obrazek
     preferences:
