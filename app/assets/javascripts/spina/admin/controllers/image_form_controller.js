@@ -3,7 +3,7 @@
 
   application.register("image-form", class extends Stimulus.Controller {
     static get targets() {
-      return ["image", "field", "button"]
+      return ["image", "field", "removeButton"]
     }
 
     remove(e) {
@@ -12,8 +12,8 @@
       e.stopPropagation()
 
       // Remove image and reset field
-      this.imageTarget.remove()
-      this.buttonTarget.remove()
+      this.imageTarget.querySelector('img').remove()
+      this.removeButtonTarget.style.display = "none"
       this.fieldTarget.value = null
     }
     
