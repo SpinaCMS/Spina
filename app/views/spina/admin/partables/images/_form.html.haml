@@ -5,7 +5,7 @@
   .page-form-media-picker
     .image{data: {target: 'image-form.image'}}
       .page-form-media-picker-placeholder=t "spina.images.no_image_selected"
-      
+
       - if f.object.partable.file.attached?
         = image_tag variant(f.object.partable.file, resize: "400x300^", crop: "400x300+0+0"), width: 200, height: 150
 
@@ -14,5 +14,5 @@
         = icon('dots')
         =t "spina.images.choose_image"
 
-      = button_tag type: :default, class: 'button button-small button-white', data: {target: "image-form.removeButton", action: "image-form#remove"} do
+      = button_tag type: :default, class: 'button button-small button-white', data: {action: "image-form#remove"} do
         %i.icon.icon-cross{style: "margin: 0; font-size: 10px"}

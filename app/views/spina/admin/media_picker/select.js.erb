@@ -4,7 +4,8 @@ hidden_input.val("");
 
 <% if @image.present? %>
   hidden_input.parents('.media_picker').append("<%=j render partial: 'spina/admin/images/image', object: @image, locals: {simple: true} %>");
-  hidden_input.parents('[data-controller="image-form"]').find(".image")[0].innerHTML = `<%=j image_tag variant(@image.file, resize: "400x300^", crop: "400x300+0+0"), width: 200, height: 150 %>`
+  hidden_input.parents('[data-controller="image-form"]').find(".image img").remove();
+  hidden_input.parents('[data-controller="image-form"]').find(".image")[0].insertAdjacentHTML("beforeend", `<%=j image_tag variant(@image.file, resize: "400x300^", crop: "400x300+0+0"), width: 200, height: 150 %>`)
   hidden_input.val("<%= @image.id %>");
 
   // Trix editor
