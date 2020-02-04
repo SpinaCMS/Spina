@@ -1,0 +1,16 @@
+.modal-container{data: {controller: "modal"}}
+  .modal.modal-large{data: {controller: "media-picker"}}
+    %header
+      = button_tag type: :default, class: 'modal-close-cross', data: {action: "modal#close"} do
+        = icon('cross')
+      %h3=t "spina.images.choose_image"
+    %section.media-picker
+      = hidden_field_tag :selector, params[:hidden_field_id], data: {target: "media-picker.selector"}
+      = hidden_field_tag :placeholder, params[:placeholder_id], data: {target: "media-picker.placeholder"}
+
+      .media-picker-grid
+        - @images.each do |image|
+          %label.media-picker-image
+            = radio_button_tag :image_id, image.id, image.id.to_s.in?(params[:selected_ids]), data: {action: "media-picker#choose modal#close", image_id: image.id, thumbnail_url: variant(image.file, resize: "400x300^", crop: "400x300+0+0")}
+            %span= image_tag variant(image.file, resize: "400x300^", crop: "400x300+0+0"), width: 200, height: 150
+

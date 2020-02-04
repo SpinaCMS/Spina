@@ -1,1 +1,1 @@
-$("<%=j render partial: 'modal', locals: {multiple: params[:multiple]} %>").modal();
+document.querySelector('body').insertAdjacentHTML("beforeend", "<%=j render partial: 'media_picker' %>")
