@@ -4,17 +4,11 @@ module Spina
       before_action :set_media_folders
 
       def show
-        if @media_folder.present?
-          @images = @media_folder.images.page(params[:page])
-        else
-          @images = Image.where(media_folder_id: nil).page(params[:page])
-        end
+        @images = Image.where(media_folder: @media_folder).page(params[:page])
+        @selected_images = Image.where(id: selected_ids)
 
-        if params[:selected_ids].present?
-          ids = params[:selected_ids].map(&:to_i).join(', ')
-          @images = @images.order(Arel.sql("CASE WHEN id IN(#{ids}) THEN 0 ELSE 1 END, created_at DESC"))
-        else
-          @images = @images.sorted
+        if selected_ids.any?
+          @images = @images.order(Arel.sql("CASE WHEN id IN(#{selected_ids.join(', ')}) THEN 0 ELSE 1 END, created_at DESC"))
         end
 
         render params[:page].present? ? :infinite_scroll : :show
@@ -34,6 +28,11 @@ module Spina
           @media_folders = MediaFolder.order(:name)
           @media_folder = MediaFolder.find(params[:media_folder_id]) if params[:media_folder_id].present?
         end
+
+        def selected_ids
+          params[:selected_ids].present? ? params[:selected_ids].map(&:to_i) : []
+        end
+        helper_method :selected_ids
 
     end
   end

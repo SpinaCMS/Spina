@@ -11,6 +11,17 @@
       .media-picker-grid
         - @images.each do |image|
           %label.media-picker-image
-            = radio_button_tag :image_id, image.id, image.id.to_s.in?(params[:selected_ids]), data: {action: "media-picker#choose modal#close", image_id: image.id, thumbnail_url: variant(image.file, resize: "400x300^", crop: "400x300+0+0")}
-            %span= image_tag variant(image.file, resize: "400x300^", crop: "400x300+0+0"), width: 200, height: 150
+            - if params[:multiple]
+              = check_box_tag :image_id, image.id, image.id.in?(selected_ids), data: {action: "media-picker#toggle", image_id: image.id, thumbnail_url: thumbnail_url(image)}
+            - else
+              = radio_button_tag :image_id, image.id, image.id.in?(selected_ids), data: {action: "media-picker#choose modal#close", image_id: image.id, thumbnail_url: thumbnail_url(image)}
+            %span= image_tag thumbnail_url(image), width: 200, height: 150
 
+    - if params[:multiple]
+      %section.media-picker-footer
+        .media-picker-selected-images{data: {target: "media-picker.selectedImages"}}
+          - @selected_images.each do |image|
+            = image_tag thumbnail_url(image), data: {target: "media-picker.selectedImage", image_id: image.id}
+
+        = button_tag type: :button, class: 'pull-right button button-primary', data: {action: "media-picker#choose_multiple modal#close"} do
+          Confirm selection (5)

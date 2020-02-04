@@ -3,17 +3,12 @@
   = f.hidden_field :partable_id, id: "media_picker_#{f.object.object_id}", data: {target: 'image-form.field'}
 
   .page-form-media-picker
-    .image{data: {target: 'image-form.image'}}
-      .page-form-media-picker-placeholder=t "spina.images.no_image_selected"
+    = link_to admin_media_picker_path(selected_ids: [f.object.partable_id], hidden_field_id: "media_picker_#{f.object.object_id}", placeholder_id: "media_picker_placeholder_#{f.object.object_id}"), remote: true, class: 'image', data: {target: 'image-form.image'} do
+      .page-form-media-picker-placeholder=t "spina.images.choose_image"
 
       %div{id: "media_picker_placeholder_#{f.object.object_id}"}
         - if f.object.partable.file.attached?
           = image_tag variant(f.object.partable.file, resize: "400x300^", crop: "400x300+0+0"), width: 200, height: 150
 
-    .button-group
-      = link_to admin_media_picker_path(selected_ids: [f.object.partable_id], hidden_field_id: "media_picker_#{f.object.object_id}", placeholder_id: "media_picker_placeholder_#{f.object.object_id}"), remote: true, class: 'button button-small button-white' do
-        = icon('dots')
-        =t "spina.images.choose_image"
-
-      = button_tag type: :default, class: 'button button-small button-white', data: {action: "image-form#remove"} do
-        %i.icon.icon-cross{style: "margin: 0; font-size: 10px"}
+    = button_tag type: :default, class: 'button button-small button-white', data: {action: "image-form#remove"} do
+      %i.icon.icon-cross{style: "margin: 0; font-size: 10px"}
