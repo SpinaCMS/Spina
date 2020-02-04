@@ -25,7 +25,7 @@ module Spina
       private
 
         def set_media_folders
-          @media_folders = MediaFolder.order(:name)
+          @media_folders = MediaFolder.order(:name).joins(:images)
           @media_folder = MediaFolder.find(params[:media_folder_id]) if params[:media_folder_id].present?
         end
 
