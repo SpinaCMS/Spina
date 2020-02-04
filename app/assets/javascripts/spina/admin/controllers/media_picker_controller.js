@@ -3,7 +3,7 @@
 
   application.register("media-picker", class extends Stimulus.Controller {
     static get targets() {
-      return ["selector", "placeholder", "selectedImage", "selectedImages", "selectedCount"]
+      return ["selector", "placeholder", "grid", "selectedImage", "selectedImages", "selectedCount"]
     }
 
     choose(event) {
@@ -23,6 +23,24 @@
       this.selectedImageTargets.forEach(function(image) {
         this.placeholder.insertAdjacentHTML("beforeend", `<img src="${image.src}" />`)
       }.bind(this))
+    }
+
+    openFolder(event) {
+      event.preventDefault()
+      fetch(event.currentTarget.href)
+        .then(response => response.text())
+        .then(function(html) {
+          this.gridTarget.innerHTML = html
+        }.bind(this))
+    }
+
+    backToRoot(event) {
+      event.preventDefault()
+      fetch(event.currentTarget.href)
+        .then(response => response.text())
+        .then(function(html) {
+          this.gridTarget.innerHTML = html
+        }.bind(this))
     }
 
     toggle(event) {
@@ -59,6 +77,10 @@
 
     get placeholder() {
       return document.querySelector(`#${this.placeholderTarget.value}`)
+    }
+
+    get token() {
+      return document.querySelector('meta[name="csrf-token"]').content
     }
 
   })
