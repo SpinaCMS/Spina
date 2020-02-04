@@ -11,7 +11,10 @@ module Spina
           @images = @images.order(Arel.sql("CASE WHEN id IN(#{selected_ids.join(', ')}) THEN 0 ELSE 1 END, created_at DESC"))
         end
 
-        render params[:page].present? ? :infinite_scroll : :show
+        respond_to do |format|
+          format.js { render :infinite_scroll if params[:page].present? }
+          format.html { render layout: false }
+        end
       end
 
       def select
