@@ -3,7 +3,7 @@
 
   application.register("media-picker", class extends Stimulus.Controller {
     static get targets() {
-      return ["selector", "placeholder", "selectedImage", "selectedImages"]
+      return ["selector", "placeholder", "selectedImage", "selectedImages", "selectedCount"]
     }
 
     choose(event) {
@@ -31,6 +31,11 @@
       } else {
         this.removeImage(event.currentTarget.dataset.imageId)
       }
+      this.setCount()
+    }
+
+    setCount() {
+      this.selectedCountTarget.innerHTML = `(${this.selectedIds.length})`
     }
 
     addImage(id, url) {

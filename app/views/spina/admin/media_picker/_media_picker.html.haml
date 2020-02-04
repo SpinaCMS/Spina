@@ -9,6 +9,13 @@
       = hidden_field_tag :placeholder, params[:placeholder_id], data: {target: "media-picker.placeholder"}
 
       .media-picker-grid
+        - @media_folders.each do |media_folder|
+          = link_to '#', class: 'media-folder' do
+            .media-folder-thumbnail{data: {badge: media_folder.images.size}}
+              = image_tag variant(media_folder.images.last.file, resize: '144x144^', crop: "144x144+0+0")
+              .media-folder-shadow
+            .media-folder-name= media_folder.name
+
         - @images.each do |image|
           %label.media-picker-image
             - if params[:multiple]
@@ -24,4 +31,5 @@
             = image_tag thumbnail_url(image), data: {target: "media-picker.selectedImage", image_id: image.id}
 
         = button_tag type: :button, class: 'pull-right button button-primary', data: {action: "media-picker#choose_multiple modal#close"} do
-          Confirm selection (5)
+          =t "spina.images.confirm_selection"
+          %span{data: {target: "media-picker.selectedCount"}} (#{@selected_images.size})
