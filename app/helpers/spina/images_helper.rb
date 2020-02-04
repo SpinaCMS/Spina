@@ -12,5 +12,10 @@ module Spina
         "https://placehold.it/100x100.png"
       end
     end
+
+    def thumbnail_url(image)
+      variant(image.file, resize: "400x300^", crop: "400x300+0+0")
+    end
+
   end
 end

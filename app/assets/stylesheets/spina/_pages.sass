@@ -41,7 +41,17 @@
 
 .page-form-media-picker
   align-items: flex-start
+  background: white
+  border: 1px solid #e2e2e2
+  border-radius: 4px
+  box-shadow: 0 1px 1px rgba(0, 0, 0, .05)
   display: flex
+  justify-content: space-between
+  padding: 15px
+  width: 100%
+
+  .button
+    margin: 0
 
   .image
     background: #ddd
@@ -55,6 +65,25 @@
   .image img
     border-radius: 4px
     position: relative
+
+  .images
+    height: 80px
+    margin: -4px
+
+    img
+      border-radius: 4px
+      display: block
+      float: left
+      margin: 4px
+      position: relative
+      width: 96px
+
+    .page-form-media-picker-placeholder
+      background: #ddd
+      border-radius: 4px
+      height: 72px
+      margin: 4px
+      width: 96px
 
   .page-form-media-picker-placeholder
     align-items: center

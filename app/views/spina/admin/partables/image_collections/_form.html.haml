@@ -1,16 +1,16 @@
-.horizontal-form-label
-  = f.object.title
-.horizontal-form-content
+.page-form-label= f.object.title
+.page-form-control
   = f.fields_for :partable, f.object.partable do |ff|
-    = link_to admin_media_picker_path(selected_ids: ff.object.image_ids, hidden_field_id: "media_picker_#{ff.object.object_id}", multiple: true), remote: true, class: 'media_picker clearfix' do
-      .placeholder
-        %span.button.button-small.button-round
-          %i.icon.icon-dots
-          =t 'spina.images.choose_images'
+    = ff.hidden_field :image_tokens, id: "media_picker_#{ff.object.object_id}", value: ff.object.image_ids.join(",")
+    = ff.hidden_field :image_positions, value: ff.object.images.sorted_by_image_collection.pluck(:image_id).join(",")
 
-      .image-collection
-        - if ff.object.images.any?
-          = render 'spina/admin/image_collections/image_collection', images: ff.object.images.sorted_by_image_collection
-          
-      = ff.hidden_field :image_tokens, value: ff.object.image_ids.join(","), data: {hidden_field_id: "media_picker_#{ff.object.object_id}"}
-      = ff.hidden_field :image_positions, value: ff.object.images.sorted_by_image_collection.pluck(:image_id).join(","), class: 'image-positions'
+    .page-form-media-picker
+      = link_to admin_media_picker_path(selected_ids: ff.object.image_ids, hidden_field_id: "media_picker_#{ff.object.object_id}", multiple: true, placeholder_id: "media_picker_placeholder_#{f.object.object_id}"), remote: true, class: 'images' do
+        .page-form-media-picker-placeholder=t "spina.images.choose"
+
+        %div{id: "media_picker_placeholder_#{f.object.object_id}"}
+          - ff.object.images.sorted_by_image_collection.each do |image|
+            = image_tag thumbnail_url(image)
+
+      = button_tag type: :default, class: 'button button-small button-white', data: {action: "image-form#remove"} do
+        %i.icon.icon-cross{style: "margin: 0; font-size: 10px"}
