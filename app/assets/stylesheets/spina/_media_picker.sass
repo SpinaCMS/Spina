@@ -1,0 +1,52 @@
+.modal section.media-picker
+  padding-top: 0
+
+.media-picker-grid
+  display: grid
+  grid-auto-columns: minmax(200px, auto)
+  grid-template-columns: repeat(5, 1fr)
+  grid-row-gap: 15px
+  grid-column-gap: 15px
+
+.media-picker-image
+  cursor: pointer
+  display: block
+  margin: 0
+  position: relative
+
+  input[type="radio"]
+    display: none
+
+  input[type="radio"]:checked + span:before
+    background: $primary-color-light
+    border-radius: 4px
+    content: " "
+    height: 100%
+    left: 0px
+    opacity: .5
+    position: absolute
+    top: 0px
+    width: 100%
+
+  input[type="radio"]:checked + span:after
+    align-items: center
+    background: rgba(0, 0, 0, .2)
+    border: 1px solid rgba(255, 255, 255, .25)
+    border-radius: 15px
+    color: white
+    display: flex
+    font-size: 13px
+    height: 30px
+    justify-content: center
+    left: 50%
+    position: absolute
+    transform: translateX(-50%) translateY(-50%)
+    top: 50%
+    width: 30px
+    @extend .icon, .icon-large-check:before
+
+  img
+    border-radius: 4px
+    display: block
+    height: auto
+    width: 100%
