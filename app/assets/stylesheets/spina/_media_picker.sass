@@ -8,6 +8,9 @@
   grid-row-gap: 15px
   grid-column-gap: 15px
 
+  @media (min-width: 1680px)
+    grid-template-columns: repeat(6, 1fr)
+
   .media-folder
     border-radius: 4px
 
@@ -16,6 +19,23 @@
   display: block
   margin: 0
   position: relative
+
+  span
+    background: #eee
+    border-radius: 4px
+    display: block
+    height: 0
+    padding-top: calc(150 / 200 * 100%)
+    position: relative
+
+  img
+    border-radius: 4px
+    display: block
+    height: auto
+    left: 0
+    position: absolute
+    top: 0
+    width: 100%
 
   input[type="radio"], input[type="checkbox"]
     display: none
@@ -30,6 +50,7 @@
     position: absolute
     top: 0px
     width: 100%
+    z-index: 1
 
   input[type="radio"]:checked + span:after, input[type="checkbox"]:checked + span:after
     align-items: center
@@ -46,13 +67,8 @@
     transform: translateX(-50%) translateY(-50%)
     top: 50%
     width: 30px
+    z-index: 2
     @extend .icon, .icon-large-check:before
-
-  img
-    border-radius: 4px
-    display: block
-    height: auto
-    width: 100%
 
 .media-picker-footer
   align-items: center
