@@ -12,8 +12,8 @@ module Spina
         end
 
         respond_to do |format|
-          format.js { render :infinite_scroll if params[:page].present? }
           format.html { render layout: false }
+          format.js { render :infinite_scroll if params[:page].present? }
         end
       end
 
@@ -28,7 +28,7 @@ module Spina
       private
 
         def set_media_folders
-          @media_folders = MediaFolder.order(:name).joins(:images)
+          @media_folders = MediaFolder.order(:name).joins(:images).uniq
           @media_folder = MediaFolder.find(params[:media_folder_id]) if params[:media_folder_id].present?
         end
 
