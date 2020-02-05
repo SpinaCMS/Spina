@@ -3,4 +3,4 @@
     = check_box_tag :image_id, image.id, nil, data: {action: "media-picker#toggle", image_id: image.id, thumbnail_url: thumbnail_url(image)}
   - else
     = radio_button_tag :image_id, image.id, image.id.in?(selected_ids), data: {action: "media-picker#choose modal#close", image_id: image.id, thumbnail_url: thumbnail_url(image)}
-  %span= image_tag thumbnail_url(image), width: 200, height: 150
+  %span{style: "position: relative; height: 0; display: block; padding-top: calc(150/200*100%); background: #eee; border-radius: 4px"}= image_tag thumbnail_url(image), width: 200, height: 150, style: "position: absolute; top: 0; left: 0; width: 100%; height: auto;"

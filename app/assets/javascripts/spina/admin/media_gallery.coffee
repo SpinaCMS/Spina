@@ -7,9 +7,9 @@ $(document).on 'direct-uploads:end', 'form', (e) ->
 $(document).on 'direct-upload:progress', 'input', (e) ->
   console.log(e.detail.progress)
 
-$(document).on 'change', 'input[type="file"]', (e) ->
-  $form = $(this).parents('form')
-  $form.find('input[type="submit"]').click()
+# $(document).on 'change', 'input[type="file"]', (e) ->
+#   $form = $(this).parents('form')
+#   $form.find('input[type="submit"]').click()
 
 $(document).on 'click', '.organize-switch', (e) ->
   $items = $('.gallery .infinite-scroll .item')

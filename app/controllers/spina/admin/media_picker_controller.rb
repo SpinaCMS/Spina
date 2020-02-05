@@ -4,11 +4,14 @@ module Spina
       before_action :set_media_folders
 
       def show
-        @images = Image.where(media_folder: @media_folder).page(params[:page])
-        @selected_images = Image.where(id: selected_ids)
+        @images = Image.where(media_folder: @media_folder).order(created_at: :desc).page(params[:page])
+        100.times do
+          Rails.logger.info selected_ids.inspect
+        end
+        @selected_images = Image.where(id: selected_ids).sort_by{|image| selected_ids.index(image.id)}
 
         if selected_ids.any?
-          @images = @images.order(Arel.sql("CASE WHEN id IN(#{selected_ids.join(', ')}) THEN 0 ELSE 1 END, created_at DESC"))
+          @images = @images.reorder(Arel.sql("CASE WHEN id IN(#{selected_ids.join(', ')}) THEN 0 ELSE 1 END, created_at DESC"))
         end
 
         respond_to do |format|
