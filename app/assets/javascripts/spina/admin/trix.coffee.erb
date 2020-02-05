@@ -88,10 +88,9 @@ Trix.config.toolbar =
 class Spina.TrixAttachment
   @imageSelect: (e) ->
     toolbar_id = $(this).closest('trix-toolbar').attr('id')
-    $.getScript("<%= Spina::Engine.routes.url_helpers.admin_media_picker_path %>" + "?trix_toolbar_id=#{toolbar_id}")
+    $.getScript("<%= Spina::Engine.routes.url_helpers.admin_media_picker_path %>" + "?input=#{toolbar_id}&mode=trix")
 
   @imageInsert: (e) ->
-    console.log(e.detail)
     labels = []
     labels.push "✍️ #{e.detail.alt}" if e.detail.alt != ""
     labels.push "🔗 #{e.detail.link_to_url}" if e.detail.link_to_url != ""

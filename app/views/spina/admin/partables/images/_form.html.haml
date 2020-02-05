@@ -1,12 +1,11 @@
 .page-form-label= f.object.title
 .page-form-control{data: {controller: "image-form"}}
-  = f.hidden_field :partable_id, id: "media_picker_#{f.object.object_id}", data: {target: 'image-form.field'}
-
   .page-form-media-picker
-    = link_to admin_media_picker_path(selected_ids: [f.object.partable_id], hidden_field_id: "media_picker_#{f.object.object_id}", placeholder_id: "media_picker_placeholder_#{f.object.object_id}"), remote: true, class: 'image', data: {target: 'image-form.image'} do
+    = link_to admin_media_picker_path(selected_ids: [f.object.partable_id], input: "media_picker_#{f.object.object_id}", mode: "single"), remote: true, class: 'image', data: {target: 'image-form.image'} do
       .page-form-media-picker-placeholder=t "spina.images.choose_image"
 
-      %div{id: "media_picker_placeholder_#{f.object.object_id}"}
+      = f.hidden_field :partable_id, id: "media_picker_#{f.object.object_id}", data: {target: 'image-form.field'}
+      %div
         - if f.object.partable.file.attached?
           = image_tag variant(f.object.partable.file, resize: "400x300^", crop: "400x300+0+0"), width: 200, height: 150
 

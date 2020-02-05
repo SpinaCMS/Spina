@@ -1,13 +1,12 @@
 .page-form-label= f.object.title
 .page-form-control{data: {controller: "image-form"}}
   = f.fields_for :partable, f.object.partable do |ff|
-    = ff.hidden_field :image_tokens, id: "media_picker_#{ff.object.object_id}", value: ff.object.image_ids.join(","), data: {target: 'image-form.field'}
-
     .page-form-media-picker
-      = link_to admin_media_picker_path(selected_ids: ff.object.images.sorted_by_image_collection.ids, hidden_field_id: "media_picker_#{ff.object.object_id}", multiple: true, placeholder_id: "media_picker_placeholder_#{f.object.object_id}"), remote: true, class: 'images', data: {target: 'image-form.image'} do
+      = link_to admin_media_picker_path(selected_ids: ff.object.images.sorted_by_image_collection.ids, input: "media_picker_#{ff.object.object_id}", mode: "multiple"), remote: true, class: 'images', data: {target: 'image-form.image'} do
         .page-form-media-picker-placeholder=t "spina.images.choose"
 
-        %div{id: "media_picker_placeholder_#{f.object.object_id}"}
+        = ff.hidden_field :image_tokens, id: "media_picker_#{ff.object.object_id}", value: ff.object.image_ids.join(","), data: {target: 'image-form.field'}
+        %div
           - ff.object.images.sorted_by_image_collection.each do |image|
             = image_tag thumbnail_url(image)
 
