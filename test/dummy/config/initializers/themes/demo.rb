@@ -69,7 +69,7 @@
     name: 'demo',
     title: 'Demo',
     description: 'Contains examples of every page part',
-    page_parts: ['line', 'text', 'image', 'header_image', 'image_collection', 'attachment', 'attachment_collection', 'structure']
+    page_parts: ['line', 'text', 'image', 'header_image', 'image_collection', 'structure']
   }]
 
   theme.custom_pages = [{
