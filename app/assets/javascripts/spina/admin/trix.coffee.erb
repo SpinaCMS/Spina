@@ -90,19 +90,20 @@ class Spina.TrixAttachment
     toolbar_id = $(this).closest('trix-toolbar').attr('id')
     $.getScript("<%= Spina::Engine.routes.url_helpers.admin_media_picker_path %>" + "?trix_toolbar_id=#{toolbar_id}")
 
-  @imageInsert: (e, url, alt = "", link_to_url = "") ->
+  @imageInsert: (e) ->
+    console.log(e.detail)
     labels = []
-    labels.push "✍️ #{alt}" if alt != ""
-    labels.push "🔗 #{link_to_url}" if link_to_url != ""
+    labels.push "✍️ #{e.detail.alt}" if e.detail.alt != ""
+    labels.push "🔗 #{e.detail.link_to_url}" if e.detail.link_to_url != ""
     label = labels.join("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;")
 
-    if link_to_url != ""
-      attachment = new Trix.Attachment({content: "<a href='#{link_to_url}' class='trix-attachment-spina-image' data-label='#{label}'>
-        <img src='#{url}' alt='#{alt}' />
+    if e.detail.link_to_url != ""
+      attachment = new Trix.Attachment({content: "<a href='#{e.detail.link_to_url}' class='trix-attachment-spina-image' data-label='#{label}'>
+        <img src='#{e.detail.url}' alt='#{e.detail.alt}' />
       </a>"})
     else
       attachment = new Trix.Attachment({content: "<span class='trix-attachment-spina-image' data-label='#{label}'>
-        <img src='#{url}' alt='#{alt}' />
+        <img src='#{e.detail.url}' alt='#{e.detail.alt}' />
       </span>"})
 
     this.editor.insertAttachment(attachment)

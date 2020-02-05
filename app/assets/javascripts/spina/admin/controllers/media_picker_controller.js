@@ -3,7 +3,7 @@
 
   application.register("media-picker", class extends Stimulus.Controller {
     static get targets() {
-      return ["selector", "placeholder", "image", "grid", "selectedImage", "selectedImages", "selectedCount"]
+      return ["selector", "placeholder", "trix", "image", "grid", "selectedImage", "selectedImages", "selectedCount", "alt", "linkToUrl", "trixImage"]
     }
 
     connect() {
@@ -31,6 +31,19 @@
       this.selectedImageTargets.forEach(function(image) {
         this.placeholder.insertAdjacentHTML("beforeend", `<img src="${image.src}" />`)
       }.bind(this))
+    }
+
+    setTrixImage(event) {
+      this.trixImage = event.currentTarget
+    }
+
+    insert_trix(event) {
+      let customEvent = new CustomEvent("image-insert", {bubbles: true, cancelable: true, detail: {
+        url: this.trixImage.dataset.fullImageUrl, 
+        alt: this.altTarget.value, 
+        link_to_url: this.linkToUrlTarget.value
+      }})
+      this.trixEditor.dispatchEvent(customEvent)
     }
 
     refresh() {
@@ -81,6 +94,10 @@
     removeImage(id) {
       let image = this.selectedImagesTarget.querySelector(`img[data-image-id="${id}"]`)
       this.selectedImagesTarget.removeChild(image)
+    }
+
+    get trixEditor() {
+      return document.querySelector(`trix-editor[toolbar="${this.trixTarget.value}"]`)
     }
 
     get selectedIds() {

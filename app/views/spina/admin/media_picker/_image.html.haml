@@ -1,6 +1,8 @@
 %label.media-picker-image{data: {target: "media-picker.image"}}
-  - if params[:multiple]
+  - if params[:trix_toolbar_id]
+    = radio_button_tag :image_id, image.id, image.id.in?(selected_ids), data: {action: "media-picker#setTrixImage", image_id: image.id, full_image_url: main_app.url_for(image.file)}
+  - elsif params[:multiple]
     = check_box_tag :image_id, image.id, nil, data: {action: "media-picker#toggle", image_id: image.id, thumbnail_url: thumbnail_url(image)}
   - else
-    = radio_button_tag :image_id, image.id, image.id.in?(selected_ids), data: {action: "media-picker#choose modal#close", image_id: image.id, thumbnail_url: thumbnail_url(image)}
+    = radio_button_tag :image_id, image.id, image.id.in?(selected_ids), data: {action: "media-picker#choose modal#close", image_id: image.id, thumbnail_url: thumbnail_url(image), full_image_url: main_app.url_for(image.file)}
   %span= image_tag thumbnail_url(image)
