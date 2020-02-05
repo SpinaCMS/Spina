@@ -15,12 +15,26 @@
     }
 
     choose(event) {
-      if (this.element.dataset.mode == "single") {
-        // Set image ID
-        this.hiddenInput.value = event.currentTarget.value
-
-        // Set image URL
-        this.placeholder.innerHTML = `<img src="${event.currentTarget.dataset.thumbnailUrl}" width="200" height="150" />`
+      switch(this.element.dataset.mode) {
+        case "single":
+          this.imageTargets.forEach((image) => image.querySelector('input').checked = false)
+          event.currentTarget.checked = true
+          this.hiddenInput.value = event.currentTarget.value
+          this.placeholder.innerHTML = `<img src="${event.currentTarget.dataset.thumbnailUrl}" width="200" height="150" />`
+          break
+        case "multiple":
+          if(event.currentTarget.checked) {
+            this.addImage(event.currentTarget.dataset.imageId, event.currentTarget.dataset.thumbnailUrl)
+          } else {
+            this.removeImage(event.currentTarget.dataset.imageId)
+          }
+          this.setCount()
+          break
+        case "trix":
+          this.imageTargets.forEach((image) => image.querySelector('input').checked = false)
+          event.currentTarget.checked = true
+          this.trixImage = event.currentTarget
+          break
       }
     }
 
@@ -33,10 +47,6 @@
       this.selectedImageTargets.forEach(function(image) {
         this.placeholder.insertAdjacentHTML("beforeend", `<img src="${image.src}" />`)
       }.bind(this))
-    }
-
-    setTrixImage(event) {
-      this.trixImage = event.currentTarget
     }
 
     insert_trix(event) {
@@ -72,15 +82,6 @@
           this.gridTarget.innerHTML = html
           this.toggleActive()
         }.bind(this))
-    }
-
-    toggle(event) {
-      if(event.currentTarget.checked) {
-        this.addImage(event.currentTarget.dataset.imageId, event.currentTarget.dataset.thumbnailUrl)
-      } else {
-        this.removeImage(event.currentTarget.dataset.imageId)
-      }
-      this.setCount()
     }
 
     setCount() {
