@@ -6,6 +6,7 @@ module Spina
 
       def show
         @images = Image.where(media_folder: @media_folder).order(created_at: :desc).page(params[:page])
+        @mode = params[:mode]
 
         if selected_ids.any?
           @images = @images.reorder(Arel.sql("CASE WHEN id IN(#{selected_ids.join(', ')}) THEN 0 ELSE 1 END, created_at DESC"))

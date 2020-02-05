@@ -1,5 +1,5 @@
 .modal-container{data: {controller: "modal"}}
-  .modal.modal-large{data: {controller: "media-picker", mode: params[:mode]}}
+  .modal.modal-large{data: {controller: "media-picker", mode: @mode}}
     %header
       = button_tag type: :default, class: 'modal-close-cross', data: {action: "modal#close"} do
         = icon('cross')
@@ -7,10 +7,9 @@
     %section.media-picker
       = text_field_tag :input, params[:input], data: {target: "media-picker.input"}
   
-      %div{data: {target: "media-picker.grid"}}
-        = render 'media_picker_grid'
+      %div{data: {target: "media-picker.grid"}}= render 'media_picker_grid'
 
-    - if params[:mode] == "trix"
+    - if @mode == "trix"
       %section.media-picker-footer
         = text_field_tag :alt, nil, placeholder: "✍️ Alt", data: {target: "media-picker.alt"}
         = text_field_tag :link_to_url, nil, placeholder: "🔗 Link to URL", data: {target: "media-picker.linkToUrl"}
@@ -18,7 +17,7 @@
         = button_tag type: :button, class: 'pull-right button button-primary', data: {action: "media-picker#insert_trix modal#close"} do
           =t "spina.images.insert_image"
 
-    - if params[:mode] == "multiple"
+    - if @mode == "multiple"
       %section.media-picker-footer
         .media-picker-selected-images{data: {target: "media-picker.selectedImages"}}
           - @selected_images.each do |image|
