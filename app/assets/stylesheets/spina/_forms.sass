@@ -622,7 +622,6 @@ input.datepicker
 
 .structure-form
   display: flex
-  margin-left: -20px
   position: relative
 
   .structure-form-menu
@@ -636,22 +635,8 @@ input.datepicker
       text-transform: none
 
     ul
-      border-right: 1px solid #ddd
+      box-shadow: 0 1px 1px rgba(0, 0, 0, .05)
       position: relative
-
-    ul:before, ul:after
-      background: linear-gradient(rgba(255, 255, 255, 0), #ddd)
-      content: " "
-      height: 40px
-      position: absolute
-      right: -1px
-      top: -40px
-      width: 1px
-
-    ul:after
-      background: linear-gradient(#ddd, rgba(255, 255, 255, 0))
-      bottom: -40px
-      top: auto
 
     ul li
       overflow: hidden
@@ -660,14 +645,29 @@ input.datepicker
       color: #999
       float: right
 
+    ul li a
+      background: rgba(255, 255, 255, .4)
+      border: 1px solid #e6e6e6
+
+    ul li:not(:last-child) a
+      border-bottom: none
+
+    ul li:first-child a
+      border-top-left-radius: 4px
+      border-top-right-radius: 4px
+
+    ul li:last-child a
+      border-bottom-left-radius: 4px
+      border-bottom-right-radius: 4px
+
     ul li a, ul li.sortable-placeholder
-      color: #333
+      color: #444
       cursor: pointer
       display: block
       font-weight: 600
       font-size: 13px
-      height: 50px
-      line-height: 50px
+      height: 44px
+      line-height: 44px
       outline: none
       padding-left: 20px
 
@@ -684,40 +684,12 @@ input.datepicker
       background: #f9f9f9
 
     ul li.active a
+      background: white
       color: $primary-color
 
-    ul li.active
-      margin-right: -1px
-      position: relative
-
-      a
-        background: #fff
-
-      &:before
-        border-bottom: 1px solid #ddd
-        border-bottom-right-radius: 3px
-        border-right: 1px solid #ddd
-        content: " "
-        height: 10px
-        position: absolute
-        right: 0px
-        top: -10px
-        width: 100%
-
-      &:after
-        bottom: -10px
-        border-right: 1px solid #ddd
-        border-top: 1px solid #d5d5d5
-        border-top-right-radius: 3px
-        box-shadow: inset 0 1px 2px rgba(0, 0, 0, .075)
-        content: " "
-        height: 10px
-        right: 0px
-        position: absolute
-        width: 100%
-
   .structure-form-content
-    padding-left: 12px
+    padding-left: 15px
+    margin-top: -29px
     width: 100%
 
     .structure-form-pane
