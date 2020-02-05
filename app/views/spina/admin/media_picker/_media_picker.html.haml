@@ -7,8 +7,8 @@
     %section.media-picker
       = hidden_field_tag :selector, params[:hidden_field_id], data: {target: "media-picker.selector"}
       = hidden_field_tag :placeholder, params[:placeholder_id], data: {target: "media-picker.placeholder"}
-
-      .media-picker-grid{data: {target: "media-picker.grid"}}
+  
+      %div{data: {target: "media-picker.grid"}}
         = render 'media_picker_grid'
 
     - if params[:multiple]

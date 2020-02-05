@@ -3,7 +3,11 @@
 
   application.register("media-picker", class extends Stimulus.Controller {
     static get targets() {
-      return ["selector", "placeholder", "grid", "selectedImage", "selectedImages", "selectedCount"]
+      return ["selector", "placeholder", "image", "grid", "selectedImage", "selectedImages", "selectedCount"]
+    }
+
+    connect() {
+      this.toggleActive()
     }
 
     choose(event) {
@@ -25,21 +29,22 @@
       }.bind(this))
     }
 
+    toggleActive() {
+      this.imageTargets.forEach(function(image) {
+        let input = image.querySelector('input')
+        if (this.selectedIds.includes(input.value)) {
+          input.checked = true
+        }
+      }.bind(this))
+    }
+
     openFolder(event) {
       event.preventDefault()
       fetch(event.currentTarget.href)
         .then(response => response.text())
         .then(function(html) {
           this.gridTarget.innerHTML = html
-        }.bind(this))
-    }
-
-    backToRoot(event) {
-      event.preventDefault()
-      fetch(event.currentTarget.href)
-        .then(response => response.text())
-        .then(function(html) {
-          this.gridTarget.innerHTML = html
+          this.toggleActive()
         }.bind(this))
     }
 
