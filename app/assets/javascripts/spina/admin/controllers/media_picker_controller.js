@@ -8,6 +8,10 @@
 
     connect() {
       this.toggleActive()
+
+      if (this.hasSelectedImagesTarget) {
+        this.sortable = Sortable.create(this.selectedImagesTarget)
+      }
     }
 
     choose(event) {
@@ -27,6 +31,15 @@
       this.selectedImageTargets.forEach(function(image) {
         this.placeholder.insertAdjacentHTML("beforeend", `<img src="${image.src}" />`)
       }.bind(this))
+    }
+
+    refresh() {
+      fetch('/admin/media_picker')
+        .then(response => response.text())
+        .then(function(html) {
+          this.gridTarget.innerHTML = html
+          this.toggleActive()
+        }.bind(this))
     }
 
     toggleActive() {

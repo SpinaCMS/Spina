@@ -12,7 +12,7 @@
       e.stopPropagation()
 
       // Remove image and reset field
-      this.imageTarget.querySelector('img').remove()
+      this.imageTarget.querySelectorAll('img').forEach(image => image.remove())
       this.fieldTarget.value = null
     }
     
