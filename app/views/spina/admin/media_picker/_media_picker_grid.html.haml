@@ -4,9 +4,10 @@
       .media-folder-thumbnail
       .media-folder-name GO BACK
   - else
-    = form_with model: Spina::Image.new, url: admin_images_path, data: {action: "ajax:success->media-picker#refresh"} do |f|
-      = f.file_field :files, multiple: true, accept: "image/*", style: "width: 100px", data: {direct_upload_url: main_app.rails_direct_uploads_url}
-      = f.submit
+    - if false
+      = form_with model: Spina::Image.new, url: admin_images_path, data: {action: "ajax:success->media-picker#refresh"} do |f|
+        = f.file_field :files, multiple: true, accept: "image/*", style: "width: 100px", data: {direct_upload_url: main_app.rails_direct_uploads_url}
+        = f.submit
 
     - @media_folders.each do |media_folder|
       = link_to spina.admin_media_picker_path(multiple: params[:multiple], selected_ids: selected_ids, media_folder_id: media_folder.id), class: 'media-folder', data: {action: "media-picker#openFolder"} do
