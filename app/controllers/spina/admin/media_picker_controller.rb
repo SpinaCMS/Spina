@@ -2,13 +2,10 @@ module Spina
   module Admin
     class MediaPickerController < AdminController
       before_action :set_media_folders
+      before_action :set_selected_images
 
       def show
         @images = Image.where(media_folder: @media_folder).order(created_at: :desc).page(params[:page])
-        100.times do
-          Rails.logger.info selected_ids.inspect
-        end
-        @selected_images = Image.where(id: selected_ids).sort_by{|image| selected_ids.index(image.id)}
 
         if selected_ids.any?
           @images = @images.reorder(Arel.sql("CASE WHEN id IN(#{selected_ids.join(', ')}) THEN 0 ELSE 1 END, created_at DESC"))
@@ -20,19 +17,15 @@ module Spina
         end
       end
 
-      def select
-        if params[:multiple]
-          @images = Image.where(id: params[:image_ids].split("-"))
-        else 
-          @image = Image.find(params[:image_id])
-        end
-      end
-
       private
 
         def set_media_folders
           @media_folders = MediaFolder.order(:name).joins(:images).uniq
           @media_folder = MediaFolder.find(params[:media_folder_id]) if params[:media_folder_id].present?
+        end
+
+        def set_selected_images
+          @selected_images = Image.where(id: selected_ids).sort_by{|image| selected_ids.index(image.id)}
         end
 
         def selected_ids

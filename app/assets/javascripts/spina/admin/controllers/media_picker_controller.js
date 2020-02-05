@@ -3,7 +3,7 @@
 
   application.register("media-picker", class extends Stimulus.Controller {
     static get targets() {
-      return ["selector", "placeholder", "trix", "image", "grid", "selectedImage", "selectedImages", "selectedCount", "alt", "linkToUrl", "trixImage"]
+      return ["input", "image", "grid", "selectedImage", "selectedImages", "selectedCount", "alt", "linkToUrl", "trixImage"]
     }
 
     connect() {
@@ -15,11 +15,13 @@
     }
 
     choose(event) {
-      // Set image ID
-      this.hiddenInput.value = event.currentTarget.value
+      if (this.element.dataset.mode == "single") {
+        // Set image ID
+        this.hiddenInput.value = event.currentTarget.value
 
-      // Set image URL
-      this.placeholder.innerHTML = `<img src="${event.currentTarget.dataset.thumbnailUrl}" width="200" height="150" />`
+        // Set image URL
+        this.placeholder.innerHTML = `<img src="${event.currentTarget.dataset.thumbnailUrl}" width="200" height="150" />`
+      }
     }
 
     choose_multiple(event) {
@@ -47,20 +49,18 @@
     }
 
     refresh() {
-      fetch('/admin/media_picker')
-        .then(response => response.text())
-        .then(function(html) {
-          this.gridTarget.innerHTML = html
-          this.toggleActive()
-        }.bind(this))
+      // fetch('/admin/media_picker')
+      //   .then(response => response.text())
+      //   .then(function(html) {
+      //     this.gridTarget.innerHTML = html
+      //     this.toggleActive()
+      //   }.bind(this))
     }
 
     toggleActive() {
       this.imageTargets.forEach(function(image) {
         let input = image.querySelector('input')
-        if (this.selectedIds.includes(input.value)) {
-          input.checked = true
-        }
+        if (this.selectedIds.includes(input.value)) input.checked = true
       }.bind(this))
     }
 
@@ -97,7 +97,7 @@
     }
 
     get trixEditor() {
-      return document.querySelector(`trix-editor[toolbar="${this.trixTarget.value}"]`)
+      return document.querySelector(`trix-editor[toolbar="${this.inputTarget.value}"]`)
     }
 
     get selectedIds() {
@@ -107,11 +107,11 @@
     }
 
     get hiddenInput() {
-      return document.querySelector(`#${this.selectorTarget.value}`)
+      return document.querySelector(`#${this.inputTarget.value}`)
     }
 
     get placeholder() {
-      return document.querySelector(`#${this.placeholderTarget.value}`)
+      return document.querySelector(`#${this.inputTarget.value}`).nextElementSibling
     }
 
     get token() {
