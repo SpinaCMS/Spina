@@ -169,7 +169,7 @@ GEM
       request_store (~> 1.0)
     mocha (1.11.2)
     nio4r (2.5.2)
-    nokogiri (1.10.7)
+    nokogiri (1.10.8)
       mini_portile2 (~> 2.4.0)
     pg (1.2.2)
     pry (0.12.2)
