@@ -111,14 +111,17 @@ en:
       success: You can use your new password
       unknown_user: This user does not exist
     images:
+      all_images: All images
       back: Back
       cannot_be_created: Cannot be created
       choose_image: Choose image
       choose_images: Choose images
+      confirm_selection: Confirm selection
       delete: Delete
       delete_confirmation: Are you sure you want to delete this <strong>image</strong>?
       delete_folder: Delete folder
       done_organizing: Done organizing
+      insert_image: Insert image
       insert_photo: Insert photo
       insert_photos: Insert photos
       link: Link

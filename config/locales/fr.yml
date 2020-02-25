@@ -111,14 +111,17 @@ fr:
       success: Vous pouvez utiliser votre nouveau mot de passe
       unknown_user: Cet utilisateur n'existe pas
     images:
+      all_images: 
       back: 
       cannot_be_created: 
       choose_image: 
       choose_images: 
+      confirm_selection: 
       delete: 
       delete_confirmation: 
       delete_folder: 
       done_organizing: 
+      insert_image: 
       insert_photo: 
       insert_photos: 
       link: 

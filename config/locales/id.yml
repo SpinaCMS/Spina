@@ -111,14 +111,17 @@ id:
       success: Anda dapat menggunakan sandi baru anda
       unknown_user: Pengguna ini tidak ada
     images:
+      all_images: 
       back: 
       cannot_be_created: 
       choose_image: 
       choose_images: 
+      confirm_selection: 
       delete: 
       delete_confirmation: 
       delete_folder: 
       done_organizing: 
+      insert_image: 
       insert_photo: 
       insert_photos: 
       link: 

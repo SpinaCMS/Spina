@@ -111,14 +111,17 @@ it:
       success: Puoi usare la tua nuova password
       unknown_user: Questo utente non esiste
     images:
+      all_images: 
       back: Indietro
       cannot_be_created: Non può essere creato
       choose_image: Scegli immagine
       choose_images: Scegli immagini
+      confirm_selection: 
       delete: Cancella
       delete_confirmation: Sei sicuro di voler cancellare questa <strong> immagine </strong>?
       delete_folder: Cancella cartella
       done_organizing: Fine riordinare
+      insert_image: 
       insert_photo: Inserisci foto
       insert_photos: Inserisci foto
       link: Link

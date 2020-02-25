@@ -111,14 +111,17 @@ nl:
       success: Je kunt je nieuwe wachtwoord gebruiken
       unknown_user: Die gebruiker bestaat niet
     images:
+      all_images: Alle afbeeldingen
       back: Terug
       cannot_be_created: Kan niet worden aangemaakt
       choose_image: Kies afbeelding
       choose_images: Kies afbeeldingen
+      confirm_selection: Bevestig selectie
       delete: Verwijderen
       delete_confirmation: Weet je zeker dat je deze <strong>afbeelding</strong> wilt verwijderen?
       delete_folder: Verwijder folder
       done_organizing: Klaar met slepen
+      insert_image: Afbeelding invoegen
       insert_photo: Afbeelding invoegen
       insert_photos: Afbeeldingen invoegen
       link: Link

@@ -111,14 +111,17 @@ pt-BR:
       success: Você já pode usar sua nova senha
       unknown_user: Este usuário não existe
     images:
+      all_images: 
       back: 
       cannot_be_created: 'Imagem não pôde ser processada:'
       choose_image: 
       choose_images: Escolher imagens
+      confirm_selection: 
       delete: Excluir
       delete_confirmation: Tem certeza que deseja remover esta <strong>imagem</strong>?
       delete_folder: Excluir pasta
       done_organizing: Concluir organização
+      insert_image: 
       insert_photo: Inserir imagem
       insert_photos: Inserir imagens
       link: 'URL da sua imagem:'

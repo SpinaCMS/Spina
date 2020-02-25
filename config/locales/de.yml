@@ -111,14 +111,17 @@ de:
       success: Du kannst dein neues Passwort verwenden
       unknown_user: Dieser Nutzer existiert nicht
     images:
+      all_images: 
       back: 
       cannot_be_created: 
       choose_image: 
       choose_images: 
+      confirm_selection: 
       delete: 
       delete_confirmation: 
       delete_folder: 
       done_organizing: 
+      insert_image: 
       insert_photo: 
       insert_photos: 
       link: 

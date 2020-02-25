@@ -111,14 +111,17 @@ ro:
       success: Îți poți folosi parola nouă
       unknown_user: Acest utilizator nu există
     images:
+      all_images: 
       back: 
       cannot_be_created: 
       choose_image: 
       choose_images: 
+      confirm_selection: 
       delete: 
       delete_confirmation: 
       delete_folder: 
       done_organizing: 
+      insert_image: 
       insert_photo: 
       insert_photos: 
       link: 

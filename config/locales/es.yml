@@ -111,14 +111,17 @@ es:
       success: Puede utilizar su nueva contraseña
       unknown_user: Este usuario no existe
     images:
+      all_images: 
       back: Regresar
       cannot_be_created: No puede ser creada
       choose_image: Elegir imagen
       choose_images: Elegir imágenes
+      confirm_selection: 
       delete: Borrar
       delete_confirmation: Esta seguro que desea borrar esta <strong>imagen</strong>?
       delete_folder: Borrar carpeta
       done_organizing: 
+      insert_image: 
       insert_photo: Insertar foto
       insert_photos: Insertar fotos
       link: Enlace
