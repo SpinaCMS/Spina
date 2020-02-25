@@ -5,7 +5,7 @@ module Spina
       before_action :set_selected_images
 
       def show
-        @images = Image.where(media_folder: @media_folder).order(created_at: :desc).page(params[:page]).per(50)
+        @images = Image.where(media_folder: @media_folder).order(created_at: :desc).page(params[:page]).per(25)
         @mode = params[:mode]
 
         if selected_ids.any?
