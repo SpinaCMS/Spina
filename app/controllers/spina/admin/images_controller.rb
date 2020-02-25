@@ -8,7 +8,7 @@ module Spina
       def index
         add_breadcrumb I18n.t('spina.website.images'), admin_images_path
         @media_folders = MediaFolder.order(:name)
-        @images = Image.sorted.where(media_folder_id: nil).with_attached_file.page(params[:page])
+        @images = Image.sorted.where(media_folder_id: nil).with_attached_file.page(params[:page]).per(50)
       end
 
       # There's no file validation yet in ActiveStorage

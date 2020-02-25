@@ -21,4 +21,5 @@
 
   = render partial: 'image', collection: @images
 
-.media-picker-pagination= link_to_next_page @images, "nest", data: {remote: true}
+.media-picker-pagination
+  = link_to_next_page @images, "Next", data: {remote: true, target: "infinite-scroll.link"}

@@ -1,5 +1,5 @@
-.modal-container{data: {controller: "modal media-picker", mode: @mode}}
-  .modal.modal-large
+.modal-container{data: {controller: "modal media-picker infinite-scroll", mode: @mode}}
+  .modal.modal-large{data: {target: "infinite-scroll.scrollContainer"}}
     %header
       = button_tag type: :default, class: 'modal-close-cross', data: {action: "modal#close"} do
         = icon('cross')
