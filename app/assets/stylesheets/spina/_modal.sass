@@ -41,8 +41,9 @@
   display: none
   margin: 0 auto
   max-width: 480px
+  max-height: 90%
   min-height: 100px
-  overflow: hidden
+  overflow: scroll
   position: relative
 
   @media screen and (max-width: 480px)
@@ -60,6 +61,12 @@
 
     footer a
       padding: 18px 0
+
+  header
+    background: white
+    position: sticky
+    top: 0px
+    z-index: 10
 
   header h3
     border-radius: 2px 2px 0 0

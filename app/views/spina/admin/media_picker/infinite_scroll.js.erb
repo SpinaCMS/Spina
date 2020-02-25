@@ -1,3 +1,5 @@
 document.querySelector(".media-picker-grid").insertAdjacentHTML("beforeend", "<%=j render partial: 'image', collection: @images %>")
 
-document.querySelector(".media-picker-pagination").innerHTML = "<%=j link_to_next_page @images, 'Next', data: {remote: true} %>"
+document.querySelector(".media-picker-pagination").innerHTML = "<%=j link_to_next_page @images, 'Next', data: {remote: true, target: 'infinite-scroll.link'} %>"
+
+document.querySelector(".modal-container").infiniteScroll.loadNextPage()
