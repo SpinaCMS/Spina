@@ -3,7 +3,10 @@
     %header
       = button_tag type: :default, class: 'modal-close-cross', data: {action: "modal#close"} do
         = icon('cross')
-      %h3=t "spina.images.choose_image"
+      - if @mode == "multiple"
+        %h3=t "spina.images.choose_images"
+      - else
+        %h3=t "spina.images.choose_image"
     %section.media-picker
       = hidden_field_tag :input, params[:input], data: {target: "media-picker.input"}
   
