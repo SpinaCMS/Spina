@@ -21,6 +21,7 @@
           event.currentTarget.checked = true
           this.hiddenInput.value = event.currentTarget.value
           this.placeholder.innerHTML = `<img src="${event.currentTarget.dataset.thumbnailUrl}" width="200" height="150" />`
+          this.element.modal.close()
           break
         case "multiple":
           if(event.currentTarget.checked) {
@@ -47,6 +48,9 @@
       this.selectedImageTargets.forEach(function(image) {
         this.placeholder.insertAdjacentHTML("beforeend", `<img src="${image.src}" />`)
       }.bind(this))
+
+      // Close modal
+      this.element.modal.close()
     }
 
     insert_trix(event) {
@@ -56,6 +60,9 @@
         link_to_url: this.linkToUrlTarget.value
       }})
       this.trixEditor.dispatchEvent(customEvent)
+
+      // Close modal
+      this.element.modal.close()
     }
 
     refresh() {

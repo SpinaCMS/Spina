@@ -2,7 +2,10 @@
   - if @media_folder.present?
     = link_to spina.admin_media_picker_path, class: 'media-folder', data: {action: "media-picker#openFolder"} do
       .media-folder-thumbnail
-      .media-folder-name GO BACK
+        .media-folder-placeholder
+          %i.icon.icon-picture-o
+        .media-folder-shadow
+      .media-folder-name=t "spina.images.all_images"
   - else
     / - if false
     /   = form_with model: Spina::Image.new, url: admin_images_path, data: {action: "ajax:success->media-picker#refresh"} do |f|

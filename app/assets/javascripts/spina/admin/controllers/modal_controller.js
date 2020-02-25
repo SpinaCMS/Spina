@@ -7,6 +7,7 @@
     }
 
     connect() {
+      this.element[this.identifier] = this
     }
 
     close() {
