@@ -20,7 +20,7 @@
 %h5 Structure
 
 %ul
-  - content(:structure)&.structure_items&.each do |item|
+  - content(:structure)&.each do |item|
     %li
       %h6 Title
       %p= item.content(:title)
