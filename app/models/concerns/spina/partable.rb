@@ -3,12 +3,12 @@ module Spina
     extend ActiveSupport::Concern
 
     included do
-      def part(attributes)
-        part = page_parts.where(name: attributes[:name]).first_or_initialize(attributes)
-        part.partable = part.partable_type.constantize.new if part.partable.blank?
-        part.options = attributes[:options]
-        part
-      end
+      # def part(attributes)
+      #   part = page_parts.where(name: attributes[:name]).first_or_initialize(attributes)
+      #   part.partable = part.partable_type.constantize.new if part.partable.blank?
+      #   part.options = attributes[:options]
+      #   part
+      # end
 
       def has_content?(name)
         content(name).present?

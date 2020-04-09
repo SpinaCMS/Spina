@@ -2,12 +2,16 @@ require 'spina/engine'
 require 'spina/railtie'
 require 'spina/plugin'
 require 'spina/theme'
+require 'spina/parts/base'
 require 'spina/parts/line'
+require 'spina/parts/text'
+require 'spina/parts/image'
 
 module Spina
 
   include ActiveSupport::Configurable
 
+  PARTS = [Parts::Line, Parts::Text, Parts::Image]
   PLUGINS = []
   THEMES = []
 
@@ -24,7 +28,8 @@ module Spina
   self.locales = [I18n.default_locale]
 
   self.parts = [
-    Parts::Line
+    Parts::Line,
+    Parts::Text
   ]
 
 end

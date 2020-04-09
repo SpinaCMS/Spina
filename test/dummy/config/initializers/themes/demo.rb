@@ -3,6 +3,28 @@
   theme.name = 'demo'
   theme.title = 'Demo theme'
 
+  theme.parts = [{
+    name: 'line',
+    title: "Line",
+    part_type: "Spina::Parts::Line"
+  }, {
+    name: 'body',
+    title: "Body",
+    part_type: "Spina::Parts::Text"
+  }, {
+    name: 'image',
+    title: "Image",
+    part_type: "Spina::Parts::Image"
+  }, {
+    name: 'headline',
+    title: "Headline",
+    part_type: "Spina::Parts::Line"
+  }, {
+    name: 'footer',
+    title: "Footer",
+    part_type: "Spina::Parts::Text"
+  }]
+
   theme.page_parts = [{
     name:           'line',
     title:          'Line',

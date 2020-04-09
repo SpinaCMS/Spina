@@ -8,8 +8,9 @@ module Spina
     # Stores the old path when generating a new materialized_path
     attr_accessor :old_path
 
+    # Store each locale's content in [locale]_content as an array of parts
     Spina.config.locales.each do |locale|
-      attr_json "#{locale}_content".to_sym, AttrJson::Type::PolymorphicModel.new(Parts::Line), array: true, default: []
+      attr_json "#{locale}_content".to_sym, AttrJson::Type::PolymorphicModel.new(*Spina::PARTS), array: true, default: []
       attr_json_accepts_nested_attributes_for "#{locale}_content".to_sym
     end
 
@@ -54,7 +55,11 @@ module Spina
     translates :menu_title, :seo_title, :url_title, default: -> { title }
 
     def content(name)
-      send("#{I18n.locale}_content").find{|part| part.name.to_s == name.to_s}&.content
+      part(name)&.content
+    end
+
+    def part(name)
+      send("#{I18n.locale}_content").find{|part| part.name.to_s == name.to_s}
     end
 
     def to_s

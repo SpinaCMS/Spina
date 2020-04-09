@@ -1,6 +1,6 @@
 module Spina
   module Parts
-    class Line < Base
+    class Text < Base
       attr_json :content, :string, default: ""
     end
   end

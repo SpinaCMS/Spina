@@ -31,6 +31,10 @@ module Spina
         partable_type.tableize.sub(/\Aspina\//, '')
       end
 
+      def parts_partial_namespace(part_type)
+        part_type.tableize.sub(/\Aspina\/parts\//, '')
+      end
+
       def flatten_nested_hash(hash)
         hash.flat_map{|k, v| [k, *flatten_nested_hash(v)]}
       end
