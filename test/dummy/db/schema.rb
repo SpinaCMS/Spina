@@ -191,6 +191,7 @@ ActiveRecord::Schema.define(version: 2020_06_22_192131) do
     t.integer "position"
     t.boolean "active", default: true
     t.integer "resource_id"
+    t.jsonb "json_attributes"
     t.index ["resource_id"], name: "index_spina_pages_on_resource_id"
   end
 

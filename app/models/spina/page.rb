@@ -2,13 +2,20 @@ module Spina
   class Page < ApplicationRecord
     extend Mobility
     include Partable
+    include AttrJson::Record
+    include AttrJson::NestedAttributes
 
     # Stores the old path when generating a new materialized_path
     attr_accessor :old_path
 
+    Spina.config.locales.each do |locale|
+      attr_json "#{locale}_content".to_sym, AttrJson::Type::PolymorphicModel.new(Parts::Line), array: true, default: []
+      attr_json_accepts_nested_attributes_for "#{locale}_content".to_sym
+    end
+
     # Page contains multiple parts called PageParts
     has_many :page_parts, dependent: :destroy, inverse_of: :page
-    alias_attribute :parts, :page_parts
+    # alias_attribute :parts, :page_parts
     accepts_nested_attributes_for :page_parts, allow_destroy: true
 
     # Orphaned pages are adopted by parent pages if available, otherwise become root
@@ -45,6 +52,10 @@ module Spina
     translates :title, fallbacks: true
     translates :description, :materialized_path
     translates :menu_title, :seo_title, :url_title, default: -> { title }
+
+    def content(name)
+      send("#{I18n.locale}_content").find{|part| part.name.to_s == name.to_s}&.content
+    end
 
     def to_s
       name

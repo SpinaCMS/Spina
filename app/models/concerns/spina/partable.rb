@@ -4,7 +4,7 @@ module Spina
 
     included do
       def part(attributes)
-        part = parts.where(name: attributes[:name]).first_or_initialize(attributes)
+        part = page_parts.where(name: attributes[:name]).first_or_initialize(attributes)
         part.partable = part.partable_type.constantize.new if part.partable.blank?
         part.options = attributes[:options]
         part
@@ -15,7 +15,7 @@ module Spina
       end
 
       def content(name)
-        part = parts.find_by(name: name)
+        part = page_parts.find_by(name: name)
         part.try(:content)
       end
 
