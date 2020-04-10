@@ -1,4 +1,4 @@
-.structure-form-pane{class: ('active' if f.options[:child_index].zero?), id: "structure_form_pane_#{f.object.object_id}"}
+.structure-form-pane{class: ('active' if f.options[:child_index].zero?), id: "structure_form_pane_#{f.object.object_id}", data: {part_id: f.object.object_id}}
   = f.hidden_field :title
   = f.hidden_field :name
 

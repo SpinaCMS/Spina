@@ -13,11 +13,6 @@ ready = ->
       position_array.push $(this).data('image-id')
     $(e.target).parents('.horizontal-form-content').find('.image-positions').val(position_array.join(","))
 
-  $('.structure-form-menu ul').sortable().bind 'sortupdate', (e) ->
-    $(e.target).find('li').each (index) ->
-      id = $(this).data('structure-item-id')
-      $(".structure_form_pane_#{id}_position").val(index)
-
 $(document).on 'turbolinks:load', ready
 
 # Change templates makes page parts appear and disappear

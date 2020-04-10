@@ -1,8 +1,8 @@
 .page-form-label= f.object.title
 .page-form-control
-  .structure-form
+  .structure-form{data: {controller: "repeater-form"}}
     .structure-form-menu
-      %ul
+      %ul{data: {target: "repeater-form.list"}}
         - (f.object.content || []).each.with_index do |repeater_content, index|
           %li{class: ('active' if index.zero?), data: {part_id: repeater_content.object_id}}
             = link_to "#structure_form_pane_#{repeater_content.object_id}" do
@@ -13,6 +13,6 @@
         = link_to_add_repeater_fields f do
           = icon('plus')
 
-    .structure-form-content
+    .structure-form-content{data: {target: "repeater-form.content"}}
       = f.fields_for :content do |ff|
         = render 'spina/admin/parts/repeaters/fields', f: ff
