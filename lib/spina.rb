@@ -7,12 +7,14 @@ require 'spina/parts/line'
 require 'spina/parts/text'
 require 'spina/parts/image'
 require 'spina/parts/image_collection'
+require 'spina/parts/repeater_content'
+require 'spina/parts/repeater'
 
 module Spina
 
   include ActiveSupport::Configurable
 
-  PARTS = [Parts::Line, Parts::Text, Parts::Image, Parts::ImageCollection]
+  PARTS = [Parts::Line, Parts::Text, Parts::Image, Parts::ImageCollection, Parts::Repeater]
   PLUGINS = []
   THEMES = []
 

@@ -12,6 +12,16 @@ module Spina
         end
       end
 
+      def link_to_add_repeater_fields(f, &block)
+        repeater_content = Spina::Parts::RepeaterContent.new(name: "repeater", title: "Title")
+        fields = f.fields_for(:content, [repeater_content], child_index: repeater_content.object_id) do |builder|
+          render("spina/admin/parts/repeaters/fields", f: builder)
+        end
+        link_to '#', class: "add_structure_item_fields button button-link", data: {id: repeater_content.object_id, fields: fields.gsub("\n", "")} do
+          icon('plus')
+        end
+      end
+
       def build_structure_parts(name, item)
         structure = current_theme.structures.find { |structure| structure[:name] == name }
         return item.parts unless structure.present?

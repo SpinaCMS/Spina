@@ -8,6 +8,10 @@
     title: "Line",
     part_type: "Spina::Parts::Line"
   }, {
+    name: 'repeater',
+    title: "Repeater",
+    part_type: "Spina::Parts::Repeater"
+  }, {
     name: 'body',
     title: "Body",
     part_type: "Spina::Parts::Text"
