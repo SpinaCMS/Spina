@@ -1,0 +1,13 @@
+.page-form-label= f.object.title
+.page-form-control{data: {controller: "image-form"}}
+  .page-form-media-picker
+    = link_to admin_media_picker_path(selected_ids: f.object.image_ids, input: "media_picker_#{f.object.object_id}", mode: "multiple"), remote: true, class: 'images', data: {target: 'image-form.image'} do
+      .page-form-media-picker-placeholder=t "spina.images.choose"
+      = f.hidden_field :image_tokens, id: "media_picker_#{f.object.object_id}", value: f.object.image_ids.join(","), data: {target: 'image-form.field'}
+      
+      %div
+        - f.object.images.each do |image|
+          = image_tag thumbnail_url(image)
+
+    = button_tag type: :default, class: 'button button-small button-white', data: {action: "image-form#remove"} do
+      %i.icon.icon-cross{style: "margin: 0; font-size: 10px"}

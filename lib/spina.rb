@@ -6,12 +6,13 @@ require 'spina/parts/base'
 require 'spina/parts/line'
 require 'spina/parts/text'
 require 'spina/parts/image'
+require 'spina/parts/image_collection'
 
 module Spina
 
   include ActiveSupport::Configurable
 
-  PARTS = [Parts::Line, Parts::Text, Parts::Image]
+  PARTS = [Parts::Line, Parts::Text, Parts::Image, Parts::ImageCollection]
   PLUGINS = []
   THEMES = []
 

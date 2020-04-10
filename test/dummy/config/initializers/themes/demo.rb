@@ -12,6 +12,10 @@
     title: "Body",
     part_type: "Spina::Parts::Text"
   }, {
+    name: "image_collection",
+    title: "Image collection",
+    part_type: "Spina::Parts::ImageCollection"
+  }, {
     name: 'image',
     title: "Image",
     part_type: "Spina::Parts::Image"
