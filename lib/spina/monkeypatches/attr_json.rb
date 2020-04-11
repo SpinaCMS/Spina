@@ -1,3 +1,9 @@
+# It's hard to allow AttrJson to accept any model for Polymorphic attributes
+# It's not really safe to depend on model_name.constantize so instead
+# we've introduced an array Spina::PARTS which will be used for lookup 
+# as opposed to attr_json's default behavior for polymorphic attributes.
+
+# It's an ugly hack, should replace with something else later
 module Spina
   module AttrJsonPolymorphicModelDecorator
 
