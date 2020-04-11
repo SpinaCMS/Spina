@@ -38,20 +38,6 @@ module Spina
       def edit        
         add_index_breadcrumb
         add_breadcrumb @page.title
-
-        I18n.with_locale(@locale) do
-          @parts = current_theme.parts.map do |part|
-            get_part = @page.part(part[:name])
-            if get_part
-              get_part.title = part[:title] 
-            else
-              get_part = part[:part_type].constantize.new(name: part[:name], title: part[:title])
-            end
-            get_part
-          end
-        end
-
-        # @page_parts = @page.view_template_page_parts(current_theme).map { |part| @page.part(part) }
         render layout: 'spina/admin/admin'
       end
 

@@ -58,7 +58,7 @@ module Spina
       part(name)&.content
     end
 
-    def part(name)
+    def find_part(name)
       send("#{I18n.locale}_content").find{|part| part.name.to_s == name.to_s}
     end
 

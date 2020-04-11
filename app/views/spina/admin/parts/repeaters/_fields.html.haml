@@ -2,7 +2,7 @@
   = f.hidden_field :title
   = f.hidden_field :name
 
-  = f.fields_for :parts, f.object.parts.presence || [Spina::Parts::Line.new(name: "neestedd", title: "NEsted")] do |ff|
+  = f.fields_for :parts, build_parts(f.object, f.object.available_parts) do |ff|
     = ff.hidden_field :title
     = ff.hidden_field :type, value: ff.object.class
     = ff.hidden_field :name
@@ -10,4 +10,4 @@
     .structure-form-part
       = render "spina/admin/parts/#{parts_partial_namespace(ff.object.class.to_s)}/form", f: ff
 
-    = link_to t('spina.delete'), '#', class: 'remove_structure_item_fields button button-mini button-link pull-right'
+  = link_to t('spina.delete'), '#', class: 'remove_structure_item_fields button button-mini button-link pull-right'

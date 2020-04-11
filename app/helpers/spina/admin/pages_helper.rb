@@ -22,6 +22,14 @@ module Spina
         end
       end
 
+      def build_parts(partable, parts_attributes)
+        I18n.with_locale(@locale) do
+          parts_attributes.map do |part_attributes|
+            partable.part(part_attributes)
+          end
+        end
+      end
+
       def build_structure_parts(name, item)
         structure = current_theme.structures.find { |structure| structure[:name] == name }
         return item.parts unless structure.present?
