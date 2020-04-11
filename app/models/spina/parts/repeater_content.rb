@@ -4,7 +4,7 @@ module Spina
       include Partable
       include AttrJson::NestedAttributes
 
-      attr_json :parts, AttrJson::Type::PolymorphicModel.new, array: true
+      attr_json :parts, AttrJson::Type::SpinaPartsModel.new, array: true
       attr_json_accepts_nested_attributes_for :parts
     end
   end
