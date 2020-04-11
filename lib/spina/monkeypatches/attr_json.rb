@@ -16,9 +16,9 @@ module Spina
     end
 
     def spina_parts_lookup
-      @spina_parts_lookup ||= Spina::PARTS.map(&:to_type).map do |type|
+      @spina_parts_lookup ||= model_type_lookup.merge (Spina::PARTS.map(&:to_type).map do |type|
         [type.model.name, type]
-      end.to_h
+      end.to_h)
     end
 
     def type_for_model_name(model_name)
