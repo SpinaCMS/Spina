@@ -2,23 +2,16 @@ require 'spina/engine'
 require 'spina/railtie'
 require 'spina/plugin'
 require 'spina/theme'
-require 'spina/parts/base'
-require 'spina/parts/line'
-require 'spina/parts/text'
-require 'spina/parts/image'
-require 'spina/parts/image_collection'
-require 'spina/parts/repeater_content'
-require 'spina/parts/repeater'
 
 module Spina
 
   include ActiveSupport::Configurable
 
-  PARTS = [Parts::Line, Parts::Text, Parts::Image, Parts::ImageCollection, Parts::Repeater]
+  PARTS = []
   PLUGINS = []
   THEMES = []
 
-  config_accessor :backend_path, :disable_frontend_routes, :storage, :max_page_depth, :locales, :parts
+  config_accessor :backend_path, :disable_frontend_routes, :storage, :max_page_depth, :locales
 
   self.backend_path = 'admin'
 
@@ -29,10 +22,5 @@ module Spina
   self.max_page_depth = 5
 
   self.locales = [I18n.default_locale]
-
-  self.parts = [
-    Parts::Line,
-    Parts::Text
-  ]
 
 end

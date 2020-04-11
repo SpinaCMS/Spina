@@ -28,6 +28,9 @@ module Spina
       [Rails.root].flatten.map { |p| Dir[p.join('app', 'decorators', '**', '*_decorator.rb')]}.flatten.uniq.each do |decorator|
         Rails.configuration.cache_classes ? require(decorator) : load(decorator)
       end
+
+      # Load parts
+      Spina::PARTS = [Parts::Line, Parts::Text, Parts::Image, Parts::ImageCollection, Parts::Repeater]
     end
   end
 end
