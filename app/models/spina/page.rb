@@ -55,7 +55,7 @@ module Spina
     translates :menu_title, :seo_title, :url_title, default: -> { title }
 
     def content(name)
-      part(name)&.content
+      find_part(name)&.content
     end
 
     def find_part(name)
