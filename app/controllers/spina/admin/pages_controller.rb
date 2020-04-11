@@ -19,7 +19,6 @@ module Spina
           @page.view_template = params[:view_template]
         end
         add_breadcrumb I18n.t('spina.pages.new')
-        @page_parts = @page.view_template_page_parts(current_theme).map { |part| @page.part(part) }
         render layout: 'spina/admin/admin'
       end
 
