@@ -2,6 +2,7 @@ require 'spina/engine'
 require 'spina/railtie'
 require 'spina/plugin'
 require 'spina/theme'
+require 'spina/monkeypatches/attr_json'
 
 module Spina
 

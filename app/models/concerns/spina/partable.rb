@@ -5,7 +5,6 @@ module Spina
     included do
 
       def part(attributes)
-        5.times { Rails.logger.info attributes.inspect}
         part = find_part(attributes[:name]) || attributes[:part_type].constantize.new
         part.name = attributes[:name]
         part.title = attributes[:title]

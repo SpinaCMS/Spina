@@ -29,8 +29,7 @@ module Spina
         Rails.configuration.cache_classes ? require(decorator) : load(decorator)
       end
 
-      # Load parts
-      Spina::PARTS = [Parts::Line, Parts::Text, Parts::Image, Parts::ImageCollection, Parts::Repeater]
+      Spina::PARTS = [Spina::Parts::Line, Spina::Parts::Text, Spina::Parts::Image, Spina::Parts::ImageCollection, Spina::Parts::Repeater]
     end
   end
 end

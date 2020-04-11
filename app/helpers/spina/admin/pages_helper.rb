@@ -3,7 +3,7 @@ module Spina
     module PagesHelper
 
       def link_to_add_repeater_fields(f, &block)
-        repeater_content = Spina::Parts::RepeaterContent.new(name: "repeater", title: "Title")
+        repeater_content = Spina::Parts::RepeaterContent.new(name: f.object.name, title: f.object.title)
         fields = f.fields_for(:content, [repeater_content], child_index: repeater_content.object_id) do |builder|
           render("spina/admin/parts/repeaters/fields", f: builder)
         end
@@ -12,9 +12,10 @@ module Spina
         end
       end
 
-      def build_parts(partable, parts_attributes)
+      def build_parts(partable, parts)
         I18n.with_locale(@locale) do
-          parts_attributes.map do |part_attributes|
+          parts.map do |part|
+            part_attributes = current_theme.parts.find{|p|p[:name].to_s == part.to_s}
             partable.part(part_attributes)
           end
         end

@@ -17,14 +17,15 @@
             - options = options_for_select(::Spina::Theme.all.map { |theme| [theme.name, theme.name, {'data-layout-parts' => theme.layout_parts.map{|layout_part| layout_part[:name] }}] }, current_account.theme)
             = f.select :theme, options
 
-      = f.fields_for :layout_parts do |ff|
-        .horizontal-form-group.layout-part{data: {name: ff.object.name}}
-          .horizontal-form-label
-            = ff.object.title
-          .horizontal-form-content
-            = ff.hidden_field :id
-            = ff.hidden_field :title
-            = ff.hidden_field :layout_partable_type
-            = ff.hidden_field :name
+      - if false
+        = f.fields_for :layout_parts do |ff|
+          .horizontal-form-group.layout-part{data: {name: ff.object.name}}
+            .horizontal-form-label
+              = ff.object.title
+            .horizontal-form-content
+              = ff.hidden_field :id
+              = ff.hidden_field :title
+              = ff.hidden_field :layout_partable_type
+              = ff.hidden_field :name
 
-            = render "spina/admin/layout_partables/#{ partable_type_partial_namespace(ff.object.layout_partable_type) }/form", f: ff
+              = render "spina/admin/layout_partables/#{ partable_type_partial_namespace(ff.object.layout_partable_type) }/form", f: ff
