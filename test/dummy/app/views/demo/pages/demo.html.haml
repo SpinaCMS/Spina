@@ -1,15 +1,14 @@
 %h1= current_page.title
 
 %h5 Line
-%p= content :line
+%p= content :headline
 
 %h5 Content
-!= content :text
+!= content :body
 
 %h5 Image
 
-- if has_content?(:image)
-  %p= image_tag content(:image).variant(resize: "200x100")
+-#%p= image_tag content(:image).variant(resize: "200x100")
 
 %h5 Image collection
 
