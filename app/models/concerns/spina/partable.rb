@@ -15,21 +15,13 @@ module Spina
         (parts || []).find{|part| part.name.to_s == name.to_s}
       end
 
-      # def part(attributes)
-      #   part = page_parts.where(name: attributes[:name]).first_or_initialize(attributes)
-      #   part.partable = part.partable_type.constantize.new if part.partable.blank?
-      #   part.options = attributes[:options]
-      #   part
-      # end
+      def has_content?(name)
+        find_part(name).present?
+      end
 
-      # def has_content?(name)
-      #   content(name).present?
-      # end
-
-      # def content(name)
-      #   part = page_parts.find_by(name: name)
-      #   part.try(:content)
-      # end
+      def content(name)
+        find_part(name)&.content
+      end
 
     end
   end

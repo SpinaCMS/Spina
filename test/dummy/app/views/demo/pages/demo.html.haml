@@ -1,27 +1,11 @@
 %h1= current_page.title
 
-%h5 Line
-%p= content :headline
+%h2= content :headline
+%p!= content :body
 
-%h5 Content
-!= content :body
+%h5 Portfolio
 
-%h5 Image
+- repeater :repeater do |project|
+  %h1= project.content :line
+  %p= project.content :headline
 
--#%p= image_tag content(:image).variant(resize: "200x100")
-
-%h5 Image collection
-
-%ul
-  - content(:image_collection)&.images&.each do |image|
-    %li= image_tag image.variant(resize: '100x100')
-
-%h5 Structure
-
-%ul
-  - content(:structure)&.structure_items&.each do |item|
-    %li
-      %h6 Title
-      %p= item.content(:title)
-      %h6 Description
-      != item.content(:description)
