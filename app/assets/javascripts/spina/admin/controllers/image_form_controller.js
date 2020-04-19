@@ -3,7 +3,7 @@
 
   application.register("image-form", class extends Stimulus.Controller {
     static get targets() {
-      return ["image", "field"]
+      return ["image", "field", "signedBlobId"]
     }
 
     remove(e) {
@@ -14,6 +14,7 @@
       // Remove image and reset field
       this.imageTarget.querySelectorAll('img').forEach(image => image.remove())
       this.fieldTarget.value = null
+      this.signedBlobId.value = null
     }
     
   })

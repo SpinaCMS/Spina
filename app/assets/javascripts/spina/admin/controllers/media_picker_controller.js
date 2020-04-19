@@ -20,12 +20,13 @@
           this.imageTargets.forEach((image) => image.querySelector('input').checked = false)
           event.currentTarget.checked = true
           this.hiddenInput.value = event.currentTarget.value
+          this.signedBlobIdInput.value = event.currentTarget.dataset.signedBlobId
           this.placeholder.innerHTML = `<img src="${event.currentTarget.dataset.thumbnailUrl}" width="200" height="150" />`
           this.element.modal.close()
           break
         case "multiple":
           if(event.currentTarget.checked) {
-            this.addImage(event.currentTarget.dataset.imageId, event.currentTarget.dataset.thumbnailUrl)
+            this.addImage(event.currentTarget.dataset.imageId, event.currentTarget.dataset.signedBlobId, event.currentTarget.dataset.thumbnailUrl)
           } else {
             this.removeImage(event.currentTarget.dataset.imageId)
           }
@@ -41,12 +42,30 @@
 
     choose_multiple(event) {
       // Set image id's
-      this.hiddenInput.value = this.selectedIds.join(',')
+      let fields = this.imageCollectionPlaceholder.dataset.fields
+      let id = this.imageCollectionPlaceholder.dataset.id
+
+      let timeIndex = 0
 
       // Set image thumbnails
-      this.placeholder.innerHTML = ""
+      this.imageCollectionPlaceholder.innerHTML = ""
       this.selectedImageTargets.forEach(function(image) {
-        this.placeholder.insertAdjacentHTML("beforeend", `<img src="${image.src}" />`)
+        // this.imageCollectionPlaceholder.insertAdjacentHTML("beforeend", `<img src="${image.src}" />`)
+
+        // Time
+        let time = new Date().getTime() + timeIndex
+        timeIndex += 1
+
+        // Regexp
+        let regexp = new RegExp(`${id}|new_association`, 'g')
+
+        // Document generation
+        let doc = document.createRange().createContextualFragment(fields.replace(regexp, time))
+        doc.querySelector(".image-id").value = image.dataset.imageId
+        doc.querySelector(".signed-blob-id").value = image.dataset.signedBlobId
+        doc.querySelector("img").src = image.src
+
+        this.imageCollectionPlaceholder.appendChild(doc)
       }.bind(this))
 
       // Close modal
@@ -95,8 +114,8 @@
       this.selectedCountTarget.innerHTML = `(${this.selectedIds.length})`
     }
 
-    addImage(id, url) {
-      this.selectedImagesTarget.insertAdjacentHTML("beforeend", `<img src="${url}" data-image-id="${id}" data-target="media-picker.selectedImage" />`)
+    addImage(id, signed_blob_id, url) {
+      this.selectedImagesTarget.insertAdjacentHTML("beforeend", `<img src="${url}" data-image-id="${id}" data-signed-blob-id="${signed_blob_id}" data-target="media-picker.selectedImage" />`)
     }
 
     removeImage(id) {
@@ -118,8 +137,16 @@
       return document.querySelector(`#${this.inputTarget.value}`)
     }
 
+    get imageCollectionPlaceholder() {
+      return document.querySelector(`#${this.inputTarget.value}`)
+    }
+
+    get signedBlobIdInput() {
+      return this.hiddenInput.previousElementSibling
+    }
+
     get placeholder() {
-      return document.querySelector(`#${this.inputTarget.value}`).nextElementSibling
+      return this.hiddenInput.nextElementSibling
     }
 
     get token() {

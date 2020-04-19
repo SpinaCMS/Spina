@@ -9,3 +9,11 @@
   %h1= project.content :line
   %p= project.content :headline
 
+  -#= image_tag thumbnail_url(project.content(:image))
+
+= image_tag image(:image, resize: '200x200')
+
+-# attachment = ActiveStorage::Attachment.where(record_id: 36, record_type: "Spina::Image", name: "file").first
+
+-#= image_tag main_app.url_for(attachment)
+

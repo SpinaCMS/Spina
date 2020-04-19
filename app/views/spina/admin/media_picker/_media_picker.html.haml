@@ -25,7 +25,7 @@
       %section.media-picker-footer
         .media-picker-selected-images{data: {target: "media-picker.selectedImages"}}
           - @selected_images.each do |image|
-            = image_tag thumbnail_url(image), data: {target: "media-picker.selectedImage", image_id: image.id}
+            = image_tag thumbnail_url(image), data: {target: "media-picker.selectedImage", image_id: image.id, signed_blob_id: image.file.blob.signed_id}
 
         = button_tag type: :button, class: 'pull-right button button-primary', data: {action: "media-picker#choose_multiple"} do
           =t "spina.images.confirm_selection"

@@ -2,7 +2,7 @@ module Spina
   module Admin
     module PagesHelper
 
-      def link_to_add_repeater_fields(f, &block)
+      def link_to_add_repeater_fields(f)
         repeater_content = Spina::Parts::RepeaterContent.new(name: f.object.name, title: f.object.title)
         fields = f.fields_for(:content, [repeater_content], child_index: repeater_content.object_id) do |builder|
           render("spina/admin/parts/repeaters/fields", f: builder)
@@ -10,6 +10,14 @@ module Spina
         link_to '#', class: "add_structure_item_fields button button-link", data: {id: repeater_content.object_id, fields: fields.gsub("\n", "")} do
           icon('plus')
         end
+      end
+
+      def fields_for_image_collection(f)
+        image = Spina::Parts::Image.new
+        fields = f.fields_for(:image_objects, [image], child_index: image.object_id) do |builder|
+          render("spina/admin/parts/image_collections/fields", f: builder)
+        end
+        {fields: fields.gsub("\n", ""), id: image.object_id}
       end
 
       def build_parts(partable, parts)

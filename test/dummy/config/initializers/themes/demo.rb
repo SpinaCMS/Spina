@@ -44,19 +44,19 @@
     name: 'homepage',
     title: 'Homepage',
     page_parts: [],
-    parts: ['headline', 'body']
+    parts: ['headline', 'body', 'image_collection']
   }, {
     name: 'show',
     title: 'Default',
     usage: 'Use for your content',
     page_parts: [],
-    parts: ['body', 'repeater']
+    parts: ['body', 'image', 'repeater']
   }, {
     name: 'demo',
     title: 'Demo',
     description: 'Contains examples of every page part',
     page_parts: [],
-    parts: ['body', 'repeater']
+    parts: ['body', 'image', 'repeater']
   }]
 
   theme.custom_pages = [{

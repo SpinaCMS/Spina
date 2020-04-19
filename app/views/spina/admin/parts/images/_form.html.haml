@@ -3,7 +3,8 @@
   .page-form-media-picker
     = link_to admin_media_picker_path(selected_ids: [f.object.image_id], input: "media_picker_#{f.object.object_id}", mode: "single"), remote: true, class: 'image', data: {target: 'image-form.image'} do
       .page-form-media-picker-placeholder=t "spina.images.choose_image"
-      = f.hidden_field :image_id, id: "media_picker_#{f.object.object_id}", data: {target: 'image-form.field'}
+      = f.text_field :signed_blob_id, data: {target: 'image-form.signedBlobId'}
+      = f.text_field :image_id, id: "media_picker_#{f.object.object_id}", data: {target: 'image-form.field'}
       %div
         - if f.object.image&.file&.attached?
           = image_tag variant(f.object.image.file, resize: "400x300^", crop: "400x300+0+0"), width: 200, height: 150
