@@ -3,17 +3,16 @@
 %h2= content :headline
 %p!= content :body
 
-%h5 Portfolio
-
+%h5 Repeater
 - repeater :repeater do |project|
   %h1= project.content :line
   %p= project.content :headline
+  - project.content(:image_collection).each do |img|
+    = image_tag image(img, resize: '100x100')
 
-  -#= image_tag thumbnail_url(project.content(:image))
+%h4 Image
+= image_tag image(:image, resize: '100x100')
 
-= image_tag image(:image, resize: '200x200')
-
--# attachment = ActiveStorage::Attachment.where(record_id: 36, record_type: "Spina::Image", name: "file").first
-
--#= image_tag main_app.url_for(attachment)
-
+%h4 Image collection
+- content(:image_collection).each do |img|
+  = image_tag image(img, resize: '100x100')

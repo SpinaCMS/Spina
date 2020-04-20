@@ -12,9 +12,9 @@ module Spina
         end
       end
 
-      def fields_for_image_collection(f)
+      def data_attrs_for_image_collection(f)
         image = Spina::Parts::Image.new
-        fields = f.fields_for(:image_objects, [image], child_index: image.object_id) do |builder|
+        fields = f.fields_for(:images, [image], child_index: image.object_id) do |builder|
           render("spina/admin/parts/image_collections/fields", f: builder)
         end
         {fields: fields.gsub("\n", ""), id: image.object_id}

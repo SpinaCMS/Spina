@@ -13,7 +13,7 @@
     name: 'repeater',
     title: "Repeater",
     part_type: "Spina::Parts::Repeater",
-    parts: ['line', 'image', 'headline']
+    parts: ['line', 'image', 'headline', 'image_collection']
   }, {
     name: 'line',
     title: "Line",
@@ -56,7 +56,7 @@
     title: 'Demo',
     description: 'Contains examples of every page part',
     page_parts: [],
-    parts: ['body', 'image', 'repeater']
+    parts: ['body', 'image_collection', 'image', 'repeater']
   }]
 
   theme.custom_pages = [{

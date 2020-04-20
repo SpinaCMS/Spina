@@ -3,11 +3,9 @@
   .page-form-media-picker
     = link_to admin_media_picker_path(selected_ids: f.object.image_ids, input: "media_picker_#{f.object.object_id}", mode: "multiple"), remote: true, class: 'images', data: {target: 'image-form.image'} do
       .page-form-media-picker-placeholder=t "spina.images.choose"
-      = f.hidden_field :image_tokens, id: "input_media_picker_#{f.object.object_id}", value: f.object.image_ids.join(","), data: {target: 'image-form.field'}
 
-      - fields_and_id = fields_for_image_collection(f)
-      %div{id: "media_picker_#{f.object.object_id}", data: {id: fields_and_id[:id], fields: fields_and_id[:fields]}}
-        = f.fields_for :image_objects do |ff|
+      %div{id: "media_picker_#{f.object.object_id}", data: data_attrs_for_image_collection(f)}
+        = f.fields_for :images do |ff|
           = render partial: "spina/admin/parts/image_collections/fields", locals: {f: ff}
 
     = button_tag type: :default, class: 'button button-small button-white', data: {action: "image-form#remove"} do
