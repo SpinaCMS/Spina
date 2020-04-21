@@ -7,12 +7,12 @@
 - repeater :repeater do |project|
   %h1= project.content :line
   %p= project.content :headline
-  - project.content(:image_collection).each do |img|
-    = image_tag image(img, resize: '100x100')
+  - project.content(:image_collection).each do |image|
+    = image_tag spina_image_url(image, resize: '100x100')
 
 %h4 Image
-= image_tag image(:image, resize: '100x100')
+= image_tag spina_image_url(:image, resize: '100x100')
 
 %h4 Image collection
-- content(:image_collection).each do |img|
-  = image_tag image(img, resize: '100x100')
+- images(:image_collection) do |image|
+  = image_tag spina_image_url(image, resize: '100x100')
