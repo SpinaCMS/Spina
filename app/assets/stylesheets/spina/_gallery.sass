@@ -197,7 +197,8 @@
     top: 0
     width: 100%
     z-index: 3
-    @extend .icon, .icon-large-check:before
+    @extend .icon
+    content: "\f120"
 
   .item.attachment
     height: 60px
@@ -260,9 +261,10 @@
       font-weight: normal
       line-height: 130px
       vertical-align: middle
-      @extend .icon, .icon-refresh:before
+      @extend .icon
       display: none
       font-size: 42px
+      content: "\f131"
 
   .customfile.loading
     &:before

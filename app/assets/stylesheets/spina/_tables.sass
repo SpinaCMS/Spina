@@ -98,10 +98,11 @@ table.table
       font-size: 16px
       position: absolute
       right: 10px
-      @extend .icon, .icon-caret-up:before
+      @extend .icon
+      content: "\f108"
 
     &.table-column-sorted-desc:after
-      @extend .icon-caret-down:before
+      content: "\f105"
 
   th.text-right .table-column-sorted
     text-align: left
@@ -261,12 +262,14 @@ tr:hover .progress
 .dataTable
   th.sorting_desc
     &:after
-      @extend .icon, .icon-caret-down:before
+      @extend .icon
+      content: "\f105"
       float: right
 
   th.sorting_asc
     &:after
-      @extend .icon, .icon-caret-up:before
+      @extend .icon
+      content: "\f108"
       float: right
 
 .dataTables_paginate
