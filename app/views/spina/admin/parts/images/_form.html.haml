@@ -6,8 +6,8 @@
       = f.hidden_field :signed_blob_id, data: {target: 'image-form.signedBlobId'}
       = f.hidden_field :image_id, id: "media_picker_#{f.object.object_id}", data: {target: 'image-form.field'}
       %div
-        - if f.object.image&.file&.attached?
-          = image_tag variant(f.object.image.file, resize: "400x300^", crop: "400x300+0+0"), width: 200, height: 150
+        - if f.object.signed_blob_id.present?
+          = image_tag spina_image_url(f.object, {resize: "400x300^", crop: "400x300+0+0"}), width: 200, height: 150
 
     = button_tag type: :default, class: 'button button-small button-white', data: {action: "image-form#remove"} do
       %i.icon.icon-cross{style: "margin: 0; font-size: 10px"}

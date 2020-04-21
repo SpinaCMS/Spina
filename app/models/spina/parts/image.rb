@@ -8,6 +8,10 @@ module Spina
       def content
         self
       end
+
+      def image
+        Spina::Image.find_by(id: image_id)
+      end
     end
   end
 end
