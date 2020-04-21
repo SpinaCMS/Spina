@@ -23,6 +23,10 @@ module Spina
         find_part(name)&.content
       end
 
+      def image(name)
+        find_part(name)
+      end
+
     end
   end
 end

@@ -1,11 +1,13 @@
 %h1= current_page.title
 
+= image_tag spina_image_url(:header_image)
+
 = content :headline
 != content :body
 
-- content(:image_collection).each do |image|
-  - variant_key = ActiveStorage::Variation.encode(resize: '200x200')
-  - path = main_app.rails_blob_representation_path(image.signed_blob_id, variant_key, "image.png")
-  %br/
-  %br/
-  = image_tag path, width: 100
+- repeater :portfolio do |project|
+  = image_tag spina_image_url(project.content(:image))
+  = project.content :title
+
+- images :image_collection do |image|
+  = image_tag spina_image_url(image, resize: '200x200')
