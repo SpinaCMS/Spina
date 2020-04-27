@@ -29,7 +29,16 @@ module Spina
         Rails.configuration.cache_classes ? require(decorator) : load(decorator)
       end
 
-      Spina::PARTS += [Spina::Parts::Line, Spina::Parts::Text, Spina::Parts::Image, Spina::Parts::ImageCollection, Spina::Parts::Repeater, Spina::Parts::Attachment, Spina::Parts::AttachmentCollection]
+      # Register JSON part types for editing content
+      Spina::Part.register(
+        Spina::Parts::Line, 
+        Spina::Parts::Text, 
+        Spina::Parts::Image, 
+        Spina::Parts::ImageCollection, 
+        Spina::Parts::Repeater, 
+        Spina::Parts::Attachment, 
+        Spina::Parts::AttachmentCollection
+      )
     end
   end
 end
