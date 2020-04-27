@@ -14,6 +14,8 @@ default: &default
 development:
   <<: *default
   database: spina_development
+  user: bram
+  password: bram
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -21,3 +23,5 @@ development:
 test:
   <<: *default
   database: spina_test
+  user: bram
+  password: bram
