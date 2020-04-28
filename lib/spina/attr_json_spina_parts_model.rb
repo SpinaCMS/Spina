@@ -1,3 +1,5 @@
+require 'attr_json/type/polymorphic_model'
+
 # Extending the PolymorphicModel to use the Spina::PARTS array as input
 # as opposed to arguments
 module AttrJson

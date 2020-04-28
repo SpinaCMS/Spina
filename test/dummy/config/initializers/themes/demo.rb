@@ -3,11 +3,6 @@
   theme.name = 'demo'
   theme.title = 'Demo theme'
 
-  # Deprecated config
-  theme.page_parts = []
-  theme.structures = []
-  theme.layout_parts = []
-
   # New config
   theme.parts = [{
     name: 'repeater',
