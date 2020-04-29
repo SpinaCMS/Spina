@@ -211,7 +211,9 @@ GEM
     pry-rails (0.3.9)
       pry (>= 0.10.4)
     public_suffix (4.0.1)
-    rack (2.2.3)
+    puma (4.3.5)
+      nio4r (~> 2.0)
+    rack (2.2.2)
     rack-rewrite (1.5.1)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
@@ -276,6 +278,7 @@ DEPENDENCIES
   minitest-reporters
   mocha
   pry-rails
+  puma
   rails!
   rails-controller-testing
   simplecov

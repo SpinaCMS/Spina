@@ -14,4 +14,6 @@ group :test do
   gem 'letter_opener'
   gem 'pry-rails'
   gem 'mocha'
+
+  gem 'puma'
 end
