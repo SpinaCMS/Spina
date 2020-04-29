@@ -1,5 +1,0 @@
-.page-form-label= f.object.title
-.page-form-content
-  = f.fields_for :partable, f.object.partable do |ff|
-    .select-dropdown
-      = ff.select :value, f.object.options[:values].map{|o| [option_label(f.object, o), o]}, prompt: true

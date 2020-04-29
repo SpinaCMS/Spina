@@ -1,4 +1,0 @@
-.page-form-label= f.object.title
-.page-form-control
-  = f.fields_for :partable, f.object.partable do |ff|
-    = ff.text_field :content, value: ff.object.content(fallback: false, default: nil)

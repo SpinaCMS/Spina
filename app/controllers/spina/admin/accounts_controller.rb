@@ -22,7 +22,6 @@ module Spina
       def style
         add_breadcrumb I18n.t('spina.preferences.style'), spina.style_admin_account_path
         @themes = ::Spina::Theme.all
-        @layout_parts = current_theme.layout_parts.map { |layout_part| current_account.layout_part(layout_part) }
       end
 
       private

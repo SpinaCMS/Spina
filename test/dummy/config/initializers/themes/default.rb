@@ -3,10 +3,10 @@
   theme.name = 'default'
   theme.title = 'Default Theme'
 
-  theme.page_parts = [{
-    name:           'text',
-    title:          'Text',
-    partable_type:  'Spina::Text'
+  theme.parts = [{
+    name: 'text',
+    title: "Text",
+    part_type: "Spina::Parts::Text"
   }]
 
   theme.view_templates = [{

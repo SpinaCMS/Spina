@@ -1,8 +1,0 @@
-.page-form-label= f.object.title
-.page-form-content
-  .page-form-rich-text
-    = f.fields_for :partable, f.object.partable do |ff|
-      - object_id = (ff.object.persisted? ? ff.object.object_id : "new_association_#{ff.object.object_id}").to_s + "_content"
-      = ff.hidden_field :content, id: "#{object_id}_input", value: ff.object.content(fallback: false, default: nil)
-      %trix-editor.text-input.trix-content{ input: "#{object_id}_input" }
-

@@ -29,7 +29,6 @@ module Spina
           @page.navigations << Spina::Navigation.where(auto_add_pages: true)
           redirect_to spina.edit_admin_page_url(@page), flash: {success: t('spina.pages.saved')}
         else
-          @page_parts = @page.view_template_page_parts(current_theme).map { |part| @page.part(part) }
           render :new, layout: 'spina/admin/admin'
         end
       end
@@ -49,7 +48,6 @@ module Spina
             format.js
           else
             format.html do
-              @page_parts = @page.view_template_page_parts(current_theme).map { |part| @page.part(part) }
               Mobility.locale = I18n.default_locale
               render :edit, layout: 'spina/admin/admin'
             end

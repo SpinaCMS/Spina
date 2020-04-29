@@ -14,11 +14,6 @@ module Spina
       attr_json_accepts_nested_attributes_for "#{locale}_content".to_sym
     end
 
-    # Page contains multiple parts called PageParts
-    has_many :page_parts, dependent: :destroy, inverse_of: :page
-    # alias_attribute :parts, :page_parts
-    accepts_nested_attributes_for :page_parts, allow_destroy: true
-
     # Orphaned pages are adopted by parent pages if available, otherwise become root
     has_ancestry orphan_strategy: :adopt
 

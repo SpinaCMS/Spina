@@ -6,7 +6,7 @@
       .page-form-control
         = f.text_field :title, placeholder: Spina::Page.human_attribute_name(:title_placeholder), class: 'input-large'
 
-    - parts = (current_theme.view_templates.find{|v|v[:name].to_s == f.object.view_template.to_s}.dig(:parts) || [])
+    - parts = (current_theme.view_templates.find{|v|v[:name].to_s == f.object.view_template.to_s}&.dig(:parts) || [])
 
     = f.fields_for "#{@locale}_content".to_sym, build_parts(f.object, parts) do |ff|
       = ff.hidden_field :type, value: ff.object.class
