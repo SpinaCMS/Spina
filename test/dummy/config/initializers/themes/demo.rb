@@ -3,7 +3,7 @@
   theme.name = 'demo'
   theme.title = 'Demo theme'
 
-  # New config
+  # All available parts
   theme.parts = [{
     name: 'repeater',
     title: "Repeater",
@@ -66,8 +66,8 @@
     view_template:  'demo'
   }]
 
-  # Some parts in the layout
-  theme.layout_parts = ['line', 'body']
+  # Some global content
+  theme.layout_parts = ['line', 'body', 'repeater']
 
   theme.plugins = ['reviews']
 
