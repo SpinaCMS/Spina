@@ -1,6 +1,9 @@
 // Sortable lists
 
 .dd
+  border: 1px solid #e2e2e2
+  border-radius: 4px
+  box-shadow: 0 1px 1px rgba(0, 0, 0, .05)
   margin: -20px
   overflow: hidden
   position: relative
@@ -39,6 +42,9 @@
   padding: 0
   position: relative
 
+  .dd-item:last-child
+    border-bottom: none
+
   .dd-placeholder
     position: relative
 
@@ -54,16 +60,13 @@
 
   .dd-list
     background: tint(#f5f5fa, 50%)
-    border-top: 1px solid #ddd
+    border-top: 1px solid #eee
 
     .dd-placeholder
       background: tint(#f5f5fa, 50%)
 
       &:after
         margin-left: 40px
-
-    .dd-item:last-child
-      border-bottom: none
     
     .dd-item
       padding-left: 20px
@@ -85,7 +88,7 @@
   display: none
 
 .dd-item
-  border-bottom: 1px solid #ddd
+  border-bottom: 1px solid #eee
 
 .dd-item, .dd-empty, .dd-placeholder
   margin: 0
@@ -112,7 +115,7 @@
   a.sortable-link, a.sortable-link:hover
     color: $primary-color
     font-size: 13px
-    font-weight: 600
+    font-weight: 500
     padding-left: 0
 
     small
