@@ -3,8 +3,6 @@
   theme.name = 'demo'
   theme.title = 'Demo theme'
 
-  theme.layout_parts = ['line', 'body']
-
   # New config
   theme.parts = [{
     name: 'repeater',
@@ -67,6 +65,9 @@
     deletable:      true,
     view_template:  'demo'
   }]
+
+  # Some parts in the layout
+  theme.layout_parts = ['line', 'body']
 
   theme.plugins = ['reviews']
 

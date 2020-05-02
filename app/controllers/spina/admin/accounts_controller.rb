@@ -1,6 +1,7 @@
 module Spina
   module Admin
     class AccountsController < AdminController
+      before_action :set_locale
 
       def edit
         add_breadcrumb I18n.t('spina.preferences.account'), spina.edit_admin_account_path
@@ -26,9 +27,14 @@ module Spina
 
       private
 
-      def account_params
-        params.require(:account).permit!
-      end
+        def account_params
+          params.require(:account).permit!
+        end
+
+        def set_locale
+          @locale = params[:locale] || I18n.default_locale
+        end
+        
     end
   end
 end

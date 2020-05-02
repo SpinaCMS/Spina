@@ -1,42 +1,35 @@
 = form_for [spina, :admin, current_account], url: spina.admin_account_path do |f|
   %header#header
-    = render partial: 'spina/admin/shared/breadcrumbs'
+    .breadcrumbs
+      = render_breadcrumbs separator: '<div class="divider"></div>'
+      %span{style: 'margin-left: 10px'}
+        - if Spina.config.locales.size > 1
+          %div{style: "display: inline-block", data: {dropdown: true}}
+            = link_to '#', class: 'button button-hollow button-small', style: 'margin-left: 0; margin-right: 0', data: {trigger: 'dropdown', target: '#locales'} do
+              = icon('comment')
+              =t "spina.languages.#{@locale}"
+              %i.icon.icon-chevron-down{style: 'font-size: 9px; margin-right: 0'}
+
+            %ul#locales
+              - Spina.config.locales.each do |locale|
+                %li
+                  = link_to t("spina.languages.#{locale}"), "?locale=#{locale}", style: ('font-weight: 600' if @locale.to_s == locale.to_s).to_s
 
     #header_actions
       %button.button.button-primary{type: 'submit', data: {icon: 'o'}}
         = icon('check')
         = t('spina.preferences.style_save')
 
-  .well
-    .horizontal-form
-      .horizontal-form-group
-        .horizontal-form-label
-          = Spina::Account.human_attribute_name(:theme)
-        .horizontal-form-content
-          .select-dropdown.account-theme
-            = f.select :theme, Spina::Theme.all.map(&:name)
+  .page-form
+    .page-form-group
+      .page-form-label= Spina::Account.human_attribute_name(:theme)
+      .page-form-control
+        .select-dropdown= f.select :theme, Spina::Theme.all.map(&:name)
 
-
-    - parts = (current_theme.layout_parts || [])
-    - parts = build_parts(f.object, parts)
-
-    = f.fields_for "#{I18n.locale}_content".to_sym, parts do |ff|
+    = f.fields_for "#{@locale}_content".to_sym, build_parts(f.object, current_theme.layout_parts) do |ff|
       = ff.hidden_field :type, value: ff.object.class
       = ff.hidden_field :name
       = ff.hidden_field :title
       
       .page-form-group.page-part{data: {name: ff.object.name}}
         = render "spina/admin/parts/#{parts_partial_namespace(ff.object.class.to_s)}/form", f: ff
-
-      - if false
-        = f.fields_for :layout_parts do |ff|
-          .horizontal-form-group.layout-part{data: {name: ff.object.name}}
-            .horizontal-form-label
-              = ff.object.title
-            .horizontal-form-content
-              = ff.hidden_field :id
-              = ff.hidden_field :title
-              = ff.hidden_field :layout_partable_type
-              = ff.hidden_field :name
-
-              = render "spina/admin/layout_partables/#{ partable_type_partial_namespace(ff.object.layout_partable_type) }/form", f: ff

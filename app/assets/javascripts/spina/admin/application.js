@@ -38,7 +38,6 @@
 //= require ./notifications
 //= require ./media_gallery
 
-//= require ./account
 //= require ./confirm_delete
 //= require ./pages
 
