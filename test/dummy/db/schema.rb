@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 2020_06_22_192131) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "robots_allowed", default: false
+    t.jsonb "json_attributes"
   end
 
   create_table "spina_attachment_collections", id: :serial, force: :cascade do |t|

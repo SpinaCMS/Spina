@@ -13,9 +13,20 @@
         .horizontal-form-label
           = Spina::Account.human_attribute_name(:theme)
         .horizontal-form-content
-          .select-dropdown.account-theme{data: {layout_parts: current_theme.layout_parts.map{|layout_part| layout_part[:name]}}}
-            - options = options_for_select(::Spina::Theme.all.map { |theme| [theme.name, theme.name, {'data-layout-parts' => theme.layout_parts.map{|layout_part| layout_part[:name] }}] }, current_account.theme)
-            = f.select :theme, options
+          .select-dropdown.account-theme
+            = f.select :theme, Spina::Theme.all.map(&:name)
+
+
+    - parts = (current_theme.layout_parts || [])
+    - parts = build_parts(f.object, parts)
+
+    = f.fields_for "#{I18n.locale}_content".to_sym, parts do |ff|
+      = ff.hidden_field :type, value: ff.object.class
+      = ff.hidden_field :name
+      = ff.hidden_field :title
+      
+      .page-form-group.page-part{data: {name: ff.object.name}}
+        = render "spina/admin/parts/#{parts_partial_namespace(ff.object.class.to_s)}/form", f: ff
 
       - if false
         = f.fields_for :layout_parts do |ff|
