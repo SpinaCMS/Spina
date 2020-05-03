@@ -18,17 +18,12 @@ module Spina
       main_app.rails_blob_representation_url(image.signed_blob_id, variant_key, image.filename)
     end
 
-    def images(part_name, global: false)
-      find_part(part_name, global)&.images&.each do |image| 
-        yield(image)
-      end
-    end
-
     def repeater(part_name, global: false)
       find_part(part_name, global)&.content&.each do |repeater_content|
         yield(repeater_content)
       end
     end
+    alias_method :images, :repeater
 
     def has_content?(part_name, global: false)
       current_page.has_content?(part_name)
