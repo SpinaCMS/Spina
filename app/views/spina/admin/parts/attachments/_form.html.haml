@@ -1,0 +1,5 @@
+.page-form-label= f.object.title
+.page-form-control{data: {controller: "attachment-picker"}}
+  = f.hidden_field :signed_blob_id, data: {target: "attachment-picker.signedBlobId"}
+  .select-dropdown
+    = f.select :attachment_id, Spina::Attachment.sorted.map{|attachment| [attachment.file&.filename, attachment.id, data: {signed_blob_id: attachment.file.blob.signed_id}]}, {include_blank: t("spina.attachments.choose_attachment")}, {data: {action: "attachment-picker#chooseAttachment"}}

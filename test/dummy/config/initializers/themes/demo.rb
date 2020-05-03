@@ -38,6 +38,10 @@
     title: "Option",
     part_type: "Spina::Parts::Option",
     options: [["Left", 'left'], ["Center", 'center'], ["Right", 'right']]
+  }, {
+    name: 'attachment',
+    title: "Attachment",
+    part_type: "Spina::Parts::Attachment"
   }]
 
   theme.view_templates = [{
@@ -50,13 +54,13 @@
     title: 'Default',
     usage: 'Use for your content',
     page_parts: [],
-    parts: ['option', 'body', 'image', 'repeater']
+    parts: ['attachment', 'option', 'body', 'image', 'repeater']
   }, {
     name: 'demo',
     title: 'Demo',
     description: 'Contains examples of every page part',
     page_parts: [],
-    parts: ['option', 'body', 'image_collection', 'image', 'repeater']
+    parts: ['attachment', 'option', 'body', 'image_collection', 'image', 'repeater']
   }]
 
   theme.custom_pages = [{
