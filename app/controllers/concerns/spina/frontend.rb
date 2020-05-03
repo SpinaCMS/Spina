@@ -7,6 +7,7 @@ module Spina
       
       before_action :set_locale
       before_action :set_current_page
+      before_action :set_current_account
     end
 
     def show
@@ -27,6 +28,10 @@ module Spina
 
       def set_current_page
         Spina::Current.page = page
+      end
+
+      def set_current_account
+        Spina::Current.account = Spina::Account.first
       end
 
       def page_by_locale(locale)
