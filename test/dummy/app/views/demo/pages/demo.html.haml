@@ -8,11 +8,11 @@
   %h1= project.content :line
   %p= project.content :headline
   - project.content(:image_collection)&.each do |image|
-    = image_tag spina_image_url(image, resize: '100x100')
+    = spina_image_tag image, resize: '100x100'
 
 %h4 Image
-= image_tag spina_image_url(:image, resize: '100x100')
+= spina_image_tag :image, resize: '100x100'
 
 %h4 Image collection
 - images :image_collection do |image|
-  = image_tag spina_image_url(image, resize: '100x100')
+  = spina_image_tag image, resize: '100x100'
