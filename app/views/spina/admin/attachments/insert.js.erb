@@ -1,5 +1,0 @@
-var hidden_input = $("input[name='<%= j params[:page_part_id] %>[partable_id]'], input[name='<%= j params[:page_part_id] %>[structure_partable_id]'], input[data-hidden-field-id='<%= j params[:hidden_field_id] %>']");
-hidden_input.parents('.media_picker').find('.attachment').remove();
-hidden_input.parents('.media_picker').append("<div class='attachment'><%= @attachment.name %></div>");
-hidden_input.val("<%= @attachment.id %>");
-$.hideModal();
