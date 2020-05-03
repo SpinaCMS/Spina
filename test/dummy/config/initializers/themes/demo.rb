@@ -33,6 +33,11 @@
     name: 'footer',
     title: "Footer",
     part_type: "Spina::Parts::Text"
+  }, {
+    name: 'option',
+    title: "Option",
+    part_type: "Spina::Parts::Option",
+    options: [["Left", 'left'], ["Center", 'center'], ["Right", 'right']]
   }]
 
   theme.view_templates = [{
@@ -45,13 +50,13 @@
     title: 'Default',
     usage: 'Use for your content',
     page_parts: [],
-    parts: ['body', 'image', 'repeater']
+    parts: ['option', 'body', 'image', 'repeater']
   }, {
     name: 'demo',
     title: 'Demo',
     description: 'Contains examples of every page part',
     page_parts: [],
-    parts: ['body', 'image_collection', 'image', 'repeater']
+    parts: ['option', 'body', 'image_collection', 'image', 'repeater']
   }]
 
   theme.custom_pages = [{

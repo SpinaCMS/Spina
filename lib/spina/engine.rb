@@ -36,6 +36,7 @@ module Spina
         Spina::Parts::Image, 
         Spina::Parts::ImageCollection, 
         Spina::Parts::Repeater, 
+        Spina::Parts::Option, 
         Spina::Parts::Attachment, 
         Spina::Parts::AttachmentCollection
       )
