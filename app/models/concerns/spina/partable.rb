@@ -17,11 +17,6 @@ module Spina
         part
       end
 
-      def find_part(name)
-        content_parts = respond_to?(:parts) ? (parts || []) : send("#{I18n.locale}_content")
-        content_parts.find{|part| part.name.to_s == name.to_s}
-      end
-
       def has_content?(name)
         find_part(name).present?
       end
