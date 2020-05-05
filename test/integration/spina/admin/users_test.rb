@@ -28,6 +28,12 @@ module Spina
         assert_select '.field_with_errors'
       end
 
+      test "update user" do
+        patch "/admin/users/#{@user.id}", params: {user: {name: "New name"}}
+        get "/admin/users"
+        assert_select 'a', text: /New name/
+      end
+
     end
   end
 end

@@ -1,9 +1,12 @@
 %h1= current_page.title
 
+= content :option
+
 = content :headline
 = content.text :headline
 = content.html :body
-= content.image_tag :image, resize: '100x100'
+- if has_content?(:image)
+  = content.image_tag :image, resize: '100x100'
 
 = current_account.content :line
 

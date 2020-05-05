@@ -35,6 +35,11 @@ module Spina
       assert_select 'h1', 'About'
     end
 
+    test "view demo page" do
+      get "/demo"
+      assert_select 'h1', 'Demo'
+    end
+
     # Different languages
     test "view homepage in another language" do
       get "/nl"
