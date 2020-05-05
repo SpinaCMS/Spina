@@ -3,12 +3,12 @@
 
 != content(:body)
 
-= spina_attachment_url(:attachment)
+= content.attachment_url(:attachment)
 
-= spina_image_url(:image)
+= content.image_url(:image)
 
 / Falls back to global part "line"
 = content(:line)
 
 / Same as above, but explicitly search globally
-= content(:line, global: true)
+= content(:line)

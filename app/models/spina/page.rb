@@ -48,10 +48,6 @@ module Spina
     translates :description, :materialized_path
     translates :menu_title, :seo_title, :url_title, default: -> { title }
 
-    def find_part(name)
-      send("#{I18n.locale}_content").find{|part| part.name.to_s == name.to_s}
-    end
-
     def to_s
       name
     end

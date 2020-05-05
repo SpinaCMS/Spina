@@ -2,6 +2,8 @@ module Spina
   module Partable
     extend ActiveSupport::Concern
 
+    attr_accessor :view_context
+
     included do
 
       def part(attributes)
@@ -9,21 +11,30 @@ module Spina
 
         # Copy all attributes to part
         %w(name title options).each do |attribute|
-          if part.respond_to?(attribute)
-            part.public_send("#{attribute}=", attributes[attribute.to_sym])
-          end
+          part.public_send("#{attribute}=", attributes[attribute.to_sym]) if part.respond_to?(attribute)
         end
 
         part
+      end
+
+      def find_part(name)
+        content_parts = respond_to?(:parts) ? (parts || []) : send("#{I18n.locale}_content")
+        content_parts.find{|part| part.name.to_s == name.to_s}
       end
 
       def has_content?(name)
         find_part(name).present?
       end
 
-      def content(name)
-        find_part(name)&.content
+      def content(name = nil)
+        name ? find_part(name)&.content : content_presenter
       end
+
+      private
+
+        def content_presenter
+          @content_presenter ||= ContentPresenter.new(view_context, container: self)
+        end
 
     end
   end

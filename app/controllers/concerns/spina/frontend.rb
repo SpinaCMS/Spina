@@ -28,10 +28,12 @@ module Spina
 
       def set_current_page
         Spina::Current.page = page
+        Spina::Current.page.view_context = view_context
       end
 
       def set_current_account
         Spina::Current.account = Spina::Account.first
+        Spina::Current.account.view_context = view_context
       end
 
       def page_by_locale(locale)

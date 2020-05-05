@@ -8,6 +8,10 @@ module Spina
       def content
         self
       end
+
+      def present?
+        signed_blob_id.present?
+      end
     end
   end
 end

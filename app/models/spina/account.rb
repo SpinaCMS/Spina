@@ -14,10 +14,6 @@ module Spina
 
     after_save :bootstrap_website
 
-    def find_part(name)
-      send("#{I18n.locale}_content").find{|part| part.name.to_s == name.to_s}
-    end
-
     def to_s
       name
     end

@@ -1,18 +1,18 @@
 %h1= current_page.title
 
-%h2= content :headline
-%p!= content :body
+= content :headline
+= content.text :headline
+= content.html :body
+= content.image_tag :image, resize: '100x100'
 
-%h5 Repeater
-- repeater :repeater do |project|
-  %h1= project.content :line
-  %p= project.content :headline
-  - project.content(:image_collection)&.each do |image|
-    = spina_image_tag image, resize: '100x100'
+= current_account.content :line
 
-%h4 Image
-= spina_image_tag :image, resize: '100x100'
+- repeater current_account.content(:repeater) do |repeater_content|
+  = repeater_content.content :line
 
-%h4 Image collection
 - images :image_collection do |image|
-  = spina_image_tag image, resize: '100x100'
+  = content.image_tag image, resize: '50x50'
+
+- repeater :repeater do |project|
+  = project.content.html :line
+  = project.content.image_tag :image, resize: '50x50'

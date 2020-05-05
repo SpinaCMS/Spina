@@ -9,6 +9,14 @@ module Spina
       def content
         self
       end
+
+      def spina_image
+        Spina::Image.find(image_id)
+      end
+
+      def present?
+        signed_blob_id.present?
+      end
     end
   end
 end

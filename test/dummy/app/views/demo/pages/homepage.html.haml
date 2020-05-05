@@ -1,13 +1,2 @@
 %h1= current_page.title
 
-= spina_image_tag(:header_image)
-
-= content :headline
-!= content :body
-
-- repeater :portfolio do |project|
-  = spina_image_tag(project.content(:image))
-  = project.content :title
-
-- images :image_collection do |image|
-  = spina_image_tag(image, resize: '200x200')
