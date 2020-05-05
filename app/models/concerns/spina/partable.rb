@@ -33,7 +33,7 @@ module Spina
       private
 
         def content_presenter
-          @content_presenter ||= ContentPresenter.new(view_context, container: self)
+          @content_presenter ||= ContentPresenter.new(view_context, self)
         end
 
     end

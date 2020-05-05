@@ -2,7 +2,7 @@ module Spina
   class ContentPresenter
     attr_reader :view_context, :container
 
-    def initialize(view_context, container: nil)
+    def initialize(view_context, container)
       @view_context = view_context || Spina::Current.page&.view_context
       @container = container
     end
@@ -40,10 +40,8 @@ module Spina
         view_context.main_app.rails_blob_representation_url(image.signed_blob_id, variant_key, image.filename)
       end
 
-      def find_part(name, global: false)
-        return container.find_part(name) if container
-        return Current.account.find_part(name) if global
-        Current.page.find_part(name) || Current.account.find_part(name)
+      def find_part(name)
+        container.find_part(name)
       end
 
   end

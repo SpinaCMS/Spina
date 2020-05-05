@@ -44,13 +44,13 @@ module Spina
       def render_items(collection)
         content_tag(list_tag, class: list_css) do
           collection.inject(ActiveSupport::SafeBuffer.new) do |buffer, item|
-            next if item.materialized_path.nil? # Check if page is actually translated and there's a materialized_path
             buffer << render_item(item)
           end
         end
       end
 
       def render_item(item)
+        return nil unless item.materialized_path
         children = scoped_collection(item.children)
 
         content_tag(list_item_tag, class: list_item_css, data: {page_id: item.page_id, draft: (true if item.draft?) }) do
