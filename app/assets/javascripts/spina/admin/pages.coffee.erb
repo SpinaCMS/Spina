@@ -3,10 +3,6 @@ ready = ->
     $('.dd').nestable
       maxDepth: "<%= Spina.config.max_page_depth %>"
 
-  if $('.page-template').length > 0
-    page_parts = $('.page-template').data('page-parts')
-    show_page_parts(page_parts)
-
   $('.sortable-grid').sortable().bind 'sortupdate', (e) ->
     position_array = []
     $(e.target).find('li.image').each (index) ->
@@ -14,16 +10,6 @@ ready = ->
     $(e.target).parents('.horizontal-form-content').find('.image-positions').val(position_array.join(","))
 
 $(document).on 'turbolinks:load', ready
-
-# Change templates makes page parts appear and disappear
-$(document).on 'change', '.page-template select', ->
-  page_parts = $(this).find('option:selected').data('page-parts').split(" ")
-  show_page_parts(page_parts)
-
-show_page_parts = (page_parts) ->
-  $('.horizontal-form-group.page-part').hide()
-  for page_part in page_parts
-    $('.horizontal-form-group.page-part[data-name=' + page_part + ']').show()
 
 # Dynamically add and remove structures
 $(document).on 'click', 'form .add_structure_item_fields', (event) ->
