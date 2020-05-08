@@ -2,6 +2,12 @@
 
 ## 1.1
 
+### 1.1.4 (May 8, 2020)
+
+* Allow SVGs to be displayed
+* Fixed bug with @extend in sass files
+* Improved translations
+
 ### 1.1.3 (December 25, 2019)
 
 * Added missing icons to Trix editor
