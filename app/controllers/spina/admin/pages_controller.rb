@@ -8,7 +8,7 @@ module Spina
       def index
         add_breadcrumb I18n.t('spina.website.pages'), spina.admin_pages_path
         redirect_to admin_pages_path unless current_admin_path.starts_with?('/pages')
-        @pages = Page.active.sorted.roots.regular_pages
+        @pages = Page.active.sorted.roots.regular_pages.includes(:translations)
       end
 
       def new

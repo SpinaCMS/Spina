@@ -38,7 +38,7 @@ module Spina
       end
 
       def page_ancestry_options(page)
-        pages = Spina::Page.active.regular_pages
+        pages = Spina::Page.active.regular_pages.includes(:translations)
         pages = pages.where.not(id: page.subtree.ids) unless page.new_record? || !page.methods.include?(:subtree)
 
         (flatten_nested_hash(pages.arrange(order: :position)).map do |page|

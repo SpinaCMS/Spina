@@ -29,7 +29,7 @@
         let top = this.linkTarget.getBoundingClientRect().top
         if (top < window.innerHeight + 500) {
           this.linkTarget.dataset.disableWith = "..."
-          Rails.fire(this.linkTarget, 'click')
+          this.linkTarget.click()
         }
       }
     }
