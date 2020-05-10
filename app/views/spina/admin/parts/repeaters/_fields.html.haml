@@ -2,7 +2,7 @@
   = f.hidden_field :title
   = f.hidden_field :name
 
-  - parts = current_theme.parts.find{|p|p[:name].to_s == f.object.name.to_s}&.dig(:parts)
+  - parts = current_theme.parts.find{|p|p[:name].to_s == f.object.name.to_s}&.dig(:parts) || []
 
   = f.fields_for :parts, build_parts(f.object, parts) do |ff|
     = ff.hidden_field :title
