@@ -1,4 +1,4 @@
-.structure-form-pane{class: ('active' if f.options[:child_index].zero?), id: "structure_form_pane_#{f.object.object_id}", data: {part_id: f.object.object_id}}
+.structure-form-pane{class: ('active' if f.options[:child_index].zero?), id: "structure_form_pane_#{f.object.object_id}", data: {part_id: f.object.object_id, target: "repeater-form.pane"}}
   = f.hidden_field :title
   = f.hidden_field :name
 
@@ -12,4 +12,4 @@
     .structure-form-part
       = render "spina/admin/parts/#{parts_partial_namespace(ff.object.class.to_s)}/form", f: ff
 
-  = link_to t('spina.delete'), '#', class: 'remove_structure_item_fields button button-mini button-link pull-right'
+  = link_to t('spina.delete'), '#', class: 'button button-mini button-link pull-right', data: {action: "repeater-form#delete", part_id: f.object.object_id}

@@ -3,7 +3,7 @@
 
   application.register("repeater-form", class extends Stimulus.Controller {
     static get targets() {
-      return ["list", "content"]
+      return ["list", "listItem", "content", "pane"]
     }
 
     connect() {
@@ -21,6 +21,15 @@
           }).map(node => this.contentTarget.appendChild(node))
         }.bind(this)
       })
+    }
+
+    delete(event) {
+      event.preventDefault()
+      let part_id = event.currentTarget.dataset.partId
+      let pane = [...this.paneTargets].find(function(pane) {
+        pane.dataset.partId == part_id
+      })
+      pane.parentElement.removeChilld(pane)
     }
     
   })

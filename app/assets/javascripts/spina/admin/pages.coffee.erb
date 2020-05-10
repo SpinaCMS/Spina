@@ -41,6 +41,8 @@ $(document).on 'click', 'form .remove_structure_item_fields', (event) ->
   $previousLink.find('a').trigger('click')
   $link.hide()
   $pane.hide()
+  $link.remove()
+  $pane.remove()
   event.preventDefault()
 
 $(document).on 'change', '.structure-form-pane .structure-form-part:first-child input', (event) ->

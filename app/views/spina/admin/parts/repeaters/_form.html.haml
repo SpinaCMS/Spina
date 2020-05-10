@@ -4,7 +4,7 @@
     .structure-form-menu
       %ul{data: {target: "repeater-form.list"}}
         - (f.object.content || []).each.with_index do |repeater_content, index|
-          %li{class: ('active' if index.zero?), data: {part_id: repeater_content.object_id}}
+          %li{class: ('active' if index.zero?), data: {part_id: repeater_content.object_id, target: "repeater-form.listItem"}}
             = link_to "#structure_form_pane_#{repeater_content.object_id}" do
               %i.icon.icon-bars.sortable-handle
               = repeater_content.parts&.first&.content
