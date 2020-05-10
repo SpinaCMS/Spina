@@ -26,10 +26,12 @@
     delete(event) {
       event.preventDefault()
       let part_id = event.currentTarget.dataset.partId
-      let pane = [...this.paneTargets].find(function(pane) {
-        pane.dataset.partId == part_id
-      })
-      pane.parentElement.removeChilld(pane)
+
+      let pane = this.element.querySelector(`.structure-form-pane[data-part-id="${part_id}"]`)
+      let listItem = this.element.querySelector(`.structure-form-menu li[data-part-id="${part_id}"]`)
+
+      pane.parentElement.removeChild(pane)
+      listItem.parentElement.removeChild(listItem)
     }
     
   })

@@ -20,7 +20,7 @@ $(document).on 'click', 'form .add_structure_item_fields', (event) ->
   $fields = $($(this).data('fields').replace(regexp, time))
   $structureForm.find('.structure-form-content').append($fields)
 
-  $link = $("<li><a href='#structure_form_pane_#{time}'><i class='icon icon-bars'></i> </a></li>")
+  $link = $("<li data-part-id='#{time}'><a href='#structure_form_pane_#{time}'><i class='icon icon-bars'></i> </a></li>")
 
   $structureForm.find('.structure-form-menu ul').append($link)
   $fields.attr('id', "structure_form_pane_#{time}")
