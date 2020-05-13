@@ -19,7 +19,7 @@
         case "single":
           this.imageTargets.forEach((image) => image.querySelector('input').checked = false)
           event.currentTarget.checked = true
-          this.hiddenInput.value = event.currentTarget.value
+          this.imageIdInput.value = event.currentTarget.value
           this.signedBlobIdInput.value = event.currentTarget.dataset.signedBlobId
           this.placeholder.innerHTML = `<img src="${event.currentTarget.dataset.thumbnailUrl}" width="200" height="150" />`
           this.element.modal.close()
@@ -133,20 +133,24 @@
       })
     }
 
-    get hiddenInput() {
-      return document.querySelector(`#${this.inputTarget.value}`)
-    }
-
     get imageCollectionPlaceholder() {
       return document.querySelector(`#${this.inputTarget.value}`)
     }
+    
+    get hiddenInputs() {
+      return document.querySelector(`#${this.inputTarget.value}`)
+    }
+    
+    get imageIdInput() {
+      return this.hiddenInputs.querySelector("input[data-target='image-form.imageId']")
+    }
 
     get signedBlobIdInput() {
-      return this.hiddenInput.previousElementSibling
+      return this.hiddenInputs.querySelector("input[data-target='image-form.signedBlobId']")
     }
 
     get placeholder() {
-      return this.hiddenInput.nextElementSibling
+      return this.hiddenInputs.nextElementSibling
     }
 
     get token() {
