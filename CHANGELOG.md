@@ -1,5 +1,21 @@
 # Spina CMS Changelog
 
+## 2.0
+
+⚠️ _Beware: lots of changes regarding page content. The old page parts are gone in favor of new JSON-based parts. Read the [Upgrading Guide](https://www.spinacms.com/guide/getting-started/upgrade-from-v1) to learn how to upgrade._
+
+### 2.0.0.alpha
+
+* __Replaced all page content with JSON-based Spina::Parts__
+* Redesigned page editing
+* Redesigned media picker
+* Added content helpers
+* Added json content to Spina::Account
+* Added tests for better test coverage
+* Removed `Spina::PagePart` and related models
+* Fixed MenuPresenter for pages without translations
+* Refactored jQuery as Stimulus controllers
+
 ## 1.2
 
 ### 1.2.0 (June 29th, 2020)
