@@ -30,14 +30,14 @@ module Spina
 
     def attachment_url(attachment)
       attachment = find_part(attachment) unless attachment.is_a? Spina::Parts::Attachment
-      view_context.main_app.rails_service_blob_url(attachment.signed_blob_id, filename: attachment.filename) if attachment.present?
+      view_context.main_app.rails_service_blob_url(attachment.signed_blob_id, filename: attachment.filename.presence || "attachment") if attachment.present?
     end
 
     private
 
       def main_app_image_url(image, variant_options = {})
         variant_key = ActiveStorage::Variation.encode(variant_options)
-        view_context.main_app.rails_blob_representation_url(image.signed_blob_id, variant_key, image.filename)
+        view_context.main_app.rails_blob_representation_url(image.signed_blob_id, variant_key, image.filename.presence || "image")
       end
 
       def find_part(name)
