@@ -1,4 +1,3 @@
-require 'spina'
 require 'haml-rails'
 require 'sass-rails'
 require 'coffee-rails'
