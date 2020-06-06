@@ -4,6 +4,8 @@ module Spina
 
     included do
       rescue_from ActiveRecord::RecordNotFound, with: :redirect_or_render_404
+
+      helper Spina::PagesHelper
       
       before_action :set_locale
       before_action :set_current_page
