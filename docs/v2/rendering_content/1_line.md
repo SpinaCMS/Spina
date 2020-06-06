@@ -1,7 +1,23 @@
 # Line
 
-The most basic of all the parts, a simple textfield to store a line of text. The class name is `Spina::Parts::Line`. Use the `content` helper method to render it.
+The most basic of all the parts, a simple textfield to store a line of text. 
+
+Use the `content` helper method to render lines.
+
+## Theme configuration
 
 ```
-<%= content(:part_name) %>
+config.parts = [
+  # ...
+  {
+    name: "headline",
+    title: "Headline",
+    part_type: "Spina::Parts::Line"
+  }
+]
+```
+
+## View template example
+```
+<h1><%= content(:headline) %></h1>
 ```
