@@ -21,7 +21,7 @@ config.parts = [
 ## View template example
 
 ```
-<%= repeater(:portfolio) do |project| %>
+<% repeater(:portfolio) do |project| %>
   
   <h1><%= project.content(:title) %></h1>
   <%= project.content.image_tag(:image, resize: "400x300") %>
