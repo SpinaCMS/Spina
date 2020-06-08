@@ -7,7 +7,7 @@ Let's imagine our app contains a movie database. We'd like to add a custom part 
 
 File: `app/models/spina/parts/movie.rb`
 
-```
+```ruby
 module Spina
   module Parts
     class Movie < Base
@@ -26,7 +26,7 @@ end
 
 File: `app/views/spina/admin/parts/movies/_form.html.haml`
 
-```
+```haml
 .page-form-label= f.object.title
 .page-form-control
   .select-dropdown= f.select :movie_id, Movie.all.pluck(:name, :id)
