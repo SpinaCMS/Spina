@@ -5,9 +5,8 @@ All page content is stored in a single JSONB-column in the database. Spina uses 
 ## Step 1. Create a part
 Let's imagine our app contains a movie database. We'd like to add a part to select one of the movies in our collection. First we need to create the object that can be stored as page content.
 
-File: `app/models/spina/parts/movie.rb`
-
 ```ruby
+# app/models/spina/parts/movie.rb
 module Spina
   module Parts
     class Movie < Base
@@ -26,9 +25,8 @@ end
 
 ## Step 2. Create a view for page editing
 
-File: `app/views/spina/admin/parts/movies/_form.html.haml`
-
 ```haml
+-# app/views/spina/admin/parts/movies/_form.html.haml
 .page-form-label= f.object.title
 .page-form-control
   .select-dropdown= f.select :movie_id, Movie.all.pluck(:name, :id)
