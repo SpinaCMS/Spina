@@ -26,7 +26,7 @@ Spina v2 comes with two migrations to add json_attributes to the Page and Accoun
 ### 4. Refactor custom pageparts to AttrJSON-backed parts
 All PageParts that were previously included in Spina v1 were recreated as parts in the `Spina::Parts` namespace. The spina-upgrade gem includes the necessary code to convert the old models to these new JSON-backed parts. Here's an example of the Spina::Line part in spina-upgrade:
 
-```
+```ruby
 module Spina
   class Line < ApplicationRecord
     extend Mobility
@@ -48,7 +48,7 @@ If you're using any custom PageParts that you'd like to migrate, create a new JS
 Change `config.page_parts` to `config.parts` and change all items to reflect the new changes.
 
 Example:
-```
+```ruby
 theme.parts = [{
   name: 'text',
   title: "Text",
@@ -58,7 +58,7 @@ theme.parts = [{
 
 Delete `config.structures` and instead add structures as repeater parts like this:
 
-```
+```ruby
 theme.parts = [
   # ...
   {
@@ -66,6 +66,19 @@ theme.parts = [
     title: "Portfolio",
     part_type: "Spina::Parts::Repeater",
     parts: %w(title image description)
+  }
+]
+```
+
+Change `page_parts` to `parts` in your view_templates config
+
+```ruby
+theme.view_templates = [
+  # ...
+  {
+    name: 'homepage',
+    title: 'Homepage',
+    parts: %w(headline body)
   }
 ]
 ```
