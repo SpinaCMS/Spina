@@ -85,7 +85,7 @@ GIT
 PATH
   remote: .
   specs:
-    spina (1.2.0)
+    spina (2.0.0.alpha)
       ancestry
       attr_json
       bcrypt
@@ -111,7 +111,7 @@ GEM
     ancestry (3.0.7)
       activerecord (>= 3.2.0)
     ansi (1.5.0)
-    attr_json (1.0.0)
+    attr_json (1.2.0)
       activerecord (>= 5.0.0, < 6.1)
     bcrypt (3.1.13)
     breadcrumbs_on_rails (4.0.0)
@@ -159,7 +159,7 @@ GEM
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
     json (2.3.0)
-    jsonb_accessor (1.0.0)
+    jsonb_accessor (1.1.0)
       activerecord (>= 5.0)
       activesupport (>= 5.0)
       pg (>= 0.18.1)
