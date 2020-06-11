@@ -15,7 +15,7 @@ module Spina
       end
 
       def spina_image
-        Spina::Image.find(image_id)
+        Spina::Image.find_by(id: image_id)
       end
 
       def present?
