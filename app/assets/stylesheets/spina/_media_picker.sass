@@ -14,6 +14,37 @@
   .media-folder
     border-radius: 4px
 
+.media-picker-uploader
+  background: #eee
+  border-radius: 5px
+  height: 100%
+  position: relative
+
+  &:before
+    color: #999
+    font-size: 48px
+    left: 50%
+    position: absolute
+    top: 50%
+    transform: translateX(-50%) translateY(-50%)
+    @extend .icon, .icon-upload-outline
+
+  &:hover:before
+    color: #333
+
+  &.uploading:before
+    font-size: 24px
+    @extend .icon-dots
+
+  input[type="file"]
+    cursor: pointer
+    height: 100%
+    opacity: 0
+    width: 100%
+
+  input[type="submit"]
+    display: none
+
 .media-picker-image
   cursor: pointer
   display: block

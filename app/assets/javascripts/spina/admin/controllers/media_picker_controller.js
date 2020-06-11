@@ -86,13 +86,17 @@
       this.element.modal.close()
     }
 
-    refresh() {
-      // fetch('/admin/media_picker')
-      //   .then(response => response.text())
-      //   .then(function(html) {
-      //     this.gridTarget.innerHTML = html
-      //     this.toggleActive()
-      //   }.bind(this))
+    startUpload(event) {
+      event.currentTarget.querySelector('.media-picker-uploader').classList.add("uploading")
+    }
+
+    refresh(event) {
+      fetch(event.currentTarget.dataset.mediaPickerUrl)
+        .then(response => response.text())
+        .then(function(html) {
+          this.gridTarget.innerHTML = html
+          this.toggleActive()
+        }.bind(this))
     }
 
     toggleActive() {
