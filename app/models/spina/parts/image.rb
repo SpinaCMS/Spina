@@ -10,6 +10,10 @@ module Spina
         self
       end
 
+      def svg?
+        filename =~ /\.svg\z/
+      end
+
       def spina_image
         Spina::Image.find(image_id)
       end

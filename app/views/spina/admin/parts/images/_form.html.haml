@@ -8,7 +8,7 @@
           = f.hidden_field :image_id, data: {target: 'image-form.imageId'}
           = f.hidden_field :signed_blob_id, data: {target: 'image-form.signedBlobId'}
           = f.hidden_field :filename, data: {target: 'image-form.filename'}
-        %div
+        %div{style: "width: 200px; height: 150px; overflow: hidden"}
           - if f.object.signed_blob_id.present?
             = image_tag main_app.url_for(f.object.spina_image.variant(resize: "400x300^", crop: "400x300+0+0")), width: 200, height: 150
 

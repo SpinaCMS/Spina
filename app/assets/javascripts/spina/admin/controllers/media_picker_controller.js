@@ -21,12 +21,13 @@
           event.currentTarget.checked = true
           this.imageIdInput.value = event.currentTarget.value
           this.signedBlobIdInput.value = event.currentTarget.dataset.signedBlobId
+          this.filenameInput.value = event.currentTarget.dataset.filename
           this.placeholder.innerHTML = `<img src="${event.currentTarget.dataset.thumbnailUrl}" width="200" height="150" />`
           this.element.modal.close()
           break
         case "multiple":
           if(event.currentTarget.checked) {
-            this.addImage(event.currentTarget.dataset.imageId, event.currentTarget.dataset.signedBlobId, event.currentTarget.dataset.thumbnailUrl)
+            this.addImage(event.currentTarget.dataset.imageId, event.currentTarget.dataset.signedBlobId, event.currentTarget.dataset.filename, event.currentTarget.dataset.thumbnailUrl)
           } else {
             this.removeImage(event.currentTarget.dataset.imageId)
           }
@@ -63,6 +64,7 @@
         let doc = document.createRange().createContextualFragment(fields.replace(regexp, time))
         doc.querySelector(".image-id").value = image.dataset.imageId
         doc.querySelector(".signed-blob-id").value = image.dataset.signedBlobId
+        doc.querySelector(".filename").value = image.dataset.filename
         doc.querySelector("img").src = image.src
 
         this.imageCollectionPlaceholder.appendChild(doc)
@@ -114,8 +116,8 @@
       this.selectedCountTarget.innerHTML = `(${this.selectedIds.length})`
     }
 
-    addImage(id, signed_blob_id, url) {
-      this.selectedImagesTarget.insertAdjacentHTML("beforeend", `<img src="${url}" data-image-id="${id}" data-signed-blob-id="${signed_blob_id}" data-target="media-picker.selectedImage" />`)
+    addImage(id, signed_blob_id, filename, url) {
+      this.selectedImagesTarget.insertAdjacentHTML("beforeend", `<img src="${url}" data-image-id="${id}" data-signed-blob-id="${signed_blob_id}" data-filename="${filename}" data-target="media-picker.selectedImage" />`)
     }
 
     removeImage(id) {
@@ -147,6 +149,10 @@
 
     get signedBlobIdInput() {
       return this.hiddenInputs.querySelector("input[data-target='image-form.signedBlobId']")
+    }
+
+    get filenameInput() {
+      return this.hiddenInputs.querySelector("input[data-target='image-form.filename']")
     }
 
     get placeholder() {
