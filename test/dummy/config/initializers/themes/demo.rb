@@ -8,7 +8,12 @@
     name: 'repeater',
     title: "Repeater",
     part_type: "Spina::Parts::Repeater",
-    parts: ['line', 'image', 'headline', 'image_collection']
+    parts: ['line', 'body', 'image']
+  }, {
+    name: 'repeater2',
+    title: "Repeater",
+    part_type: "Spina::Parts::Repeater",
+    parts: ['line', 'image']
   }, {
     name: 'line',
     title: "Line",
@@ -60,7 +65,7 @@
     title: 'Demo',
     description: 'Contains examples of every page part',
     page_parts: [],
-    parts: ['attachment', 'option', 'body', 'image_collection', 'image', 'repeater']
+    parts: ['repeater', 'repeater2', 'attachment', 'option', 'body', 'image_collection', 'image']
   }]
 
   theme.custom_pages = [{
