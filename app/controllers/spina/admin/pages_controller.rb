@@ -13,7 +13,7 @@ module Spina
 
       def new
         @resource = Resource.find_by(id: params[:resource_id])
-        @page = Page.new(resource: @resource, parent: Page.find_by(id: params[:parent_id]) || @resource&.parent_page)
+        @page = Page.new(resource: @resource, parent: Page.find_by(id: params[:parent_id]))
         add_index_breadcrumb
         if current_theme.new_page_templates.any? { |template| template[0] == params[:view_template] }
           @page.view_template = params[:view_template]

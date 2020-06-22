@@ -30,6 +30,3 @@ Every resource can have the following attributes:
 - label
 - view_template
 - order_by
-- parent_page_id
-
-When defining a parent page, all pages within that resource will be scoped to that parent page. This means that all generated URL's will be prefixed with the parent page's URL. An example: you can create a regular page called `blog` and have a resource called `blogposts`. Your blog view template could then list all pages that are inside the blog resource. In Spina you would have a nice separate menu called "Blogposts" where you can easily manage a list of blogposts. 
