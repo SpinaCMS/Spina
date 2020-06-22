@@ -55,7 +55,6 @@ ActiveRecord::Schema.define(version: 2020_06_22_192131) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "robots_allowed", default: false
-    t.jsonb "json_attributes"
   end
 
   create_table "spina_attachment_collections", id: :serial, force: :cascade do |t|
@@ -171,7 +170,6 @@ ActiveRecord::Schema.define(version: 2020_06_22_192131) do
     t.string "materialized_path"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "slug"
     t.string "url_title"
     t.index ["locale"], name: "index_spina_page_translations_on_locale"
     t.index ["spina_page_id"], name: "index_spina_page_translations_on_spina_page_id"
@@ -193,7 +191,6 @@ ActiveRecord::Schema.define(version: 2020_06_22_192131) do
     t.integer "position"
     t.boolean "active", default: true
     t.integer "resource_id"
-    t.jsonb "json_attributes"
     t.index ["resource_id"], name: "index_spina_pages_on_resource_id"
   end
 
@@ -205,7 +202,6 @@ ActiveRecord::Schema.define(version: 2020_06_22_192131) do
     t.string "order_by"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "slug"
     t.index ["parent_page_id"], name: "index_spina_resources_on_parent_page_id"
   end
 
