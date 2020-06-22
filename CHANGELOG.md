@@ -1,5 +1,8 @@
 # Spina CMS Changelog
 
+## Unreleased
+* Added support for custom slugs (remember to install the new migration)
+
 ## 1.1
 
 ### 1.1.4 (May 8, 2020)

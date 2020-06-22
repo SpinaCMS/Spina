@@ -41,7 +41,7 @@ module Spina
 
     translates :title, fallbacks: true
     translates :description, :materialized_path
-    translates :menu_title, :seo_title, default: -> { title }
+    translates :menu_title, :seo_title, :url_title, default: -> { title }
 
     def to_s
       name
@@ -51,8 +51,8 @@ module Spina
       id
     end
 
-    def url_title
-      title.try(:parameterize)
+    def slug
+      url_title&.parameterize
     end
 
     def custom_page?
@@ -115,9 +115,9 @@ module Spina
 
       def generate_materialized_path
         if root?
-          name == 'homepage' ? '' : "#{url_title}"
+          name == 'homepage' ? '' : "#{slug}"
         else
-          ancestors.collect(&:url_title).append(url_title).join('/')
+          ancestors.collect(&:slug).append(slug).join('/')
         end
       end
 
