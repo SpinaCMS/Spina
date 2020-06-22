@@ -58,6 +58,9 @@ ru:
         skip_to_first_child_description: Переход на страницу ребенка
         title: Заголовок
         title_placeholder: Заголовок страницы
+        url_title: 
+        url_title_description: 
+        url_title_placeholder: 
         view_template: Шаблон страницы
       spina/resource:
         label: 
@@ -101,6 +104,7 @@ ru:
   spina:
     ago: назад
     attachments:
+      choose_attachment: 
       insert: Вставить документ
       insert_multiple: Вставить документы
     cancel: Отмена
@@ -119,14 +123,17 @@ ru:
       success: 
       unknown_user: 
     images:
+      all_images: 
       back: 
       cannot_be_created: 
       choose_image: 
       choose_images: 
+      confirm_selection: 
       delete: 
       delete_confirmation: 
       delete_folder: 
       done_organizing: 
+      insert_image: 
       insert_photo: 
       insert_photos: 
       link: 
@@ -167,6 +174,8 @@ ru:
       information: Информация
       login: Вы должны войти
       wrong_username_or_password: Неправильная почта или пароль
+    options:
+      choose_option: 
     pages:
       advanced: Дополнительно
       change_order: Изменить порядок

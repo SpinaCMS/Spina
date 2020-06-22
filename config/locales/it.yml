@@ -58,6 +58,9 @@ it:
         skip_to_first_child_description: Vai alla prima sottopagina
         title: Titolo
         title_placeholder: Titolo pagina
+        url_title: 
+        url_title_description: 
+        url_title_placeholder: 
         view_template: Template pagina
       spina/resource:
         label: Etichetta
@@ -93,6 +96,7 @@ it:
   spina:
     ago: fa
     attachments:
+      choose_attachment: 
       insert: Inserisci documento
       insert_multiple: Inserisci documenti
     cancel: Annulla
@@ -111,14 +115,17 @@ it:
       success: Puoi usare la tua nuova password
       unknown_user: Questo utente non esiste
     images:
+      all_images: 
       back: Indietro
       cannot_be_created: Non può essere creato
       choose_image: Scegli immagine
       choose_images: Scegli immagini
+      confirm_selection: 
       delete: Cancella
       delete_confirmation: Sei sicuro di voler cancellare questa <strong> immagine </strong>?
       delete_folder: Cancella cartella
       done_organizing: Fine riordinare
+      insert_image: 
       insert_photo: Inserisci foto
       insert_photos: Inserisci foto
       link: Link
@@ -159,6 +166,8 @@ it:
       information: Informazioni
       login: Devi prima effettuare il login
       wrong_username_or_password: Email o password errata
+    options:
+      choose_option: 
     pages:
       advanced: Avanzate
       change_order: Modifica ordine
