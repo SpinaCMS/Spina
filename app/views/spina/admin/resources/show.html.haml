@@ -9,7 +9,7 @@
 .well
   .dd#pages_list
     %ol.dd-list
-      - (@resource.parent_page.try(:children) || @resource.pages.roots).each do |page|
+      - @resource.pages.roots.each do |page|
         %li.dd-item{data: {controller: "page-collapse", url: spina.children_admin_page_path(page)}}
           .dd-item-inner
             - if page.children.any?

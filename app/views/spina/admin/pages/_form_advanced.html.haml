@@ -34,12 +34,13 @@
           = f.text_field :link_url, placeholder: Spina::Page.human_attribute_name(:link_url_placeholder)
 
     .well
-      .horizontal-form-group
-        .horizontal-form-label
-          = Spina::Page.human_attribute_name :ancestry
-        .horizontal-form-content
-          .select-dropdown.ancestry
-            = f.select :parent_id, page_ancestry_options(f.object), include_blank: Spina::Page.human_attribute_name(:no_parent)
+      - unless @page.resource.present?
+        .horizontal-form-group
+          .horizontal-form-label
+            = Spina::Page.human_attribute_name :ancestry
+          .horizontal-form-content
+            .select-dropdown.ancestry
+              = f.select :parent_id, page_ancestry_options(f.object), include_blank: Spina::Page.human_attribute_name(:no_parent)
 
       .horizontal-form-group{style: ('display: none' if @page.custom_page?)}
         .horizontal-form-label
@@ -49,9 +50,10 @@
             - options = options_for_select(current_theme.view_templates.map { |template| [template[:title], template[:name], {'data-page-parts' => template[:page_parts]}] }, @page.view_template)
             = f.select :view_template, options
 
-      .horizontal-form-group
-        .horizontal-form-label
-          = Spina::Page.human_attribute_name :resource
-        .horizontal-form-content
-          .select-dropdown
-            = f.select :resource_id, Spina::Resource.order(:label).pluck(:label, :id), include_blank: t('spina.website.pages')
+      - if @page.root?
+        .horizontal-form-group
+          .horizontal-form-label
+            = Spina::Page.human_attribute_name :resource
+          .horizontal-form-content
+            .select-dropdown
+              = f.select :resource_id, Spina::Resource.order(:label).pluck(:label, :id), include_blank: t('spina.website.pages')

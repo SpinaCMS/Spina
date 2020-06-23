@@ -28,6 +28,9 @@ module Spina
     scope :live, -> { active.where(draft: false) }
     scope :in_menu, -> { where(show_in_menu: true) }
 
+    # Copy resource from parent
+    before_save :set_resource_from_parent, if: -> { parent.present? }
+
     # Save children to update all materialized_paths
     after_save :save_children
     after_save :touch_navigations
@@ -96,6 +99,10 @@ module Spina
     end
 
     private
+
+      def set_resource_from_parent
+        self.resource_id = parent.resource_id 
+      end
 
       def touch_navigations
         navigations.update_all(updated_at: Time.zone.now)
