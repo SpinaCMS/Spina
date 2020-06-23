@@ -58,6 +58,9 @@ fr:
         skip_to_first_child_description: Renvoyer vers la première page enfant
         title: Titre
         title_placeholder: Titre de la page
+        url_title: 
+        url_title_description: 
+        url_title_placeholder: 
         view_template: Modèle de page
       spina/resource:
         label: 
@@ -93,6 +96,7 @@ fr:
   spina:
     ago: Il y a
     attachments:
+      choose_attachment: 
       insert: Insérer un document
       insert_multiple: Insérer des documents
     cancel: Annuler
@@ -111,14 +115,17 @@ fr:
       success: Vous pouvez utiliser votre nouveau mot de passe
       unknown_user: Cet utilisateur n'existe pas
     images:
+      all_images: 
       back: 
       cannot_be_created: 
       choose_image: 
       choose_images: 
+      confirm_selection: 
       delete: 
       delete_confirmation: 
       delete_folder: 
       done_organizing: 
+      insert_image: 
       insert_photo: 
       insert_photos: 
       link: 
@@ -159,6 +166,8 @@ fr:
       information: Information
       login: Vous devez d'abord vous identifier
       wrong_username_or_password: Mauvais email ou mot de passe
+    options:
+      choose_option: 
     pages:
       advanced: Avancé
       change_order: Changer l'ordre

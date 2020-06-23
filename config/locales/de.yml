@@ -58,6 +58,9 @@ de:
         skip_to_first_child_description: Zur ersten Seite
         title: Titel
         title_placeholder: Seiten-Titel
+        url_title: 
+        url_title_description: 
+        url_title_placeholder: 
         view_template: Seiten-Template
       spina/resource:
         label: 
@@ -93,6 +96,7 @@ de:
   spina:
     ago: vor
     attachments:
+      choose_attachment: 
       insert: Dokument einfügen
       insert_multiple: Dokumente einfügen
     cancel: Abbrechen
@@ -111,14 +115,17 @@ de:
       success: Du kannst dein neues Passwort verwenden
       unknown_user: Dieser Nutzer existiert nicht
     images:
+      all_images: 
       back: 
       cannot_be_created: 
       choose_image: 
       choose_images: 
+      confirm_selection: 
       delete: 
       delete_confirmation: 
       delete_folder: 
       done_organizing: 
+      insert_image: 
       insert_photo: 
       insert_photos: 
       link: 
@@ -159,6 +166,8 @@ de:
       information: Information
       login: Du musst dich zuerst einloggen
       wrong_username_or_password: Falsche E-Mail oder Passwort
+    options:
+      choose_option: 
     pages:
       advanced: Erweitert
       change_order: Reihenfolge ändern

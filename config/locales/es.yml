@@ -58,6 +58,9 @@ es:
         skip_to_first_child_description: Reenviar a la primera página hija
         title: Título
         title_placeholder: Título de la página
+        url_title: 
+        url_title_description: 
+        url_title_placeholder: 
         view_template: Plantilla de página
       spina/resource:
         label: Etiqueta
@@ -93,6 +96,7 @@ es:
   spina:
     ago: atrás
     attachments:
+      choose_attachment: 
       insert: Insertar documento
       insert_multiple: Insertar documentos
     cancel: Cancelar
@@ -111,14 +115,17 @@ es:
       success: Puede utilizar su nueva contraseña
       unknown_user: Este usuario no existe
     images:
+      all_images: 
       back: Regresar
       cannot_be_created: No puede ser creada
       choose_image: Elegir imagen
       choose_images: Elegir imágenes
+      confirm_selection: 
       delete: Borrar
       delete_confirmation: Esta seguro que desea borrar esta <strong>imagen</strong>?
       delete_folder: Borrar carpeta
       done_organizing: 
+      insert_image: 
       insert_photo: Insertar foto
       insert_photos: Insertar fotos
       link: Enlace
@@ -159,6 +166,8 @@ es:
       information: Información
       login: Primero debes ingresar
       wrong_username_or_password: Email o password incorrecto
+    options:
+      choose_option: 
     pages:
       advanced: Avanzado
       change_order: Cambiar orden

@@ -9,10 +9,10 @@ pl:
         google_analytics: Google Analytics
         google_plus: Google+
         google_site_verification: Google Site Verification
-        instagram: 
+        instagram: Instagram
         kvk_identifier: Chamber of commerce
         kvk_identifier_description: Chamber of commerce
-        linkedin: 
+        linkedin: LinkedIn
         logo: Logo
         name: Nazwa witryny internetowej
         phone: Telefon
@@ -22,7 +22,7 @@ pl:
         twitter: Twitter
         vat_identifier: VAT
         vat_identifier_description: VAT
-        youtube: 
+        youtube: YouTube
       spina/attachment:
         created_at: Utworzono
         name: Plik
@@ -37,7 +37,7 @@ pl:
         pages_description: Wybierz stronę, którą chcesz użyć w nawigacji
       spina/page:
         ancestry: Strona nadrzędna
-        created_at: 
+        created_at: Utworzono w
         description: Opis w Meta description
         description_description: Opis pokazywany w wynikach wyszukiwarki
         description_placeholder: Krótki opis strony
@@ -49,7 +49,7 @@ pl:
         menu_title: Tytuł nawigacji
         menu_title_placeholder: pozostaw puste jeśli chcesz użyć tytuł strony
         no_parent: Brak podrzędnych stron
-        resource: 
+        resource: Zasób
         seo_title: SEO <title>
         seo_title_placeholder: Tytuł w tagu <title>
         show_in_menu: Pokaż w nawigazji
@@ -58,12 +58,15 @@ pl:
         skip_to_first_child_description: Ustaw jako pierwszą w kolejności
         title: Tytuł
         title_placeholder: Tytuł strony
+        url_title: 
+        url_title_description: 
+        url_title_placeholder: 
         view_template: Szablon strony
       spina/resource:
-        label: 
+        label: Etykieta
         order_by: 
         parent_page: 
-        view_template: 
+        view_template: Domyślny szablon widoku
       spina/user:
         admin: Administrator
         admin_description: Może tworzyć Użytkowników
@@ -93,6 +96,7 @@ pl:
   spina:
     ago: temu
     attachments:
+      choose_attachment: 
       insert: Wstaw dokument
       insert_multiple: Wstaw dokumenty
     cancel: Anuluj
@@ -111,14 +115,17 @@ pl:
       success: Możesz teraz używać nowe hasło
       unknown_user: Użytkownik nie istnieje
     images:
-      back: 
-      cannot_be_created: 
-      choose_image: 
-      choose_images: 
-      delete: 
-      delete_confirmation: 
-      delete_folder: 
+      all_images: Wszystkie obrazy
+      back: Powrót
+      cannot_be_created: Nie może być utworzone
+      choose_image: Wybierz obraz
+      choose_images: Wybierz obrazy
+      confirm_selection: Potwierdź wybór
+      delete: Usuń
+      delete_confirmation: Czy na pewno chcesz usunąć ten <strong>image</strong>?
+      delete_folder: Usuń folder
       done_organizing: 
+      insert_image: Wstaw obraz
       insert_photo: 
       insert_photos: 
       link: 
@@ -159,6 +166,8 @@ pl:
       information: Informacja
       login: Musisz się zalogować
       wrong_username_or_password: Nieprawidłowy email lub hasło
+    options:
+      choose_option: 
     pages:
       advanced: Zaawansowane
       change_order: Zmień kolejność

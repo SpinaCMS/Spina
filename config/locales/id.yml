@@ -58,6 +58,9 @@ id:
         skip_to_first_child_description: Maju ke halaman anak pertama
         title: Judul
         title_placeholder: Judul halaman
+        url_title: 
+        url_title_description: 
+        url_title_placeholder: 
         view_template: Template halaman
       spina/resource:
         label: 
@@ -93,6 +96,7 @@ id:
   spina:
     ago: lalu
     attachments:
+      choose_attachment: 
       insert: Masukan dokumen
       insert_multiple: Masukan dokumen
     cancel: Batal
@@ -111,14 +115,17 @@ id:
       success: Anda dapat menggunakan sandi baru anda
       unknown_user: Pengguna ini tidak ada
     images:
+      all_images: 
       back: 
       cannot_be_created: 
       choose_image: 
       choose_images: 
+      confirm_selection: 
       delete: 
       delete_confirmation: 
       delete_folder: 
       done_organizing: 
+      insert_image: 
       insert_photo: 
       insert_photos: 
       link: 
@@ -159,6 +166,8 @@ id:
       information: Informasi
       login: Anda harus login dahulu
       wrong_username_or_password: Salah e-mail atau sandi
+    options:
+      choose_option: 
     pages:
       advanced: Lanjutan
       change_order: Ubah urutan

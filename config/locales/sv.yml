@@ -58,6 +58,9 @@ sv:
         skip_to_first_child_description: gå till första undersida
         title: Titel
         title_placeholder: Sidtitel
+        url_title: 
+        url_title_description: 
+        url_title_placeholder: 
         view_template: Sidmall
       spina/resource:
         label: 
@@ -93,6 +96,7 @@ sv:
   spina:
     ago: sen
     attachments:
+      choose_attachment: 
       insert: Infoga dokument
       insert_multiple: Infoga dokument
     cancel: Avbryt
@@ -111,14 +115,17 @@ sv:
       success: Du kan använda ditt nya lösenord
       unknown_user: Denna användare finns inte
     images:
+      all_images: 
       back: 
       cannot_be_created: 
       choose_image: 
       choose_images: 
+      confirm_selection: 
       delete: 
       delete_confirmation: 
       delete_folder: 
       done_organizing: 
+      insert_image: 
       insert_photo: 
       insert_photos: 
       link: 
@@ -159,6 +166,8 @@ sv:
       information: Information
       login: Du måste logga in först
       wrong_username_or_password: Fel mail eller lösenord
+    options:
+      choose_option: 
     pages:
       advanced: Avancerat
       change_order: Ändra ordning
