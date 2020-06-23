@@ -2,6 +2,7 @@
 
   theme.name = 'demo'
   theme.title = 'Demo theme'
+  theme.resources = [{name: "landing_pages", label: "Landing pages"}]
 
   # All available parts
   theme.parts = [{

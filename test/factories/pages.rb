@@ -15,6 +15,10 @@ FactoryBot.define do
       deletable { false }
     end
 
+    factory :services_page do
+      title { 'Services' }
+    end
+
     factory :demo_page do
       name { 'demo' }
       title { 'Demo' }
