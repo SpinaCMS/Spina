@@ -34,7 +34,6 @@
           .page-form-control
             = f.text_field :link_url, placeholder: Spina::Page.human_attribute_name(:link_url_placeholder)
 
-    .well
       - unless @page.resource.present?
         .horizontal-form-group
           .horizontal-form-label

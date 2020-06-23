@@ -20,7 +20,8 @@
         = Spina::Page.human_attribute_name :url_title
         %small= Spina::Page.human_attribute_name :url_title_description
       .horizontal-form-content
-        = f.text_field :url_title, placeholder: Spina::Page.human_attribute_name(:url_title_placeholder), value: f.object.url_title(fallback: false, default: nil)&.parameterize
+        .page-form-control
+          = f.text_field :url_title, placeholder: Spina::Page.human_attribute_name(:url_title_placeholder), value: f.object.url_title(fallback: false, default: nil)&.parameterize
 
     - unless @page.new_record?
       .horizontal-form-group
