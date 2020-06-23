@@ -6,17 +6,17 @@ button, input[type="submit"], input[type="button"]
 
 .button
   background: #efefef
-  border-radius: 4px
+  border-radius: 6px
   color: #444
   display: inline-block
   font-size: 14px
   font-weight: 600
-  line-height: 20px
+  line-height: 18px
   margin: 0 4px 4px 0
   outline: none
   padding: 8px 16px
   text-decoration: none
-  transition: all .3s ease
+  transition: all .2s ease
 
   &:hover
     background: shade(#efefef, 5%)
@@ -31,12 +31,34 @@ button, input[type="submit"], input[type="button"]
   &:focus
     outline: none
 
+  &.button-default
+    background: white
+    border: 1px solid #ddd
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .05)
+
+    &:hover
+      background: #f5f5f5
+      border: 1px solid #ccc
+      box-shadow: 0 1px 2px rgba(0, 0, 0, .1)
+
+    &:active
+      background: #eee
+      border: 1px solid #c9c9c9
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, .1)
+
   &.button-primary
     background: $primary-color
+    border: 1px solid darken($primary-color, 5%)
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .1)
     color: #fff
 
     &:hover
-      background: shade($primary-color, 10%)
+      background: shade($primary-color, 15%)
+      box-shadow: 0 1px 1px rgba(0, 0, 0, .2)
+
+    &:active
+      background: shade($primary-color, 25%)
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, .4)
 
     &.button-shaded:hover
       background: $primary-color
@@ -46,16 +68,23 @@ button, input[type="submit"], input[type="button"]
 
   &.button-success
     background: $success-color
+    border-color: $success-color
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .1)
     color: #fff
 
     &:hover
-      background: tint($success-color, 20%)
+      background: darken($success-color, 10%)
+      border-color: darken($success-color, 15%)
+      box-shadow: 0 1px 1px rgba(0, 0, 0, .2)
+
+    &:active
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, .4)
 
     &.button-shaded:hover
       background: $success-color
 
     &:active, &.button-active, &.button-shaded, &.button-shaded:active
-      background: shade($success-color, 10%)
+      background: darken($success-color, 10%)
 
   &.button-danger
     color: $danger-color
@@ -80,7 +109,6 @@ button, input[type="submit"], input[type="button"]
 
   i.icon
     margin-right: 8px
-    margin-top: -2px
 
   &.icon-only
     &:before, i.icon
@@ -90,18 +118,18 @@ button, input[type="submit"], input[type="button"]
     margin-right: 4px
 
   &.button-large
-    border-radius: 4px
+    border-radius: 6px
     padding: 11px 18px
 
     &:before
       margin-right: 10px
 
   &.button-small
-    font-size: 13px
+    font-size: 12px
     padding: 6px 12px
 
     i.icon
-      margin-right: 4px
+      margin-right: 6px
 
   &.button-mini
     font-size: 12px
@@ -129,6 +157,12 @@ button, input[type="submit"], input[type="button"]
   &.button-saving:before
     animation: rotate 3.0s linear infinite
     display: inline-block
+
+// Aligning button content
+.button-content
+  align-items: center
+  display: flex
+  justify-content: center
 
 @keyframes rotate
   from
@@ -208,7 +242,7 @@ button, input[type="submit"], input[type="button"]
   ul, .sliding-dropdown
     background: #fff
     border: 1px solid #ccc
-    border-radius: 4px
+    border-radius: 6px
     box-shadow: 0 5px 20px rgba(0, 0, 0, .15)
     display: none
     list-style: none
@@ -330,34 +364,19 @@ button, input[type="submit"], input[type="button"]
   .slide
     display: none
     text-align: center
+    padding-bottom: 15px
 
     &.active
       display: block
 
     p
       color: #333
-      font-size: 14px
-      font-weight: 400
+      font-size: 13px
+      font-weight: 500
       margin: 16px
 
     p.muted
       color: #999
-
-    .button
-      border-top-left-radius: 0
-      border-top-right-radius: 0
-      margin: -1px
-      width: 300px
-
-      &.button-primary
-        background: lighten($primary-color, 40%)
-        border: 1px solid lighten($primary-color, 30%)
-        color: $primary-color
-
-        &:hover
-          background: $primary-color
-          border: 1px solid $primary-color
-          color: #fff
 
   .slide-dots
     margin: 12px

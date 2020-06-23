@@ -2,7 +2,7 @@
 
 .dd
   border: 1px solid #e2e2e2
-  border-radius: 4px
+  border-radius: 6px
   box-shadow: 0 1px 1px rgba(0, 0, 0, .05)
   margin: -20px
   overflow: hidden
@@ -103,11 +103,16 @@
   min-height: 100px
 
 .dd-item-inner
+  align-items: center
+  display: flex
   padding: 10px 20px
   text-decoration: none
 
   a
     margin: 0
+
+  a.sortable-link
+    flex: 1
 
   a.sortable-link, a.sortable-link:hover
     color: $primary-color
@@ -121,6 +126,7 @@
       margin-left: 13px
 
   .pull-right a
+    margin: 0
     opacity: 0
     transform: translateX(50px)
     transition: all .4s ease

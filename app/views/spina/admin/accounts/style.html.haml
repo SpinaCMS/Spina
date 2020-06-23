@@ -5,7 +5,7 @@
       %span{style: 'margin-left: 10px'}
         - if Spina.config.locales.size > 1
           %div{style: "display: inline-block", data: {dropdown: true}}
-            = link_to '#', class: 'button button-hollow button-small', style: 'margin-left: 0; margin-right: 0', data: {trigger: 'dropdown', target: '#locales'} do
+            = link_to '#', class: 'button button-default button-small', style: 'margin-left: 0; margin-right: 0', data: {trigger: 'dropdown', target: '#locales'} do
               = icon('comment')
               =t "spina.languages.#{@locale}"
               %i.icon.icon-chevron-down{style: 'font-size: 9px; margin-right: 0'}

@@ -1,6 +1,6 @@
 %aside#notifications
   - if flash[:notice]
-    .notification.animated.fadeInRight
+    .notification.animated.fadeInLeft
       = icon('info')
       .notification-message
         = flash[:notice].html_safe
@@ -9,7 +9,7 @@
         = icon('cross')
 
   - if flash[:alert]
-    .notification.notification-danger.animated.fadeInRight
+    .notification.notification-danger.animated.fadeInLeft
       = icon('exclamation')
       .notification-message
         = flash[:alert].html_safe
@@ -18,8 +18,8 @@
         = icon('cross')
 
   - if flash[:success]
-    .notification.notification-success.animated.fadeInRight
-      = icon('large-check')
+    .notification.notification-success.animated.fadeInLeft
+      = icon('check')
       .notification-message
         = flash[:success].html_safe
         %small= flash[:success_small].try(:html_safe)
