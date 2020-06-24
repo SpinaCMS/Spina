@@ -39,6 +39,7 @@
           .horizontal-form-label
             = Spina::Page.human_attribute_name :ancestry
           .horizontal-form-content
+            = page_ancestry_options(f.object).inspect
             .select-dropdown.ancestry
               = f.select :parent_id, page_ancestry_options(f.object), include_blank: Spina::Page.human_attribute_name(:no_parent)
 

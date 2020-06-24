@@ -45,7 +45,7 @@ module Spina
           next if page.depth >= Spina.config.max_page_depth - 1
           page_menu_title = page.depth.zero? ? page.menu_title : " #{page.menu_title}".indent(page.depth, '-')
           [page_menu_title, page.id]
-        end << [page.parent&.menu_title, page&.parent_id].compact).uniq.compact
+        end << [page.parent&.menu_title, page&.parent_id].compact).map(&:presence).uniq.compact
       end
 
       def option_label(part, value)
