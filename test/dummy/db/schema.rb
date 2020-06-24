@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_22_192131) do
+ActiveRecord::Schema.define(version: 2020_06_24_185123) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
@@ -171,6 +171,7 @@ ActiveRecord::Schema.define(version: 2020_06_22_192131) do
     t.string "materialized_path"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "slug"
     t.string "url_title"
     t.index ["locale"], name: "index_spina_page_translations_on_locale"
     t.index ["spina_page_id"], name: "index_spina_page_translations_on_spina_page_id"
@@ -204,6 +205,7 @@ ActiveRecord::Schema.define(version: 2020_06_22_192131) do
     t.string "order_by"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.jsonb "slug"
     t.index ["parent_page_id"], name: "index_spina_resources_on_parent_page_id"
   end
 

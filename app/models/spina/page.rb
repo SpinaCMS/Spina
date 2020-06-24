@@ -114,11 +114,10 @@ module Spina
       end
 
       def generate_materialized_path
-        if root?
-          name == 'homepage' ? '' : "#{slug}"
-        else
-          ancestors.collect(&:slug).append(slug).join('/')
-        end
+        path_fragments = [resource&.slug]
+        path_fragments.append *ancestors.collect(&:slug)
+        path_fragments.append(slug) unless name == 'homepage'
+        path_fragments.compact.map(&:parameterize).join('/')
       end
 
   end
