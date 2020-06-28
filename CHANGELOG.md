@@ -4,7 +4,7 @@
 
 ⚠️ _Beware: lots of changes regarding page content. The old page parts are gone in favor of new JSON-based parts. Read the [Upgrading Guide](https://www.spinacms.com/guide/getting-started/upgrading-from-v1) to learn how to upgrade._
 
-### 2.0.0
+### 2.0.0.alpha
 
 ### 2.0.0.alpha
 
