@@ -6,14 +6,13 @@
 
 ### 2.0.0.alpha
 
-### 2.0.0.alpha
-
 * __Replaced all page content with JSON-based Spina::Parts__
 * Redesigned page editing
 * Redesigned media picker
 * Added content helpers
 * Added json content to Spina::Account
 * Added tests for better test coverage
+* Added slug to Spina::Resource
 * Removed `Spina::PagePart` and related models
 * Fixed MenuPresenter for pages without translations
 * Refactored jQuery as Stimulus controllers
