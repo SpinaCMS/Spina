@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    spina (1.1.4)
+    spina (1.2.0)
       ancestry
       bcrypt
       breadcrumbs_on_rails
@@ -103,7 +103,7 @@ GEM
     execjs (2.7.0)
     factory_bot (6.0.2)
       activesupport (>= 5.0.0)
-    ffi (1.12.2)
+    ffi (1.13.1)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     haml (5.1.2)
@@ -221,7 +221,7 @@ GEM
       sexp_processor (~> 4.9)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
-    sassc (2.3.0)
+    sassc (2.4.0)
       ffi (~> 1.9)
     sassc-rails (2.1.2)
       railties (>= 4.0.0)
@@ -229,7 +229,7 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
-    sexp_processor (4.14.1)
+    sexp_processor (4.15.0)
     simplecov (0.13.0)
       docile (~> 1.1.0)
       json (>= 1.8, < 3)
