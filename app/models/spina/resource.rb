@@ -1,6 +1,10 @@
 module Spina
   class Resource < ApplicationRecord
+    extend Mobility
+
     has_many :pages, dependent: :restrict_with_exception
+
+    translates :slug, backend: :jsonb
 
     def pages
       case order_by

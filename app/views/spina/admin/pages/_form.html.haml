@@ -1,6 +1,6 @@
 - if @page.errors.any?
   - content_for :notifications do
-    .notification.notification-danger.animated.fadeInRight
+    .notification.notification-danger.animated.fadeInLeft
       = icon('exclamation')
       .notification-message
         =t 'spina.notifications.alert'
@@ -16,17 +16,18 @@
         - unless @page.new_record?
           - if Spina.config.locales.size > 1
             %div{style: "display: inline-block", data: {dropdown: true}}
-              = link_to '#', class: 'button button-hollow button-small', style: 'margin-left: 0; margin-right: 0', data: {trigger: 'dropdown', target: '#locales'} do
-                = icon('comment')
-                =t "spina.languages.#{@locale}"
-                %i.icon.icon-chevron-down{style: 'font-size: 9px; margin-right: 0'}
+              = link_to '#', class: 'button button-default button-small', style: 'margin-left: 0; margin-right: 0', data: {trigger: 'dropdown', target: '#locales'} do
+                .button-content
+                  = icon('comment')
+                  =t "spina.languages.#{@locale}"
+                  %i.icon.icon-chevron-down{style: 'font-size: 9px; margin-right: 0; margin-left: 5px'}
 
               %ul#locales
                 - Spina.config.locales.each do |locale|
                   %li
                     = link_to t("spina.languages.#{locale}"), "?locale=#{locale}", style: ('font-weight: 600' if @locale.to_s == locale.to_s).to_s
 
-        = link_to @page.materialized_path, target: :blank, class: 'button button-hollow button-small', style: 'margin-left: 0' do
+        = link_to @page.materialized_path, target: :blank, class: 'button button-default button-small', style: 'margin-left: 0' do
           %i.icon.icon-export{style: 'margin: 0'}
 
     #header_actions
@@ -47,4 +48,5 @@
       = render "spina/admin/pages/form_#{tab}", f: f
 
   - unless @page.new_record? || !@page.deletable
-    .pull-right= link_to t('spina.permanently_delete'), spina.admin_page_path(@page), method: :delete, data: {confirm: t('spina.pages.delete_confirmation', subject: @page.menu_title)}, class: 'button button-link button-danger'
+    .text-right{style: "margin-top: 60px"}
+      = link_to t('spina.permanently_delete'), spina.admin_page_path(@page), method: :delete, data: {confirm: t('spina.pages.delete_confirmation', subject: @page.menu_title)}, class: 'button button-default button-small button-danger', style: 'margin: 0'

@@ -29,6 +29,8 @@
 @import spina/trix_custom
 @import spina/wizard
 @import spina/notifications
+@import spina/pages
+@import spina/media_picker
 
 
 html
@@ -267,12 +269,12 @@ nav#secondary
     small
       display: block
       font-size: 12px
-      font-weight: 400
+      font-weight: 500
 
   &.permanent-notice-info
-    background: #eef6fe
-    border-color: #def
-    color: #12659b
+    background: lighten($primary-color-light, 33%)
+    border-color: lighten($primary-color-light, 28%)
+    color: $primary-color
 
     p
       color: inherit
@@ -427,7 +429,7 @@ section#main
     margin-left: 12px
     vertical-align: middle
 
-  a
+  & > a:not(.button)
     color: #999
 
     &:hover
@@ -445,9 +447,9 @@ section#main
 
 .well
   background: #fff
-  border: 1px solid #eee
-  border-radius: 3px
-  margin: 24px -20px
+  border-radius: 6px
+  box-shadow: 0 1px 1px rgba(0, 0, 0, .05)
+  margin: 24px -15px
   padding: 20px
 
   hr.divider

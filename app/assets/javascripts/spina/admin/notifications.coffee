@@ -1,6 +1,6 @@
 $(document).on 'click', '.notification [data-close-notification]', (e) ->
   $notification = $(this).parents('.notification')
-  $notification.removeClass('fadeInRight').addClass('fadeOutRight')
+  $notification.removeClass('fadeInLeft').addClass('fadeOutLeft')
   setTimeout ->
     $notification.remove()
   , 400

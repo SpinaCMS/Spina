@@ -7,7 +7,7 @@
         = icon('check')
         = t('spina.preferences.analytics_save')
 
-  .well
+  %div{style: "margin-top: 40px"}
     .horizontal-form
       .horizontal-form-group
         .horizontal-form-label
@@ -18,9 +18,11 @@
         .horizontal-form-label
           = Spina::Account.human_attribute_name(:google_analytics)
         .horizontal-form-content
-          = f.text_field :google_analytics, placeholder: Spina::Account.human_attribute_name(:google_analytics)
+          .page-form-control
+            = f.text_field :google_analytics, placeholder: Spina::Account.human_attribute_name(:google_analytics)
       .horizontal-form-group
         .horizontal-form-label
           = Spina::Account.human_attribute_name(:google_site_verification)
         .horizontal-form-content
-          = f.text_field :google_site_verification, placeholder: Spina::Account.human_attribute_name(:google_site_verification)
+          .page-form-control
+            = f.text_field :google_site_verification, placeholder: Spina::Account.human_attribute_name(:google_site_verification)

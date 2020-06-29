@@ -50,6 +50,7 @@ module Spina
       end
 
       def render_item(item)
+        return nil unless item.materialized_path
         children = scoped_collection(item.children)
 
         content_tag(list_item_tag, class: list_item_css, data: {page_id: item.page_id, draft: (true if item.draft?) }) do

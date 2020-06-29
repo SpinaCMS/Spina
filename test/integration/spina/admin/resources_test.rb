@@ -30,6 +30,17 @@ module Spina
         assert_select '.breadcrumbs', text: /\ABreweries/
       end
 
+      test "edit resource" do
+        get "/admin/resources/#{@breweries.id}/edit"
+        assert_select '.breadcrumbs', text: /.*Edit.*/
+      end
+
+      test "update resource" do
+        put "/admin/resources/#{@breweries.id}", params: {resource: {label: "Top Breweries"}}
+        follow_redirect!
+        assert_select '.breadcrumbs', text: /.*Top\sBreweries.*/
+      end
+
     end
   end
 end

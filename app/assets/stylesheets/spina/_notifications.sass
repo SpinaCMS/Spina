@@ -1,25 +1,29 @@
 // Notifications
 
 aside#notifications
-  bottom: 0
+  bottom: 50px
   padding: 16px
   position: fixed
-  right: 0
+  left: 0
   z-index: 100
 
 .notification
   animation-duration: .4s
   align-items: center
-  background: $primary-color
-  border-radius: 3px
+  background: rgba(0, 0, 0, .3)
+  backdrop-filter: blur(3px)
+  -webkit-backdrop-filter: blur(3px)
+  border-radius: 7px
+  box-shadow: 3px 6px 3px rgba(0, 0, 0, .075)
   color: #fff
   display: flex
-  font-size: 16px
-  line-height: 24px
+  font-size: 14px
+  font-weight: 600
+  line-height: 18px
   margin-top: 16px
   padding: 16px 0
   position: relative
-  width: 400px
+  width: 290px
 
   .notification-message
     flex: 1
@@ -27,19 +31,21 @@ aside#notifications
 
   .icon
     text-align: center
-    min-width: 50px
-    width: 50px
+    margin-left: 4px
+    min-width: 40px
+    width: 40px
 
   a
-    color: #000
+    color: white
     display: block
     font-size: 11px
     opacity: .2
     text-align: center
+    transition: opacity .2s ease
     width: 50px
 
     &:hover
-      color: #000
+      color: white
       opacity: .4
 
   strong
@@ -53,10 +59,10 @@ aside#notifications
     opacity: .6
 
   &.notification-error
-    background: $error-color
+    // background: $error-color
 
   &.notification-danger
-    background: $danger-color
+    // background: $danger-color
 
   &.notification-success
-    background: $success-color
+    // background: $success-color

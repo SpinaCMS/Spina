@@ -8,7 +8,7 @@ module Spina
       def index
         add_breadcrumb I18n.t('spina.website.pages'), spina.admin_pages_path
         redirect_to admin_pages_path unless current_admin_path.starts_with?('/pages')
-        @pages = Page.active.sorted.roots.regular_pages
+        @pages = Page.active.sorted.roots.regular_pages.includes(:translations)
       end
 
       def new
@@ -19,7 +19,6 @@ module Spina
           @page.view_template = params[:view_template]
         end
         add_breadcrumb I18n.t('spina.pages.new')
-        @page_parts = @page.view_template_page_parts(current_theme).map { |part| @page.part(part) }
         render layout: 'spina/admin/admin'
       end
 
@@ -30,7 +29,6 @@ module Spina
           @page.navigations << Spina::Navigation.where(auto_add_pages: true)
           redirect_to spina.edit_admin_page_url(@page), flash: {success: t('spina.pages.saved')}
         else
-          @page_parts = @page.view_template_page_parts(current_theme).map { |part| @page.part(part) }
           render :new, layout: 'spina/admin/admin'
         end
       end
@@ -38,7 +36,6 @@ module Spina
       def edit        
         add_index_breadcrumb
         add_breadcrumb @page.title
-        @page_parts = @page.view_template_page_parts(current_theme).map { |part| @page.part(part) }
         render layout: 'spina/admin/admin'
       end
 
@@ -51,7 +48,6 @@ module Spina
             format.js
           else
             format.html do
-              @page_parts = @page.view_template_page_parts(current_theme).map { |part| @page.part(part) }
               Mobility.locale = I18n.default_locale
               render :edit, layout: 'spina/admin/admin'
             end

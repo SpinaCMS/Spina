@@ -1,23 +1,16 @@
 module Spina
   class Account < ApplicationRecord
+    include AttrJson::Record
+    include AttrJson::NestedAttributes
     include Partable
+    include TranslatedContent
 
     serialize :preferences
-
-    has_many :layout_parts, dependent: :destroy
-    accepts_nested_attributes_for :layout_parts, allow_destroy: true
-
-    alias_attribute :layout_part, :part
-    alias_attribute :parts, :layout_parts
 
     after_save :bootstrap_website
 
     def to_s
       name
-    end
-
-    def content(layout_part)
-      layout_parts.find_by(name: layout_part).try(:content)
     end
 
     def self.serialized_attr_accessor(*args)

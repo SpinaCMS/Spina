@@ -32,4 +32,5 @@ Gem::Specification.new do |s|
   s.add_dependency 'mobility', '>= 0.8.9'
   s.add_dependency 'rack-rewrite', '>= 1.5.0'
   s.add_dependency 'jsonb_accessor', '>= 1.0.0'
+  s.add_dependency 'attr_json'
 end

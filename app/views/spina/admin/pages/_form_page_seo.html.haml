@@ -1,28 +1,32 @@
-#page_seo.tab-content.well
+#page_seo.tab-content{style: "margin-top: 40px"}
   .horizontal-form
     .horizontal-form-group
       .horizontal-form-label
         = Spina::Page.human_attribute_name :seo_title
       .horizontal-form-content
-        = f.text_field :seo_title, placeholder: Spina::Page.human_attribute_name(:seo_title_placeholder), value: f.object.seo_title(fallback: false, default: nil)
+        .page-form-control
+          = f.text_field :seo_title, placeholder: Spina::Page.human_attribute_name(:seo_title_placeholder), value: f.object.seo_title(fallback: false, default: nil)
 
     .horizontal-form-group
       .horizontal-form-label
         = Spina::Page.human_attribute_name :description
         %small= Spina::Page.human_attribute_name :description_description
       .horizontal-form-content
-        = f.text_field :description, placeholder: Spina::Page.human_attribute_name(:description_placeholder)
+        .page-form-control
+          = f.text_field :description, placeholder: Spina::Page.human_attribute_name(:description_placeholder)
 
     .horizontal-form-group
       .horizontal-form-label
         = Spina::Page.human_attribute_name :url_title
         %small= Spina::Page.human_attribute_name :url_title_description
       .horizontal-form-content
-        = f.text_field :url_title, placeholder: Spina::Page.human_attribute_name(:url_title_placeholder), value: f.object.url_title(fallback: false, default: nil)&.parameterize
+        .page-form-control
+          = f.text_field :url_title, placeholder: Spina::Page.human_attribute_name(:url_title_placeholder), value: f.object.url_title(fallback: false, default: nil)&.parameterize
 
     - unless @page.new_record?
       .horizontal-form-group
         .horizontal-form-label
           = Spina::Page.human_attribute_name :materialized_path
         .horizontal-form-content
-          = f.text_field :materialized_path, disabled: true
+          .page-form-control
+            = f.text_field :materialized_path, disabled: true

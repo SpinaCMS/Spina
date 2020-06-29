@@ -25,5 +25,17 @@ module Spina
       assert_equal false, @demo.live?
     end
 
+    test 'custom slug' do
+      @demo.update(url_title: "custom-slug")
+      assert_equal "/custom-slug", @demo.materialized_path
+    end
+
+    test 'build slug from ancestors' do
+      about = FactoryBot.create :about_page
+      page = FactoryBot.create :services_page
+      page.update(parent: about)
+      assert_equal "/about/services", page.materialized_path
+    end
+
   end
 end

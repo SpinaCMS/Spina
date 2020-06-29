@@ -1,15 +1,13 @@
 module Spina
   class Page < ApplicationRecord
     extend Mobility
+    include AttrJson::Record
+    include AttrJson::NestedAttributes
     include Partable
+    include TranslatedContent
 
     # Stores the old path when generating a new materialized_path
     attr_accessor :old_path
-
-    # Page contains multiple parts called PageParts
-    has_many :page_parts, dependent: :destroy, inverse_of: :page
-    alias_attribute :parts, :page_parts
-    accepts_nested_attributes_for :page_parts, allow_destroy: true
 
     # Orphaned pages are adopted by parent pages if available, otherwise become root
     has_ancestry orphan_strategy: :adopt
@@ -34,7 +32,6 @@ module Spina
     # Save children to update all materialized_paths
     after_save :save_children
     after_save :touch_navigations
-    after_save -> { page_parts.each(&:save) }
 
     # Create a 301 redirect if materialized_path changed
     after_save :rewrite_rule
@@ -94,10 +91,6 @@ module Spina
       theme.view_templates.find { |template| template[:name] == view_template_name }
     end
 
-    def view_template_page_parts(theme)
-      theme.page_parts.select { |page_part| page_part[:name].in? view_template_config(theme)[:page_parts] }
-    end
-
     private
 
       def set_resource_from_parent
@@ -121,11 +114,10 @@ module Spina
       end
 
       def generate_materialized_path
-        if root?
-          name == 'homepage' ? '' : "#{slug}"
-        else
-          ancestors.collect(&:slug).append(slug).join('/')
-        end
+        path_fragments = [resource&.slug]
+        path_fragments.append *ancestors.collect(&:slug)
+        path_fragments.append(slug) unless name == 'homepage'
+        path_fragments.compact.map(&:parameterize).join('/')
       end
 
   end

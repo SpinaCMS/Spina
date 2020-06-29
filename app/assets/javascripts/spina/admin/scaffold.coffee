@@ -73,9 +73,6 @@ ready = ->
   $('input[type="file"][data-customfileinput]:visible').each ->
     $(this).customFileInput()
 
-  $(".structure-form-menu ul").sortable
-    handle: '.sortable-handle'
-
   # Switch
   if $('input[data-switch]').length > 0
     $('input[data-switch]').spinaSwitch()

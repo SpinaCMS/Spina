@@ -9,15 +9,16 @@
 - content_for :application do
   %header#header
     #header_actions
-      = link_to '#pages_list', class: 'button sort-switch', data: {change_order: t('spina.pages.change_order'), done_changing_order: t('spina.pages.done_changing_order')} do
-        = icon('random')
-        = t('spina.pages.change_order')
+      = link_to '#pages_list', class: 'button button-default sort-switch', data: {change_order: t('spina.pages.change_order'), done_changing_order: t('spina.pages.done_changing_order')} do
+        .button-content
+          = icon('random')
+          = t('spina.pages.change_order')
 
       = yield(:header_actions) if content_for?(:header_actions)
 
     .breadcrumbs
       = render_breadcrumbs separator: '<div class="divider"></div>'
-      = link_to '/', class: 'button button-small button-hollow', target: :blank do
+      = link_to '/', class: 'button button-small button-default', target: :blank do
         %i.icon.icon-export{style: "margin: 0"}
 
     %nav#secondary.tabs

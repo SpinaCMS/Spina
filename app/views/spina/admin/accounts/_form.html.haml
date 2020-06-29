@@ -7,42 +7,48 @@
         = icon('check')
         = t('spina.preferences.account_save')
 
-  .well
+  %div{style: "margin-top: 40px"}
     .horizontal-form
       .horizontal-form-group
         .horizontal-form-label
           = Spina::Account.human_attribute_name(:name)
         .horizontal-form-content
-          = f.text_field :name, placeholder: Spina::Account.human_attribute_name(:name)
+          .page-form-control
+            = f.text_field :name, placeholder: Spina::Account.human_attribute_name(:name)
 
       .horizontal-form-group
         .horizontal-form-label
           = Spina::Account.human_attribute_name(:address)
         .horizontal-form-content
-          = f.text_field :address, placeholder: Spina::Account.human_attribute_name(:address)
+          .page-form-control
+            = f.text_field :address, placeholder: Spina::Account.human_attribute_name(:address)
 
       .horizontal-form-group
         .horizontal-form-label
           = Spina::Account.human_attribute_name(:postal_code)
         .horizontal-form-content
-          = f.text_field :postal_code, placeholder: Spina::Account.human_attribute_name(:postal_code)
+          .page-form-control
+            = f.text_field :postal_code, placeholder: Spina::Account.human_attribute_name(:postal_code)
 
       .horizontal-form-group
         .horizontal-form-label
           = Spina::Account.human_attribute_name(:city)
         .horizontal-form-content
-          = f.text_field :city, placeholder: Spina::Account.human_attribute_name(:city)
+          .page-form-control
+            = f.text_field :city, placeholder: Spina::Account.human_attribute_name(:city)
 
       .horizontal-form-group
         .horizontal-form-label
           = Spina::Account.human_attribute_name(:phone)
         .horizontal-form-content
-          = f.text_field :phone, placeholder: Spina::Account.human_attribute_name(:phone)
+          .page-form-control
+            = f.text_field :phone, placeholder: Spina::Account.human_attribute_name(:phone)
 
       .horizontal-form-group
         .horizontal-form-label
           = Spina::Account.human_attribute_name(:email)
         .horizontal-form-content
-          = f.text_field :email, placeholder: Spina::Account.human_attribute_name(:email)
+          .page-form-control
+            = f.text_field :email, placeholder: Spina::Account.human_attribute_name(:email)
 
   

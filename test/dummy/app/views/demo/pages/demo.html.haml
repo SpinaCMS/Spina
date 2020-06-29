@@ -1,28 +1,21 @@
 %h1= current_page.title
 
-%h5 Line
-%p= content :line
+= content :option
 
-%h5 Content
-!= content :text
-
-%h5 Image
-
+= content :headline
+= content.text :headline
+= content.html :body
 - if has_content?(:image)
-  %p= image_tag content(:image).variant(resize: "200x100")
+  = content.image_tag :image, resize: '100x100'
 
-%h5 Image collection
+= current_account.content :line
 
-%ul
-  - content(:image_collection)&.images&.each do |image|
-    %li= image_tag image.variant(resize: '100x100')
+- repeater current_account.content(:repeater) do |repeater_content|
+  = repeater_content.content :line
 
-%h5 Structure
+- images :image_collection do |image|
+  = content.image_tag image, resize: '50x50'
 
-%ul
-  - content(:structure)&.structure_items&.each do |item|
-    %li
-      %h6 Title
-      %p= item.content(:title)
-      %h6 Description
-      != item.content(:description)
+- repeater :repeater do |project|
+  = project.content.html :line
+  = project.content.image_tag :image, resize: '50x50'
