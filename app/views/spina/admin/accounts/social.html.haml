@@ -7,40 +7,46 @@
         = icon('check')
         = t('spina.preferences.social_media_save')
 
-  .well
+  %div{style: "margin-top: 40px"}
     .horizontal-form
       .horizontal-form-group
         .horizontal-form-label
           = Spina::Account.human_attribute_name(:facebook)
         .horizontal-form-content
-          = f.text_field :facebook, placeholder: Spina::Account.human_attribute_name(:facebook)
+          .page-form-control
+            = f.text_field :facebook, placeholder: Spina::Account.human_attribute_name(:facebook)
 
       .horizontal-form-group
         .horizontal-form-label
           = Spina::Account.human_attribute_name(:twitter)
         .horizontal-form-content
-          = f.text_field :twitter, placeholder: Spina::Account.human_attribute_name(:twitter)
+          .page-form-control
+            = f.text_field :twitter, placeholder: Spina::Account.human_attribute_name(:twitter)
 
       .horizontal-form-group
         .horizontal-form-label
           = Spina::Account.human_attribute_name(:instagram)
         .horizontal-form-content
-          = f.text_field :instagram, placeholder: Spina::Account.human_attribute_name(:instagram)
+          .page-form-control
+            = f.text_field :instagram, placeholder: Spina::Account.human_attribute_name(:instagram)
 
       .horizontal-form-group
         .horizontal-form-label
           = Spina::Account.human_attribute_name(:youtube)
         .horizontal-form-content
-          = f.text_field :youtube, placeholder: Spina::Account.human_attribute_name(:youtube)
+          .page-form-control
+            = f.text_field :youtube, placeholder: Spina::Account.human_attribute_name(:youtube)
 
       .horizontal-form-group
         .horizontal-form-label
           = Spina::Account.human_attribute_name(:linkedin)
         .horizontal-form-content
-          = f.text_field :linkedin, placeholder: Spina::Account.human_attribute_name(:linkedin)
+          .page-form-control
+            = f.text_field :linkedin, placeholder: Spina::Account.human_attribute_name(:linkedin)
 
       .horizontal-form-group
         .horizontal-form-label
           = Spina::Account.human_attribute_name(:google_plus)
         .horizontal-form-content
-          = f.text_field :google_plus, placeholder: Spina::Account.human_attribute_name(:google_plus)
+          .page-form-control
+            = f.text_field :google_plus, placeholder: Spina::Account.human_attribute_name(:google_plus)
