@@ -113,7 +113,7 @@ GEM
     ansi (1.5.0)
     attr_json (1.2.0)
       activerecord (>= 5.0.0, < 6.1)
-    bcrypt (3.1.13)
+    bcrypt (3.1.15)
     breadcrumbs_on_rails (4.0.0)
       rails (>= 5.0)
     builder (3.2.4)
