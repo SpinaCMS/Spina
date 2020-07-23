@@ -76,7 +76,7 @@
 
     insert_trix(event) {
       let customEvent = new CustomEvent("image-insert", {bubbles: true, cancelable: true, detail: {
-        url: this.trixImage.dataset.fullImageUrl, 
+        url: this.trixImage.dataset.imageUrl, 
         alt: this.altTarget.value, 
         link_to_url: this.linkToUrlTarget.value
       }})
