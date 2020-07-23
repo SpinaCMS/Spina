@@ -12,7 +12,7 @@ module Spina
   PLUGINS = []
   THEMES = []
 
-  config_accessor :backend_path, :disable_frontend_routes, :storage, :max_page_depth, :locales, :embbed_image_size
+  config_accessor :backend_path, :disable_frontend_routes, :storage, :max_page_depth, :locales, :embedded_image_size
 
   self.backend_path = 'admin'
 
@@ -27,6 +27,6 @@ module Spina
   # Images that are embedded in the Trix editor are resized to fit
   # You can optimize this for your website and go for a smaller (or larger) size
   # Default: 2000x2000px
-  self.embbed_image_size = "2000x2000>"
+  self.embedded_image_size = "2000x2000>"
 
 end
