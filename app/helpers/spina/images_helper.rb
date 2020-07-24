@@ -26,5 +26,10 @@ module Spina
       variant(image.file, resize: "400x300^", crop: "400x300+0+0")
     end
 
+    def embedded_image_url(image)
+      return "" if image.nil?
+      variant(image.file, resize: Spina.config.embedded_image_size)
+    end
+
   end
 end
