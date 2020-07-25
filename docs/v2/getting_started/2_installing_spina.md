@@ -3,7 +3,7 @@
 Start by creating a new Rails app using a PostgreSQL database.
 
 ```
-rails new yourwebsite --database postgres
+rails new yourwebsite --database=postgresql
 ```
 
 After generating a new app, add the following line to your Gemfile:
