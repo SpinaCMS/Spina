@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/rails/rails.git
-  revision: b91daea9ff73b42a7f6e6479adddf299e60a59c9
+  revision: 70c9f39039e790c65236a2057fdbcb34002dfa62
   specs:
     actioncable (6.1.0.alpha)
       actionpack (= 6.1.0.alpha)
@@ -152,7 +152,7 @@ GEM
       haml (>= 4.0, < 6)
       nokogiri (>= 1.6.0)
       ruby_parser (~> 3.5)
-    i18n (1.8.3)
+    i18n (1.8.5)
       concurrent-ruby (~> 1.0)
     jquery-rails (4.4.0)
       rails-dom-testing (>= 1, < 3)
@@ -202,7 +202,7 @@ GEM
       request_store (~> 1.0)
     mocha (1.11.2)
     nio4r (2.5.2)
-    nokogiri (1.10.9)
+    nokogiri (1.10.10)
       mini_portile2 (~> 2.4.0)
     pg (1.2.3)
     pry (0.12.2)
@@ -263,10 +263,10 @@ GEM
     turbolinks-source (5.2.0)
     tzinfo (2.0.2)
       concurrent-ruby (~> 1.0)
-    websocket-driver (0.7.2)
+    websocket-driver (0.7.3)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
-    zeitwerk (2.3.1)
+    zeitwerk (2.4.0)
 
 PLATFORMS
   ruby
