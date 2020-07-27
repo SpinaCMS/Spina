@@ -1,6 +1,10 @@
 trix-toolbar
+  position: sticky
+  z-index: 2
+
   .trix-button-group
     border: 0
+    margin-bottom: 0
 
     &:not(:first-child)
       margin-left: 10px
@@ -91,10 +95,12 @@ trix-toolbar
 trix-editor
   line-height: 18px
   min-height: 100px
+  margin-top: 15px
 
   h1, h2, h3, h4, h5, h6
     padding-left: 24px
     position: relative
+    z-index: 1
 
     &:after
       color: #ccc
@@ -205,7 +211,7 @@ trix-editor
       white-space: nowrap
       width: auto
 
-  figure[data-trix-mutable] 
+  figure[data-trix-mutable]
     .trix-attachment-spina-image:before
       background: $primary-color
       color: white
@@ -215,4 +221,4 @@ trix-editor
 
   .trix-button--remove
     border: none
-    box-shadow: 0 0 5px rgba(0, 0, 0, .15) 
+    box-shadow: 0 0 5px rgba(0, 0, 0, .15)

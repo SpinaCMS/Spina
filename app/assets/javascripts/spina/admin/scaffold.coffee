@@ -65,6 +65,7 @@ ready = ->
   if header = document.getElementById('header')
     headerHeight = header.getBoundingClientRect().height
     $('section#main').css({paddingTop: headerHeight})
+    $('section#main trix-toolbar').css({top: headerHeight + 15})
 
   # Login wrapper
   $('#login_wrapper').css('margin-top', $(document).innerHeight() / 8)
