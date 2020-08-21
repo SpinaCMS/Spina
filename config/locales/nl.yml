@@ -58,6 +58,9 @@ nl:
         skip_to_first_child_description: Doorsturen naar eerste onderliggende pagina
         title: Titel
         title_placeholder: Titel van de pagina
+        url_title: 
+        url_title_description: 
+        url_title_placeholder: 
         view_template: Pagina template
       spina/resource:
         label: Label
@@ -93,6 +96,7 @@ nl:
   spina:
     ago: geleden
     attachments:
+      choose_attachment: Kies een bijlage
       insert: Document toevoegen
       insert_multiple: Documenten toevoegen
     cancel: Annuleren
@@ -111,14 +115,17 @@ nl:
       success: Je kunt je nieuwe wachtwoord gebruiken
       unknown_user: Die gebruiker bestaat niet
     images:
+      all_images: Alle afbeeldingen
       back: Terug
       cannot_be_created: Kan niet worden aangemaakt
       choose_image: Kies afbeelding
       choose_images: Kies afbeeldingen
+      confirm_selection: Bevestig selectie
       delete: Verwijderen
       delete_confirmation: Weet je zeker dat je deze <strong>afbeelding</strong> wilt verwijderen?
       delete_folder: Verwijder folder
       done_organizing: Klaar met slepen
+      insert_image: Afbeelding invoegen
       insert_photo: Afbeelding invoegen
       insert_photos: Afbeeldingen invoegen
       link: Link
@@ -159,6 +166,8 @@ nl:
       information: Informatie
       login: Je zult eerst moeten inloggen
       wrong_username_or_password: Email of wachtwoord is onjuist
+    options:
+      choose_option: Kies een optie
     pages:
       advanced: Geavanceerd
       change_order: Volgorde wijzigen
@@ -194,6 +203,7 @@ nl:
       link: 'De link naar de afbeelding is:'
       new_folder: Nieuwe folder
       organize: Organiseren
+      rename_folder: Folder hernoemen
       select_images: Kies afbeeldingen
       upload_image: Upload een afbeelding
     preferences:

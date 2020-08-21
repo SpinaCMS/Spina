@@ -2,38 +2,37 @@ module Spina
   module Admin
     class MediaPickerController < AdminController
       before_action :set_media_folders
+      before_action :set_selected_images
 
       def show
-        if @media_folder.present?
-          @images = @media_folder.images.page(params[:page])
-        else
-          @images = Image.where(media_folder_id: nil).page(params[:page])
+        @images = Image.where(media_folder: @media_folder).order(created_at: :desc).page(params[:page]).per(25)
+        @mode = params[:mode]
+
+        if selected_ids.any?
+          @images = @images.reorder(Arel.sql("CASE WHEN id IN(#{selected_ids.join(', ')}) THEN 0 ELSE 1 END, created_at DESC"))
         end
 
-        if params[:selected_ids].present?
-          ids = params[:selected_ids].map(&:to_i).join(', ')
-          @images = @images.order(Arel.sql("CASE WHEN id IN(#{ids}) THEN 0 ELSE 1 END, created_at DESC"))
-        else
-          @images = @images.sorted
-        end
-
-        render params[:page].present? ? :infinite_scroll : :show
-      end
-
-      def select
-        if params[:multiple]
-          @images = Image.where(id: params[:image_ids].split("-"))
-        else 
-          @image = Image.find(params[:image_id])
+        respond_to do |format|
+          format.html { render layout: false }
+          format.js { render :infinite_scroll if params[:page].present? }
         end
       end
 
       private
 
         def set_media_folders
-          @media_folders = MediaFolder.order(:name)
+          @media_folders = MediaFolder.order(:name).joins(:images).uniq
           @media_folder = MediaFolder.find(params[:media_folder_id]) if params[:media_folder_id].present?
         end
+
+        def set_selected_images
+          @selected_images = Image.where(id: selected_ids).sort_by{|image| selected_ids.index(image.id)}
+        end
+
+        def selected_ids
+          params[:selected_ids].present? ? params[:selected_ids].map(&:to_i) : []
+        end
+        helper_method :selected_ids
 
     end
   end

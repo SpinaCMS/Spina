@@ -1,6 +1,10 @@
 trix-toolbar
+  position: sticky
+  z-index: 2
+
   .trix-button-group
     border: 0
+    margin-bottom: 0
 
     &:not(:first-child)
       margin-left: 10px
@@ -46,56 +50,43 @@ trix-toolbar
       text-indent: 0
 
     &.trix-button--icon-bold
-      &::before
-        @extend .icon-bold:before
+      @extend .icon-bold
 
     &.trix-button--icon-italic
-      &::before
-        @extend .icon-italic:before
+      @extend .icon-italic
 
     &.trix-button--icon-strike
-      &::before
-        @extend .icon-strikethrough:before
+      @extend .icon-strikethrough
 
     &.trix-button--icon-link
-      &::before
-        @extend .icon-link:before
+      @extend .icon-link
 
     &.trix-button--icon-image
-      &::before
-        @extend .icon-image:before
+      @extend .icon-image
 
     &.trix-button--icon-quote
-      &::before
-        @extend .icon-quote-right:before
+      @extend .icon-quote-right
 
     &.trix-button--icon-code
-      &::before
-        @extend .icon-code:before
+      @extend .icon-code
 
     &.trix-button--icon-bullet-list
-      &::before
-        @extend .icon-list:before
+      @extend .icon-list
 
     &.trix-button--icon-number-list
-      &::before
-        @extend .icon-list-ol:before
+      @extend .icon-list-ol
 
     &.trix-button--icon-decrease-nesting-level
-      &::before
-        @extend .icon-outdent:before
+      @extend .icon-outdent
 
     &.trix-button--icon-increase-nesting-level
-      &::before
-        @extend .icon-indent:before
+      @extend .icon-indent
 
     &.trix-button--icon-undo
-      &::before
-        @extend .icon-undo:before
+      @extend .icon-undo
 
     &.trix-button--icon-redo
-      &::before
-        @extend .icon-redo:before
+      @extend .icon-redo
 
   .trix-dialog
     border-top-color: $primary-color
@@ -104,10 +95,12 @@ trix-toolbar
 trix-editor
   line-height: 18px
   min-height: 100px
+  margin-top: 15px
 
   h1, h2, h3, h4, h5, h6
     padding-left: 24px
     position: relative
+    z-index: 1
 
     &:after
       color: #ccc
@@ -180,10 +173,14 @@ trix-editor
     font-size: 16px
 
   .trix-attachment-spina-image
+    background: #f5f5f5
+    border-radius: 6px
     cursor: default
     display: block
+    height: 150px
     margin-bottom: 40px
     position: relative
+    width: 200px
 
     &[data-label=""]
       margin-bottom: 0px
@@ -192,10 +189,10 @@ trix-editor
         display: none
 
     img
-      border-radius: 4px
+      border-radius: 6px
       display: block
-      max-height: 150px
-      max-width: 200px
+      height: 150px
+      width: 200px
 
     &:before
       background: #eee
@@ -214,7 +211,7 @@ trix-editor
       white-space: nowrap
       width: auto
 
-  figure[data-trix-mutable] 
+  figure[data-trix-mutable]
     .trix-attachment-spina-image:before
       background: $primary-color
       color: white
@@ -224,4 +221,4 @@ trix-editor
 
   .trix-button--remove
     border: none
-    box-shadow: 0 0 5px rgba(0, 0, 0, .15) 
+    box-shadow: 0 0 5px rgba(0, 0, 0, .15)

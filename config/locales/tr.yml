@@ -58,6 +58,9 @@ tr:
         skip_to_first_child_description: İlk sıraya yerleştir
         title: Başlık
         title_placeholder: Sayfa başlığı
+        url_title: 
+        url_title_description: 
+        url_title_placeholder: 
         view_template: Sayfa şablonu
       spina/resource:
         label: 
@@ -93,6 +96,7 @@ tr:
   spina:
     ago: önce
     attachments:
+      choose_attachment: 
       insert: Belge ekle
       insert_multiple: Çoklu belge ekle
     cancel: İptal
@@ -111,14 +115,17 @@ tr:
       success: 
       unknown_user: 
     images:
+      all_images: 
       back: 
       cannot_be_created: 
       choose_image: 
       choose_images: 
+      confirm_selection: 
       delete: 
       delete_confirmation: 
       delete_folder: 
       done_organizing: 
+      insert_image: 
       insert_photo: 
       insert_photos: 
       link: 
@@ -159,6 +166,8 @@ tr:
       information: Bilgi
       login: Öncelikle giriş yapmalısınız
       wrong_username_or_password: Hatalı email ya da parola
+    options:
+      choose_option: 
     pages:
       advanced: Gelişmiş
       change_order: Sıralamayı değiştir
@@ -194,6 +203,7 @@ tr:
       link: 'Resim linki:'
       new_folder: 
       organize: 
+      rename_folder: 
       select_images: 
       upload_image: 
     preferences:

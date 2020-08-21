@@ -1,0 +1,18 @@
+.page-form-label= f.object.title
+.page-form-control{data: {controller: "image-form"}}
+  .page-form-media-picker
+    %div{style: "width: 100%"}
+      = link_to admin_media_picker_path(selected_ids: [f.object.image_id], input: "media_picker_#{f.object.object_id}", mode: "single"), remote: true, class: 'image', data: {target: 'image-form.image'} do
+        .page-form-media-picker-placeholder=t "spina.images.choose_image"
+        %div{id: "media_picker_#{f.object.object_id}"}
+          = f.hidden_field :image_id, data: {target: 'image-form.imageId'}
+          = f.hidden_field :signed_blob_id, data: {target: 'image-form.signedBlobId'}
+          = f.hidden_field :filename, data: {target: 'image-form.filename'}
+        %div{style: "width: 200px; height: 150px; overflow: hidden"}
+          - if f.object.signed_blob_id.present? && f.object.spina_image.present?
+            = image_tag main_app.url_for(f.object.spina_image.variant(resize: "400x300^", crop: "400x300+0+0")), width: 200, height: 150
+
+      = f.text_field :alt, placeholder: "Alt text", class: 'page-form-media-picker-alt-text'
+
+    = button_tag type: :default, class: 'button button-small button-default', data: {action: "image-form#remove"} do
+      %i.icon.icon-cross{style: "margin: 0; font-size: 10px"}

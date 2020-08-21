@@ -1,15 +1,13 @@
 module Spina
   class Page < ApplicationRecord
     extend Mobility
+    include AttrJson::Record
+    include AttrJson::NestedAttributes
     include Partable
+    include TranslatedContent
 
     # Stores the old path when generating a new materialized_path
     attr_accessor :old_path
-
-    # Page contains multiple parts called PageParts
-    has_many :page_parts, dependent: :destroy, inverse_of: :page
-    alias_attribute :parts, :page_parts
-    accepts_nested_attributes_for :page_parts, allow_destroy: true
 
     # Orphaned pages are adopted by parent pages if available, otherwise become root
     has_ancestry orphan_strategy: :adopt
@@ -28,10 +26,12 @@ module Spina
     scope :live, -> { active.where(draft: false) }
     scope :in_menu, -> { where(show_in_menu: true) }
 
+    # Copy resource from parent
+    before_save :set_resource_from_parent, if: -> { parent.present? }
+
     # Save children to update all materialized_paths
     after_save :save_children
     after_save :touch_navigations
-    after_save -> { page_parts.each(&:save) }
 
     # Create a 301 redirect if materialized_path changed
     after_save :rewrite_rule
@@ -41,7 +41,7 @@ module Spina
 
     translates :title, fallbacks: true
     translates :description, :materialized_path
-    translates :menu_title, :seo_title, default: -> { title }
+    translates :menu_title, :seo_title, :url_title, default: -> { title }
 
     def to_s
       name
@@ -51,8 +51,8 @@ module Spina
       id
     end
 
-    def url_title
-      title.try(:parameterize)
+    def slug
+      url_title&.parameterize
     end
 
     def custom_page?
@@ -91,11 +91,11 @@ module Spina
       theme.view_templates.find { |template| template[:name] == view_template_name }
     end
 
-    def view_template_page_parts(theme)
-      theme.page_parts.select { |page_part| page_part[:name].in? view_template_config(theme)[:page_parts] }
-    end
-
     private
+
+      def set_resource_from_parent
+        self.resource_id = parent.resource_id 
+      end
 
       def touch_navigations
         navigations.update_all(updated_at: Time.zone.now)
@@ -106,19 +106,18 @@ module Spina
       end
 
       def localized_materialized_path
-        if I18n.locale == I18n.default_locale
+        if Mobility.locale == I18n.default_locale
           generate_materialized_path.prepend('/')
         else
-          generate_materialized_path.prepend("/#{I18n.locale}/").gsub(/\/\z/, "")
+          generate_materialized_path.prepend("/#{Mobility.locale}/").gsub(/\/\z/, "")
         end
       end
 
       def generate_materialized_path
-        if root?
-          name == 'homepage' ? '' : "#{url_title}"
-        else
-          ancestors.collect(&:url_title).append(url_title).join('/')
-        end
+        path_fragments = [resource&.slug]
+        path_fragments.append *ancestors.collect(&:slug)
+        path_fragments.append(slug) unless name == 'homepage'
+        path_fragments.compact.map(&:parameterize).join('/')
       end
 
   end

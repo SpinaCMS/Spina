@@ -58,6 +58,9 @@ bg:
         skip_to_first_child_description: Пренасочи към първата дъщерна страница
         title: Заглавие
         title_placeholder: Заглавие на страницата
+        url_title: 
+        url_title_description: 
+        url_title_placeholder: 
         view_template: Темплейт на страницата
       spina/resource:
         label: Етикет
@@ -93,6 +96,7 @@ bg:
   spina:
     ago: преди
     attachments:
+      choose_attachment: 
       insert: Добавете документ
       insert_multiple: Добавете документи
     cancel: Спри
@@ -111,14 +115,17 @@ bg:
       success: Вече може да използвате новата си парола
       unknown_user: Този потребител не съществува
     images:
+      all_images: 
       back: 
       cannot_be_created: 
       choose_image: 
       choose_images: 
+      confirm_selection: 
       delete: 
       delete_confirmation: 
       delete_folder: 
       done_organizing: 
+      insert_image: 
       insert_photo: 
       insert_photos: 
       link: 
@@ -159,6 +166,8 @@ bg:
       information: Информация
       login: Трябва първо да влезете в системата
       wrong_username_or_password: Грешен email или парола
+    options:
+      choose_option: 
     pages:
       advanced: Разширени
       change_order: Смяна на подредба
@@ -194,6 +203,7 @@ bg:
       link: 'URL на изображението:'
       new_folder: Нова папка
       organize: Организиране на изображения
+      rename_folder: 
       select_images: 
       upload_image: Качване на изображение
     preferences:

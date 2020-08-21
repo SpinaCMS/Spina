@@ -58,6 +58,9 @@ zh-CN:
         skip_to_first_child_description: 跳转到首个子页面
         title: 标题
         title_placeholder: 页面标题
+        url_title: 
+        url_title_description: 
+        url_title_placeholder: 
         view_template: 页面模板
       spina/resource:
         label: 
@@ -93,6 +96,7 @@ zh-CN:
   spina:
     ago: 以前
     attachments:
+      choose_attachment: 
       insert: 插入文档
       insert_multiple: 插入多个文档
     cancel: 取消
@@ -111,14 +115,17 @@ zh-CN:
       success: 
       unknown_user: 
     images:
+      all_images: 
       back: 
       cannot_be_created: 
       choose_image: 
       choose_images: 
+      confirm_selection: 
       delete: 
       delete_confirmation: 
       delete_folder: 
       done_organizing: 
+      insert_image: 
       insert_photo: 
       insert_photos: 
       link: 
@@ -159,6 +166,8 @@ zh-CN:
       information: 通知
       login: 请先登录
       wrong_username_or_password: 用户名或密码错误
+    options:
+      choose_option: 
     pages:
       advanced: 高级
       change_order: 排序
@@ -194,6 +203,7 @@ zh-CN:
       link: 图片链接
       new_folder: 
       organize: 
+      rename_folder: 
       select_images: 
       upload_image: 
     preferences:

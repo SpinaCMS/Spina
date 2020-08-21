@@ -1,5 +1,5 @@
-// Append new data
-$("<%=j render partial: 'spina/admin/images/image', collection: @images %>").appendTo($(".infinite-scroll"));
+document.querySelector(".media-picker-grid").insertAdjacentHTML("beforeend", "<%=j render partial: 'image', collection: @images %>")
 
-// Update pagination link
-$('.infinite-pagination').html("<%= j link_to_next_page @images, 'Next', params: params.slice(:selected_photo_id).permit(:selected_photo_id), remote: true, data: {target: 'infinite-scroll.link'} %>")
+document.querySelector(".media-picker-pagination").innerHTML = "<%=j link_to_next_page @images, 'Next', data: {remote: true, target: 'infinite-scroll.link'} %>"
+
+document.querySelector(".modal-container").infiniteScroll.loadNextPage()

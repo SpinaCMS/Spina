@@ -4,9 +4,12 @@ module Spina
 
     included do
       rescue_from ActiveRecord::RecordNotFound, with: :redirect_or_render_404
+
+      helper Spina::PagesHelper
       
       before_action :set_locale
       before_action :set_current_page
+      before_action :set_current_account
     end
 
     def show
@@ -27,6 +30,12 @@ module Spina
 
       def set_current_page
         Spina::Current.page = page
+        Spina::Current.page.view_context = view_context
+      end
+
+      def set_current_account
+        Spina::Current.account = Spina::Account.first
+        Spina::Current.account.view_context = view_context
       end
 
       def page_by_locale(locale)

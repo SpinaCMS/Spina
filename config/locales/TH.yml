@@ -58,6 +58,9 @@ th:
         skip_to_first_child_description: ส่งต่อไปยังหน้าแรก
         title: ชื่อเรื่อง
         title_placeholder: ชื่อเรื่องของหน้า
+        url_title: 
+        url_title_description: 
+        url_title_placeholder: 
         view_template: เทมเพลตของเพจ
       spina/resource:
         label: 
@@ -93,6 +96,7 @@ th:
   spina:
     ago: อายุ
     attachments:
+      choose_attachment: 
       insert: แทรกเอกสาร
       insert_multiple: แทรกเอกสาร
     cancel: ยกเลิก
@@ -111,14 +115,17 @@ th:
       success: คุณสามารถใช้รหัสผ่านใหม่ได้
       unknown_user: ไม่มีผู้ใช้รายนี้
     images:
+      all_images: 
       back: 
       cannot_be_created: 
       choose_image: 
       choose_images: 
+      confirm_selection: 
       delete: 
       delete_confirmation: 
       delete_folder: 
       done_organizing: 
+      insert_image: 
       insert_photo: 
       insert_photos: 
       link: 
@@ -159,6 +166,8 @@ th:
       information: ข้อมูล
       login: คุณต้องเข้าสู่ระบบก่อน
       wrong_username_or_password: อีเมลหรือรหัสผ่านไม่ถูกต้อง
+    options:
+      choose_option: 
     pages:
       advanced: ขั้นสูง
       change_order: เปลี่ยนออเดอร์
@@ -194,6 +203,7 @@ th:
       link: 'URL รูปภาพของคุณ:'
       new_folder: โฟลเดอร์ใหม่
       organize: จัดระเบียบรูปภาพ
+      rename_folder: 
       select_images: เลือกรูปภาพ
       upload_image: อัปโหลดรูปภาพ
     preferences:

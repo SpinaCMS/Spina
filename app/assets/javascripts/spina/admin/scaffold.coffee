@@ -65,6 +65,7 @@ ready = ->
   if header = document.getElementById('header')
     headerHeight = header.getBoundingClientRect().height
     $('section#main').css({paddingTop: headerHeight})
+    $('section#main trix-toolbar').css({top: headerHeight + 15})
 
   # Login wrapper
   $('#login_wrapper').css('margin-top', $(document).innerHeight() / 8)
@@ -72,9 +73,6 @@ ready = ->
   # Custom file
   $('input[type="file"][data-customfileinput]:visible').each ->
     $(this).customFileInput()
-
-  $(".structure-form-menu ul").sortable
-    handle: '.sortable-handle'
 
   # Switch
   if $('input[data-switch]').length > 0

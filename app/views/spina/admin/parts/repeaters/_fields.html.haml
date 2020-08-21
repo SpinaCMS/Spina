@@ -1,0 +1,15 @@
+.structure-form-pane{class: ('active' if f.options[:child_index].zero?), id: "structure_form_pane_#{f.object.object_id}", data: {part_id: f.object.object_id, target: "repeater-form.pane"}}
+  = f.hidden_field :title
+  = f.hidden_field :name
+
+  - parts = current_theme.parts.find{|p|p[:name].to_s == f.object.name.to_s}&.dig(:parts) || []
+
+  = f.fields_for :parts, build_parts(f.object, parts) do |ff|
+    = ff.hidden_field :title
+    = ff.hidden_field :type, value: ff.object.class
+    = ff.hidden_field :name
+
+    .structure-form-part
+      = render "spina/admin/parts/#{parts_partial_namespace(ff.object.class.to_s)}/form", f: ff
+
+  = link_to t('spina.delete'), '#', class: 'button button-mini button-link pull-right', data: {action: "repeater-form#delete", part_id: f.object.object_id}

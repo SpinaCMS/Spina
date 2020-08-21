@@ -58,6 +58,9 @@ en:
         skip_to_first_child_description: Forward to first child page
         title: Title
         title_placeholder: Page title
+        url_title: Override slug
+        url_title_description: Optional
+        url_title_placeholder: Slug
         view_template: Page template
       spina/resource:
         label: Label
@@ -93,6 +96,7 @@ en:
   spina:
     ago: ago
     attachments:
+      choose_attachment: Choose attachment
       insert: Insert document
       insert_multiple: Insert documents
     cancel: Cancel
@@ -111,14 +115,17 @@ en:
       success: You can use your new password
       unknown_user: This user does not exist
     images:
+      all_images: All images
       back: Back
       cannot_be_created: Cannot be created
       choose_image: Choose image
       choose_images: Choose images
+      confirm_selection: Confirm selection
       delete: Delete
       delete_confirmation: Are you sure you want to delete this <strong>image</strong>?
       delete_folder: Delete folder
       done_organizing: Done organizing
+      insert_image: Insert image
       insert_photo: Insert photo
       insert_photos: Insert photos
       link: Link
@@ -159,6 +166,8 @@ en:
       information: Information
       login: You have to login first
       wrong_username_or_password: Wrong email or password
+    options:
+      choose_option: Choose option
     pages:
       advanced: Advanced
       change_order: Change order
@@ -194,6 +203,7 @@ en:
       link: 'URL of your image:'
       new_folder: New folder
       organize: Organize images
+      rename_folder: Rename folder
       select_images: Select images
       upload_image: Upload an image
     preferences:

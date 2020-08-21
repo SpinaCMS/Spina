@@ -1,8 +1,9 @@
 - content_for(:header_actions) do
   %span{data: {dropdown: true}}
     = link_to spina.new_admin_page_path(params: {view_template: 'show'}), class: 'button button-primary', style: 'margin-right: 0', data: {trigger: ('dropdown' if current_theme.new_page_templates.size > 1), target: '#create_page_dropdown'} do
-      = icon('plus')
-      = t('spina.pages.new')
+      .button-content
+        = icon('plus')
+        = t('spina.pages.new')
 
     .sliding-dropdown#create_page_dropdown.align-right
       .slide-controls
@@ -25,9 +26,9 @@
             - current_theme.new_page_templates.each_with_index do |template2, index2|
               .slide-dot{class: ('active' if index2 == index)}
 
-          = link_to spina.new_admin_page_path(params: {view_template: template[0]}), class: 'button button-primary' do
+          = link_to spina.new_admin_page_path(params: {view_template: template[0]}), class: 'button button-default' do
             = icon('pencil-outline')
-            = t('spina.pages.create_page', template: template[1])
+            = t('spina.pages.new')
 
 .well
   .dd#pages_list{data: {:"sort-url" => spina.sort_admin_pages_url }}

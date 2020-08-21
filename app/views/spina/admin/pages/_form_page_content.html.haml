@@ -1,16 +1,17 @@
-#page_content.tab-content.active.well
-  .horizontal-form
-    .horizontal-form-group
-      .horizontal-form-label
-        = Spina::Page.human_attribute_name :title
-      .horizontal-form-content
-        = f.text_field :title, placeholder: Spina::Page.human_attribute_name(:title_placeholder)
+#page_content.tab-content.active
 
-    = f.fields_for :page_parts, @page_parts.sort { |a,b| a.position(current_theme) <=> b.position(current_theme) } do |ff|
-      = ff.hidden_field :id
-      = ff.hidden_field :title
-      = ff.hidden_field :page_partable_type
+  .page-form
+    .page-form-group
+      .page-form-label= Spina::Page.human_attribute_name :title
+      .page-form-control
+        = f.text_field :title, placeholder: Spina::Page.human_attribute_name(:title_placeholder), class: 'input-large'
+
+    - parts = (current_theme.view_templates.find{|v|v[:name].to_s == f.object.view_template.to_s}&.dig(:parts) || [])
+
+    = f.fields_for "#{@locale}_content".to_sym, build_parts(f.object, parts) do |ff|
+      = ff.hidden_field :type, value: ff.object.class
       = ff.hidden_field :name
+      = ff.hidden_field :title
 
-      .horizontal-form-group.page-part{data: {name: ff.object.name}}
-        = render "spina/admin/partables/#{ partable_type_partial_namespace(ff.object.page_partable_type) }/form", f: ff
+      .page-form-group.page-part{data: {name: ff.object.name}}
+        = render "spina/admin/parts/#{parts_partial_namespace(ff.object.class.to_s)}/form", f: ff

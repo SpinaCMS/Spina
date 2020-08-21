@@ -197,7 +197,8 @@
     top: 0
     width: 100%
     z-index: 3
-    @extend .icon, .icon-large-check:before
+    @extend .icon
+    content: "\f120"
 
   .item.attachment
     height: 60px
@@ -234,8 +235,9 @@
 
 .gallery .item
   .customfile
+    background: white
     border: 1px solid #e5e5e5
-    border-radius: 5px
+    border-radius: 6px
     cursor: pointer
     height: 100%
     overflow: hidden
@@ -260,9 +262,10 @@
       font-weight: normal
       line-height: 130px
       vertical-align: middle
-      @extend .icon, .icon-refresh:before
+      @extend .icon
       display: none
       font-size: 42px
+      content: "\f131"
 
   .customfile.loading
     &:before
@@ -307,10 +310,11 @@
     text-transform: lowercase
     transition: color .2s ease
     width: 100%
+    z-index: 1
 
 // Media folders
 
-.item.media-folder
+.media-folder
   align-items: center
   background: #e5e5f0
   border: 1px solid #d5d4e6
@@ -335,6 +339,19 @@
   transform-origin: center bottom
   transition: transform .4s ease
   width: 70px
+
+  .media-folder-placeholder
+    align-items: center
+    background: $primary-color-light
+    border-radius: 5px
+    color: rgba(255, 255, 255, .5)
+    display: flex
+    font-size: 28px
+    height: 100%
+    justify-content: center
+    position: relative
+    width: 100%
+    z-index: 1
 
   &[data-badge]:after
     background: #6b699f
@@ -376,6 +393,7 @@
     border-radius: 5px
     position: relative
     width: 100%
+    z-index: 1
 
 .media-folder-name
   color: #4d4f81

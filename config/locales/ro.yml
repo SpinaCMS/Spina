@@ -58,6 +58,9 @@ ro:
         skip_to_first_child_description: Redirecționează către prima pagină copil
         title: Titlu
         title_placeholder: Titlul paginii
+        url_title: 
+        url_title_description: 
+        url_title_placeholder: 
         view_template: Template pagină
       spina/resource:
         label: 
@@ -93,6 +96,7 @@ ro:
   spina:
     ago: acum
     attachments:
+      choose_attachment: 
       insert: Inserează document
       insert_multiple: Inserează documente
     cancel: Anulare
@@ -111,14 +115,17 @@ ro:
       success: Îți poți folosi parola nouă
       unknown_user: Acest utilizator nu există
     images:
+      all_images: 
       back: 
       cannot_be_created: 
       choose_image: 
       choose_images: 
+      confirm_selection: 
       delete: 
       delete_confirmation: 
       delete_folder: 
       done_organizing: 
+      insert_image: 
       insert_photo: 
       insert_photos: 
       link: 
@@ -159,6 +166,8 @@ ro:
       information: Informație
       login: Trebuie să vă autentificați întâi
       wrong_username_or_password: Email-ul sau parola sunt greșite
+    options:
+      choose_option: 
     pages:
       advanced: Avansat
       change_order: Schimbă ordinea
@@ -194,6 +203,7 @@ ro:
       link: 'URL-ul imaginii:'
       new_folder: Director nou
       organize: Organizează imagini
+      rename_folder: 
       select_images: 
       upload_image: Încarcă o imagine
     preferences:

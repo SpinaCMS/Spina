@@ -6,7 +6,7 @@ module Spina
     private
 
     def current_theme
-      @current_theme = ::Spina::Theme.find_by_name(current_account.theme)
+      @current_theme ||= ::Spina::Theme.find_by_name(current_account.theme)
     end
     helper_method :current_theme
 

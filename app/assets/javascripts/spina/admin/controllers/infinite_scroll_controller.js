@@ -3,36 +3,34 @@
 
   application.register("infinite-scroll", class extends Stimulus.Controller {
     static get targets() {
-      return ["link"]
+      return ["link", "scrollContainer"]
     }
 
     connect() {
-      // Disable scroll event listeners
-      $(window).off('scroll.infiniteScroll')
-      $('#overlay section').off('scroll.infiniteScroll')
+      this.element["infiniteScroll"] = this
+      this.scrollElement.addEventListener("scroll", this.loadNextPage.bind(this))
+      this.loadNextPage()
+    }
 
-      let $link = $(this.linkTarget)
+    disconnect() {
+      this.scrollElement.removeEventListener("scroll", this.loadNextPage.bind(this))
+    }
 
-      // If the link has an actual href
-      if ($link.attr('href')) {
-        // If the window scrolls
-        $(window).on('scroll.infiniteScroll', this.loadNextPage($link))
-
-        // If the overlay scrolls
-        $('#overlay section').on('scroll.infiniteScroll', function() {
-          $(window).trigger('scroll.infiniteScroll')
-        })
-
-        $(window).trigger('scroll.infiniteScroll')
+    get scrollElement() {
+      if (this.hasScrollContainerTarget) {
+        return this.scrollContainerTarget
+      } else {
+        return window
       }
     }
 
-    loadNextPage(link) {
-      if ($(window).scrollTop() > link.offset().top - $(window).height() - 500) {
-        $(window).off('scroll.infiniteScroll')
-        $('#overlay section').off('scroll.infiniteScroll')
-        $.rails.disableElement(link)
-        $.getScript(link.attr('href'))
+    loadNextPage() {
+      if (this.hasLinkTarget) {
+        let top = this.linkTarget.getBoundingClientRect().top
+        if (top < window.innerHeight + 500) {
+          this.linkTarget.dataset.disableWith = "..."
+          this.linkTarget.click()
+        }
       }
     }
 

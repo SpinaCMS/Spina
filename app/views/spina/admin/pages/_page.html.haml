@@ -1,5 +1,6 @@
 = link_to spina.edit_admin_page_path(page), class: 'button button-link button-small sortable-link' do
   = page.menu_title
+
   - if page.draft?
     %small (#{t('spina.pages.concept')})
   - elsif !page.show_in_menu?
@@ -9,6 +10,7 @@
     %small (#{raw t('spina.pages.skip_to_first_child')})
 
 %span.pull-right
-  = link_to spina.edit_admin_page_path(page), class: 'button button-small button-link dd-nodrag' do
-    = icon('pencil-outline')
-    = t('spina.edit')
+  = link_to spina.edit_admin_page_path(page), class: 'button button-small button-default dd-nodrag' do
+    .button-content
+      = icon('pencil-outline')
+      = t('spina.edit')

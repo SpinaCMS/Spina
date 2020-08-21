@@ -44,7 +44,6 @@ Trix.config.toolbar =
       <span class="trix-button-group trix-button-group--text-tools" data-trix-button-group="text-tools">
         <button type="button" class="trix-button trix-button--icon trix-button--icon-bold" data-trix-attribute="bold" data-trix-key="b" title="#{Trix.config.lang.bold}" tabindex="-1">#{Trix.config.lang.bold}</button>
         <button type="button" class="trix-button trix-button--icon trix-button--icon-italic" data-trix-attribute="italic" data-trix-key="i" title="#{Trix.config.lang.italic}" tabindex="-1">#{Trix.config.lang.italic}</button>
-        <button type="button" class="trix-button trix-button--icon trix-button--icon-strike" data-trix-attribute="strike" title="#{Trix.config.lang.strike}" tabindex="-1">#{Trix.config.lang.strike}</button>
         <button type="button" class="trix-button trix-button--icon trix-button--icon-link" data-trix-attribute="href" data-trix-action="link" data-trix-key="k" title="#{Trix.config.lang.link}" tabindex="-1">#{Trix.config.lang.link}</button>
       </span>
       <span class="trix-button-group trix-button-group--block-tools" data-trix-button-group="block-tools">
@@ -52,16 +51,8 @@ Trix.config.toolbar =
         <button type="button" class="trix-button trix-button--text" data-trix-attribute="heading2" title="#{Trix.config.lang.heading2}" tabindex="-1">#{Trix.config.lang.heading2}</button>
         <button type="button" class="trix-button trix-button--text" data-trix-attribute="heading3" title="#{Trix.config.lang.heading3}" tabindex="-1">#{Trix.config.lang.heading3}</button>
         <button type="button" class="trix-button trix-button--text" data-trix-attribute="heading4" title="#{Trix.config.lang.heading4}" tabindex="-1">#{Trix.config.lang.heading4}</button>
-        <button type="button" class="trix-button trix-button--text" data-trix-attribute="heading5" title="#{Trix.config.lang.heading5}" tabindex="-1">#{Trix.config.lang.heading5}</button>
-        <button type="button" class="trix-button trix-button--text" data-trix-attribute="heading6" title="#{Trix.config.lang.heading6}" tabindex="-1">#{Trix.config.lang.heading6}</button>
       </span>
-      <span class="trix-button-group-spacer"></span>
-      <span class="trix-button-group trix-button-group--history-tools" data-trix-button-group="history-tools">
-        <button type="button" class="trix-button trix-button--icon trix-button--icon-undo" data-trix-action="undo" data-trix-key="z" title="#{Trix.config.lang.undo}" tabindex="-1">#{Trix.config.lang.undo}</button>
-        <button type="button" class="trix-button trix-button--icon trix-button--icon-redo" data-trix-action="redo" data-trix-key="shift+z" title="#{Trix.config.lang.redo}" tabindex="-1">#{Trix.config.lang.redo}</button>
-      </span>
-    </div>
-    <div class="trix-button-row">
+
       <span class="trix-button-group trix-button-group--block-tools">
         <button type="button" class="trix-button trix-button--icon trix-button--icon-image" data-trix-attribute="image" data-trix-action="image" title="#{Trix.config.lang.image}" tabindex="-1">#{Trix.config.lang.image}</button>
         <button type="button" class="trix-button trix-button--icon trix-button--icon-quote" data-trix-attribute="quote" title="#{Trix.config.lang.quote}" tabindex="-1">#{Trix.config.lang.quote}</button>
@@ -71,6 +62,11 @@ Trix.config.toolbar =
         <button type="button" class="trix-button trix-button--icon trix-button--icon-decrease-nesting-level" data-trix-action="decreaseNestingLevel" title="#{Trix.config.lang.outdent}" tabindex="-1">#{Trix.config.lang.outdent}</button>
         <button type="button" class="trix-button trix-button--icon trix-button--icon-increase-nesting-level" data-trix-action="increaseNestingLevel" title="#{Trix.config.lang.indent}" tabindex="-1">#{Trix.config.lang.indent}</button>
       </span>
+
+      <span class="trix-button-group-spacer"></span>
+    </div>
+    <div class="trix-button-row">
+      
     </div>
     <div class="trix-dialogs" data-trix-dialogs>
       <div class="trix-dialog trix-dialog--link" data-trix-dialog="href" data-trix-dialog-attribute="href">
@@ -88,21 +84,21 @@ Trix.config.toolbar =
 class Spina.TrixAttachment
   @imageSelect: (e) ->
     toolbar_id = $(this).closest('trix-toolbar').attr('id')
-    $.get("<%= Spina::Engine.routes.url_helpers.admin_media_picker_path %>" + "?trix_toolbar_id=#{toolbar_id}")
+    $.getScript("<%= Spina::Engine.routes.url_helpers.admin_media_picker_path %>" + "?input=#{toolbar_id}&mode=trix")
 
-  @imageInsert: (e, url, alt = "", link_to_url = "") ->
+  @imageInsert: (e) ->
     labels = []
-    labels.push "✍️ #{alt}" if alt != ""
-    labels.push "🔗 #{link_to_url}" if link_to_url != ""
+    labels.push "✍️ #{e.detail.alt}" if e.detail.alt != ""
+    labels.push "🔗 #{e.detail.link_to_url}" if e.detail.link_to_url != ""
     label = labels.join("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;")
 
-    if link_to_url != ""
-      attachment = new Trix.Attachment({content: "<a href='#{link_to_url}' class='trix-attachment-spina-image' data-label='#{label}'>
-        <img src='#{url}' alt='#{alt}' />
+    if e.detail.link_to_url != ""
+      attachment = new Trix.Attachment({content: "<a href='#{e.detail.link_to_url}' class='trix-attachment-spina-image' data-label='#{label}'>
+        <img src='#{e.detail.url}' alt='#{e.detail.alt}' />
       </a>"})
     else
       attachment = new Trix.Attachment({content: "<span class='trix-attachment-spina-image' data-label='#{label}'>
-        <img src='#{url}' alt='#{alt}' />
+        <img src='#{e.detail.url}' alt='#{e.detail.alt}' />
       </span>"})
 
     this.editor.insertAttachment(attachment)

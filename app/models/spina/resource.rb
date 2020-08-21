@@ -1,10 +1,10 @@
 module Spina
   class Resource < ApplicationRecord
+    extend Mobility
+
     has_many :pages, dependent: :restrict_with_exception
 
-    belongs_to :parent_page, class_name: "Spina::Page", optional: true
-
-    after_save :scope_pages_to_parent_page
+    translates :slug, backend: :jsonb
 
     def pages
       case order_by
@@ -14,14 +14,6 @@ module Spina
         super.order(created_at: :desc)
       end
     end
-
-    private
-
-      def scope_pages_to_parent_page
-        pages.roots.each do |root_page|
-          root_page.update(parent: parent_page)
-        end
-      end
-
+    
   end
 end

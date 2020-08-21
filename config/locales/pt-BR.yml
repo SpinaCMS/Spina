@@ -58,6 +58,9 @@ pt-BR:
         skip_to_first_child_description: Encaminhar para a primeira página filha
         title: Título
         title_placeholder: Título da página
+        url_title: 
+        url_title_description: 
+        url_title_placeholder: 
         view_template: Modelo de página
       spina/resource:
         label: 
@@ -93,6 +96,7 @@ pt-BR:
   spina:
     ago: atrás
     attachments:
+      choose_attachment: 
       insert: Inserir documento
       insert_multiple: Inserir documentos
     cancel: Cancelar
@@ -111,14 +115,17 @@ pt-BR:
       success: Você já pode usar sua nova senha
       unknown_user: Este usuário não existe
     images:
+      all_images: 
       back: 
       cannot_be_created: 'Imagem não pôde ser processada:'
       choose_image: 
       choose_images: Escolher imagens
+      confirm_selection: 
       delete: Excluir
       delete_confirmation: Tem certeza que deseja remover esta <strong>imagem</strong>?
       delete_folder: Excluir pasta
       done_organizing: Concluir organização
+      insert_image: 
       insert_photo: Inserir imagem
       insert_photos: Inserir imagens
       link: 'URL da sua imagem:'
@@ -159,6 +166,8 @@ pt-BR:
       information: Informação
       login: Você deve estar autenticado
       wrong_username_or_password: Email ou senha incorreto(s)
+    options:
+      choose_option: 
     pages:
       advanced: Avançado
       change_order: Mudar ordem
@@ -194,6 +203,7 @@ pt-BR:
       link: 'URL da sua imagem:'
       new_folder: Nova pasta
       organize: Organizar imagens
+      rename_folder: 
       select_images: 
       upload_image: Enviar uma imagem
     preferences:

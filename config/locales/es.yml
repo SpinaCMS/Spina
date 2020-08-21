@@ -37,7 +37,7 @@ es:
         pages_description: Seleccione las páginas que quiere usar en esta navegación
       spina/page:
         ancestry: Página padre
-        created_at: 
+        created_at: Creada el
         description: Meta description
         description_description: Esta descripción se mostrará en los resultados de búsqueda
         description_placeholder: Descripción corta de tu página
@@ -58,11 +58,14 @@ es:
         skip_to_first_child_description: Reenviar a la primera página hija
         title: Título
         title_placeholder: Título de la página
+        url_title: 
+        url_title_description: 
+        url_title_placeholder: 
         view_template: Plantilla de página
       spina/resource:
-        label: 
-        order_by: 
-        parent_page: 
+        label: Etiqueta
+        order_by: Ordenar por
+        parent_page: Página padre
         view_template: 
       spina/user:
         admin: Administrador
@@ -91,8 +94,9 @@ es:
         one: Usuario
         other: Usuarios
   spina:
-    ago: ago
+    ago: atrás
     attachments:
+      choose_attachment: 
       insert: Insertar documento
       insert_multiple: Insertar documentos
     cancel: Cancelar
@@ -111,32 +115,35 @@ es:
       success: Puede utilizar su nueva contraseña
       unknown_user: Este usuario no existe
     images:
-      back: 
-      cannot_be_created: 
-      choose_image: 
-      choose_images: 
-      delete: 
-      delete_confirmation: 
-      delete_folder: 
+      all_images: 
+      back: Regresar
+      cannot_be_created: No puede ser creada
+      choose_image: Elegir imagen
+      choose_images: Elegir imágenes
+      confirm_selection: 
+      delete: Borrar
+      delete_confirmation: Esta seguro que desea borrar esta <strong>imagen</strong>?
+      delete_folder: Borrar carpeta
       done_organizing: 
-      insert_photo: 
-      insert_photos: 
-      link: 
-      new_folder: 
-      organize: 
-      remove_image: 
-      upload: 
-      upload_image: 
+      insert_image: 
+      insert_photo: Insertar foto
+      insert_photos: Insertar fotos
+      link: Enlace
+      new_folder: Nueva carpeta
+      organize: Organizar
+      remove_image: Eliminar imagen
+      upload: Subir imáneges
+      upload_image: Subir imagen
     languages:
       bg: 
-      de: 
+      de: Alemán
       en: Inglés
-      es: 
-      fr: 
+      es: Español
+      fr: Francés
       id: 
-      it: 
+      it: Italiano
       nl: Holandés
-      pl: 
+      pl: Polaco
       pt-BR: 
       ro: 
       ru: 
@@ -149,7 +156,7 @@ es:
     main_menu: Menú principal
     media_library:
       attachments: Documentos
-      images: 
+      images: Imágenes
       photos: Imágenes
     modal:
       agree: Si, estoy seguro
@@ -159,6 +166,8 @@ es:
       information: Información
       login: Primero debes ingresar
       wrong_username_or_password: Email o password incorrecto
+    options:
+      choose_option: 
     pages:
       advanced: Avanzado
       change_order: Cambiar orden
@@ -185,7 +194,7 @@ es:
     photos:
       cannot_be_created: 'Tu imagen no puede ser procesada:'
       choose_images: Seleccionar imágenes
-      delete: 
+      delete: Borrar
       delete_confirmation: Seguro que deseas eliminar ésta <strong>imagen</strong>?
       delete_folder: Borrar carpeta
       done_organizing: Terminar la organización
@@ -194,6 +203,7 @@ es:
       link: 'URL de tu imagen:'
       new_folder: Nueva carpeta
       organize: Organizar imágenes
+      rename_folder: Renombrar carpeta
       select_images: 
       upload_image: Subir una imagen
     preferences:
@@ -228,11 +238,11 @@ es:
       delete_confirmation: Estás seguro que deseas eliminar al usuario <strong>%{user}</strong>?
       new: Nuevo usuario
       save: Guardar usuario
-    visit_page: 
+    visit_page: Visitar página
     website:
       all_pages: Todas las páginas
       documents: Documentos
-      images: 
+      images: Imágenes
       media_library: Biblioteca de medios
       media_library_description: Aquí encontrarás todas tus imágenes y documentos
       pages: Páginas
