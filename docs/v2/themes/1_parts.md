@@ -3,6 +3,7 @@
 A page in Spina has many parts. By default these parts can be one of the following:
 
 - Spina::Parts::Line
+- Spina::Parts::MultiLine
 - Spina::Parts::Text
 - Spina::Parts::Image
 - Spina::Parts::ImageCollection

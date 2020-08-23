@@ -7,6 +7,7 @@
 ### Unreleased
 
 * Resize images embedded in Trix (configurable in spina.rb)
+* Added `Spina::Parts::MultiLine`
 
 ### 2.0.0.alpha
 
