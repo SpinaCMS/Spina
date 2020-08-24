@@ -22,7 +22,7 @@ module Spina
     config.to_prepare do
       # Load helpers from main application
       Spina::ApplicationController.helper Rails.application.helpers
- 
+
       # Require decorators from main application
       [Rails.root].flatten.map { |p| Dir[p.join('app', 'decorators', '**', '*_decorator.rb')]}.flatten.uniq.each do |decorator|
         Rails.configuration.cache_classes ? require(decorator) : load(decorator)
@@ -30,12 +30,13 @@ module Spina
 
       # Register JSON part types for editing content
       Spina::Part.register(
-        Spina::Parts::Line, 
-        Spina::Parts::Text, 
-        Spina::Parts::Image, 
-        Spina::Parts::ImageCollection, 
-        Spina::Parts::Repeater, 
-        Spina::Parts::Option, 
+        Spina::Parts::Line,
+        Spina::Parts::MultiLine,
+        Spina::Parts::Text,
+        Spina::Parts::Image,
+        Spina::Parts::ImageCollection,
+        Spina::Parts::Repeater,
+        Spina::Parts::Option,
         Spina::Parts::Attachment
       )
     end
