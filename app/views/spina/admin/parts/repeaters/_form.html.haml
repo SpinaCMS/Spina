@@ -7,12 +7,11 @@
           %li{class: ('active' if index.zero?), data: {part_id: repeater_content.object_id, target: "repeater-form.listItem"}}
             = link_to "#structure_form_pane_#{repeater_content.object_id}" do
               %i.icon.icon-bars.sortable-handle
-              = repeater_content.parts&.first&.content
+              %span= strip_tags(repeater_content.parts&.first&.content)
 
       %div{style: "margin-top: 6px; margin-left: 6px"}
         = link_to_add_repeater_fields f do
           = icon('plus')
-
     .structure-form-content{data: {target: "repeater-form.content"}}
       = f.fields_for :content do |ff|
         = render 'spina/admin/parts/repeaters/fields', f: ff

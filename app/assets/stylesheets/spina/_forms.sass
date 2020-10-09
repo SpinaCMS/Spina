@@ -677,13 +677,14 @@ input.datepicker
     ul li a, ul li.sortable-placeholder
       color: #444
       cursor: pointer
-      display: block
+      display: flex
       font-weight: 600
       font-size: 13px
       height: 44px
       line-height: 44px
       outline: none
       padding-left: 20px
+      padding-right: 6px
 
       &:hover
         background: #f9f9f9
@@ -693,6 +694,11 @@ input.datepicker
         font-size: 16px
         margin-right: 8px
         vertical-align: middle
+
+      span
+        white-space: nowrap
+        overflow: hidden
+        text-overflow: ellipsis
 
     ul li.sortable-placeholder
       background: #f9f9f9
