@@ -23,9 +23,11 @@ module Spina
       # Load helpers from main application
       Spina::ApplicationController.helper Rails.application.helpers
 
-      # Require decorators from main application
-      [Rails.root].flatten.map { |p| Dir[p.join('app', 'decorators', '**', '*_decorator.rb')]}.flatten.uniq.each do |decorator|
-        Rails.configuration.cache_classes ? require(decorator) : load(decorator)
+      unless Spina.config.disable_decorator_load
+        # Require decorators from main application
+        Dir[Rails.root.join('app', 'decorators', '**', '*_decorator.rb')].flatten.uniq.each do |decorator|
+          require_dependency(decorator)
+        end
       end
 
       # Register JSON part types for editing content
