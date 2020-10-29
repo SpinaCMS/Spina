@@ -1,0 +1,55 @@
+<div class="max-w-5xl grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-6">
+
+  <% unless @page.draft? %>
+    <div class="col-span-1 mt-6 md:mt-0">
+      <label for="country" class="block text-sm font-medium leading-5 text-gray-700">
+        <%= Spina::Page.human_attribute_name :draft %>  
+      </label>
+
+      <div class="text-sm leading-5">
+        <p class="text-gray-500"><%= Spina::Page.human_attribute_name :draft_description %></p>
+      </div>
+    </div>
+
+    <div class="col-span-2 mt-1">
+      <%= render Spina::Forms::SwitchComponent.new(f, :draft) %>
+    </div>
+  <% end %>
+
+  <div class="col-span-1 mt-6 md:mt-0">
+    <label for="country" class="block text-sm font-medium leading-5 text-gray-700">
+      <%= Spina::Page.human_attribute_name :show_in_menu %>  
+    </label>
+
+    <div class="text-sm leading-5">
+      <p class="text-gray-500"><%= Spina::Page.human_attribute_name :show_in_menu_description %></p>
+    </div>
+  </div>
+
+  <div class="col-span-2 mt-1">
+    <%= render Spina::Forms::SwitchComponent.new(f, :show_in_menu) %>
+  </div>
+
+  <div class="col-span-1 mt-6 md:mt-0">
+    <label class="font-medium text-sm leading-5 w-full text-gray-700">
+      <%= Spina::Page.human_attribute_name :menu_title %>
+    </label>
+  </div>
+
+  <div class="col-span-2">
+    <%= f.text_field :menu_title, placeholder: Spina::Page.human_attribute_name(:show_in_menu_placeholder), value: f.object.menu_title(fallback: false, default: nil), class: "form-input shadow-sm text-sm w-full" %>
+  </div>
+
+  <div class="col-span-1 mt-6 md:mt-0">
+    <label class="font-medium text-sm leading-5 w-full text-gray-700">
+      <%= Spina::Page.human_attribute_name :skip_to_first_child %>
+    </label>
+    <div class="text-sm leading-5">
+      <p class="text-gray-500"><%= Spina::Page.human_attribute_name :skip_to_first_child_description %></p>
+    </div>
+  </div>
+
+  <div class="col-span-2">
+    <%= render Spina::Forms::SwitchComponent.new(f, :skip_to_first_child) %>
+  </div>
+</div>

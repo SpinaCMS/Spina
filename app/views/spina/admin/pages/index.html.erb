@@ -1,0 +1,52 @@
+<%= render Spina::UserInterface::HeaderComponent.new do |header| %>
+  <% header.actions do %>
+    <% if @resource %>
+      <%= link_to spina.edit_admin_resource_path(@resource), class: 'btn btn-default' do %>
+        <%= heroicon('cog', style: :solid, class: 'text-gray-300 w-5 h-5 -ml-1 mr-1') %>
+        <%=t 'spina.resources.settings', label: @resource.label %>
+      <% end %>
+    <% end %>
+    
+    <div class="ml-3">
+      <%= render Spina::UserInterface::DropdownComponent.new do |dropdown| %>
+        <% dropdown.button(classes: "btn btn-primary w-full") do %>
+          <%= heroicon("plus", style: :solid, class: "w-7 h-7 -ml-2") %>
+          <%=t 'spina.pages.new' %>  
+        <% end %>
+        
+        <% dropdown.menu do %>
+          <% Spina::Current.theme.new_page_templates.each do |template| %>
+            <%= link_to spina.new_admin_page_path(view_template: template[0], resource_id: @resource&.id), class: "block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900", data: {turbo_frame: "modal", action: "reveal#hide"} do %>
+              <div class="font-medium text-gray-700"><%= template[1] %></div>
+              <div class="text-gray-400"><%= template[2] %></div>
+            <% end %>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+  
+  <% header.navigation do %>
+    <nav class="-mb-1 md:-mb-3 mt-4">
+      <ul class="inline-flex w-auto rounded-md bg-white">
+        <%= render Spina::UserInterface::TabLinkComponent.new("#{heroicon('collection', style: :solid, class: 'h-4 w-4 mr-1 -ml-1 opacity-75')} #{t('spina.website.main')}".html_safe, spina.admin_pages_path, active: @resource.nil?) %>
+        
+        <% Spina::Resource.order(:name).each do |resource| %>
+          <%= render Spina::UserInterface::TabLinkComponent.new("#{heroicon('collection', class: 'h-4 w-4 mr-1 -ml-1 opacity-75')} #{resource.label}".html_safe, spina.admin_pages_path(resource_id: resource.id), active: @resource == resource) %>
+        <% end %>
+      </ul>
+    </nav>
+  <% end %>
+<% end %>
+
+<% if @pages.any? %>
+  
+  <div class="my-6 md:m-8 bg-white md:rounded-lg border-l-0 border-r-0 border md:border-r md:border-l border-gray-200 border-b-0 shadow-sm">
+    <%= render Spina::Pages::ListComponent.new(pages: @pages, sortable: @resource.nil? || @resource&.order_by&.blank?) %>
+  </div>
+  
+<% else %>
+
+  <div class="m-8 my-6 italic text-gray-400"><%=t 'spina.pages.no_pages_yet' %></div>
+  
+<% end %>

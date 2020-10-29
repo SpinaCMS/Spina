@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= current_account.name %></title>
+    <%= stylesheet_link_tag 'default/application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <%= render 'default/shared/navigation' %>
+    
+    <%= yield %>
+  </body>
+</html>

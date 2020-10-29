@@ -1,0 +1,18 @@
+<%= turbo_frame_tag dom_id(media_folder) do %>
+  <div class="flex items-center h-12 hover:bg-white border-b border-gray-200 px-8">
+    <%= link_to spina.admin_media_folder_images_path(media_folder), class: 'flex h-full items-center flex-1', target: "_top" do %>
+      <div class="w-8 mr-4 flex justify-center"><%= heroicon("folder", style: :solid, class: "w-7 h-7 text-spina") %></div>
+      <div class="font-medium text-spina flex-1 text-sm">
+        <%= media_folder.name %>
+      </div>
+    <% end %>
+    <div class="text-gray-500 text-sm">
+      <%=t 'spina.media_library.images_count', count: media_folder.images.size %>
+    </div>
+    <div class="text-gray-500 text-xs w-32 text-right"><%=l media_folder.created_at, format: :short %></div>
+    
+    <%= button_to spina.admin_media_folder_path(media_folder), method: :delete, class: "block py-3 px-4 ml-2 text-gray-500 hover:text-gray-900", form: {data: {controller: "confirm", confirm_message: t('spina.media_library.media_folder_delete_confirmation_html')}} do %>
+      <%= heroicon('trash', class: 'w-5 h-5') %>
+    <% end %>
+  </div>
+<% end %>

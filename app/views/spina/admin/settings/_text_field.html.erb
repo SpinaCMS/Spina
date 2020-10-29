@@ -1,0 +1,5 @@
+<%= render Spina::Forms::GroupComponent.new(label: t("spina.#{plugin.namespace}.settings.#{attribute}")) do %>
+  <%= render Spina::Forms::LabelComponent.new(f, attribute) %>
+  
+  <%= f.text_area attribute, class: "form-input mt-1 w-full" %>
+<% end %>

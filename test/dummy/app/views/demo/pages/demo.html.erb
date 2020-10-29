@@ -1,0 +1,25 @@
+<h1><%= current_page.title %></h1>
+<%= content :option %>
+
+<%= content :headline %>
+<%= content.text :headline %>
+<%= content.html :body %>
+
+<% if has_content?(:image) %>
+  <%= content.image_tag :image, resize: '100x100' %>
+<% end %>
+
+<%= current_account.content :line %>
+
+<% repeater current_account.content(:repeater) do |repeater_content| %>
+  <%= repeater_content.content :line %>
+<% end %>
+
+<% images :image_collection do |image| %>
+  <%= content.image_tag image, resize: '50x50' %>
+<% end %>
+
+<% repeater :repeater do |project| %>
+  <%= project.content.html :line %>
+  <%= project.content.image_tag :image, resize: '50x50' %>
+<% end %>

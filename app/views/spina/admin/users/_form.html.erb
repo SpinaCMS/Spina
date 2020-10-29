@@ -1,0 +1,52 @@
+<%= render Spina::UserInterface::HeaderComponent.new do |header| %>
+  <% header.actions do %>
+    <%= button_tag type: :submit, form: dom_id(@user), class: 'btn btn-primary', data: {controller: "button", action: "button#loading", loading_message: t('spina.ui.saving')} do %>
+      <%= heroicon('check', style: :solid, class: 'w-5 h-5 mr-1 -ml-2') %>
+      <%=t 'spina.users.save' %>
+    <% end %>
+  <% end %>
+<% end %>
+
+<div class="p-8">
+  <%= form_with model: [spina, :admin, @user], id: dom_id(@user) do |f| %>
+  
+    <%= render Spina::Forms::GroupComponent.new(label: t('spina.users.profile'), description: t('spina.users.profile_description')) do %>
+      <%= render Spina::Forms::LabelComponent.new(f, :name) %>
+      <%= render Spina::Forms::TextFieldComponent.new(f, :name, autofocus: @user.name.blank?) %>
+      
+      <div class="mt-5">
+        <%= render Spina::Forms::LabelComponent.new(f, :email) %>
+        <%= render Spina::Forms::TextFieldComponent.new(f, :email) %>
+      </div>
+    <% end %>
+    
+    <div class="border-t border-gray-200 my-6"></div>
+    
+    <%= render Spina::Forms::GroupComponent.new(label: t('spina.users.authorization'), description: t('spina.users.authorization_description')) do %>
+      <%= render Spina::Forms::LabelComponent.new(f, :password) %>
+      <%= render Spina::Forms::PasswordFieldComponent.new(f, :password) %>
+      
+      <% if @user != Spina::Current.user %>
+        <div class="mt-5">
+          <%= render Spina::Forms::LabelComponent.new(f, :admin) %>
+          <%= render Spina::Forms::SwitchComponent.new(f, :admin) %>
+        </div>
+      <% end %>
+    <% end %>
+    
+  <% end %>
+  
+  <% if @user.persisted? && @user != Spina::Current.user %>
+    <div class="border-t border-gray-200 my-6"></div>
+    
+    <div class="grid grid-cols-3 gap-x-6 mt-3">
+      <div class="col-span-1"></div>    
+      <div class="col-span-2 flex justify-end">
+        <%= button_to spina.admin_user_path(@user), method: :delete, class: 'btn btn-default', form: {data: {controller: "confirm", confirm_message: t('spina.users.delete_confirmation_html', user: @user.name)}} do %>
+          <%= heroicon('trash', class: 'w-4 h-4 mr-1 -ml-1') %>
+          <%=t 'spina.users.delete' %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>

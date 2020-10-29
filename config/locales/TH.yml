@@ -51,6 +51,7 @@ th:
         no_parent: ไม่มีเพจระดับบน
         resource: 
         seo_title: SEO <title>
+        seo_title_description: 
         seo_title_placeholder: ชื่อนี้ใช้ใน <title> -tag
         show_in_menu: แสดงการนำทาง
         show_in_menu_description: ถ้าหน้านี้ถูกปิดใช้งานจะไม่ปรากฏการนำทางของคุณ
@@ -94,9 +95,17 @@ th:
         one: ผู้ใช้
         other: หลายๆผู้ใช้
   spina:
+    accounts:
+      contact_details: 
+      contact_details_description: 
+      couldnt_be_saved: 
+      name_description: 
+      save: 
+      saved: 
     ago: อายุ
     attachments:
       choose_attachment: 
+      delete_confirmation_html: 
       insert: แทรกเอกสาร
       insert_multiple: แทรกเอกสาร
     cancel: ยกเลิก
@@ -122,7 +131,7 @@ th:
       choose_images: 
       confirm_selection: 
       delete: 
-      delete_confirmation: 
+      delete_confirmation_html: 
       delete_folder: 
       done_organizing: 
       insert_image: 
@@ -151,16 +160,44 @@ th:
       th: 
       tr: 
       zh-CN: 
+    layout:
+      couldnt_be_saved: 
+      layout: 
+      no_layout_parts: 
+      save: 
+      saved: 
     login: ลงชื่อเข้าใช้
     logout: ลงชื่อออก
     main_menu: เมนูหลัก
     media_library:
+      add_folder: 
+      add_image: 
       attachments: เอกสาร
+      back_to_all: 
+      filename: 
       images: 
+      images_count: 
+      insert: 
+      media_folder_delete_confirmation_html: 
+      no_folder: 
       photos: รูปภาพ
+      rename_folder: 
+      save_media_folder: 
+      upload_from_device: 
+      uploading: 
     modal:
       agree: ตกลง
       cancel: ยกเลิก
+    navigations:
+      add_menu_item: 
+      add_sub_item: 
+      choose_page: 
+      delete_item: 
+      delete_item_confirmation_html: 
+      description: 
+      navigations: 
+      no_navigations: 
+      sorting_saved: 
     notifications:
       alert: อ้าว!เกิดข้อผิดพลาด
       information: ข้อมูล
@@ -169,27 +206,50 @@ th:
     options:
       choose_option: 
     pages:
+      add_page_to: 
+      add_translation: 
       advanced: ขั้นสูง
+      cannot_be_deleted: 
       change_order: เปลี่ยนออเดอร์
+      change_view_template: 
+      change_view_template_confirmation: 
       concept: คอนเซ็ปท์
+      create: 
       create_page: สร้างหน้าใหม่ %{template}
+      delete: 
       delete_confirmation: คุณแน่ใจหรือไม่ว่าต้องการลบหน้านี้ <strong>%{subject}</strong>?
+      deleted: 
       done_changing_order: การสั่งซื้อเสร็จสิ้น
+      edit_translation: 
       invisible_to_search_engines: เว็บไซต์ของคุณไม่สามารถใช้งานได้กับเครื่องมือค้นหา
       invisible_to_search_engines_description: ป้อนการตั้งค่าเพื่อเปิดใช้งานเครื่องมือค้นหา
+      main_collection: 
       materialize_path_confirmation: คุณแน่ใจหรือว่าต้องการสร้างเส้นทางสำหรับหน้านี้ใหม่
+      missing_translations: 
+      move_page: 
+      moved: 
       new: หน้าใหม่
+      no_pages_yet: 
+      no_parent_page: 
       page_content: เนื้อหา
       page_part: ส่วนของหน้า
       page_seo: เครื่องมือค้นหา
+      path: 
       photo_picker: เลือกรูปภาพ
       photos_picker: เลือกรูปภาพ
+      preview: 
+      publish: 
+      published: 
       rebuild_materialized_path: กำหนดเส้นทางที่สร้างขึ้นใหม่
       save: บันทึกหน้า
+      save_changes: 
+      save_draft: 
       saved: บันทึกเสร็จสิ้น
       saving: กำลังบันทึก
+      search_engines: 
       show_in_menu: มองไม่เห็น
       skip_to_first_child: ข้ามไปที่หน้าแรก
+      sorting_saved: 
     permanently_delete: ลบอย่างถาวร
     photos:
       cannot_be_created: 'รูปภาพของคุณไม่สามารถประมวลผลได้:'
@@ -228,16 +288,46 @@ th:
     preview_website: ตัวอย่างเว็บไซต์
     resources:
       edit: 
+      label_description: 
+      manual_sorting: 
+      no_default_template: 
+      saved: 
+      settings: 
+      settings_description: 
     save: บันทึก
     search: ค้นหา
     settings:
       save: บันทึก
       title: การตั้งค่า
+    theme:
+      save: 
+      saved: 
+      theme: 
+      theme_description: 
+    ui:
+      cancel: 
+      delete: 
+      load_more: 
+      move_to: 
+      new_entry: 
+      optional: 
+      rename: 
+      save_changes: 
+      saving: 
     users:
+      authorization: 
+      authorization_description: 
       cannot_be_created: ไม่สามารถบันทึกการสร้างได้
-      delete_confirmation: คุณแน่ใจหรือไม่ว่าต้องการลบผู้ใช้นี้ <strong>%{user}</strong>?
+      delete: 
+      delete_confirmation_html: คุณแน่ใจหรือไม่ว่าต้องการลบผู้ใช้นี้ <strong>%{user}</strong>?
+      deleted: 
+      last_login: 
+      never_logged_in: 
       new: ผู้ใช้ใหม่
+      profile: 
+      profile_description: 
       save: บันทึกผู้ใช้
+      saved: 
     visit_page: 
     website:
       all_pages: หน้าเพจทั้งหมด
@@ -254,5 +344,9 @@ th:
       heading_2: ส่วนหัว 2
       heading_3: ส่วนหัว 3
       insert_link: แทรกลิงค์
+      link: 
       paragraph: ย่อหน้า
       quote: อ้างอิง
+      unlink: 
+      url: 
+      url_placeholder: 

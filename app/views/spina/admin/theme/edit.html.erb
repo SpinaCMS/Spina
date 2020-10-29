@@ -1,0 +1,19 @@
+<%= form_with model: Spina::Current.account, url: spina.admin_theme_path do |f| %>
+
+  <%= render Spina::UserInterface::HeaderComponent.new do |header| %>
+    <% header.actions do %>
+      <%= button_tag t('spina.theme.save'), type: :submit, class: 'btn btn-primary', data: {controller: "button", action: "button#loading", loading_message: t('spina.ui.saving')} %>
+    <% end %>
+  <% end %>
+  
+  <div class="p-4 md:p-8 max-w-screen-2xl">
+      
+    <%= render Spina::Forms::GroupComponent.new(label: Spina::Account.human_attribute_name(:theme), description: t('spina.theme.theme_description')) do %>
+    
+      <%= f.select :theme, Spina::Theme.all.map{|theme| [theme.title, theme.name]}, {}, class: "form-select" %>
+      
+    <% end %>
+      
+  </div>
+  
+<% end %>

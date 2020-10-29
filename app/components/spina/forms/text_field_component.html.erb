@@ -1,0 +1,14 @@
+<%= f.text_field method, placeholder: placeholder, class: "mt-1 form-input font-medium block w-full max-w-5xl #{error_styles} #{size_styles}", data: {controller: controllers} %>
+
+<% if has_errors? %>
+  <div class="leading-relaxed mt-2">
+    <% error_messages.each do |message| %>
+      <div class="text-red-500 font-medium text-sm px-3 flex items-center">
+        <svg class="w-3 h-3 mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+        </svg>
+        <%= message %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

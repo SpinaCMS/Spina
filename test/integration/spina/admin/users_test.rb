@@ -18,9 +18,9 @@ module Spina
       end
 
       test "create new user" do
-        post "/admin/users", params: {user: {name: "Joe", email: "joe@denkgroot.com", password: "test", password_confirmation: "test"}}
+        post "/admin/users", params: {user: {name: "Joe", email: "joe@denkgroot.com", password: "test"}}
         follow_redirect!
-        assert_select 'a', text: /Joe/
+        assert_select 'div', text: /Joe/
       end
 
       test "create new user without password" do
@@ -31,7 +31,7 @@ module Spina
       test "update user" do
         patch "/admin/users/#{@user.id}", params: {user: {name: "New name"}}
         get "/admin/users"
-        assert_select 'a', text: /New name/
+        assert_select 'div', text: /New name/
       end
 
     end

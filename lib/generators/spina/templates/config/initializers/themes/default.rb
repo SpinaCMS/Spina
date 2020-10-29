@@ -33,8 +33,7 @@
     label: 'Mobile'
   }, {
     name: 'main',
-    label: 'Main navigation',
-    auto_add_pages: true
+    label: 'Main navigation'
   }]
 
 end

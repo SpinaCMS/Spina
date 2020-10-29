@@ -1,0 +1,36 @@
+<li data-id="<%= navigation_item.id %>" id="<%= dom_id(navigation_item, :container) %>">
+  <div class="btn w-56 px-0 text-gray-700 bg-white shadow-sm border-gray-300 cursor-default justify-start">
+    <div data-sortable-handle class="cursor-move px-2 pl-4 h-full flex items-center text-gray-400 hover:text-gray-700">
+      <%= heroicon('menu-alt-4', style: :solid, class: 'w-4 h-4 -ml-1') %>  
+    </div>
+    
+    <div class="flex-1 truncate text-left"><%= navigation_item.menu_title %></div>
+    
+    <div data-controller="reveal" data-reveal-away-value class="relative h-full">
+      <button type="button" data-action="reveal#toggle" class="h-full px-2 text-gray-400 hover:text-gray-700">
+        <%= heroicon("dots-horizontal", class: "w-5 h-5") %>
+      </button>
+      
+      <div hidden data-reveal data-transition class="origin-top-right absolute left-0 z-10 mt-1 w-48 rounded-md shadow-lg">
+        <div class="rounded-md bg-gray-700 shadow-xs py-1">
+          <%= link_to spina.new_admin_navigation_navigation_item_path(@navigation, parent_id: navigation_item.id), class: "px-3 py-1 text-xs leading-5 text-gray-200 hover:bg-gray-800 hover:text-white focus:outline-none flex items-center", data: {turbo_frame: "modal", action: "reveal#hide"} do %>
+            <%= heroicon('plus', style: :outline, class: 'w-4 h-4 mr-2') %>
+            <%=t 'spina.navigations.add_sub_item' %>
+          <% end %>
+          
+          <%= button_to spina.admin_navigation_navigation_item_path(@navigation, navigation_item), method: :delete, class: "bg-transparent w-full text-left cursor-pointer font-medium px-3 py-1 text-xs leading-5 text-red-400 hover:bg-gray-800 hover:text-red-400 focus:outline-none flex items-center", form: {data: {action: "reveal#hide", controller: "confirm", confirm_message: t('spina.navigations.delete_item_confirmation_html')}} do %>
+            <%= heroicon('trash', class: 'w-4 h-4 mr-2') %>
+            <%=t 'spina.navigations.delete_item' %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <ul class="space-y-2 ml-8 mt-2" data-controller="sortable" data-sortable-target="list" id="<%= dom_id(navigation_item) %>">
+    <%= form_with url: spina.sort_admin_navigation_path(@navigation), data: {sortable_target: "form"} do |f| %>
+    <% end %>
+    
+    <%= render navigation_item.children.sorted %>
+  </ul>
+</li>

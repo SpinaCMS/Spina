@@ -1,0 +1,18 @@
+<li data-navigation-target="navigation">
+  <button type="button" class="flex w-full items-center p-3 relative <%= button_classes %> hover:opacity-100 transition-opacity" data-navigation-target="button" data-action="navigation#toggle">
+    <%= icon %>
+  </button>
+
+  <ul class="flex items-center justify-center md:block md:h-screen absolute left-0 md:inset-0 z-30 w-full transform transition-transform ease-in-out duration-300 md:h-full <%= ul_classes %>">
+    <div class="bg-spina-dark md:bg-gradient-to-b md:from-spina-dark md:to-spina-light px-2 md:px-3 py-3 md:py-5 shadow-lg md:shadow-none w-full md:h-full">
+      <div>
+        <%= links %>
+      </div>
+      
+      <button type="button" data-action="navigation#backToFirstLevel" class="hidden md:flex text-white opacity-30 hover:opacity-100 w-full transition-opacity font-semibold py-3">
+        <%= helpers.heroicon('chevron-right', style: :solid, class: "w-6 h-6 transform rotate-180 ml-1") %>
+        <%=t "spina.main_menu" %>
+      </button>
+    </div>
+  </ul>
+</li>

@@ -31,6 +31,9 @@
     name: 'image',
     title: "Image",
     part_type: "Spina::Parts::Image"
+  }, {name: 'portrait', part_type: 'Spina::Parts::Image', options: {ratio: "portrait"}
+  }, {name: 'landscape', part_type: 'Spina::Parts::Image', options: {ratio: "landscape"}
+  }, {name: 'wide', part_type: 'Spina::Parts::Image', options: {ratio: "wide"}
   }, {
     name: 'headline',
     title: "Headline",
@@ -48,6 +51,11 @@
     name: 'attachment',
     title: "Attachment",
     part_type: "Spina::Parts::Attachment"
+  }, {
+    name: 'testrepeater',
+    title: 'Testrepeater',
+    part_type: "Spina::Parts::Repeater",
+    parts: %w(line)
   }]
 
   theme.view_templates = [{
@@ -57,16 +65,17 @@
     parts: ['headline', 'body', 'image_collection']
   }, {
     name: 'show',
-    title: 'Default',
+    title: 'Simple page',
+    description: "Default layout",
     usage: 'Use for your content',
     page_parts: [],
-    parts: ['attachment', 'option', 'body', 'image', 'repeater']
+    parts: ['body', 'testrepeater']
   }, {
     name: 'demo',
     title: 'Demo',
-    description: 'Contains examples of every page part',
+    description: 'Example including all parts',
     page_parts: [],
-    parts: ['repeater', 'repeater2', 'attachment', 'option', 'body', 'image_collection', 'image']
+    parts: ['repeater', 'repeater2', 'attachment', 'option', 'body', 'image_collection', 'image', 'portrait', 'landscape', 'wide']
   }]
 
   theme.custom_pages = [{

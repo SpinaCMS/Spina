@@ -1,0 +1,70 @@
+<div data-controller="tabs" data-tabs-active="cursor-default text-gray-900 bg-spina-dark bg-opacity-10" data-tabs-inactive="cursor-pointer bg-transparent text-gray-400 border-transparent">
+  <%= render Spina::UserInterface::HeaderComponent.new do |header| %>
+    <% header.after_breadcrumbs do %>
+      <% if @page.draft? %>
+        <span class="text-gray-400 ml-2 text-sm">(<%= Spina::Page.human_attribute_name(:draft) %>)</span>
+      <% end %>
+      
+      <%= link_to @page.materialized_path, class: 'px-3 py-2 flex items-center text-gray-400 hover:text-gray-700', target: :blank, data: {turbo: false} do %>
+        <%= heroicon("external-link", style: :solid, class: "w-4 h-4") %>
+      <% end %>
+    <% end %>
+    
+    <% header.actions do %>
+      <%= render Spina::Pages::ActionsComponent.new(page: @page, locale: @locale) %>
+    <% end %>
+    
+    <% header.navigation do %>
+      <nav class="-mb-3 mt-4">
+        <ul class="inline-flex w-auto rounded-md bg-white">
+          <button type="button" class="block px-3 leading-relaxed py-1 hover:text-gray-800 rounded-md text-gray-400 font-medium text-sm flex items-center whitespace-nowrap" data-action="tabs#show" data-tabs-target="button" data-pane-id="page_content">
+            <%= heroicon('document-text', class: 'w-4 h-4 mr-1 -ml-1 opacity-75') %>
+            <%=t 'spina.pages.page_content' %>
+          </button>
+          <button type="button" class="block px-3 leading-relaxed py-1 rounded-md hover:text-gray-800 text-gray-400 font-medium text-sm flex items-center whitespace-nowrap" data-action="tabs#show" data-tabs-target="button" data-pane-id="seo">
+            <%= heroicon('search', style: :solid, class: 'w-4 h-4 mr-1 -ml-1 opacity-75') %>
+            <span class="hidden md:inline">
+              <%=t 'spina.pages.search_engines' %>
+            </span>
+            <span class="md:hidden">
+              SEO
+            </span>
+          </button>
+          <button type="button" class="block px-3 leading-relaxed py-1 rounded-md hover:text-gray-800 text-gray-400 font-medium text-sm flex items-center whitespace-nowrap" data-action="tabs#show" data-tabs-target="button" data-pane-id="advanced">
+            <%= heroicon('cog', style: :solid, class: 'w-4 h-4 mr-1 -ml-1 opacity-75') %>
+            <%=t 'spina.pages.advanced' %>
+          </button>
+        </ul>
+      </nav>
+    <% end %>
+  <% end %>
+  
+  <div class="p-4 md:p-8">
+    <%= form_with model: @page, url: spina.admin_page_path(@page), id: dom_id(@page) do |f| %>
+      <%= hidden_field_tag :locale, @locale %>
+      
+      <% Mobility.with_locale(@locale) do %>
+        <div data-tabs-target="pane" id="page_content">
+          <div class="max-w-5xl">
+            <label class="font-medium text-gray-700">
+              <%= Spina::Page.human_attribute_name(:title) %>
+            </label>
+          
+            <%= render Spina::Forms::TextFieldComponent.new(f, :title, size: "lg") %>
+            
+            <turbo-frame id="page_content" src="<%= spina.edit_content_admin_page_path(f.object, locale: @locale) %>">
+            </turbo-frame>
+          </div>
+        </div>
+    
+        <div data-tabs-target="pane" id="seo">
+          <%= render partial: 'form_seo', locals: {f: f} %>
+        </div>
+    
+        <div data-tabs-target="pane" id="advanced">
+          <%= render partial: 'form_advanced', locals: {f: f} %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

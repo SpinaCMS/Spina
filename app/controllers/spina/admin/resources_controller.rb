@@ -2,20 +2,17 @@ module Spina
   module Admin
     class ResourcesController < AdminController
       before_action :set_locale
-      before_action :set_resource, only: [:show, :edit, :update]
-
-      def show        
-        add_breadcrumb @resource.label
-      end
+      before_action :set_resource, only: [:edit, :update]
 
       def edit        
-        add_breadcrumb @resource.label, spina.admin_resource_path(@resource)
+        add_breadcrumb @resource.label, spina.admin_pages_path(resource_id: @resource.id), class: 'text-gray-400'
         add_breadcrumb t('spina.edit')
       end
 
       def update
         if Mobility.with_locale(@locale) { @resource.update(resource_params) }
-          redirect_to spina.admin_resource_path(@resource)
+          flash[:success] = t('spina.resources.saved')
+          redirect_to spina.admin_pages_path(resource_id: @resource.id)
         else
           render :edit
         end

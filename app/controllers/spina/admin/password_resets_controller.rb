@@ -1,7 +1,7 @@
 module Spina
   module Admin
     class PasswordResetsController < AdminController
-      layout "spina/login"
+      layout "spina/admin/sessions"
 
       skip_before_action :authorize_spina_user
 
@@ -18,7 +18,7 @@ module Spina
           redirect_to admin_login_path, flash: {success: t('spina.forgot_password.instructions_sent')}
         else
           flash.now[:alert] = t('spina.forgot_password.unknown_user')
-          render :new
+          render :new, status: :unprocessable_entity
         end
       end
 
@@ -34,7 +34,7 @@ module Spina
         elsif @user.update(user_params)
           redirect_to admin_login_path, flash: {success: t('spina.forgot_password.success')}
         else
-          render :edit
+          render :edit, status: :unprocessable_entity
         end
       end
 

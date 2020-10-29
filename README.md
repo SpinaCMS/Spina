@@ -2,7 +2,7 @@
 
 [Spina CMS](https://www.spinacms.com) is an easy to use CMS that features a clean interface without distractions. [Live demo](http://spinacms-demo.herokuapp.com/admin/pages)
 
-[![Build Status](https://travis-ci.com/SpinaCMS/Spina.svg?branch=master)](https://travis-ci.com/SpinaCMS/Spina)
+[![Ruby](https://github.com/SpinaCMS/Spina/actions/workflows/ruby.yml/badge.svg)](https://github.com/SpinaCMS/Spina/actions/workflows/ruby.yml)
 [![Code Climate](https://codeclimate.com/github/SpinaCMS/Spina/badges/gpa.svg)](https://codeclimate.com/github/SpinaCMS/Spina)
 [![Test Coverage](https://codeclimate.com/github/SpinaCMS/Spina/badges/coverage.svg)](https://codeclimate.com/github/SpinaCMS/Spina/coverage)
 [![Slack](https://slack-spinacms.herokuapp.com/badge.svg)](https://slack-spinacms.herokuapp.com)
@@ -57,7 +57,7 @@ Spina is released under the [MIT license](LICENSE.md).
 
 ## Acknowledgements
 
-All icons in Spina were made by Brent Jackson [Geomicons](http://jxnblk.com/geomicons-wired/).
+Icons were designed by [@steveschoger](https://twitter.com/steveschoger) - [Heroicons](https://github.com/tailwindlabs/heroicons).
 
 The font used in Spina's admin panel is called Metropolis and was created by Chris Simpson [Metropolis](https://github.com/chrismsimpson/Metropolis)
 
@@ -68,5 +68,3 @@ The font used in Spina's admin panel is called Metropolis and was created by Chr
     http://scripts.sil.org/OFL
 
     Version 2.0 - 18 March 2012
-
-Some early parts of Spina are influenced by Refinery CMS. Credits to [the Refinery team](https://www.refinerycms.com/).

@@ -14,20 +14,31 @@ module Spina
 
       test "view all images with image upload form" do
         get "/admin/images"
-        assert_select 'input#image_files[type="file"]'
+        assert_select 'input#new_image_file_field[type="file"]'
       end
 
       test "upload a new image" do
         spina_png = fixture_file_upload('spina.png','image/png')
         post "/admin/images", params: {image: {files: [spina_png]}, format: :js}
         get "/admin/images"
-        assert_select 'span.photo-name', 'spina.png'
+        assert_select 'span', 'spina.png'
       end
 
       test "delete image" do
         spina_png = fixture_file_upload('spina.png','image/png')
         post "/admin/images", params: {image: {files: [spina_png]}, format: :js}
         delete "/admin/images/#{Spina::Image.last.id}"
+      end
+      
+      test "move an image to a folder" do
+        spina_png = fixture_file_upload('spina.png','image/png')
+        post "/admin/images", params: {image: {files: [spina_png]}, format: :js}
+        @media_folder = FactoryBot.create :media_folder, name: "Beautiful logos"
+        get "/admin/images"
+        assert_select "div", text: "Beautiful logos"
+        assert_select 'span', 'spina.png'
+        patch "/admin/images/#{Spina::Image.first.id}", params: {image: {media_folder_id: @media_folder.id}, format: :turbo_stream}
+        assert_not_empty @media_folder.images
       end
 
     end

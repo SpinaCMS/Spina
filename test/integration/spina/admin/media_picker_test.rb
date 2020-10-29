@@ -18,7 +18,7 @@ module Spina
         @image = Spina::Image.create(file: spina_png)
         get "/admin/media_picker"
 
-        assert_select ".media-picker-image input[type='checkbox'][value='#{@image.id}']"
+        assert_select "button[data-image-id='#{@image.id}']"
       end
 
     end

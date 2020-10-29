@@ -51,6 +51,7 @@ fr:
         no_parent: Pas de parent
         resource: 
         seo_title: Balise SEO <title>
+        seo_title_description: 
         seo_title_placeholder: Ce titre est utilisé dans a balise <title>
         show_in_menu: Afficher dans la navigation
         show_in_menu_description: Si désactivé cette page ne ​​sera pas affichée dans la navigation
@@ -94,9 +95,17 @@ fr:
         one: Utilisateur
         other: Utilisateurs
   spina:
+    accounts:
+      contact_details: 
+      contact_details_description: 
+      couldnt_be_saved: 
+      name_description: 
+      save: 
+      saved: 
     ago: Il y a
     attachments:
       choose_attachment: 
+      delete_confirmation_html: 
       insert: Insérer un document
       insert_multiple: Insérer des documents
     cancel: Annuler
@@ -122,7 +131,7 @@ fr:
       choose_images: 
       confirm_selection: 
       delete: 
-      delete_confirmation: 
+      delete_confirmation_html: 
       delete_folder: 
       done_organizing: 
       insert_image: 
@@ -151,16 +160,44 @@ fr:
       th: 
       tr: 
       zh-CN: 
+    layout:
+      couldnt_be_saved: 
+      layout: 
+      no_layout_parts: 
+      save: 
+      saved: 
     login: Connexion
     logout: Déconnexion
     main_menu: Menu principal
     media_library:
+      add_folder: 
+      add_image: 
       attachments: Documents
+      back_to_all: 
+      filename: 
       images: 
+      images_count: 
+      insert: 
+      media_folder_delete_confirmation_html: 
+      no_folder: 
       photos: Images
+      rename_folder: 
+      save_media_folder: 
+      upload_from_device: 
+      uploading: 
     modal:
       agree: Oui, je suis sûr
       cancel: Non, annuler
+    navigations:
+      add_menu_item: 
+      add_sub_item: 
+      choose_page: 
+      delete_item: 
+      delete_item_confirmation_html: 
+      description: 
+      navigations: 
+      no_navigations: 
+      sorting_saved: 
     notifications:
       alert: Oups! Quelque chose a mal fonctionné
       information: Information
@@ -169,27 +206,50 @@ fr:
     options:
       choose_option: 
     pages:
+      add_page_to: 
+      add_translation: 
       advanced: Avancé
+      cannot_be_deleted: 
       change_order: Changer l'ordre
+      change_view_template: 
+      change_view_template_confirmation: 
       concept: brouillon
+      create: 
       create_page: Nouvelle page %{template}
+      delete: 
       delete_confirmation: 'Êtes-vous sûr de vouloir supprimer la page :  <strong>%{subject}</strong> ?'
+      deleted: 
       done_changing_order: Changement d'ordre effectué
+      edit_translation: 
       invisible_to_search_engines: Votre site n'apparait pas sur les moteurs de recherche
       invisible_to_search_engines_description: Allez dans vos préférences pour activer l'indexation sur les moteurs de recherche.
+      main_collection: 
       materialize_path_confirmation: Êtes-vous sûr de vouloir reconstruire le chemin pour cette page ?
+      missing_translations: 
+      move_page: 
+      moved: 
       new: Nouvelle page
+      no_pages_yet: 
+      no_parent_page: 
       page_content: Contenu
       page_part: Section de page
       page_seo: Moteurs de recherche
+      path: 
       photo_picker: Choisir une image
       photos_picker: Choisir des images
+      preview: 
+      publish: 
+      published: 
       rebuild_materialized_path: Reconstruire le chemin matérialisé
       save: Sauvegarder la page
+      save_changes: 
+      save_draft: 
       saved: Page enregistrée
       saving: Enregistrement...
+      search_engines: 
       show_in_menu: invisible
       skip_to_first_child: Renvoyer vers la première page enfant
+      sorting_saved: 
     permanently_delete: Supprimer définitivement
     photos:
       cannot_be_created: 'L''image n''a pas pu être traitée :'
@@ -228,16 +288,46 @@ fr:
     preview_website: Aperçu du site
     resources:
       edit: 
+      label_description: 
+      manual_sorting: 
+      no_default_template: 
+      saved: 
+      settings: 
+      settings_description: 
     save: Enregistrer
     search: Rechercher...
     settings:
       save: Enregistrer les paramètres
       title: Paramètres
+    theme:
+      save: 
+      saved: 
+      theme: 
+      theme_description: 
+    ui:
+      cancel: 
+      delete: 
+      load_more: 
+      move_to: 
+      new_entry: 
+      optional: 
+      rename: 
+      save_changes: 
+      saving: 
     users:
+      authorization: 
+      authorization_description: 
       cannot_be_created: L'utilisateur ne peut pas être sauvegarder
-      delete_confirmation: 'Êtes-vous sûr de vouloir supprimer l''utilisateur :  <strong>%{user}</strong> ?'
+      delete: 
+      delete_confirmation_html: 'Êtes-vous sûr de vouloir supprimer l''utilisateur :  <strong>%{user}</strong> ?'
+      deleted: 
+      last_login: 
+      never_logged_in: 
       new: Nouvel utilisateur
+      profile: 
+      profile_description: 
       save: Sauvegarder l'utilisateur
+      saved: 
     visit_page: 
     website:
       all_pages: Toutes les pages
@@ -254,5 +344,9 @@ fr:
       heading_2: Titre 2
       heading_3: Titre 3
       insert_link: Insérer un lien
+      link: 
       paragraph: Paragraphe
       quote: Citation
+      unlink: 
+      url: 
+      url_placeholder: 

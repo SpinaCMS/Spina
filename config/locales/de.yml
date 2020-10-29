@@ -51,6 +51,7 @@ de:
         no_parent: Kein Eltern Element
         resource: 
         seo_title: SEO <title>
+        seo_title_description: 
         seo_title_placeholder: Dieser Titel wird im <title>-tag verwendet
         show_in_menu: In der Navigation anzeigen
         show_in_menu_description: Wenn diese Option ausgeschaltet ist, wird deine Seite nicht in der Navigation angezeigt
@@ -94,9 +95,17 @@ de:
         one: Benutzer
         other: Benutzer
   spina:
+    accounts:
+      contact_details: 
+      contact_details_description: 
+      couldnt_be_saved: 
+      name_description: 
+      save: 
+      saved: 
     ago: vor
     attachments:
       choose_attachment: 
+      delete_confirmation_html: 
       insert: Dokument einfügen
       insert_multiple: Dokumente einfügen
     cancel: Abbrechen
@@ -122,7 +131,7 @@ de:
       choose_images: 
       confirm_selection: 
       delete: 
-      delete_confirmation: 
+      delete_confirmation_html: 
       delete_folder: 
       done_organizing: 
       insert_image: 
@@ -151,16 +160,44 @@ de:
       th: 
       tr: 
       zh-CN: 
+    layout:
+      couldnt_be_saved: 
+      layout: 
+      no_layout_parts: 
+      save: 
+      saved: 
     login: Login
     logout: Logout
     main_menu: Hauptmenü
     media_library:
+      add_folder: 
+      add_image: 
       attachments: Dokumente
+      back_to_all: 
+      filename: 
       images: 
+      images_count: 
+      insert: 
+      media_folder_delete_confirmation_html: 
+      no_folder: 
       photos: Bilder
+      rename_folder: 
+      save_media_folder: 
+      upload_from_device: 
+      uploading: 
     modal:
       agree: Ja, ich bin sicher
       cancel: Nein, abbrechen
+    navigations:
+      add_menu_item: 
+      add_sub_item: 
+      choose_page: 
+      delete_item: 
+      delete_item_confirmation_html: 
+      description: 
+      navigations: 
+      no_navigations: 
+      sorting_saved: 
     notifications:
       alert: Oops! Etwas ist falsch gelaufen
       information: Information
@@ -169,27 +206,50 @@ de:
     options:
       choose_option: 
     pages:
+      add_page_to: 
+      add_translation: 
       advanced: Erweitert
+      cannot_be_deleted: 
       change_order: Reihenfolge ändern
+      change_view_template: 
+      change_view_template_confirmation: 
       concept: Entwurf
+      create: 
       create_page: Neu %{template}
+      delete: 
       delete_confirmation: Bist du sicher, dass du die Seite <strong>%{subject}</strong> löschen möchtest?
+      deleted: 
       done_changing_order: Reihenfolge speichern
+      edit_translation: 
       invisible_to_search_engines: Deine Website ist für Suchmaschinen nicht sichtbar.
       invisible_to_search_engines_description: Gehe zu deinen Einstellungen um Suchmaschinen-Support zu aktivieren.
+      main_collection: 
       materialize_path_confirmation: Bist du sicher, dass du den Pfad für diese Seite neu erzeugen willst?
+      missing_translations: 
+      move_page: 
+      moved: 
       new: Neue Seite
+      no_pages_yet: 
+      no_parent_page: 
       page_content: Inhalt
       page_part: Seiteninhalt
       page_seo: Suchmaschinen
+      path: 
       photo_picker: Wähle Bild
       photos_picker: Wähle Bilder
+      preview: 
+      publish: 
+      published: 
       rebuild_materialized_path: Materialisierten Pfad neu erzeugen
       save: Seite speichern
+      save_changes: 
+      save_draft: 
       saved: Seite gespeichert
       saving: Speichert...
+      search_engines: 
       show_in_menu: unsichtbar
       skip_to_first_child: Springe zur ersten Unterseite
+      sorting_saved: 
     permanently_delete: Permanent Löschen
     photos:
       cannot_be_created: 'Bild kann nicht verarbeitet werden:'
@@ -228,16 +288,46 @@ de:
     preview_website: Vorschau der Webseite
     resources:
       edit: 
+      label_description: 
+      manual_sorting: 
+      no_default_template: 
+      saved: 
+      settings: 
+      settings_description: 
     save: Speichern
     search: Suchen...
     settings:
       save: Einstellungen speichern
       title: Einstellungen
+    theme:
+      save: 
+      saved: 
+      theme: 
+      theme_description: 
+    ui:
+      cancel: 
+      delete: 
+      load_more: 
+      move_to: 
+      new_entry: 
+      optional: 
+      rename: 
+      save_changes: 
+      saving: 
     users:
+      authorization: 
+      authorization_description: 
       cannot_be_created: Der Benutzer kann nicht gespeichert werden
-      delete_confirmation: Bist du sicher, dass du den Benutzer <strong>%{user}</strong> löschen möchtest?
+      delete: 
+      delete_confirmation_html: Bist du sicher, dass du den Benutzer <strong>%{user}</strong> löschen möchtest?
+      deleted: 
+      last_login: 
+      never_logged_in: 
       new: Neuer Benutzer
+      profile: 
+      profile_description: 
       save: Benutzer speichern
+      saved: 
     visit_page: 
     website:
       all_pages: Alle Seiten
@@ -254,5 +344,9 @@ de:
       heading_2: Überschrift 2
       heading_3: Überschrift 3
       insert_link: Link einfügen
+      link: 
       paragraph: Paragraph
       quote: Zitat
+      unlink: 
+      url: 
+      url_placeholder: 

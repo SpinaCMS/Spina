@@ -51,6 +51,7 @@ bg:
         no_parent: Няма родителска страница
         resource: 
         seo_title: SEO <title>
+        seo_title_description: 
         seo_title_placeholder: Това заглавие се отпечатва в <title>-tag
         show_in_menu: Покажи в навигацията
         show_in_menu_description: Когато тази опция не е активна, страницата няма да е видима в навигацията
@@ -94,9 +95,17 @@ bg:
         one: Потребител
         other: Потребители
   spina:
+    accounts:
+      contact_details: 
+      contact_details_description: 
+      couldnt_be_saved: 
+      name_description: 
+      save: 
+      saved: 
     ago: преди
     attachments:
       choose_attachment: 
+      delete_confirmation_html: 
       insert: Добавете документ
       insert_multiple: Добавете документи
     cancel: Спри
@@ -122,7 +131,7 @@ bg:
       choose_images: 
       confirm_selection: 
       delete: 
-      delete_confirmation: 
+      delete_confirmation_html: 
       delete_folder: 
       done_organizing: 
       insert_image: 
@@ -151,16 +160,44 @@ bg:
       th: Тайландски
       tr: Турски
       zh-CN: Китайски (опростен)
+    layout:
+      couldnt_be_saved: 
+      layout: 
+      no_layout_parts: 
+      save: 
+      saved: 
     login: Вход
     logout: Изход
     main_menu: Основно меню
     media_library:
+      add_folder: 
+      add_image: 
       attachments: Документи
+      back_to_all: 
+      filename: 
       images: 
+      images_count: 
+      insert: 
+      media_folder_delete_confirmation_html: 
+      no_folder: 
       photos: Изображения
+      rename_folder: 
+      save_media_folder: 
+      upload_from_device: 
+      uploading: 
     modal:
       agree: Да, сигурен съм
       cancel: Не, спри
+    navigations:
+      add_menu_item: 
+      add_sub_item: 
+      choose_page: 
+      delete_item: 
+      delete_item_confirmation_html: 
+      description: 
+      navigations: 
+      no_navigations: 
+      sorting_saved: 
     notifications:
       alert: Възникна грешка
       information: Информация
@@ -169,27 +206,50 @@ bg:
     options:
       choose_option: 
     pages:
+      add_page_to: 
+      add_translation: 
       advanced: Разширени
+      cannot_be_deleted: 
       change_order: Смяна на подредба
+      change_view_template: 
+      change_view_template_confirmation: 
       concept: чернова
+      create: 
       create_page: Нов %{template}
+      delete: 
       delete_confirmation: Сигурен ли сте, че желаете да изтриете страницата <strong>%{subject}</strong>?
+      deleted: 
       done_changing_order: Приключено подреждане
+      edit_translation: 
       invisible_to_search_engines: Вашият сайт е невидим за търсачки
       invisible_to_search_engines_description: Отидете на Настройки за да активирате търсачки.
+      main_collection: 
       materialize_path_confirmation: Сигурен ли сте, че искате да възтановите оригиналния адрес на тази страница?
+      missing_translations: 
+      move_page: 
+      moved: 
       new: Нова страница
+      no_pages_yet: 
+      no_parent_page: 
       page_content: Съдържание на страницата
       page_part: Секция от страницата
       page_seo: Търсачки
+      path: 
       photo_picker: Изберете изображение
       photos_picker: Изберете изображения
+      preview: 
+      publish: 
+      published: 
       rebuild_materialized_path: Възтановяване на оригинален адрес
       save: Запис на страницата
+      save_changes: 
+      save_draft: 
       saved: Страницата е записана
       saving: Запис...
+      search_engines: 
       show_in_menu: невидима
       skip_to_first_child: изпрати към първата дъщерна страница
+      sorting_saved: 
     permanently_delete: Изтрий завинаги
     photos:
       cannot_be_created: 'Изображението неможе да бъде обработено:'
@@ -228,16 +288,46 @@ bg:
     preview_website: Преглед на сайта
     resources:
       edit: Редакция на ресурс
+      label_description: 
+      manual_sorting: 
+      no_default_template: 
+      saved: 
+      settings: 
+      settings_description: 
     save: Запази
     search: Търсене...
     settings:
       save: Запази настройките
       title: Настройки
+    theme:
+      save: 
+      saved: 
+      theme: 
+      theme_description: 
+    ui:
+      cancel: 
+      delete: 
+      load_more: 
+      move_to: 
+      new_entry: 
+      optional: 
+      rename: 
+      save_changes: 
+      saving: 
     users:
+      authorization: 
+      authorization_description: 
       cannot_be_created: Потребителя неможе да бъде записан
-      delete_confirmation: Сигурен ли сте, че искате да изтриете потребител <strong>%{user}</strong>?
+      delete: 
+      delete_confirmation_html: Сигурен ли сте, че искате да изтриете потребител <strong>%{user}</strong>?
+      deleted: 
+      last_login: 
+      never_logged_in: 
       new: Нов потребител
+      profile: 
+      profile_description: 
       save: Запис на потребител
+      saved: 
     visit_page: 
     website:
       all_pages: Всички страници
@@ -254,5 +344,9 @@ bg:
       heading_2: Heading 2
       heading_3: Heading 3
       insert_link: Позтавете линк
+      link: 
       paragraph: Параграф
       quote: Цитат
+      unlink: 
+      url: 
+      url_placeholder: 

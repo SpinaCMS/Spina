@@ -1,0 +1,24 @@
+<%= form_with url: spina.admin_sessions_path do |f| %>
+  <div class="flex flex-col max-w-xs mx-auto items-center">
+    <div class="py-8">
+      <%= image_tag 'spina/spina.svg', width: 75 %>
+    </div>
+    
+    <% if flash[:alert] %>
+      <div class="bg-red-400 p-2 px-4 rounded-full font-medium text-white mb-5">
+        <%= flash[:alert] %>
+      </div>
+    <% end %>
+    
+    <%= f.email_field :email, placeholder: Spina::User.human_attribute_name(:email), class: 'form-input w-full' %>
+    
+    <%= f.password_field :password, placeholder: Spina::User.human_attribute_name(:password), class: 'form-input mt-3 w-full' %>
+    
+    <%= button_tag type: :submit, class: "btn btn-primary h-10 mt-3 w-full" do %>
+      <%= t('spina.login') %>
+      <%= heroicon('login', style: :solid, class: 'w-4 h-4 ml-2') %>
+    <% end %>
+    
+    <%= link_to t('spina.forgot_password.new'), spina.new_admin_password_reset_path, class: "btn btn-default h-10 mt-3 w-full" %>
+  </div>
+<% end %>
