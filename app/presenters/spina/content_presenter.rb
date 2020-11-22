@@ -23,6 +23,12 @@ module Spina
       view_context.image_tag main_app_image_url(image, variant_options), options.merge(image_tag_options) if image.present?
     end
 
+    def datetime(name, format = :long)
+      format = Time::DATE_FORMATS[format] unless format.is_a? String
+      date_time = find_part(name)&.content
+      date_time.strftime(format)
+    end
+
     def image_url(image, variant_options = {})
       image = find_part(image) unless image.is_a? Spina::Parts::Image
       main_app_image_url(image, variant_options) if image.present?

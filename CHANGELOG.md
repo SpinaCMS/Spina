@@ -8,6 +8,7 @@
 
 * Resize images embedded in Trix (configurable in spina.rb)
 * Added `Spina::Parts::MultiLine`
+* Added `Spina::Parts::Datetime`
 
 ### 2.0.0.alpha
 

@@ -9,6 +9,7 @@ A page in Spina has many parts. By default these parts can be one of the followi
 - Spina::Parts::ImageCollection
 - Spina::Parts::Repeater
 - Spina::Parts::Option
+- Spina::Parts::Datetime
 
 These are the building blocks of your view templates. You can have an unlimited number of parts in a page. We prefer to keep the number of parts to a minimum so that managing your pages isn't too complex.
 

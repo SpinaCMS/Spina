@@ -1,0 +1,2 @@
+.page-form-label= f.object.title
+.page-form-control= f.text_field :content, placeholder: f.object.title, data: { controller: 'datetime-picker' }.merge(f.object.options || {})

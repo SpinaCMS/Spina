@@ -10,6 +10,7 @@
 // Stimulus
 
 //= require spina/stimulus.umd
+//= require spina/stimulus-flatpickr.umd
 //= require_tree ./controllers
 
 // File Upload
