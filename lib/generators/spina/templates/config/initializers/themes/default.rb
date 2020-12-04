@@ -30,7 +30,7 @@
 
   theme.navigations = [{
     name: 'mobile',
-    label: 'Mobile'  
+    label: 'Mobile'
   }, {
     name: 'main',
     label: 'Main navigation',
