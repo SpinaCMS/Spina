@@ -11,7 +11,7 @@ namespace :spina do
       Mobility.with_locale(locale) do
 
         Spina::Page.all.order(:id).each do |page|
-          page.title = page.title(fallback: Mobility.new_fallbacks[locale])
+          page.title = page.title(fallback: I18n.fallbacks[locale])
           page.save
         end
 
