@@ -16,7 +16,6 @@ module Spina
           attachment.file.attach(file)
           attachment
         end
-        redirect_back fallback_location: spina.admin_attachments_path
       end
 
       def destroy
