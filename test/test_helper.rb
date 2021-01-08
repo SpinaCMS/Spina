@@ -19,13 +19,9 @@ end
 FactoryBot.find_definitions
 
 # Load fixtures from the engine
-# ActiveSupport::TestCase.fixture_path = File.expand_path("../fixtures", __FILE__)
-ActionDispatch::IntegrationTest.fixture_path = File.expand_path("../fixtures", __FILE__)
-#
-# class ActiveSupport::TestCase
-#   fixtures :all
-# end
-#
-# class ActionDispatch::IntegrationTest
-#   fixtures :all
-# end
+if ActiveSupport::TestCase.respond_to?(:fixture_path=)
+  ActiveSupport::TestCase.fixture_path = File.expand_path("fixtures", __dir__)
+  ActionDispatch::IntegrationTest.fixture_path = ActiveSupport::TestCase.fixture_path
+  ActiveSupport::TestCase.file_fixture_path = ActiveSupport::TestCase.fixture_path + "/files"
+  ActiveSupport::TestCase.fixtures :all
+end

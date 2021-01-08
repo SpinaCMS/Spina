@@ -18,7 +18,7 @@ module Spina
       end
 
       test "upload a new document" do
-        spina_png = fixture_file_upload('files/spina.png','image/png')
+        spina_png = fixture_file_upload('spina.png','image/png')
         post "/admin/attachments", params: {attachment: {files: [spina_png]}, format: :js}
         get "/admin/attachments"
         assert_select 'table a', 'spina.png'
