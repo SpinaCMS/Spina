@@ -74,12 +74,17 @@ module Spina
     def next_sibling
       siblings.where('position > ?', position).sorted.first
     end
-
+    
     def set_materialized_path
       self.old_path = materialized_path
       self.materialized_path = localized_materialized_path
-      self.materialized_path = localized_materialized_path + "-#{Page.i18n.where(materialized_path: materialized_path).count}" if Page.i18n.where(materialized_path: materialized_path).where.not(id: id).count > 0
-      materialized_path
+      
+      # Append counter to duplicate materialized_path
+      i = 0
+      while duplicate_materialized_path?
+        i += 1
+        self.materialized_path = localized_materialized_path.concat("-#{i}")
+      end
     end
 
     def cache_key
@@ -118,6 +123,10 @@ module Spina
         path_fragments.append *ancestors.collect(&:slug)
         path_fragments.append(slug) unless name == 'homepage'
         path_fragments.compact.map(&:parameterize).join('/')
+      end
+      
+      def duplicate_materialized_path?
+        self.class.where.not(id: id).i18n.where(materialized_path: materialized_path).exists?
       end
 
   end
