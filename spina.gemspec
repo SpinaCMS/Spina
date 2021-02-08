@@ -29,7 +29,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'breadcrumbs_on_rails'
   s.add_dependency 'turbolinks', '~> 5'
   s.add_dependency 'kaminari'
-  s.add_dependency 'mobility', '1.0.7'
+  s.add_dependency 'mobility', '1.1.0'
   s.add_dependency 'rack-rewrite', '>= 1.5.0'
   s.add_dependency 'jsonb_accessor', '>= 1.0.0'
   s.add_dependency 'attr_json'
