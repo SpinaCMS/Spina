@@ -2,7 +2,7 @@ source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gemspec
-gem 'rails', '~> 6.1.2'
+gem 'rails', '~> 6.1.3'
 
 group :test do
   gem 'factory_bot'
