@@ -13,9 +13,6 @@
     / Stylesheet
     = stylesheet_link_tag 'spina/admin/application', data: {turbolinks_track: true}
 
-    /[if lt IE 9]
-      = javascript_include_tag '//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js', data: {turbolinks_track: true}
-
     / JavaScript
     = javascript_include_tag 'spina/admin/application', data: {turbolinks_track: true}
     = yield(:plugin_stylesheets)
