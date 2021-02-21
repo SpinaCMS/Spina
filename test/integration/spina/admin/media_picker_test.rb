@@ -13,7 +13,8 @@ module Spina
       end
 
       test "Show media picker with spina.png" do
-        spina_png = fixture_file_upload('files/spina.png','image/png')
+        spina_png = fixture_file_upload("spina.png", 'image/png')
+        
         @image = Spina::Image.create(file: spina_png)
         get "/admin/media_picker"
 

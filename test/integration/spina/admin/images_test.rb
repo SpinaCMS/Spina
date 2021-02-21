@@ -18,14 +18,14 @@ module Spina
       end
 
       test "upload a new image" do
-        spina_png = fixture_file_upload('files/spina.png','image/png')
+        spina_png = fixture_file_upload('spina.png','image/png')
         post "/admin/images", params: {image: {files: [spina_png]}, format: :js}
         get "/admin/images"
         assert_select 'span.photo-name', 'spina.png'
       end
 
       test "delete image" do
-        spina_png = fixture_file_upload('files/spina.png','image/png')
+        spina_png = fixture_file_upload('spina.png','image/png')
         post "/admin/images", params: {image: {files: [spina_png]}, format: :js}
         delete "/admin/images/#{Spina::Image.last.id}"
       end

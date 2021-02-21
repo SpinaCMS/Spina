@@ -1,5 +1,14 @@
-Mobility.configure do |config|
-  config.default_backend = :table
-  config.accessor_method = :translates
-  config.query_method    = :i18n
+Mobility.configure do
+  plugins do
+    backend :table
+    active_record
+    reader
+    writer
+    backend_reader
+    query
+    cache
+    presence
+    fallbacks false # default to false, enable if passed fallbacks: true
+    default
+  end
 end
