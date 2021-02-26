@@ -12,9 +12,9 @@ Spina.configure do |config|
   # Specify a backend path. Defaults to /admin.
   # config.backend_path = 'admin'
   
-  # The parent controller all Spina controllers inherit from
+  # The parent controller all frontend Spina controllers inherit from
   # Defaults to ApplicationController
-  # config.parent_controller = "ApplicationController"
+  # config.frontend_parent_controller = "ApplicationController"
 
   # Pages Options
   # ===============

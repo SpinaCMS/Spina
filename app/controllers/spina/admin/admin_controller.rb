@@ -1,6 +1,10 @@
 module Spina
   module Admin
-    class AdminController < ::Spina::ApplicationController
+    class AdminController < ActionController::Base
+      include Spina::CurrentMethods
+      
+      helper Spina::Engine.helpers
+      
       before_action :set_admin_locale
       before_action :authorize_spina_user
 
