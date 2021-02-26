@@ -25,6 +25,15 @@ module Spina
       def present?
         signed_blob_id.present?
       end
+      
+      def signed_id
+        signed_blob_id
+      end
+      
+      def variant(options)
+        Spina::Parts::ImageVariant.new(self, options)
+      end
+      
     end
   end
 end
