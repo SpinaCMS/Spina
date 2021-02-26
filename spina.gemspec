@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.files = Dir['{app,config,db,lib,vendor}/**/*'] + ['Rakefile', 'README.md']
   # s.test_files = Dir['test/**/*']
 
-  s.add_dependency 'rails', '>= 5.2'
+  s.add_dependency 'rails', '>= 6.0'
   s.add_dependency 'pg'
   s.add_dependency 'bcrypt'
   s.add_dependency 'haml-rails'
