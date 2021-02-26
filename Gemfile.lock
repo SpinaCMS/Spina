@@ -15,7 +15,7 @@ PATH
       mobility (= 1.1.1)
       pg
       rack-rewrite (>= 1.5.0)
-      rails (>= 5.2)
+      rails (>= 6.0)
       sass-rails
       turbolinks (~> 5)
 
