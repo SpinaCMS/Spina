@@ -39,6 +39,19 @@ module Spina
       get "/demo"
       assert_select 'h1', 'Demo'
     end
+    
+    test "view demo page with image" do
+      spina_png = fixture_file_upload('spina.png','image/png')
+      
+      @image = Spina::Image.create
+      @image.file.attach(io: spina_png, filename: 'spina.png')
+      
+      image_part = Spina::Parts::Image.new(name: "image", title: "Image", image_id: @image.id, signed_blob_id: @image.file.blob.signed_id, alt: "", filename: "spina.png")
+      
+      @demo_page.update(en_content: [image_part]) 
+      get "/demo"
+      assert_select 'img'
+    end
 
     # Different languages
     test "view homepage in another language" do
