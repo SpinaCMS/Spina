@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
-  resolve("Spina::Parts::Image") { |image, options| route_for(ActiveStorage.resolve_model_to_route, image, options) }
-  resolve("Spina::Parts::ImageVariant") { |image, options| route_for(ActiveStorage.resolve_model_to_route, image, options) }
-  resolve("Spina::Parts::Attachment") { |attachment, options| route_for(ActiveStorage.resolve_model_to_route, attachment, options) }
+  if ActiveStorage.respond_to?(:resolve_model_to_route)
+    resolve("Spina::Parts::Image") { |image, options| route_for(ActiveStorage.resolve_model_to_route, image, options) }
+    resolve("Spina::Parts::ImageVariant") { |image, options| route_for(ActiveStorage.resolve_model_to_route, image, options) }
+    resolve("Spina::Parts::Attachment") { |attachment, options| route_for(ActiveStorage.resolve_model_to_route, attachment, options) }
+  else
+    resolve("Spina::Parts::Image") { |image, options| route_for(:rails_blob, image, options) }
+    resolve("Spina::Parts::ImageVariant") { |image, options| route_for(:rails_representation, image, options) }
+    resolve("Spina::Parts::Attachment") { |attachment, options| route_for(:rails_blob, attachment, options) }
+  end
 end
 
 Spina::Engine.routes.draw do
