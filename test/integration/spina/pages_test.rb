@@ -50,5 +50,11 @@ module Spina
       get "/nl/over-ons"
       assert_select 'h1', 'Over ons'
     end
+    
+    test "helper methods parent app" do
+      get "/"
+      assert_select 'body', /This is some helper method/
+    end
+    
   end
 end
