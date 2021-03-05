@@ -4,33 +4,41 @@ $:.push File.expand_path('lib', __dir__)
 require 'spina/version'
 
 # Describe your gem and declare its dependencies:
-Gem::Specification.new do |s|
-  s.name        = 'spina'
-  s.version     = Spina::VERSION
-  s.authors     = ['Bram Jetten']
-  s.email       = ['bram@denkgroot.com']
-  s.homepage    = 'http://www.denkgroot.com'
-  s.summary     = 'Spina'
-  s.description = 'CMS'
-  s.licenses    = ['MIT']
+Gem::Specification.new do |gem|
+  gem.name        = 'spina'
+  gem.version     = Spina::VERSION
+  
+  gem.authors     = ['Bram Jetten']
+  gem.email       = ['bram@denkgroot.com']
+  gem.homepage    = 'https://www.spinacms.com'
+  gem.summary     = 'Spina'
+  gem.description = 'CMS'
+  gem.license     = 'MIT'
+  
+  gem.metadata = {
+    "homepage_uri" => "https://www.spinacms.com",
+    "bug_tracker_uri" => "https://github.com/SpinaCMS/Spina/issues",
+    "documentation_uri" => "https://www.spinacms.com/guide",
+    "changelog_uri" => "https://github.com/SpinaCMS/Spina/blob/master/CHANGELOG.md",
+    "source_code_uri" => "https://github.com/SpinaCMS/Spina",
+  }
 
-  s.files = Dir['{app,config,db,lib,vendor}/**/*'] + ['Rakefile', 'README.md']
-  # s.test_files = Dir['test/**/*']
+  gem.files = Dir['{app,config,db,lib,vendor}/**/*'] + ['Rakefile', 'README.md']
 
-  s.add_dependency 'rails', '>= 6.0'
-  s.add_dependency 'pg'
-  s.add_dependency 'bcrypt'
-  s.add_dependency 'haml-rails'
-  s.add_dependency 'sass-rails'
-  s.add_dependency 'coffee-rails'
-  s.add_dependency 'jquery-rails'
-  s.add_dependency 'image_processing'
-  s.add_dependency 'ancestry'
-  s.add_dependency 'breadcrumbs_on_rails'
-  s.add_dependency 'turbolinks', '~> 5'
-  s.add_dependency 'kaminari'
-  s.add_dependency 'mobility', '1.1.1'
-  s.add_dependency 'rack-rewrite', '>= 1.5.0'
-  s.add_dependency 'jsonb_accessor', '>= 1.0.0'
-  s.add_dependency 'attr_json'
+  gem.add_dependency 'rails', '>= 6.0'
+  gem.add_dependency 'pg'
+  gem.add_dependency 'bcrypt'
+  gem.add_dependency 'haml-rails'
+  gem.add_dependency 'sass-rails'
+  gem.add_dependency 'coffee-rails'
+  gem.add_dependency 'jquery-rails'
+  gem.add_dependency 'image_processing'
+  gem.add_dependency 'ancestry'
+  gem.add_dependency 'breadcrumbs_on_rails'
+  gem.add_dependency 'turbolinks', '~> 5'
+  gem.add_dependency 'kaminari'
+  gem.add_dependency 'mobility', '1.1.1'
+  gem.add_dependency 'rack-rewrite', '>= 1.5.0'
+  gem.add_dependency 'jsonb_accessor', '>= 1.0.0'
+  gem.add_dependency 'attr_json'
 end
