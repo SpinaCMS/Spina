@@ -4,8 +4,8 @@
 
 ⚠️ _Beware: lots of changes regarding page content. The old page parts are gone in favor of new JSON-based parts. Read the [Upgrading Guide](https://www.spinacms.com/guide/getting-started/upgrading-from-v1) to learn how to upgrade._
 
-### Unreleased
-–
+### 2.0.0 (March 13th, 2021)
+_No changes since beta_
 
 ### 2.0.0.beta (March 5th, 2021)
 
