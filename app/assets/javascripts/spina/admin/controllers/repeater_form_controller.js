@@ -17,7 +17,7 @@
           // Sort the DOM elements containing the repeater fields
           let array = [...this.contentTarget.children]
           array.sort(function(a, b) {
-            return order_of_ids.indexOf(parseInt(a.dataset.partId)) > order_of_ids.indexOf(parseInt(b.dataset.partId))
+            return order_of_ids.indexOf(parseInt(a.dataset.partId)) - order_of_ids.indexOf(parseInt(b.dataset.partId))
           }).map(node => this.contentTarget.appendChild(node))
         }.bind(this)
       })
