@@ -5,4 +5,4 @@
         = t('spina.images.delete')
       %span.photo-name= truncate(image.name, length: 125)
 
-  = image_tag main_app.url_for(image.file.variant(resize: '300x300^', crop: "300x300+0+0"))
+  = image_tag main_app.url_for(image.variant(resize: '300x300^', crop: "300x300+0+0"))
