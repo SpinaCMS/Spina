@@ -22,7 +22,7 @@ config.parts = [
 ## Image tag example
 
 ```
-<%= content.image(:header_image, {resize: '200x200'}, {class: 'image'}) %>
+<%= content.image_tag(:header_image, {resize: '200x200'}, {class: 'image'}) %>
 ```
 
 This `content` helper will automatically add an `alt` attribute to the image. You can change the alt text when editing pages in Spina.
