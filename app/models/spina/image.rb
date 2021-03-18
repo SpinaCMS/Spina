@@ -12,7 +12,7 @@ module Spina
 
     def variant(options)
       return "" unless file.attached?
-      return file if ['svg', 'webp'].any? { |type| file.content_type.include? type }
+      return file if file.content_type.include?('svg')
       return file unless file.variable?
 
       file.variant(options)
