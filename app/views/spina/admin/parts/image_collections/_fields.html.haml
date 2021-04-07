@@ -2,6 +2,6 @@
 = f.hidden_field :signed_blob_id, class: 'signed-blob-id'
 = f.hidden_field :filename, class: 'filename'
 - if f.object.signed_blob_id.present? && f.object.spina_image
-  = image_tag main_app.url_for(f.object.spina_image.variant(resize: "400x300^", crop: "400x300+0+0"))
+  = image_tag main_app.url_for(f.object.spina_image.variant(resize_to_fill: [400, 300]))
 - else
   = image_tag ""

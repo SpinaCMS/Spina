@@ -10,7 +10,7 @@
           = f.hidden_field :filename, data: {target: 'image-form.filename'}
         %div{style: "width: 200px; height: 150px; overflow: hidden"}
           - if f.object.signed_blob_id.present? && f.object.spina_image.present?
-            = image_tag main_app.url_for(f.object.spina_image.variant(resize: "400x300^", crop: "400x300+0+0")), width: 200, height: 150
+            = image_tag main_app.url_for(f.object.spina_image.variant(resize_to_fill: [400, 300])), width: 200, height: 150
 
       = f.text_field :alt, placeholder: "Alt text", class: 'page-form-media-picker-alt-text'
 

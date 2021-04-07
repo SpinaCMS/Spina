@@ -35,6 +35,6 @@ module Spina
   # Images that are embedded in the Trix editor are resized to fit
   # You can optimize this for your website and go for a smaller (or larger) size
   # Default: 2000x2000px
-  self.embedded_image_size = "2000x2000>"
+  self.embedded_image_size = [2000, 2000]
 
 end

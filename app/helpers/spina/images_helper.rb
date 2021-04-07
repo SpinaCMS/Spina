@@ -3,12 +3,12 @@ module Spina
 
     def thumbnail_url(image)
       return "" if image.nil?
-      main_app.url_for(image.variant(resize: "400x300^", crop: "400x300+0+0"))
+      main_app.url_for(image.variant(resize_to_fill: [400, 300]))
     end
 
     def embedded_image_url(image)
       return "" if image.nil?
-      main_app.url_for(image.variant(resize: Spina.config.embedded_image_size))
+      main_app.url_for(image.variant(resize_to_fit: Spina.config.embedded_image_size))
     end
 
   end

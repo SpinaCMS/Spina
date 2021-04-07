@@ -16,7 +16,7 @@
             = link_to spina.admin_media_picker_path({media_folder_id: media_folder.id}.merge(request.query_parameters)), class: 'item media-folder', data: {remote: true} do
               .media-folder-thumbnail{data: {badge: media_folder.images.count}}
                 - if media_folder.images.any?
-                  = image_tag main_app.url_for(media_folder.images.last.variant(resize: '144x144^', crop: "144x144+0+0"))
+                  = image_tag main_app.url_for(media_folder.images.last.variant(resize_to_fill: [144, 144]))
                 - else
                   = image_tag 'spina/media_folder_placeholder.svg'
                 .media-folder-shadow
