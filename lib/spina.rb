@@ -19,6 +19,26 @@ module Spina
                   :locales, 
                   :embedded_image_size
 
+  # support embedded_image_size deprecation warning
+  class <<self
+    alias_method :config_original, :config
+  end
+
+  # support embedded_image_size deprecation warning
+  def self.config
+    config_obj = self.config_original
+
+    def config_obj.embedded_image_size=(image_size)
+      if image_size.is_a? String
+        warn("[DEPRECATION]: Spina embedded_image_size should be set to an array of arguments to be passed to the :resize_to_limit ImageProcessing macro. https://github.com/janko/image_processing/blob/master/doc/minimagick.md#resize_to_limit")
+      end
+
+      self[:embedded_image_size] = image_size
+    end
+
+    config_obj
+  end
+
   # Specify a backend path. Defaults to /admin.
   self.backend_path = 'admin'
   
