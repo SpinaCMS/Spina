@@ -15,7 +15,6 @@ module Spina
                    else
                      :resize_to_limit
                    end
-      byebug
       main_app.url_for(image.variant(Hash[resize_key, Spina.config.embedded_image_size]))
     end
 
