@@ -20,7 +20,7 @@ config.parts = [
 ```
 <% images(:cars) do |image| %>
 
-  <%= content.image_tag image, resize: '50x50' %>
+  <%= content.image_tag image, resize_to_fill: [50, 50] %>
 
 <% end %>
 ```
