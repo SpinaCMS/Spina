@@ -57,6 +57,8 @@ Spina is released under the [MIT license](LICENSE.md).
 
 ## Acknowledgements
 
+The Tailwind purger was created by [@dhh](https://twitter.com/dhh) for [tailwindcss-rails](https://github.com/rails/tailwindcss-rails)
+
 Icons were designed by [@steveschoger](https://twitter.com/steveschoger) - [Heroicons](https://github.com/tailwindlabs/heroicons).
 
 The font used in Spina's admin panel is called Metropolis and was created by Chris Simpson [Metropolis](https://github.com/chrismsimpson/Metropolis)
