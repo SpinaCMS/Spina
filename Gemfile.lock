@@ -12,7 +12,7 @@ PATH
       jquery-rails
       jsonb_accessor (>= 1.0.0)
       kaminari
-      mobility (= 1.1.1)
+      mobility (= 1.1.2)
       pg
       rack-rewrite (>= 1.5.0)
       rails (>= 6.0)
@@ -173,7 +173,7 @@ GEM
       builder
       minitest (>= 5.0)
       ruby-progressbar
-    mobility (1.1.1)
+    mobility (1.1.2)
       i18n (>= 0.6.10, < 2)
       request_store (~> 1.0)
     mocha (1.12.0)
