@@ -37,7 +37,7 @@ Gem::Specification.new do |gem|
   gem.add_dependency 'breadcrumbs_on_rails'
   gem.add_dependency 'turbolinks', '~> 5'
   gem.add_dependency 'kaminari'
-  gem.add_dependency 'mobility', '1.1.1'
+  gem.add_dependency 'mobility', '1.1.2'
   gem.add_dependency 'rack-rewrite', '>= 1.5.0'
   gem.add_dependency 'jsonb_accessor', '>= 1.0.0'
   gem.add_dependency 'attr_json'
