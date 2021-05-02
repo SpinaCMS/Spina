@@ -50,7 +50,6 @@ module Spina
       theme = ::Spina::Account.first.theme
       if theme.in? ['default', 'demo']
         template "config/initializers/themes/#{theme}.rb"
-        directory "app/assets/stylesheets/#{theme}"
         directory "app/views/#{theme}"
         directory "app/views/layouts/#{theme}"
       end
