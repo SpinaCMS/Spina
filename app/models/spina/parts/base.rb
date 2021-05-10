@@ -7,6 +7,12 @@ module Spina
 
       attr_json :title, :string
       attr_json :name, :string
+
+      def label
+        content&.to_s
+      end
+
+      def content; end
     end
   end
 end
