@@ -2,7 +2,10 @@
 
   theme.name = 'demo'
   theme.title = 'Demo theme'
-  theme.resources = [{name: "landing_pages", label: "Landing pages"}]
+  theme.resources = [
+    {name: "landing_pages", label: "Landing pages"}, 
+    {name: "blog", label: "Blog"}, 
+  ]
 
   # All available parts
   theme.parts = [{
@@ -61,21 +64,23 @@
   theme.view_templates = [{
     name: 'homepage',
     title: 'Homepage',
-    page_parts: [],
     parts: ['headline', 'body', 'image_collection']
   }, {
     name: 'show',
     title: 'Simple page',
     description: "Default layout",
     usage: 'Use for your content',
-    page_parts: [],
     parts: ['body', 'testrepeater']
   }, {
     name: 'demo',
     title: 'Demo',
     description: 'Example including all parts',
-    page_parts: [],
     parts: ['repeater', 'repeater2', 'attachment', 'option', 'body', 'image_collection', 'image', 'portrait', 'landscape', 'wide']
+  }, {
+    name: 'blogpost',
+    title: "Blogpost",
+    description: 'Article template',
+    parts: ['body']
   }]
 
   theme.custom_pages = [{

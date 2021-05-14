@@ -241,6 +241,7 @@ tr:
       publish: 
       published: 
       rebuild_materialized_path: 
+      recommended: 
       save: Sayfayı kaydet
       save_changes: 
       save_draft: 

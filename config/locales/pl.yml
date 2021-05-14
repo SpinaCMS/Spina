@@ -241,6 +241,7 @@ pl:
       publish: 
       published: 
       rebuild_materialized_path: Przebuduj adres
+      recommended: 
       save: Zapisz stronę
       save_changes: 
       save_draft: 

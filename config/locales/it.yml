@@ -241,6 +241,7 @@ it:
       publish: 
       published: 
       rebuild_materialized_path: Ricostruisci path
+      recommended: 
       save: Salva pagina
       save_changes: 
       save_draft: 

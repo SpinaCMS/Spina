@@ -241,6 +241,7 @@ bg:
       publish: 
       published: 
       rebuild_materialized_path: Възтановяване на оригинален адрес
+      recommended: 
       save: Запис на страницата
       save_changes: 
       save_draft: 

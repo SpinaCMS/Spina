@@ -241,6 +241,7 @@ th:
       publish: 
       published: 
       rebuild_materialized_path: กำหนดเส้นทางที่สร้างขึ้นใหม่
+      recommended: 
       save: บันทึกหน้า
       save_changes: 
       save_draft: 

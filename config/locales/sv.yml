@@ -241,6 +241,7 @@ sv:
       publish: 
       published: 
       rebuild_materialized_path: Bygg om materialiserade sökvägar
+      recommended: 
       save: Spara sida
       save_changes: 
       save_draft: 

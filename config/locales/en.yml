@@ -243,6 +243,7 @@ en:
       publish: Publish
       published: Page published
       rebuild_materialized_path: Rebuild materialized path
+      recommended: recommended
       save: Save page
       save_changes: Save changes
       save_draft: Save draft
