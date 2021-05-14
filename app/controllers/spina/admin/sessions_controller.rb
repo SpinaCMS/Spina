@@ -19,7 +19,7 @@ module Spina
       end
 
       def destroy
-        cookies.delete(:spina_user_id)
+        session.delete(:spina_user_id)
         redirect_to "/"
       end
     end
