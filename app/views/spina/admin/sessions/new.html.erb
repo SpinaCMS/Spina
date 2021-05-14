@@ -10,7 +10,7 @@
       </div>
     <% end %>
     
-    <%= f.email_field :email, placeholder: Spina::User.human_attribute_name(:email), class: 'form-input w-full' %>
+    <%= f.email_field :email, value: params[:email], placeholder: Spina::User.human_attribute_name(:email), class: 'form-input w-full' %>
     
     <%= f.password_field :password, placeholder: Spina::User.human_attribute_name(:password), class: 'form-input mt-3 w-full' %>
     
