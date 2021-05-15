@@ -1,4 +1,4 @@
-<div id="<%= f.object.object_id %>" class="cursor-move">
+<div data-controller="unique-id" data-unique-id="<%= f.object.object_id %>" class="cursor-move">
   <%= f.hidden_field :signed_blob_id, data: {media_picker_target: "signedBlobId"} %>
   <%= f.hidden_field :filename, data: {media_picker_target: "filename"} %>
   <%= f.hidden_field :image_id, data: {media_picker_target: "imageId"} %>

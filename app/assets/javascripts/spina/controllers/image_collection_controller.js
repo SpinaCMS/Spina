@@ -19,13 +19,7 @@ export default class extends Controller {
   }
   
   handleDone(event) {
-    let childIndex = this.element.dataset.childIndex
-    let fields = this.element.dataset.fields
-
-    // Get timestamp
-    let time = new Date().getTime()
-    let regex = new RegExp(childIndex, 'g')
-    let html = fields.replace(regex, time)
+    let html = this.element.dataset.fields
     
     let range = document.createRange()
     range.selectNodeContents(document.body)

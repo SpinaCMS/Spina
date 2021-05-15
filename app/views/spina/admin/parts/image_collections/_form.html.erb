@@ -6,7 +6,7 @@
   end.gsub("\n", "")
 %>
 
-<div class="mt-6 relative" data-controller="image-collection unique-id" data-unique-id="<%= dom_id(image, image.object_id) %>" data-action="media-picker:done->image-collection#handleDone" data-fields="<%= fields %>" data-child-index="<%= image.object_id %>">
+<div class="mt-6 relative" data-controller="image-collection unique-id" data-unique-id="<%= dom_id(image, image.object_id) %>" data-action="media-picker:done->image-collection#handleDone" data-fields="<%= fields %>">
   <label class="block text-sm leading-5 font-medium text-gray-700">
     <%= f.object.title %>
   </label>
