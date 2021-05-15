@@ -1,4 +1,4 @@
-<div class="mt-6 relative" data-controller="media-picker" id="<%= dom_id(f.object, f.object.object_id) %>" data-action="media-picker:done->media-picker#handleDone">
+<div class="mt-6 relative" data-controller="media-picker unique-id" data-unique-id="<%= dom_id(f.object, f.object.object_id) %>" data-action="media-picker:done->media-picker#handleDone">
   <label class="block text-sm leading-5 font-medium text-gray-700">
     <%= f.object.title %>
   </label>
