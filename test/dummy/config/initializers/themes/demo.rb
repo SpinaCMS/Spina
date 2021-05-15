@@ -12,7 +12,7 @@
     name: 'repeater',
     title: "Repeater",
     part_type: "Spina::Parts::Repeater",
-    parts: ['line', 'body', 'image']
+    parts: ['line', 'body', 'image', 'image_collection']
   }, {
     name: 'repeater2',
     title: "Repeater",
