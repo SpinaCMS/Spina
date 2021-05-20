@@ -57,11 +57,11 @@
           </div>
         </div>
     
-        <div data-tabs-target="pane" id="seo">
+        <div data-tabs-target="pane" id="seo" hidden>
           <%= render partial: 'form_seo', locals: {f: f} %>
         </div>
     
-        <div data-tabs-target="pane" id="advanced">
+        <div data-tabs-target="pane" id="advanced" hidden>
           <%= render partial: 'form_advanced', locals: {f: f} %>
         </div>
       <% end %>
