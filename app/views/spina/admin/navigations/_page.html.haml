@@ -1,8 +1,0 @@
-%tr
-  %td{style: "padding-left: #{20 * page.depth + 16}px"}
-    .form-checkbox
-      = check_box_tag 'navigation[page_ids][]', page.id, @navigation.page_ids.include?(page.id)
-      = label_tag page.title
-
-- if page.children.regular_pages.any?
-  = render partial: 'page', collection: page.children.sorted.regular_pages

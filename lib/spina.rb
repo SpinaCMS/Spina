@@ -1,11 +1,14 @@
+require 'spina/importmap_helper'
 require 'spina/engine'
+require 'spina/admin_sectionable'
 require 'spina/railtie'
 require 'spina/plugin'
 require 'spina/theme'
+require 'spina/tailwind_purger'
 require 'spina/attr_json_spina_parts_model'
+require 'spina/attr_json_monkeypatch'
 
 module Spina
-
   include ActiveSupport::Configurable
 
   PARTS = []
@@ -15,9 +18,11 @@ module Spina
   config_accessor :backend_path, 
                   :frontend_parent_controller,
                   :disable_frontend_routes,
-                  :max_page_depth, 
-                  :locales,
-                  :embedded_image_size
+                  :max_page_depth,
+                  :locales, 
+                  :embedded_image_size,
+                  :party_pooper,
+                  :tailwind_purge_content
 
   # Specify a backend path. Defaults to /admin.
   self.backend_path = 'admin'
@@ -31,6 +36,9 @@ module Spina
   self.max_page_depth = 5
 
   self.locales = [I18n.default_locale]
+  
+  # Don't like confetti?
+  self.party_pooper = false
 
   # Images that are embedded in the Trix editor are resized to fit
   # You can optimize this for your website and go for a smaller (or larger) size
@@ -54,5 +62,16 @@ module Spina
   end
   
   self.embedded_image_size = [2000, 2000]
+
+  
+  # Tailwind purging
+  # Spina will by default purge all unused Tailwind classes by scanning
+  # the files listed below. You probably don't want to override this in 
+  # your main app. Spina Plugins can add files to this array.
+  self.tailwind_purge_content = Spina::Engine.root.glob("app/views/**/*.*") + 
+                                Spina::Engine.root.glob("app/components/**/*.*") + 
+                                Spina::Engine.root.glob("app/helpers/**/*.*") + 
+                                Spina::Engine.root.glob("app/assets/javascripts/**/*.js") +
+                                Spina::Engine.root.glob("app/**/tailwind/custom.css")
 
 end

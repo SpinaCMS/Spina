@@ -1,0 +1,74 @@
+<%= render(Spina::UserInterface::ModalComponent.new(size: "max-w-6xl h-full")) do |component| %>
+  <div class="h-full w-full" data-controller="infinite-scroll media-picker-modal" data-target="<%= @target %>">
+    <turbo-frame id="media_picker">
+      <div class="flex flex-col md:flex-row h-full w-full">
+        <div class="flex-1 bg-white flex flex-col max-h-full relative overflow-hidden">
+          <div data-infinite-scroll-target="container" data-controller="selectable" class="p-6 h-full w-full overflow-scroll ">
+            
+            <!-- Images are loaded using nested turbo-frame-tags -->
+            <!-- Only load images in multiples of 4 so that this grid -->
+            <!-- will not show any gaps. -->
+            <turbo-frame id="images-<%= @images.current_page %>">
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-6 auto-rows-min">
+                <%= render Spina::MediaPicker::ImageComponent.with_collection(@images) %>
+              </div>
+              
+              <% if @images.next_page %>
+                <turbo-frame id="images-<%= @images.next_page %>">
+                  <%= link_to "...", helpers.path_to_next_page(@images), data: {infinite_scroll_target: "button"} %>
+                </turbo-frame>
+              <% end %>
+              
+            </turbo-frame>
+            
+          </div>
+        </div>
+      
+        <div class="md:w-72 p-4 border-t rounded-b-lg md:rounded-none md:border-t-0 border-gray-200 flex flex-col justify-between bg-gray-100 md:bg-opacity-50 md:rounded-l-lg">
+          <div class="hidden md:block md:mb-6">      
+            <%= link_to helpers.spina.admin_media_picker_path, class: "font-medium w-full text-sm px-3 py-2 rounded-lg flex items-center justify-between #{media_folder_classes(nil)}", data: {turbo_frame: "media_picker"} do %>
+              <div class="flex items-center">
+                <%= helpers.heroicon("collection", style: :solid, class: "w-5 h-5 mr-2 text-spina-light") %>
+                <%=t 'spina.images.all_images' %>
+              </div>
+              
+              <div class="text-gray-400 text-sm font-semibold">
+                <%= image_count %>
+              </div>
+            <% end %>
+      
+            <% media_folders.each do |media_folder| %>
+              <%= link_to helpers.spina.admin_media_picker_path(media_folder_id: media_folder.id), class: "font-medium w-full text-gray-600 text-sm px-3 py-2 cursor-pointer rounded-lg flex items-center justify-between #{media_folder_classes(media_folder)}", data: {turbo_frame: "media_picker"} do %>
+                <div class="flex items-center">
+                  <%= helpers.heroicon('folder', style: :solid, class: 'w-5 h-5 mr-2 text-spina-light') %>
+                  <%= media_folder.name %>
+                </div>
+                
+                <div class="text-gray-400 text-sm font-semibold">
+                  <%= media_folder.images.count %>
+                </div>
+              <% end %>
+            <% end %>
+            
+            <%= form_with model: [:admin, Spina::Image.new], url: helpers.spina.admin_images_path, data: {controller: "form loading-button", loading_message: t('spina.media_library.uploading'), action: "turbo:submit-end->loading-button#doneLoading", turbo_frame: "media_picker"} do |f| %>
+              <%= hidden_field_tag :modal, true %>
+              <%= f.hidden_field :media_folder_id, value: @media_folder&.id %>
+              
+              <%= f.file_field :files, multiple: true, accept: "image/*", id: "new_image_file_field", class: 'hidden', data: {action: "loading-button#loading form#requestSubmit"} %>
+              
+              <button type="button" class="font-medium w-full text-gray-600 text-sm hover:bg-gray-200 px-3 py-2 cursor-pointer rounded-lg flex items-center w-full" data-controller="delegate-click" data-action="delegate-click#click" data-loading-button-target="button" data-delegate-click-target="#new_image_file_field">
+                <%= helpers.heroicon("upload", style: :solid, class: "w-5 h-5 text-spina mr-2") %>
+                <%=t 'spina.media_library.upload_from_device' %>
+              </button>
+            <% end %>
+          </div>
+          
+          <button type="button" class="btn btn-primary w-full mt-3" data-action="media-picker-modal#confirm modal#close">
+            <%= helpers.heroicon("plus", style: :solid, class: "text-white w-6 h-6") %>
+            <%=t 'spina.media_library.insert' %>
+          </button>
+        </div>
+      </div>
+    </turbo-frame>
+  </div>
+<% end %>

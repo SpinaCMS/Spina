@@ -10,8 +10,10 @@ module Spina
       case order_by
       when "title"
         super.joins(:translations).where(spina_page_translations: {locale: I18n.locale}).order("spina_page_translations.title")
+      when "created_at"
+        super.order(:created_at)
       else
-        super.order(created_at: :desc)
+        super.order(:position)
       end
     end
     

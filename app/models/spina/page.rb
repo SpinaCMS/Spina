@@ -19,7 +19,8 @@ module Spina
     # Pages can belong to a resource
     belongs_to :resource, optional: true
 
-    scope :regular_pages, ->  { where(resource: nil) }
+    scope :main, -> { where(resource_id: nil) }    
+    scope :regular_pages, ->  { main }
     scope :resource_pages, -> { where.not(resource: nil) }
     scope :active, -> { where(active: true) }
     scope :sorted, -> { order(:position) }
@@ -53,6 +54,10 @@ module Spina
 
     def slug
       url_title&.parameterize
+    end
+    
+    def homepage?
+      name == 'homepage'
     end
 
     def custom_page?
@@ -99,7 +104,7 @@ module Spina
     private
 
       def set_resource_from_parent
-        self.resource_id = parent.resource_id 
+        self.resource_id = parent.resource_id
       end
 
       def touch_navigations
@@ -121,7 +126,7 @@ module Spina
       def generate_materialized_path
         path_fragments = [resource&.slug]
         path_fragments.append *ancestors.collect(&:slug)
-        path_fragments.append(slug) unless name == 'homepage'
+        path_fragments.append(slug) unless homepage?
         path_fragments.compact.map(&:parameterize).join('/')
       end
       

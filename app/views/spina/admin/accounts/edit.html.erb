@@ -1,0 +1,49 @@
+<%= form_with model: current_account, url: spina.admin_account_path do |f| %>
+
+  <%= render Spina::UserInterface::HeaderComponent.new do |header| %>
+    <% header.actions do %>
+    
+      <%= button_tag t('spina.accounts.save'), type: :submit, class: 'btn btn-primary', data: {controller: "button", action: "button#loading", loading_message: t("spina.ui.saving")} %>
+      
+    <% end %>
+  <% end %>
+  
+  <div class="p-4 md:p-8 max-w-screen-xl">
+    
+    <%= render Spina::Forms::GroupComponent.new(label: Spina::Account.human_attribute_name(:name), description: t('spina.accounts.name_description')) do %>
+      <%= render Spina::Forms::LabelComponent.new(f, :name) %>
+      <%= render Spina::Forms::TextFieldComponent.new(f, :name) %>
+    <% end %>
+      
+    <div class="border-t border-gray-200 my-6"></div>
+    
+    <%= render Spina::Forms::GroupComponent.new(label: Spina::Account.human_attribute_name(:address), description: t('spina.ui.optional')) do %>
+      <%= render Spina::Forms::LabelComponent.new(f, :address) %>
+      <%= render Spina::Forms::TextFieldComponent.new(f, :address) %>
+      
+      <div class="mt-5">
+        <%= render Spina::Forms::LabelComponent.new(f, :postal_code) %>
+        <%= render Spina::Forms::TextFieldComponent.new(f, :postal_code) %>
+      </div>
+      
+      <div class="mt-5">
+        <%= render Spina::Forms::LabelComponent.new(f, :city) %>
+        <%= render Spina::Forms::TextFieldComponent.new(f, :city) %>
+      </div>
+    <% end %>
+    
+    <div class="border-t border-gray-200 my-6"></div>
+    
+    <%= render Spina::Forms::GroupComponent.new(label: t('spina.accounts.contact_details'), description: t('spina.accounts.contact_details_description')) do %>
+      <%= render Spina::Forms::LabelComponent.new(f, :email) %>
+      <%= render Spina::Forms::TextFieldComponent.new(f, :email) %>
+      
+      <div class="mt-5">
+        <%= render Spina::Forms::LabelComponent.new(f, :phone) %>
+        <%= render Spina::Forms::TextFieldComponent.new(f, :phone) %>
+      </div>
+    <% end %>
+    
+  </div>
+
+<% end %>

@@ -1,0 +1,16 @@
+<%= turbo_frame_tag dom_id(@image) + "_filename" do %>
+  <%= form_with model: @image, url: spina.admin_image_path(@image), html: {class: 'w-full max-w-sm pr-3'} do |f| %>
+    <div class="flex items-center w-full">
+      <div class="relative w-full mr-2">
+        <%= text_field_tag :filename, @image.file.filename.base, class: 'form-input w-full h-9 pr-10 text-sm', placeholder: t('spina.media_library.filename'), data: {controller: "autofocus"} %>
+        <div class="absolute top-0 right-2 h-full flex items-center text-gray-400">
+          <%= ".#{@image.file.filename.extension}" %>
+        </div>
+      </div>
+      
+      <button type="submit" class="btn btn-default px-2">
+        <%= heroicon("check", style: :solid, class: "w-5 h-5") %>
+      </button>
+    </div>
+  <% end %>
+<% end %>

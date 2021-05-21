@@ -1,0 +1,65 @@
+<% if helpers.asset_available?("spina/view_template_previews/#{@page.view_template}.png") %>
+  <div class="relative" data-controller="reveal" data-reveal-away-value>
+    <button type="button" class="btn text-gray-400 border-none hover:text-gray-700" data-action="reveal#toggle">
+      <%= helpers.heroicon('eye', style: :solid, class: 'w-4 h-4 mr-2') %>
+      <%=t 'spina.pages.preview' %>
+    </button>
+    
+    <div class="absolute left-1/2 transform -translate-x-1/2">
+      <div hidden data-reveal data-transition class="w-60 bg-white shadow-lg rounded-md">
+        <%= image_tag "spina/view_template_previews/#{@page.view_template}.png", class: "block w-full rounded-md" %>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<!-- Advanced actions -->
+<div class="relative w-1/2 md:w-auto" data-controller="reveal" data-reveal-away-value>
+  <button type="button" class="btn btn-default px-3 w-full" data-action="reveal#toggle">
+    <svg class="w-5 h-5 text-gray-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+      <path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z" />
+    </svg>
+  </button>
+
+  <div hidden data-reveal data-transition class="origin-top-left md:origin-top-right absolute md:right-0 mt-2 w-56 rounded-md shadow-lg border border-gray-200">
+    <div class="rounded-md bg-white shadow-xs">
+      <div class="py-1">
+        
+        <% unless @page.homepage? %>
+          <%= link_to t('spina.pages.move_page') + "...", helpers.spina.new_admin_page_move_path(@page), class: "block px-4 py-2 text-sm font-medium leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900", data: {turbo_frame: "modal", action: "reveal#hide"} %>
+        <% end %>
+        
+        <% if !@page.custom_page? %>
+          <%= link_to t('spina.pages.change_view_template') + "...", helpers.spina.edit_template_admin_page_path(@page), class: "block px-4 py-2 text-sm font-medium leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900", data: {turbo_frame: "modal", action: "reveal#hide"} %>
+        <% end %>
+        <% if @page.deletable? %>
+          <%= button_to t('spina.pages.delete'), helpers.spina.admin_page_path(@page), method: :delete, class: "block w-full text-left px-4 py-2 text-sm leading-5 font-medium text-red-500 cursor-pointer bg-white hover:bg-red-100 hover:bg-opacity-50 hover:text-red-500 focus:outline-none focus:bg-gray-100 focus:text-gray-900", form: {data: {controller: "confirm", confirm_message: t('spina.pages.delete_confirmation', subject: @page.title)}} %>
+        <% else %>
+          <span class="block px-4 py-2 text-sm leading-5 text-gray-400"><%=t 'spina.pages.cannot_be_deleted' %></span>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Translations -->
+<%= render Spina::Pages::TranslationsComponent.new(@page, label: @locale.upcase) %>
+
+<button type="submit" form="<%= dom_id(@page) %>" class="btn btn-primary w-1/2 md:w-auto" data-controller="button" data-action="button#loading" data-loading-message="Saving...">
+  <%= helpers.heroicon('check', style: :solid, class: 'w-5 h-5 mr-1 -ml-2') %>
+  <% if @page.draft? %>
+    <%=t 'spina.pages.save_draft' %>
+  <% else %>
+    <%=t 'spina.pages.save_changes' %>
+  <% end %>
+</button>
+
+<!-- Saving -->
+<% if @page.persisted? && @page.draft? %>
+  <button type="submit" form="<%= dom_id(@page) %>" name="page[draft]" value="false" class="btn btn-primary flex items-center">
+    <svg class="w-4 h-4 -ml-1 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+      <path fill-rule="evenodd" d="M6.672 1.911a1 1 0 10-1.932.518l.259.966a1 1 0 001.932-.518l-.26-.966zM2.429 4.74a1 1 0 10-.517 1.932l.966.259a1 1 0 00.517-1.932l-.966-.26zm8.814-.569a1 1 0 00-1.415-1.414l-.707.707a1 1 0 101.415 1.415l.707-.708zm-7.071 7.072l.707-.707A1 1 0 003.465 9.12l-.708.707a1 1 0 001.415 1.415zm3.2-5.171a1 1 0 00-1.3 1.3l4 10a1 1 0 001.823.075l1.38-2.759 3.018 3.02a1 1 0 001.414-1.415l-3.019-3.02 2.76-1.379a1 1 0 00-.076-1.822l-10-4z" clip-rule="evenodd" />
+    </svg>
+    <%=t 'spina.pages.publish' %>
+  </button>
+<% end %>

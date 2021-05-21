@@ -13,19 +13,22 @@ module Spina
         post "/admin/sessions", params: {email: @user.email, password: "password"}
       end
 
-      test "List navigations" do
-        get("/admin/pages")
-        assert_select 'nav.tabs li a', 'Custom nav'
-      end
-
-      test "Show navigation" do
-        get("/admin/navigations/#{@navigation.id}")
-        assert_select 'nav.tabs li.active a', 'Custom nav'
-      end
-
       test "Edit a navigation with pages to select" do
         get("/admin/navigations/#{@navigation.id}/edit")
-        assert_select 'input[type="checkbox"][name="navigation[page_ids][]"]'
+        assert_select 'a div', "Add menu item"
+      end
+      
+      test "Add a menu item" do
+        @page = FactoryBot.create :homepage
+        
+        get "/admin/navigations/#{@navigation.id}/navigation_items/new"
+        assert_select 'button[type="submit"]', text: "Add menu item"
+        
+        post "/admin/navigations/#{@navigation.id}/navigation_items", params: {navigation_item: {page_id: @page.id}}
+        
+        get "/admin/navigations/#{@navigation.id}/edit"
+        
+        assert_select 'div', text: "Homepage"
       end
 
     end

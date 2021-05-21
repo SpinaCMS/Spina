@@ -16,19 +16,14 @@ Spina::Engine.routes.draw do
   namespace :admin, path: Spina.config.backend_path do
     root to: "pages#index"
 
-    resource :account do
-      member do
-        get :style
-        get :analytics
-        get :social
-      end
-    end
+    resource :account
+    resource :theme, controller: :theme
 
     get "/settings/:plugin", to: "settings#edit", as: :edit_settings
     patch "/settings/:plugin", to: "settings#update", as: :settings
 
     resources :users
-
+    
     # Sessions
     resources :sessions
     get "login" => "sessions#new"
@@ -37,18 +32,25 @@ Spina::Engine.routes.draw do
     # Passwords
     resources :password_resets
 
-    # Media library
-    get 'media_library' => 'images#index', as: "media_library"
-
     resources :pages do
-      get :children, on: :member
+      member do
+        get :edit_content
+        get :edit_template
+        get :children
+      end
+      
+      resource :move, controller: "move_pages"
+
       post :sort, on: :collection
     end
+    resources :parent_pages
+    resource :layout, controller: :layout, only: [:edit, :update]
 
     resources :resources, only: [:show, :edit, :update]
 
     resources :navigations do
       post :sort, on: :member
+      resources :navigation_items
     end
 
     resources :attachments do
@@ -59,24 +61,19 @@ Spina::Engine.routes.draw do
         post 'insert_collection/:page_part_id' => 'attachments#insert_collection', as: :insert_collection
       end
     end
+    resources :rename_files
 
-    resources :media_folders
-
-    resources :images do
-      collection do
-        get 'folder/:id' => 'images#media_folder', as: :media_folder
-        put 'folder/:id' => 'images#add_to_media_folder', as: :add_to_media_folder
-      end
+    resources :media_folders do
+      resources :images
     end
-    get :media_picker, to: 'media_picker#show'
-    post :media_picker, to: 'media_picker#select'
+
+    resources :images
+    
+    resource :media_picker, controller: "media_picker", only: [:show]
   end
 
   # Sitemap
   resource :sitemap
-
-  # Robots.txt
-  get '/robots', to: 'pages#robots', constraints: { format: 'txt' }
 
   unless Spina.config.disable_frontend_routes
     # Frontend

@@ -16,12 +16,15 @@ Spina.configure do |config|
   # Defaults to ApplicationController
   # config.frontend_parent_controller = "ApplicationController"
 
+  # Confetti
+  # ===============
+  # 
+  # For people who don't appreciate confetti, you can disable that here 
+  # config.party_pooper = true
+
   # Pages Options
   # ===============
 
   # Note that you might need to remove cached asset after changing this value
   # config.max_page_depth = 5
-
-  # Base css color for Spina
-  config.primary_color = '#6865b4'
 end

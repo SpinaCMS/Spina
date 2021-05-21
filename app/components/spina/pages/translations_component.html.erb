@@ -1,0 +1,41 @@
+<div class="relative" data-controller="reveal" data-reveal-away-value>
+  <button type="button" class="btn btn-default px-3" data-action="reveal#toggle">
+    <%= helpers.heroicon("chat-alt", style: :solid, class: 'w-4 h-4 text-gray-300') %>
+    <% if @label.present? %>
+      <span class="ml-1 font-semibold"><%= @label %></span>
+    <% elsif missing_locales.any? %>
+      <span class="hidden md:block ml-1"><%=t 'spina.pages.missing_translations' %></span>
+    <% end %>
+
+    <% if missing_locales.any? %>
+      <div class="bg-yellow-500 rounded text-white leading-4 ml-2 w-4 font-medium text-center text-xs">
+        <%= missing_locales.size %>
+      </div>
+    <% end %>
+  </button>
+
+  <div hidden data-reveal data-transition class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg border border-gray-200 z-20">
+    <div class="rounded-md bg-white shadow-xs">
+      <div class="py-1">
+        <% if missing_locales.any? %>
+          <% missing_locales.each do |locale| %>
+            <%= link_to helpers.spina.edit_admin_page_path(@page, locale: locale), class: "block px-3 py-2 text-sm leading-4 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900 font-medium" do %>
+              <div class="text-yellow-500">
+                <%=t('spina.pages.add_translation', language: '<span class="font-semibold">' + t("spina.languages.#{locale}") + '</span>').html_safe %>
+              </div>
+            <% end %>
+          <% end %>
+          <div class="border-b border-gray-200 my-1"></div>
+        <% end %>
+
+        <% existing_locales.each do |locale| %>
+          <%= link_to helpers.spina.edit_admin_page_path(@page, locale: locale), class: "block px-3 py-2 text-sm leading-4 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900 font-medium" do %>
+            <div class="text-gray-700">
+              <%=t('spina.pages.edit_translation', language: '<span class="font-semibold">' + t("spina.languages.#{locale}") + '</span>').html_safe %>  
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -3,11 +3,12 @@ module Spina
     class AttachmentsController < AdminController
       before_action :set_breadcrumbs
 
-      layout "spina/admin/media_library"
-
       def index
-        add_breadcrumb I18n.t('spina.website.documents'), spina.admin_attachments_path
-        @attachments = Attachment.sorted
+        @attachments = Attachment.sorted.with_attached_file.page(params[:page]).per(25)
+      end
+      
+      def edit
+        @attachment = Attachment.find(params[:id])
       end
 
       def create
@@ -16,18 +17,34 @@ module Spina
           attachment.file.attach(file)
           attachment
         end
+        
+        respond_to do |format|
+          format.turbo_stream { render turbo_stream: turbo_stream.prepend("attachments", partial: "attachment", collection: @attachments)}
+          format.html { redirect_to spina.admin_attachments_url }
+        end
+      end
+      
+      def update
+        @attachment = Attachment.find(params[:id])
+        if params[:filename].present?
+          extension = @attachment.file.filename.extension
+          filename = "#{params[:filename]}.#{extension}"
+          @attachment.file.blob.update(filename: filename)
+        end
+        
+        render @attachment
       end
 
       def destroy
         @attachment = Attachment.find(params[:id])
         @attachment.destroy
-        redirect_to spina.admin_attachments_url
+        render turbo_stream: turbo_stream.remove(@attachment)
       end
 
       private
 
       def set_breadcrumbs
-        add_breadcrumb I18n.t('spina.website.media_library'), spina.admin_media_library_path
+        add_breadcrumb I18n.t('spina.website.media_library')
       end
 
       def attachment_params

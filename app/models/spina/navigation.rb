@@ -11,5 +11,6 @@ module Spina
     def cache_key
       super + "_" + Mobility.locale.to_s
     end
+    
   end
 end

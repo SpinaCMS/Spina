@@ -4,7 +4,7 @@ module Spina
 
     attr_accessor :_destroy
 
-    scope :sorted, -> { order('file ASC') }
+    scope :sorted, -> { order('created_at DESC') }
 
     def name
       file.filename.to_s

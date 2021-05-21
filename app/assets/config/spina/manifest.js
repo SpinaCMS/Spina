@@ -1,5 +1,8 @@
-//= link_directory ../../images/spina
-//= link_directory ../../fonts/spina
+//= link_tree ../../images/spina
+//= link_tree ../../fonts/spina
 
-//= link_tree ../../stylesheets/spina
-//= link_directory ../../javascripts/spina/admin
+//= link_directory ../../javascripts/spina/controllers
+//= link_directory ../../javascripts/spina/libraries
+
+//= link spina/application.css
+

@@ -1,0 +1,24 @@
+<%= form_with model: @setting, scope: :setting, url: admin_settings_path do |f| %>
+
+  <%= render Spina::UserInterface::HeaderComponent.new do |header| %>
+    <% header.actions do %>
+    
+      <%= button_tag type: :submit, class: 'btn btn-primary', data: {controller: "button", action: "button#loading", loading_message: t('spina.ui.saving')} do %>
+        <%= heroicon('check', style: :solid, class: 'w-5 h-5 mr-1 -ml-2') %>
+        <%=t 'spina.settings.save' %>
+      <% end %>
+      
+    <% end %>
+  <% end %>
+  
+  <div class="py-4 p-8">
+    <% plugin.settings.each do |key, value| %>
+    
+      <%= render "#{value.is_a?(Hash) ? value.first.first : value}_field", f: f, attribute: key %>
+      
+      <div class="border-t border-gray-200 my-6"></div>
+    
+    <% end %>
+  </div>
+
+<% end %>

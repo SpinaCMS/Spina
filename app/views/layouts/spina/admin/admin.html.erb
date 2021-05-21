@@ -1,0 +1,18 @@
+<% content_for(:body) do %>
+  <div class="flex flex-col md:flex-row md:h-screen min-h-screen w-full overflow-hidden">
+    <%= render partial: "spina/admin/shared/navigation" %>
+    
+    <section class="w-full md:overflow-scroll">
+      <%= yield %>
+      
+      <%= turbo_frame_tag "flash" do %>
+        <%= render partial: "spina/admin/shared/flash" %>
+      <% end %>
+    </section>
+  </div>
+  
+  <!-- Make sure all modals are rendered in this frame -->
+  <%= turbo_frame_tag "modal" %>
+<% end %>
+
+<%= render template: 'layouts/spina/admin/application' %>

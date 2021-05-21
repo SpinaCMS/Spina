@@ -1,0 +1,36 @@
+<%= render(Spina::UserInterface::ModalComponent.new) do |component| %>
+  <%= form_with model: @page, url: spina.admin_page_path(@page), data: {turbo_frame: "_top"} do |f| %>
+    <div class="px-4 pt-5 sm:p-6 sm:pb-4">
+      <div class="sm:flex sm:items-start">
+        <div class="mt-3 text-center sm:mt-0 sm:text-left">
+          <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-headline">
+            <%=t 'spina.pages.change_view_template' %>
+          </h3>
+          <div class="mt-2">
+            <p class="text-sm leading-5 text-gray-500 mb-4">
+              <%=t 'spina.pages.change_view_template_confirmation' %>
+            </p>
+
+            <label for="page[view_template]" class="block text-sm font-medium leading-5 text-gray-700">
+              <%= Spina::Page.human_attribute_name :view_template %>
+            </label>
+
+            <%= f.select :view_template, options_for_select(current_theme.view_templates.map { |template| [template[:title], template[:name], {'data-page-parts' => template[:page_parts]}] }, @page.view_template), {}, class: "mt-1 form-select w-full" %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="px-4 py-6 sm:px-6 sm:flex sm:flex-row-reverse">
+      <span class="flex w-full rounded-md shadow-sm sm:ml-3 sm:w-auto">
+        <button type="submit" class="btn btn-primary">
+          <%=t 'spina.pages.change_view_template' %>
+        </button>
+      </span>
+      <span class="mt-3 flex w-full rounded-md shadow-sm sm:mt-0 sm:w-auto">
+        <button type="button" class="btn btn-default" data-action="modal#close">
+          <%=t 'spina.ui.cancel' %>
+        </button>
+      </span>
+    </div>
+  <% end %>
+<% end %>

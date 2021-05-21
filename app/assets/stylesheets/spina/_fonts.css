@@ -1,0 +1,114 @@
+@font-face {
+  font-family: "Metropolis";
+  font-weight: 400;
+  src: asset_url("spina/Metropolis-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Metropolis";
+  font-style: italic;
+  src: asset_url("spina/Metropolis-RegularItalic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Metropolis";
+  font-weight: 100;
+  src: asset_url("spina/Metropolis-Thin.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Metropolis";
+  font-weight: 100;
+  font-style: italic;
+  src: asset_url("spina/Metropolis-ThinItalic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Metropolis";
+  font-weight: 200;
+  src: asset_url("spina/Metropolis-ExtraLight.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Metropolis";
+  font-weight: 200;
+  src: asset_url("spina/Metropolis-ExtraLightItalic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Metropolis";
+  font-weight: 300;
+  src: asset_url("spina/Metropolis-Light.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Metropolis";
+  font-weight: 300;
+  font-style: italic;
+  src: asset_url("spina/Metropolis-LightItalic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Metropolis";
+  font-weight: 500;
+  src: asset_url("spina/Metropolis-Medium.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Metropolis";
+  font-weight: 500;
+  font-style: italic;
+  src: asset_url("spina/Metropolis-MediumItalic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Metropolis";
+  font-weight: 600;
+  src: asset_url("spina/Metropolis-SemiBold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Metropolis";
+  font-weight: 600;
+  font-style: italic;
+  src: asset_url("spina/Metropolis-SemiBoldItalic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Metropolis";
+  font-weight: 700;
+  src: asset_url("spina/Metropolis-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Metropolis";
+  font-weight: 700;
+  font-style: italic;
+  src: asset_url("spina/Metropolis-BoldItalic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Metropolis";
+  font-weight: 800;
+  src: asset_url("spina/Metropolis-ExtraBold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Metropolis";
+  font-weight: 800;
+  font-style: italic;
+  src: asset_url("spina/Metropolis-ExtraBoldItalic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Metropolis";
+  font-weight: 900;
+  src: asset_url("spina/Metropolis-Black.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Metropolis";
+  font-weight: 900;
+  font-style: italic;
+  src: asset_url("spina/Metropolis-BlackItalic.woff2") format("woff2");
+}

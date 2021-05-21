@@ -14,14 +14,15 @@ module Spina
 
       test "view table of all attachments" do
         get "/admin/attachments"
-        assert_select 'th', 'Filename'
+        assert_select 'turbo-frame#attachments'
       end
 
       test "upload a new document" do
         spina_png = fixture_file_upload('spina.png','image/png')
-        post "/admin/attachments", params: {attachment: {files: [spina_png]}, format: :js}
+        post "/admin/attachments", params: {attachment: {files: [spina_png]}}
         get "/admin/attachments"
-        assert_select 'table a', 'spina.png'
+        assert_select 'turbo-frame#attachments-1'
+        assert_select 'span', 'spina.png'
       end
 
     end

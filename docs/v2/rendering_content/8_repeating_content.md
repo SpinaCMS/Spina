@@ -24,7 +24,7 @@ config.parts = [
 <% repeater(:portfolio) do |project| %>
   
   <h1><%= project.content(:title) %></h1>
-  <%= project.content.image_tag(:image, resize: "400x300") %>
+  <%= project.content.image_tag(:image, resize_to_fill: [400, 300]) %>
 
 <% end %>
 ```

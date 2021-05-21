@@ -6,6 +6,8 @@ module Spina
       attr_json :alt, :string, default: ""
       attr_json :filename, :string, default: ""
 
+      attr_accessor :options
+
       def to_s
         alt.presence || filename.presence || Spina::Image.model_name.human
       end

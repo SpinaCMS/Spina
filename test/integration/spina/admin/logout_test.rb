@@ -7,6 +7,7 @@ module Spina
         host! "dummy.test"
         
         @routes = Engine.routes
+        @account = FactoryBot.create :account
         @user = FactoryBot.create :user
         post "/admin/sessions", params: {email: @user.email, password: "password"}
       end

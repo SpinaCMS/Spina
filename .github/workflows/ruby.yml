@@ -1,0 +1,59 @@
+name: Ruby
+
+on:
+  push:
+    branches: [ master, hotwire ]
+  pull_request:
+    branches: [ master ]
+    
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        ruby-version: ['2.7', '3.0']
+        
+    services:
+      postgres:
+        image: postgres:latest
+        env:
+          POSTGRES_DB: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_USER: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: ${{matrix.ruby-version}}
+        bundler-cache: true
+
+    - name: Setup Code Climate test-reporter
+      run: |
+        curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+        chmod +x ./cc-test-reporter
+        ./cc-test-reporter before-build
+        
+    - name: Create DB
+      env:
+        RAILS_ENV: test
+      run: |
+        cp test/dummy/config/database.yml.ci test/dummy/config/database.yml
+        bin/rails db:setup
+        
+    - name: Run tests
+      run: bin/rails test
+      
+    - name: Publish Code Coverage
+      env:
+        GIT_BRANCH: ${GITHUB_REF/refs\/heads\//}
+      run: ./cc-test-reporter after-build -r ${{ secrets.CodeClimate }}

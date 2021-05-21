@@ -2,14 +2,17 @@
 
   theme.name = 'demo'
   theme.title = 'Demo theme'
-  theme.resources = [{name: "landing_pages", label: "Landing pages"}]
+  theme.resources = [
+    {name: "landing_pages", label: "Landing pages"}, 
+    {name: "blog", label: "Blog"}, 
+  ]
 
   # All available parts
   theme.parts = [{
     name: 'repeater',
     title: "Repeater",
     part_type: "Spina::Parts::Repeater",
-    parts: ['line', 'body', 'image']
+    parts: ['line', 'body', 'image', 'image_collection']
   }, {
     name: 'repeater2',
     title: "Repeater",
@@ -31,6 +34,9 @@
     name: 'image',
     title: "Image",
     part_type: "Spina::Parts::Image"
+  }, {name: 'portrait', part_type: 'Spina::Parts::Image', options: {ratio: "portrait"}
+  }, {name: 'landscape', part_type: 'Spina::Parts::Image', options: {ratio: "landscape"}
+  }, {name: 'wide', part_type: 'Spina::Parts::Image', options: {ratio: "wide"}
   }, {
     name: 'headline',
     title: "Headline",
@@ -48,25 +54,33 @@
     name: 'attachment',
     title: "Attachment",
     part_type: "Spina::Parts::Attachment"
+  }, {
+    name: 'testrepeater',
+    title: 'Testrepeater',
+    part_type: "Spina::Parts::Repeater",
+    parts: %w(line)
   }]
 
   theme.view_templates = [{
     name: 'homepage',
     title: 'Homepage',
-    page_parts: [],
     parts: ['headline', 'body', 'image_collection']
   }, {
     name: 'show',
-    title: 'Default',
+    title: 'Simple page',
+    description: "Default layout",
     usage: 'Use for your content',
-    page_parts: [],
-    parts: ['attachment', 'option', 'body', 'image', 'repeater']
+    parts: ['body', 'testrepeater']
   }, {
     name: 'demo',
     title: 'Demo',
-    description: 'Contains examples of every page part',
-    page_parts: [],
-    parts: ['repeater', 'repeater2', 'attachment', 'option', 'body', 'image_collection', 'image']
+    description: 'Example including all parts',
+    parts: ['repeater', 'repeater2', 'attachment', 'option', 'body', 'image_collection', 'image', 'portrait', 'landscape', 'wide']
+  }, {
+    name: 'blogpost',
+    title: "Blogpost",
+    description: 'Article template',
+    parts: ['body']
   }]
 
   theme.custom_pages = [{

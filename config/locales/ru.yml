@@ -51,6 +51,7 @@ ru:
         no_parent: No parent
         resource: 
         seo_title: SEO <title>
+        seo_title_description: 
         seo_title_placeholder: Это название используется в <title>-tag
         show_in_menu: Показать в навигации
         show_in_menu_description: При выключении эта страница не будет показана в навигации
@@ -102,9 +103,17 @@ ru:
         one: Пользователь
         other: Пользователей
   spina:
+    accounts:
+      contact_details: 
+      contact_details_description: 
+      couldnt_be_saved: 
+      name_description: 
+      save: 
+      saved: 
     ago: назад
     attachments:
       choose_attachment: 
+      delete_confirmation_html: 
       insert: Вставить документ
       insert_multiple: Вставить документы
     cancel: Отмена
@@ -130,7 +139,7 @@ ru:
       choose_images: 
       confirm_selection: 
       delete: 
-      delete_confirmation: 
+      delete_confirmation_html: 
       delete_folder: 
       done_organizing: 
       insert_image: 
@@ -159,16 +168,44 @@ ru:
       th: 
       tr: 
       zh-CN: 
+    layout:
+      couldnt_be_saved: 
+      layout: 
+      no_layout_parts: 
+      save: 
+      saved: 
     login: Логин
     logout: Выход
     main_menu: Главное меню
     media_library:
+      add_folder: 
+      add_image: 
       attachments: Документы
+      back_to_all: 
+      filename: 
       images: 
+      images_count: 
+      insert: 
+      media_folder_delete_confirmation_html: 
+      no_folder: 
       photos: Изображения
+      rename_folder: 
+      save_media_folder: 
+      upload_from_device: 
+      uploading: 
     modal:
       agree: Да, я уверен
       cancel: Нет, отменить
+    navigations:
+      add_menu_item: 
+      add_sub_item: 
+      choose_page: 
+      delete_item: 
+      delete_item_confirmation_html: 
+      description: 
+      navigations: 
+      no_navigations: 
+      sorting_saved: 
     notifications:
       alert: Упс! Что-то пошло не так
       information: Информация
@@ -177,27 +214,51 @@ ru:
     options:
       choose_option: 
     pages:
+      add_page_to: 
+      add_translation: 
       advanced: Дополнительно
+      cannot_be_deleted: 
       change_order: Изменить порядок
+      change_view_template: 
+      change_view_template_confirmation: 
       concept: Концепция
+      create: 
       create_page: Создать %{template}
+      delete: 
       delete_confirmation: Вы уверены, что хотите удалить страницу <strong>%{subject}</strong>?
+      deleted: 
       done_changing_order: Порядок изменен
+      edit_translation: 
       invisible_to_search_engines: Ваш сайт не виден для поисковых машин
       invisible_to_search_engines_description: Перейти к вашим параметрам, чтобы активировать поисковые системы.
+      main_collection: 
       materialize_path_confirmation: Are you sure you want to rebuild the path for this page?
+      missing_translations: 
+      move_page: 
+      moved: 
       new: Новая страница
+      no_pages_yet: 
+      no_parent_page: 
       page_content: Контент
       page_part: Раздел страницы
       page_seo: Поисковые системы
+      path: 
       photo_picker: Выбрать изображение
       photos_picker: Выбрать изображения
+      preview: 
+      publish: 
+      published: 
       rebuild_materialized_path: Rebuild materialized path
+      recommended: 
       save: Сохранить страницу
+      save_changes: 
+      save_draft: 
       saved: 
       saving: 
+      search_engines: 
       show_in_menu: Невидимый
       skip_to_first_child: Переход на страницу ребенка
+      sorting_saved: 
     permanently_delete: Удалить навсегда
     photos:
       cannot_be_created: 'Изображение не может быть обработано:'
@@ -236,16 +297,46 @@ ru:
     preview_website: Предварительный просмотр сайта
     resources:
       edit: 
+      label_description: 
+      manual_sorting: 
+      no_default_template: 
+      saved: 
+      settings: 
+      settings_description: 
     save: 
     search: Поиск...
     settings:
       save: 
       title: 
+    theme:
+      save: 
+      saved: 
+      theme: 
+      theme_description: 
+    ui:
+      cancel: 
+      delete: 
+      load_more: 
+      move_to: 
+      new_entry: 
+      optional: 
+      rename: 
+      save_changes: 
+      saving: 
     users:
+      authorization: 
+      authorization_description: 
       cannot_be_created: Пользователь не сохранен
-      delete_confirmation: Вы уверены, что хотите удалить пользователя <strong>%{user}</strong>?
+      delete: 
+      delete_confirmation_html: Вы уверены, что хотите удалить пользователя <strong>%{user}</strong>?
+      deleted: 
+      last_login: 
+      never_logged_in: 
       new: Новый пользователь
+      profile: 
+      profile_description: 
       save: Сохранить пользователя
+      saved: 
     visit_page: 
     website:
       all_pages: 
@@ -262,5 +353,9 @@ ru:
       heading_2: Заголовок 2
       heading_3: Заголовок 3
       insert_link: Вставить ссылку
+      link: 
       paragraph: Параграф
       quote: Цитата
+      unlink: 
+      url: 
+      url_placeholder: 

@@ -1,6 +1,0 @@
-.page-form-label= f.object.title
-.page-form-content
-  .page-form-rich-text
-    = f.hidden_field :content, id: "#{f.object.object_id}_input"
-    %trix-editor.text-input.trix-content{ input: "#{f.object.object_id}_input" }
-
