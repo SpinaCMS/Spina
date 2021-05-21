@@ -57,3 +57,4 @@ jobs:
       env:
         GIT_BRANCH: ${GITHUB_REF/refs\/heads\//}
       run: ./cc-test-reporter after-build -r ${{ secrets.CodeClimate }}
+      if: github.ref == 'refs/heads/master'
