@@ -1,17 +1,17 @@
 module Spina
   module ImportmapHelper
   
-    def importmap_list_with_spina_from(*paths)
-      [ %("stimulus": "#{asset_path("stimulus/libraries/stimulus")}"), importmap_spina_list_from(*paths) ].compact_blank.join(",\n")
+    def spina_importmap_with_stimulus_from(*paths)
+      [ %("stimulus": "#{asset_path("stimulus/libraries/stimulus")}"), spina_importmap_from(*paths) ].reject(&:blank?).join(",\n")
     end
   
-    def importmap_spina_list_from(*paths)
+    def spina_importmap_from(*paths, prepend: "spina")
       Array(paths).flat_map do |path|
         if (absolute_path = absolute_root_of(path)).exist?
           find_javascript_files_in_tree(absolute_path).collect do |filename|
             module_filename = filename.relative_path_from(absolute_path)
             module_name     = importmap_module_name_from(module_filename)
-            module_path     = asset_path('spina/' + absolute_path.basename.join(module_filename).to_s)
+            module_path     = asset_path("#{prepend}/" + absolute_path.basename.join(module_filename).to_s)
       
             %("#{module_name}": "#{module_path}")
           end

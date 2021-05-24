@@ -1,5 +1,12 @@
 # Spina CMS Changelog
 
+## 2.1 (Unreleased)
+
+* Refactored all CSS with TailwindCSS
+* Refactored all views with ViewComponent
+* Refactored all javascript with Hotwire
+* Added importmap helper `spina_importmap_from`
+
 ## 2.0
 
 ⚠️ _Beware: lots of changes regarding page content. The old page parts are gone in favor of new JSON-based parts. Read the [Upgrading Guide](https://www.spinacms.com/guide/getting-started/upgrading-from-v1) to learn how to upgrade._

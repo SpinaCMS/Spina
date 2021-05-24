@@ -20,6 +20,9 @@
     <!-- Plugins & Hooks -->
     <%= yield(:head) %>
     <%= render Spina::Hooks::HookComponent.new(partial: "head") %>
+    
+    <!-- Stimulus Autoloader -->
+    <%= autoloader_include_tag %>
   </head>
 
   <body>
