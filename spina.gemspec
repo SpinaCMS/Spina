@@ -36,7 +36,7 @@ Gem::Specification.new do |gem|
   gem.add_dependency 'mobility', '1.1.2'
   gem.add_dependency 'rack-rewrite', '>= 1.5.0'
   gem.add_dependency 'attr_json'
-  gem.add_dependency 'view_component', '2.25.1'
+  gem.add_dependency 'view_component', '2.32.0'
   gem.add_dependency 'turbo-rails'
   gem.add_dependency 'stimulus-rails'
 end
