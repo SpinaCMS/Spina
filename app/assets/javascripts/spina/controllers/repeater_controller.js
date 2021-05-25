@@ -21,7 +21,12 @@ export default class extends Controller {
     // Sort the DOM elements containing the repeater fields
     this.panes
       .sort((a, b) => ids.indexOf(a.id) - ids.indexOf(b.id))
-      .map(node => this.contentTarget.appendChild(node))
+      .map((node, index) => {
+        this.contentTarget.appendChild(node)
+        const positionField = node.querySelector('[data-position]')
+        if (positionField) positionField.value = index
+      })
+
   }
 
   addFields(event) {
