@@ -15,10 +15,7 @@
       <nav class="-mb-3 mt-4">
         <ul class="inline-flex w-auto rounded-md bg-white">
           <% @tabs.each do |tab_name| %>
-            <%= render Spina::Pages::TabButtonComponent.new(
-              page: @page,
-              tab_name: tab_name,
-            ) %>
+            <%= render partial: "button_#{tab_name}" %>
           <% end %>
         </ul>
       </nav>

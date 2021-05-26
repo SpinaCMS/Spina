@@ -1,21 +1,23 @@
 module Spina
   module Pages
     class TabButtonComponent < ApplicationComponent
-      def initialize(page:, tab_name:)
-        @page = page
+      include ViewComponent::SlotableV2
+      renders_one :icon, "IconComponent"
+
+      def initialize(tab_name:, shortened_text_for_mobile: nil)
         @tab_name = tab_name
+        @shortened_text_for_mobile = shortened_text_for_mobile
       end
 
-      def icon_name
-        case @tab_name
-        when 'page_content'
-          'document-text'
-        when 'search_engines'
-          'search'
-        when 'advanced'
-          'cog'
-        else
-          'exclamation-circle'
+      def text_class
+        if @shortened_text_for_mobile
+          "hidden md:inline"
+        end
+      end
+
+      class IconComponent < ApplicationComponent
+        def call
+          content
         end
       end
     end
