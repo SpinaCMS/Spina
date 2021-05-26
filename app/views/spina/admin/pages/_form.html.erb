@@ -30,14 +30,7 @@
       <%= hidden_field_tag :locale, @locale %>
       <% Mobility.with_locale(@locale) do %>
         <div data-tabs-target="pane" id="page_content">
-          <div class="max-w-5xl">
-            <label class="font-medium text-gray-700">
-              <%= Spina::Page.human_attribute_name(:title) %>
-            </label>
-            <%= render Spina::Forms::TextFieldComponent.new(f, :title, size: "lg") %>
-            <turbo-frame id="page_content" src="<%= spina.edit_content_admin_page_path(f.object, locale: @locale) %>">
-            </turbo-frame>
-          </div>
+          <%= render partial: 'form_page_content', locals: {f: f} %>
         </div>
         <div data-tabs-target="pane" id="search_engines" hidden>
           <%= render partial: 'form_seo', locals: {f: f} %>
