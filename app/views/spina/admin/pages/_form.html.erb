@@ -1,3 +1,4 @@
+<% @tabs = %w[page_content search_engines advanced] %>
 <div data-controller="tabs" data-tabs-active="cursor-default text-gray-900 bg-spina-dark bg-opacity-10" data-tabs-inactive="cursor-pointer bg-transparent text-gray-400 border-transparent">
   <%= render Spina::UserInterface::HeaderComponent.new do |header| %>
     <% header.after_breadcrumbs do %>
@@ -14,7 +15,7 @@
     <% header.navigation do %>
       <nav class="-mb-3 mt-4">
         <ul class="inline-flex w-auto rounded-md bg-white">
-          <% %w[page_content search_engines advanced].each do |tab_name| %>
+          <% @tabs.each do |tab_name| %>
             <%= render Spina::Pages::TabButtonComponent.new(
               page: @page,
               locale: @locale,
@@ -29,15 +30,11 @@
     <%= form_with model: @page, url: spina.admin_page_path(@page), id: dom_id(@page) do |f| %>
       <%= hidden_field_tag :locale, @locale %>
       <% Mobility.with_locale(@locale) do %>
-        <div data-tabs-target="pane" id="page_content">
-          <%= render partial: 'form_page_content', locals: {f: f} %>
-        </div>
-        <div data-tabs-target="pane" id="search_engines" hidden>
-          <%= render partial: 'form_seo', locals: {f: f} %>
-        </div>
-        <div data-tabs-target="pane" id="advanced" hidden>
-          <%= render partial: 'form_advanced', locals: {f: f} %>
-        </div>
+        <% @tabs.each do |tab_name| %>
+          <div data-tabs-target="pane" id="<%= tab_name %>" <%= 'hidden' unless tab_name == @tabs.first %>>
+            <%= render partial: "form_#{tab_name}", locals: {f: f} %>
+          </div>
+        <% end %>
       <% end %>
     <% end %>
   </div>
