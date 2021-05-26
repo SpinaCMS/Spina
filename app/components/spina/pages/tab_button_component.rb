@@ -15,6 +15,8 @@ module Spina
           'search'
         when 'advanced'
           'cog'
+        else
+          'exclamation-circle'
         end
       end
     end
