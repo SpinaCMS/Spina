@@ -28,8 +28,8 @@
     <%= form_with model: @page, url: spina.admin_page_path(@page), id: dom_id(@page) do |f| %>
       <%= hidden_field_tag :locale, @locale %>
       <% Mobility.with_locale(@locale) do %>
-        <% @tabs.each do |tab_name| %>
-          <div data-tabs-target="pane" id="<%= tab_name %>" <%= 'hidden' unless tab_name == @tabs.first %>>
+        <% @tabs.each_with_index do |tab_name, idx| %>
+          <div data-tabs-target="pane" id="<%= tab_name %>" <%= 'hidden' unless idx.zero? %>>
             <%= render partial: "form_#{tab_name}", locals: {f: f} %>
           </div>
         <% end %>
