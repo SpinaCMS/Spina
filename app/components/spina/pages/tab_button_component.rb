@@ -1,9 +1,8 @@
 module Spina
   module Pages
     class TabButtonComponent < ApplicationComponent
-      def initialize(page:, locale:, tab_name:)
+      def initialize(page:, tab_name:)
         @page = page
-        @locale = locale
         @tab_name = tab_name
       end
 

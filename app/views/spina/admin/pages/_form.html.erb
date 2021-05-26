@@ -17,7 +17,6 @@
           <% @tabs.each do |tab_name| %>
             <%= render Spina::Pages::TabButtonComponent.new(
               page: @page,
-              locale: @locale,
               tab_name: tab_name,
             ) %>
           <% end %>
