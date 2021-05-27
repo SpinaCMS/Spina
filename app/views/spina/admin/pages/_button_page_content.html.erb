@@ -1,5 +1,6 @@
 <%= render Spina::Pages::TabButtonComponent.new(tab_name: 'page_content') do |button| %>
-  <% button.icon do %>
+  <% button.content do %>
     <%= heroicon('document-text', class: 'w-4 h-4 mr-1 -ml-1 opacity-75') %>
+    <%= t("spina.pages.page_content") %>
   <% end %>
 <% end %>
