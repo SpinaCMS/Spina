@@ -1,8 +1,6 @@
 module Spina
   module UserInterface
-    class DropdownComponent < ApplicationComponent
-      include ViewComponent::SlotableV2
-      
+    class DropdownComponent < ApplicationComponent      
       renders_one :button, "ButtonComponent"
       
       renders_one :menu, "MenuComponent"
