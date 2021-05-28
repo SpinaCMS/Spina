@@ -3,6 +3,7 @@ module Spina
     class PagesController < AdminController
       before_action :set_locale
       before_action :set_page, only: [:edit, :edit_content, :edit_template, :update, :destroy, :children]
+      before_action :set_tabs
 
       def index
         add_breadcrumb I18n.t('spina.website.pages'), spina.admin_pages_path
@@ -107,6 +108,10 @@ module Spina
   
         def set_page
           @page = Page.find(params[:id])
+        end
+
+        def set_tabs
+          @tabs = %w[page_content search_engines advanced]
         end
 
     end
