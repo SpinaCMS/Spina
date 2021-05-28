@@ -1,8 +1,6 @@
 module Spina
   module UserInterface
-    class HeaderComponent < ApplicationComponent
-      include ViewComponent::SlotableV2
-      
+    class HeaderComponent < ApplicationComponent      
       renders_one :actions
       renders_one :navigation
       renders_one :after_breadcrumbs

@@ -1,5 +1,5 @@
 <%= render Spina::Pages::TabButtonComponent.new(tab_name: 'advanced')  do |button| %>
-  <% button.content do %>
+  <% button.label do %>
     <%= heroicon('cog', style: :solid, class: 'w-4 h-4 mr-1 -ml-1 opacity-75') %>
     <%= t("spina.pages.advanced") %>
   <% end %>

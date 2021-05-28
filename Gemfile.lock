@@ -15,7 +15,7 @@ PATH
       sass-rails
       stimulus-rails
       turbo-rails
-      view_component (= 2.25.1)
+      view_component (~> 2.32)
 
 GEM
   remote: https://rubygems.org/
@@ -99,7 +99,7 @@ GEM
     erubi (1.10.0)
     factory_bot (6.2.0)
       activesupport (>= 5.0.0)
-    ffi (1.15.0)
+    ffi (1.15.1)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     i18n (1.8.10)
@@ -228,7 +228,7 @@ GEM
       rails (>= 6.0.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
-    view_component (2.25.1)
+    view_component (2.32.0)
       activesupport (>= 5.0.0, < 7.0)
     websocket-driver (0.7.3)
       websocket-extensions (>= 0.1.0)

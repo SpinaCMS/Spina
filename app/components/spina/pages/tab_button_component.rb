@@ -1,14 +1,13 @@
 module Spina
   module Pages
     class TabButtonComponent < ApplicationComponent
-      include ViewComponent::SlotableV2
-      renders_one :content, "ContentComponent"
+      renders_one :label, "LabelComponent"
 
       def initialize(tab_name:)
         @tab_name = tab_name
       end
 
-      class ContentComponent < ApplicationComponent
+      class LabelComponent < ApplicationComponent
         def call
           content
         end
