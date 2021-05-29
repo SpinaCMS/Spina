@@ -3,7 +3,10 @@
     <nav class="-mb-3 mt-4">
       <ul class="inline-flex w-auto rounded-md bg-white">
         <% @navigations.each do |navigation| %>
-          <%= render Spina::UserInterface::TabLinkComponent.new("#{heroicon('menu-alt-2', style: :solid, class: 'w-3 h-3 mr-1')} #{navigation.label}".html_safe, spina.edit_admin_navigation_path(navigation), active: @navigation == navigation) %>
+          <%= render Spina::UserInterface::TabLinkComponent.new(spina.edit_admin_navigation_path(navigation), active: @navigation == navigation) do %>
+            <%= heroicon('menu-alt-2', style: :solid, class: 'w-3 h-3 mr-1') %>
+            <%= navigation.label %>
+          <% end %>
         <% end %>
       </ul>
     </nav>

@@ -13,8 +13,15 @@
   <% header.navigation do %>
     <nav class="-mb-3 mt-4">
       <ul class="inline-flex w-auto rounded-md bg-white">
-        <%= render Spina::UserInterface::TabLinkComponent.new("#{heroicon('photograph', style: :solid, class: 'w-5 h\-5 mr-2 -ml-1')} #{t('spina.media_library.images')}".html_safe, spina.admin_images_path) %>
-        <%= render Spina::UserInterface::TabLinkComponent.new("#{heroicon('document', style: :solid, class: 'w-5 h-5 mr-2 -ml-1')} #{t('spina.media_library.attachments')}".html_safe, spina.admin_attachments_path, active: true) %>
+        <%= render Spina::UserInterface::TabLinkComponent.new(spina.admin_images_path) do %>
+          <%= heroicon('photograph', style: :solid, class: 'w-5 h-5 mr-2 -ml-1') %>
+          <%=t 'spina.media_library.images' %>
+        <% end %>
+        
+        <%= render Spina::UserInterface::TabLinkComponent.new(spina.admin_attachments_path, active: true) do %>
+          <%= heroicon('document', style: :solid, class: 'w-5 h-5 mr-2 -ml-1') %>
+          <%=t 'spina.media_library.attachments' %>
+        <% end %>
       </ul>
     </nav>
   <% end %>
