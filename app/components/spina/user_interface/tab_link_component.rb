@@ -2,9 +2,11 @@ module Spina
   module UserInterface
     class TabLinkComponent < ApplicationComponent
       
-      def initialize(url, options = {})
+      def initialize(name = nil, url = nil, active: false)
+        url = name if url.nil?
         @url = url
-        @active = options[:active]
+        @name = name
+        @active = active
       end
       
       def css_classes
