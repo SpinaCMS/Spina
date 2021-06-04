@@ -35,7 +35,7 @@ module Spina
     after_save :touch_navigations
 
     # Create a 301 redirect if materialized_path changed
-    after_save :rewrite_rule
+    after_update :rewrite_rule
 
     before_validation :set_materialized_path
     validates :title, presence: true
