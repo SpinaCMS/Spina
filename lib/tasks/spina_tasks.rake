@@ -32,11 +32,13 @@ namespace :spina do
     desc "Purging Tailwind classes"
     task purge: :environment do
       assets_path = "app/assets/stylesheets/spina"
+      vendor_path = "vendor/assets/stylesheets"
       src = Spina::Engine.root.join(assets_path, "_tailwind.css")
-      dest = Rails.root.join(assets_path, "_tailwind.css")
+      dest = Rails.root.join(vendor_path, "spina/_tailwind.css")
       
       # Copy Spina assets to main app
-      FileUtils.cp_r(Spina::Engine.root.join(assets_path), Rails.root.join("app/assets/stylesheets")) 
+      FileUtils.mkdir_p Rails.root.join(vendor_path)
+      FileUtils.cp_r Spina::Engine.root.join(assets_path), Rails.root.join(vendor_path)
       
       # Purge Tailwind classes
       purged = Spina::TailwindPurger.purge(File.read(src), keeping_class_names_from_files: Spina.config.tailwind_purge_content)
