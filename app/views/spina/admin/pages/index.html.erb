@@ -35,10 +35,18 @@
   <% header.navigation do %>
     <nav class="-mb-1 md:-mb-3 mt-4">
       <ul class="inline-flex w-auto rounded-md bg-white">
-        <%= render Spina::UserInterface::TabLinkComponent.new("#{heroicon('collection', style: :solid, class: 'h-4 w-4 mr-1 -ml-1 opacity-75')} #{t('spina.website.main')}".html_safe, spina.admin_pages_path, active: @resource.nil?) %>
+        <%= render Spina::UserInterface::TabLinkComponent.new(spina.admin_pages_path, active: @resource.nil?) do %>
+          <%= heroicon('collection', style: :solid, class: "h-4 w-4 mr-1 -ml-1 opacity-75") %>
+          <%=t 'spina.website.main' %>
+        <% end %>
         
         <% Spina::Resource.order(:name).each do |resource| %>
-          <%= render Spina::UserInterface::TabLinkComponent.new("#{heroicon('collection', class: 'h-4 w-4 mr-1 -ml-1 opacity-75')} #{resource.label}".html_safe, spina.admin_pages_path(resource_id: resource.id), active: @resource == resource) %>
+        
+          <%= render Spina::UserInterface::TabLinkComponent.new(spina.admin_pages_path(resource_id: resource.id), active: @resource == resource) do %>
+            <%= heroicon('collection', class: 'h-4 w-4 mr-1 -ml-1 opacity-75') %>
+            <%= resource.label %>
+          <% end %>
+          
         <% end %>
       </ul>
     </nav>

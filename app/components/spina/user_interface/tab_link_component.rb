@@ -2,9 +2,10 @@ module Spina
   module UserInterface
     class TabLinkComponent < ApplicationComponent
       
-      def initialize(label, path, active: false)
-        @label = label
-        @path = path
+      def initialize(name = nil, url = nil, active: false)
+        url = name if url.nil?
+        @url = url
+        @name = name
         @active = active
       end
       
