@@ -25,10 +25,12 @@
       <%=t 'spina.users.never_logged_in' %>
     <% end %>
   </div>
-  
-  <div>
-    <%= link_to spina.edit_admin_user_path(user), class: "btn btn-default px-3" do %>
-      <%= heroicon('pencil', style: :solid, class: 'w-4 h-4') %>
-    <% end %>
-  </div>
+
+  <% if current_spina_user.admin? %>
+    <div>
+      <%= link_to spina.edit_admin_user_path(user), class: "btn btn-default px-3" do %>
+        <%= heroicon('pencil', style: :solid, class: 'w-4 h-4') %>
+      <% end %>
+    </div>
+  <% end %>
 </div>
