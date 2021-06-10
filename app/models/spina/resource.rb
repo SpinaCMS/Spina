@@ -4,6 +4,8 @@ module Spina
 
     has_many :pages, dependent: :restrict_with_exception
 
+    after_save :save_pages
+
     translates :slug, backend: :jsonb
 
     def pages
@@ -16,6 +18,11 @@ module Spina
         super.order(:position)
       end
     end
+
+    def save_pages
+      pages.each(&:save)
+    end
+
     
   end
 end
