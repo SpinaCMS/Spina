@@ -1,7 +1,8 @@
 module Spina
   module MainNavigation
-    class SubNavComponent < ApplicationComponent
-      with_content_areas :icon, :links
+    class SubNavComponent < ApplicationComponent      
+      renders_one :icon
+      renders_one :links
       
       def initialize(name = :content)
         @name = name
