@@ -20,9 +20,8 @@ module Spina
     end
 
     def save_pages
-      pages.each(&:save)
+      PageUpdateJob.perform_later id
     end
 
-    
   end
 end
