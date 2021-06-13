@@ -43,6 +43,12 @@ module Spina
         assert_select 'div', text: /.*Top\sBreweries.*/
       end
 
+      test "update slug enqueues a bg job" do
+        put "/admin/resources/#{@breweries.id}", params: {resource: {slug: "new-slug"}}
+        follow_redirect!
+        assert_enqueued_jobs 1, only: Spina::ResourcePagesUpdateJob
+      end
+
     end
   end
 end
