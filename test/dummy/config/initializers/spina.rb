@@ -15,6 +15,12 @@ Spina.configure do |config|
   # The parent controller all frontend Spina controllers inherit from
   # Defaults to ApplicationController
   # config.frontend_parent_controller = "ApplicationController"
+  
+  # Background jobs
+  # ===============
+  # 
+  # By default, all background jobs are queued as :default
+  # config.queues.page_updates = :default
 
   # Pages Options
   # ===============
