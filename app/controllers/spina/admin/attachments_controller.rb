@@ -7,6 +7,10 @@ module Spina
         @attachments = Attachment.sorted.with_attached_file.page(params[:page]).per(25)
       end
       
+      def show
+        @attachment = Attachment.find(params[:id])
+      end
+      
       def edit
         @attachment = Attachment.find(params[:id])
       end
@@ -32,7 +36,7 @@ module Spina
           @attachment.file.blob.update(filename: filename)
         end
         
-        render @attachment
+        redirect_to [:admin, @attachment]
       end
 
       def destroy

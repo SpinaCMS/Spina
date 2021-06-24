@@ -9,6 +9,10 @@ module Spina
         @images = Image.sorted.where(media_folder: @media_folder).with_attached_file.page(params[:page]).per(25)
       end
       
+      def show
+        @image = Image.find(params[:id])
+      end
+      
       def edit
         @image = Image.find(params[:id])
       end
@@ -47,7 +51,7 @@ module Spina
         if @image.saved_change_to_media_folder_id?
           render :update
         else
-          render @image
+          redirect_to [:admin, @image]
         end
       end
 

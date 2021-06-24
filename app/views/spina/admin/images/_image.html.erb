@@ -8,7 +8,7 @@
       <span class="truncate"><%= image.file.filename %></span>
     
       <div class="absolute h-full opacity-0 group-hover:opacity-100 flex items-center right-0 pr-3 top-0">
-        <%= link_to spina.edit_admin_image_path(image, t: Time.now.to_i), class: "btn btn-default h-7 px-2 mr-2 text-xs" do %>
+        <%= link_to spina.edit_admin_image_path(image), class: "btn btn-default h-7 px-2 mr-2 text-xs" do %>
           <%= heroicon('pencil', style: :solid, class: 'w-4 h-4 mr-1 text-gray-600') %>
           <%=t 'spina.ui.rename' %>
         <% end %>
