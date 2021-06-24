@@ -6,6 +6,7 @@
 * Refactored all views with ViewComponent
 * Refactored all javascript with Hotwire
 * Added importmap helper `spina_importmap_from`
+* Added background job to save resource pages in bulk
 
 ## 2.0
 
