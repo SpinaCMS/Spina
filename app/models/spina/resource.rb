@@ -4,6 +4,8 @@ module Spina
 
     has_many :pages, dependent: :restrict_with_exception
 
+    after_commit :update_resource_pages, on: [:update]
+
     translates :slug, backend: :jsonb
 
     def pages
@@ -16,6 +18,12 @@ module Spina
         super.order(:position)
       end
     end
-    
+
+    def update_resource_pages
+      if previous_changes[:slug]
+        ResourcePagesUpdateJob.perform_later(id)
+      end
+    end
+
   end
 end

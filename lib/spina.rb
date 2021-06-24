@@ -22,7 +22,8 @@ module Spina
                   :locales, 
                   :embedded_image_size,
                   :party_pooper,
-                  :tailwind_purge_content
+                  :tailwind_purge_content,
+                  :queues
 
   # Specify a backend path. Defaults to /admin.
   self.backend_path = 'admin'
@@ -36,6 +37,9 @@ module Spina
   self.max_page_depth = 5
 
   self.locales = [I18n.default_locale]
+  
+  # Queues
+  self.queues = ActiveSupport::InheritableOptions.new
   
   # Don't like confetti?
   self.party_pooper = false
