@@ -8,11 +8,11 @@ export default class extends Controller {
   
   connect() {
     hotkeys(this.element.dataset.hotkeys, this.handleHotkeys.bind(this))
+    hotkeys.filter = (event) => true
   }
   
   handleHotkeys(event, handler) {
     event.preventDefault()
-    
     if (this.hasButtonTarget) {
       this.buttonTarget.click()
     }
