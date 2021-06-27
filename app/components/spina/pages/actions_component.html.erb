@@ -45,7 +45,7 @@
 <!-- Translations -->
 <%= render Spina::Pages::TranslationsComponent.new(@page, label: @locale.upcase) %>
 
-<button type="submit" form="<%= dom_id(@page) %>" class="btn btn-primary w-1/2 md:w-auto" data-controller="button" data-action="button#loading" data-loading-message="Saving...">
+<button type="submit" form="<%= dom_id(@page) %>" class="btn btn-primary w-1/2 md:w-auto" data-controller="button hotkeys" data-hotkeys="command+s, ctrl+s" data-hotkeys-target="button" data-action="button#loading" data-loading-message="Saving...">
   <%= helpers.heroicon('check', style: :solid, class: 'w-5 h-5 mr-1 -ml-2') %>
   <% if @page.draft? %>
     <%=t 'spina.pages.save_draft' %>
