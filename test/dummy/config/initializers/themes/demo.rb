@@ -58,7 +58,7 @@
     name: 'testrepeater',
     title: 'Testrepeater',
     part_type: "Spina::Parts::Repeater",
-    parts: %w(line)
+    parts: %w(line body)
   }]
 
   theme.view_templates = [{

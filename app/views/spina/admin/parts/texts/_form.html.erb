@@ -3,7 +3,7 @@
   <div class="mt-1 relative">
     <%= f.hidden_field :content, id: "#{f.object.object_id}_input" %>
 
-    <div class="relative form-textarea p-4 shadow-sm max-w-5xl" data-controller="trix" id="<%= "insert_#{f.object.object_id}_trix-toolbar" %>" data-action="media-picker:done->trix#insertAttachment">      
+    <div class="relative form-textarea p-4 pt-0 shadow-sm max-w-5xl" data-controller="trix" id="<%= "insert_#{f.object.object_id}_trix-toolbar" %>" data-action="media-picker:done->trix#insertAttachment">      
       <%= render Spina::Forms::TrixToolbarComponent.new("#{f.object.object_id}_trix-toolbar") %>
       
       <trix-editor class="prose prose-sm focus:outline-none max-w-3xl xl:border-r border-dashed border-gray-200 pr-3" toolbar="<%= f.object.object_id %>_trix-toolbar" input="<%= f.object.object_id %>_input" data-trix-target="editor" data-action="trix-file-accept->trix#preventDefault"></trix-editor>
