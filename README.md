@@ -61,6 +61,8 @@ The Tailwind purger was created by [@dhh](https://twitter.com/dhh) for [tailwind
 
 Icons were designed by [@steveschoger](https://twitter.com/steveschoger) - [Heroicons](https://github.com/tailwindlabs/heroicons).
 
+HotKeys support via [Hotkeys.js](https://wangchujiang.com/hotkeys/)
+
 The font used in Spina's admin panel is called Metropolis and was created by Chris Simpson [Metropolis](https://github.com/chrismsimpson/Metropolis)
 
     Copyright (c) 2015, Chris Simpson <chris@victoryonemedia.com>.
