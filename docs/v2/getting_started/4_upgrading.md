@@ -1,4 +1,14 @@
-# Upgrading from v1
+# Upgrading
+
+# Upgrading from v2.0 to v2.1
+
+v2.1 is a big upgrade for Spina's interface. All JavaScript, CSS and views have been refactored. Gone are jQuery, Turbolinks, custom stylesheets and Haml. 
+
+Spina's UI has been rebuilt from the ground up using Hotwire, ViewComponent and TailwindCSS. If you haven't made any changes to Spina's interface and don't use any custom plugins, you should be able to upgrade seamlessly from v2.0 to v2.1. 
+
+If you have built custom plugins for Spina, make sure to update all views to match the new interface. Spina includes some useful ViewComponents to quickly build a beautiful interface.
+
+# Upgrading from v1 to v2
 
 Already have a project on v1.0-v1.1? We've created a gem to make the upgrade process easier for you. 
 
