@@ -2,11 +2,14 @@
 
 ## 2.1 (Unreleased)
 
+* Refactored all javascript with Hotwire
 * Refactored all CSS with TailwindCSS
 * Refactored all views with ViewComponent
-* Refactored all javascript with Hotwire
 * Added importmap helper `spina_importmap_from`
 * Added background job to save resource pages in bulk
+* Added support for hotkeys
+* Added sticky toolbar to Trix
+* Fixed ActiveStorage variant definitions
 
 ## 2.0
 
