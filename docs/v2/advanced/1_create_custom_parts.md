@@ -25,11 +25,14 @@ end
 
 ## Step 2. Create a view for page editing
 
-```haml
--# app/views/spina/admin/parts/movies/_form.html.haml
-.page-form-label= f.object.title
-.page-form-control
-  .select-dropdown= f.select :movie_id, Movie.all.pluck(:name, :id)
+```erb
+<!-- app/views/spina/admin/parts/movies/_form.html.erb -->
+<div class="mt-6">
+  <label class="block text-sm leading-5 font-medium text-gray-700"><%= f.object.title %></label>
+  <div class="mt-1">
+    <%= f.select :movie_id, Movie.all.pluck(:name, :id) %>
+  </div>
+</div>
 ```
 
 ## Step 3. Register your new part
