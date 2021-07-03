@@ -6,7 +6,13 @@ Start by creating a new Rails app using a PostgreSQL database.
 rails new yourwebsite --database=postgresql
 ```
 
-After generating a new app, add the following line to your Gemfile:
+Run the ActiveStorage installer to install ActiveStorage.
+
+```
+rails active_storage:install
+```
+
+After that, add the following line to your Gemfile:
 
 ```
 gem 'spina'

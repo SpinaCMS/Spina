@@ -1,6 +1,6 @@
 # Spina CMS Changelog
 
-## 2.1 (Unreleased)
+## 2.1 (July 3rd, 2021)
 
 * Refactored all javascript with Hotwire
 * Refactored all CSS with TailwindCSS
@@ -13,7 +13,7 @@
 
 ## 2.0
 
-⚠️ _Beware: lots of changes regarding page content. The old page parts are gone in favor of new JSON-based parts. Read the [Upgrading Guide](https://www.spinacms.com/guide/getting-started/upgrading-from-v1) to learn how to upgrade._
+⚠️ _Beware: lots of changes regarding page content. The old page parts are gone in favor of new JSON-based parts. Read the [Upgrading Guide](https://www.spinacms.com/docs/getting-started/upgrading) to learn how to upgrade._
 
 ### 2.0.2 (March 19th, 2021)
 * Fixed issue with webp images

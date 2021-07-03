@@ -18,7 +18,7 @@ Gem::Specification.new do |gem|
   gem.metadata = {
     "homepage_uri" => "https://www.spinacms.com",
     "bug_tracker_uri" => "https://github.com/SpinaCMS/Spina/issues",
-    "documentation_uri" => "https://www.spinacms.com/guide",
+    "documentation_uri" => "https://www.spinacms.com/docs",
     "changelog_uri" => "https://github.com/SpinaCMS/Spina/blob/master/CHANGELOG.md",
     "source_code_uri" => "https://github.com/SpinaCMS/Spina",
   }
