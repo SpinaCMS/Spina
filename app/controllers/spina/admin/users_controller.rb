@@ -1,7 +1,7 @@
 module Spina
   module Admin
     class UsersController < AdminController
-      before_action :authorize_admin, except: [:index]
+      before_action -> { authorize(Spina::User) }
       before_action :set_user, only: [:edit, :update, :destroy]
       
       admin_section :settings
@@ -47,7 +47,7 @@ module Spina
       end
 
       def destroy
-        if @user != current_spina_user   
+        if @user != Spina::Current.user
           @user.destroy 
           redirect_to spina.admin_users_url, flash: {success: t('spina.users.deleted')}
         end

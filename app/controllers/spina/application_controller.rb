@@ -1,5 +1,6 @@
 class Spina::ApplicationController < Spina.frontend_parent_controller.constantize
   include Spina::CurrentMethods
+  include Spina::Auth
   
   helper Spina::Engine.helpers
   

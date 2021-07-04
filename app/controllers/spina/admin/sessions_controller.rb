@@ -1,7 +1,7 @@
 module Spina
   module Admin
     class SessionsController < AdminController
-      skip_before_action :authorize_spina_user
+      skip_before_action :authenticate
 
       def new
       end
