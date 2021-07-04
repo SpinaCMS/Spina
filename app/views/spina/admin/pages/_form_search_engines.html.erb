@@ -39,7 +39,7 @@
 
     <div class="col-span-2">
       <%= f.text_field :url_title, class: "form-input block w-full sm:text-sm sm:leading-5", placeholder: f.object.slug || Spina::Page.human_attribute_name(:url_title_placeholder), value: f.object.url_title(fallback: false, default: nil)&.parameterize %>
-      <div class="text-sm text-gray-400 mt-1"><%=t 'spina.pages.path' %> <%= @page.materialized_path %></div>
+      <div class="text-sm text-gray-400 mt-1"><%=t 'spina.pages.path' %> <%= @page.url %></div>
     </div>
   </div>
 </div>

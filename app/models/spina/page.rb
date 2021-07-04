@@ -55,6 +55,10 @@ module Spina
     def slug
       url_title&.parameterize
     end
+
+    def url
+      [engine_path, materialized_path].join
+    end
     
     def homepage?
       name == 'homepage'
@@ -102,6 +106,10 @@ module Spina
     end
 
     private
+
+      def engine_path
+        Spina::Engine.routes.url_helpers.root_path.gsub(/\/$/, '')
+      end
 
       def set_resource_from_parent
         self.resource_id = parent.resource_id
