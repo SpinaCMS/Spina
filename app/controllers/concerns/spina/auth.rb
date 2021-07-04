@@ -7,7 +7,11 @@ module Spina
     end
     
     def authenticate
-      redirect_to admin_login_path, flash: {information: I18n.t('spina.notifications.login')} unless current_spina_user
+      redirect_to admin_login_path, flash: {information: I18n.t('spina.notifications.login')} unless authenticated?
+    end
+    
+    def authenticated?
+      current_spina_user
     end
     
     def authorize(object)
