@@ -1,6 +1,6 @@
-![Spina CMS](https://www.spinacms.com/spinacms.png)
+<img src="https://spinacms.com/spinacms.png" alt="Spina CMS" width="225"/>
 
-[Spina CMS](https://www.spinacms.com) is an easy to use CMS that features a clean interface without distractions. [Live demo](http://spinacms-demo.herokuapp.com/admin/pages)
+[Spina CMS](https://spinacms.com) is an easy to use CMS that features a clean interface without distractions. [Live demo](http://spinacms-demo.herokuapp.com/admin/pages)
 
 [![Ruby](https://github.com/SpinaCMS/Spina/actions/workflows/ruby.yml/badge.svg)](https://github.com/SpinaCMS/Spina/actions/workflows/ruby.yml)
 [![Code Climate](https://codeclimate.com/github/SpinaCMS/Spina/badges/gpa.svg)](https://codeclimate.com/github/SpinaCMS/Spina)
