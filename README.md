@@ -8,7 +8,7 @@
 [![Slack](https://slack-spinacms.herokuapp.com/badge.svg)](https://slack-spinacms.herokuapp.com)
 
 ## Getting Started
-[Read the guide](https://www.spinacms.com/guide) to learn more about how to use Spina. If you just want to get started, create a new Ruby on Rails app and follow these instructions:
+[Read the guide](https://www.spinacms.com/docs) to learn more about how to use Spina. If you just want to get started, create a new Ruby on Rails app and follow these instructions:
 
 Add the following line to your Gemfile:
 
