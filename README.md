@@ -1,4 +1,4 @@
-<img src="https://spinacms.com/spinacms.svg" alt="Spina CMS" width="225"/>
+<img src="https://spinacms.com/spinacms.png" alt="Spina CMS" width="225"/>
 
 [Spina CMS](https://spinacms.com) is an easy to use CMS that features a clean interface without distractions. [Live demo](http://spinacms-demo.herokuapp.com/admin/pages)
 
