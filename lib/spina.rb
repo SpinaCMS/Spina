@@ -34,7 +34,7 @@ module Spina
   # Specify the module that handles authentication
   # You can swap this out for something like Devise, or you can use your own authentication.
   # The default is Spina::Authentication and includes basic user management
-  self.authentication = "Spina::BasicAuthentication"
+  self.authentication = "Spina::Authentication"
   
   # The parent controller all frontend Spina controllers inherit from
   # Default is ApplicationController
