@@ -8,6 +8,7 @@ require 'spina/tailwind_purger'
 require 'spina/attr_json_spina_parts_model'
 require 'spina/attr_json_monkeypatch'
 require 'spina/authentication'
+require 'spina/basic_authentication'
 
 module Spina
   include ActiveSupport::Configurable
@@ -33,7 +34,7 @@ module Spina
   # Specify the module that handles authentication
   # You can swap this out for something like Devise, or you can use your own authentication.
   # The default is Spina::Authentication and includes basic user management
-  self.authentication = "Spina::Authentication"
+  self.authentication = "Spina::BasicAuthentication"
   
   # The parent controller all frontend Spina controllers inherit from
   # Default is ApplicationController
