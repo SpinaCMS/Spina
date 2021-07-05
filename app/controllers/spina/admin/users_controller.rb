@@ -1,7 +1,7 @@
 module Spina
   module Admin
     class UsersController < AdminController
-      before_action -> { authorize(Spina::User) }
+      before_action :authorize_admin, except: [:index]
       before_action :set_user, only: [:edit, :update, :destroy]
       
       admin_section :settings

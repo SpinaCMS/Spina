@@ -7,6 +7,7 @@ require 'spina/theme'
 require 'spina/tailwind_purger'
 require 'spina/attr_json_spina_parts_model'
 require 'spina/attr_json_monkeypatch'
+require 'spina/authentication'
 
 module Spina
   include ActiveSupport::Configurable
@@ -23,10 +24,16 @@ module Spina
                   :embedded_image_size,
                   :party_pooper,
                   :tailwind_purge_content,
-                  :queues
+                  :queues,
+                  :authentication
 
   # Specify a backend path. Defaults to /admin.
   self.backend_path = 'admin'
+  
+  # Specify the module that handles authentication
+  # You can swap this out for something like Devise, or you can use your own authentication.
+  # The default is Spina::Authentication and includes basic user management
+  self.authentication = "Spina::Authentication"
   
   # The parent controller all frontend Spina controllers inherit from
   # Default is ApplicationController

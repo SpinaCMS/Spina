@@ -26,7 +26,7 @@
     <% end %>
   </div>
 
-  <% if authorize(user) %>
+  <% if current_spina_user.admin? %>
     <div>
       <%= link_to spina.edit_admin_user_path(user), class: "btn btn-default px-3" do %>
         <%= heroicon('pencil', style: :solid, class: 'w-4 h-4') %>

@@ -1,6 +1,6 @@
 <%= render Spina::UserInterface::HeaderComponent.new do |header| %>
   <% header.after_breadcrumbs do %>
-    <% if authorize(Spina::User) %>
+    <% if current_spina_user.admin? %>
       <%= link_to spina.new_admin_user_path, class: 'btn btn-default h-8 px-2 ml-3' do %>
         <%= heroicon('plus', style: :solid, class: 'w-6 h-6') %>
       <% end %>

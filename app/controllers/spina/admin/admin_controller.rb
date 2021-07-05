@@ -2,7 +2,7 @@ module Spina
   module Admin
     class AdminController < ActionController::Base
       include Spina::CurrentMethods
-      include Spina::Auth
+      include Spina.config.authentication.constantize
       
       helper Spina::Engine.helpers
       
