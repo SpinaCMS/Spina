@@ -47,7 +47,7 @@ module Spina
       end
 
       def destroy
-        if @user != Spina::Current.user
+        if @user != current_spina_user
           @user.destroy 
           redirect_to spina.admin_users_url, flash: {success: t('spina.users.deleted')}
         end
