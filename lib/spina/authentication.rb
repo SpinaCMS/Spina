@@ -4,6 +4,7 @@ module Spina
     
     included do
       helper_method :logged_in?
+      helper_method :logout_path
       helper_method :current_spina_user
     end
     
@@ -13,6 +14,10 @@ module Spina
     
     def current_spina_user
       Spina::Current.user ||= User.find_by(id: session[:spina_user_id]) if session[:spina_user_id]
+    end
+    
+    def logout_path
+      spina.admin_logout_path
     end
     
     private

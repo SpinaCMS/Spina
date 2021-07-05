@@ -57,13 +57,15 @@
       <% end %>
     </ul>
 
-    <ul class="md:block">
-      <li>
-        <%= link_to spina.admin_logout_path, class: 'p-3 w-14 block flex justify-center opacity-50 hover:opacity-100 transition duration-200 ease', data: {turbo: false} do %>
-          <%= heroicon('logout', style: :solid, class: 'h-8 w-8 text-white') %>
-        <% end %>
-      </li>
-    </ul>
+    <% if defined?(logout_path) %>
+      <ul class="md:block">
+        <li>
+          <%= link_to logout_path, class: 'p-3 w-14 block flex justify-center opacity-50 hover:opacity-100 transition duration-200 ease', data: {turbo: false} do %>
+            <%= heroicon('logout', style: :solid, class: 'h-8 w-8 text-white') %>
+          <% end %>
+        </li>
+      </ul>
+    <% end %>
 
   </div>
 </nav>
