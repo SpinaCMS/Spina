@@ -15,7 +15,7 @@ module Spina
       
         def authenticate
           authenticate_or_request_with_http_basic do |username, password|
-            "spina" == username && "demo" == password
+            username == Rails.application.credentials.dig(:spina, :username) && password == Rails.application.credentials.dig(:spina, :password)
           end
         end
     
