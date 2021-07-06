@@ -1,6 +1,6 @@
 <%= render Spina::UserInterface::HeaderComponent.new do |header| %>
   <% header.actions do %>
-    <% if Spina::Current.theme.layout_parts.any? %>
+    <% if current_theme.layout_parts.any? %>
       <%= button_tag type: :submit, form: dom_id(@account), class: 'btn btn-primary', data: {controller: "button hotkeys", hotkeys: "command+s, ctrl+s", hotkeys_target: "button", action: "button#loading", loading_message: t('spina.ui.saving')} do %>
         <%= heroicon('check', style: :solid, class: 'w-5 h-5 mr-1 -ml-2') %>
         <%=t 'spina.layout.save' %>
@@ -13,10 +13,10 @@
   <%= hidden_field_tag :locale, @locale %>
   
   <div class="py-4 p-8">
-    <% if Spina::Current.theme.layout_parts.any? %>
+    <% if current_theme.layout_parts.any? %>
       
       <div class="max-w-5xl">
-        <%= f.fields_for "#{@locale}_content".to_sym, build_parts(f.object, Spina::Current.theme.layout_parts) do |ff| %>
+        <%= f.fields_for "#{@locale}_content".to_sym, build_parts(f.object, current_theme.layout_parts) do |ff| %>
           <%= ff.hidden_field :type, value: ff.object.class %>
           <%= ff.hidden_field :name %>
           <%= ff.hidden_field :title %>

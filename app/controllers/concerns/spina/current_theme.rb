@@ -3,7 +3,6 @@ module Spina
     extend ActiveSupport::Concern
     
     included do
-      before_action -> { current_theme }
       helper_method :current_theme
     end
   

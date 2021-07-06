@@ -8,7 +8,7 @@ module Spina
       end
       
       def update
-        Spina::Current.account.update(theme_params)
+        current_account.update(theme_params)
         redirect_to spina.edit_admin_theme_path, flash: {success: t('spina.theme.saved')}
       end
       
