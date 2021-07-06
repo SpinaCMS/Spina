@@ -26,10 +26,6 @@ module Spina
         def authenticate
           redirect_to admin_login_path, flash: {information: I18n.t('spina.notifications.login')} unless logged_in?
         end
-        
-        def authorize_admin
-          render status: 401 unless current_spina_user&.admin?
-        end
     
     end
   end
