@@ -12,7 +12,7 @@ class Spina::PagesController < Spina::ApplicationController
   private
   
     def authorize_page
-      raise ActiveRecord::RecordNotFound unless page.live? || spina_logged_in?
+      raise ActiveRecord::RecordNotFound unless page.live? || logged_in?
     end
 
 end

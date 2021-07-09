@@ -4,10 +4,10 @@ module Spina
       extend ActiveSupport::Concern
       
       included do
-        helper_method :spina_logged_in?
+        helper_method :logged_in?
       end
       
-      def spina_logged_in?
+      def logged_in?
         authenticate
       end
       
