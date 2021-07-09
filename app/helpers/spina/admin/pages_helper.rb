@@ -12,7 +12,7 @@ module Spina::Admin
     def build_parts(partable, parts)
       I18n.with_locale(@locale) do
         parts.map do |part|
-          part_attributes = Spina::Current.theme.parts.find{|p|p[:name].to_s == part.to_s}
+          part_attributes = current_theme.parts.find{|p|p[:name].to_s == part.to_s}
           partable.part(part_attributes)
         end
       end

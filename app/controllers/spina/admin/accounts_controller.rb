@@ -9,7 +9,7 @@ module Spina
       end
 
       def update
-        if Spina::Current.account.update(account_params)
+        if current_account.update(account_params)
           redirect_back fallback_location: spina.edit_admin_account_path, flash: {success: t('spina.accounts.saved')}
         else
           flash.now[:error] = t('spina.accounts.couldnt_be_saved')

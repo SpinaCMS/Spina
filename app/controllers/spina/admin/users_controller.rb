@@ -48,7 +48,7 @@ module Spina
       end
 
       def destroy
-        if @user != Spina::Current.user
+        if @user != current_spina_user
           @user.destroy 
           redirect_to spina.admin_users_url, flash: {success: t('spina.users.deleted')}
         end
@@ -73,7 +73,7 @@ module Spina
         end
         
         def authorize_admin
-          render status: 401 unless Spina::Current.user.admin?
+          render status: 401 unless current_spina_user.admin?
         end
         
     end

@@ -12,7 +12,7 @@ module Spina
       
       def plugins
         Spina::Plugin.all.find_all do |plugin|
-          Spina::Current.theme.plugins.include?(plugin.name)
+          helpers.current_theme.plugins.include?(plugin.name)
         end
       end
       
