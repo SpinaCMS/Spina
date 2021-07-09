@@ -11,11 +11,11 @@ module Spina
         
         if params[:resource_id]
           @resource = Resource.find(params[:resource_id])
-          @page_templates = current_theme.new_page_templates(recommended: @resource.view_template)
+          @page_templates = Spina::Current.theme.new_page_templates(recommended: @resource.view_template)
           @pages = @resource.pages.active.roots.includes(:translations)
         else
           @pages = Page.active.sorted.roots.main.includes(:translations)
-          @page_templates = current_theme.new_page_templates
+          @page_templates = Spina::Current.theme.new_page_templates
         end
       end
 
@@ -39,7 +39,7 @@ module Spina
       end
 
       def edit_content
-        @parts = current_theme.view_templates.find do |view_template|
+        @parts = Spina::Current.theme.view_templates.find do |view_template|
           view_template[:name].to_s == @page.view_template.to_s
         end&.dig(:parts) || []
       end

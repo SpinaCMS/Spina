@@ -7,7 +7,7 @@ module Spina
 
       mail(
         to: @user.email, 
-        from: current_account.email, 
+        from: Spina::Current.account.email, 
         subject: t('spina.forgot_password.mail_subject')
       )
     end

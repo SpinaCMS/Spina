@@ -1,4 +1,4 @@
-<%= form_with model: current_account, url: spina.admin_theme_path do |f| %>
+<%= form_with model: Spina::Current.account, url: spina.admin_theme_path do |f| %>
 
   <%= render Spina::UserInterface::HeaderComponent.new do |header| %>
     <% header.actions do %>

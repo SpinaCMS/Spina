@@ -3,6 +3,7 @@ module Spina
     extend ActiveSupport::Concern
     
     included do
+      before_action :current_account
       helper_method :current_account
     end
   
