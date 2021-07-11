@@ -10,7 +10,7 @@ config.parts = [
   {
     name: "file",
     title: "File",
-    part_type: "Spina::Parts::Attachments"
+    part_type: "Spina::Parts::Attachment"
   }
 ]
 ```
