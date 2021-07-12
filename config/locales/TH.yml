@@ -108,6 +108,7 @@ th:
       delete_confirmation_html: 
       insert: แทรกเอกสาร
       insert_multiple: แทรกเอกสาร
+      upload: 
     cancel: ยกเลิก
     choose_from_library: เลือกจากไลบารี
     close: ปิด

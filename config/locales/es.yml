@@ -49,9 +49,9 @@ es:
         menu_title: Título de navegación
         menu_title_placeholder: Deja en blanco para usar el título de la página
         no_parent: No página padre
-        resource: 
+        resource: Recurso
         seo_title: SEO <title>
-        seo_title_description: 
+        seo_title_description: SEO <description>
         seo_title_placeholder: Este título es usado en <title>-tag
         show_in_menu: Mostrar en navegación
         show_in_menu_description: Si se desactiva esta página no será mostrada en tu navegación
@@ -59,15 +59,15 @@ es:
         skip_to_first_child_description: Reenviar a la primera página hija
         title: Título
         title_placeholder: Título de la página
-        url_title: 
-        url_title_description: 
-        url_title_placeholder: 
+        url_title: Sobreescribir slug
+        url_title_description: Opcional
+        url_title_placeholder: Slug
         view_template: Plantilla de página
       spina/resource:
         label: Etiqueta
         order_by: Ordenar por
         parent_page: Página padre
-        view_template: 
+        view_template: Plantilla
       spina/user:
         admin: Administrador
         admin_description: Los administradores pueden crear usuarios
@@ -96,18 +96,19 @@ es:
         other: Usuarios
   spina:
     accounts:
-      contact_details: 
-      contact_details_description: 
-      couldnt_be_saved: 
-      name_description: 
-      save: 
-      saved: 
+      contact_details: Detalles de contacto
+      contact_details_description: Correo electrónico y teléfono
+      couldnt_be_saved: La cuenta no puede ser guardada
+      name_description: El nombre de tu sitio web
+      save: Guardar cuenta
+      saved: Cuenta guardada
     ago: atrás
     attachments:
-      choose_attachment: 
-      delete_confirmation_html: 
+      choose_attachment: Elegir documentos
+      delete_confirmation_html: "¿Estás seguro? El documento <span class='font-semibold'>podría estar en uso</span> en otra página."
       insert: Insertar documento
       insert_multiple: Insertar documentos
+      upload: 
     cancel: Cancelar
     choose_from_library: Elegir de la biblioteca
     close: Cerrar
@@ -124,17 +125,17 @@ es:
       success: Puede utilizar su nueva contraseña
       unknown_user: Este usuario no existe
     images:
-      all_images: 
+      all_images: Todas las imágenes
       back: Regresar
       cannot_be_created: No puede ser creada
       choose_image: Elegir imagen
       choose_images: Elegir imágenes
-      confirm_selection: 
+      confirm_selection: Confimar selección
       delete: Borrar
       delete_confirmation_html: Esta seguro que desea borrar esta <strong>imagen</strong>?
       delete_folder: Borrar carpeta
-      done_organizing: 
-      insert_image: 
+      done_organizing: Terminar el ordenamiento
+      insert_image: Insertar imagen
       insert_photo: Insertar foto
       insert_photos: Insertar fotos
       link: Enlace
@@ -144,113 +145,115 @@ es:
       upload: Subir imáneges
       upload_image: Subir imagen
     languages:
-      bg: 
+      bg: Búlgaro
       de: Alemán
       en: Inglés
       es: Español
       fr: Francés
-      id: 
+      id: Indonesio
       it: Italiano
       nl: Holandés
       pl: Polaco
-      pt-BR: 
-      ro: 
-      ru: 
-      sv: 
-      th: 
-      tr: 
-      zh-CN: 
+      pt-BR: Portugués brasileño
+      ro: Rumano
+      ru: Ruso
+      sv: Sueco
+      th: Tailandés
+      tr: Turco
+      zh-CN: Chino
     layout:
-      couldnt_be_saved: 
-      layout: 
-      no_layout_parts: 
-      save: 
-      saved: 
+      couldnt_be_saved: El diseño no se puede guardar
+      layout: Diseño
+      no_layout_parts: No hay partes del diseño disponibles
+      save: Guardar diseño
+      saved: Diseño guardado
     login: Ingresar
     logout: Cerrar sesión
     main_menu: Menú principal
     media_library:
-      add_folder: 
-      add_image: 
+      add_folder: Agregar folder
+      add_image: Agregar imagen
       attachments: Documentos
-      back_to_all: 
-      filename: 
+      back_to_all: Regresar
+      filename: Nombre del archivo
       images: Imágenes
-      images_count: 
-      insert: 
-      media_folder_delete_confirmation_html: 
-      no_folder: 
+      images_count:
+        one: Una imagen
+        other: "%{count} imágenes"
+      insert: Insertar imagen
+      media_folder_delete_confirmation_html: "¿Estás seguro? Las imágenes <strong>no</strong> serán eliminadas."
+      no_folder: No hay folders
       photos: Imágenes
-      rename_folder: 
-      save_media_folder: 
-      upload_from_device: 
-      uploading: 
+      rename_folder: Renombrar folder
+      save_media_folder: Guardar carpeta
+      upload_from_device: Subir desde un dispositivo
+      uploading: Subiendo...
     modal:
       agree: Si, estoy seguro
       cancel: No, cancelar
     navigations:
-      add_menu_item: 
-      add_sub_item: 
-      choose_page: 
-      delete_item: 
-      delete_item_confirmation_html: 
-      description: 
-      navigations: 
-      no_navigations: 
-      sorting_saved: 
+      add_menu_item: Agregar elemento al menú
+      add_sub_item: Agregar sub-elemento
+      choose_page: Elige la página
+      delete_item: Eliminar elemento
+      delete_item_confirmation_html: "¿Estás seguro que quieres <span class='font-semibold'>eliminar</span>? este elemento?"
+      description: Agrega u ordena los elementos a tu preferencia. También puedes agregar elementos anidados al menú (opcional).
+      navigations: Navegación
+      no_navigations: Este sitio no cuenta con navegación. Puedes configurarlo en las opciones de tu tema.
+      sorting_saved: Se guardó el ordenamiento
     notifications:
       alert: Ups! Algo salió mal
       information: Información
       login: Primero debes ingresar
       wrong_username_or_password: Email o password incorrecto
     options:
-      choose_option: 
+      choose_option: Elige una opción
     pages:
-      add_page_to: 
-      add_translation: 
+      add_page_to: 'Agergar página a:'
+      add_translation: Agregar traducción al %{language}
       advanced: Avanzado
-      cannot_be_deleted: 
+      cannot_be_deleted: No se puede eliminar la página
       change_order: Cambiar orden
-      change_view_template: 
-      change_view_template_confirmation: 
+      change_view_template: Cambiar plantilla
+      change_view_template_confirmation: "¿Estás seguro que quieres cambiar la plantilla de tu página? El contenidod el página que no pertenezca a la plantilla será eliminada."
       concept: concepto
-      create: 
+      create: Crear página
       create_page: Nuevo %{template}
-      delete: 
+      delete: Eliminar página
       delete_confirmation: Seguro que quieres eliminar la página <strong>%{subject}</strong>?
-      deleted: 
+      deleted: Página eliminada
       done_changing_order: Ordenamiento finalizado
-      edit_translation: 
+      edit_translation: Editar traducción al %{language}
       invisible_to_search_engines: Tu sitio es invisible para los motores de búsqueda
       invisible_to_search_engines_description: Ingresa a preferencias para activar los motores de búsqueda.
-      main_collection: 
+      main_collection: Colección principal
       materialize_path_confirmation: Estás seguro de que quieres reconstruir la ruta para esta página?
-      missing_translations: 
-      move_page: 
-      moved: 
+      missing_translations: Faltan traducciónes
+      move_page: Mover página
+      moved: Página movida
       new: Nueva página
-      no_pages_yet: 
-      no_parent_page: 
+      no_pages_yet: No hay páginas
+      no_parent_page: No hay páginas padre
       page_content: Contenido
       page_part: Sección de página
       page_seo: Motores de búsqueda
-      path: 
+      path: 'URL:'
       photo_picker: Seleccionar imagen
       photos_picker: Seleccionar imágenes
-      preview: 
-      publish: 
-      published: 
+      preview: Previsualización
+      publish: Publicar
+      published: Página publicada
       rebuild_materialized_path: Recontruir ruta materializada
-      recommended: 
+      recommended: recomendados
       save: Guardar página
-      save_changes: 
-      save_draft: 
+      save_changes: Guardar cambios
+      save_draft: Guardar borrador
       saved: Página guardada
       saving: Guardando...
-      search_engines: 
+      search_engines: Motores de búsqueda
       show_in_menu: invisible
       skip_to_first_child: omitir hasta la primera página hija
-      sorting_saved: 
+      sorting_saved: Ordenamiento guardado
     permanently_delete: Eliminar permanentemente
     photos:
       cannot_be_created: 'Tu imagen no puede ser procesada:'
@@ -265,10 +268,10 @@ es:
       new_folder: Nueva carpeta
       organize: Organizar imágenes
       rename_folder: Renombrar carpeta
-      select_images: 
+      select_images: Seleccionar imágenes
       upload_image: Subir una imagen
     preferences:
-      Analytics: 
+      Analytics: Analíticas
       account: General
       account_description: Preferencias personales
       account_save: Guardar preferencias
@@ -288,47 +291,47 @@ es:
       users_description: Administrar usuarios y administradores
     preview_website: Previsualizar sitio
     resources:
-      edit: 
-      label_description: 
-      manual_sorting: 
-      no_default_template: 
-      saved: 
-      settings: 
-      settings_description: 
+      edit: Editar recurso
+      label_description: User-facing label for this page collection.
+      manual_sorting: Ordenamiento manual
+      no_default_template: No hay plantilla por defecto
+      saved: Colección de páginas guardadas
+      settings: "%{label} configuraciones"
+      settings_description: Todas las páginas de la colección tendrás el prefijo del slug.
     save: Guardar
     search: Buscar...
     settings:
       save: Guardar configuraciones
       title: Configuraciones
     theme:
-      save: 
-      saved: 
-      theme: 
-      theme_description: 
+      save: Guardar tema
+      saved: Tema guardado
+      theme: Tema
+      theme_description: Configura tu tema
     ui:
-      cancel: 
-      delete: 
-      load_more: 
-      move_to: 
-      new_entry: 
-      optional: 
-      rename: 
-      save_changes: 
-      saving: 
+      cancel: Cancelar
+      delete: Borrar
+      load_more: Cargar más
+      move_to: Mover a
+      new_entry: Nueva entrada
+      optional: Opcional
+      rename: Renombrar
+      save_changes: Guardar cambios
+      saving: Guardando...
     users:
-      authorization: 
-      authorization_description: 
+      authorization: Autorización
+      authorization_description: Únicamente los administradores pueden editar usuarios.
       cannot_be_created: El usuario no puede ser
-      delete: 
+      delete: Eliminar usuario
       delete_confirmation_html: Estás seguro que deseas eliminar al usuario <strong>%{user}</strong>?
-      deleted: 
-      last_login: 
-      never_logged_in: 
+      deleted: Usuario eliminado
+      last_login: 'Último inicio de sesión:'
+      never_logged_in: Nunca ha iniciado sesión
       new: Nuevo usuario
-      profile: 
-      profile_description: 
+      profile: Perfil
+      profile_description: Esta información será usada para identificar a los usuarios. Los usuarios deben usar su correo electrónico para iniciar sesión.
       save: Guardar usuario
-      saved: 
+      saved: Usuario guardado
     visit_page: Visitar página
     website:
       all_pages: Todas las páginas
@@ -345,9 +348,9 @@ es:
       heading_2: Encabezado 2
       heading_3: Encabezado 3
       insert_link: Insertar enlace
-      link: 
+      link: Enlace
       paragraph: Párrafo
       quote: Cita
-      unlink: 
-      url: 
-      url_placeholder: 
+      unlink: Quitar enlace
+      url: URL
+      url_placeholder: Inserta una URL

@@ -108,6 +108,7 @@ bg:
       delete_confirmation_html: 
       insert: Добавете документ
       insert_multiple: Добавете документи
+      upload: 
     cancel: Спри
     choose_from_library: Избери от библиотеката
     close: Затвори

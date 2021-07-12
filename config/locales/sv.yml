@@ -108,6 +108,7 @@ sv:
       delete_confirmation_html: 
       insert: Infoga dokument
       insert_multiple: Infoga dokument
+      upload: 
     cancel: Avbryt
     choose_from_library: Välj från bibliotek
     close: Stäng

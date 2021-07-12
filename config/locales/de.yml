@@ -108,6 +108,7 @@ de:
       delete_confirmation_html: 
       insert: Dokument einfügen
       insert_multiple: Dokumente einfügen
+      upload: 
     cancel: Abbrechen
     choose_from_library: Wähle aus Bibliothek
     close: Schließen
