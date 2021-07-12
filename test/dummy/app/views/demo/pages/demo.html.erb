@@ -5,6 +5,10 @@
 <%= content.text :headline %>
 <%= content.html :body %>
 
+<% if has_content?(:attachment) %>
+  <%= link_to "Attachment", content.attachment_url(:attachment) %> 
+<% end %>
+
 <% if has_content?(:image) %>
   <%= content.image_tag :image, resize_to_fill: [100, 100] %>
 <% end %>

@@ -13,6 +13,10 @@ module Spina
     def content
       file if file.attached?
     end
+    
+    def present?
+      signed_blob_id.present?
+    end
 
     alias_method :old_update, :update
     def update(attributes)
