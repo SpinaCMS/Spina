@@ -111,15 +111,7 @@ de:
       delete_confirmation_html: Bist du sicher? Dieses Dokument <span class='font-semibold'>könnte</span> von einer Seite genutzt werden.
       insert: Dokument einfügen
       insert_multiple: Dokumente einfügen
-<<<<<<< HEAD
-<<<<<<< HEAD
-      upload: 
-=======
-      upload: Hochladen
->>>>>>> add missing translation strings to navigation view
-=======
       upload: Dokumente Hochladen
->>>>>>> apply suggestions
     cancel: Abbrechen
     choose_from_library: In Bibliothek auswählen
     close: Schließen
