@@ -21,7 +21,7 @@ de:
         phone: Telefon
         postal_code: PLZ
         robots_allowed: Sichtbar für Suchmaschinen
-        theme: Webseite Theme
+        theme: Webseiten Theme
         twitter: Twitter
         vat_identifier: USt-IdNr
         vat_identifier_description: USt-IdNr
@@ -63,8 +63,8 @@ de:
         title: Titel
         title_placeholder: Seiten-Titel
         url_title: Prefix überschreiben
-        url_title_description: 
-        url_title_placeholder: 
+        url_title_description: Optional
+        url_title_placeholder: Prefix
         view_template: Seiten-Template
       spina/resource:
         label: Label
@@ -75,7 +75,7 @@ de:
         admin: Administrator
         admin_description: Administratoren können Benutzer anlegen
         email: E-Mail
-        email_description: Deine E-Mail muss eindeutig sein
+        email_description: Deine E-Mail Adresse muss eindeutig sein
         last_logged_in: Zuletzt eingeloggt
         name: Name
         name_placeholder: Name
@@ -107,8 +107,8 @@ de:
       saved: Konto wurde gespeichert
     ago: vor
     attachments:
-      choose_attachment: Anhang auswählen
-      delete_confirmation_html: Bist du sicher? Dieser Anhang <span class='font-semibold'>könnte</span> von einer Seite genutzt werden.
+      choose_attachment: Dokument auswählen
+      delete_confirmation_html: Bist du sicher? Dieses Dokument <span class='font-semibold'>könnte</span> von einer Seite genutzt werden.
       insert: Dokument einfügen
       insert_multiple: Dokumente einfügen
 <<<<<<< HEAD
@@ -213,7 +213,7 @@ de:
       no_navigations: Diese Webseite hat noch keine Navigationen. Du kannst eine in der Theme Konfiguration erstellen.
       sorting_saved: Reihenfolge gespeichert
     notifications:
-      alert: Oops! Etwas ist falsch gelaufen
+      alert: Ups! Etwas ist falsch gelaufen
       information: Information
       login: Du musst dich zuerst einloggen
       wrong_username_or_password: E-Mail oder Passwort falsch
@@ -226,7 +226,7 @@ de:
       cannot_be_deleted: Seite kann nicht gelöscht werden
       change_order: Reihenfolge ändern
       change_view_template: View Template ändern
-      change_view_template_confirmation: Bist du discher, dass du dein view Template ändern möchtest? Inhalte die nicht zum neuen Template passen gehen verloren.
+      change_view_template_confirmation: Bist du sicher, dass du dein view Template ändern möchtest? Inhalte die nicht zum neuen Template passen gehen verloren.
       concept: Entwurf
       create: Seite erstellen
       create_page: Neue(s) %{template}
@@ -258,12 +258,12 @@ de:
       recommended: Empfohlen
       save: Seite speichern
       save_changes: Änderungen speichern
-      save_draft: entwurf speichern
+      save_draft: Entwurf speichern
       saved: Seite gespeichert
-      saving: Speichern...
+      saving: wird gespeichert...
       search_engines: Suchmaschinen
       show_in_menu: unsichtbar
-      skip_to_first_child: Springe zur ersten Unterseite
+      skip_to_first_child: Zur ersten Unterseite weiterleiten
       sorting_saved: Reihenfolge gespeichert
     permanently_delete: Permanent Löschen
     photos:
@@ -296,7 +296,7 @@ de:
       social_media_save: Speichere Social Media
       style: Stil
       style_description: Wähle einen passenden Stil
-      style_save: Style speichern
+      style_save: Stil speichern
       title: Einstellungen
       users: Benutzer
       users_description: Benutzer und Administratoren verwalten
