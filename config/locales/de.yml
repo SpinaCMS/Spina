@@ -36,19 +36,19 @@ de:
         pages: Seiten
         pages_description: Wähle die Seiten aus, die du in diesem Menü verwenden willst
       spina/page:
-        ancestry: Elternseite
-        created_at: 
+        ancestry: Oberseite
+        created_at: Erstellt am 
         description: Meta Beschreibung
         description_description: Diese Beschreibung wird in den Suchergebnissen angezeigt
         description_placeholder: Kurze Beschreibung deiner Seite
         draft: Entwurf
-        draft_description: Great for when your page is not quite finished
+        draft_description: Praktisch wenn deine Seite noch nicht ganz fertig ist
         link_url: Seitenumleitung
         link_url_description: Weiterleiten an URL
         link_url_placeholder: z.B. http://www.example.com/
         menu_title: Menü-Titel
         menu_title_placeholder: Leer lassen um den Seiten-Titel zu verwenden
-        no_parent: Kein Eltern Element
+        no_parent: Kein Oberelement
         resource: 
         seo_title: SEO <title>
         seo_title_description: 
@@ -59,15 +59,15 @@ de:
         skip_to_first_child_description: Zur ersten Seite
         title: Titel
         title_placeholder: Seiten-Titel
-        url_title: 
+        url_title: Slug überschreiben
         url_title_description: 
         url_title_placeholder: 
         view_template: Seiten-Template
       spina/resource:
-        label: 
-        order_by: 
-        parent_page: 
-        view_template: 
+        label: Label
+        order_by: Ordnen nach
+        parent_page: Oberseite
+        view_template: Standard View Template
       spina/user:
         admin: Administrator
         admin_description: Administratoren können Benutzer anlegen
@@ -96,21 +96,21 @@ de:
         other: Benutzer
   spina:
     accounts:
-      contact_details: 
-      contact_details_description: 
-      couldnt_be_saved: 
-      name_description: 
-      save: 
-      saved: 
+      contact_details: Kontaktangaben
+      contact_details_description: Email und Telefon
+      couldnt_be_saved: Konto konnte nicht gespeichert werden
+      name_description: Name deiner Webseite
+      save: Konto speichern
+      saved: Konto wurde gespeichert
     ago: vor
     attachments:
-      choose_attachment: 
-      delete_confirmation_html: 
+      choose_attachment: Anhang auswählen
+      delete_confirmation_html: Bist du sicher? Dieser Anhang <span class='font-semibold'>könnte</span> von einer Seite genutzt werden.
       insert: Dokument einfügen
       insert_multiple: Dokumente einfügen
       upload: 
     cancel: Abbrechen
-    choose_from_library: Wähle aus Bibliothek
+    choose_from_library: In Bibliothek auswählen
     close: Schließen
     delete: Löschen
     delete_confirmation: Bist du sicher, dass du <strong>%{subject}</strong> löschen möchtest?
@@ -125,156 +125,158 @@ de:
       success: Du kannst dein neues Passwort verwenden
       unknown_user: Dieser Nutzer existiert nicht
     images:
-      all_images: 
-      back: 
-      cannot_be_created: 
-      choose_image: 
-      choose_images: 
-      confirm_selection: 
-      delete: 
-      delete_confirmation_html: 
-      delete_folder: 
-      done_organizing: 
-      insert_image: 
-      insert_photo: 
-      insert_photos: 
-      link: 
-      new_folder: 
-      organize: 
-      remove_image: 
-      upload: 
-      upload_image: 
+      all_images: Alle Bilder
+      back: Zurück
+      cannot_be_created: Konnte nicht erstellt werden
+      choose_image: Bild auswählen
+      choose_images: Bilder auswählen
+      confirm_selection: Auswahl bestätigen
+      delete: Löschen
+      delete_confirmation_html: Bist du sicher, dass du dieses <strong>Bild</strong> löschen möchtest?
+      delete_folder: Ordner löschen
+      done_organizing: Speichern
+      insert_image: Bild einfügen
+      insert_photo: Foto einfügen
+      insert_photos: Fotos einfügen
+      link: Link
+      new_folder: Neuer Ordner
+      organize: Ordnen
+      remove_image: Bild löschen
+      upload: Bilder hochladen
+      upload_image: Bild hochladen
     languages:
-      bg: 
-      de: 
+      bg: Bulgarisch
+      de: Deutsch
       en: Englisch
-      es: 
-      fr: 
-      id: 
-      it: 
+      es: Spanisch
+      fr: Französisch
+      id: Indonesisch
+      it: Italiensich
       nl: Holländisch
-      pl: 
-      pt-BR: 
-      ro: 
-      ru: 
-      sv: 
-      th: 
-      tr: 
-      zh-CN: 
+      pl: Polnisch
+      pt-BR: Brasilianisches Portugiesisch 
+      ro: Rumänisch
+      ru: Russisch
+      sv: Schwedisch
+      th: Thai
+      tr: Türkisch
+      zh-CN: Vereinfachtes Chinesisch
     layout:
-      couldnt_be_saved: 
-      layout: 
-      no_layout_parts: 
-      save: 
-      saved: 
+      couldnt_be_saved: Layout konnte nicht gespeichert werden
+      layout: Layout
+      no_layout_parts: Keine Layout Elemente verfügbar 
+      save: Layout speichern
+      saved: Layout gespeichert
     login: Login
     logout: Logout
     main_menu: Hauptmenü
     media_library:
-      add_folder: 
-      add_image: 
+      add_folder: Ordner hinzufügen
+      add_image: Bild hinzufügen
       attachments: Dokumente
-      back_to_all: 
-      filename: 
-      images: 
+      back_to_all: Zurück
+      filename: Dateiname
+      images: Bilder
       images_count: 
-      insert: 
-      media_folder_delete_confirmation_html: 
-      no_folder: 
+        one: 1 Bild
+        other: "%{count} Bilder"
+      insert: Bild einfügen
+      media_folder_delete_confirmation_html: Bist du sicher? Die Bilder werden <strong>nicht</strong> gelöscht.
+      no_folder: Kein Ordner
       photos: Bilder
-      rename_folder: 
-      save_media_folder: 
-      upload_from_device: 
-      uploading: 
+      rename_folder: Ordner umbenennen
+      save_media_folder: Medien-Ordner speichern
+      upload_from_device: Von Gerät hochladen
+      uploading: Wird hochgeladen...
     modal:
       agree: Ja, ich bin sicher
       cancel: Nein, abbrechen
     navigations:
-      add_menu_item: 
-      add_sub_item: 
-      choose_page: 
-      delete_item: 
-      delete_item_confirmation_html: 
-      description: 
-      navigations: 
-      no_navigations: 
-      sorting_saved: 
+      add_menu_item: Menü-Eintrag hinzufügen
+      add_sub_item: Untereintrag hinzufügen
+      choose_page: Seite auswählen
+      delete_item: Eintrag löschen
+      delete_item_confirmation_html: Bist du sicher, dass du diesen Menü-Eintrag <span class='font-semibold'>löschen</span> möchtest?
+      description: Füge und sortiere Einträge wie du möchtest. Optional kannst du auch verschachtelte Menü-Einträge hinzufügen.
+      navigations: Navigationen
+      no_navigations: Diese Webseite hat noch keine Navigationen. Du kannst eine in der Theme Konfiguration erstellen.
+      sorting_saved: Reihenfolge gespeichert
     notifications:
       alert: Oops! Etwas ist falsch gelaufen
       information: Information
       login: Du musst dich zuerst einloggen
-      wrong_username_or_password: Falsche E-Mail oder Passwort
+      wrong_username_or_password: E-Mail oder Passwort falsch
     options:
-      choose_option: 
+      choose_option: Option auswählen 
     pages:
-      add_page_to: 
-      add_translation: 
+      add_page_to: 'Seite hinzufügen zu:'
+      add_translation: %{language} Übersetzung hinzufügen
       advanced: Erweitert
-      cannot_be_deleted: 
+      cannot_be_deleted: Seite kann nicht gelöscht werden
       change_order: Reihenfolge ändern
-      change_view_template: 
-      change_view_template_confirmation: 
+      change_view_template: View Template ändern
+      change_view_template_confirmation: Bist du discher, dass du dein view Template ändern möchtest? Inhalte die nicht zum neuen Template passen gehen verloren.
       concept: Entwurf
-      create: 
-      create_page: Neu %{template}
-      delete: 
+      create: Seite erstellen
+      create_page: Neue(s) %{template}
+      delete: Seite löschen
       delete_confirmation: Bist du sicher, dass du die Seite <strong>%{subject}</strong> löschen möchtest?
-      deleted: 
+      deleted: Seite gelöscht
       done_changing_order: Reihenfolge speichern
-      edit_translation: 
+      edit_translation: %{language} Übersetzung editieren
       invisible_to_search_engines: Deine Website ist für Suchmaschinen nicht sichtbar.
       invisible_to_search_engines_description: Gehe zu deinen Einstellungen um Suchmaschinen-Support zu aktivieren.
-      main_collection: 
+      main_collection: Hauptkollektion
       materialize_path_confirmation: Bist du sicher, dass du den Pfad für diese Seite neu erzeugen willst?
-      missing_translations: 
-      move_page: 
-      moved: 
+      missing_translations: Fehlende Übersetzungen
+      move_page: Seite verschieben
+      moved: Seite verschoben
       new: Neue Seite
-      no_pages_yet: 
-      no_parent_page: 
+      no_pages_yet: Noch keine Seiten
+      no_parent_page: Keine Oberseite
       page_content: Inhalt
       page_part: Seiteninhalt
       page_seo: Suchmaschinen
-      path: 
-      photo_picker: Wähle Bild
-      photos_picker: Wähle Bilder
-      preview: 
-      publish: 
-      published: 
+      path: 'Pfad:'
+      photo_picker: Bild auswählen
+      photos_picker: Bilder auswählen
+      preview: Vorschau
+      publish: Publizieren
+      published: Seite publiziert
       rebuild_materialized_path: Materialisierten Pfad neu erzeugen
-      recommended: 
+      recommended: Empfohlen
       save: Seite speichern
-      save_changes: 
-      save_draft: 
+      save_changes: Änderungen speichern
+      save_draft: entwurf speichern
       saved: Seite gespeichert
-      saving: Speichert...
-      search_engines: 
+      saving: Speichern...
+      search_engines: Suchmaschinen
       show_in_menu: unsichtbar
       skip_to_first_child: Springe zur ersten Unterseite
-      sorting_saved: 
+      sorting_saved: Reihenfolge gespeichert
     permanently_delete: Permanent Löschen
     photos:
       cannot_be_created: 'Bild kann nicht verarbeitet werden:'
-      choose_images: Wähle Bilder aus
-      delete: 
+      choose_images: Bilder auswählen
+      delete: Löschen
       delete_confirmation: Bist du sicher, dass du das Bild <strong>%{image}</strong> löschen möchtest?
-      delete_folder: Lösche Ordner
-      done_organizing: Organisieren abgeschlossen
+      delete_folder: Ordner löschen
+      done_organizing: Reihenfolge speichern
       insert_photo: Bild einfügen
-      insert_photos: Wähle Bilder aus
+      insert_photos: Bilder auswählen
       link: 'URL des Bildes:'
       new_folder: Neuer Ordner
-      organize: Organisiere Bilder
-      rename_folder: 
-      select_images: 
+      organize: Bilder sortieren
+      rename_folder: Ordner umbenenen 
+      select_images: Bilder auswählen
       upload_image: Bild hochladen
     preferences:
-      Analytics: 
+      Analytics: Analytics
       account: Allgemein
       account_description: Persönliche Einstellungen
       account_save: Einstellungen speichern
       analytics: Analytics und Suchmaschinen
-      analytics_description: Vernetzte deinen Account für real-time Analysen
+      analytics_description: Verknüpfe deinen Account für real-time Analysen
       analytics_save: Einstellungen speichern
       domain_name_settings: Domain Einstellungen
       domain_name_settings_description: Richte deine Domain ein
@@ -302,53 +304,53 @@ de:
       save: Einstellungen speichern
       title: Einstellungen
     theme:
-      save: 
-      saved: 
-      theme: 
-      theme_description: 
+      save: Theme speichern
+      saved: Theme gespeichert
+      theme: Theme
+      theme_description: Konfiguriere dein Theme
     ui:
-      cancel: 
-      delete: 
-      load_more: 
-      move_to: 
-      new_entry: 
-      optional: 
-      rename: 
-      save_changes: 
-      saving: 
+      cancel: Abbrechen
+      delete: Löschen
+      load_more: Weitere laden
+      move_to: Verschieben nach
+      new_entry: Neuer Eintrag
+      optional: Optional 
+      rename: Umbenennen
+      save_changes: Änderungen speichern
+      saving: Speichern...
     users:
-      authorization: 
-      authorization_description: 
+      authorization: Authorisierung
+      authorization_description: Administratoren können Benutzer verwalten. Normale Benutzer nicht.
       cannot_be_created: Der Benutzer kann nicht gespeichert werden
-      delete: 
+      delete: Benutzer löschen
       delete_confirmation_html: Bist du sicher, dass du den Benutzer <strong>%{user}</strong> löschen möchtest?
-      deleted: 
+      deleted: Benutzer gelöscht
       last_login: 
       never_logged_in: 
       new: Neuer Benutzer
-      profile: 
-      profile_description: 
+      profile: Profil
+      profile_description: Diese Information wird zur Identifikation der Benutzer verwendet. Benutzer müssen sich mit ihrer Email Adresse anmelden.
       save: Benutzer speichern
-      saved: 
-    visit_page: 
+      saved: Benutzer speichern
+    visit_page: Seite besuchen
     website:
       all_pages: Alle Seiten
       documents: Dokumente
-      images: 
+      images: Bilder
       media_library: Medien-Bibliothek
       media_library_description: Hier findest du alle deine Bilder und Dokumente
       pages: Seiten
       pages_description: Alle Seiten deiner Webseite
-      photos: Bilder
+      photos: Fotos
       title: Deine Webseite
     wysiwyg:
       heading_1: Überschrift 1
       heading_2: Überschrift 2
       heading_3: Überschrift 3
       insert_link: Link einfügen
-      link: 
+      link: Link
       paragraph: Paragraph
       quote: Zitat
-      unlink: 
-      url: 
-      url_placeholder: 
+      unlink: Link löschen
+      url: URL
+      url_placeholder: URL einfügen
