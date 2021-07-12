@@ -1,4 +1,7 @@
 de:
+  time:
+    formats:
+      long: "%Y-%m-%d %H:%M:%S"
   activerecord:
     attributes:
       spina/account:
