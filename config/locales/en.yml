@@ -301,8 +301,10 @@ en:
     save: Save
     search: Search...
     settings:
+      general: General
       save: Save Settings
       title: Settings
+      users: Users
     theme:
       save: Save theme
       saved: Theme saved
@@ -335,6 +337,7 @@ en:
     visit_page: Visit page
     website:
       all_pages: All pages
+      content: Content
       documents: Documents
       images: Images
       media_library: Media library
@@ -342,6 +345,8 @@ en:
       pages: Pages
       pages_description: All pages on your website
       photos: Images
+      settings: Settings
+      theme: Theme
       title: Your website
     wysiwyg:
       heading_1: Heading 1
