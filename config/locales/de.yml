@@ -210,7 +210,7 @@ de:
       choose_option: Option auswählen 
     pages:
       add_page_to: 'Seite hinzufügen zu:'
-      add_translation: %{language} Übersetzung hinzufügen
+      add_translation: Übersetzung für %{language} hinzufügen
       advanced: Erweitert
       cannot_be_deleted: Seite kann nicht gelöscht werden
       change_order: Reihenfolge ändern
@@ -223,7 +223,7 @@ de:
       delete_confirmation: Bist du sicher, dass du die Seite <strong>%{subject}</strong> löschen möchtest?
       deleted: Seite gelöscht
       done_changing_order: Reihenfolge speichern
-      edit_translation: %{language} Übersetzung editieren
+      edit_translation: Übersetzung für %{language} editieren
       invisible_to_search_engines: Deine Website ist für Suchmaschinen nicht sichtbar.
       invisible_to_search_engines_description: Gehe zu deinen Einstellungen um Suchmaschinen-Support zu aktivieren.
       main_collection: Hauptkollektion
