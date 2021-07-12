@@ -111,7 +111,11 @@ de:
       delete_confirmation_html: Bist du sicher? Dieser Anhang <span class='font-semibold'>könnte</span> von einer Seite genutzt werden.
       insert: Dokument einfügen
       insert_multiple: Dokumente einfügen
+<<<<<<< HEAD
       upload: 
+=======
+      upload: Hochladen
+>>>>>>> add missing translation strings to navigation view
     cancel: Abbrechen
     choose_from_library: In Bibliothek auswählen
     close: Schließen
@@ -338,14 +342,19 @@ de:
     visit_page: Seite besuchen
     website:
       all_pages: Alle Seiten
+      content: Inhalt
       documents: Dokumente
+      general: Allgemein
       images: Bilder
       media_library: Medien-Bibliothek
       media_library_description: Hier findest du alle deine Bilder und Dokumente
       pages: Seiten
       pages_description: Alle Seiten deiner Webseite
       photos: Fotos
+      settings: Einstellungen
+      theme: Theme
       title: Deine Webseite
+      users: Benutzer
     wysiwyg:
       heading_1: Überschrift 1
       heading_2: Überschrift 2

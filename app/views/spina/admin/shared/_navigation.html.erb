@@ -8,7 +8,7 @@
           <%= heroicon('menu', style: :solid, class: 'md:hidden w-8 h-8 text-white md:mr-3') %>
           
           <div class="text-white font-semibold hidden md:block transform -translate-x-2 ease-in-out duration-300 absolute md:relative opacity-0 transition-all" data-navigation-target="label">
-            Content
+            <%= t('spina.website.content') %>
           </div>
         <% end %>
 
@@ -33,14 +33,14 @@
           <%= heroicon('cog', style: :solid, class: 'w-8 h-8 text-white md:mr-3') %>
           
           <div class="text-white font-semibold hidden md:block transform -translate-x-2 ease-in-out duration-300 absolute md:relative opacity-0 transition-all" data-navigation-target="label">
-            Settings
+            <%= t('spina.website.settings') %>
           </div>
         <% end %>
 
         <% nav.links do %>
-          <%= render Spina::MainNavigation::LinkComponent.new("General", spina.edit_admin_account_path, active: controller_name == "accounts") %>
+          <%= render Spina::MainNavigation::LinkComponent.new(t('spina.website.general'), spina.edit_admin_account_path, active: controller_name == "accounts") %>
           <%= render Spina::MainNavigation::LinkComponent.new(t('spina.website.theme'), spina.edit_admin_theme_path, active: controller_name == "theme") %>
-          <%= render Spina::MainNavigation::LinkComponent.new("Users", spina.admin_users_path, active: controller_name == "users") %>
+          <%= render Spina::MainNavigation::LinkComponent.new(t('spina.website.users'), spina.admin_users_path, active: controller_name == "users") %>
           
           <%= render Spina::Hooks::HookComponent.new(partial: "settings_secondary_navigation") %>
           

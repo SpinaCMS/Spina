@@ -335,14 +335,19 @@ en:
     visit_page: Visit page
     website:
       all_pages: All pages
+      content: Content
       documents: Documents
+      general: General
       images: Images
       media_library: Media library
       media_library_description: Here's where you'll find all of your images and documents
       pages: Pages
       pages_description: All pages on your website
       photos: Images
+      settings: Settings
+      theme: Theme
       title: Your website
+      users: Users
     wysiwyg:
       heading_1: Heading 1
       heading_2: Heading 2
