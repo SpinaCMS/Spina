@@ -108,6 +108,7 @@ id:
       delete_confirmation_html: 
       insert: Masukan dokumen
       insert_multiple: Masukan dokumen
+      upload: 
     cancel: Batal
     choose_from_library: Pilih dari pustaka
     close: Tutup

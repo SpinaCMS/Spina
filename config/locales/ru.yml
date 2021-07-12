@@ -116,6 +116,7 @@ ru:
       delete_confirmation_html: 
       insert: Вставить документ
       insert_multiple: Вставить документы
+      upload: 
     cancel: Отмена
     choose_from_library: Выбрать из библиотеки
     close: Закрыть

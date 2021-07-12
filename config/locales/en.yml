@@ -108,6 +108,7 @@ en:
       delete_confirmation_html: Are you sure? This attachment <span class='font-semibold'>might</span> be in use on a page.
       insert: Insert document
       insert_multiple: Insert documents
+      upload: Upload files
     cancel: Cancel
     choose_from_library: Choose from library
     close: Close

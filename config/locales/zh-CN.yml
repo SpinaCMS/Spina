@@ -108,6 +108,7 @@ zh-CN:
       delete_confirmation_html: 
       insert: 插入文档
       insert_multiple: 插入多个文档
+      upload: 
     cancel: 取消
     choose_from_library: 从库中选择
     close: 关闭

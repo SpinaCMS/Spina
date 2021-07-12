@@ -1,8 +1,8 @@
-<div class="mt-6">
+<div class="mt-6" data-controller="attachment-picker">
   <label for="price" class="block text-sm leading-5 font-medium text-gray-700"><%= f.object.title %></label>
 
   <%= f.hidden_field :signed_blob_id, data: {attachment_picker_target: 'signedBlobId'} %>
   <%= f.hidden_field :filename, data: {attachment_picker_target: 'filename'} %>
 
-  <%= f.select :attachment_id, Spina::Attachment.sorted.map{|attachment| [attachment.file&.filename, attachment.id, data: {signed_blob_id: attachment.file&.blob&.signed_id, filename: attachment.file&.filename}]}, {include_blank: t("spina.attachments.choose_attachment")}, {class: "form-select"} %>
+  <%= f.select :attachment_id, Spina::Attachment.sorted.map{|attachment| [attachment.file&.filename, attachment.id, data: {signed_blob_id: attachment.file&.blob&.signed_id, filename: attachment.file&.filename}]}, {include_blank: t("spina.attachments.choose_attachment")}, {class: "form-select", data: {action: "attachment-picker#pick"}} %>
 </div>

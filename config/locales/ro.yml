@@ -108,6 +108,7 @@ ro:
       delete_confirmation_html: 
       insert: Inserează document
       insert_multiple: Inserează documente
+      upload: 
     cancel: Anulare
     choose_from_library: Alege din bibliotecă
     close: Închide
