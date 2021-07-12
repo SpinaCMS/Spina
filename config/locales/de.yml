@@ -49,17 +49,17 @@ de:
         menu_title: Menü-Titel
         menu_title_placeholder: Leer lassen um den Seiten-Titel zu verwenden
         no_parent: Kein Oberelement
-        resource: 
+        resource: Kollektion
         seo_title: SEO <title>
-        seo_title_description: 
+        seo_title_description: Stelle sicher dass deine Suchresultate gut aussehen
         seo_title_placeholder: Dieser Titel wird im <title>-tag verwendet
         show_in_menu: In der Navigation anzeigen
         show_in_menu_description: Wenn diese Option ausgeschaltet ist, wird deine Seite nicht in der Navigation angezeigt
-        skip_to_first_child: Vorwärts
-        skip_to_first_child_description: Zur ersten Seite
+        skip_to_first_child: Weiterleiten
+        skip_to_first_child_description: Zur ersten Unterseite
         title: Titel
         title_placeholder: Seiten-Titel
-        url_title: Slug überschreiben
+        url_title: Prefix überschreiben
         url_title_description: 
         url_title_placeholder: 
         view_template: Seiten-Template
@@ -283,21 +283,21 @@ de:
       social_media: Social Media
       social_media_description: Facebook und Twitter Accounts
       social_media_save: Speichere Social Media
-      style: Style
-      style_description: Wähle einen passenden Style
+      style: Stil
+      style_description: Wähle einen passenden Stil
       style_save: Style speichern
       title: Einstellungen
       users: Benutzer
       users_description: Benutzer und Administratoren verwalten
     preview_website: Vorschau der Webseite
     resources:
-      edit: 
-      label_description: 
-      manual_sorting: 
-      no_default_template: 
-      saved: 
-      settings: 
-      settings_description: 
+      edit: Kollektion editieren
+      label_description: Label für diese Seiten Kollektion
+      manual_sorting: Manuell sortieren
+      no_default_template: Kein Standard-Template
+      saved: Kollektion gespeichert
+      settings: Einstellungen für %{label}
+      settings_description: Alle Seiten in dieser Kollektion haben folgendes Prefix.
     save: Speichern
     search: Suchen...
     settings:
@@ -325,11 +325,11 @@ de:
       delete: Benutzer löschen
       delete_confirmation_html: Bist du sicher, dass du den Benutzer <strong>%{user}</strong> löschen möchtest?
       deleted: Benutzer gelöscht
-      last_login: 
-      never_logged_in: 
+      last_login: Letztes Login
+      never_logged_in: Noch nie eingeloggt
       new: Neuer Benutzer
       profile: Profil
-      profile_description: Diese Information wird zur Identifikation der Benutzer verwendet. Benutzer müssen sich mit ihrer Email Adresse anmelden.
+      profile_description: Diese Information wird zur Identifikation des Benutzers verwendet. Benutzer müssen sich mit ihrer Email Adresse anmelden.
       save: Benutzer speichern
       saved: Benutzer speichern
     visit_page: Seite besuchen
