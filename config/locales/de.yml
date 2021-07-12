@@ -112,10 +112,14 @@ de:
       insert: Dokument einfügen
       insert_multiple: Dokumente einfügen
 <<<<<<< HEAD
+<<<<<<< HEAD
       upload: 
 =======
       upload: Hochladen
 >>>>>>> add missing translation strings to navigation view
+=======
+      upload: Dokumente Hochladen
+>>>>>>> apply suggestions
     cancel: Abbrechen
     choose_from_library: In Bibliothek auswählen
     close: Schließen
@@ -308,8 +312,10 @@ de:
     save: Speichern
     search: Suchen...
     settings:
+      general: Allgemein
       save: Einstellungen speichern
       title: Einstellungen
+      users: Benutzer
     theme:
       save: Theme speichern
       saved: Theme gespeichert
@@ -344,7 +350,6 @@ de:
       all_pages: Alle Seiten
       content: Inhalt
       documents: Dokumente
-      general: Allgemein
       images: Bilder
       media_library: Medien-Bibliothek
       media_library_description: Hier findest du alle deine Bilder und Dokumente
@@ -354,7 +359,6 @@ de:
       settings: Einstellungen
       theme: Theme
       title: Deine Webseite
-      users: Benutzer
     wysiwyg:
       heading_1: Überschrift 1
       heading_2: Überschrift 2
