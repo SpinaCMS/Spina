@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    spina (2.1.0)
+    spina (2.1.1)
       ancestry
       attr_json
       bcrypt
@@ -99,7 +99,7 @@ GEM
     erubi (1.10.0)
     factory_bot (6.2.0)
       activesupport (>= 5.0.0)
-    ffi (1.15.1)
+    ffi (1.15.3)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     i18n (1.8.10)
@@ -192,7 +192,7 @@ GEM
       method_source
       rake (>= 0.13)
       thor (~> 1.0)
-    rake (13.0.3)
+    rake (13.0.6)
     request_store (1.5.0)
       rack (>= 1.4)
     ruby-progressbar (1.11.0)

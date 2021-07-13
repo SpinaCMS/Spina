@@ -1,7 +1,13 @@
 # Spina CMS Changelog
 
-## 2.1 (July 3rd, 2021)
+## 2.1
 
+### 2.1.1 (July 13th, 2021)
+* Fixed bugs with attachments (#746 / #747)
+* Updated spanish locales
+* Updated german locales
+
+### 2.1.0 (July 3rd, 2021)
 * Refactored all javascript with Hotwire
 * Refactored all CSS with TailwindCSS
 * Refactored all views with ViewComponent
