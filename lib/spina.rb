@@ -18,6 +18,7 @@ module Spina
   config_accessor :backend_path, 
                   :frontend_parent_controller,
                   :disable_frontend_routes,
+                  :disable_decorator_load,
                   :max_page_depth,
                   :locales, 
                   :embedded_image_size,
@@ -33,6 +34,7 @@ module Spina
   self.frontend_parent_controller = "ApplicationController"
 
   self.disable_frontend_routes = false
+  self.disable_decorator_load = false
 
   self.max_page_depth = 5
 

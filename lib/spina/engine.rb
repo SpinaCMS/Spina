@@ -15,10 +15,12 @@ module Spina
 
     config.autoload_paths += %W( #{config.root}/lib )
 
-    config.to_prepare do    
+    config.to_prepare do
       # Require decorators from main application
-      [Rails.root].flatten.map { |p| Dir[p.join('app', 'decorators', '**', '*_decorator.rb')]}.flatten.uniq.each do |decorator|
-        Rails.configuration.cache_classes ? require(decorator) : load(decorator)
+      unless Spina.config.disable_decorator_load
+        Dir.glob(Rails.root + "app/decorators/**/*_decorator.rb").each do |decorator|
+          require_dependency(decorator)
+        end
       end
 
       # Register JSON part types for editing content
