@@ -21,6 +21,7 @@ module Spina
                   :backend_path, 
                   :frontend_parent_controller,
                   :disable_frontend_routes,
+                  :disable_decorator_load,
                   :locales, 
                   :embedded_image_size,
                   :party_pooper,
@@ -31,6 +32,7 @@ module Spina
   self.authentication = "Spina::Authentication::Sessions"
   self.backend_path = 'admin'
   self.disable_frontend_routes = false
+  self.disable_decorator_load = false
   self.embedded_image_size = [2000, 2000]
   self.frontend_parent_controller = "ApplicationController"
   self.locales = [I18n.default_locale]
