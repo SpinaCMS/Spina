@@ -106,8 +106,10 @@ en:
     attachments:
       choose_attachment: Choose attachment
       delete_confirmation_html: Are you sure? This attachment <span class='font-semibold'>might</span> be in use on a page.
+      download: Download
       insert: Insert document
       insert_multiple: Insert documents
+      upload: Upload files
     cancel: Cancel
     choose_from_library: Choose from library
     close: Close
@@ -300,8 +302,10 @@ en:
     save: Save
     search: Search...
     settings:
+      general: General
       save: Save Settings
       title: Settings
+      users: Users
     theme:
       save: Save theme
       saved: Theme saved
@@ -334,6 +338,7 @@ en:
     visit_page: Visit page
     website:
       all_pages: All pages
+      content: Content
       documents: Documents
       images: Images
       media_library: Media library
@@ -341,6 +346,8 @@ en:
       pages: Pages
       pages_description: All pages on your website
       photos: Images
+      settings: Settings
+      theme: Theme
       title: Your website
     wysiwyg:
       heading_1: Heading 1

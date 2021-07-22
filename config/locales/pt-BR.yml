@@ -108,6 +108,7 @@ pt-BR:
       delete_confirmation_html: 
       insert: Inserir documento
       insert_multiple: Inserir documentos
+      upload: 
     cancel: Cancelar
     choose_from_library: Escolher da biblioteca
     close: Fechar

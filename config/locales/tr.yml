@@ -108,6 +108,7 @@ tr:
       delete_confirmation_html: 
       insert: Belge ekle
       insert_multiple: Çoklu belge ekle
+      upload: 
     cancel: İptal
     choose_from_library: Kütüphaneden seç
     close: Kapat
