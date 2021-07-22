@@ -1,0 +1,5 @@
+<%= turbo_stream.remove @image %>
+
+<% if @image.media_folder %>
+  <%= turbo_stream.update @image.media_folder %>
+<% end %>

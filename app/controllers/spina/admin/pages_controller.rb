@@ -1,66 +1,79 @@
 module Spina
   module Admin
     class PagesController < AdminController
-      before_action :set_tabs, only: [:new, :create, :edit, :update]
       before_action :set_locale
-      before_action :set_page, only: [:edit, :update, :destroy, :children]
+      before_action :set_page, only: [:edit, :edit_content, :edit_template, :update, :destroy, :children]
+      before_action :set_tabs
 
       def index
         add_breadcrumb I18n.t('spina.website.pages'), spina.admin_pages_path
-        redirect_to admin_pages_path unless current_admin_path.starts_with?('/pages')
-        @pages = Page.active.sorted.roots.regular_pages.includes(:translations)
+        
+        
+        if params[:resource_id]
+          @resource = Resource.find(params[:resource_id])
+          @page_templates = Current.theme.new_page_templates(recommended: @resource.view_template)
+          @pages = @resource.pages.active.roots.includes(:translations)
+        else
+          @pages = Page.active.sorted.roots.main.includes(:translations)
+          @page_templates = Current.theme.new_page_templates
+        end
       end
 
       def new
-        @resource = Resource.find_by(id: params[:resource_id])
-        @page = Page.new(resource: @resource, parent: Page.find_by(id: params[:parent_id]))
-        add_index_breadcrumb
-        if current_theme.new_page_templates.any? { |template| template[0] == params[:view_template] }
-          @page.view_template = params[:view_template]
-        end
-        add_breadcrumb I18n.t('spina.pages.new')
-        render layout: 'spina/admin/admin'
+        resource = Resource.find_by(id: params[:resource_id])
+        @page = Page.new(view_template: params[:view_template], resource: resource)
       end
 
       def create
-        @page = Page.new(page_params)
-        add_breadcrumb I18n.t('spina.pages.new')
+        @page = Page.new(page_params.merge(draft: true))
         if @page.save
-          @page.navigations << Spina::Navigation.where(auto_add_pages: true)
-          redirect_to spina.edit_admin_page_url(@page), flash: {success: t('spina.pages.saved')}
+          redirect_to spina.edit_admin_page_url(@page)
         else
-          render :new, layout: 'spina/admin/admin'
+          render turbo_stream: turbo_stream.update(view_context.dom_id(@page, :new_page_form), partial: "new_page_form")
         end
       end
 
-      def edit        
+      def edit
         add_index_breadcrumb
         add_breadcrumb @page.title
-        render layout: 'spina/admin/admin'
+      end
+
+      def edit_content
+        @parts = current_theme.view_templates.find do |view_template|
+          view_template[:name].to_s == @page.view_template.to_s
+        end&.dig(:parts) || []
+      end
+
+      def edit_template
+        render layout: false
       end
 
       def update
-        respond_to do |format|
-          Mobility.locale = @locale
-          if @page.update(page_params)
-            @page.touch
-            format.html { redirect_to spina.edit_admin_page_url(@page, params: {locale: @locale}), flash: {success: t('spina.pages.saved')} }
-            format.js
+        Mobility.locale = @locale
+        if @page.update(page_params)
+          if @page.saved_change_to_draft? && @page.live?
+            flash[:confetti] = t('spina.pages.published')
           else
-            format.html do
-              Mobility.locale = I18n.default_locale
-              render :edit, layout: 'spina/admin/admin'
-            end
+            flash[:success] = t('spina.pages.saved')
           end
+          
+          redirect_to spina.edit_admin_page_url(@page, params: {locale: @locale})
+        else
+          add_index_breadcrumb
+          Mobility.locale = I18n.locale
+          add_breadcrumb @page.title
+          flash.now[:error] = t('spina.pages.couldnt_be_saved')
+          render :edit, status: :unprocessable_entity
         end
       end
 
       def sort
-        params[:list].each_pair do |parent_pos, parent_node|
-          update_child_pages_position(parent_node)
-          update_page_position(parent_node, parent_pos, nil)
+        params[:ids].each.with_index do |id, index| 
+          Page.where(id: id).update_all(position: index + 1)
         end
-        head :ok
+        
+        flash.now[:info] = t("spina.pages.sorting_saved")
+        render_flash
       end
 
       def children
@@ -68,49 +81,39 @@ module Spina
         render layout: false
       end
 
-      def destroy        
+      def destroy
+        flash[:info] = t('spina.pages.deleted')    
         @page.destroy
         redirect_to spina.admin_pages_url
       end
 
       private
 
-      def set_locale
-        @locale = params[:locale] || I18n.default_locale
-      end
-
-      def add_index_breadcrumb
-        if @page.resource.present?
-          add_breadcrumb @page.resource.label, spina.admin_resource_path(@page.resource)
-        else
-          add_breadcrumb I18n.t('spina.website.pages'), spina.admin_pages_path
+        def set_locale
+          @locale = params[:locale] || I18n.default_locale
         end
-      end
-
-      def set_tabs
-        @tabs = %w{page_content page_seo advanced}
-      end
-
-      def update_page_position(page, position, parent_id = nil)
-        Page.update(page[:id], position: position.to_i + 1, parent_id: parent_id )
-      end
-
-      def update_child_pages_position(node)
-        if node[:children].present?
-          node[:children].each_pair do |child_pos, child_node|
-            update_child_pages_position(child_node) if child_node[:children].present?
-            update_page_position(child_node, child_pos, node[:id])
+  
+        def add_index_breadcrumb
+          path = spina.admin_pages_path
+          if @page.resource
+            path = spina.admin_pages_path(resource_id: @page.resource_id)
           end
+          
+          add_breadcrumb t('spina.website.pages'), path, class: 'text-gray-400'
         end
-      end
+  
+        def page_params
+          params.require(:page).permit!
+        end
+  
+        def set_page
+          @page = Page.find(params[:id])
+        end
 
-      def page_params
-        params.require(:page).permit!
-      end
+        def set_tabs
+          @tabs = %w[page_content search_engines advanced]
+        end
 
-      def set_page
-        @page = Page.find(params[:id])
-      end
     end
   end
 end

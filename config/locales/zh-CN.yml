@@ -51,6 +51,7 @@ zh-CN:
         no_parent: 
         resource: 
         seo_title: SEO <title>
+        seo_title_description: 
         seo_title_placeholder: 标签页标题
         show_in_menu: 在导航栏显示
         show_in_menu_description: 关闭以后在导航栏不显示
@@ -94,11 +95,20 @@ zh-CN:
         one: 用户
         other: 所有用户
   spina:
+    accounts:
+      contact_details: 
+      contact_details_description: 
+      couldnt_be_saved: 
+      name_description: 
+      save: 
+      saved: 
     ago: 以前
     attachments:
       choose_attachment: 
+      delete_confirmation_html: 
       insert: 插入文档
       insert_multiple: 插入多个文档
+      upload: 
     cancel: 取消
     choose_from_library: 从库中选择
     close: 关闭
@@ -122,7 +132,7 @@ zh-CN:
       choose_images: 
       confirm_selection: 
       delete: 
-      delete_confirmation: 
+      delete_confirmation_html: 
       delete_folder: 
       done_organizing: 
       insert_image: 
@@ -151,16 +161,44 @@ zh-CN:
       th: 
       tr: 
       zh-CN: 
+    layout:
+      couldnt_be_saved: 
+      layout: 
+      no_layout_parts: 
+      save: 
+      saved: 
     login: 登录
     logout: 登出
     main_menu: 
     media_library:
+      add_folder: 
+      add_image: 
       attachments: 所有文档
+      back_to_all: 
+      filename: 
       images: 
+      images_count: 
+      insert: 
+      media_folder_delete_confirmation_html: 
+      no_folder: 
       photos: 所有图片
+      rename_folder: 
+      save_media_folder: 
+      upload_from_device: 
+      uploading: 
     modal:
       agree: 同意
       cancel: 取消
+    navigations:
+      add_menu_item: 
+      add_sub_item: 
+      choose_page: 
+      delete_item: 
+      delete_item_confirmation_html: 
+      description: 
+      navigations: 
+      no_navigations: 
+      sorting_saved: 
     notifications:
       alert: 哎呀, 出错了
       information: 通知
@@ -169,27 +207,51 @@ zh-CN:
     options:
       choose_option: 
     pages:
+      add_page_to: 
+      add_translation: 
       advanced: 高级
+      cannot_be_deleted: 
       change_order: 排序
+      change_view_template: 
+      change_view_template_confirmation: 
       concept: concept
+      create: 
       create_page: 新 %{template}
+      delete: 
       delete_confirmation: 是否确定删除 <strong>%{subject}</strong> 页面?
+      deleted: 
       done_changing_order: 完成排序
+      edit_translation: 
       invisible_to_search_engines: 对搜索引擎隐身
       invisible_to_search_engines_description: 设置对搜索引擎显隐
+      main_collection: 
       materialize_path_confirmation: 
+      missing_translations: 
+      move_page: 
+      moved: 
       new: 新页面
+      no_pages_yet: 
+      no_parent_page: 
       page_content: 内容
       page_part: 局部页面
       page_seo: 搜索引擎
+      path: 
       photo_picker: 选择图片
       photos_picker: 选择多张图片
+      preview: 
+      publish: 
+      published: 
       rebuild_materialized_path: 
+      recommended: 
       save: 保存页面
+      save_changes: 
+      save_draft: 
       saved: 
       saving: 
+      search_engines: 
       show_in_menu: 隐藏
       skip_to_first_child: 跳转到首个子页面
+      sorting_saved: 
     permanently_delete: 永久删除
     photos:
       cannot_be_created: '图片不能被处理:'
@@ -228,16 +290,46 @@ zh-CN:
     preview_website: 预览网站
     resources:
       edit: 
+      label_description: 
+      manual_sorting: 
+      no_default_template: 
+      saved: 
+      settings: 
+      settings_description: 
     save: 
     search: 搜索...
     settings:
       save: 
       title: 
+    theme:
+      save: 
+      saved: 
+      theme: 
+      theme_description: 
+    ui:
+      cancel: 
+      delete: 
+      load_more: 
+      move_to: 
+      new_entry: 
+      optional: 
+      rename: 
+      save_changes: 
+      saving: 
     users:
+      authorization: 
+      authorization_description: 
       cannot_be_created: 无法保存用户
-      delete_confirmation: 是否确定删除用户 <strong>%{user}</strong>?
+      delete: 
+      delete_confirmation_html: 是否确定删除用户 <strong>%{user}</strong>?
+      deleted: 
+      last_login: 
+      never_logged_in: 
       new: 新建用户
+      profile: 
+      profile_description: 
       save: 保存用户
+      saved: 
     visit_page: 
     website:
       all_pages: 
@@ -254,5 +346,9 @@ zh-CN:
       heading_2: 标题 2
       heading_3: 标题 3
       insert_link: 插入链接
+      link: 
       paragraph: 段落
       quote: 引用
+      unlink: 
+      url: 
+      url_placeholder: 

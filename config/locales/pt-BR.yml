@@ -51,6 +51,7 @@ pt-BR:
         no_parent: Nenhum pai
         resource: 
         seo_title: SEO <title>
+        seo_title_description: 
         seo_title_placeholder: Este título é utilizado na tag <title>
         show_in_menu: Mostrar no menu de navegação
         show_in_menu_description: Quando desativada, está página não será exibida no seu menu de navegação
@@ -94,11 +95,20 @@ pt-BR:
         one: Usuário
         other: Usuários
   spina:
+    accounts:
+      contact_details: 
+      contact_details_description: 
+      couldnt_be_saved: 
+      name_description: 
+      save: 
+      saved: 
     ago: atrás
     attachments:
       choose_attachment: 
+      delete_confirmation_html: 
       insert: Inserir documento
       insert_multiple: Inserir documentos
+      upload: 
     cancel: Cancelar
     choose_from_library: Escolher da biblioteca
     close: Fechar
@@ -122,7 +132,7 @@ pt-BR:
       choose_images: Escolher imagens
       confirm_selection: 
       delete: Excluir
-      delete_confirmation: Tem certeza que deseja remover esta <strong>imagem</strong>?
+      delete_confirmation_html: Tem certeza que deseja remover esta <strong>imagem</strong>?
       delete_folder: Excluir pasta
       done_organizing: Concluir organização
       insert_image: 
@@ -151,16 +161,44 @@ pt-BR:
       th: 
       tr: 
       zh-CN: 
+    layout:
+      couldnt_be_saved: 
+      layout: 
+      no_layout_parts: 
+      save: 
+      saved: 
     login: Login
     logout: Sair
     main_menu: Menu principal
     media_library:
+      add_folder: 
+      add_image: 
       attachments: Documentos
+      back_to_all: 
+      filename: 
       images: Imagens
+      images_count: 
+      insert: 
+      media_folder_delete_confirmation_html: 
+      no_folder: 
       photos: Imagens
+      rename_folder: 
+      save_media_folder: 
+      upload_from_device: 
+      uploading: 
     modal:
       agree: Sim, tenho certeza
       cancel: Não, cancelar
+    navigations:
+      add_menu_item: 
+      add_sub_item: 
+      choose_page: 
+      delete_item: 
+      delete_item_confirmation_html: 
+      description: 
+      navigations: 
+      no_navigations: 
+      sorting_saved: 
     notifications:
       alert: Oops! Algo deu errado
       information: Informação
@@ -169,27 +207,51 @@ pt-BR:
     options:
       choose_option: 
     pages:
+      add_page_to: 
+      add_translation: 
       advanced: Avançado
+      cannot_be_deleted: 
       change_order: Mudar ordem
+      change_view_template: 
+      change_view_template_confirmation: 
       concept: rascunho
+      create: 
       create_page: novo %{template}
+      delete: 
       delete_confirmation: Tem certeza que deseja remover a página <strong>%{subject}</strong>?
+      deleted: 
       done_changing_order: Ordenação finalizada
+      edit_translation: 
       invisible_to_search_engines: Seu site não está visível para os sistemas de busca
       invisible_to_search_engines_description: Vá para as preferências para ativar os sistemas de busca
+      main_collection: 
       materialize_path_confirmation: Você está certo que quer reconstruir o caminho para esta página?
+      missing_translations: 
+      move_page: 
+      moved: 
       new: Nova página
+      no_pages_yet: 
+      no_parent_page: 
       page_content: Conteúdo
       page_part: Seção de página
       page_seo: Sistemas de busca
+      path: 
       photo_picker: Escolher imagem
       photos_picker: Escolher imagens
+      preview: 
+      publish: 
+      published: 
       rebuild_materialized_path: Reconstruir caminho materializado
+      recommended: 
       save: Salvar página
+      save_changes: 
+      save_draft: 
       saved: Página salva
       saving: Salvando...
+      search_engines: 
       show_in_menu: invisível
       skip_to_first_child: encaminhar para a primeira página filha
+      sorting_saved: 
     permanently_delete: Remover permanentemente
     photos:
       cannot_be_created: 'Imagem não pôde ser processada:'
@@ -228,16 +290,46 @@ pt-BR:
     preview_website: Pré-visualizar site
     resources:
       edit: 
+      label_description: 
+      manual_sorting: 
+      no_default_template: 
+      saved: 
+      settings: 
+      settings_description: 
     save: Salvar
     search: Buscar...
     settings:
       save: Salvar Configurações
       title: Configurações
+    theme:
+      save: 
+      saved: 
+      theme: 
+      theme_description: 
+    ui:
+      cancel: 
+      delete: 
+      load_more: 
+      move_to: 
+      new_entry: 
+      optional: 
+      rename: 
+      save_changes: 
+      saving: 
     users:
+      authorization: 
+      authorization_description: 
       cannot_be_created: O usuário não pode ser salvo
-      delete_confirmation: Tem certeza que deseja remover o usuário <strong>%{user}</strong>?
+      delete: 
+      delete_confirmation_html: Tem certeza que deseja remover o usuário <strong>%{user}</strong>?
+      deleted: 
+      last_login: 
+      never_logged_in: 
       new: Novo usuário
+      profile: 
+      profile_description: 
       save: Salvar usuário
+      saved: 
     visit_page: 
     website:
       all_pages: Todas as páginas
@@ -254,5 +346,9 @@ pt-BR:
       heading_2: Cabeçalho 2
       heading_3: Cabeçalho 3
       insert_link: Inserir link
+      link: 
       paragraph: Parágrafo
       quote: Citação
+      unlink: 
+      url: 
+      url_placeholder: 

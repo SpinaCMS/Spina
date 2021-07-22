@@ -36,6 +36,23 @@ module Spina
       page.update(parent: about)
       assert_equal "/about/services", page.materialized_path
     end
+    
+    test 'append decimal to duplicate paths' do
+      page = FactoryBot.create :about_page, title: "About"
+      assert_equal "/about", page.materialized_path
+      
+      duplicate_page = FactoryBot.create :about_page, title: "About"
+      assert_equal "/about-1", duplicate_page.materialized_path
+    end
+    
+    test 'append decimal to multiple duplicate paths' do
+      2.times do
+        FactoryBot.create :about_page, title: "About"
+      end
+      
+      page = FactoryBot.create :about_page, title: "About"
+      assert_equal "/about-2", page.materialized_path
+    end
 
   end
 end

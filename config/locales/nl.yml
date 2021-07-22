@@ -51,6 +51,7 @@ nl:
         no_parent: Geen parent
         resource: Weergeven in
         seo_title: SEO <title>
+        seo_title_description: Zorg ervoor dat je resultaat in Google er goed uit ziet
         seo_title_placeholder: Deze titel komt in de <title>-tag van de broncode te staan
         show_in_menu: In menu weergeven
         show_in_menu_description: Als dit uit staat komt de pagina niet voor in het menu
@@ -58,9 +59,9 @@ nl:
         skip_to_first_child_description: Doorsturen naar eerste onderliggende pagina
         title: Titel
         title_placeholder: Titel van de pagina
-        url_title: 
-        url_title_description: 
-        url_title_placeholder: 
+        url_title: Slug overschrijven
+        url_title_description: Optioneel
+        url_title_placeholder: Slug
         view_template: Pagina template
       spina/resource:
         label: Label
@@ -94,11 +95,20 @@ nl:
         one: Gebruiker
         other: Gebruikers
   spina:
+    accounts:
+      contact_details: Contactgegevens
+      contact_details_description: Email en telefoon
+      couldnt_be_saved: Account kon niet worden opgeslagen
+      name_description: Naam van je website
+      save: Account opslaan
+      saved: Account opgeslagen
     ago: geleden
     attachments:
       choose_attachment: Kies een bijlage
+      delete_confirmation_html: Weet je het zeker? Het kan zijn dat dit document in gebruik is op een pagina.
       insert: Document toevoegen
       insert_multiple: Documenten toevoegen
+      upload: 
     cancel: Annuleren
     choose_from_library: Kies uit bibliotheek
     close: Sluiten
@@ -122,7 +132,7 @@ nl:
       choose_images: Kies afbeeldingen
       confirm_selection: Bevestig selectie
       delete: Verwijderen
-      delete_confirmation: Weet je zeker dat je deze <strong>afbeelding</strong> wilt verwijderen?
+      delete_confirmation_html: Weet je zeker dat je deze <strong>afbeelding</strong> wilt verwijderen?
       delete_folder: Verwijder folder
       done_organizing: Klaar met slepen
       insert_image: Afbeelding invoegen
@@ -151,16 +161,46 @@ nl:
       th: Thais
       tr: Turks
       zh-CN: Versimpeld Chinees
+    layout:
+      couldnt_be_saved: Layout kan niet worden opgeslagen
+      layout: Layout
+      no_layout_parts: Er zijn geen layout-specifieke velden om in te vullen
+      save: Layout opslaan
+      saved: Layout opgeslagen
     login: Aanmelden
     logout: Uitloggen
     main_menu: Hoofdmenu
     media_library:
+      add_folder: Map toevoegen
+      add_image: Afbeelding toevoegen
       attachments: Documenten
+      back_to_all: Terug naar alles
+      filename: Bestandsnaam
       images: Afbeeldingen
+      images_count:
+        one: 1 afbeelding
+        other: "%{count} afbeeldingen"
+      insert: Afbeelding invoegen
+      media_folder_delete_confirmation_html: Weet je het zeker? Afbeeldingen worden <strong>niet</strong> verwijderd.
+      no_folder: Geen map
       photos: Afbeeldingen
+      rename_folder: Map hernoemen
+      save_media_folder: Map opslaan
+      upload_from_device: Upload
+      uploading: Uploaden...
     modal:
       agree: Ja, dat weet ik zeker
       cancel: Nee, annuleren
+    navigations:
+      add_menu_item: Voeg menu-item toe
+      add_sub_item: Voeg sub-item toe
+      choose_page: Kies een pagina
+      delete_item: Verwijder item
+      delete_item_confirmation_html: Weet je zeker dat je dit menu-item wil <span class='font-semibold'>verwijderen</span>?
+      description: Voeg pagina's toe en sorteer ze naar wens. Je kunt ook sub-items toevoegen, maar dat is niet verplicht.
+      navigations: Navigaties
+      no_navigations: Deze website heeft nog geen navigaties. Je kunt er een instellen via je thema configuratie.
+      sorting_saved: Volgorde opgeslagen
     notifications:
       alert: Oeps! Er is iets mis gegaan
       information: Informatie
@@ -169,27 +209,51 @@ nl:
     options:
       choose_option: Kies een optie
     pages:
+      add_page_to: 'Voeg pagina toe aan:'
+      add_translation: Voeg pagina toe in %{language}
       advanced: Geavanceerd
+      cannot_be_deleted: Pagina kan niet worden verwijderd
       change_order: Volgorde wijzigen
+      change_view_template: Wijzig pagina template
+      change_view_template_confirmation: Weet je zeker dat je de pagina template wil veranderen? Inhoud die niet op de nieuwe pagina past gaat verloren.
       concept: concept
+      create: Maak pagina
       create_page: "%{template} invullen"
+      delete: Verwijder pagina
       delete_confirmation: Weet je zeker dat je de pagina <strong>%{subject}</strong> wilt verwijderen?
+      deleted: Pagina verwijderd
       done_changing_order: Klaar met slepen
+      edit_translation: Bewerk pagina in %{language}
       invisible_to_search_engines: Je website is niet zichtbaar voor zoekmachines
       invisible_to_search_engines_description: Bij voorkeuren voor Statistieken en zoekmachines kun je dit activeren.
+      main_collection: Hoofdcollectie
       materialize_path_confirmation: Weet je zeker dat je het pad opnieuw wilt opbouwen voor deze pagina?
+      missing_translations: Ontbrekende vertalingen
+      move_page: Verhuis pagina
+      moved: Pagina verhuisd
       new: Nieuwe pagina
+      no_pages_yet: Nog geen pagina's
+      no_parent_page: Geen bovenliggende pagina
       page_content: Inhoud
       page_part: Paginasectie
       page_seo: Zoekmachines
+      path: 'Pad:'
       photo_picker: Foto kiezen
       photos_picker: Foto's kiezen
+      preview: Voorvertoning
+      publish: Publiceren
+      published: Pagina gepubliceerd
       rebuild_materialized_path: Pad opnieuw opbouwen
+      recommended: aanbevolen
       save: Pagina opslaan
+      save_changes: Wijzigingen opslaan
+      save_draft: Concept opslaan
       saved: Pagina opgeslagen
       saving: "<i></i> Opslaan..."
+      search_engines: Zoekmachines
       show_in_menu: onzichtbaar
       skip_to_first_child: doorsturen naar 1<sup>e</sup> subpagina
+      sorting_saved: Volgorde opgeslagen
     permanently_delete: Definitief verwijderen
     photos:
       cannot_be_created: 'Foto kon niet worden verwerkt:'
@@ -228,16 +292,46 @@ nl:
     preview_website: Bekijk je website
     resources:
       edit: Bewerken
+      label_description: Label voor deze collectie
+      manual_sorting: Handmatig sorteren
+      no_default_template: Geen standaard template
+      saved: Paginacollectie opgeslagen
+      settings: "%{label} instellingen"
+      settings_description: Alle pagina's in deze collectie worden voorzien van deze slug.
     save: Opslaan
     search: Zoeken...
     settings:
       save: Voorkeuren opslaan
       title: Voorkeuren
+    theme:
+      save: Thema opslaan
+      saved: Thema opgeslagen
+      theme: Thema
+      theme_description: Configureer je thema
+    ui:
+      cancel: Annuleer
+      delete: Verwijder
+      load_more: Meer laden
+      move_to: Verplaats naar
+      new_entry: Nieuw item
+      optional: Optioneel
+      rename: Hernoemen
+      save_changes: Wijzigingen opslaan
+      saving: Opslaan...
     users:
+      authorization: Autorisatie
+      authorization_description: Admins kunnen gebruikers beheren. Normale gebruikers niet.
       cannot_be_created: De gebruiker kan niet worden opgeslagen
-      delete_confirmation: Weet je zeker dat je de gebruiker <strong>%{user}</strong> wilt verwijderen?
+      delete: Verwijder gebruiker
+      delete_confirmation_html: Weet je zeker dat je de gebruiker <strong>%{user}</strong> wilt verwijderen?
+      deleted: Gebruiker verwijderd
+      last_login: 'Laatste login:'
+      never_logged_in: Nooit ingelogd
       new: Nieuwe gebruiker
+      profile: Profiel
+      profile_description: Deze informatie wordt gebruikt om verschillende gebruikers te identificeren. Gebruikers loggen in met hun emailadres.
       save: Gebruiker opslaan
+      saved: Gebruiker opgeslagen
     visit_page: Bekijk pagina
     website:
       all_pages: Alle pagina's
@@ -254,5 +348,9 @@ nl:
       heading_2: Kop 2
       heading_3: Kop 3
       insert_link: Link invoegen
+      link: Link
       paragraph: Paragraaf
       quote: Quote
+      unlink: Ontlink
+      url: URL
+      url_placeholder: Vul een URL in

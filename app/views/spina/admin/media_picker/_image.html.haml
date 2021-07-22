@@ -1,3 +1,0 @@
-%label.media-picker-image{data: {target: "media-picker.image"}}
-  = check_box_tag :image_id, image.id, image.id.in?(selected_ids), data: {action: "media-picker#choose", image_id: image.id, signed_blob_id: image.file.blob.signed_id, thumbnail_url: thumbnail_url(image), image_url: embedded_image_url(image), filename: image.file.filename}
-  %span= image_tag thumbnail_url(image)

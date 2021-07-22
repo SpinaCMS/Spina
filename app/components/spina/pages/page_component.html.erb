@@ -1,0 +1,25 @@
+<li data-id="<%= @page.id %>">
+  <div class="flex items-center border-gray-200 border-b <%= css_class %> bg-opacity-50">
+    <% if sortable? %>
+      <div data-sortable-handle class="p-4 text-gray-300 hover:text-gray-600 cursor-move">
+        <%= helpers.heroicon("menu-alt-4", style: :solid, class: "w-4 h-4 -mr-4") %>
+      </div>
+    <% end %>
+    
+    <%= link_to helpers.spina.edit_admin_page_path(@page), class: "block text-spina font-medium text-sm p-4 hover:text-spina-dark" do %>
+      <%= @page.menu_title %>
+      
+      <small class="font-normal"><%= label %></small>
+    <% end %>
+    
+    <div class='flex-1'></div>
+    <div class="mr-3 flex space-x-2">
+      <%= render Spina::Pages::TranslationsComponent.new(@page) %>
+    </div>
+
+  </div>
+
+  <% if children.any? %>
+    <%= render Spina::Pages::ListComponent.new(pages: children, sortable: sortable) %>
+  <% end %>
+</li>

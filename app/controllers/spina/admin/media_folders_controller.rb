@@ -1,7 +1,6 @@
 module Spina
   module Admin
     class MediaFoldersController < AdminController
-      layout "spina/admin/media_library"
 
       def new
         @media_folder = MediaFolder.new
@@ -11,24 +10,22 @@ module Spina
         @media_folder = MediaFolder.find(params[:id])
       end
 
-      def show
-        add_breadcrumb I18n.t('spina.website.media_library'), admin_media_library_path
-        add_breadcrumb I18n.t('spina.website.images'), spina.admin_images_path
-        @media_folder = MediaFolder.find(params[:id])
-        add_breadcrumb @media_folder.name
-        @images = @media_folder.images.sorted.page(params[:page])
-      end
-
       def create
         @media_folder = MediaFolder.new(media_folder_params)
-        @media_folder.save
-        redirect_to spina.admin_images_path
+        if @media_folder.save
+          redirect_to spina.admin_images_path
+        else
+          render turbo_stream: turbo_stream.update(view_context.dom_id(@media_folder, :form), partial: "form")
+        end
       end
 
       def update
         @media_folder = MediaFolder.find(params[:id])
-        @media_folder.update(media_folder_params)
-        redirect_to spina.admin_media_folder_path(@media_folder)
+        if @media_folder.update(media_folder_params)
+          redirect_to spina.admin_media_folder_images_path(@media_folder)
+        else
+          render turbo_stream: turbo_stream.update(view_context.dom_id(@media_folder, :form), partial: "form")
+        end
       end
 
       def destroy

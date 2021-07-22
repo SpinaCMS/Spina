@@ -1,0 +1,55 @@
+<%= render Spina::UserInterface::HeaderComponent.new do |header| %>
+  <% header.actions do %>
+    <%= button_tag type: :submit, form: dom_id(@resource), class: 'btn btn-primary', data: {controller: "button", action: "button#loading", loading_message: t('spina.ui.saving')} do %>
+      <%= heroicon('check', style: :solid, class: 'w-5 h-5 mr-1 -ml-2') %>
+      <%=t 'spina.ui.save_changes' %>
+    <% end %>
+  <% end %>
+<% end %>
+
+<div class="p-8">
+  <%= form_with model: [spina, :admin, @resource], id: dom_id(@resource) do |f| %>
+    <%= hidden_field_tag :locale, @locale %>
+    
+    <div class="grid grid-cols-3 gap-x-12">
+      <div class="col-span-1">
+        <%= label_tag :label, class: "font-medium block" do %>
+          <%= Spina::Resource.human_attribute_name(:label) %>
+        <% end %>
+        <div class="text-gray-600 text-sm"><%=t 'spina.resources.label_description' %></div>
+      </div>
+      
+      <div class="col-span-2">
+        <%= render Spina::Forms::TextFieldComponent.new(f, :label, size: "lg", autofocus: @resource.label.blank?) %>
+      </div>
+    </div>
+    
+    <div class="border-t border-gray-200 my-6"></div>
+    
+    <div class="grid grid-cols-3 gap-x-12">
+      <div class="col-span-1">
+        <%= label_tag :label, class: "font-medium block" do %>
+          <%= Spina::Resource.human_attribute_name(:settings) %>
+        <% end %>
+        <div class="text-gray-600 text-sm"><%=t 'spina.resources.settings_description' %></div>
+      </div>
+      
+      <div class="col-span-2">
+        <%= f.label :slug, class: 'font-medium text-sm text-gray-700 block' %>
+        <%= render Spina::Forms::TextFieldComponent.new(f, :slug) %>
+        
+        <div class="mt-5">
+          <%= f.label :view_template, class: 'font-medium text-sm text-gray-700 block' %>
+          
+          <% options = options_for_select(current_theme.view_templates.map { |template| [template[:title], template[:name]] }, @resource.view_template) %>
+          <%= f.select :view_template, options, {include_blank: t('spina.resources.no_default_template')}, class: 'form-select', data: {controller: "select-placeholder", action: "select-placeholder#update"} %>
+        </div>
+        
+        <div class="mt-5">
+          <%= f.label :order_by, class: 'font-medium text-sm text-gray-700 block' %>
+          <%= f.select :order_by, [[Spina::Page.human_attribute_name(:title), "title"], [Spina::Page.human_attribute_name(:created_at), "created_at"]], {include_blank: t('spina.resources.manual_sorting')}, class: 'form-select' %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

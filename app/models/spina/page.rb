@@ -19,7 +19,8 @@ module Spina
     # Pages can belong to a resource
     belongs_to :resource, optional: true
 
-    scope :regular_pages, ->  { where(resource: nil) }
+    scope :main, -> { where(resource_id: nil) }    
+    scope :regular_pages, ->  { main }
     scope :resource_pages, -> { where.not(resource: nil) }
     scope :active, -> { where(active: true) }
     scope :sorted, -> { order(:position) }
@@ -34,7 +35,7 @@ module Spina
     after_save :touch_navigations
 
     # Create a 301 redirect if materialized_path changed
-    after_save :rewrite_rule
+    after_update :rewrite_rule
 
     before_validation :set_materialized_path
     validates :title, presence: true
@@ -53,6 +54,10 @@ module Spina
 
     def slug
       url_title&.parameterize
+    end
+    
+    def homepage?
+      name == 'homepage'
     end
 
     def custom_page?
@@ -74,12 +79,17 @@ module Spina
     def next_sibling
       siblings.where('position > ?', position).sorted.first
     end
-
+    
     def set_materialized_path
       self.old_path = materialized_path
       self.materialized_path = localized_materialized_path
-      self.materialized_path = localized_materialized_path + "-#{Page.i18n.where(materialized_path: materialized_path).count}" if Page.i18n.where(materialized_path: materialized_path).where.not(id: id).count > 0
-      materialized_path
+      
+      # Append counter to duplicate materialized_path
+      i = 0
+      while duplicate_materialized_path?
+        i += 1
+        self.materialized_path = localized_materialized_path.concat("-#{i}")
+      end
     end
 
     def cache_key
@@ -94,7 +104,7 @@ module Spina
     private
 
       def set_resource_from_parent
-        self.resource_id = parent.resource_id 
+        self.resource_id = parent.resource_id
       end
 
       def touch_navigations
@@ -116,8 +126,12 @@ module Spina
       def generate_materialized_path
         path_fragments = [resource&.slug]
         path_fragments.append *ancestors.collect(&:slug)
-        path_fragments.append(slug) unless name == 'homepage'
+        path_fragments.append(slug) unless homepage?
         path_fragments.compact.map(&:parameterize).join('/')
+      end
+      
+      def duplicate_materialized_path?
+        self.class.where.not(id: id).i18n.where(materialized_path: materialized_path).exists?
       end
 
   end

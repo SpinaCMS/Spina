@@ -12,6 +12,11 @@ module Spina
       def present?
         signed_blob_id.present?
       end
+      
+      def signed_id
+        signed_blob_id
+      end
+      
     end
   end
 end

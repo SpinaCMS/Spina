@@ -1,14 +1,14 @@
-![Spina CMS](https://www.spinacms.com/spinacms.png)
+<img src="https://spinacms.com/spinacms.png" alt="Spina CMS" width="225"/>
 
-[Spina CMS](https://www.spinacms.com) is an easy to use CMS that features a clean interface without distractions. [Live demo](http://spinacms-demo.herokuapp.com/admin/pages)
+[Spina CMS](https://spinacms.com) is an easy to use CMS that features a clean interface without distractions. [Live demo](http://spinacms-demo.herokuapp.com/admin/pages)
 
-[![Build Status](https://travis-ci.com/SpinaCMS/Spina.svg?branch=master)](https://travis-ci.com/SpinaCMS/Spina)
+[![Ruby](https://github.com/SpinaCMS/Spina/actions/workflows/ruby.yml/badge.svg)](https://github.com/SpinaCMS/Spina/actions/workflows/ruby.yml)
 [![Code Climate](https://codeclimate.com/github/SpinaCMS/Spina/badges/gpa.svg)](https://codeclimate.com/github/SpinaCMS/Spina)
 [![Test Coverage](https://codeclimate.com/github/SpinaCMS/Spina/badges/coverage.svg)](https://codeclimate.com/github/SpinaCMS/Spina/coverage)
 [![Slack](https://slack-spinacms.herokuapp.com/badge.svg)](https://slack-spinacms.herokuapp.com)
 
 ## Getting Started
-[Read the guide](https://www.spinacms.com/guide) to learn more about how to use Spina. If you just want to get started, create a new Ruby on Rails app and follow these instructions:
+[Read the guide](https://www.spinacms.com/docs) to learn more about how to use Spina. If you just want to get started, create a new Ruby on Rails app and follow these instructions:
 
 Add the following line to your Gemfile:
 
@@ -57,7 +57,11 @@ Spina is released under the [MIT license](LICENSE.md).
 
 ## Acknowledgements
 
-All icons in Spina were made by Brent Jackson [Geomicons](http://jxnblk.com/geomicons-wired/).
+The Tailwind purger was created by [@dhh](https://twitter.com/dhh) for [tailwindcss-rails](https://github.com/rails/tailwindcss-rails)
+
+Icons were designed by [@steveschoger](https://twitter.com/steveschoger) - [Heroicons](https://github.com/tailwindlabs/heroicons).
+
+HotKeys support via [Hotkeys.js](https://wangchujiang.com/hotkeys/)
 
 The font used in Spina's admin panel is called Metropolis and was created by Chris Simpson [Metropolis](https://github.com/chrismsimpson/Metropolis)
 
@@ -68,5 +72,3 @@ The font used in Spina's admin panel is called Metropolis and was created by Chr
     http://scripts.sil.org/OFL
 
     Version 2.0 - 18 March 2012
-
-Some early parts of Spina are influenced by Refinery CMS. Credits to [the Refinery team](https://www.refinerycms.com/).

@@ -1,4 +1,0 @@
-
-- object_id = (f.object.persisted? ? f.object.object_id : "new_association_#{f.object.object_id}").to_s + "_#{field}"
-= f.hidden_field field, id: "#{object_id}_input"
-%trix-editor.text-input.trix-content{ input: "#{object_id}_input" }

@@ -22,7 +22,7 @@ Spina uses an initializer to create the basic building blocks of your page. Ther
 
 When you install Spina, you will see the following in config/initializers/themes/default.rb
 
-```
+```ruby
 ::Spina::Theme.register do |theme|
   theme.name = 'default'
   theme.title = 'Default Theme'
@@ -58,7 +58,7 @@ Right now, the default theme is applying a title to the page, with a simple text
 
 Let's say I wanted to add another text box below this called portfolio. First I would add another hash to the parts array like so:
 
-```
+```ruby
 theme.parts = [{
   name:         'content',
   title:        'Content',
@@ -74,7 +74,7 @@ theme.parts = [{
 
 Now, we need to update the view_templates config. These view templates provide customization for the different views you might want. For example, you may have a 'blog' view or an 'about' view which add different parts. For this example we will add the portfolio part into the 'Default' view template.
 
-```
+```ruby
 theme.view_templates = [{
   name:  'homepage',
   title: 'Homepage',
@@ -92,7 +92,7 @@ theme.view_templates = [{
 
 Finally, let's go to views/default/pages/show.html.erb and add the following:
 
-```
+```erb
 <h1><%= current_page.title %></h1>
 
 <%= content.html :text %>

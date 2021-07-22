@@ -1,0 +1,18 @@
+<div id="pane_<%= f.object.object_id%>" data-part-id="<%= f.object.object_id %>" data-tabs-target="pane">
+  <%= f.hidden_field :title %>
+  <%= f.hidden_field :name %>
+
+  <% parts = current_theme.parts.find{|p|p[:name].to_s == f.object.name.to_s}&.dig(:parts) || [] %>
+
+  <%= f.fields_for :parts, build_parts(f.object, parts) do |ff| %>
+    <%= ff.hidden_field :title %>
+    <%= ff.hidden_field :type, value: ff.object.class %>
+    <%= ff.hidden_field :name %>
+
+    <%= render "spina/admin/parts/#{parts_partial_namespace(ff.object.class.to_s)}/form", f: ff %>
+  <% end %>
+
+  <div class="text-right">
+    <%= button_tag t('spina.ui.delete'), type: :button, class: 'btn btn-default bg-transparent hover:bg-white hover:text-red-500 h-8 px-3 inline-block mt-3', data: {action: "repeater#removeFields", id: "pane_#{f.object.object_id}"} %>
+  </div>
+</div>

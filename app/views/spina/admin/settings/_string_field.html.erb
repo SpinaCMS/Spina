@@ -1,0 +1,4 @@
+<%= render Spina::Forms::GroupComponent.new(label: t("spina.#{plugin.namespace}.settings.#{attribute}")) do %>
+  <%= render Spina::Forms::LabelComponent.new(f, attribute) %>
+  <%= render Spina::Forms::TextFieldComponent.new(f, attribute) %>
+<% end %>

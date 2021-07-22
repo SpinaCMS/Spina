@@ -11,13 +11,20 @@ Spina.configure do |config|
 
   # Specify a backend path. Defaults to /admin.
   # config.backend_path = 'admin'
+  
+  # The parent controller all frontend Spina controllers inherit from
+  # Defaults to ApplicationController
+  # config.frontend_parent_controller = "ApplicationController"
+  
+  # Background jobs
+  # ===============
+  # 
+  # By default, all background jobs are queued as :default
+  # config.queues.page_updates = :default
 
   # Pages Options
   # ===============
 
   # Note that you might need to remove cached asset after changing this value
   # config.max_page_depth = 5
-
-  # Base css color for Spina
-  config.primary_color = '#6865b4'
 end

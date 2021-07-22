@@ -1,0 +1,45 @@
+<div class="max-w-5xl">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-6">
+    <div class="col-span-1">
+      <label class="block text-sm font-medium leading-5 text-gray-700 flex items-center">
+        <svg class="h-4 w-4 mr-1 text-gray-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+        </svg>
+        <%= Spina::Page.human_attribute_name(:seo_title) %>
+      </label>
+      <div class="text-gray-400 text-sm">
+        <%= Spina::Page.human_attribute_name(:seo_title_description) %>
+      </div>
+    </div>
+
+    <div class="col-span-2">
+      <%= f.text_field :seo_title, placeholder: Spina::Page.human_attribute_name(:seo_title_placeholder), value: f.object.seo_title(fallback: false, default: nil), class: "form-input block w-full sm:text-sm sm:leading-5" %>
+    </div>
+
+    <div class="col-span-1 mt-6 md:mt-0">
+      <label class="block font-medium text-sm leading-5 text-gray-700 flex items-center">
+        <svg class="h-4 w-4 mr-1 text-gray-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+        </svg>
+        <%= Spina::Page.human_attribute_name(:description) %>
+      </label>
+      <div class="text-gray-400 text-sm"><%= Spina::Page.human_attribute_name :description_description %></div>
+    </div>
+
+    <div class="col-span-2">
+      <%= f.text_field :description, placeholder: Spina::Page.human_attribute_name(:description_placeholder), class: "form-input block w-full sm:text-sm sm:leading-5" %>
+    </div>
+
+    <div class="col-span-1 mt-6 md:mt-0">
+      <label class="block font-medium text-sm leading-5 text-gray-700 flex items-center">
+        <%= Spina::Page.human_attribute_name(:url_title) %>
+      </label>
+      <p class="text-gray-400 text-sm"><%= Spina::Page.human_attribute_name :url_title_description %></p>
+    </div>
+
+    <div class="col-span-2">
+      <%= f.text_field :url_title, class: "form-input block w-full sm:text-sm sm:leading-5", placeholder: f.object.slug || Spina::Page.human_attribute_name(:url_title_placeholder), value: f.object.url_title(fallback: false, default: nil)&.parameterize %>
+      <div class="text-sm text-gray-400 mt-1"><%=t 'spina.pages.path' %> <%= @page.materialized_path %></div>
+    </div>
+  </div>
+</div>

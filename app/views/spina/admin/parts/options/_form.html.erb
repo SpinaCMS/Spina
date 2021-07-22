@@ -1,0 +1,5 @@
+<div class="mt-6">
+  <label for="price" class="block text-sm leading-5 font-medium text-gray-700"><%= f.object.title %></label>
+
+  <%= f.select :value, f.object.options, {include_blank: t("spina.options.choose_option")}, class: "form-select" %>
+</div>

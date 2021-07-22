@@ -13,11 +13,12 @@ module Spina
       end
 
       test "Show media picker with spina.png" do
-        spina_png = fixture_file_upload('files/spina.png','image/png')
+        spina_png = fixture_file_upload("spina.png", 'image/png')
+        
         @image = Spina::Image.create(file: spina_png)
         get "/admin/media_picker"
 
-        assert_select ".media-picker-image input[type='checkbox'][value='#{@image.id}']"
+        assert_select "button[data-image-id='#{@image.id}']"
       end
 
     end

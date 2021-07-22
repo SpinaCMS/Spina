@@ -1,0 +1,33 @@
+<%= turbo_frame_tag dom_id(attachment) do %>
+  <div class="flex items-center h-12 border-b border-gray-200 px-8 hover:bg-white group">
+    
+    <turbo-frame id="<%= dom_id(attachment) %>_filename" class="font-medium text-gray-800 h-full flex-1 w-56 text-sm flex items-center relative">
+      <span class="truncate"><%= attachment.file.filename %></span>
+    
+      <div class="absolute h-full opacity-0 group-hover:opacity-100 flex items-center right-0 pr-3 top-0">
+        <%= link_to spina.edit_admin_attachment_path(attachment), class: "btn btn-default h-7 px-2 mr-2 text-xs" do %>
+          <%= heroicon('pencil', style: :solid, class: 'w-4 h-4 mr-1 text-gray-600') %>
+          <%=t 'spina.ui.rename' %>
+        <% end %>
+        
+        <%= link_to file_url(attachment.file), class: "btn btn-default h-7 px-2 mr-2 text-xs" do %>
+          <%= heroicon('download', style: :solid, class: 'w-4 h-4 mr-1 text-gray-600') %>
+          <%=t 'spina.attachments.download' %>
+        <% end %>
+      </div>
+    </turbo-frame>
+    
+    <div class="text-gray-500 text-sm whitespace-nowrap flex items-center">
+      <%= number_to_human_size attachment.file.byte_size %>
+      <div class="uppercase ml-2 h-5 flex items-center rounded-md <%= content_type_color(attachment) %> text-white font-semibold px-1 text-xs">
+        <%= content_type(attachment) %>
+      </div>
+    </div>
+    <div class="text-gray-500 text-xs w-32 text-right whitespace-nowrap"><%=l attachment.created_at, format: :short %></div>
+    <div class="">
+      <%= button_to spina.admin_attachment_path(attachment), method: :delete, class: "block py-3 px-4 ml-2 text-gray-500 hover:text-gray-900", form: {data: {controller: "confirm", confirm_message: t('spina.attachments.delete_confirmation_html')}} do %>
+        <%= heroicon('trash', class: "w-5 h-5") %>
+      <% end %>
+    </div>
+  </div>
+<% end %>

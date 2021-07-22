@@ -1,0 +1,36 @@
+<div class="border-b border-gray-200 flex items-center justify-between space-x-8 px-4 py-3">
+  <div class="flex items-center">
+    <%= image_tag user.gravatar_url, alt: user.name, class: 'rounded-md w-10 h-10 mr-3' %>
+    
+    <div>
+      <div class="font-medium"><%= user.name %></div>
+      <div class="text-gray-500 text-sm"><%= user.email %></div>
+    </div>
+  </div>
+  
+  <% if user.admin? %>
+    <div class="flex items-center text-green-500">
+      <%= heroicon("badge-check", style: :solid, class: "w-6 h-6 mr-1") %>
+      <span class="text-sm font-medium"><%= Spina::User.human_attribute_name(:admin) %></span>
+    </div>
+  <% end %>
+  
+  <div class="flex-1"></div>
+  
+  <div class="text-gray-400 text-sm">
+    <% if user.last_logged_in %>
+      <%=t 'spina.users.last_login' %>
+      <%=l user.last_logged_in, format: :long %>
+    <% else %>
+      <%=t 'spina.users.never_logged_in' %>
+    <% end %>
+  </div>
+
+  <% if current_spina_user.admin? %>
+    <div>
+      <%= link_to spina.edit_admin_user_path(user), class: "btn btn-default px-3" do %>
+        <%= heroicon('pencil', style: :solid, class: 'w-4 h-4') %>
+      <% end %>
+    </div>
+  <% end %>
+</div>

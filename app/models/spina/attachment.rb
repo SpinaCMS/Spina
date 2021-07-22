@@ -4,7 +4,7 @@ module Spina
 
     attr_accessor :_destroy
 
-    scope :sorted, -> { order('file ASC') }
+    scope :sorted, -> { order('created_at DESC') }
 
     def name
       file.filename.to_s
@@ -12,6 +12,10 @@ module Spina
 
     def content
       file if file.attached?
+    end
+    
+    def present?
+      signed_blob_id.present?
     end
 
     alias_method :old_update, :update

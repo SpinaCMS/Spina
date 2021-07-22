@@ -3,7 +3,7 @@ module Spina
     belongs_to :navigation, touch: true
     belongs_to :page
 
-    has_ancestry orphan_strategy: :adopt
+    has_ancestry
 
     scope :regular_pages, -> { joins(:page).where(spina_pages: {resource_id: nil}) }
     scope :sorted, -> { order('spina_navigation_items.position') }

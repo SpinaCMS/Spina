@@ -25,18 +25,19 @@ module Spina
       end
 
       test "Show form with theme config" do
-        get "/admin/account/style"
+        get "/admin/theme/edit"
         assert_select 'form select#account_theme'
       end
-
-      test "Show form with settings for analytics" do
-        get "/admin/account/analytics"
-        assert_select 'form #account_robots_allowed'
+      
+      test "Show form with layout parts" do
+        get "/admin/layout/edit"
+        assert_select 'form input[type="text"]'
       end
-
-      test "Show form with social media accounts" do
-        get "/admin/account/social"
-        assert_select 'form #account_facebook'
+      
+      test "Update layout parts" do
+        patch "/admin/layout", params: {account: {name: "Demo Spina website"}}
+        follow_redirect!
+        assert_select 'turbo-frame#flash div', text: "Layout saved"
       end
 
     end

@@ -1,15 +1,46 @@
 # Spina CMS Changelog
 
+## 2.1
+
+### 2.1.1 (July 13th, 2021)
+* Fixed bugs with attachments (#746 / #747)
+* Updated spanish locales
+* Updated german locales
+
+### 2.1.0 (July 3rd, 2021)
+* Refactored all javascript with Hotwire
+* Refactored all CSS with TailwindCSS
+* Refactored all views with ViewComponent
+* Added importmap helper `spina_importmap_from`
+* Added background job to save resource pages in bulk
+* Added support for hotkeys
+* Added sticky toolbar to Trix
+* Fixed ActiveStorage variant definitions
+
 ## 2.0
 
-⚠️ _Beware: lots of changes regarding page content. The old page parts are gone in favor of new JSON-based parts. Read the [Upgrading Guide](https://www.spinacms.com/guide/getting-started/upgrading-from-v1) to learn how to upgrade._
+⚠️ _Beware: lots of changes regarding page content. The old page parts are gone in favor of new JSON-based parts. Read the [Upgrading Guide](https://www.spinacms.com/docs/getting-started/upgrading) to learn how to upgrade._
 
-### Unreleased
+### 2.0.2 (March 19th, 2021)
+* Fixed issue with webp images
+
+### 2.0.1 (March 18th, 2021)
+* Fixed issue with sorting repeater parts
+
+### 2.0.0 (March 13th, 2021)
+_No changes since beta_
+
+### 2.0.0.beta (March 5th, 2021)
 
 * Resize images embedded in Trix (configurable in spina.rb)
 * Added `Spina::Parts::MultiLine`
+* Added `frontend_parent_controller` (configurable in spina.rb)
+* Removed html5shiv
+* Updated Mobility to 1.0 and updated included initializer
+* Fixed url_helpers for images to support `resolve_model_to_route` in Rails 6.1
+* Fixed bug (#655) for pages with duplicate titles
 
-### 2.0.0.alpha
+### 2.0.0.alpha (June 29th, 2020)
 
 * __Replaced all page content with JSON-based Spina::Parts__
 * Redesigned page editing

@@ -11,12 +11,48 @@ namespace :spina do
       Mobility.with_locale(locale) do
 
         Spina::Page.all.order(:id).each do |page|
-          page.title = page.title(fallback: Mobility.new_fallbacks[locale])
+          page.title = page.title(fallback: I18n.fallbacks[locale])
           page.save
         end
 
       end
     end
   end
+  
+  
+  namespace :tailwind do
+    
+    desc "Compile Tailwind.css for Spina"
+    task :compile do
+      Dir.chdir(File.join(__dir__, "../..")) do
+        system "npx tailwindcss-cli@latest build ./app/assets/stylesheets/spina/tailwind/custom.css -o ./app/assets/stylesheets/spina/_tailwind.css -c ./app/assets/config/spina/tailwind.config.js"
+      end
+    end
+    
+    desc "Purging Tailwind classes"
+    task purge: :environment do
+      assets_path = "app/assets/stylesheets/spina"
+      vendor_path = "vendor/assets/stylesheets"
+      src = Spina::Engine.root.join(assets_path, "_tailwind.css")
+      dest = Rails.root.join(vendor_path, "spina/_tailwind.css")
+      
+      # Copy Spina assets to main app
+      FileUtils.mkdir_p Rails.root.join(vendor_path)
+      FileUtils.cp_r Spina::Engine.root.join(assets_path), Rails.root.join(vendor_path)
+      
+      # Purge Tailwind classes
+      purged = Spina::TailwindPurger.purge(File.read(src), keeping_class_names_from_files: Spina.config.tailwind_purge_content)
+      
+      # Overwrite Tailwind stylesheet with fewer lines
+      File.write(dest, purged)
+    end
+    
+    # Every time you execute 'rake assets:precompile'
+    # run 'spina:tailwind:purge' first
+    if Rake::Task.task_defined?("assets:precompile")
+      Rake::Task['assets:precompile'].enhance ['spina:tailwind:purge']
+    end
+  end
+  
 
 end

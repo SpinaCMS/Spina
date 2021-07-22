@@ -30,6 +30,8 @@ Every resource can have the following attributes:
 - label
 - view_template
 - order_by
-- parent_page_id
+- slug
 
-When defining a parent page, all pages within that resource will be scoped to that parent page. This means that all generated URL's will be prefixed with the parent page's URL. An example: you can create a regular page called `blog` and have a resource called `blogposts`. Your blog view template could then list all pages that are inside the blog resource. In Spina you would have a nice separate menu called "Blogposts" where you can easily manage a list of blogposts. 
+**Updating resources and page slugs/paths**
+
+After updating a resource and changing it's slug, a background job is created. This background job saves all pages inside that resource, triggering a callback that sets new materialized paths. Be sure to setup a background worker (using Sidekiq for instance) in your production environment to perform these tasks.

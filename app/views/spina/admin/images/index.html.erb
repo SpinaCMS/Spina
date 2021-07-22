@@ -1,0 +1,73 @@
+<%= render Spina::UserInterface::HeaderComponent.new do |header| %>
+  <% header.actions do %>
+    <% if @media_folder.blank? %>
+      <%= link_to spina.new_admin_media_folder_path, class: "btn btn-default", data: {turbo_frame: "modal"} do %>
+        <%= heroicon("folder", style: :solid, class: 'w-4 h-4 mr-1 -ml-1') %>
+        <%=t 'spina.media_library.add_folder' %>
+      <% end %>
+    <% else %>
+      <%= link_to spina.edit_admin_media_folder_path(@media_folder), class: "btn btn-default", data: {turbo_frame: "modal"} do %>
+        <%= heroicon("pencil", style: :solid, class: "w-4 h-4 mr-1 -ml-1") %>
+        <%=t 'spina.media_library.rename_folder' %>
+      <% end %>
+    <% end %>
+    
+    <%= form_with model: [:admin, Spina::Image.new], url: spina.admin_images_path, data: {controller: "form loading-button", loading_message: t('spina.media_library.uploading'), action: "turbo:submit-end->loading-button#doneLoading"} do |f| %>
+      <%= f.hidden_field :media_folder_id, value: @media_folder&.id %>
+      
+      <%= f.file_field :files, multiple: true, accept: "image/*", id: "new_image_file_field", class: 'hidden', data: {action: "loading-button#loading form#requestSubmit"} %>
+      
+      <button type="button" class="btn btn-default" data-controller="delegate-click" data-action="delegate-click#click" data-loading-button-target="button" data-delegate-click-target="#new_image_file_field">
+        <%= heroicon("upload", style: :solid, class: "w-4 h-4 -ml-1 mr-1") %>
+        <%=t 'spina.images.upload' %>
+      </button>
+    <% end %>
+  <% end %>
+  
+  <% header.navigation do %>
+    <nav class="-mb-3 mt-4">
+      <ul class="inline-flex w-auto rounded-md bg-white">
+        <%= render Spina::UserInterface::TabLinkComponent.new(spina.admin_images_path, active: true) do %>
+          <%= heroicon('photograph', style: :solid, class: 'w-5 h-5 mr-2 -ml-1') %>
+          <%=t 'spina.media_library.images' %>
+        <% end %>
+        
+        <%= render Spina::UserInterface::TabLinkComponent.new(spina.admin_attachments_path) do %>
+          <%= heroicon('document', style: :solid, class: 'w-5 h-5 mr-2 -ml-1') %>
+          <%=t 'spina.media_library.attachments' %>
+        <% end %>
+      </ul>
+    </nav>
+  <% end %>
+<% end %>
+
+<div class="my-8 border-t border-gray-200">
+  <% if @media_folder.present? %>
+    <div class="flex items-center h-12 hover:bg-white border-b border-gray-200 px-8">
+      <%= link_to spina.admin_images_path, class: 'flex h-full items-center flex-1' do %>
+        <div class="w-8 mr-4 flex justify-center">
+          <%= heroicon("collection", style: :solid, class: "w-7 h-7 text-spina") %>
+        </div>
+        <div class="font-medium text-spina flex-1 text-sm">
+          <%=t 'spina.media_library.back_to_all' %>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <%= render @media_folders %>
+  <% end %>
+  
+  <div data-controller="infinite-scroll">
+    <%= turbo_frame_tag "images" do %>
+      <%= turbo_frame_tag "images-#{@images.current_page}" do %>
+        <%= render @images %>
+        
+        <% if @images.next_page %>
+          <%= turbo_frame_tag "images-#{@images.next_page}", data: {action: "turbo:frame-load->infinite-scroll#load"} do %>
+            <%= link_to t('spina.ui.load_more'), path_to_next_page(@images), class: 'hidden', data: {infinite_scroll_target: "button"} %>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
