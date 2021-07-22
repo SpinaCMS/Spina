@@ -38,11 +38,11 @@
         <% end %>
 
         <% nav.links do %>
-          <%= render Spina::MainNavigation::LinkComponent.new("General", spina.edit_admin_account_path, active: controller_name == "accounts") %>
+          <%= render Spina::MainNavigation::LinkComponent.new(t('spina.settings.general'), spina.edit_admin_account_path, active: controller_name == "accounts") %>
           <%= render Spina::MainNavigation::LinkComponent.new(t('spina.website.theme'), spina.edit_admin_theme_path, active: controller_name == "theme") %>
           
           <% if Spina.config.authentication == "Spina::Authentication::Sessions" %>
-            <%= render Spina::MainNavigation::LinkComponent.new("Users", spina.admin_users_path, active: controller_name == "users") %>
+            <%= render Spina::MainNavigation::LinkComponent.new(t('spina.settings.users'), spina.admin_users_path, active: controller_name == "users") %>
           <% end %>
           
           <%= render Spina::Hooks::HookComponent.new(partial: "settings_secondary_navigation") %>
