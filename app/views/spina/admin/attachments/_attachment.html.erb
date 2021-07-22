@@ -9,6 +9,11 @@
           <%= heroicon('pencil', style: :solid, class: 'w-4 h-4 mr-1 text-gray-600') %>
           <%=t 'spina.ui.rename' %>
         <% end %>
+        
+        <%= link_to file_url(attachment.file), class: "btn btn-default h-7 px-2 mr-2 text-xs" do %>
+          <%= heroicon('download', style: :solid, class: 'w-4 h-4 mr-1 text-gray-600') %>
+          <%=t 'spina.attachments.download' %>
+        <% end %>
       </div>
     </turbo-frame>
     
