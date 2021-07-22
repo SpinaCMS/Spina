@@ -106,6 +106,7 @@ en:
     attachments:
       choose_attachment: Choose attachment
       delete_confirmation_html: Are you sure? This attachment <span class='font-semibold'>might</span> be in use on a page.
+      download: Download
       insert: Insert document
       insert_multiple: Insert documents
       upload: Upload files
