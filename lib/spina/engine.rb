@@ -16,11 +16,8 @@ module Spina
     config.autoload_paths += %W( #{config.root}/lib )
 
     config.to_prepare do
-      # Load helpers from main application
-      Spina::ApplicationController.helper Rails.application.helpers
-
+      # Require decorators from main application
       unless Spina.config.disable_decorator_load
-        # Require decorators from main application
         Dir.glob(Rails.root + "app/decorators/**/*_decorator.rb").each do |decorator|
           require_dependency(decorator)
         end
