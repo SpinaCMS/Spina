@@ -2,7 +2,7 @@
   <div class="flex items-center h-12 border-b border-gray-200 px-8 hover:bg-white group">
     
     <turbo-frame id="<%= dom_id(attachment) %>_filename" class="font-medium text-gray-800 h-full flex-1 w-56 text-sm flex items-center relative">
-      <span class="truncate"><%= link_to attachment.file.filename, file_url(attachment.file), target: :_blank %></span>
+      <span class="truncate"><%= attachment.file.filename %></span>
     
       <div class="absolute h-full opacity-0 group-hover:opacity-100 flex items-center right-0 pr-3 top-0">
         <%= link_to spina.edit_admin_attachment_path(attachment), class: "btn btn-default h-7 px-2 mr-2 text-xs" do %>
