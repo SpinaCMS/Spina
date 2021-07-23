@@ -6,6 +6,7 @@ require 'breadcrumbs_on_rails'
 require 'kaminari'
 require 'mobility'
 require 'rack-rewrite'
+require 'babosa'
 require 'attr_json'
 require 'view_component/engine'
 

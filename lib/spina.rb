@@ -24,7 +24,8 @@ module Spina
                   :embedded_image_size,
                   :party_pooper,
                   :tailwind_purge_content,
-                  :queues
+                  :queues,
+                  :transliterations
 
   # Specify a backend path. Defaults to /admin.
   self.backend_path = 'admin'
@@ -45,6 +46,9 @@ module Spina
   
   # Don't like confetti?
   self.party_pooper = false
+  
+  # Transliterations for slug generation
+  self.transliterations = %i(latin)
 
   # Images that are embedded in the Trix editor are resized to fit
   # You can optimize this for your website and go for a smaller (or larger) size

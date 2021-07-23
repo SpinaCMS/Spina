@@ -33,4 +33,11 @@ Spina.configure do |config|
 
   # Note that you might need to remove cached asset after changing this value
   # config.max_page_depth = 5
+
+  # Transliterations
+  # ===============
+  # Set provided transliterations for normalizing url slugs
+  # %i( bulgarian cyrillic danish german greek latin macedonian norwegian 
+  #     romanian russian serbian spanish swedish ukrainian vietnamese)
+  # config.transliterations = %i(latin)
 end

@@ -25,6 +25,17 @@ module Spina
       assert_equal false, @demo.live?
     end
 
+    test 'url_title' do
+      page = FactoryBot.build(:page, title: 'Some long title')
+      assert_equal page.slug, 'some-long-title'
+    end
+
+    test 'url_title with specific locale' do
+      Spina.config.transliterations = %i(latin bulgarian)
+      page = FactoryBot.build(:page, title: 'Тест страница')
+      assert_equal page.slug, 'test-stranica'
+    end
+
     test 'custom slug' do
       @demo.update(url_title: "custom-slug")
       assert_equal "/custom-slug", @demo.materialized_path
