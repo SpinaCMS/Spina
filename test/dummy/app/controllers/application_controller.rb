@@ -1,3 +1,10 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery
+  before_action :set_some_variable
+  
+  private
+  
+    def set_some_variable
+      @some_variable = "Some variable is set!"
+    end
+  
 end

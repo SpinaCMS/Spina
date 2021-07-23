@@ -1,227 +1,364 @@
 de:
-  spina:
-    cancel: Abbrechen
-    close: Schließen
-    choose_from_library: Wähle aus Bibliothek
-    edit: Bearbeiten
-    save: Speichern
-    delete: Löschen
-    permanently_delete: Permanent Löschen
-    delete_confirmation: "Bist du sicher, dass du <strong>%{subject}</strong> löschen möchtest?"
-    login: Login
-    preview_website: Vorschau der Webseite
-    search: Suchen...
-    ago: vor
-    edit_website: Deine Website bearbeiten
-    logout: Logout
-    main_menu: Hauptmenü
-
-    settings:
-      title: Einstellungen
-      save: Einstellungen speichern
-
-    forgot_password:
-      new: Passwort vergessen
-      request: Neues Passwort anfordern
-      unknown_user: Dieser Nutzer existiert nicht
-      save: Neues Passwort speichern
-      success: Du kannst dein neues Passwort verwenden
-      mail_subject: Passwort zurücksetzen
-      expired: Dein Token zum Zurücksetzen des Passwortes ist abgelaufen
-
-    modal:
-      agree: Ja, ich bin sicher
-      cancel: "Nein, abbrechen"
-
-    notifications:
-      information: Information
-      alert: Oops! Etwas ist falsch gelaufen
-      login: Du musst dich zuerst einloggen
-      wrong_username_or_password: Falsche E-Mail oder Passwort
-
-    website:
-      title: Deine Webseite
-      pages: Seiten
-      all_pages: Alle Seiten
-      pages_description: "Alle Seiten deiner Webseite"
-      media_library: Medien-Bibliothek
-      media_library_description: "Hier findest du alle deine Bilder und Dokumente"
-      documents: Dokumente
-      photos: Bilder
-
-    pages:
-      new: Neue Seite
-      create_page: "Neu %{template}"
-      change_order: Reihenfolge ändern
-      done_changing_order: Reihenfolge speichern
-      page_content: Inhalt
-      page_seo: Suchmaschinen
-      advanced: Erweitert
-      page_part: Seiteninhalt
-      photos_picker: Wähle Bilder
-      photo_picker: Wähle Bild
-      delete_confirmation: "Bist du sicher, dass du die Seite <strong>%{subject}</strong> löschen möchtest?"
-      save: Seite speichern
-      concept: Entwurf
-      show_in_menu: unsichtbar
-      skip_to_first_child: Springe zur ersten Unterseite
-      invisible_to_search_engines: Deine Website ist für Suchmaschinen nicht sichtbar.
-      invisible_to_search_engines_description: Gehe zu deinen Einstellungen um Suchmaschinen-Support zu aktivieren.
-      rebuild_materialized_path: Materialisierten Pfad neu erzeugen
-      materialize_path_confirmation: "Bist du sicher, dass du den Pfad für diese Seite neu erzeugen willst?"
-      saving: Speichert...
-      saved: Seite gespeichert
-
-    users:
-      new: Neuer Benutzer
-      save: Benutzer speichern
-      delete_confirmation: "Bist du sicher, dass du den Benutzer <strong>%{user}</strong> löschen möchtest?"
-      cannot_be_created: Der Benutzer kann nicht gespeichert werden
-
-    photos:
-      delete_confirmation: "Bist du sicher, dass du das Bild <strong>%{image}</strong> löschen möchtest?"
-      insert_photos: Wähle Bilder aus
-      choose_images: Wähle Bilder aus
-      insert_photo: Bild einfügen
-      link: "URL des Bildes:"
-      cannot_be_created: "Bild kann nicht verarbeitet werden:"
-      upload_image: "Bild hochladen"
-      organize: Organisiere Bilder
-      done_organizing: Organisieren abgeschlossen
-      new_folder: Neuer Ordner
-      delete_folder: Lösche Ordner
-
-    wysiwyg:
-      paragraph: Paragraph
-      heading_1: Überschrift 1
-      heading_2: Überschrift 2
-      heading_3: Überschrift 3
-      quote: Zitat
-      insert_link: Link einfügen
-
-    preferences:
-      title: Einstellungen
-      account: Allgemein
-      account_description: Persönliche Einstellungen
-      account_save: Einstellungen speichern
-      style: Style
-      style_description: Wähle einen passenden Style
-      style_save: Style speichern
-      users: Benutzer
-      users_description: Benutzer und Administratoren verwalten
-      social_media: Social Media
-      social_media_description: Facebook und Twitter Accounts
-      social_media_save: Speichere Social Media
-      analytics: Analytics und Suchmaschinen
-      analytics_description: Vernetzte deinen Account für real-time Analysen
-      analytics_save: Einstellungen speichern
-      domain_name_settings: Domain Einstellungen
-      domain_name_settings_description: Richte deine Domain ein
-
-    attachments:
-      insert: 'Dokument einfügen'
-      insert_multiple: 'Dokumente einfügen'
-
-    media_library:
-      photos: Bilder
-      attachments: Dokumente
-
+  time:
+    formats:
+      long: "%Y-%m-%d %H:%M:%S"
   activerecord:
-    models:
-      spina/page:
-        one: Seite
-        other: Seiten
-      spina/user:
-        one: Benutzer
-        other: Benutzer
-      spina/photo:
-        one: Bild
-        other: Bilder
-      spina/attachment:
-        one: Dokument
-        other: Dokumente
-
     attributes:
       spina/account:
-        name: Name der Webseite
         address: Adresse
-        postal_code: PLZ
         city: Stadt
-        phone: Telefon
         email: E-Mail
+        facebook: Facebook
+        google_analytics: Google Analytics
+        google_plus: Google+
+        google_site_verification: Google Site Verification
+        instagram: Instagram
         kvk_identifier: Handelskammer
         kvk_identifier_description: Handelskammer
+        linkedin: LinkedIn
+        logo: Logo
+        name: Name der Webseite
+        phone: Telefon
+        postal_code: PLZ
+        robots_allowed: Sichtbar für Suchmaschinen
+        theme: Webseiten Theme
+        twitter: Twitter
         vat_identifier: USt-IdNr
         vat_identifier_description: USt-IdNr
-        theme: Webseite Theme
-        logo: Logo
-        google_analytics: Google Analytics
-        google_site_verification: Google Site Verification
-        robots_allowed: Sichtbar für Suchmaschinen
-        facebook: Facebook
-        twitter: Twitter
-        google_plus: Google+
-
+        youtube: YouTube
       spina/attachment:
         created_at: Erstellt am
         name: Dateiname
         size: Größe
-
+      spina/media_folder:
+        name: Name
+      spina/navigation:
+        auto_add_pages: Automatisch hinzugefügte Seite
+        auto_add_pages_description: Neue Seiten werden automatisch zum Menü hinzugefügt
+        label: Label
+        pages: Seiten
+        pages_description: Wähle die Seiten aus, die du in diesem Menü verwenden willst
       spina/page:
-        title: Titel
-        title_placeholder: Seiten-Titel
-        seo_title: SEO <title>
-        seo_title_placeholder: Dieser Titel wird im <title>-tag verwendet
+        ancestry: Oberseite
+        created_at: Erstellt am 
         description: Meta Beschreibung
         description_description: Diese Beschreibung wird in den Suchergebnissen angezeigt
         description_placeholder: Kurze Beschreibung deiner Seite
         draft: Entwurf
-        draft_description: Great for when your page is not quite finished
-        skip_to_first_child: Vorwärts
-        skip_to_first_child_description: Zur ersten Seite
+        draft_description: Praktisch wenn deine Seite noch nicht ganz fertig ist
         link_url: Seitenumleitung
         link_url_description: Weiterleiten an URL
         link_url_placeholder: z.B. http://www.example.com/
-        show_in_menu: In der Navigation anzeigen
-        show_in_menu_description: "Wenn diese Option ausgeschaltet ist, wird deine Seite nicht in der Navigation angezeigt"
         menu_title: Menü-Titel
         menu_title_placeholder: Leer lassen um den Seiten-Titel zu verwenden
+        no_parent: Kein Oberelement
+        resource: Kollektion
+        seo_title: SEO <title>
+        seo_title_description: Stelle sicher dass deine Suchresultate gut aussehen
+        seo_title_placeholder: Dieser Titel wird im <title>-tag verwendet
+        show_in_menu: In der Navigation anzeigen
+        show_in_menu_description: Wenn diese Option ausgeschaltet ist, wird deine Seite nicht in der Navigation angezeigt
+        skip_to_first_child: Weiterleiten
+        skip_to_first_child_description: Zur ersten Unterseite
+        title: Titel
+        title_placeholder: Seiten-Titel
+        url_title: Prefix überschreiben
+        url_title_description: Optional
+        url_title_placeholder: Prefix
         view_template: Seiten-Template
-        ancestry: Elternseite
-        no_parent: Kein Eltern Element
-
-      spina/media_folder:
-        name: Name
-
-      spina/navigation:
+      spina/resource:
         label: Label
-        auto_add_pages: Automatisch hinzugefügte Seite
-        auto_add_pages_description: Neue Seiten werden automatisch zum Menü hinzugefügt
-        pages: Seiten
-        pages_description: Wähle die Seiten aus, die du in diesem Menü verwenden willst
-
+        order_by: Ordnen nach
+        parent_page: Oberseite
+        view_template: Standard View Template
       spina/user:
+        admin: Administrator
+        admin_description: Administratoren können Benutzer anlegen
         email: E-Mail
-        password: Passwort
+        email_description: Deine E-Mail Adresse muss eindeutig sein
+        last_logged_in: Zuletzt eingeloggt
         name: Name
         name_placeholder: Name
-        email: E-Mail
-        email_description: Deine E-Mail muss eindeutig sein
         password: Passwort
-        password_description: Leer lassen wenn das Passwort nicht geändert werden soll
         password_confirmation: Passwort bestätigen
-        admin: Administrator
-        user: Benutzer
-        admin_description: Administratoren können Benutzer anlegen
+        password_description: Leer lassen wenn das Passwort nicht geändert werden soll
         role: Rolle
-        last_logged_in: Zuletzt eingeloggt
-
-  misc:
-    messages:
-      zero: "0 neue Nachrichten"
-      one: "1 neue Nachricht"
-      other: "%{count} neue Nachrichten"
-
-  languages:
-    en: Englisch
-    nl: Holländisch
+        user: Benutzer
+    models:
+      spina/attachment:
+        one: Dokument
+        other: Dokumente
+      spina/page:
+        one: Seite
+        other: Seiten
+      spina/photo:
+        one: Bild
+        other: Bilder
+      spina/user:
+        one: Benutzer
+        other: Benutzer
+  spina:
+    accounts:
+      contact_details: Kontaktangaben
+      contact_details_description: Email und Telefon
+      couldnt_be_saved: Konto konnte nicht gespeichert werden
+      name_description: Name deiner Webseite
+      save: Konto speichern
+      saved: Konto wurde gespeichert
+    ago: vor
+    attachments:
+      choose_attachment: Dokument auswählen
+      delete_confirmation_html: Bist du sicher? Dieses Dokument <span class='font-semibold'>könnte</span> von einer Seite genutzt werden.
+      insert: Dokument einfügen
+      insert_multiple: Dokumente einfügen
+      upload: Dokumente Hochladen
+    cancel: Abbrechen
+    choose_from_library: In Bibliothek auswählen
+    close: Schließen
+    delete: Löschen
+    delete_confirmation: Bist du sicher, dass du <strong>%{subject}</strong> löschen möchtest?
+    edit: Bearbeiten
+    edit_website: Deine Website bearbeiten
+    forgot_password:
+      expired: Dein Token zum Zurücksetzen des Passwortes ist abgelaufen
+      mail_subject: Passwort zurücksetzen
+      new: Passwort vergessen
+      request: Neues Passwort anfordern
+      save: Neues Passwort speichern
+      success: Du kannst dein neues Passwort verwenden
+      unknown_user: Dieser Nutzer existiert nicht
+    images:
+      all_images: Alle Bilder
+      back: Zurück
+      cannot_be_created: Konnte nicht erstellt werden
+      choose_image: Bild auswählen
+      choose_images: Bilder auswählen
+      confirm_selection: Auswahl bestätigen
+      delete: Löschen
+      delete_confirmation_html: Bist du sicher, dass du dieses <strong>Bild</strong> löschen möchtest?
+      delete_folder: Ordner löschen
+      done_organizing: Speichern
+      insert_image: Bild einfügen
+      insert_photo: Foto einfügen
+      insert_photos: Fotos einfügen
+      link: Link
+      new_folder: Neuer Ordner
+      organize: Ordnen
+      remove_image: Bild löschen
+      upload: Bilder hochladen
+      upload_image: Bild hochladen
+    languages:
+      bg: Bulgarisch
+      de: Deutsch
+      en: Englisch
+      es: Spanisch
+      fr: Französisch
+      id: Indonesisch
+      it: Italiensich
+      nl: Holländisch
+      pl: Polnisch
+      pt-BR: Brasilianisches Portugiesisch 
+      ro: Rumänisch
+      ru: Russisch
+      sv: Schwedisch
+      th: Thai
+      tr: Türkisch
+      zh-CN: Vereinfachtes Chinesisch
+    layout:
+      couldnt_be_saved: Layout konnte nicht gespeichert werden
+      layout: Layout
+      no_layout_parts: Keine Layout Elemente verfügbar 
+      save: Layout speichern
+      saved: Layout gespeichert
+    login: Login
+    logout: Logout
+    main_menu: Hauptmenü
+    media_library:
+      add_folder: Ordner hinzufügen
+      add_image: Bild hinzufügen
+      attachments: Dokumente
+      back_to_all: Zurück
+      filename: Dateiname
+      images: Bilder
+      images_count: 
+        one: 1 Bild
+        other: "%{count} Bilder"
+      insert: Bild einfügen
+      media_folder_delete_confirmation_html: Bist du sicher? Die Bilder werden <strong>nicht</strong> gelöscht.
+      no_folder: Kein Ordner
+      photos: Bilder
+      rename_folder: Ordner umbenennen
+      save_media_folder: Medien-Ordner speichern
+      upload_from_device: Von Gerät hochladen
+      uploading: Wird hochgeladen...
+    modal:
+      agree: Ja, ich bin sicher
+      cancel: Nein, abbrechen
+    navigations:
+      add_menu_item: Menü-Eintrag hinzufügen
+      add_sub_item: Untereintrag hinzufügen
+      choose_page: Seite auswählen
+      delete_item: Eintrag löschen
+      delete_item_confirmation_html: Bist du sicher, dass du diesen Menü-Eintrag <span class='font-semibold'>löschen</span> möchtest?
+      description: Füge und sortiere Einträge wie du möchtest. Optional kannst du auch verschachtelte Menü-Einträge hinzufügen.
+      navigations: Navigationen
+      no_navigations: Diese Webseite hat noch keine Navigationen. Du kannst eine in der Theme Konfiguration erstellen.
+      sorting_saved: Reihenfolge gespeichert
+    notifications:
+      alert: Ups! Etwas ist falsch gelaufen
+      information: Information
+      login: Du musst dich zuerst einloggen
+      wrong_username_or_password: E-Mail oder Passwort falsch
+    options:
+      choose_option: Option auswählen 
+    pages:
+      add_page_to: 'Seite hinzufügen zu:'
+      add_translation: Übersetzung für %{language} hinzufügen
+      advanced: Erweitert
+      cannot_be_deleted: Seite kann nicht gelöscht werden
+      change_order: Reihenfolge ändern
+      change_view_template: View Template ändern
+      change_view_template_confirmation: Bist du sicher, dass du dein view Template ändern möchtest? Inhalte die nicht zum neuen Template passen gehen verloren.
+      concept: Entwurf
+      create: Seite erstellen
+      create_page: Neue(s) %{template}
+      delete: Seite löschen
+      delete_confirmation: Bist du sicher, dass du die Seite <strong>%{subject}</strong> löschen möchtest?
+      deleted: Seite gelöscht
+      done_changing_order: Reihenfolge speichern
+      edit_translation: Übersetzung für %{language} editieren
+      invisible_to_search_engines: Deine Website ist für Suchmaschinen nicht sichtbar.
+      invisible_to_search_engines_description: Gehe zu deinen Einstellungen um Suchmaschinen-Support zu aktivieren.
+      main_collection: Hauptkollektion
+      materialize_path_confirmation: Bist du sicher, dass du den Pfad für diese Seite neu erzeugen willst?
+      missing_translations: Fehlende Übersetzungen
+      move_page: Seite verschieben
+      moved: Seite verschoben
+      new: Neue Seite
+      no_pages_yet: Noch keine Seiten
+      no_parent_page: Keine Oberseite
+      page_content: Inhalt
+      page_part: Seiteninhalt
+      page_seo: Suchmaschinen
+      path: 'Pfad:'
+      photo_picker: Bild auswählen
+      photos_picker: Bilder auswählen
+      preview: Vorschau
+      publish: Publizieren
+      published: Seite publiziert
+      rebuild_materialized_path: Materialisierten Pfad neu erzeugen
+      recommended: Empfohlen
+      save: Seite speichern
+      save_changes: Änderungen speichern
+      save_draft: Entwurf speichern
+      saved: Seite gespeichert
+      saving: wird gespeichert...
+      search_engines: Suchmaschinen
+      show_in_menu: unsichtbar
+      skip_to_first_child: Zur ersten Unterseite weiterleiten
+      sorting_saved: Reihenfolge gespeichert
+    permanently_delete: Permanent Löschen
+    photos:
+      cannot_be_created: 'Bild kann nicht verarbeitet werden:'
+      choose_images: Bilder auswählen
+      delete: Löschen
+      delete_confirmation: Bist du sicher, dass du das Bild <strong>%{image}</strong> löschen möchtest?
+      delete_folder: Ordner löschen
+      done_organizing: Reihenfolge speichern
+      insert_photo: Bild einfügen
+      insert_photos: Bilder auswählen
+      link: 'URL des Bildes:'
+      new_folder: Neuer Ordner
+      organize: Bilder sortieren
+      rename_folder: Ordner umbenenen 
+      select_images: Bilder auswählen
+      upload_image: Bild hochladen
+    preferences:
+      Analytics: Analytics
+      account: Allgemein
+      account_description: Persönliche Einstellungen
+      account_save: Einstellungen speichern
+      analytics: Analytics und Suchmaschinen
+      analytics_description: Verknüpfe deinen Account für real-time Analysen
+      analytics_save: Einstellungen speichern
+      domain_name_settings: Domain Einstellungen
+      domain_name_settings_description: Richte deine Domain ein
+      social_media: Social Media
+      social_media_description: Facebook und Twitter Accounts
+      social_media_save: Speichere Social Media
+      style: Stil
+      style_description: Wähle einen passenden Stil
+      style_save: Stil speichern
+      title: Einstellungen
+      users: Benutzer
+      users_description: Benutzer und Administratoren verwalten
+    preview_website: Vorschau der Webseite
+    resources:
+      edit: Kollektion editieren
+      label_description: Label für diese Seiten Kollektion
+      manual_sorting: Manuell sortieren
+      no_default_template: Kein Standard-Template
+      saved: Kollektion gespeichert
+      settings: Einstellungen für %{label}
+      settings_description: Alle Seiten in dieser Kollektion haben folgendes Prefix.
+    save: Speichern
+    search: Suchen...
+    settings:
+      general: Allgemein
+      save: Einstellungen speichern
+      title: Einstellungen
+      users: Benutzer
+    theme:
+      save: Theme speichern
+      saved: Theme gespeichert
+      theme: Theme
+      theme_description: Konfiguriere dein Theme
+    ui:
+      cancel: Abbrechen
+      delete: Löschen
+      load_more: Weitere laden
+      move_to: Verschieben nach
+      new_entry: Neuer Eintrag
+      optional: Optional 
+      rename: Umbenennen
+      save_changes: Änderungen speichern
+      saving: Speichern...
+    users:
+      authorization: Authorisierung
+      authorization_description: Administratoren können Benutzer verwalten. Normale Benutzer nicht.
+      cannot_be_created: Der Benutzer kann nicht gespeichert werden
+      delete: Benutzer löschen
+      delete_confirmation_html: Bist du sicher, dass du den Benutzer <strong>%{user}</strong> löschen möchtest?
+      deleted: Benutzer gelöscht
+      last_login: Letztes Login
+      never_logged_in: Noch nie eingeloggt
+      new: Neuer Benutzer
+      profile: Profil
+      profile_description: Diese Information wird zur Identifikation des Benutzers verwendet. Benutzer müssen sich mit ihrer Email Adresse anmelden.
+      save: Benutzer speichern
+      saved: Benutzer speichern
+    visit_page: Seite besuchen
+    website:
+      all_pages: Alle Seiten
+      content: Inhalt
+      documents: Dokumente
+      images: Bilder
+      media_library: Medien-Bibliothek
+      media_library_description: Hier findest du alle deine Bilder und Dokumente
+      pages: Seiten
+      pages_description: Alle Seiten deiner Webseite
+      photos: Fotos
+      settings: Einstellungen
+      theme: Theme
+      title: Deine Webseite
+    wysiwyg:
+      heading_1: Überschrift 1
+      heading_2: Überschrift 2
+      heading_3: Überschrift 3
+      insert_link: Link einfügen
+      link: Link
+      paragraph: Paragraph
+      quote: Zitat
+      unlink: Link löschen
+      url: URL
+      url_placeholder: URL einfügen

@@ -8,7 +8,13 @@ module Spina
       plugin_name = namespace
 
       klass = Class.new(::Spina::Setting) do
-        jsonb_accessor :preferences, class_settings
+        include AttrJson::Record
+        include Spina::AttrJsonMonkeypatch
+        
+        class_settings.each do |setting|
+          attr_json *setting, container_attribute: "preferences"
+          attr_json_setter_monkeypatch setting.first
+        end
 
         default_scope { where(plugin: "#{plugin_name}") }
       end

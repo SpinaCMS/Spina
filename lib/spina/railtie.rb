@@ -1,9 +1,13 @@
 module Spina
   class Railtie < Rails::Railtie
-    initializer "spina.configure_rails_initialization" do
-      Rails.application.middleware.insert_before(Rack::Runtime, Rack::Rewrite) do
-        r301 %r{^/(.*)/$}, '/$1'
-      end
+
+    initializer "spina.assets.precompile" do |app|
+      app.config.assets.precompile += %w(spina/manifest spina/importmap.json)
     end
+    
+    ActiveSupport.on_load(:action_controller) do
+      ::ActionController::Base.send(:include, Spina::AdminSectionable)
+    end
+
   end
 end

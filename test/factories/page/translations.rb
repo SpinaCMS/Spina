@@ -1,5 +1,5 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :page_translation, class: Spina::Page::Translation do
-    locale 'nl'
+    locale { 'nl' }
   end
 end

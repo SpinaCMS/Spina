@@ -1,9 +1,7 @@
 Spina.configure do |config|
   # Set locales
-  config.locales = [:en, :nl]
+  config.locales = [:en, :nl, :de]
   # Run `rake spina:update_translations` after you add any new locale.
-
-  config.pages_controller = 'pages'
 
   # Important Note
   # ==============
@@ -13,6 +11,16 @@ Spina.configure do |config|
 
   # Specify a backend path. Defaults to /admin.
   # config.backend_path = 'admin'
+  
+  # The parent controller all frontend Spina controllers inherit from
+  # Defaults to ApplicationController
+  # config.frontend_parent_controller = "ApplicationController"
+  
+  # Background jobs
+  # ===============
+  # 
+  # By default, all background jobs are queued as :default
+  # config.queues.page_updates = :default
 
   # Pages Options
   # ===============

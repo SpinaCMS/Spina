@@ -1,236 +1,362 @@
 en:
-  spina:
-    cancel: Cancel
-    close: Close
-    choose_from_library: Choose from library
-    edit: Edit
-    save: Save
-    delete: Delete
-    permanently_delete: Permanently delete
-    delete_confirmation: "Are you sure you want to delete <strong>%{subject}</strong>?"
-    login: Login
-    preview_website: Preview website
-    search: Search...
-    ago: ago
-    edit_website: Edit your website
-    logout: Logout
-    main_menu: Main menu
-
-    settings:
-      title: Settings
-      save: Save Settings
-
-    forgot_password:
-      new: Forgot password
-      request: Request new password
-      unknown_user: This user does not exist
-      save: Save new password
-      success: You can use your new password
-      mail_subject: Reset your password
-      expired: Your password reset token has expired
-
-    modal:
-      agree: "Yes, I'm sure"
-      cancel: "No, cancel"
-
-    notifications:
-      information: Information
-      alert: Oops! Something went wrong
-      login: You have to login first
-      wrong_username_or_password: Wrong email or password
-
-    website:
-      title: Your website
-      pages: Pages
-      all_pages: All pages
-      pages_description: "All pages on your website"
-      media_library: Media library
-      media_library_description: "Here's where you'll find all of your images and documents"
-      documents: Documents
-      photos: Images
-
-    pages:
-      new: New page
-      create_page: "new %{template}"
-      change_order: Change order
-      done_changing_order: Done ordering
-      page_content: Content
-      page_seo: Search engines
-      advanced: Advanced
-      page_part: Page section
-      photos_picker: Choose images
-      photo_picker: Choose image
-      delete_confirmation: "Are you sure you want to delete the page <strong>%{subject}</strong>?"
-      save: Save page
-      concept: draft
-      show_in_menu: invisible
-      skip_to_first_child: forward to first child page
-      invisible_to_search_engines: Your website is invisible to search engines
-      invisible_to_search_engines_description: Go to your preferences to activate search engines.
-      rebuild_materialized_path: Rebuild materialized path
-      materialize_path_confirmation: "Are you sure you want to rebuild the path for this page?"
-      saving: Saving...
-      saved: Page saved
-
-    resources:
-      edit: Edit resource
-
-    users:
-      new: New user
-      save: Save user
-      delete_confirmation: "Are you sure you want to delete the user <strong>%{user}</strong>?"
-      cannot_be_created: The user cannot be saved
-
-    photos:
-      delete_confirmation: "Are you sure you want to delete this <strong>image</strong>?"
-      insert_photos: Choose images
-      choose_images: Choose images
-      insert_photo: Insert image
-      link: "URL of your image:"
-      cannot_be_created: "Image could not be processed:"
-      upload_image: "Upload an image"
-      organize: Organize images
-      done_organizing: Done organizing
-      new_folder: New folder
-      delete_folder: Delete folder
-      delete: Delete
-
-    wysiwyg:
-      paragraph: Paragraph
-      heading_1: Heading 1
-      heading_2: Heading 2
-      heading_3: Heading 3
-      quote: Quote
-      insert_link: Insert link
-
-    preferences:
-      title: Preferences
-      account: General
-      account_description: Personal preferences
-      account_save: Save preferences
-      style: Styling
-      style_description: Choose a theme that fits your brand
-      style_save: Save styling
-      users: Users
-      users_description: Manage users and administrators
-      social_media: Social media
-      social_media_description: Facebook and Twitter accounts
-      social_media_save: Save social media
-      analytics: Analytics and search
-      analytics_description: Link your account with for real-time analytics
-      analytics_save: Save preferences
-      domain_name_settings: Domain settings
-      domain_name_settings_description: Setup your own custom domain
-
-    attachments:
-      insert: 'Insert document'
-      insert_multiple: 'Insert documents'
-
-    media_library:
-      photos: Images
-      attachments: Documents
-
   activerecord:
-    models:
-      spina/page:
-        one: Page
-        other: Pages
-      spina/user:
-        one: User
-        other: Users
-      spina/photo:
-        one: Image
-        other: Images
-      spina/attachment:
-        one: Document
-        other: Documents
-
     attributes:
       spina/account:
-        name: Website name
         address: Address
-        postal_code: Postal code
         city: City
-        phone: Phone
         email: Email
+        facebook: Facebook
+        google_analytics: Google Analytics
+        google_plus: Google+
+        google_site_verification: Google Site Verification
+        instagram: Instagram
         kvk_identifier: Chamber of commerce
         kvk_identifier_description: Chamber of commerce
+        linkedin: LinkedIn
+        logo: Logo
+        name: Website name
+        phone: Phone
+        postal_code: Postal code
+        robots_allowed: Visible in search engines
+        theme: Theme website
+        twitter: Twitter
         vat_identifier: VAT
         vat_identifier_description: VAT
-        theme: Theme website
-        logo: Logo
-        google_analytics: Google Analytics
-        google_site_verification: Google Site Verification
-        robots_allowed: Visible in search engines
-        facebook: Facebook
-        twitter: Twitter
-        google_plus: Google+
-
+        youtube: YouTube
       spina/attachment:
         created_at: Created at
         name: Filename
         size: Size
-
+      spina/media_folder:
+        name: Name
+      spina/navigation:
+        auto_add_pages: Automatically add pages
+        auto_add_pages_description: New pages are added automatically to this navigation
+        label: Label
+        pages: Pages
+        pages_description: Select the pages you want to use in this navigation
       spina/page:
+        ancestry: Parent page
         created_at: Created at
-        title: Title
-        title_placeholder: Page title
-        seo_title: SEO <title>
-        seo_title_placeholder: This title is used in the <title>-tag
         description: Meta description
         description_description: This description will be shown in search results
         description_placeholder: Short description of your page
         draft: Draft
         draft_description: Great for when your page is not quite finished
-        skip_to_first_child: Forward
-        skip_to_first_child_description: Forward to first child page
         link_url: Page Redirect
         link_url_description: Forward to URL
         link_url_placeholder: e.g. http://www.example.com/
-        show_in_menu: Show in navigation
-        show_in_menu_description: "When turned off this page won't be shown in your navigation"
         menu_title: Navigation title
         menu_title_placeholder: Leave empty to use the page title
-        view_template: Page template
-        ancestry: Parent page
         no_parent: No parent
-
+        resource: Resource
+        seo_title: SEO <title>
+        seo_title_description: Make sure your search result looks good in search engines
+        seo_title_placeholder: This title is used in the <title>-tag
+        show_in_menu: Show in navigation
+        show_in_menu_description: When turned off this page won't be shown in your navigation
+        skip_to_first_child: Forward
+        skip_to_first_child_description: Forward to first child page
+        title: Title
+        title_placeholder: Page title
+        url_title: Override slug
+        url_title_description: Optional
+        url_title_placeholder: Slug
+        view_template: Page template
       spina/resource:
         label: Label
         order_by: Order by
-        view_template: Default view template
         parent_page: Parent page
-
-      spina/media_folder:
-        name: Name
-
-      spina/navigation:
-        label: Label
-        auto_add_pages: Automatically add pages
-        auto_add_pages_description: New pages are added automatically to this navigation
-        pages: Pages
-        pages_description: Select the pages you want to use in this navigation
-
+        view_template: Default view template
       spina/user:
-        name: Name
-        name_placeholder: Name
+        admin: Administrator
+        admin_description: Administrators can create users
         email: Email
         email_description: Your email must be unique
-        password: Password
-        password_description: Leave blank to keep password
-        password_confirmation: Confirm password
-        admin: Administrator
-        user: User
-        admin_description: Administrators can create users
-        role: Role
         last_logged_in: Last logged in
-
-  misc:
-    messages:
-      zero: "0 new messages"
-      one: "1 new message"
-      other: "%{count} new messages"
-
-  languages:
-    en: English
-    nl: Dutch
+        name: Name
+        name_placeholder: Name
+        password: Password
+        password_confirmation: Confirm password
+        password_description: Leave blank to keep password
+        role: Role
+        user: User
+    models:
+      spina/attachment:
+        one: Document
+        other: Documents
+      spina/page:
+        one: Page
+        other: Pages
+      spina/photo:
+        one: Image
+        other: Images
+      spina/user:
+        one: User
+        other: Users
+  spina:
+    accounts:
+      contact_details: Contact details
+      contact_details_description: Email and phone
+      couldnt_be_saved: Account couldn't be saved
+      name_description: Your website name
+      save: Save account
+      saved: Account saved
+    ago: ago
+    attachments:
+      choose_attachment: Choose attachment
+      delete_confirmation_html: Are you sure? This attachment <span class='font-semibold'>might</span> be in use on a page.
+      download: Download
+      insert: Insert document
+      insert_multiple: Insert documents
+      upload: Upload files
+    cancel: Cancel
+    choose_from_library: Choose from library
+    close: Close
+    delete: Delete
+    delete_confirmation: Are you sure you want to delete <strong>%{subject}</strong>?
+    edit: Edit
+    edit_website: Edit your website
+    forgot_password:
+      expired: Your password reset token has expired
+      mail_subject: Reset your password
+      new: Forgot password
+      request: Request new password
+      save: Save new password
+      success: You can use your new password
+      unknown_user: This user does not exist
+    images:
+      all_images: All images
+      back: Back
+      cannot_be_created: Cannot be created
+      choose_image: Choose image
+      choose_images: Choose images
+      confirm_selection: Confirm selection
+      delete: Delete
+      delete_confirmation_html: Are you sure you want to delete this <strong>image</strong>?
+      delete_folder: Delete folder
+      done_organizing: Done organizing
+      insert_image: Insert image
+      insert_photo: Insert photo
+      insert_photos: Insert photos
+      link: Link
+      new_folder: New folder
+      organize: Organize
+      remove_image: Remove image
+      upload: Upload images
+      upload_image: Upload image
+    languages:
+      bg: Bulgarian
+      de: German
+      en: English
+      es: Spanish
+      fr: French
+      id: Indonesian
+      it: Italian
+      nl: Dutch
+      pl: Polish
+      pt-BR: Brazilian Portuguese
+      ro: Romanian
+      ru: Russian
+      sv: Swedish
+      th: Thai
+      tr: Turkish
+      zh-CN: Simplified Chinese
+    layout:
+      couldnt_be_saved: Layout couldn't be saved
+      layout: Layout
+      no_layout_parts: No layout parts available
+      save: Save layout
+      saved: Layout saved
+    login: Login
+    logout: Logout
+    main_menu: Main menu
+    media_library:
+      add_folder: Add folder
+      add_image: Add image
+      attachments: Documents
+      back_to_all: Back to all
+      filename: Filename
+      images: Images
+      images_count:
+        one: 1 image
+        other: "%{count} images"
+      insert: Insert image
+      media_folder_delete_confirmation_html: Are you sure? Images will <strong>not</strong> be deleted.
+      no_folder: No folder
+      photos: Images
+      rename_folder: Rename folder
+      save_media_folder: Save media folder
+      upload_from_device: Upload from device
+      uploading: Uploading...
+    modal:
+      agree: Yes, I'm sure
+      cancel: No, cancel
+    navigations:
+      add_menu_item: Add menu item
+      add_sub_item: Add sub-item
+      choose_page: Choose page
+      delete_item: Delete item
+      delete_item_confirmation_html: Are you sure you want to <span class='font-semibold'>delete</span> this menu item?
+      description: Add and sort items as you see fit. You can add nested menu items, but don't have to.
+      navigations: Navigations
+      no_navigations: This website has no navigations yet. You can set one up in your theme configuration.
+      sorting_saved: Sorting saved
+    notifications:
+      alert: Oops! Something went wrong
+      information: Information
+      login: You have to login first
+      wrong_username_or_password: Wrong email or password
+    options:
+      choose_option: Choose option
+    pages:
+      add_page_to: 'Add page to:'
+      add_translation: Add %{language} translation
+      advanced: Advanced
+      cannot_be_deleted: Page can't be deleted
+      change_order: Change order
+      change_view_template: Change view template
+      change_view_template_confirmation: Are you sure you want to change your page template? Page content that does not belong in the new template will be lost.
+      concept: draft
+      create: Create page
+      create_page: new %{template}
+      delete: Delete page
+      delete_confirmation: Are you sure you want to delete the page <strong>%{subject}</strong>?
+      deleted: Page deleted
+      done_changing_order: Done ordering
+      edit_translation: Edit %{language} translation
+      invisible_to_search_engines: Your website is invisible to search engines
+      invisible_to_search_engines_description: Go to your preferences to activate search engines.
+      main_collection: Main collection
+      materialize_path_confirmation: Are you sure you want to rebuild the path for this page?
+      missing_translations: Missing translations
+      move_page: Move page
+      moved: Page moved
+      new: New page
+      no_pages_yet: No pages yet
+      no_parent_page: No parent page
+      page_content: Content
+      page_part: Page section
+      page_seo: Search engines
+      path: 'Path:'
+      photo_picker: Choose image
+      photos_picker: Choose images
+      preview: Preview
+      publish: Publish
+      published: Page published
+      rebuild_materialized_path: Rebuild materialized path
+      recommended: recommended
+      save: Save page
+      save_changes: Save changes
+      save_draft: Save draft
+      saved: Page saved
+      saving: Saving...
+      search_engines: Search engines
+      show_in_menu: invisible
+      skip_to_first_child: forward to first child page
+      sorting_saved: Sorting saved
+    permanently_delete: Permanently delete
+    photos:
+      cannot_be_created: 'Image could not be processed:'
+      choose_images: Choose images
+      delete: Delete
+      delete_confirmation: Are you sure you want to delete this <strong>image</strong>?
+      delete_folder: Delete folder
+      done_organizing: Done organizing
+      insert_photo: Insert image
+      insert_photos: Choose images
+      link: 'URL of your image:'
+      new_folder: New folder
+      organize: Organize images
+      rename_folder: Rename folder
+      select_images: Select images
+      upload_image: Upload an image
+    preferences:
+      Analytics: Analytics
+      account: General
+      account_description: Personal preferences
+      account_save: Save preferences
+      analytics: Analytics and search
+      analytics_description: Link your account with for real-time analytics
+      analytics_save: Save preferences
+      domain_name_settings: Domain settings
+      domain_name_settings_description: Setup your own custom domain
+      social_media: Social media
+      social_media_description: Facebook and Twitter accounts
+      social_media_save: Save social media
+      style: Styling
+      style_description: Choose a theme that fits your brand
+      style_save: Save styling
+      title: Preferences
+      users: Users
+      users_description: Manage users and administrators
+    preview_website: Preview website
+    resources:
+      edit: Edit resource
+      label_description: User-facing label for this page collection.
+      manual_sorting: Manual sorting
+      no_default_template: No default template
+      saved: Page collection saved
+      settings: "%{label} settings"
+      settings_description: All pages inside this collection will be prepended with this slug.
+    save: Save
+    search: Search...
+    settings:
+      general: General
+      save: Save Settings
+      title: Settings
+      users: Users
+    theme:
+      save: Save theme
+      saved: Theme saved
+      theme: Theme
+      theme_description: Configure your theme
+    ui:
+      cancel: Cancel
+      delete: Delete
+      load_more: Load more
+      move_to: Move to
+      new_entry: New entry
+      optional: Optional
+      rename: Rename
+      save_changes: Save changes
+      saving: Saving...
+    users:
+      authorization: Authorization
+      authorization_description: Administrators can manage users. Regular users cannot.
+      cannot_be_created: The user cannot be saved
+      delete: Delete user
+      delete_confirmation_html: Are you sure you want to delete the user <strong>%{user}</strong>?
+      deleted: User deleted
+      last_login: 'Last login:'
+      never_logged_in: Never logged in
+      new: New user
+      profile: Profile
+      profile_description: This information will be used to identify different users. Users will use their email address to login.
+      save: Save user
+      saved: User saved
+    visit_page: Visit page
+    website:
+      all_pages: All pages
+      content: Content
+      documents: Documents
+      images: Images
+      media_library: Media library
+      media_library_description: Here's where you'll find all of your images and documents
+      pages: Pages
+      pages_description: All pages on your website
+      photos: Images
+      settings: Settings
+      theme: Theme
+      title: Your website
+    wysiwyg:
+      heading_1: Heading 1
+      heading_2: Heading 2
+      heading_3: Heading 3
+      insert_link: Insert link
+      link: Link
+      paragraph: Paragraph
+      quote: Quote
+      unlink: Unlink
+      url: URL
+      url_placeholder: Enter a URL

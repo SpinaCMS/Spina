@@ -4,8 +4,11 @@ module Spina
   module Admin
     class LogoutTest < ActionDispatch::IntegrationTest
       setup do
+        host! "dummy.test"
+        
         @routes = Engine.routes
-        @user = FactoryGirl.create :user
+        @account = FactoryBot.create :account
+        @user = FactoryBot.create :user
         post "/admin/sessions", params: {email: @user.email, password: "password"}
       end
 

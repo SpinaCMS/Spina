@@ -4,15 +4,19 @@ module Spina
 
     included do
       rescue_from ActiveRecord::RecordNotFound, with: :redirect_or_render_404
+
+      helper Spina::PagesHelper
       
       before_action :set_locale
+      before_action :set_current_page
+      before_action :set_current_account
     end
 
     def show
       if should_skip_to_first_child?
         redirect_to first_live_child.try(:materialized_path) and return
       elsif page.link_url.present?
-        redirect_to page.link_url and return
+        redirect_to Spina::Current.page.link_url and return
       end
 
       render_with_template(page)
@@ -24,15 +28,28 @@ module Spina
         I18n.locale = params[:locale] || I18n.default_locale
       end
 
+      def set_current_page
+        Spina::Current.page = page
+        Spina::Current.page.view_context = view_context
+      end
+
+      def set_current_account
+        Spina::Current.account = Spina::Account.first
+        Spina::Current.account.view_context = view_context
+      end
+
       def page_by_locale(locale)
-        Mobility.with_locale(locale) do
+        I18n.with_locale(locale) do
           Page.i18n.find_by!(materialized_path: spina_request_path)
         end
       end
 
       def page
-        current_page = page_by_locale(I18n.locale) || page_by_locale(I18n.default_locale)
-        @page ||= (action_name == 'homepage') ? Page.find_by!(name: 'homepage') : current_page
+        @page = if action_name == 'homepage'
+          Page.find_by!(name: 'homepage')
+        else 
+          page_by_locale(I18n.locale) || page_by_locale(I18n.default_locale)
+        end
       end
 
       def spina_request_path
@@ -41,11 +58,11 @@ module Spina
       end
 
       def should_skip_to_first_child?
-        page.skip_to_first_child && first_live_child
+        Spina::Current.page.skip_to_first_child && first_live_child
       end
 
       def first_live_child
-        page.children.sorted.live.first
+        Spina::Current.page.children.sorted.live.first
       end
 
       def redirect_or_render_404
@@ -61,7 +78,7 @@ module Spina
       end
 
       def render_with_template(page)
-        render layout: "#{current_theme.name.parameterize.underscore}/#{page.layout_template || 'application'}", template: "#{current_theme.name.parameterize.underscore}/pages/#{page.view_template || 'show'}"
+        render layout: "#{current_theme.name.parameterize.underscore}/#{page.layout_template || 'application'}", template: "#{current_theme.name.parameterize.underscore}/pages/#{Spina::Current.page.view_template || 'show'}"
       end
 
   end

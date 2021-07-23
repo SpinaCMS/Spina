@@ -3,49 +3,52 @@ module Spina
     class AttachmentsController < AdminController
       before_action :set_breadcrumbs
 
-      layout "spina/admin/media_library"
-
       def index
-        add_breadcrumb I18n.t('spina.website.documents'), spina.admin_attachments_path
-        @attachments = Attachment.file_attached.sorted
-        @attachment = Attachment.new
+        @attachments = Attachment.sorted.with_attached_file.page(params[:page]).per(25)
+      end
+      
+      def show
+        @attachment = Attachment.find(params[:id])
+      end
+      
+      def edit
+        @attachment = Attachment.find(params[:id])
       end
 
       def create
-        @attachment = Attachment.create(attachment_params)
+        @attachments = params[:attachment][:files].map do |file|
+          attachment = Attachment.create(attachment_params)
+          attachment.file.attach(file)
+          attachment
+        end
+        
+        respond_to do |format|
+          format.turbo_stream { render turbo_stream: turbo_stream.prepend("attachments", partial: "attachment", collection: @attachments)}
+          format.html { redirect_to spina.admin_attachments_url }
+        end
+      end
+      
+      def update
+        @attachment = Attachment.find(params[:id])
+        if params[:filename].present?
+          extension = @attachment.file.filename.extension
+          filename = "#{params[:filename]}.#{extension}"
+          @attachment.file.blob.update(filename: filename)
+        end
+        
+        redirect_to [:admin, @attachment]
       end
 
       def destroy
         @attachment = Attachment.find(params[:id])
         @attachment.destroy
-        redirect_to spina.admin_attachments_url
-      end
-
-      def select
-        @selected_attachment_id = Attachment.find_by(id: params[:selected_attachment_id]).try(:id)
-        @hidden_field_id = params[:hidden_field_id]
-        @attachments = Attachment.order_by_ids(@selected_attachment_id).file_attached.sorted
-        @attachment = Attachment.new
-      end
-
-      def insert
-        @attachment = Attachment.find(params[:attachment_id])
-      end
-
-      def select_collection
-        @selected_attachment_ids = Attachment.where(id: params[:selected_attachment_ids]).ids
-        @attachments = Attachment.order_by_ids(@selected_attachment_ids).file_attached.sorted
-        @attachment = Attachment.new
-      end
-
-      def insert_collection
-        @attachments = Attachment.where(id: params[:attachment_ids])
+        render turbo_stream: turbo_stream.remove(@attachment)
       end
 
       private
 
       def set_breadcrumbs
-        add_breadcrumb I18n.t('spina.website.media_library'), spina.admin_media_library_path
+        add_breadcrumb I18n.t('spina.website.media_library')
       end
 
       def attachment_params

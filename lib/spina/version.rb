@@ -1,3 +1,3 @@
 module Spina
-  VERSION = "0.12.0"
+  VERSION = "2.1.1"
 end

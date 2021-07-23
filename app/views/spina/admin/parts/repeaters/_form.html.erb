@@ -1,0 +1,37 @@
+<div class="mt-6" data-controller="repeater">
+  <label class="block text-sm leading-5 font-medium text-gray-700"><%= f.object.title %></label>
+
+  <div class="-mt-4 flex flex-col md:flex-row" data-controller="tabs" data-tabs-active="bg-spina-dark bg-opacity-10 text-gray-900" data-tabs-inactive="text-gray-500">
+    <div class="md:w-64 md:pr-6">
+      <% 
+        # Fields
+        repeater_content = Spina::Parts::RepeaterContent.new(name: f.object.name, title: f.object.title)
+        fields = f.fields_for(:content, [repeater_content], child_index: repeater_content.object_id) do |builder|
+          render("spina/admin/parts/repeaters/fields", f: builder)
+        end.gsub("\n", "")
+      %>
+
+      <div class="pt-6 -ml-3">
+        <div data-repeater-target="list" data-tabs-target="list" data-action="exists->tabs#added">
+          <% (f.object.content || []).each.with_index do |repeater_content, index| %>
+            <button type="button" class="text-gray-500 hover:text-gray-900 rounded-md px-3 truncate text-sm font-medium flex items-center w-full h-9" data-action="tabs#show" data-tabs-target="button" data-repeater-target="listItem" data-pane-id="<%= "pane_#{repeater_content.object_id}" %>">
+              <svg class="w-4 h-4 mr-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M432 288H16c-8.8 0-16 7.2-16 16v16c0 8.8 7.2 16 16 16h416c8.8 0 16-7.2 16-16v-16c0-8.8-7.2-16-16-16zm0-112H16c-8.8 0-16 7.2-16 16v16c0 8.8 7.2 16 16 16h416c8.8 0 16-7.2 16-16v-16c0-8.8-7.2-16-16-16z"/></svg>
+              <%= strip_tags(repeater_content.parts&.first&.label) %>
+            </button>
+          <% end %>
+        </div>
+
+        <button type="button" class="text-gray-400 pl-2 hover:text-gray-900 rounded-md truncate text-sm font-medium flex items-center w-full h-10" data-action="repeater#addFields" data-fields="<%= fields %>" data-child-index="<%= repeater_content.object_id %>">
+          <%= heroicon('plus', style: :solid, class: "w-6 h-6 mr-1") %>
+          <%=t 'spina.ui.new_entry' %>
+        </button>
+      </div>
+    </div>
+
+    <div class="flex-1 pl-6 md:pl-0" data-repeater-target="content">
+      <%= f.fields_for :content do |ff| %>
+        <%= render 'spina/admin/parts/repeaters/fields', f: ff %>
+      <% end %>
+    </div>
+  </div>
+</div>

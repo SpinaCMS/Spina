@@ -1,0 +1,8 @@
+<div data-controller="sortable">
+  <%= form_with url: helpers.spina.sort_admin_pages_path, data: {sortable_target: "form"} do |f| %>
+  <% end %>
+  
+  <ul data-sortable-target="list">
+    <%= render Spina::Pages::PageComponent.with_collection(@pages, sortable: sortable) %>
+  </ul>
+</div>

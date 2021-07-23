@@ -4,9 +4,9 @@ module Spina
   class PageTest < ActiveSupport::TestCase
 
     def setup
-      FactoryGirl.create :account
-      @homepage = FactoryGirl.create :homepage
-      @demo = FactoryGirl.create :demo_page
+      FactoryBot.create :account
+      @homepage = FactoryBot.create :homepage
+      @demo = FactoryBot.create :demo_page
     end
 
     test 'homepage custom_page?' do
@@ -26,20 +26,44 @@ module Spina
     end
 
     test 'url_title' do
-      page = FactoryGirl.build(:page, title: 'Some long title')
-      assert_equal page.url_title, 'some-long-title'
+      page = FactoryBot.build(:page, title: 'Some long title')
+      assert_equal page.slug, 'some-long-title'
     end
 
     test 'url_title with specific locale' do
       Spina.config.transliterations = %i(latin bulgarian)
-      page = FactoryGirl.build(:page, title: 'Тест страница')
-      assert_equal page.url_title, 'test-stranica'
+      page = FactoryBot.build(:page, title: 'Тест страница')
+      assert_equal page.slug, 'test-stranica'
     end
 
-    test 'url_title without valid title' do
-      page = FactoryGirl.build(:page, title: nil)
-      page.save(validate: false)
-      assert_equal page.url_title, "page-#{page.id}"
+    test 'custom slug' do
+      @demo.update(url_title: "custom-slug")
+      assert_equal "/custom-slug", @demo.materialized_path
     end
+
+    test 'build slug from ancestors' do
+      about = FactoryBot.create :about_page
+      page = FactoryBot.create :services_page
+      page.update(parent: about)
+      assert_equal "/about/services", page.materialized_path
+    end
+    
+    test 'append decimal to duplicate paths' do
+      page = FactoryBot.create :about_page, title: "About"
+      assert_equal "/about", page.materialized_path
+      
+      duplicate_page = FactoryBot.create :about_page, title: "About"
+      assert_equal "/about-1", duplicate_page.materialized_path
+    end
+    
+    test 'append decimal to multiple duplicate paths' do
+      2.times do
+        FactoryBot.create :about_page, title: "About"
+      end
+      
+      page = FactoryBot.create :about_page, title: "About"
+      assert_equal "/about-2", page.materialized_path
+    end
+
   end
 end

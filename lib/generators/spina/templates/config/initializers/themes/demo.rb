@@ -1,85 +1,72 @@
-::Spina::Theme.register do |theme|
+# Theme configuration file
+# ========================
+# This file is used for all theme configuration.
+# It's where you define everything that's editable in Spina CMS.
 
+Spina::Theme.register do |theme|
+  # All views are namespaced based on the theme's name
   theme.name = 'demo'
   theme.title = 'Demo theme'
 
-  theme.page_parts = [{
-    name:           'line',
-    title:          'Line',
-    partable_type:  'Spina::Line'
-  }, {
-    name:           'text',
-    title:          'Text',
-    partable_type:  'Spina::Text'
-  }, {
-    name:           'photo',
-    title:          'Photo',
-    partable_type:  'Spina::Photo'
-  }, {
-    name:           'photo_collection',
-    title:          'Photo collection',
-    partable_type:  'Spina::PhotoCollection'
-  }, {
-    name:           'attachment',
-    title:          'Attachment',
-    partable_type:  'Spina::Attachment'
-  }, {
-    name:           'attachment_collection',
-    title:          'Attachment collection',
-    partable_type:  'Spina::AttachmentCollection'
-  }, {
-    name:           'structure',
-    title:          'Structure',
-    partable_type:  'Spina::Structure'
-  }]
+  # Parts 
+  # Define all editable parts you want to use in your view templates
+  # 
+  # Built-in part types:
+  # - Line
+  # - MultiLine
+  # - Text (Rich text editor)
+  # - Image
+  # - ImageCollection
+  # - Attachment
+  # - Option
+  # - Repeater
+  theme.parts = [
+    {name: 'repeater', title: "Repeater", part_type: "Spina::Parts::Repeater", parts: %w(line image headline)}, 
+    {name: 'line', title: "Line", part_type: "Spina::Parts::Line"}, 
+    {name: 'body', title: "Body", part_type: "Spina::Parts::Text"}, 
+    {name: "image_collection", title: "Image collection", part_type: "Spina::Parts::ImageCollection"},
+    {name: 'image', title: "Image", part_type: "Spina::Parts::Image"}, 
+    {name: 'headline', title: "Headline", part_type: "Spina::Parts::Line"}, 
+    {name: 'footer', title: "Footer", part_type: "Spina::Parts::Text"}
+  ]
 
-  theme.structures = [{
-    name: 'structure',
-    structure_parts: [{
-      name:           'title',
-      title:          'Title',
-      partable_type:  'Spina::Line'
-    }, {
-      name:           'description',
-      title:          'Description',
-      partable_type:  'Spina::Text'
-    }]
-  }]
+  # View templates
+  # Every page has a view template stored in app/views/my_theme/pages/*
+  # You define which parts you want to enable for every view template
+  # by referencing them from the theme.parts configuration above.
+  theme.view_templates = [
+    {name: 'homepage', title: 'Homepage', parts: %w(headline body image_collection)}, 
+    {name: 'show', title: 'Default', parts: %w(body image repeater)}, 
+    {name: 'demo', title: 'Demo', parts: %w(body image_collection image repeater)}
+  ]
 
-  theme.layout_parts = [{
-    name:           'line',
-    title:          'Line',
-    partable_type:  'Spina::Line'
-  }]
+  # Custom pages
+  # Some pages should not be created by the user, but generated automatically.
+  # By naming them you can reference them in your code.
+  theme.custom_pages = [
+    {name: 'homepage', title: 'Homepage', deletable: false, view_template: 'homepage'}, 
+    {name: 'demo', title: 'Demo', deletable: true, view_template: 'demo'}
+  ]
+  
+  # Navigations (optional)
+  # If your project has multiple navigations, it can be useful to configure multiple
+  # navigations.
+  theme.navigations = [
+    {name: 'main', label: 'Main navigation'}
+  ]
+  
+  # Layout parts (optional)
+  # You can create global content that doesn't belong to one specific page. We call these layout parts.
+  # You only have to reference the name of the parts you want to have here.
+  theme.layout_parts = []
+  
+  # Resources (optional)
+  # Think of resources as a collection of pages. They are managed separately in Spina
+  # allowing you to separate these pages from the 'main' collection of pages.
+  theme.resources = [
+    {name: 'articles', label: "Articles", view_template: "article", slug: "articles"}
+  ]
 
-  theme.view_templates = [{
-    name: 'homepage',
-    title: 'Homepage',
-    page_parts: ['text'],
-  }, {
-    name: 'show',
-    title: 'Default',
-    usage: 'Use for your content',
-    page_parts: ['text']
-  }, {
-    name: 'demo',
-    title: 'Demo',
-    description: 'Contains examples of every page part',
-    page_parts: ['line', 'text', 'photo', 'photo_collection', 'attachment', 'attachment_collection', 'structure']
-  }]
-
-  theme.custom_pages = [{
-    name:           'homepage',
-    title:          'Homepage',
-    deletable:      false,
-    view_template:  'homepage'
-  }, {
-    name:           'demo',
-    title:          'Demo',
-    deletable:      true,
-    view_template:  'demo'
-  }]
-
+  # Plugins (optional)
   theme.plugins = ['reviews']
-
 end

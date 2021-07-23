@@ -1,7 +1,7 @@
 module Spina
   class Theme
 
-    attr_accessor :name, :title, :page_parts, :structures, :view_templates, :layout_parts, :custom_pages, :plugins, :public_theme, :config, :navigations
+    attr_accessor :name, :title, :parts, :page_parts, :structures, :view_templates, :layout_parts, :custom_pages, :plugins, :public_theme, :config, :navigations, :resources
 
     class << self
 
@@ -32,18 +32,28 @@ module Spina
       @view_templates   = []
       @custom_pages     = []
       @navigations      = []
+      @resources        = []
       @public_theme = false
     end
 
-    def new_page_templates
+    def new_page_templates(recommended: "")
       @view_templates.map do |view_template|
-        [view_template[:name], view_template[:title], view_template[:description], view_template[:usage]] unless is_custom_undeletable_page?(view_template[:name])
-      end.compact
+        next if is_custom_undeletable_page?(view_template[:name])
+        
+        OpenStruct.new({
+          name: view_template[:name],
+          title: view_template[:title],
+          description: view_template[:description],
+          recommended: view_template[:name] == recommended
+        })
+      end.compact.sort_by do |page_template|
+        [page_template.recommended ? 0 : 1]
+      end
     end
 
     # Check if view_template is defined as a custom undeletable page
-    def is_custom_undeletable_page?(view_template)
-      @custom_pages.any? { |page| page[:view_template] == view_template && !page[:deletable] }
+    def is_custom_undeletable_page?(view_template_name)
+      @custom_pages.any? { |page| page[:view_template] == view_template_name && !page[:deletable] }
     end
 
   end

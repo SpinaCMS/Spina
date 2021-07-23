@@ -1,37 +1,38 @@
 module Spina
   module Admin
     class NavigationsController < AdminController
-      layout 'spina/admin/pages'
-
-      before_action :set_breadcrumb, except: [:show]
-
-      def show
-        @navigation = Navigation.find(params[:id])
-        add_breadcrumb t('spina.website.pages')
+      before_action :set_breadcrumb
+      before_action :set_navigation, only: [:show, :edit, :update]
+      
+      admin_section :content
+      
+      def index
+        navigation = Spina::Navigation.order(:position).first
+        if navigation
+          redirect_to spina.edit_admin_navigation_path(navigation)
+        end
       end
 
       def edit
-        @navigation = Navigation.find(params[:id])
-        add_breadcrumb @navigation.label, spina.admin_navigation_path(@navigation)
-        add_breadcrumb t('spina.edit')
+        @navigations = Spina::Navigation.order(:position)
         render layout: 'spina/admin/admin'
       end
 
-      def update
-        @navigation = Navigation.find(params[:id])
-        if @navigation.update_attributes(navigation_params)
-          redirect_to spina.admin_navigation_path(@navigation)
+      def update        
+        if @navigation.update(navigation_params)
+          redirect_to spina.edit_admin_navigation_path(@navigation)
         else
           render :edit
         end
       end
 
       def sort
-        params[:list].each_pair do |parent_pos, parent_node|
-          update_child_pages_position(parent_node)
-          update_navigation_item_position(parent_node[:id], parent_pos, nil)
+        params[:ids].each.with_index do |id, index| 
+          NavigationItem.where(id: id).update_all(position: index + 1)
         end
-        render nothing: true
+        
+        flash.now[:info] = t("spina.navigations.sorting_saved")
+        render_flash
       end
 
       private
@@ -50,11 +51,15 @@ module Spina
         end
 
         def set_breadcrumb
-          add_breadcrumb t('spina.website.pages'), spina.admin_pages_path
+          add_breadcrumb t('spina.navigations.navigations')
         end
 
         def navigation_params
-          params.require(:navigation).permit(:auto_add_pages, page_ids: [])
+          params.require(:navigation).permit(:label, :auto_add_pages, page_ids: [])
+        end
+
+        def set_navigation
+          @navigation = Navigation.find(params[:id])
         end
     end
   end

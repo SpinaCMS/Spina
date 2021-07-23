@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= current_account.name %></title>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <%= render 'demo/shared/languages' %>
+    <%= render 'demo/shared/navigation' %>
+    
+    <%= yield %>
+  </body>
+</html>

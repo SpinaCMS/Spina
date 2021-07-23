@@ -1,182 +1,354 @@
 it:
-  spina:
-    cancel: Annulla
-    close: Chiudi
-    choose_from_library: Seleziona dalla libreria
-    edit: Modifica
-    delete: Elimina
-    permanently_delete: Elimina definitivamente
-    delete_confirmation: "Sei sicuro di voler eliminare <strong>%{subject}</strong>?"
-    login: Login
-    preview_website: Anteprima sito
-    search: Cerca...
-    ago: fa
-    edit_website: Modifica il sito
-    logout: Logout
-
-    modal:
-      agree: "Si, sono sicuro"
-      cancel: "No, annulla"
-
-    notifications:
-      information: Informazioni
-      alert: Oops! Qualcosa è andato storto
-      login: Devi prima effettuare il login
-      wrong_username_or_password: Email o password errata
-
-    website:
-      title: Il tuo sito
-      pages: Pagine
-      pages_description: "Tutte le pagine del sito"
-      media_library: Libreria media
-      media_library_description: "Qui puoi trovare tutte le tue immagini e i tuoi documenti"
-      documents: Documenti
-      photos: Immagini
-
-    pages:
-      new: Nuova pagina
-      create_page: "Nuova %{template}"
-      change_order: Modifica ordine
-      done_changing_order: Ordinamento fatto
-      page_content: Contenuto
-      page_seo: Motori di ricerca
-      advanced: Avanzate
-      page_part: Sezione pagina
-      photos_picker: Seleziona immagini
-      photo_picker: Seleziona immagine
-      delete_confirmation: "Sei sicuro di voler eliminare la pagina <strong>%{subject}</strong>?"
-      save: Salva pagina
-      concept: bozza
-      show_in_menu: nascosto
-      skip_to_first_child: Vai alla prima sottopagina
-      invisible_to_search_engines: Il tuo sito è nascosto ai motori di ricerca
-      invisible_to_search_engines_description: Vai alla sezione impostazioni per attivare la visibilità per i motori di ricerca.
-
-    users:
-      new: Nuovo utente
-      save: Salva utente
-      delete_confirmation: "Sei sicuro di voler eliminare l'utente <strong>%{user}</strong>?"
-      cannot_be_created: "L'utente non può essere salvato"
-
-    photos:
-      delete_confirmation: "Sei sicuro di voler eliminare questa <strong>immagine</strong>?"
-      insert_photos: Inserisci immagini
-      insert_photo: Inserisci immagine
-      link: "URL immagine:"
-      cannot_be_created: "L'immagine non può essere processata:"
-
-    wysiwyg:
-      paragraph: Paragrafo
-      heading_1: Intestazione 1
-      heading_2: Intestazione 2
-      heading_3: Intestazione 3
-      quote: Citazione
-      insert_link: Inserisci link
-
-    preferences:
-      title: Impostazioni
-      account: Generale
-      account_description: Impostazioni personali
-      account_save: Salva impostazioni
-      style: Stile
-      style_description: Scegli un tema adatto al tuo brand
-      style_save: Salva stile
-      users: Utenti
-      users_description: Gestisci utenti e amministratori
-      social_media: Social media
-      social_media_description: Account Facebook e Twitter
-      social_media_save: Salva social media
-      analytics: Analytics e motori di ricerca
-      analytics_description: Collega il tuo account per gli analytics in tempo reale
-      analytics_save: Salva impostazioni
-      domain_name_settings: Impostazioni di dominio
-      domain_name_settings_description: Imposta il tuo dominio
-
-    attachments:
-      insert: 'Inserisci documento'
-      insert_multiple: 'Inserisci documenti'
-
-    media_library:
-      photos: Immagini
-      attachments: Documenti
-
   activerecord:
-    models:
-      spina/page:
-        one: Pagina
-        other: Pagine
-      spina/user:
-        one: Utente
-        other: Utenti
-      spina/photo:
-        one: Immagine
-        other: Immagini
-      spina/attachment:
-        one: Documento
-        other: Documenti
-
     attributes:
       spina/account:
-        name: Nome sito
         address: Indirizzo
-        postal_code: CAP
         city: Città
-        phone: Telefono
         email: Email
+        facebook: Facebook
+        google_analytics: Google Analytics
+        google_plus: Google+
+        google_site_verification: Google Site Verification
+        instagram: Instagram
         kvk_identifier: Camera di commercio
         kvk_identifier_description: Camera di commercio
+        linkedin: LinkedIn
+        logo: Logo
+        name: Nome sito
+        phone: Telefono
+        postal_code: CAP
+        robots_allowed: Visibile ai motori di ricerca
+        theme: Tema sito
+        twitter: Twitter
         vat_identifier: Partita IVA
         vat_identifier_description: Partita IVA
-        theme: Tema sito
-        logo: Logo
-        google_analytics: Google Analytics
-        google_site_verification: Google Site Verification
-        robots_allowed: Visibile ai motori di ricerca
-        facebook: Facebook
-        twitter: Twitter
-        google_plus: Google+
-
+        youtube: YouTube
       spina/attachment:
         created_at: Creato il
         name: Nome file
         size: Dimensione
-
+      spina/media_folder:
+        name: Nome
+      spina/navigation:
+        auto_add_pages: Aggiungi automaticamente le pagine
+        auto_add_pages_description: Le nuove pagine vengono aggiunte automaticamente a questo menu di navigazione
+        label: Etichetta
+        pages: Pagine
+        pages_description: Seleziona le pagine che vuoi usare in questo menu di navigazione
       spina/page:
-        title: Titolo
-        title_placeholder: Titolo pagina
-        seo_title: <title> SEO
-        seo_title_placeholder: Questo titolo è usato nel <title>-tag
+        ancestry: Pagina parente
+        created_at: Creato il
         description: Meta description
         description_description: Questa descrizione sarà mostrata nei risultati di ricerca
         description_placeholder: Breve descrizione della pagina
         draft: Bozza
         draft_description: Utile quando la tua pagina non è ancora completa
-        skip_to_first_child: Avanza
-        skip_to_first_child_description: Vai alla prima sottopagina
-        show_in_menu: Mostra nel menù
-        show_in_menu_description: "Quando è disattivato la pagina non verrà mostrata nel menù"
+        link_url: 'Reindirizzamento Pagina '
+        link_url_description: Reindirzza a URL
+        link_url_placeholder: es. http://www.esempio.com/
         menu_title: Titolo menù
         menu_title_placeholder: Lasciare vuoto per usare il titolo della pagina
+        no_parent: Nessun parente
+        resource: Risorse
+        seo_title: "<title> SEO"
+        seo_title_description: 
+        seo_title_placeholder: Questo titolo è usato nel <title>-tag
+        show_in_menu: Mostra nel menù
+        show_in_menu_description: Quando è disattivato la pagina non verrà mostrata nel menù
+        skip_to_first_child: Avanza
+        skip_to_first_child_description: Vai alla prima sottopagina
+        title: Titolo
+        title_placeholder: Titolo pagina
+        url_title: Sovrascrivi slug
+        url_title_description: Opzionale
+        url_title_placeholder: Slug
         view_template: Template pagina
-
+      spina/resource:
+        label: Etichetta
+        order_by: Ordina per
+        parent_page: Pagina parente
+        view_template: Template view di default
       spina/user:
-        email: Email
-        password: Password
-        name: Nome
-        name_placeholder: Nome
+        admin: Amministratore
+        admin_description: Gli amministratori possono creare utenti
         email: Email
         email_description: La tua email deve essere univoca
+        last_logged_in: Loggato l'ultima volta il
+        name: Nome
+        name_placeholder: Nome
         password: Password
-        password_description: Lasciare vuoto per mantenere la password
         password_confirmation: Conferma password
-        admin: Amministratore
-        user: Utente
-        admin_description: Gli amministratori possono creare utenti
+        password_description: Lasciare vuoto per mantenere la password
         role: Ruolo
-        last_logged_in: "Loggato l'ultima volta il"
-
-  misc:
-    messages:
-      zero: "0 nuovi messaggi"
-      one: "1 nuovo messaggio"
-      other: "%{count} nuovi messaggi"
+        user: Utente
+    models:
+      spina/attachment:
+        one: Documento
+        other: Documenti
+      spina/page:
+        one: Pagina
+        other: Pagine
+      spina/photo:
+        one: Immagine
+        other: Immagini
+      spina/user:
+        one: Utente
+        other: Utenti
+  spina:
+    accounts:
+      contact_details: 
+      contact_details_description: 
+      couldnt_be_saved: 
+      name_description: 
+      save: 
+      saved: 
+    ago: fa
+    attachments:
+      choose_attachment: Scegli allegato
+      delete_confirmation_html: 
+      insert: Inserisci documento
+      insert_multiple: Inserisci documenti
+      upload: 
+    cancel: Annulla
+    choose_from_library: Seleziona dalla libreria
+    close: Chiudi
+    delete: Elimina
+    delete_confirmation: Sei sicuro di voler eliminare <strong>%{subject}</strong>?
+    edit: Modifica
+    edit_website: Modifica il sito
+    forgot_password:
+      expired: Il token di reset della password e' scaduto
+      mail_subject: Resetta la tua password
+      new: Password dimenticata
+      request: Richiedi una nuova password
+      save: Salva nuova password
+      success: Puoi usare la tua nuova password
+      unknown_user: Questo utente non esiste
+    images:
+      all_images: Tutte le immagini
+      back: Indietro
+      cannot_be_created: Non può essere creato
+      choose_image: Scegli immagine
+      choose_images: Scegli immagini
+      confirm_selection: Conferma selezione
+      delete: Cancella
+      delete_confirmation_html: Sei sicuro di voler cancellare questa <strong> immagine </strong>?
+      delete_folder: Cancella cartella
+      done_organizing: Fine riordinare
+      insert_image: Inserisci immagine
+      insert_photo: Inserisci foto
+      insert_photos: Inserisci foto
+      link: Link
+      new_folder: Nuova cartella
+      organize: Organizza
+      remove_image: Rimuovi immagine
+      upload: Carica immagini
+      upload_image: Carica immagine
+    languages:
+      bg: Bulgaro
+      de: Tedesco
+      en: Inglese
+      es: Spagnolo
+      fr: Francese
+      id: Indonesiano
+      it: Italiano
+      nl: Olandese
+      pl: Polacco
+      pt-BR: Portoghese Braziliano
+      ro: Rumeno
+      ru: Russo
+      sv: Svedese
+      th: Thailandase
+      tr: Turco
+      zh-CN: Cinese semplificato
+    layout:
+      couldnt_be_saved: 
+      layout: 
+      no_layout_parts: 
+      save: 
+      saved: 
+    login: Login
+    logout: Logout
+    main_menu: Menu primario
+    media_library:
+      add_folder: 
+      add_image: 
+      attachments: Documenti
+      back_to_all: 
+      filename: 
+      images: Immagini
+      images_count: 
+      insert: 
+      media_folder_delete_confirmation_html: 
+      no_folder: 
+      photos: Immagini
+      rename_folder: 
+      save_media_folder: 
+      upload_from_device: 
+      uploading: 
+    modal:
+      agree: Si, sono sicuro
+      cancel: No, annulla
+    navigations:
+      add_menu_item: 
+      add_sub_item: 
+      choose_page: 
+      delete_item: 
+      delete_item_confirmation_html: 
+      description: 
+      navigations: 
+      no_navigations: 
+      sorting_saved: 
+    notifications:
+      alert: Oops! Qualcosa è andato storto
+      information: Informazioni
+      login: Devi prima effettuare il login
+      wrong_username_or_password: Email o password errata
+    options:
+      choose_option: Scegli un' opzione
+    pages:
+      add_page_to: 
+      add_translation: 
+      advanced: Avanzate
+      cannot_be_deleted: 
+      change_order: Modifica ordine
+      change_view_template: 
+      change_view_template_confirmation: 
+      concept: bozza
+      create: 
+      create_page: Nuova %{template}
+      delete: 
+      delete_confirmation: Sei sicuro di voler eliminare la pagina <strong>%{subject}</strong>?
+      deleted: 
+      done_changing_order: Ordinamento fatto
+      edit_translation: 
+      invisible_to_search_engines: Il tuo sito è nascosto ai motori di ricerca
+      invisible_to_search_engines_description: Vai alla sezione impostazioni per attivare la visibilità per i motori di ricerca.
+      main_collection: 
+      materialize_path_confirmation: Sei sicuro di voler reimpostare il percorso di questa pagina
+      missing_translations: 
+      move_page: 
+      moved: 
+      new: Nuova pagina
+      no_pages_yet: 
+      no_parent_page: 
+      page_content: Contenuto
+      page_part: Sezione pagina
+      page_seo: Motori di ricerca
+      path: 
+      photo_picker: Seleziona immagine
+      photos_picker: Seleziona immagini
+      preview: 
+      publish: 
+      published: 
+      rebuild_materialized_path: Ricostruisci path
+      recommended: 
+      save: Salva pagina
+      save_changes: 
+      save_draft: 
+      saved: Pagina salvata
+      saving: Salvataggio ...
+      search_engines: 
+      show_in_menu: nascosto
+      skip_to_first_child: Vai alla prima sottopagina
+      sorting_saved: 
+    permanently_delete: Elimina definitivamente
+    photos:
+      cannot_be_created: 'L''immagine non può essere processata:'
+      choose_images: Scegli immagine
+      delete: Cancella
+      delete_confirmation: Sei sicuro di voler eliminare questa <strong>immagine</strong>?
+      delete_folder: Cancella cartella
+      done_organizing: Fine organizzazione
+      insert_photo: Inserisci immagine
+      insert_photos: Inserisci immagini
+      link: 'URL immagine:'
+      new_folder: Nuova cartella
+      organize: Organizza immagini
+      rename_folder: Rinomina cartella
+      select_images: Seleziona immagini
+      upload_image: Carica un immagine
+    preferences:
+      Analytics: Analytics
+      account: Generale
+      account_description: Impostazioni personali
+      account_save: Salva impostazioni
+      analytics: Analytics e motori di ricerca
+      analytics_description: Collega il tuo account per gli analytics in tempo reale
+      analytics_save: Salva impostazioni
+      domain_name_settings: Impostazioni di dominio
+      domain_name_settings_description: Imposta il tuo dominio
+      social_media: Social media
+      social_media_description: Account Facebook e Twitter
+      social_media_save: Salva social media
+      style: Stile
+      style_description: Scegli un tema adatto al tuo brand
+      style_save: Salva stile
+      title: Impostazioni
+      users: Utenti
+      users_description: Gestisci utenti e amministratori
+    preview_website: Anteprima sito
+    resources:
+      edit: Modifica risorse
+      label_description: 
+      manual_sorting: 
+      no_default_template: 
+      saved: 
+      settings: 
+      settings_description: 
+    save: Salva
+    search: Cerca...
+    settings:
+      save: Salva impostazioni
+      title: Impostazioni
+    theme:
+      save: 
+      saved: 
+      theme: 
+      theme_description: 
+    ui:
+      cancel: 
+      delete: 
+      load_more: 
+      move_to: 
+      new_entry: 
+      optional: 
+      rename: 
+      save_changes: 
+      saving: 
+    users:
+      authorization: 
+      authorization_description: 
+      cannot_be_created: L'utente non può essere salvato
+      delete: 
+      delete_confirmation_html: Sei sicuro di voler eliminare l'utente <strong>%{user}</strong>?
+      deleted: 
+      last_login: 
+      never_logged_in: 
+      new: Nuovo utente
+      profile: 
+      profile_description: 
+      save: Salva utente
+      saved: 
+    visit_page: Visualizza la pagina
+    website:
+      all_pages: Tutte le pagine
+      documents: Documenti
+      images: Immagini
+      media_library: Libreria media
+      media_library_description: Qui puoi trovare tutte le tue immagini e i tuoi documenti
+      pages: Pagine
+      pages_description: Tutte le pagine del sito
+      photos: Immagini
+      title: Il tuo sito
+    wysiwyg:
+      heading_1: Intestazione 1
+      heading_2: Intestazione 2
+      heading_3: Intestazione 3
+      insert_link: Inserisci link
+      link: 
+      paragraph: Paragrafo
+      quote: Citazione
+      unlink: 
+      url: 
+      url_placeholder: 

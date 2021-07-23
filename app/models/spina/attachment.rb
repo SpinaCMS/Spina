@@ -1,37 +1,30 @@
 module Spina
   class Attachment < ApplicationRecord
-
-    has_one :page_part, as: :page_partable
-    has_many :structure_parts, as: :structure_partable
-    has_and_belongs_to_many :attachment_collections, join_table: 'spina_attachment_collections_attachments'
+    has_one_attached :file
 
     attr_accessor :_destroy
 
-    scope :sorted, -> { order('file ASC') }
-    scope :file_attached, -> { where('file IS NOT NULL') }
-
-    mount_uploader :file, FileUploader
+    scope :sorted, -> { order('created_at DESC') }
 
     def name
-      file.file.try(:filename)
+      file.filename.to_s
     end
 
     def content
-      self
+      file if file.attached?
+    end
+    
+    def present?
+      signed_blob_id.present?
     end
 
-    alias_method :old_update_attributes, :update_attributes
-    def update_attributes(attributes)
+    alias_method :old_update, :update
+    def update(attributes)
       if attributes["_destroy"] == "1" && attributes["file"].blank?
         self.page_part.destroy
       else
-        old_update_attributes(attributes)
+        old_update(attributes)
       end
-    end
-
-    def self.order_by_ids(ids)
-      sql = sanitize_sql_for_assignment({id: ids})
-      order("CASE WHEN #{sql} THEN 0 ELSE 1 END")
     end
 
   end

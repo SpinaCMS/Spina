@@ -1,7 +1,7 @@
 module Spina
   module Admin
     class PasswordResetsController < AdminController
-      layout "spina/login"
+      layout "spina/admin/sessions"
 
       skip_before_action :authorize_spina_user
 
@@ -13,12 +13,12 @@ module Spina
 
         if user.present?
           user.regenerate_password_reset_token
-          user.update_attributes!(password_reset_sent_at: Time.zone.now)
+          user.touch(:password_reset_sent_at)
           UserMailer.forgot_password(user).deliver_now
           redirect_to admin_login_path, flash: {success: t('spina.forgot_password.instructions_sent')}
         else
           flash.now[:alert] = t('spina.forgot_password.unknown_user')
-          render :new
+          render :new, status: :unprocessable_entity
         end
       end
 
@@ -31,10 +31,10 @@ module Spina
 
         if @user.password_reset_sent_at < 2.hours.ago
           redirect_to new_admin_password_reset_path, flash: {alert: t('spina.forgot_password.expired')}
-        elsif @user.update_attributes(user_params)
+        elsif @user.update(user_params)
           redirect_to admin_login_path, flash: {success: t('spina.forgot_password.success')}
         else
-          render :edit
+          render :edit, status: :unprocessable_entity
         end
       end
 
