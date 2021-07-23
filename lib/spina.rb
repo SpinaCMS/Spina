@@ -26,7 +26,8 @@ module Spina
                   :embedded_image_size,
                   :party_pooper,
                   :tailwind_purge_content,
-                  :queues
+                  :queues,
+                  :transliterations
 
   # Defaults
   self.authentication = "Spina::Authentication::Sessions"
@@ -37,6 +38,7 @@ module Spina
   self.frontend_parent_controller = "ApplicationController"
   self.locales = [I18n.default_locale]
   self.party_pooper = false
+  self.transliterations = %i(latin)
   
   # Queues for background jobs
   # - config.queues.page_updates

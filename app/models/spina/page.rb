@@ -53,7 +53,7 @@ module Spina
     end
 
     def slug
-      url_title&.parameterize
+      url_title.to_s.to_slug.normalize(transliterations: Spina.config.transliterations)
     end
     
     def homepage?
