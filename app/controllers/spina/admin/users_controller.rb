@@ -1,6 +1,7 @@
 module Spina
   module Admin
     class UsersController < AdminController
+      before_action :authorize_authentication_module
       before_action :authorize_admin, except: [:index]
       before_action :set_user, only: [:edit, :update, :destroy]
       
@@ -47,7 +48,7 @@ module Spina
       end
 
       def destroy
-        if @user != current_spina_user   
+        if @user != current_spina_user
           @user.destroy 
           redirect_to spina.admin_users_url, flash: {success: t('spina.users.deleted')}
         end
@@ -66,6 +67,15 @@ module Spina
         def set_user
           @user = User.find(params[:id])
         end
+        
+        def authorize_authentication_module
+          render status: 401 unless Spina.config.authentication == "Spina::Authentication::Sessions"
+        end
+        
+        def authorize_admin
+          render status: 401 unless current_spina_user.admin?
+        end
+        
     end
   end
 end

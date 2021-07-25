@@ -25,3 +25,13 @@ if ActiveSupport::TestCase.respond_to?(:fixture_path=)
   ActiveSupport::TestCase.file_fixture_path = ActiveSupport::TestCase.fixture_path + "/files"
   ActiveSupport::TestCase.fixtures :all
 end
+
+module AuthenticationHelper
+  def change_authentication(auth)
+    Spina.config.authentication = auth
+    Spina::Admin.send(:remove_const, :AdminController)
+    Spina::Admin.send(:remove_const, :PagesController)
+    load("app/controllers/spina/admin/admin_controller.rb")
+    load("app/controllers/spina/admin/pages_controller.rb")
+  end
+end

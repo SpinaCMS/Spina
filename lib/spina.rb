@@ -7,6 +7,8 @@ require 'spina/theme'
 require 'spina/tailwind_purger'
 require 'spina/attr_json_spina_parts_model'
 require 'spina/attr_json_monkeypatch'
+require 'spina/authentication/sessions'
+require 'spina/authentication/basic'
 
 module Spina
   include ActiveSupport::Configurable
@@ -15,11 +17,11 @@ module Spina
   PLUGINS = []
   THEMES = []
 
-  config_accessor :backend_path, 
+  config_accessor :authentication,
+                  :backend_path, 
                   :frontend_parent_controller,
                   :disable_frontend_routes,
                   :disable_decorator_load,
-                  :max_page_depth,
                   :locales, 
                   :embedded_image_size,
                   :party_pooper,
@@ -27,28 +29,30 @@ module Spina
                   :queues,
                   :transliterations
 
-  # Specify a backend path. Defaults to /admin.
+  # Defaults
+  self.authentication = "Spina::Authentication::Sessions"
   self.backend_path = 'admin'
-  
-  # The parent controller all frontend Spina controllers inherit from
-  # Default is ApplicationController
-  self.frontend_parent_controller = "ApplicationController"
-
   self.disable_frontend_routes = false
   self.disable_decorator_load = false
-
-  self.max_page_depth = 5
-
+  self.embedded_image_size = [2000, 2000]
+  self.frontend_parent_controller = "ApplicationController"
   self.locales = [I18n.default_locale]
+  self.party_pooper = false
+  self.transliterations = %i(latin)
   
-  # Queues
+  # Queues for background jobs
+  # - config.queues.page_updates
   self.queues = ActiveSupport::InheritableOptions.new
   
-  # Don't like confetti?
-  self.party_pooper = false
-  
-  # Transliterations for slug generation
-  self.transliterations = %i(latin)
+  # Tailwind purging
+  # Spina will by default purge all unused Tailwind classes by scanning
+  # the files listed below. You probably don't want to override this in 
+  # your main app. Spina Plugins can add files to this array.
+  self.tailwind_purge_content = Spina::Engine.root.glob("app/views/**/*.*") + 
+                                Spina::Engine.root.glob("app/components/**/*.*") + 
+                                Spina::Engine.root.glob("app/helpers/**/*.*") + 
+                                Spina::Engine.root.glob("app/assets/javascripts/**/*.js") +
+                                Spina::Engine.root.glob("app/**/tailwind/custom.css")
 
   # Images that are embedded in the Trix editor are resized to fit
   # You can optimize this for your website and go for a smaller (or larger) size
@@ -70,18 +74,4 @@ module Spina
       config_obj
     end
   end
-  
-  self.embedded_image_size = [2000, 2000]
-
-  
-  # Tailwind purging
-  # Spina will by default purge all unused Tailwind classes by scanning
-  # the files listed below. You probably don't want to override this in 
-  # your main app. Spina Plugins can add files to this array.
-  self.tailwind_purge_content = Spina::Engine.root.glob("app/views/**/*.*") + 
-                                Spina::Engine.root.glob("app/components/**/*.*") + 
-                                Spina::Engine.root.glob("app/helpers/**/*.*") + 
-                                Spina::Engine.root.glob("app/assets/javascripts/**/*.js") +
-                                Spina::Engine.root.glob("app/**/tailwind/custom.css")
-
 end

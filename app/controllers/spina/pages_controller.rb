@@ -1,18 +1,18 @@
 class Spina::PagesController < Spina::ApplicationController
   include Spina::Frontend
 
-  before_action :current_spina_user_can_view_page?
+  before_action :authorize_page
 
   helper_method :page
 
   def homepage
     render_with_template(page)
   end
-
+  
   private
-
-    def current_spina_user_can_view_page?
-      raise ActiveRecord::RecordNotFound unless current_spina_user.present? || page.live?
+  
+    def authorize_page
+      raise ActiveRecord::RecordNotFound unless page.live? || logged_in?
     end
 
 end
