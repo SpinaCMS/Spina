@@ -1,5 +1,13 @@
 # Spina CMS Changelog
 
+## 2.2
+
+### 2.2.0 (July 26th, 2021)
+* Added download link to attachments in media library
+* Added optional decorator loading to configuration
+* Fixed slug generation for non-latin characters
+* Refactored authentication as a replaceable module
+
 ## 2.1
 
 ### 2.1.1 (July 13th, 2021)
