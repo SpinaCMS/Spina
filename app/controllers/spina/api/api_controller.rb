@@ -9,7 +9,6 @@ module Spina
       
       TOKEN = Spina.config.api_key
       
-      before_action -> { current_account && current_theme }
       before_action :authenticate_api
       
       private
