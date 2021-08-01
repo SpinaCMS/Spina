@@ -1,7 +1,5 @@
 module Spina::Api
-  class PageSerializer
-    include JSONAPI::Serializer
-    
+  class PageSerializer < BaseSerializer    
     set_type :page
     
     attributes :title, :seo_title, :menu_title, :materialized_path, :name, :description, :view_template

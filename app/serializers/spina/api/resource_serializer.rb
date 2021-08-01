@@ -1,8 +1,5 @@
 module Spina::Api
-  class ResourceSerializer
-    include JSONAPI::Serializer
-    singleton_class.include Spina::Engine.routes.url_helpers
-    
+  class ResourceSerializer < BaseSerializer
     set_type :resource
     
     attributes :name, :label, :view_template, :order_by, :slug

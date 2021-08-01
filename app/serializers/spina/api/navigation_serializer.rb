@@ -1,7 +1,5 @@
 module Spina::Api
-  class NavigationSerializer
-    include JSONAPI::Serializer
-    
+  class NavigationSerializer < BaseSerializer    
     set_type :navigation
     
     attributes :name, :label

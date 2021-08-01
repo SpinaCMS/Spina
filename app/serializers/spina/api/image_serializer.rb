@@ -1,7 +1,5 @@
 module Spina::Api
-  class ImageSerializer
-    include JSONAPI::Serializer
-    
+  class ImageSerializer < BaseSerializer    
     set_type :image
     
     attributes :id
