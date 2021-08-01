@@ -9,7 +9,7 @@ require 'rack-rewrite'
 require 'babosa'
 require 'attr_json'
 require 'view_component/engine'
-require 'jsonapi-serializer'
+require 'jsonapi/serializer'
 
 module Spina
   class Engine < ::Rails::Engine
