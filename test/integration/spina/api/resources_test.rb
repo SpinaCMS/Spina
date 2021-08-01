@@ -20,7 +20,6 @@ module Spina
       test "show resource" do
         get "/api/resources/#{@resource.id}.json", headers: {'Authorization' => 'Token dummy_api_key'}
         assert_equal "breweries", @response.parsed_body.dig("data", "attributes", "name")
-        assert_nil @response.parsed_body.dig("relationships", "pages")
         assert_equal "/api/resources/#{@resource.id}/pages", @response.parsed_body.dig("data", "relationships", "pages", "links", "related")
       end
 
