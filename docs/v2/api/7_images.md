@@ -1,5 +1,7 @@
 # Images API
 
+🚧 _The current images API returns a URL with an image variant that uses `resize_to_fill: [2000, 2000]`. This will be changed in the future to allow on the fly image transformations._
+
 ## Get image
 
 Endpoint:
