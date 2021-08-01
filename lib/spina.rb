@@ -17,7 +17,9 @@ module Spina
   PLUGINS = []
   THEMES = []
 
-  config_accessor :authentication,
+  config_accessor :api_key,
+                  :api_path,
+                  :authentication,
                   :backend_path, 
                   :frontend_parent_controller,
                   :disable_frontend_routes,
@@ -30,6 +32,8 @@ module Spina
                   :transliterations
 
   # Defaults
+  self.api_key = nil
+  self.api_path = "api"
   self.authentication = "Spina::Authentication::Sessions"
   self.backend_path = 'admin'
   self.disable_frontend_routes = false

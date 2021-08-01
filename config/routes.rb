@@ -11,6 +11,16 @@ Rails.application.routes.draw do
 end
 
 Spina::Engine.routes.draw do
+  
+  # API
+  namespace :api, path: Spina.config.api_path do
+    resources :pages, only: [:index, :show]
+    resources :navigations, only: [:index, :show]
+    resources :resources, only: [:index, :show] do
+      resources :pages, only: [:index, :show]
+    end
+    resources :images, only: [:show]
+  end
 
   # Backend
   namespace :admin, path: Spina.config.backend_path do
