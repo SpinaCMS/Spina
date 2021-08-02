@@ -15,7 +15,9 @@ module Spina
       
       test "show image" do
         get "/api/images/#{@image.id}.json", headers: {'Authorization' => 'Token dummy_api_key'}
-        assert_not_empty @response.parsed_body.dig("data", "attributes", "url")
+        assert_not_empty @response.parsed_body.dig("data", "attributes", "original_url")
+        assert_not_empty @response.parsed_body.dig("data", "attributes", "thumbnail_url")
+        assert_not_empty @response.parsed_body.dig("data", "attributes", "embedded_image_size_url")
       end
 
     end
