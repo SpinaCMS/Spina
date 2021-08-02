@@ -21,6 +21,11 @@ Spina.configure do |config|
   # You can define your desired dimensions here.
   # config.embedded_image_size = [2000, 2000]
   
+  # Thumbnail image size
+  # ===============
+  # Thumbnail images for the API are generated using `resize_to_fill`.
+  # config.thumbnail_image_size = [400, 400]
+  
   # Parent controller
   # ===============
   # The parent controller all frontend Spina controllers inherit from
