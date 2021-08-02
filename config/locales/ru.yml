@@ -6,9 +6,9 @@ ru:
         city: Город
         email: Почта
         facebook: Facebook
-        google_analytics: Google Analytics
+        google_analytics: Google Аналитика
         google_plus: Google+
-        google_site_verification: Google Site Verification
+        google_site_verification: Проверка сайта Google
         instagram: Instagram
         kvk_identifier: Торговая палата
         kvk_identifier_description: Торговая палата
@@ -28,16 +28,16 @@ ru:
         name: Название файла
         size: Размер
       spina/media_folder:
-        name: 
+        name: Имя
       spina/navigation:
-        auto_add_pages: 
-        auto_add_pages_description: 
-        label: 
-        pages: 
-        pages_description: 
+        auto_add_pages: Автоматически добавлять страницы
+        auto_add_pages_description: Новые страницы автоматически добавляются в эту навигацию.
+        label: Метка
+        pages: Страницы
+        pages_description: Выберите страницы, которые вы хотите использовать в этой навигации
       spina/page:
-        ancestry: Parent page
-        created_at: 
+        ancestry: Родительская страница
+        created_at: Создано в
         description: Мета описание
         description_description: Это описание будет показано в результатах поиска
         description_placeholder: Краткое описание вашей страницы
@@ -48,26 +48,27 @@ ru:
         link_url_placeholder: Например http://www.example.com/
         menu_title: Навигация
         menu_title_placeholder: Оставьте пустым, чтобы использовать заголовок страницы
-        no_parent: No parent
-        resource: 
+        no_parent: Нет родителя
+        resource: Ресурс
         seo_title: SEO <title>
-        seo_title_description: 
+        seo_title_description: Убедитесь, что ваш результат поиска хорошо выглядит в поисковых системах
         seo_title_placeholder: Это название используется в <title>-tag
         show_in_menu: Показать в навигации
-        show_in_menu_description: При выключении эта страница не будет показана в навигации
+        show_in_menu_description: При выключении эта страница не будет показана в
+          навигации
         skip_to_first_child: Перенаправление
-        skip_to_first_child_description: Переход на страницу ребенка
+        skip_to_first_child_description: Переход на дочернюю страницу
         title: Заголовок
         title_placeholder: Заголовок страницы
-        url_title: 
-        url_title_description: 
-        url_title_placeholder: 
+        url_title: Переопределить слаг
+        url_title_description: Опционально
+        url_title_placeholder: Слаг
         view_template: Шаблон страницы
       spina/resource:
-        label: 
-        order_by: 
-        parent_page: 
-        view_template: 
+        label: Метка
+        order_by: Сортировать по
+        parent_page: Родительская страница
+        view_template: Шаблон представления по умолчанию
       spina/user:
         admin: Администратор
         admin_description: Администраторы могут создавать пользователей
@@ -104,19 +105,21 @@ ru:
         other: Пользователей
   spina:
     accounts:
-      contact_details: 
-      contact_details_description: 
-      couldnt_be_saved: 
-      name_description: 
-      save: 
-      saved: 
+      contact_details: Контактная информация
+      contact_details_description: Электронная почта и телефон
+      couldnt_be_saved: Аккаунт не может быть сохранен
+      name_description: Название вашего веб-сайта
+      save: Сохранить аккаунт
+      saved: Аккаунт сохранен
     ago: назад
     attachments:
-      choose_attachment: 
-      delete_confirmation_html: 
+      choose_attachment: Выберите вложение
+      delete_confirmation_html: Вы уверены? Это вложение <span class='font-semibold'>может</span>
+        использоваться на странице.
+      download: Скачать
       insert: Вставить документ
       insert_multiple: Вставить документы
-      upload: 
+      upload: Загрузить файлы
     cancel: Отмена
     choose_from_library: Выбрать из библиотеки
     close: Закрыть
@@ -125,159 +128,171 @@ ru:
     edit: Редактировать
     edit_website: Редактировать сайт
     forgot_password:
-      expired: 
-      mail_subject: 
-      new: 
-      request: 
-      save: 
-      success: 
-      unknown_user: 
+      expired: Срок действия вашего токена для сброса пароля истек
+      mail_subject: Сбросить пароль
+      new: Забыли пароль
+      request: Запросить новый пароль
+      save: Сохранить новый пароль
+      success: Вы можете использовать свой новый пароль
+      unknown_user: Этот пользователь не существует
     images:
-      all_images: 
-      back: 
-      cannot_be_created: 
-      choose_image: 
-      choose_images: 
-      confirm_selection: 
-      delete: 
-      delete_confirmation_html: 
-      delete_folder: 
-      done_organizing: 
-      insert_image: 
-      insert_photo: 
-      insert_photos: 
-      link: 
-      new_folder: 
-      organize: 
-      remove_image: 
-      upload: 
-      upload_image: 
+      all_images: Все изображения
+      back: Назад
+      cannot_be_created: Не может быть создано
+      choose_image: Выбрать изображение
+      choose_images: Выбрать изображения
+      confirm_selection: Подтвердите выбор
+      delete: Удалить
+      delete_confirmation_html: Вы действительно хотите удалить это <strong>изображение</strong>?
+      delete_folder: Удалить папку
+      done_organizing: Готово
+      insert_image: Вставить изображение
+      insert_photo: Вставить фото
+      insert_photos: Вставить фото
+      link: Ссылка на сайт
+      new_folder: Новая папка
+      organize: Организовать
+      remove_image: Удалить изображение
+      upload: Загрузить изображения
+      upload_image: Загрузить изображение
     languages:
-      bg: 
-      de: 
+      bg: Болгарский
+      de: Немецкий
       en: Английский
-      es: 
-      fr: 
-      id: 
-      it: 
+      es: Испанский
+      fr: Французский
+      id: Индонезийский
+      it: Итальянский
       nl: Голландский
-      pl: 
-      pt-BR: 
-      ro: 
-      ru: 
-      sv: 
-      th: 
-      tr: 
-      zh-CN: 
+      pl: Польский
+      pt-BR: Бразильский португальский
+      ro: Румынский
+      ru: Русский
+      sv: Шведский
+      th: Тайский
+      tr: Турецкий
+      zh-CN: Упрощенный китайский
     layout:
-      couldnt_be_saved: 
-      layout: 
-      no_layout_parts: 
-      save: 
-      saved: 
+      couldnt_be_saved: Макет не может быть сохранен
+      layout: Макет
+      no_layout_parts: Нет доступных частей макета
+      save: Сохранить макет
+      saved: Макет сохранен
     login: Логин
     logout: Выход
     main_menu: Главное меню
     media_library:
-      add_folder: 
-      add_image: 
+      add_folder: Добавить папку
+      add_image: Добавить изображение
       attachments: Документы
-      back_to_all: 
-      filename: 
-      images: 
-      images_count: 
-      insert: 
-      media_folder_delete_confirmation_html: 
-      no_folder: 
+      back_to_all: Назад ко всем
+      filename: Имя файла
+      images: Изображения
+      images_count:
+        one: "%{count} изображение"
+        few: "%{count} изображения"
+        many: "%{count} изображений"
+        other: "%{count} изображений"
+        zero: нет изображений
+      insert: Вставить изображение
+      media_folder_delete_confirmation_html: Вы уверены? Изображения <strong>не</strong>
+        будут удалены.
+      no_folder: Нет папки
       photos: Изображения
-      rename_folder: 
-      save_media_folder: 
-      upload_from_device: 
-      uploading: 
+      rename_folder: Переименовать папку
+      save_media_folder: Сохранить папку мультимедиа
+      upload_from_device: Загрузить с устройства
+      uploading: Загрузка...
     modal:
       agree: Да, я уверен
       cancel: Нет, отменить
     navigations:
-      add_menu_item: 
-      add_sub_item: 
-      choose_page: 
-      delete_item: 
-      delete_item_confirmation_html: 
-      description: 
-      navigations: 
-      no_navigations: 
-      sorting_saved: 
+      add_menu_item: Добавить пункт меню
+      add_sub_item: Добавить подпункт
+      choose_page: Выбрать страницу
+      delete_item: Удалить пункт
+      delete_item_confirmation_html: Вы уверены, что хотите <span class='font-semibold'>удалить</span>
+        этот пункт меню?
+      description: Добавляйте и сортируйте элементы по своему усмотрению. Вы можете добавлять элементы вложенного меню,
+        но не обязательно.
+      navigations: Навигация
+      no_navigations: На этом веб-сайте еще нет навигации. Вы можете настроить её в своей
+        конфигурации темы.
+      sorting_saved: Сортировка сохранена
     notifications:
       alert: Упс! Что-то пошло не так
       information: Информация
       login: Вы должны войти
       wrong_username_or_password: Неправильная почта или пароль
     options:
-      choose_option: 
+      choose_option: Выберите вариант
     pages:
-      add_page_to: 
-      add_translation: 
+      add_page_to: 'Добавить страницу в:'
+      add_translation: Добавить перевод %{language}
       advanced: Дополнительно
-      cannot_be_deleted: 
+      cannot_be_deleted: Страница не может быть удалена
       change_order: Изменить порядок
-      change_view_template: 
-      change_view_template_confirmation: 
+      change_view_template: Change view template
+      change_view_template_confirmation: Вы уверены, что хотите сменить шаблон страницы?
+        Содержимое страницы, которое не входит в новый шаблон, будет потеряно.
       concept: Концепция
-      create: 
+      create: Создать страницу
       create_page: Создать %{template}
-      delete: 
+      delete: Удалить страницу
       delete_confirmation: Вы уверены, что хотите удалить страницу <strong>%{subject}</strong>?
-      deleted: 
+      deleted: Страница удалена
       done_changing_order: Порядок изменен
-      edit_translation: 
+      edit_translation: Редактировать перевод %{language}
       invisible_to_search_engines: Ваш сайт не виден для поисковых машин
-      invisible_to_search_engines_description: Перейти к вашим параметрам, чтобы активировать поисковые системы.
-      main_collection: 
-      materialize_path_confirmation: Are you sure you want to rebuild the path for this page?
-      missing_translations: 
-      move_page: 
-      moved: 
+      invisible_to_search_engines_description: Перейти к вашим параметрам, чтобы активировать
+        поисковые системы.
+      main_collection: Основная коллекция
+      materialize_path_confirmation: Вы уверены, что хотите перестроить путь для
+        этой страницы?
+      missing_translations: Отсутствующие переводы
+      move_page: Переместить страницу
+      moved: Страница перемещена
       new: Новая страница
-      no_pages_yet: 
-      no_parent_page: 
+      no_pages_yet: Страниц пока нет
+      no_parent_page: Нет родительской страницы
       page_content: Контент
       page_part: Раздел страницы
       page_seo: Поисковые системы
-      path: 
+      path: 'Путь:'
       photo_picker: Выбрать изображение
       photos_picker: Выбрать изображения
-      preview: 
-      publish: 
-      published: 
-      rebuild_materialized_path: Rebuild materialized path
-      recommended: 
+      preview: Предварительный просмотр
+      publish: Публиковать
+      published: Страница опубликована
+      rebuild_materialized_path: Перестроить материализованный путь
+      recommended: рекомендуемые
       save: Сохранить страницу
-      save_changes: 
-      save_draft: 
-      saved: 
-      saving: 
-      search_engines: 
+      save_changes: Сохранить изменения
+      save_draft: Сохранить черновик
+      saved: Страница сохранена
+      saving: Сохранение...
+      search_engines: Поисковые системы
       show_in_menu: Невидимый
-      skip_to_first_child: Переход на страницу ребенка
-      sorting_saved: 
+      skip_to_first_child: Переход на дочернюю страницу
+      sorting_saved: Сортировка сохранена
     permanently_delete: Удалить навсегда
     photos:
       cannot_be_created: 'Изображение не может быть обработано:'
       choose_images: Выбрать изображения
-      delete: 
+      delete: Удалить
       delete_confirmation: Вы уверены, что хотите удалить <strong>image</strong>?
-      delete_folder: 
-      done_organizing: 
+      delete_folder: Удалить папку
+      done_organizing: Готово
       insert_photo: Вставить изображение
       insert_photos: Вставить изображения
       link: 'URL изображения:'
-      new_folder: 
-      organize: 
-      rename_folder: 
-      select_images: 
-      upload_image: 
+      new_folder: Новая папка
+      organize: Организовать изображения
+      rename_folder: Переименовать папку
+      select_images: Выбрать изображения
+      upload_image: Загрузите изображение
     preferences:
-      Analytics: 
+      Analytics: Аналитика
       account: Общее
       account_description: Персональные параметры
       account_save: Сохранить параметры
@@ -297,66 +312,73 @@ ru:
       users_description: Управление пользователями и администраторами
     preview_website: Предварительный просмотр сайта
     resources:
-      edit: 
-      label_description: 
-      manual_sorting: 
-      no_default_template: 
-      saved: 
-      settings: 
-      settings_description: 
-    save: 
+      edit: Редактировать ресурс
+      label_description: Ярлык для пользователя, для этой коллекции страниц.
+      manual_sorting: Ручная сортировка
+      no_default_template: Нет шаблона по умолчанию
+      saved: Коллекция страниц сохранена
+      settings: "%{label} настройки"
+      settings_description: Перед всеми страницами в этой коллекции будет стоять
+        этот слаг.
+    save: Сохранить
     search: Поиск...
     settings:
-      save: 
-      title: 
+      general: Общие
+      save: Сохранить настройки
+      title: Настройки
+      users: Пользователи
     theme:
-      save: 
-      saved: 
-      theme: 
-      theme_description: 
+      save: Сохранить тему
+      saved: Тема сохранена
+      theme: Тема
+      theme_description: Настройте свою тему
     ui:
-      cancel: 
-      delete: 
-      load_more: 
-      move_to: 
-      new_entry: 
-      optional: 
-      rename: 
-      save_changes: 
-      saving: 
+      cancel: Отмена
+      delete: Удалить
+      load_more: Загрузи больше
+      move_to: Перенести в
+      new_entry: Новая запись
+      optional: По желанию
+      rename: Переименовать
+      save_changes: Сохранить изменения
+      saving: Сохранение...
     users:
-      authorization: 
-      authorization_description: 
+      authorization: Авторизация
+      authorization_description: Администраторы могут управлять пользователями. Обычные пользователи не могут.
       cannot_be_created: Пользователь не сохранен
-      delete: 
+      delete: Удалить пользователя
       delete_confirmation_html: Вы уверены, что хотите удалить пользователя <strong>%{user}</strong>?
-      deleted: 
-      last_login: 
-      never_logged_in: 
+      deleted: Пользователь удален
+      last_login: 'Последний визит:'
+      never_logged_in: Никогда не входил в систему
       new: Новый пользователь
-      profile: 
-      profile_description: 
+      profile: Профиль
+      profile_description: Эта информация будет использоваться для идентификации разных пользователей.
+        Пользователи будут использовать свой адрес электронной почты для входа в систему.
       save: Сохранить пользователя
-      saved: 
-    visit_page: 
+      saved: Пользователь сохранен
+    visit_page: Посетите страницу
     website:
-      all_pages: 
+      all_pages: Все страницы
+      content: Содержание
       documents: Документы
-      images: 
+      images: Картинки
       media_library: Медиа библиотека
       media_library_description: Здесь вы найдете все ваши изображения и документы
       pages: Страницы
       pages_description: Все страницы вашего сайта
       photos: Изображения
+      settings: Настройки
+      theme: Тема
       title: Ваш сайт
     wysiwyg:
       heading_1: Заголовок 1
       heading_2: Заголовок 2
       heading_3: Заголовок 3
       insert_link: Вставить ссылку
-      link: 
+      link: Ссылка
       paragraph: Параграф
       quote: Цитата
-      unlink: 
-      url: 
-      url_placeholder: 
+      unlink: Удалить ссылку
+      url: URL
+      url_placeholder: Введите URL
