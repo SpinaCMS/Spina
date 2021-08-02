@@ -2,6 +2,9 @@
 
 ## 2.2
 
+### Unreleased
+* Added an API
+
 ### 2.2.0 (July 26th, 2021)
 * Added download link to attachments in media library
 * Added optional decorator loading to configuration

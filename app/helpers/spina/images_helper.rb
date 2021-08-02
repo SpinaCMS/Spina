@@ -10,11 +10,7 @@ module Spina
       return "" if image.nil?
 
       # support both ImageProcessing gem macro :resize_to_limit and ImageMagick-specific :resize
-      resize_key = if !Spina.config.embedded_image_size.is_a?(Array)
-                     :resize
-                   else
-                     :resize_to_limit
-                   end
+      resize_key = Spina.config.embedded_image_size.is_a?(Array) ? :resize_to_limit : :resize
       main_app.url_for(image.variant(Hash[resize_key, Spina.config.embedded_image_size]))
     end
     

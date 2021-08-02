@@ -40,4 +40,5 @@ Gem::Specification.new do |gem|
   gem.add_dependency 'turbo-rails'
   gem.add_dependency 'stimulus-rails'
   gem.add_dependency 'babosa'
+  gem.add_dependency 'jsonapi-serializer'
 end

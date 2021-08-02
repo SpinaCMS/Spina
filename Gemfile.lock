@@ -8,6 +8,7 @@ PATH
       bcrypt
       breadcrumbs_on_rails
       image_processing
+      jsonapi-serializer
       kaminari
       mobility (= 1.1.2)
       pg
@@ -110,6 +111,8 @@ GEM
       mini_magick (>= 4.9.5, < 5)
       ruby-vips (>= 2.0.17, < 3)
     json (2.5.1)
+    jsonapi-serializer (2.2.0)
+      activesupport (>= 4.2)
     kaminari (1.2.1)
       activesupport (>= 4.1.0)
       kaminari-actionview (= 1.2.1)
@@ -255,4 +258,4 @@ DEPENDENCIES
   spina!
 
 BUNDLED WITH
-   2.2.21
+   2.2.24

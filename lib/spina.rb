@@ -17,24 +17,30 @@ module Spina
   PLUGINS = []
   THEMES = []
 
-  config_accessor :authentication,
+  config_accessor :api_key,
+                  :api_path,
+                  :authentication,
                   :backend_path, 
                   :frontend_parent_controller,
                   :disable_frontend_routes,
                   :disable_decorator_load,
                   :locales, 
                   :embedded_image_size,
+                  :thumbnail_image_size,
                   :party_pooper,
                   :tailwind_purge_content,
                   :queues,
                   :transliterations
 
   # Defaults
+  self.api_key = nil
+  self.api_path = "api"
   self.authentication = "Spina::Authentication::Sessions"
   self.backend_path = 'admin'
   self.disable_frontend_routes = false
   self.disable_decorator_load = false
   self.embedded_image_size = [2000, 2000]
+  self.thumbnail_image_size = [400, 400]
   self.frontend_parent_controller = "ApplicationController"
   self.locales = [I18n.default_locale]
   self.party_pooper = false
