@@ -27,13 +27,13 @@ module Spina
 
     test 'url_title' do
       page = FactoryBot.build(:page, title: 'Some long title')
-      assert_equal page.slug, 'some-long-title'
+      assert_equal 'some-long-title', page.slug
     end
 
     test 'url_title with specific locale' do
       Spina.config.transliterations = %i(latin bulgarian)
       page = FactoryBot.build(:page, title: 'Тест страница')
-      assert_equal page.slug, 'test-stranica'
+      assert_equal 'test-stranica', page.slug
     end
 
     test 'custom slug' do
