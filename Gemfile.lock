@@ -233,7 +233,7 @@ GEM
       rails (>= 6.0.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
-    view_component (2.36.0)
+    view_component (2.37.0)
       activesupport (>= 5.0.0, < 8.0)
       method_source (~> 1.0)
     websocket-driver (0.7.5)
