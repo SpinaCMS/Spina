@@ -64,23 +64,27 @@
   theme.view_templates = [{
     name: 'homepage',
     title: 'Homepage',
-    parts: ['headline', 'body', 'image_collection']
+    parts: ['headline', 'body', 'image_collection'],
+    exclude_from: %w(guides)
   }, {
     name: 'show',
     title: 'Simple page',
     description: "Default layout",
     usage: 'Use for your content',
-    parts: ['body', 'testrepeater']
+    parts: ['body', 'testrepeater'],
+    exclude_from: %w(guides)
   }, {
     name: 'demo',
     title: 'Demo',
     description: 'Example including all parts',
-    parts: ['repeater', 'repeater2', 'attachment', 'option', 'body', 'image_collection', 'image', 'portrait', 'landscape', 'wide']
+    parts: ['repeater', 'repeater2', 'attachment', 'option', 'body', 'image_collection', 'image', 'portrait', 'landscape', 'wide'],
+    exclude_from: %w(guides)
   }, {
     name: 'blogpost',
     title: "Blogpost",
     description: 'Article template',
-    parts: ['body']
+    parts: ['body'],
+    exclude_from: %w(main)
   }]
 
   theme.custom_pages = [{

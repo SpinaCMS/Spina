@@ -36,15 +36,17 @@ module Spina
       @public_theme = false
     end
 
-    def new_page_templates(recommended: "")
+    def new_page_templates(resource: nil)
+      page_collection = resource&.name || "main"
       @view_templates.map do |view_template|
         next if is_custom_undeletable_page?(view_template[:name])
+        next if view_template[:exclude_from]&.include?(page_collection)
         
         OpenStruct.new({
           name: view_template[:name],
           title: view_template[:title],
           description: view_template[:description],
-          recommended: view_template[:name] == recommended
+          recommended: view_template[:name] == resource&.view_template
         })
       end.compact.sort_by do |page_template|
         [page_template.recommended ? 0 : 1]
