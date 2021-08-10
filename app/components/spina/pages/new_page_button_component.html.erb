@@ -8,14 +8,7 @@
     
     <% dropdown.menu do %>
       <% view_templates.each do |template| %>
-        <%= link_to helpers.spina.new_admin_page_path(view_template: template.name, resource_id: @resource&.id), class: "block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900 relative group", data: {turbo_frame: "modal", action: "reveal#hide"} do %>
-          
-          <% if helpers.asset_available?("spina/view_template_previews/#{template.name}.png") %>
-            <div class="absolute right-0 transform -translate-x-full pr-4 opacity-0 group-hover:opacity-100 top-0">
-              <%= image_tag "spina/view_template_previews/#{template.name}.png", class: 'rounded-md shadow-md block w-full' %>
-            </div>
-          <% end %>
-          
+        <%= link_to helpers.spina.new_admin_page_path(view_template: template.name, resource_id: @resource&.id), class: "block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900", data: {turbo_frame: "modal", action: "reveal#hide"} do %>
           <div class="font-medium text-gray-700">
             <%= template.title %>
             

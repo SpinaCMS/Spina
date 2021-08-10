@@ -64,15 +64,13 @@
   theme.view_templates = [{
     name: 'homepage',
     title: 'Homepage',
-    parts: ['headline', 'body', 'image_collection'],
-    exclude_from: %w(guides)
+    parts: ['headline', 'body', 'image_collection']
   }, {
     name: 'show',
     title: 'Simple page',
     description: "Default layout",
     usage: 'Use for your content',
-    parts: ['body', 'testrepeater'],
-    exclude_from: %w(guides)
+    parts: ['body', 'testrepeater']
   }, {
     name: 'demo',
     title: 'Demo',
