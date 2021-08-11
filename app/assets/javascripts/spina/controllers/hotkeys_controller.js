@@ -1,5 +1,5 @@
-import { Controller } from "stimulus"
-import hotkeys from "hotkeys"
+import { Controller } from "@hotwired/stimulus"
+import hotkeys from "libraries/hotkeys"
 
 export default class extends Controller {
   static get targets() {

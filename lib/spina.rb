@@ -1,4 +1,3 @@
-require 'spina/importmap_helper'
 require 'spina/engine'
 require 'spina/admin_sectionable'
 require 'spina/railtie'
@@ -21,6 +20,7 @@ module Spina
                   :api_path,
                   :authentication,
                   :backend_path, 
+                  :importmap,
                   :frontend_parent_controller,
                   :disable_frontend_routes,
                   :disable_decorator_load,
@@ -50,6 +50,10 @@ module Spina
   # - config.queues.page_updates
   self.queues = ActiveSupport::InheritableOptions.new
   
+  # An importmap specifically meant for Spina
+  self.importmap = ActiveSupport::OrderedOptions.new
+  self.importmap.paths = Importmap::Paths.new
+    
   # Tailwind purging
   # Spina will by default purge all unused Tailwind classes by scanning
   # the files listed below. You probably don't want to override this in 

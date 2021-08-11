@@ -1,5 +1,5 @@
-import { Controller } from "stimulus"
-import confetti from "canvas-confetti"
+import { Controller } from "@hotwired/stimulus"
+import confetti from "libraries/canvas-confetti"
 
 export default class extends Controller {
   

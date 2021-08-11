@@ -8,10 +8,10 @@ PATH
       bcrypt
       breadcrumbs_on_rails
       image_processing
-      importmap-rails
+      importmap-rails (>= 0.1.1)
       jsonapi-serializer
       kaminari
-      mobility (= 1.1.3)
+      mobility (>= 1.1.3)
       pg
       rack-rewrite (>= 1.5.0)
       rails (>= 6.0)
