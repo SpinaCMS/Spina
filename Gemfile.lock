@@ -16,8 +16,8 @@ PATH
       rack-rewrite (>= 1.5.0)
       rails (>= 6.0)
       sass-rails
-      stimulus-rails
-      turbo-rails
+      stimulus-rails (>= 0.3.0)
+      turbo-rails (>= 0.7.0)
       view_component (~> 2.32)
 
 GEM
