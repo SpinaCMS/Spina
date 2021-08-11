@@ -37,6 +37,7 @@ Gem::Specification.new do |gem|
   gem.add_dependency 'rack-rewrite', '>= 1.5.0'
   gem.add_dependency 'attr_json'
   gem.add_dependency 'view_component', '~> 2.32'
+  gem.add_dependency 'importmap-rails'
   gem.add_dependency 'turbo-rails'
   gem.add_dependency 'stimulus-rails'
   gem.add_dependency 'babosa'
