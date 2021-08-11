@@ -1,4 +1,5 @@
 require 'sass-rails'
+require 'importmap-rails'
 require 'turbo-rails'
 require 'stimulus-rails'
 require 'ancestry'
@@ -37,11 +38,17 @@ module Spina
         Spina::Parts::Attachment
       )
     end
-
-    initializer "spina.helpers" do
-      Rails.application.config.assets.configure do |env|
-        env.context_class.class_eval { include Spina::ImportmapHelper }
+    
+    initializer "spina.importmap" do
+      Spina.config.importmap.paths.tap do |paths|
+        # Stimulus & Turbo
+        paths.asset "@hotwired/stimulus", path: "stimulus"
+        paths.asset "@hotwired/stimulus-autoloader", path: "stimulus-autoloader"
+        paths.asset "@hotwired/turbo-rails", path: "turbo"
+        
+        paths.assets_in Spina::Engine.root.join("app/assets/javascripts/spina"), append_base_path: true
       end
     end
+    
   end
 end

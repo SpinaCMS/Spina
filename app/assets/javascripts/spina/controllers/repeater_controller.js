@@ -1,5 +1,5 @@
-import { Controller } from "stimulus"
-import Sortable from "sortablejs"
+import { Controller } from "@hotwired/stimulus"
+import Sortable from "libraries/sortablejs"
 
 export default class extends Controller {
   static get targets() {

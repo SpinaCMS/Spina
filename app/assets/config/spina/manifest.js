@@ -6,3 +6,4 @@
 
 //= link spina/application.css
 
+//= link spina/application.js

@@ -1,6 +1,6 @@
-import { Controller } from "stimulus"
-import Sortable from "sortablejs"
-import formRequestSubmitPolyfill from 'form-request-submit-polyfill'
+import { Controller } from "@hotwired/stimulus"
+import Sortable from "libraries/sortablejs"
+import formRequestSubmitPolyfill from "libraries/form-request-submit-polyfill"
 
 export default class extends Controller {
   static get targets() {

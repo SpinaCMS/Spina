@@ -1,5 +1,5 @@
-import { Controller } from "stimulus"
-import formRequestSubmitPolyfill from 'form-request-submit-polyfill'
+import { Controller } from "@hotwired/stimulus"
+import formRequestSubmitPolyfill from "libraries/form-request-submit-polyfill"
 
 export default class extends Controller {
   
