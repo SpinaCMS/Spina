@@ -10,6 +10,7 @@
 * Updated Russian locales
 * Fixed overflow CSS-bug in media folders
 * Fixed focus CSS-bug in Chrome
+* Removed old importmap helpers
 
 ### 2.2.0 (July 26th, 2021)
 * Added download link to attachments in media library
