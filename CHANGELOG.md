@@ -2,8 +2,15 @@
 
 ## 2.2
 
-### Unreleased
-* Added an API
+### 2.3.0 (August 12th, 2021)
+* Added an API!
+* Added transliterations for non-latin characters in URLs
+* Updated Stimulus + Turbo
+* Updated importmap to use the importmap-rails gem
+* Updated Russian locales
+* Fixed overflow CSS-bug in media folders
+* Fixed focus CSS-bug in Chrome
+* Removed old importmap helpers
 
 ### 2.2.0 (July 26th, 2021)
 * Added download link to attachments in media library
@@ -15,8 +22,8 @@
 
 ### 2.1.1 (July 13th, 2021)
 * Fixed bugs with attachments (#746 / #747)
-* Updated spanish locales
-* Updated german locales
+* Updated Spanish locales
+* Updated German locales
 
 ### 2.1.0 (July 3rd, 2021)
 * Refactored all javascript with Hotwire
