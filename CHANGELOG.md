@@ -2,6 +2,9 @@
 
 ## 2.2
 
+### 2.3.1 (August 13th, 2021)
+* Fixed bug `not present in the asset pipeline` in production
+
 ### 2.3.0 (August 12th, 2021)
 * Added an API!
 * Added transliterations for non-latin characters in URLs
