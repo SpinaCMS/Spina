@@ -42,9 +42,9 @@ module Spina
     initializer "spina.importmap" do
       Spina.config.importmap.paths.tap do |paths|
         # Stimulus & Turbo
-        paths.asset "@hotwired/stimulus", path: "stimulus"
-        paths.asset "@hotwired/stimulus-autoloader", path: "stimulus-autoloader"
-        paths.asset "@hotwired/turbo-rails", path: "turbo"
+        paths.asset "@hotwired/stimulus", path: "stimulus.js"
+        paths.asset "@hotwired/stimulus-autoloader", path: "stimulus-autoloader.js"
+        paths.asset "@hotwired/turbo-rails", path: "turbo.js"
         
         paths.assets_in Spina::Engine.root.join("app/assets/javascripts/spina"), append_base_path: true
       end
