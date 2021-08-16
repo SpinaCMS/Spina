@@ -51,8 +51,7 @@ module Spina
   self.queues = ActiveSupport::InheritableOptions.new
   
   # An importmap specifically meant for Spina
-  self.importmap = ActiveSupport::OrderedOptions.new
-  self.importmap.paths = Importmap::Paths.new
+  self.importmap = Importmap::Map.new
     
   # Tailwind purging
   # Spina will by default purge all unused Tailwind classes by scanning

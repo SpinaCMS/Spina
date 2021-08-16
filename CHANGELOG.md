@@ -2,6 +2,9 @@
 
 ## 2.2
 
+### 2.3.2 (August 16h, 2021)
+* Updated to new importmap API
+
 ### 2.3.1 (August 13th, 2021)
 * Fixed bug `not present in the asset pipeline` in production
 
