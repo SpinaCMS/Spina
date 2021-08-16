@@ -6,7 +6,7 @@ module Spina
 
     after_commit :update_resource_pages, on: [:update]
 
-    translates :slug, backend: :jsonb
+    translates :slug, backend: :json
 
     def pages
       case order_by
