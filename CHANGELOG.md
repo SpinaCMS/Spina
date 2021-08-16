@@ -2,6 +2,9 @@
 
 ## 2.2
 
+### 2.3.3 (August 16h, 2021)
+* Pinned importmap-rails to 0.2.2 as a temporary workaround
+
 ### 2.3.2 (August 16h, 2021)
 * Updated to new importmap API
 

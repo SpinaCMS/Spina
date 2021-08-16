@@ -1,14 +1,14 @@
 PATH
   remote: .
   specs:
-    spina (2.3.2)
+    spina (2.3.3)
       ancestry
       attr_json
       babosa
       bcrypt
       breadcrumbs_on_rails
       image_processing
-      importmap-rails (~> 0.2.2)
+      importmap-rails (= 0.2.2)
       jsonapi-serializer
       kaminari
       mobility (>= 1.1.3)
