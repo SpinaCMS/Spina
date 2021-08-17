@@ -2,10 +2,14 @@
 
 ## 2.2
 
-### 2.3.3 (August 16h, 2021)
+### 2.3.4 (August 17th, 2021)
+* Updated importmap and importmap-rails to 0.2.7
+* Updated turbo-rails and stimulus-rails
+
+### 2.3.3 (August 16th, 2021)
 * Pinned importmap-rails to 0.2.2 as a temporary workaround
 
-### 2.3.2 (August 16h, 2021)
+### 2.3.2 (August 16th, 2021)
 * Updated to new importmap API
 
 ### 2.3.1 (August 13th, 2021)
