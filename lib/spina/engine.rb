@@ -46,7 +46,11 @@ module Spina
         pin "@hotwired/stimulus-autoloader", to: "stimulus-autoloader.js"
         pin "@hotwired/turbo-rails", to: "turbo.js"
         
-        pin_all_from Spina::Engine.root.join("app/assets/javascripts/spina"), append_base_path: true
+        # Spina entrypoint
+        pin "application", to: "spina/application.js"
+        
+        pin_all_from Spina::Engine.root.join("app/assets/javascripts/spina/controllers"), under: "controllers", to: "spina/controllers"
+        pin_all_from Spina::Engine.root.join("app/assets/javascripts/spina/libraries"), under: "libraries", to: "spina/libraries"
       end
     end
     
