@@ -2,8 +2,10 @@ module Spina
   class UserMailer < ActionMailer::Base
     layout 'spina/mail'
 
-    def forgot_password(user)
+    def forgot_password(user, os, browser)
       @user = user
+      @os = os
+      @browser = browser
 
       mail(
         to: @user.email, 
