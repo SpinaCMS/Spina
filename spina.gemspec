@@ -42,4 +42,5 @@ Gem::Specification.new do |gem|
   gem.add_dependency 'stimulus-rails', '~> 0.3.3'
   gem.add_dependency 'babosa'
   gem.add_dependency 'jsonapi-serializer'
+  gem.add_dependency 'browser'
 end
