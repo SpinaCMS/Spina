@@ -31,7 +31,7 @@ SOFTWARE. -->
     <style type="text/css" rel="stylesheet" media="all">
     /* Base ------------------------------ */
     
-    @import url("https://fonts.googleapis.com/css?family=Nunito+Sans:400,700&display=swap");
+    @import url("https://fonts.googleapis.com/css?family=Nunito+Sans:400,700&amp;display=swap");
     body {
       width: 100% !important;
       height: 100%;
@@ -310,15 +310,12 @@ SOFTWARE. -->
     }
     
     body {
-      color: #51545E;
+      background-color: #FFF;
+      color: #333;
     }
     
     p {
-      color: #51545E;
-    }
-    
-    p.sub {
-      color: #6B6E76;
+      color: #333;
     }
     
     .email-wrapper {
@@ -365,7 +362,6 @@ SOFTWARE. -->
       -premailer-width: 100%;
       -premailer-cellpadding: 0;
       -premailer-cellspacing: 0;
-      background-color: #FFFFFF;
     }
     
     .email-body_inner {
@@ -375,7 +371,6 @@ SOFTWARE. -->
       -premailer-width: 570px;
       -premailer-cellpadding: 0;
       -premailer-cellspacing: 0;
-      background-color: #FFFFFF;
     }
     
     .email-footer {
@@ -389,7 +384,7 @@ SOFTWARE. -->
     }
     
     .email-footer p {
-      color: #6B6E76;
+      color: #A8AAAF;
     }
     
     .body-action {
@@ -421,13 +416,7 @@ SOFTWARE. -->
     }
     
     @media (prefers-color-scheme: dark) {
-      body,
-      .email-body,
-      .email-body_inner,
-      .email-content,
-      .email-wrapper,
-      .email-masthead,
-      .email-footer {
+      body {
         background-color: #333333 !important;
         color: #FFF !important;
       }
@@ -463,8 +452,25 @@ SOFTWARE. -->
       }
     </style>
   <![endif]-->
+    <style type="text/css" rel="stylesheet" media="all">
+    body {
+      width: 100% !important;
+      height: 100%;
+      margin: 0;
+      -webkit-text-size-adjust: none;
+    }
+    
+    body {
+      font-family: "Nunito Sans", Helvetica, Arial, sans-serif;
+    }
+    
+    body {
+      background-color: #FFF;
+      color: #333;
+    }
+    </style>
   </head>
-  <body>
+  <body style="width: 100% !important; height: 100%; -webkit-text-size-adjust: none; font-family: &quot;Nunito Sans&quot;, Helvetica, Arial, sans-serif; background-color: #FFF; color: #333; margin: 0;" bgcolor="#FFF">
     <%= yield %>
   </body>
 </html>
