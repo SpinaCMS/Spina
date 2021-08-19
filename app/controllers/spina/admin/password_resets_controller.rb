@@ -11,7 +11,7 @@ module Spina
       def create
         user = User.find_by(email: params[:email])
 
-        if user&.regenerate_password_token!
+        if user&.reset_passord!
           UserMailer.forgot_password(user, request.user_agent).deliver_later
           redirect_to admin_login_path, flash: {success: t('spina.forgot_password.instructions_sent')}
         else
