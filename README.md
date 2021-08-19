@@ -63,6 +63,8 @@ Icons were designed by [@steveschoger](https://twitter.com/steveschoger) - [Hero
 
 HotKeys support via [Hotkeys.js](https://wangchujiang.com/hotkeys/)
 
+Email templates based on Wildbit's [Postmark Templates](https://github.com/wildbit/postmark-templates)
+
 The font used in Spina's admin panel is called Metropolis and was created by Chris Simpson [Metropolis](https://github.com/chrismsimpson/Metropolis)
 
     Copyright (c) 2015, Chris Simpson <chris@victoryonemedia.com>.
