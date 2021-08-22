@@ -2,6 +2,9 @@
 
 ## 2.2
 
+### 2.3.5 (August 22nd, 2021)
+* Changed to esm-compatible build of Trix to fix bug in Firefox
+
 ### 2.3.4 (August 17th, 2021)
 * Updated importmap and importmap-rails to 0.2.7
 * Updated turbo-rails and stimulus-rails
