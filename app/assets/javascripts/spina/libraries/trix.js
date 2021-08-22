@@ -1,4 +1,4 @@
-//= require ./trix@1.3.1.js
+//= require ./trix@1.3.1.esm.js
 
 // Extra headings
 Trix.config.blockAttributes.heading2 = {
