@@ -18,6 +18,16 @@ export default class extends Controller {
     }.bind(this))
   }
   
+  insertShorttag() {
+    let shorttag = new Trix.Attachment({content: `
+      <youtube-component data-youtube-id="PkKYBHget4g">
+        >>> Youtube component: PkKYBHget4g <<<
+      </youtube-component>`, 
+      contentType: "application/vnd+spina.shorttag+html"})
+      
+    this.editor.insertAttachment(shorttag)
+  }
+  
   preventSubmission(event) {
     if (event.key === 'Enter') event.preventDefault() // Prevent form submit from alt text fields
   }

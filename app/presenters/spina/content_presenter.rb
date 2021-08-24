@@ -1,6 +1,8 @@
 module Spina
   class ContentPresenter
     attr_reader :view_context, :container
+    
+    SPINA_EMBED_SELECTOR = 'figure[data-trix-content-type="application/vnd+spina.shorttag+html"]'
 
     def initialize(view_context, container)
       @view_context = view_context || Spina::Current.page&.view_context
@@ -14,6 +16,7 @@ module Spina
 
     def html(name)
       html = find_part(name)&.content
+      html = render_spina_embeds(html)
       ActiveSupport::SafeBuffer.new(html.to_s)
     end
 
@@ -45,6 +48,22 @@ module Spina
 
       def find_part(name)
         container.find_part(name)
+      end
+      
+      def render_spina_embeds(html)
+        doc = Nokogiri::HTML(html)
+        doc.css(SPINA_EMBED_SELECTOR).each do |shorttag|
+          shorttag.replace element_to_html(shorttag.first_element_child)
+        end
+        doc
+      end
+      
+      def element_to_html(element)
+        class_name = element.name.split("-").map(&:capitalize).join("")
+        component_name = "Spina::Embeddable::#{class_name}"
+        component = component_name.safe_constantize&.new(element.attributes)
+        return "Missing component (#{component_name})" unless component
+        view_context.render(component)
       end
 
   end
