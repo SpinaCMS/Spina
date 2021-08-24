@@ -19,13 +19,13 @@ export default class extends Controller {
   }
   
   insertShorttag() {
-    let shorttag = new Trix.Attachment({content: `
+    let component = new Trix.Attachment({content: `
       <youtube-component data-youtube-id="PkKYBHget4g">
         >>> Youtube component: PkKYBHget4g <<<
       </youtube-component>`, 
-      contentType: "application/vnd+spina.shorttag+html"})
+      contentType: "application/vnd+spina.component+html"})
       
-    this.editor.insertAttachment(shorttag)
+    this.editor.insertAttachment(component)
   }
   
   preventSubmission(event) {
