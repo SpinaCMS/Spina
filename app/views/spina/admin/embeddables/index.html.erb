@@ -1,0 +1,15 @@
+<%= render Spina::UserInterface::ModalComponent.new do %>
+  <%= form_with url: spina.admin_embeddables_path do |f| %>
+    <%= f.text_field :id %>
+    
+    <%= f.submit %>
+  <% end %>
+  
+  <div data-controller="embeddables" data-trix-target="<%= params[:target] %>">
+    <%= turbo_frame_tag :embeddable_html, class: 'hidden', data: {embeddables_target: "html"} do %>
+    <% end %>
+    <button type="button" data-action="embeddables#embed">
+      Embed
+    </button>
+  </div>
+<% end %>
