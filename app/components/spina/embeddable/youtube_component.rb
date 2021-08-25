@@ -8,7 +8,7 @@ module Spina
       end
       
       def youtube_id
-        attributes["data-youtube-id"]
+        attributes["data-id"]
       end
       
       def call

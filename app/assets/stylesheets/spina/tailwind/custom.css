@@ -154,11 +154,14 @@
     [data-trix-mutable]:not(.attachment__captain-editor) {
       @apply select-none
     }
-  
+    
     figure.attachment {
+      @apply m-0 inline-block
+    }
+  
+    figure.attachment[data-trix-content-type="Spina::Image"] {
       max-height: 150px;
       max-width: 200px;
-      @apply m-0 inline-block;
     }
   
     figure.attachment img {
@@ -172,6 +175,11 @@
   
     figure[data-trix-mutable].attachment img {
       @apply shadow-lg ring ring-spina-light
+    }
+    
+    figure[data-trix-mutable][data-trix-content-type="application/vnd+spina.component+html"].attachment > *:first-child {
+      @apply block;
+      @apply shadow-lg ring ring-spina-light rounded-md;
     }
   
     figure .attachment__caption {

@@ -27,11 +27,7 @@
       </button>
     </div>
   
-    <div class="flex items-center bg-gray-200 rounded overflow-hidden mr-3 mb-3">    
-    
-      <button type="button" data-action="trix#insertShorttag">
-        Shorttag
-      </button>
+    <div class="flex items-center bg-gray-200 rounded overflow-hidden mr-3 mb-3">
       
       <%= link_to helpers.spina.admin_media_picker_path(target: "insert_#{@trix_id}"), class: "text-gray-700 w-9 h-9 flex items-center justify-center", data: {turbo_frame: "modal"} do %>
         <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
@@ -39,6 +35,14 @@
         </svg>
       <% end %>
       
+      <button type="button" class="text-gray-700 w-9 h-9 flex items-center justify-center" data-action="trix#insertComponent">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+          <path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM14 11a1 1 0 011 1v1h1a1 1 0 110 2h-1v1a1 1 0 11-2 0v-1h-1a1 1 0 110-2h1v-1a1 1 0 011-1z" />
+        </svg>
+      </button>
+    </div>
+    
+    <div class="flex items-center bg-gray-200 rounded overflow-hidden mr-3 mb-3">
       <button type="button" class="text-gray-700 w-9 h-9 flex items-center justify-center" data-trix-attribute="quote" title="${Trix.config.lang.quote}" tabindex="-1">
         <svg class="w-4 h-4" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M464 32H336c-26.5 0-48 21.5-48 48v128c0 26.5 21.5 48 48 48h80v64c0 35.3-28.7 64-64 64h-8c-13.3 0-24 10.7-24 24v48c0 13.3 10.7 24 24 24h8c88.4 0 160-71.6 160-160V80c0-26.5-21.5-48-48-48zm-288 0H48C21.5 32 0 53.5 0 80v128c0 26.5 21.5 48 48 48h80v64c0 35.3-28.7 64-64 64h-8c-13.3 0-24 10.7-24 24v48c0 13.3 10.7 24 24 24h8c88.4 0 160-71.6 160-160V80c0-26.5-21.5-48-48-48z"/></svg>
       </button>
