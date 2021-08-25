@@ -6,7 +6,14 @@ module Spina
       end
       
       def create
+        @embeddable = Spina::Embeddable::Youtube.new(embed_params)
       end
+      
+      private
+      
+        def embed_params
+          params.permit(:id)
+        end
       
     end
   end

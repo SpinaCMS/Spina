@@ -37,7 +37,7 @@ module Spina
         name = element.name.split("-").map(&:capitalize).join("")
         class_name = [COMPONENT_NAMESPACE, name].join("::")
         begin
-          class_name.constantize.new(element.attributes)
+          class_name.constantize.from_data_attributes(element.attributes)
         rescue
           Rails.logger.error "Error: Couldn't find #{class_name}"
           {inline: ""}

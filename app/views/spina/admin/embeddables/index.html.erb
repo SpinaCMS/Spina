@@ -1,6 +1,6 @@
 <%= render Spina::UserInterface::ModalComponent.new do %>
   <%= form_with url: spina.admin_embeddables_path do |f| %>
-    <%= f.text_field :id %>
+    <%= render partial: Spina::Embeddable::Youtube.new.to_form_path, locals: {f: f} %>
     
     <%= f.submit %>
   <% end %>
