@@ -1,1 +1,2 @@
-<%= turbo_stream.update("embeddable_html", partial: @embeddable.to_trix_partial_path) %>
+<% Rails.logger.info @embeddable.id %>
+<%= turbo_stream.update("embeddable_html", partial: @embeddable.to_trix_partial_path, object: @embeddable) %>
