@@ -1,6 +1,9 @@
 <%= render Spina::UserInterface::ModalComponent.new do %>
   <%= form_with url: spina.admin_embeddables_path do |f| %>
-    <%= render partial: Spina::Embeddable::Youtube.new.to_fields_path, locals: {f: f} %>
+    
+    <% @embeddables.each do |embeddable| %>
+      <%= render partial: embeddable.to_fields_path, locals: {f: f} %>
+    <% end %>
     
     <%= f.submit %>
   <% end %>

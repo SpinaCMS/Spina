@@ -3,16 +3,17 @@ module Spina
     class EmbeddablesController < AdminController
       
       def index
+        @embeddables = Spina::Embed.all.map(&:new)
       end
       
       def create
-        @embeddable = Spina::Embeddable::Youtube.new(embed_params)
+        @embeddable = Spina::Embeds::Youtube.new(embed_params)
       end
       
       private
       
         def embed_params
-          params.permit(:id)
+          params.permit!
         end
       
     end

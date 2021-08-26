@@ -177,7 +177,7 @@
       @apply shadow-lg ring ring-spina-light
     }
     
-    figure[data-trix-mutable][data-trix-content-type="application/vnd+spina.component+html"].attachment > *:first-child {
+    figure[data-trix-mutable][data-trix-content-type="application/vnd+spina.embed+html"].attachment > spina-embed {
       @apply block;
       @apply shadow-lg ring ring-spina-light rounded-md;
     }

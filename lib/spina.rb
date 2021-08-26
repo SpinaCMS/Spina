@@ -11,8 +11,18 @@ require 'spina/authentication/basic'
 
 module Spina
   include ActiveSupport::Configurable
+  extend ActiveSupport::Autoload
+  
+  autoload :Embeddable
+  
+  module Embeds
+    extend ActiveSupport::Autoload
+    
+    autoload :TrixConversion
+  end
 
   PARTS = []
+  EMBEDS = []
   PLUGINS = []
   THEMES = []
 

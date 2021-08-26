@@ -15,7 +15,8 @@ require 'jsonapi/serializer'
 module Spina
   class Engine < ::Rails::Engine
     isolate_namespace Spina
-
+    
+    config.eager_load_namespaces << Spina
     config.autoload_paths += %W( #{config.root}/lib )
 
     config.to_prepare do
@@ -25,7 +26,9 @@ module Spina
           require_dependency(decorator)
         end
       end
-
+    end
+    
+    initializer "spina.parts" do
       # Register JSON part types for editing content
       Spina::Part.register(
         Spina::Parts::Line,
@@ -36,6 +39,13 @@ module Spina
         Spina::Parts::Repeater,
         Spina::Parts::Option,
         Spina::Parts::Attachment
+      )
+    end
+    
+    initializer "spina.embeds" do
+      # Register embeddables for rich text editing
+      Spina::Embed.register(
+        Spina::Embeds::Youtube
       )
     end
     

@@ -23,7 +23,7 @@ export default class extends Controller {
   insertComponent(html) {
     let component = new Trix.Attachment({
       content: html, 
-      contentType: "application/vnd+spina.component+html"})
+      contentType: "application/vnd+spina.embed+html"})
       
     this.editor.insertAttachment(component)
   }

@@ -2,8 +2,7 @@ module Spina
   class RichTextPresenter
     attr_reader :html, :view_context
     
-    COMPONENT_CONTENT_TYPE = "application/vnd+spina.component+html"
-    COMPONENT_NAMESPACE    = "Spina::Embeddable"
+    EMBED_CONTENT_TYPE = "application/vnd+spina.embed+html"
     
     def initialize(view_context, html)
       @view_context = view_context || Spina::Current.page&.view_context
@@ -11,35 +10,33 @@ module Spina
     end
     
     def to_s
-      ActiveSupport::SafeBuffer.new(render_components(html))
+      ActiveSupport::SafeBuffer.new(render_embeds(html))
     end
     
     private
     
-      def component_selector
-        "figure[data-trix-content-type=\"#{COMPONENT_CONTENT_TYPE}\"]"
+      def embed_selector
+        "figure[data-trix-content-type=\"#{EMBED_CONTENT_TYPE}\"]"
       end
     
-      def render_components(html)
+      def render_embeds(html)
         doc = Nokogiri::HTML(html)
-        doc.css(component_selector).each do |node|
-          node.replace render_component(node.first_element_child)
+        doc.css(embed_selector).each do |node|
+          node.replace render_embed(node.first_element_child)
         end
         doc.to_s
       end
       
-      def render_component(element)
-        component = element_to_component(element)
-        view_context.render component
+      def render_embed(element)
+        embeddable = element_to_embeddable(element)
+        view_context.render embeddable
       end
       
-      def element_to_component(element)
-        name = element.name.split("-").map(&:capitalize).join("")
-        class_name = [COMPONENT_NAMESPACE, name].join("::")
-        begin
-          class_name.constantize.from_data_attributes(element.attributes)
-        rescue
-          Rails.logger.error "Error: Couldn't find #{class_name}"
+      def element_to_embeddable(element)
+        class_name = element["data-embed-type"].safe_constantize
+        if Spina::Embed.registered?(class_name)
+          class_name.from_data_attributes element.attributes
+        else
           {inline: ""}
         end
       end
