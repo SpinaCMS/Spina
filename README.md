@@ -5,7 +5,7 @@
 [![Ruby](https://github.com/SpinaCMS/Spina/actions/workflows/ruby.yml/badge.svg)](https://github.com/SpinaCMS/Spina/actions/workflows/ruby.yml)
 [![Code Climate](https://codeclimate.com/github/SpinaCMS/Spina/badges/gpa.svg)](https://codeclimate.com/github/SpinaCMS/Spina)
 [![Test Coverage](https://codeclimate.com/github/SpinaCMS/Spina/badges/coverage.svg)](https://codeclimate.com/github/SpinaCMS/Spina/coverage)
-[![Slack](https://slack-spinacms.herokuapp.com/badge.svg)](https://slack-spinacms.herokuapp.com)
+[![Discord](https://img.shields.io/discord/811903407525986304?label=Discord)](https://discord.gg/bv5Mu4XYcN)
 
 ## Getting Started
 [Read the guide](https://www.spinacms.com/docs) to learn more about how to use Spina. If you just want to get started, create a new Ruby on Rails app and follow these instructions:
