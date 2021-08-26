@@ -1,6 +1,6 @@
 module Spina::Embeds
   class Youtube < Base
-    attributes :id
+    attributes :id, :title
     
     def to_trix_partial_path
       "spina/embeds/youtubes/thumbnail"
