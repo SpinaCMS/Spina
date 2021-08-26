@@ -3,7 +3,7 @@ module Spina::Embeds
     attributes :id
     
     def to_trix_partial_path
-      "spina/embeds/youtubes/thumbnail"
+      "spina/embeds/vimeos/thumbnail"
     end
   end
 end

@@ -4,7 +4,7 @@
     <div class="p-5 w-64 bg-gray-100 md:bg-opacity-50">
       <% @embeddables.each do |embeddable| %>
       
-        <%= link_to '#', class: "font-medium w-full text-sm px-3 py-2 cursor-pointer rounded-lg flex items-center text-gray-600 hover:bg-gray-200 bg-opacity-100 hover:bg-gray-200" do %>
+        <%= link_to spina.admin_embeds_path(embed_type: embeddable.name), class: "font-medium w-full text-sm px-3 py-2 cursor-pointer rounded-lg flex items-center text-gray-600 hover:bg-gray-200 bg-opacity-100 hover:bg-gray-200", data: {turbo_frame: :embeddable_form} do %>
           <%= heroicon('arrow-right', style: :solid, class: 'w-5 h-5 mr-2 text-spina-light') %>
           <%= embeddable.model_name.human %>
         <% end %>
@@ -13,17 +13,21 @@
     </div>
     
     <div class="bg-white flex-1 p-5">
-      <%= form_with url: spina.admin_embeds_path do |f| %>
-        <%= f.text_field :embed_type, value: @embeddables.first.name %>
-        <% @embeddables.each do |embeddable| %>
-          <%= render partial: embeddable.new.to_fields_path, locals: {f: f} %>
+      <%= turbo_frame_tag :embeddable_form do %>
+      
+        <%= form_with url: spina.admin_embeds_path do |f| %>
+          <%= f.hidden_field :embed_type, value: @embeddable.class.name %>
+          
+          <%= render partial: @embeddable.to_fields_path, locals: {f: f} %>
+
+          <%= f.submit %>
         <% end %>
-        <%= f.submit %>
+        
       <% end %>
-    
+      
       <div data-controller="embeddables" data-trix-target="<%= params[:target] %>">
-        <%= turbo_frame_tag :embeddable_html, class: 'hidden', data: {embeddables_target: "html"} do %>
-        <% end %>
+        <%= turbo_frame_tag :embeddable_html, class: 'hidden', data: {embeddables_target: "html"} %>
+
         <button type="button" data-action="embeddables#embed">
           Embed
         </button>
