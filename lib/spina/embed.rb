@@ -7,6 +7,11 @@ module Spina
         ::Spina::EMBEDS
       end
       
+      def constantize(embeddable_type)
+        return nil unless registered?(embeddable_type)
+        embeddable_type.safe_constantize
+      end
+      
       def registered?(embeddable)
         all.map(&:to_s).include?(embeddable.to_s)
       end

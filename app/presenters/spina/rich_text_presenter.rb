@@ -33,9 +33,8 @@ module Spina
       end
       
       def element_to_embeddable(element)
-        class_name = element["data-embed-type"].safe_constantize
-        if Spina::Embed.registered?(class_name)
-          class_name.from_data_attributes element.attributes
+        if embeddable = Spina::Embed.constantize(element["data-embed-type"])
+          embeddable.from_data_attributes element.attributes
         else
           {inline: ""}
         end

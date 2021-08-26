@@ -45,7 +45,8 @@ module Spina
     initializer "spina.embeds" do
       # Register embeddables for rich text editing
       Spina::Embed.register(
-        Spina::Embeds::Youtube
+        Spina::Embeds::Youtube,
+        Spina::Embeds::Vimeo
       )
     end
     
