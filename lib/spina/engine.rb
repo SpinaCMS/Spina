@@ -46,7 +46,8 @@ module Spina
       # Register embeddables for rich text editing
       Spina::Embed.register(
         Spina::Embeds::Youtube,
-        Spina::Embeds::Vimeo
+        Spina::Embeds::Vimeo,
+        Spina::Embeds::Button
       )
     end
     

@@ -1,0 +1,36 @@
+<%= render Spina::UserInterface::ModalComponent.new(size: "max-w-screen-md") do %>
+  <div class="flex" data-controller="embeddables" data-trix-target="<%= params[:target] %>">
+    <%= turbo_frame_tag :trix_attachment_html, class: 'hidden', data: {embeddables_target: "html"} %>
+    
+    <div class="p-5 w-64 bg-gray-100 md:bg-opacity-50">
+      <% embeddables.each do |embeddable| %>
+      
+        <%= link_to spina.new_admin_embed_path(embed_type: embeddable.name), class: "font-medium w-full text-sm px-3 py-2 cursor-pointer rounded-lg flex items-center text-gray-600 hover:bg-gray-200 bg-opacity-100 hover:bg-gray-200", data: {turbo_frame: :embeddable_form} do %>
+          <%= heroicon('arrow-right', style: :solid, class: 'w-5 h-5 mr-2 text-spina-light') %>
+          <%= embeddable.model_name.human %>
+        <% end %>
+                
+      <% end %>
+    </div>
+    
+    <div class="bg-white flex-1 p-5">
+      <%= turbo_frame_tag :embeddable_form do %>
+      
+        <%= form_with model: @embeddable, scope: :embeddable, url: spina.admin_embeds_path do |f| %>
+          <%= hidden_field_tag :embed_type, @embeddable.class.name %>
+          
+          <%= render partial: @embeddable.to_fields_path, locals: {f: f} %>
+
+          <%= button_tag type: :submit, class: 'btn btn-primary' do %>
+            Generate HTML
+          <% end %>
+        <% end %>
+        
+      <% end %>
+      
+      <button type="button" class="btn btn-primary" data-action="embeddables#embed modal#close">
+        Embed
+      </button>
+    </div>
+  </div>
+<% end %>

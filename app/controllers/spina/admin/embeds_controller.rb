@@ -2,31 +2,33 @@ module Spina
   module Admin
     class EmbedsController < AdminController
       
-      def index
-        @embeddables = Spina::Embed.all
-        
-        if embed_type.present?
-          @embeddable = Spina::Embed.constantize(embed_type).new
-        else
-          @embeddable = @embeddables.first.new
-        end
-      end
-      
-      def show
+      def new
+        @embeddable = Spina::Embed.constantize(embed_type || embeddables.first).new
       end
       
       def create
         @embeddable = Spina::Embed.constantize(embed_type).new(embed_params)
+        
+        if @embeddable.valid?
+          render turbo_stream: turbo_stream.update(:trix_attachment_html, @embeddable.to_trix_attachment)
+        else
+          render :new, status: :unprocessable_entity
+        end
       end
       
       private
+      
+        def embeddables
+          @embeddables ||= Spina::Embed.all
+        end
+        helper_method :embeddables
       
         def embed_type
           params[:embed_type]
         end
       
         def embed_params
-          params.permit!
+          params.require(:embeddable).permit!
         end
       
     end

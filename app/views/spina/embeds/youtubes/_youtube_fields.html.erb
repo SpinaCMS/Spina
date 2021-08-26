@@ -1,2 +1,2 @@
-<%= f.text_field :id, placeholder: "Youtube ID" %>
-<%= f.text_field :title, placeholder: "Title of the video" %>
+<%= render Spina::Forms::TextFieldComponent.new(f, :id) %>
+<%= render Spina::Forms::TextFieldComponent.new(f, :title) %>

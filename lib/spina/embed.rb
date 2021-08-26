@@ -8,8 +8,8 @@ module Spina
       end
       
       def constantize(embeddable_type)
-        return nil unless registered?(embeddable_type)
-        embeddable_type.safe_constantize
+        return nil unless registered?(embeddable_type.to_s)
+        embeddable_type.to_s.safe_constantize
       end
       
       def registered?(embeddable)

@@ -17,7 +17,7 @@ module Spina
       
       def attributes(*names)
         attr_accessor(*names.map(&:to_sym))
-        names.each{|name| self.embed_attributes << name.to_sym}
+        self.embed_attributes += names.map(&:to_sym)
       end
     end
     

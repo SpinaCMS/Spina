@@ -164,16 +164,16 @@
       max-width: 200px;
     }
   
-    figure.attachment img {
+    figure.attachment[data-trix-content-type="Spina::Image"] img {
       @apply m-0 rounded-md object-contain;
     }
     
-    figure.attachment [data-label]:after {
+    figure.attachment[data-trix-content-type="Spina::Image"] [data-label]:after {
       content: attr(data-label);
       @apply italic text-gray-500 h-8 flex items-center px-2 mt-1 text-sm;
     }
   
-    figure[data-trix-mutable].attachment img {
+    figure[data-trix-mutable].attachment[data-trix-content-type="Spina::Image"] img {
       @apply shadow-lg ring ring-spina-light
     }
     
