@@ -11,6 +11,7 @@ require 'babosa'
 require 'attr_json'
 require 'view_component/engine'
 require 'jsonapi/serializer'
+require 'browser'
 
 module Spina
   class Engine < ::Rails::Engine

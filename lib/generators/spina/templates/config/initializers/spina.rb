@@ -39,6 +39,13 @@ Spina.configure do |config|
   # The default is Spina::Authentication::Sessions and includes basic user management
   # config.authentication = "Spina::Authentication::Sessions"
   
+  # Mailers
+  # ===============
+  # In order to send emails, you need to set a default from address.
+  # You can set an optional reply_to address as well.
+  # config.mailer_defaults.from = "no-reply@example.com"
+  # config.mailer_defaults.reply_to = "support@example.com"
+  
   # API
   # ===============
   # Set an API key to activate Spina's API. 
