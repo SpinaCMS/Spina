@@ -8,7 +8,7 @@ module Spina
       end
       
       def registered?(embeddable)
-        all.include?(embeddable)
+        all.map(&:to_s).include?(embeddable.to_s)
       end
   
       def register(*embeds)

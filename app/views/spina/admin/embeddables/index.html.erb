@@ -2,7 +2,7 @@
   <%= form_with url: spina.admin_embeddables_path do |f| %>
     
     <% @embeddables.each do |embeddable| %>
-      <%= render partial: embeddable.to_fields_path, locals: {f: f} %>
+      <%= render partial: embeddable.new.to_fields_path, locals: {f: f} %>
     <% end %>
     
     <%= f.submit %>

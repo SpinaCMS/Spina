@@ -3,7 +3,7 @@ module Spina
     class EmbeddablesController < AdminController
       
       def index
-        @embeddables = Spina::Embed.all.map(&:new)
+        @embeddables = Spina::Embed.all
       end
       
       def create
