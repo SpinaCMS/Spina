@@ -8,10 +8,9 @@ module Spina
       def index
         add_breadcrumb I18n.t('spina.website.pages'), spina.admin_pages_path
         
-        
         if params[:resource_id]
           @resource = Resource.find(params[:resource_id])
-          @page_templates = Spina::Current.theme.new_page_templates(recommended: @resource.view_template)
+          @page_templates = Spina::Current.theme.new_page_templates(resource: @resource)
           @pages = @resource.pages.active.roots.includes(:translations)
         else
           @pages = Page.active.sorted.roots.main.includes(:translations)
