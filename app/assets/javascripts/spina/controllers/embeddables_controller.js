@@ -6,8 +6,6 @@ export default class extends Controller {
   }
   
   embed(event) {
-    // let [data, status, xhr] = event.detail
-    // const { detail: [, , xhr] } = event    
     this.trixEditor.insertComponent(this.htmlTarget.innerHTML)
   }
   
