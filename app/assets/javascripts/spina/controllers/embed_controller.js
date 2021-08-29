@@ -5,8 +5,8 @@ export default class extends Controller {
     return [ "html" ]
   }
   
-  catchEmbedded(event) {
-    this.trixEditor.insertComponent(event.detail.html)
+  insertEmbeddable(event) {
+    this.trixEditor.insertEmbeddable(event.detail.html)
   }
   
   get trixEditor() {

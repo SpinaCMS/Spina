@@ -1,6 +1,6 @@
 <%= render Spina::UserInterface::ModalComponent.new(size: "max-w-screen-md") do %>
-  <div class="flex" data-controller="embeddables" data-trix-target="<%= params[:target] %>">
-    <%= turbo_frame_tag :trix_attachment_html, class: 'hidden', data: {embeddables_target: "html", action: "embeddables:embedded->embeddables#catchEmbedded embeddables:embedded->modal#close"} %>
+  <div class="flex" data-controller="embed" data-trix-target="<%= params[:target] %>">
+    <%= turbo_frame_tag :trix_attachment_html, class: 'hidden', data: {embeddables_target: "html", action: "embed-tag:embedded->embed#insertEmbeddable embed-tag:embedded->modal#close"} %>
     
     <div class="p-4 w-64 bg-gray-100 md:bg-opacity-50">
       <div class="text-xs font-medium text-gray-600 mb-2">

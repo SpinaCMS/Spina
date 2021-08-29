@@ -20,12 +20,12 @@ export default class extends Controller {
     }.bind(this))
   }
   
-  insertComponent(html) {
-    let component = new Trix.Attachment({
+  insertEmbeddable(html) {
+    let embeddable = new Trix.Attachment({
       content: html, 
       contentType: "application/vnd+spina.embed+html"})
       
-    this.editor.insertAttachment(component)
+    this.editor.insertAttachment(embeddable)
   }
   
   preventSubmission(event) {
