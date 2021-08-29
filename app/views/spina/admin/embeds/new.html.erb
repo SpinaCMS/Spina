@@ -1,6 +1,6 @@
 <%= render Spina::UserInterface::ModalComponent.new(size: "max-w-screen-md") do %>
   <div class="flex" data-controller="embeddables" data-trix-target="<%= params[:target] %>">
-    <%= turbo_frame_tag :trix_attachment_html, class: 'hidden', data: {embeddables_target: "html"} %>
+    <%= turbo_frame_tag :trix_attachment_html, class: 'hidden', data: {embeddables_target: "html", action: "embeddables:embedded->embeddables#catchEmbedded embeddables:embedded->modal#close"} %>
     
     <div class="p-4 w-64 bg-gray-100 md:bg-opacity-50">
       <div class="text-xs font-medium text-gray-600 mb-2">
@@ -10,7 +10,7 @@
       
         <% if embeddable.name == @embeddable.class.name %>
           <%= link_to spina.new_admin_embed_path(embed_type: embeddable.name), class: "font-medium w-full text-sm px-3 py-2 rounded-lg flex items-center text-gray-900 bg-spina-dark bg-opacity-20", data: {turbo_frame: :embeddable_form} do %>
-            <%= heroicon('table', style: :solid, class: 'w-5 h-5 mr-2 text-spina-light') %>
+            <%= heroicon('cursor-click', style: :solid, class: 'w-5 h-5 mr-2 text-spina-light') %>
             <%= embeddable.model_name.human %>
           <% end %>
         <% else %>
@@ -28,22 +28,17 @@
       
         <%= form_with model: @embeddable, scope: :embeddable, url: spina.admin_embeds_path do |f| %>
           <%= hidden_field_tag :embed_type, @embeddable.class.name %>
-          
           <%= render partial: @embeddable.to_fields_path, locals: {f: f} %>
-
-          <%= button_tag type: :submit, class: 'btn btn-default py-2 text-sm mt-2' do %>
-            Generate HTML
-          <% end %>
+          
+          <div class="flex justify-end mt-4">
+            <%= button_tag type: :submit, class: 'btn btn-primary' do %>
+              <%= heroicon('plus', style: :solid, class: 'w-6 h-6 -ml-2') %>
+              Embed component
+            <% end %>
+          </div>
         <% end %>
         
       <% end %>
-      
-      <div class="flex justify-end">
-        <button type="button" class="btn btn-primary mt-10" data-action="embeddables#embed modal#close">
-          <%= heroicon('plus', style: :solid, class: 'w-6 h-6 -ml-2') %>
-          Embed component
-        </button>
-      </div>
     </div>
     
   </div>

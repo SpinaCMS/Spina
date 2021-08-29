@@ -1,6 +1,6 @@
 module Spina::Embeds
   class Button < Base
-    attributes :url, :label
+    attributes :url, :label, :style
     
     validates :url, :label, :style, presence: true
     

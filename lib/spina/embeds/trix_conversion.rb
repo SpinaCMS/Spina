@@ -17,7 +17,7 @@ module Spina
       private
       
         def trix_attachment_attributes
-          attrs = {"data-embed-type": self.class.name}
+          attrs = {"data-embed-type": self.class.name, "data-controller": "embed-element"}
           self.class.embed_attributes.each do |attr|
             attrs["data-#{attr.to_s.dasherize}"] = send(attr)
           end
