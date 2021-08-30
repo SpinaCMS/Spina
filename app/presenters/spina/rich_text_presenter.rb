@@ -34,7 +34,7 @@ module Spina
       
       def element_to_embeddable(element)
         if embeddable = Spina::Embed.constantize(element["data-embed-type"])
-          embeddable.from_data_attributes element.attributes
+          embeddable.from_json element["data-embed-attributes"]
         else
           {inline: ""}
         end

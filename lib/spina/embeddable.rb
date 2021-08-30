@@ -7,12 +7,14 @@ module Spina
     end
     
     class_methods do
-      def from_data_attributes(data_attributes = {})
-        data_attributes.transform_keys! do |key|
-          key.remove(/\Adata\-/).underscore.to_sym
+      def from_json(json)
+        begin
+          attributes = JSON.parse(json)
+          attributes.transform_keys!(&:to_sym)
+          new(attributes)
+        rescue 
+          Rails.logger.error "[#{self.class.name}] Couldn't parse JSON"
         end
-        data_attributes.transform_values!(&:to_s)
-        new(data_attributes)
       end
       
       def attributes(*names)

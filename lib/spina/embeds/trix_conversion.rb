@@ -17,13 +17,11 @@ module Spina
       private
       
         def embed_tag_attributes
-          spina_attributes.merge(trix_attributes)
+          spina_attributes.merge({"data-embed-attributes": embed_attributes_to_json})
         end
       
-        def trix_attributes
-          self.class.embed_attributes.map do |attr|
-            ["data-#{attr.to_s.dasherize}", send(attr)]
-          end.to_h
+        def embed_attributes_to_json
+          JSON.generate Hash[self.class.embed_attributes.map{|a| [a.to_s, send(a)]}]
         end
         
         def spina_attributes
