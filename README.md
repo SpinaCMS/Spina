@@ -24,6 +24,9 @@ The installer will help you create your first user.
 
 Then start `rails s` and access Spina at `/admin`.
 
+## Browser support
+Spina requires Chrome/Edge 89+, or any other browser with basic ESM support (Safari/Firefox). This is due to a recent browser feature called `import maps` and will be used in Rails 7 as the default way to deploy javascript assets.
+
 ## Contributing
 
 Check our [Contributing Guide](CONTRIBUTING.md) for instructions on how to help the project.
