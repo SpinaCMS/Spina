@@ -6,7 +6,7 @@
       <div class="flex h-full">
         <div class="p-4 w-64 bg-gray-100 md:bg-opacity-50">
           <div class="text-xs font-medium text-gray-600 mb-2">
-            Embed a component
+            <%=t "spina.embeds.embed_a_compoment" %>
           </div>
           <% embeddables.each do |embeddable| %>
             <% if embeddable.name == @embeddable.class.name %>
@@ -34,7 +34,7 @@
               <div class="w-full flex backdrop-filter backdrop-blur-lg absolute bottom-0 justify-end p-5 py-4 border-t border-gray-200">
                 <%= button_tag type: :submit, class: 'btn btn-primary' do %>
                   <%= heroicon('plus', style: :solid, class: 'w-6 h-6 -ml-2') %>
-                  Embed component
+                  <%=t "spina.embeds.embed_compoment" %>
                 <% end %>
               </div>
             </div>
