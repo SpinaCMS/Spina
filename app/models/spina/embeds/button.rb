@@ -1,10 +1,10 @@
 module Spina::Embeds
   class Button < Base
-    attributes :url, :label, :style
+    attributes :url, :label
     
     heroicon "cursor-click"
     
-    validates :url, :label, :style, presence: true
+    validates :url, :label, presence: true
     
     def to_trix_partial_path
       "spina/embeds/buttons/trix_button"

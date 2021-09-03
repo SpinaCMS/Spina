@@ -12,8 +12,3 @@
   <%= render Spina::Forms::LabelComponent.new(f, :label) %>
   <%= render Spina::Forms::TextFieldComponent.new(f, :label) %>
 </div>
-
-<div class="mt-3">
-  <%= render Spina::Forms::LabelComponent.new(f, :style) %>
-  <%= f.select :style, ["Default", "Primary"], {}, class: "form-select mt-1" %>
-</div>

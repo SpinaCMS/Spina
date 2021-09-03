@@ -4,7 +4,6 @@ en:
       spina/embeds/button:
         url: URL
         label: Button label
-        style: Button style
       spina/embeds/youtube:
         url: Youtube URL
       spina/embeds/vimeo:
