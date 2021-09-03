@@ -16,7 +16,6 @@ module Spina
   class Engine < ::Rails::Engine
     isolate_namespace Spina
     
-    config.eager_load_namespaces << Spina
     config.autoload_paths += %W( #{config.root}/lib )
 
     config.to_prepare do
@@ -39,15 +38,6 @@ module Spina
         Spina::Parts::Repeater,
         Spina::Parts::Option,
         Spina::Parts::Attachment
-      )
-    end
-    
-    initializer "spina.embeds" do
-      # Register embeddables for rich text editing
-      Spina::Embed.register(
-        Spina::Embeds::Button,
-        Spina::Embeds::Youtube,
-        Spina::Embeds::Vimeo
       )
     end
     

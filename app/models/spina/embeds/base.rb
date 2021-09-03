@@ -1,7 +1,5 @@
 module Spina::Embeds
-  class Base
-    extend ActiveModel::Naming
-    
+  class Base    
     include ActiveModel::Model
     include Spina::Embeddable
     include Spina::Embeds::TrixConversion

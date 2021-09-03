@@ -4,6 +4,7 @@ module Spina
     
     included do
       class_attribute :embed_attributes, default: []
+      class_attribute :icon, default: nil
     end
     
     class_methods do
@@ -20,6 +21,11 @@ module Spina
       def attributes(*names)
         attr_accessor(*names.map(&:to_sym))
         self.embed_attributes += names.map(&:to_sym)
+      end
+      
+      # Give it an icon
+      def heroicon(name)
+        self.icon = name
       end
     end
     

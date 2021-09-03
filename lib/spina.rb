@@ -8,18 +8,12 @@ require 'spina/attr_json_spina_parts_model'
 require 'spina/attr_json_monkeypatch'
 require 'spina/authentication/sessions'
 require 'spina/authentication/basic'
+require 'spina/embed'
+require 'spina/embeddable'
+require 'spina/embeds/trix_conversion'
 
 module Spina
   include ActiveSupport::Configurable
-  extend ActiveSupport::Autoload
-  
-  autoload :Embeddable
-  
-  module Embeds
-    extend ActiveSupport::Autoload
-    
-    autoload :TrixConversion
-  end
 
   PARTS = []
   EMBEDS = []
