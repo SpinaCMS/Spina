@@ -1,20 +1,10 @@
 en:
-  helpers:
-    label:
-      spina/embeds/button:
-        url: URL
-        label: Button label
-      spina/embeds/youtube:
-        url: Youtube URL
-      spina/embeds/vimeo:
-        url: Vimeo URL
   activemodel:
     attributes:
       spina/embeds/youtube:
         url: youtube.com/watch?v=...
       spina/embeds/vimeo:
         url: vimeo.com/...
-        
   activerecord:
     attributes:
       spina/account:
@@ -110,6 +100,15 @@ en:
       spina/user:
         one: User
         other: Users
+  helpers:
+    label:
+      spina/embeds/button:
+        url: URL
+        label: Button label
+      spina/embeds/youtube:
+        url: Youtube URL
+      spina/embeds/vimeo:
+        url: Vimeo URL
   spina:
     accounts:
       contact_details: Contact details
