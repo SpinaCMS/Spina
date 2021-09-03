@@ -1,5 +1,3 @@
-require 'net/http'
-
 module Spina::Embeds
   class Vimeo < Base
     attributes :url
