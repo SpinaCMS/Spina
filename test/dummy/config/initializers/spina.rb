@@ -60,5 +60,6 @@ end
 # Embeddable content in Trix
 Spina::Embed.register(
   Spina::Embeds::Button,
-  Spina::Embeds::Youtube
+  Spina::Embeds::Youtube,
+  Spina::Embeds::Vimeo
 )

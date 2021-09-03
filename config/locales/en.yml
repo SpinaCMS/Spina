@@ -1,4 +1,21 @@
 en:
+  helpers:
+    label:
+      spina/embeds/button:
+        url: URL
+        label: Button label
+        style: Button style
+      spina/embeds/youtube:
+        url: Youtube URL
+      spina/embeds/vimeo:
+        url: Vimeo URL
+  activemodel:
+    attributes:
+      spina/embeds/youtube:
+        url: youtube.com/watch?v=...
+      spina/embeds/vimeo:
+        url: vimeo.com/...
+        
   activerecord:
     attributes:
       spina/account:

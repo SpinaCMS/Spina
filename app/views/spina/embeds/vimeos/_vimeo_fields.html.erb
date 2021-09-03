@@ -1,0 +1,9 @@
+<div class="text-xl font-bold mb-3 text-gray-800">
+  Vimeo
+  <div class="text-sm text-gray-500 font-normal">
+    Embed a Vimeo video
+  </div>
+</div>
+
+<%= render Spina::Forms::LabelComponent.new(f, :url) %>
+<%= render Spina::Forms::TextFieldComponent.new(f, :url, autofocus: true) %>
