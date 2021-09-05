@@ -30,6 +30,7 @@ module Spina
                   :disable_decorator_load,
                   :locales, 
                   :embedded_image_size,
+                  :mailer_defaults,
                   :thumbnail_image_size,
                   :party_pooper,
                   :tailwind_purge_content,
@@ -44,6 +45,7 @@ module Spina
   self.disable_frontend_routes = false
   self.disable_decorator_load = false
   self.embedded_image_size = [2000, 2000]
+  self.mailer_defaults = ActiveSupport::OrderedOptions.new
   self.thumbnail_image_size = [400, 400]
   self.frontend_parent_controller = "ApplicationController"
   self.locales = [I18n.default_locale]

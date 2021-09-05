@@ -37,7 +37,7 @@ Spina::Theme.register do |theme|
   theme.view_templates = [
     {name: 'homepage', title: 'Homepage', parts: %w(headline body image_collection)}, 
     {name: 'show', title: 'Default', parts: %w(body image repeater)}, 
-    {name: 'demo', title: 'Demo', parts: %w(body image_collection image repeater)}
+    {name: 'demo', title: 'Demo', parts: %w(body image_collection image repeater), exclude_from: %w(articles)}
   ]
 
   # Custom pages
