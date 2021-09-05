@@ -2,7 +2,7 @@
   <button type="button" 
     data-action="media-picker-modal#selectImage selectable#select dblclick->media-picker-modal#instantInsert" 
     data-image-id="<%= @image.id %>"
-    data-signed-blob-id="<%= @image.file.blob.signed_id %>"
+    data-signed-blob-id="<%= @image.file.blob&.signed_id %>"
     data-filename="<%= @image.file.filename %>"
     data-thumbnail="<%= helpers.thumbnail_url(@image) %>"
     data-embedded-url="<%= helpers.embedded_image_url(@image) %>"

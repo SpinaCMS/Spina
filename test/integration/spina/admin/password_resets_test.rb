@@ -21,8 +21,7 @@ module Spina
         follow_redirect!
         assert_select 'form', action: "/admin/sessions"
 
-        mail = ActionMailer::Base.deliveries.last
-        assert_equal 'bram@denkgroot.com', mail['to'].to_s
+        assert_enqueued_email_with UserMailer, :forgot_password, args: [@user, nil]
       end
 
     end
