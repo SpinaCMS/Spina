@@ -1,7 +1,7 @@
 require "application_system_test_case"
 
 module Spina
-  class Admin::PagesTest < ApplicationSystemTestCase
+  class Admin::EditingPagesTest < ApplicationSystemTestCase
     
     test "visiting the pages index" do
       visit spina.admin_pages_path
