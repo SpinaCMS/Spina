@@ -11,9 +11,16 @@ end
 group :test do
   gem 'factory_bot'
   gem 'rails-controller-testing'
+  
+  # CodeClimate
   gem 'minitest-reporters'
   gem 'simplecov'
   gem 'codeclimate-test-reporter', '~> 1.0.0'
+  
+  # System tests
+  gem 'capybara'
+  gem 'selenium-webdriver'
+  gem 'webdrivers'
 
   gem 'pry-rails'
   gem 'mocha'
