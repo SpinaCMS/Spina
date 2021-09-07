@@ -30,5 +30,16 @@ module Spina
       assert_selector "turbo-frame", text: "Page published"
     end
     
+    test "embedding a youtube video" do
+      visit spina.admin_pages_path
+      click_on "Homepage"
+      find_link(nil, href: /\/admin\/embeds\/new/).click
+      click_link "Youtube"
+      assert_selector "label", text: "Youtube URL"
+      fill_in "embeddable[url]", with: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+      click_button "Embed component"
+      assert_selector "trix-editor spina-embed", text: "Rick Astley - Never Gonna Give You Up (Official Music Video)"
+    end
+    
   end
 end

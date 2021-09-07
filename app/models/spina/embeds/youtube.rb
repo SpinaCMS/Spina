@@ -1,3 +1,5 @@
+require 'net/http'
+
 module Spina::Embeds
   class Youtube < Base
     attributes :url
