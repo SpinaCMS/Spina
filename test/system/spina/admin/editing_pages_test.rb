@@ -39,6 +39,10 @@ module Spina
       fill_in "embeddable[url]", with: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
       click_button "Embed component"
       assert_selector "trix-editor spina-embed", text: "Rick Astley - Never Gonna Give You Up (Official Music Video)"
+      click_button "Save changes"
+      assert_selector "turbo-frame", text: "Page saved"
+      visit "/"
+      assert_selector "iframe", id: "ytplayer"
     end
     
   end
