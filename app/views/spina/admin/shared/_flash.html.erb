@@ -1,4 +1,4 @@
-<div class="fixed bottom-0 left-0 w-full flex justify-center z-50">
+<div class="fixed bottom-0 left-0 w-full flex justify-center z-50 pointer-events-none">
   <% flash.each do |type, message| %>
     <%= render Spina::UserInterface::FlashMessageComponent.new(type: type, message: message) %>
   <% end %>
