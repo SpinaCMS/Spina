@@ -1,6 +1,16 @@
 # Spina CMS Changelog
 
-## 2.2
+## 2.4
+
+### 2.4.0 (September 9th, 2021)
+* Added option to exclude view templates from resources
+* Added HTML email templates
+* Added configurable mailer defaults
+* Updated Hotwire dependencies
+* Fixed exception for missing image attachments
+* Refactored importmap config to importmap.rb
+
+## 2.3
 
 ### 2.3.5 (August 22nd, 2021)
 * Changed to esm-compatible build of Trix to fix bug in Firefox
@@ -27,6 +37,8 @@
 * Fixed overflow CSS-bug in media folders
 * Fixed focus CSS-bug in Chrome
 * Removed old importmap helpers
+
+# 2.2
 
 ### 2.2.0 (July 26th, 2021)
 * Added download link to attachments in media library
