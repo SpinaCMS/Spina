@@ -9,7 +9,7 @@ PATH
       breadcrumbs_on_rails
       browser
       image_processing
-      importmap-rails (= 0.7.1)
+      importmap-rails (= 0.7.3)
       jsonapi-serializer
       kaminari
       mobility (>= 1.1.3)
@@ -113,8 +113,7 @@ GEM
     image_processing (1.12.1)
       mini_magick (>= 4.9.5, < 5)
       ruby-vips (>= 2.0.17, < 3)
-    importmap-rails (0.7.1)
-      listen (~> 3.7)
+    importmap-rails (0.7.3)
       rails (>= 6.0.0)
     json (2.5.1)
     jsonapi-serializer (2.2.0)
@@ -135,9 +134,6 @@ GEM
       addressable (~> 2.7)
     letter_opener (1.7.0)
       launchy (~> 2.2)
-    listen (3.7.0)
-      rb-fsevent (~> 0.10, >= 0.10.3)
-      rb-inotify (~> 0.9, >= 0.9.10)
     loofah (2.12.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -207,9 +203,6 @@ GEM
       rake (>= 0.13)
       thor (~> 1.0)
     rake (13.0.6)
-    rb-fsevent (0.11.0)
-    rb-inotify (0.10.1)
-      ffi (~> 1.0)
     request_store (1.5.0)
       rack (>= 1.4)
     ruby-progressbar (1.11.0)
