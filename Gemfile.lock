@@ -18,7 +18,7 @@ PATH
       rails (>= 6.0)
       sass-rails
       stimulus-rails (>= 0.3.8, < 0.7.0)
-      turbo-rails (~> 0.7.4)
+      turbo-rails (>= 0.7.4, < 0.9.0)
       view_component (~> 2.32)
 
 GEM
@@ -234,7 +234,7 @@ GEM
       rails (>= 6.0.0)
     thor (1.1.0)
     tilt (2.0.10)
-    turbo-rails (0.7.15)
+    turbo-rails (0.8.1)
       rails (>= 6.0.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
