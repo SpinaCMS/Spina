@@ -106,7 +106,7 @@ module Spina
     private
     
       def set_default_position
-        self.position = self.class.maximum(:position).to_i.next
+        self.position ||= self.class.maximum(:position).to_i.next
       end
 
       def set_resource_from_parent
