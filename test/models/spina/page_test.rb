@@ -64,6 +64,11 @@ module Spina
       page = FactoryBot.create :about_page, title: "About"
       assert_equal "/about-2", page.materialized_path
     end
+    
+    test 'page has a position' do
+      page = FactoryBot.create :about_page, title: "About"
+      assert_not_nil page.position
+    end
 
   end
 end

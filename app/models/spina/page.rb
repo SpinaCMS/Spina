@@ -26,6 +26,8 @@ module Spina
     scope :sorted, -> { order(:position) }
     scope :live, -> { active.where(draft: false) }
     scope :in_menu, -> { where(show_in_menu: true) }
+    
+    before_create :set_default_position
 
     # Copy resource from parent
     before_save :set_resource_from_parent, if: -> { parent.present? }
@@ -102,6 +104,10 @@ module Spina
     end
 
     private
+    
+      def set_default_position
+        self.position = self.class.maximum(:position).to_i.next
+      end
 
       def set_resource_from_parent
         self.resource_id = parent.resource_id
