@@ -1,4 +1,10 @@
 en:
+  activemodel:
+    attributes:
+      spina/embeds/youtube:
+        url: youtube.com/watch?v=...
+      spina/embeds/vimeo:
+        url: vimeo.com/...
   activerecord:
     attributes:
       spina/account:
@@ -94,6 +100,15 @@ en:
       spina/user:
         one: User
         other: Users
+  helpers:
+    label:
+      spina/embeds/button:
+        url: URL
+        label: Button label
+      spina/embeds/youtube:
+        url: Youtube URL
+      spina/embeds/vimeo:
+        url: Vimeo URL
   spina:
     accounts:
       contact_details: Contact details
@@ -117,6 +132,9 @@ en:
     delete_confirmation: Are you sure you want to delete <strong>%{subject}</strong>?
     edit: Edit
     edit_website: Edit your website
+    embeds:
+      embed_a_component: Embed a component
+      embed_component: Embed component
     forgot_password:
       expired: Your password reset token has expired
       mail_subject: Reset your password

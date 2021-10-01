@@ -80,6 +80,8 @@ Spina::Engine.routes.draw do
     resources :images
     
     resource :media_picker, controller: "media_picker", only: [:show]
+    
+    resources :embeds, only: [:new, :create]
   end
 
   # Sitemap

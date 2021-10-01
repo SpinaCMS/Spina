@@ -63,3 +63,10 @@ Spina.configure do |config|
   # For people who don't appreciate confetti, you can disable that here.
   # config.party_pooper = true
 end
+
+# Embeddable content in Trix
+Spina::Embed.register(
+  Spina::Embeds::Button,
+  Spina::Embeds::Youtube,
+  Spina::Embeds::Vimeo
+)

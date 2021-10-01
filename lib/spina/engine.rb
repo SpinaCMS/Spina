@@ -16,7 +16,7 @@ require 'browser'
 module Spina
   class Engine < ::Rails::Engine
     isolate_namespace Spina
-
+    
     config.autoload_paths += %W( #{config.root}/lib )
 
     config.to_prepare do
@@ -26,7 +26,9 @@ module Spina
           require_dependency(decorator)
         end
       end
-
+    end
+    
+    initializer "spina.parts" do
       # Register JSON part types for editing content
       Spina::Part.register(
         Spina::Parts::Line,

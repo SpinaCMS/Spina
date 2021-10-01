@@ -1,4 +1,5 @@
-::Spina::Theme.register do |theme|
+# Theme configuration
+Spina::Theme.register do |theme|
 
   theme.name = 'demo'
   theme.title = 'Demo theme'

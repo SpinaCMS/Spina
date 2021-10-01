@@ -14,7 +14,7 @@ module Spina
 
     def html(name)
       html = find_part(name)&.content
-      ActiveSupport::SafeBuffer.new(html.to_s)
+      RichTextPresenter.new(view_context, html)
     end
 
     def image_tag(image, variant_options = {}, options = {})
