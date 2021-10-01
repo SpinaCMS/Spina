@@ -6,6 +6,5 @@ FactoryBot.define do
   
   factory :navigation_item, class: Spina::NavigationItem do
     navigation
-    page
   end
 end
