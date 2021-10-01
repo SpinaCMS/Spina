@@ -1,4 +1,4 @@
-class Spina::Reloader
+class Spina::ThemeReloader
   delegate :execute_if_updated, :execute, :updated?, to: :updater
   
   def reload!

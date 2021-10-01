@@ -1,10 +1,10 @@
 require "test_helper"
 
 module Spina
-  class ReloaderTest < ActiveSupport::TestCase
+  class ThemeReloaderTest < ActiveSupport::TestCase
     
     setup do
-      @reloader = Spina::Reloader.new
+      @reloader = Spina::ThemeReloader.new
       @theme = Rails.root.join("config/initializers/themes/demo.rb")
     end
     

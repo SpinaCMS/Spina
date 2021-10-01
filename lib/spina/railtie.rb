@@ -5,8 +5,8 @@ module Spina
       app.config.assets.precompile += %w(spina/manifest)
     end
     
-    initializer "spina.reloader" do |app|
-      reloader = Reloader.new
+    initializer "spina.theme_reloader" do |app|
+      reloader = ThemeReloader.new
       reloader.execute
       
       app.reloaders << reloader
