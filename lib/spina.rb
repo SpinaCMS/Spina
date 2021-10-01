@@ -1,6 +1,7 @@
 require 'spina/engine'
 require 'spina/admin_sectionable'
 require 'spina/railtie'
+require 'spina/theme_reloader'
 require 'spina/plugin'
 require 'spina/theme'
 require 'spina/tailwind_purger'

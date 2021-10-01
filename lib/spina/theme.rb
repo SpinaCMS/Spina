@@ -8,6 +8,11 @@ module Spina
       def all
         ::Spina::THEMES
       end
+      
+      def unregister(name)
+        theme = find_by_name(name)
+        all.delete(theme) if theme
+      end
 
       def find_by_name(name)
         all.find { |theme| theme.name == name }
@@ -17,6 +22,7 @@ module Spina
         theme = ::Spina::Theme.new
         yield theme
         raise 'Missing theme name' if theme.name.nil?
+        unregister(theme.name)
         if theme.plugins.nil?
           theme.plugins = ::Spina::Plugin.all.map { |plugin| plugin.name }
         end
