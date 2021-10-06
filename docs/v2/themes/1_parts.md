@@ -99,4 +99,4 @@ Finally, let's go to views/default/pages/show.html.erb and add the following:
 <%= content.html :portfolio %> # added this line
 ```
 
-We have successfully added another textbox! Restart your server and load up the admin section again. You should see another text box below the content box.
+We have successfully added another textbox! Refresh the page form in the admin section. You should see another text box below the content box.

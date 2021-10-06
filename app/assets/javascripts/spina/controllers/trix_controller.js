@@ -5,17 +5,27 @@ export default class extends Controller {
     return [ "editor", "imageFields", "altField" ]
   }
   
-  connect() {    
+  connect() {
+    this.element[this.identifier] = this
+    
     this.editorTarget.addEventListener("trix-selection-change", function(event) {
       if (this.mutableImageAttachment) {
         this.imageFieldsTarget.classList.remove("hidden")
-        let position = this.mutableImageAttachment.querySelector("img").offsetTop + this.mutableImageAttachment.querySelector("img").offsetHeight - 16
+        let position = this.mutableImageAttachment.querySelector("img").offsetTop + this.mutableImageAttachment.querySelector("img").offsetHeight
         this.imageFieldsTarget.style.top = `${position}px`
         this.altFieldTarget.value = this.currentAltText
       } else {
         this.imageFieldsTarget.classList.add("hidden")
       }
     }.bind(this))
+  }
+  
+  insertEmbeddable(html) {
+    let embeddable = new Trix.Attachment({
+      content: html, 
+      contentType: "application/vnd+spina.embed+html"})
+      
+    this.editor.insertAttachment(embeddable)
   }
   
   preventSubmission(event) {

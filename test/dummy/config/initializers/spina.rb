@@ -26,6 +26,13 @@ Spina.configure do |config|
   # Thumbnail images for the API are generated using `resize_to_fill`.
   # config.thumbnail_image_size = [400, 400]
   
+  # Mailers
+  # ===============
+  # In order to send emails, you need to set a default from address.
+  # You can set an optional reply_to address as well.
+  config.mailer_defaults.from = "no-reply@spinacms.com"
+  # config.mailer_defaults.reply_to = "support@example.com"
+  
   # Parent controller
   # ===============
   # The parent controller all frontend Spina controllers inherit from
@@ -56,3 +63,10 @@ Spina.configure do |config|
   # For people who don't appreciate confetti, you can disable that here.
   # config.party_pooper = true
 end
+
+# Embeddable content in Trix
+Spina::Embed.register(
+  Spina::Embeds::Button,
+  Spina::Embeds::Youtube,
+  Spina::Embeds::Vimeo
+)

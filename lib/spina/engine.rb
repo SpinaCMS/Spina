@@ -11,11 +11,12 @@ require 'babosa'
 require 'attr_json'
 require 'view_component/engine'
 require 'jsonapi/serializer'
+require 'browser'
 
 module Spina
   class Engine < ::Rails::Engine
     isolate_namespace Spina
-
+    
     config.autoload_paths += %W( #{config.root}/lib )
 
     config.to_prepare do
@@ -25,7 +26,9 @@ module Spina
           require_dependency(decorator)
         end
       end
-
+    end
+    
+    initializer "spina.parts" do
       # Register JSON part types for editing content
       Spina::Part.register(
         Spina::Parts::Line,
@@ -37,18 +40,6 @@ module Spina
         Spina::Parts::Option,
         Spina::Parts::Attachment
       )
-    end
-    
-    initializer "spina.importmap" do
-      Spina.config.importmap.draw do
-        # Stimulus & Turbo
-        pin "@hotwired/stimulus", to: "stimulus.js"
-        pin "@hotwired/stimulus-autoloader", to: "stimulus-autoloader.js"
-        pin "@hotwired/turbo-rails", to: "turbo.js"
-        
-        pin_all_from Spina::Engine.root.join("app/assets/javascripts/spina"), append_base_path: true
-      end
-    end
-    
+    end    
   end
 end

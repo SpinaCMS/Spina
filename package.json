@@ -6,7 +6,8 @@
     "@tailwindcss/typography": "^0.3.1",
     "autoprefixer": "^10.2.1",
     "postcss": "^8.2.10",
-    "tailwindcss": "^2.0.2"
+    "tailwindcss": "^2.2.7",
+    "tailwindcss-cli": "^0.1.2"
   },
   "version": "2.0.0.alpha"
 }

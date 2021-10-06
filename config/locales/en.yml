@@ -1,4 +1,10 @@
 en:
+  activemodel:
+    attributes:
+      spina/embeds/youtube:
+        url: youtube.com/watch?v=...
+      spina/embeds/vimeo:
+        url: vimeo.com/...
   activerecord:
     attributes:
       spina/account:
@@ -94,6 +100,15 @@ en:
       spina/user:
         one: User
         other: Users
+  helpers:
+    label:
+      spina/embeds/button:
+        url: URL
+        label: Button label
+      spina/embeds/youtube:
+        url: Youtube URL
+      spina/embeds/vimeo:
+        url: Vimeo URL
   spina:
     accounts:
       contact_details: Contact details
@@ -117,6 +132,9 @@ en:
     delete_confirmation: Are you sure you want to delete <strong>%{subject}</strong>?
     edit: Edit
     edit_website: Edit your website
+    embeds:
+      embed_a_component: Embed a component
+      embed_component: Embed component
     forgot_password:
       expired: Your password reset token has expired
       mail_subject: Reset your password
@@ -140,6 +158,7 @@ en:
       insert_photo: Insert photo
       insert_photos: Insert photos
       link: Link
+      missing_image: Missing image
       new_folder: New folder
       organize: Organize
       remove_image: Remove image
@@ -321,6 +340,16 @@ en:
       rename: Rename
       save_changes: Save changes
       saving: Saving...
+    user_mailer:
+      forgot_password:
+        button: Reset your password
+        introduction: You recently requested to reset your password for your Spina CMS account. This password reset is only valid for the next 2 hours. Copy and paste the URL below into your web browser.
+        introduction_html: "You recently requested to reset your password for your Spina CMS account. Use the button below to reset it. <strong>This password reset is only valid for the next 2 hours.</strong>"
+        preheader: Use this link to reset your password. The link is only valid for 2 hours.
+        request_origin: For security, this request was received from a %{platform} device using %{browser}. If you did not request a password reset, please ignore this email.
+        salutation: Hi, %{name}
+        subject: Reset your password
+        trouble: If you’re having trouble with the button above, copy and paste the URL below into your web browser.
     users:
       authorization: Authorization
       authorization_description: Administrators can manage users. Regular users cannot.
@@ -341,6 +370,7 @@ en:
       content: Content
       documents: Documents
       images: Images
+      main: Main
       media_library: Media library
       media_library_description: Here's where you'll find all of your images and documents
       pages: Pages

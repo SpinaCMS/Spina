@@ -1,6 +1,7 @@
 require 'spina/engine'
 require 'spina/admin_sectionable'
 require 'spina/railtie'
+require 'spina/theme_reloader'
 require 'spina/plugin'
 require 'spina/theme'
 require 'spina/tailwind_purger'
@@ -8,11 +9,15 @@ require 'spina/attr_json_spina_parts_model'
 require 'spina/attr_json_monkeypatch'
 require 'spina/authentication/sessions'
 require 'spina/authentication/basic'
+require 'spina/embed'
+require 'spina/embeddable'
+require 'spina/embeds/trix_conversion'
 
 module Spina
   include ActiveSupport::Configurable
 
   PARTS = []
+  EMBEDS = []
   PLUGINS = []
   THEMES = []
 
@@ -26,6 +31,7 @@ module Spina
                   :disable_decorator_load,
                   :locales, 
                   :embedded_image_size,
+                  :mailer_defaults,
                   :thumbnail_image_size,
                   :party_pooper,
                   :tailwind_purge_content,
@@ -40,6 +46,7 @@ module Spina
   self.disable_frontend_routes = false
   self.disable_decorator_load = false
   self.embedded_image_size = [2000, 2000]
+  self.mailer_defaults = ActiveSupport::OrderedOptions.new
   self.thumbnail_image_size = [400, 400]
   self.frontend_parent_controller = "ApplicationController"
   self.locales = [I18n.default_locale]
