@@ -103,4 +103,6 @@ Spina::Theme.register do |theme|
 
   theme.plugins = ['reviews']
 
+  # Embeds
+  theme.embeds = ["Spina::Embeds::Button", "Spina::Embeds::Youtube", "Spina::Embeds::Vimeo"]
 end

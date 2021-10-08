@@ -19,7 +19,7 @@ module Spina
       private
       
         def embeddables
-          @embeddables ||= Spina::Embed.all
+          @embeddables ||= current_theme.embeddables
         end
         helper_method :embeddables
       
