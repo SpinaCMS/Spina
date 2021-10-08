@@ -17,7 +17,7 @@ PATH
       rack-rewrite (>= 1.5.0)
       rails (>= 6.0)
       sass-rails
-      stimulus-rails (>= 0.3.8, < 0.7.0)
+      stimulus-rails (>= 0.3.8, < 0.8.0)
       turbo-rails (>= 0.7.4, < 0.9.0)
       view_component (~> 2.32)
 
@@ -246,7 +246,7 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    stimulus-rails (0.6.0)
+    stimulus-rails (0.7.0)
       rails (>= 6.0.0)
     thor (1.1.0)
     tilt (2.0.10)
