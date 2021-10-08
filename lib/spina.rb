@@ -16,7 +16,6 @@ module Spina
   include ActiveSupport::Configurable
 
   PARTS = []
-  EMBEDS = []
   PLUGINS = []
   THEMES = []
 
