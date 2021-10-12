@@ -10,6 +10,7 @@ require 'spina/attr_json_monkeypatch'
 require 'spina/authentication/sessions'
 require 'spina/authentication/basic'
 require 'spina/embeddable'
+require 'spina/embeds'
 require 'spina/embeds/trix_conversion'
 
 module Spina

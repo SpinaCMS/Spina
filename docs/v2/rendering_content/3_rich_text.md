@@ -25,18 +25,18 @@ config.parts = [
 ## Embeddable content
 
 Spina features a way to add embeddable components to Trix. It includes three components by default:
-- Spina::Embeds::Youtube
-- Spina::Embeds::Vimeo
-- Spina::Embeds::Button
+- Youtube
+- Vimeo
+- Button
 
-You can enable these components by registering them in an initializer:
+You can enable these components by setting them in your theme initializer:
 ```
-# config/initializers/spina.rb
-Spina::Embed.register(
-  Spina::Embeds::Button,
-  Spina::Embeds::Youtube,
-  Spina::Embeds::Vimeo
-)
+# config/initializers/themes/default.rb
+Spina::Theme.register do |theme|
+  # ...
+  config.embeds = %w(button youtube vimeo)
+  # ...
+end
 ```
 
 You can change the way these components are rendered by overriding these view templates:
@@ -99,10 +99,4 @@ Add some views for editing and rendering:
 # app/views/spina/embeds/my_components/_my_component.html.erb
 <%= my_component.some_attribute %>
 <%= my_component.another_attribute %>
-```
-
-Don't forget to register your component:
-
-```
-Spina::Embed.register(Spina::Embeds::MyComponent)
 ```

@@ -44,7 +44,7 @@ module Spina
     end
     
     def embeddables
-      embeds.map(&:constantize)
+      embeds.map{|embed| Embeds.constantize(embed)}
     end
 
     def new_page_templates(resource: nil)
