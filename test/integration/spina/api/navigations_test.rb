@@ -9,7 +9,8 @@ module Spina
         @routes = Engine.routes
         @account = FactoryBot.create :account
         @navigation = FactoryBot.create :navigation
-        FactoryBot.create :navigation_item, page: Spina::Page.first, navigation: @navigation
+        @page = FactoryBot.create :homepage
+        FactoryBot.create :navigation_item, page: @page, navigation: @navigation
       end
 
       test "get all navigations" do

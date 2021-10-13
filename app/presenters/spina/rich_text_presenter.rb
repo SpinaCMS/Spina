@@ -29,15 +29,16 @@ module Spina
       
       def render_embed(element)
         embeddable = element_to_embeddable(element)
-        view_context.render embeddable
+        view_context.render(embeddable)
       end
       
       def element_to_embeddable(element)
-        if embeddable = Spina::Embed.constantize(element["data-embed-type"])
-          embeddable.from_json element["data-embed-attributes"]
-        else
-          {inline: ""}
-        end
+        embeddable = Spina::Embeds.constantize(element["data-embed-type"])
+        embeddable&.from_json(element["data-embed-attributes"]) || null_object
+      end
+      
+      def null_object
+        {inline: ""}
       end
 
   end
