@@ -53,7 +53,7 @@ module Spina
         
         patch "/admin/pages/#{@page.id}/move", params: {page: {parent_id: @homepage.id}}
         @page.reload
-        assert_equal @page.parent, @homepage
+        assert_equal @page.parent.id, @homepage.id
       end
       
       test "change a view template" do
