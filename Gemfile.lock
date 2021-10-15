@@ -230,9 +230,9 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
-    selenium-webdriver (4.0.0.rc3)
+    selenium-webdriver (4.0.0)
       childprocess (>= 0.5, < 5.0)
-      rexml (~> 3.2)
+      rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2)
     simplecov (0.13.0)
       docile (~> 1.1.0)
@@ -282,7 +282,7 @@ DEPENDENCIES
   puma
   rails (~> 6.1.4)
   rails-controller-testing
-  selenium-webdriver (= 4.0.0.rc3)
+  selenium-webdriver (~> 4.0.0)
   simplecov
   spina!
   webdrivers
