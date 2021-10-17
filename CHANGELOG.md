@@ -1,5 +1,16 @@
 # Spina CMS Changelog
 
+## 2.5
+
+### 2.5.0 (October 17th, 2021)
+* Added custom embeds in Trix
+* Added auto-reloading themes
+* Added default position to new pages
+* Refactored loading of Stimulus controllers
+* Refactored autoloading of objects during initialization
+* Updated dependencies
+* Fixed flash pointer events
+
 ## 2.4
 
 ### 2.4.0 (September 9th, 2021)
