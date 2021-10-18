@@ -34,7 +34,7 @@ You can enable these components by setting them in your theme initializer:
 # config/initializers/themes/default.rb
 Spina::Theme.register do |theme|
   # ...
-  config.embeds = %w(button youtube vimeo)
+  theme.embeds = %w(button youtube vimeo)
   # ...
 end
 ```
