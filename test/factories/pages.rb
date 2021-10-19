@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :page, class: Spina::Page do
+  factory :page, class: "Spina::Page" do
     draft { false }
     active { true }
 

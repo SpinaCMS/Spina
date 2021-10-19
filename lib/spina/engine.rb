@@ -28,8 +28,7 @@ module Spina
       end
     end
     
-    initializer "spina.parts" do
-      # Register JSON part types for editing content
+    config.to_prepare do
       Spina::Part.register(
         Spina::Parts::Line,
         Spina::Parts::MultiLine,
@@ -40,6 +39,7 @@ module Spina
         Spina::Parts::Option,
         Spina::Parts::Attachment
       )
-    end    
+    end
+
   end
 end

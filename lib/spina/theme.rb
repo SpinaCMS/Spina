@@ -1,7 +1,7 @@
 module Spina
   class Theme
 
-    attr_accessor :name, :title, :parts, :page_parts, :structures, :view_templates, :layout_parts, :custom_pages, :plugins, :public_theme, :config, :navigations, :resources
+    attr_accessor :name, :title, :parts, :page_parts, :structures, :view_templates, :layout_parts, :custom_pages, :plugins, :public_theme, :config, :navigations, :resources, :embeds
 
     class << self
 
@@ -39,7 +39,12 @@ module Spina
       @custom_pages     = []
       @navigations      = []
       @resources        = []
+      @embeds           = []
       @public_theme = false
+    end
+    
+    def embeddables
+      embeds.map{|embed| Embeds.constantize(embed)}
     end
 
     def new_page_templates(resource: nil)

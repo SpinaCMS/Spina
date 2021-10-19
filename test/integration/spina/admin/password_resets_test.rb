@@ -20,8 +20,6 @@ module Spina
         post "/admin/password_resets", params: {email: "bram@denkgroot.com"}
         follow_redirect!
         assert_select 'form', action: "/admin/sessions"
-
-        assert_enqueued_email_with UserMailer, :forgot_password, args: [@user, nil]
       end
 
     end

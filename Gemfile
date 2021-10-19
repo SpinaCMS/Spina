@@ -19,7 +19,7 @@ group :test do
   
   # System tests
   gem 'capybara'
-  gem 'selenium-webdriver', '4.0.0.rc1'
+  gem 'selenium-webdriver', '~> 4.0.0'
   gem 'webdrivers'
 
   gem 'pry-rails'

@@ -3,11 +3,11 @@ module Spina
     class EmbedsController < AdminController
       
       def new
-        @embeddable = Spina::Embed.constantize(embed_type || embeddables.first).new
+        @embeddable = (Spina::Embeds.constantize(embed_type) || embeddables.first).new
       end
       
       def create
-        @embeddable = Spina::Embed.constantize(embed_type).new(embed_params)
+        @embeddable = Spina::Embeds.constantize(embed_type).new(embed_params)
         
         if @embeddable.valid?
           render turbo_stream: turbo_stream.update(:trix_attachment_html, @embeddable.to_trix_attachment)
@@ -19,7 +19,7 @@ module Spina
       private
       
         def embeddables
-          @embeddables ||= Spina::Embed.all
+          @embeddables ||= current_theme.embeddables
         end
         helper_method :embeddables
       

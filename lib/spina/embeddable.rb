@@ -13,8 +13,9 @@ module Spina
           attributes = JSON.parse(json)
           attributes.transform_keys!(&:to_sym)
           new(attributes)
-        rescue 
+        rescue
           Rails.logger.error "[#{self.class.name}] Couldn't parse JSON"
+          nil
         end
       end
       

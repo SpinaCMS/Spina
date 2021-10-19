@@ -103,4 +103,6 @@ Spina::Theme.register do |theme|
 
   theme.plugins = ['reviews']
 
+  # Embeds
+  theme.embeds = %w(button youtube vimeo)
 end
