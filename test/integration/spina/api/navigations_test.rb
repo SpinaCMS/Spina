@@ -8,8 +8,9 @@ module Spina
 
         @routes = Engine.routes
         @account = FactoryBot.create :account
+        @page = FactoryBot.create :page, title: "A page"
         @navigation = FactoryBot.create(:navigation) do |navigation|
-          FactoryBot.create_list(:navigation_item, 3, navigation: navigation)
+          FactoryBot.create_list(:navigation_item, 1, navigation: navigation, page: @page)
         end
       end
 
