@@ -35,10 +35,10 @@ module Spina
       click_on "Homepage"
       find_link(nil, href: /\/admin\/embeds\/new/).click
       click_link "Youtube"
-      assert_selector "label", text: "Youtube URL"
+      assert_selector "label", text: "Youtube URL", wait: 5
       fill_in "embeddable[url]", with: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
       click_button "Embed component"
-      assert_selector "trix-editor spina-embed", text: "Rick Astley - Never Gonna Give You Up (Official Music Video)"
+      assert_selector "trix-editor spina-embed", text: "Rick Astley - Never Gonna Give You Up (Official Music Video)", wait: 5
       click_button "Save changes"
       assert_selector "turbo-frame", text: "Page saved"
       visit "/"
