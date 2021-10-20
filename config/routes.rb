@@ -94,8 +94,9 @@ Spina::Engine.routes.draw do
     # Pages
     get '/:locale/*id' => 'pages#show', constraints: {locale: /#{Spina.config.locales.join('|')}/ }
     get '/:locale/' => 'pages#homepage', constraints: {locale: /#{Spina.config.locales.join('|')}/ }
-    get '/*id' => 'pages#show', as: "page", controller: 'pages', constraints: lambda { |request|
-      (!(Rails.env.development? && request.env['PATH_INFO'].starts_with?('/rails/') || request.env['PATH_INFO'].starts_with?("/#{Spina.config.backend_path}") || request.env['PATH_INFO'].starts_with?('/attachments/'))) && request.path.exclude?("rails/active_storage")
+    get '/*id' => 'pages#show', as: "page", controller: 'pages', constraints: -> (request) {
+      request.path.exclude?(ActiveStorage.routes_prefix) &&
+      !(Rails.env.development? && request.path.starts_with?('/rails/'))
     }
   end
 
