@@ -254,7 +254,7 @@ GEM
       rails (>= 6.0.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
-    view_component (2.40.0)
+    view_component (2.41.0)
       activesupport (>= 5.0.0, < 8.0)
       method_source (~> 1.0)
     webdrivers (5.0.0)
@@ -266,7 +266,7 @@ GEM
     websocket-extensions (0.1.5)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    zeitwerk (2.4.2)
+    zeitwerk (2.5.1)
 
 PLATFORMS
   ruby
