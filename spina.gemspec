@@ -35,7 +35,6 @@ Gem::Specification.new do |gem|
   gem.add_dependency 'kaminari'
   gem.add_dependency 'mobility', '>= 1.1.3'
   gem.add_dependency 'rack-rewrite', '>= 1.5.0'
-  gem.add_dependency 'attr_json'
   gem.add_dependency 'view_component', '~> 2.32'
   gem.add_dependency 'importmap-rails', '>= 0.7.6'
   gem.add_dependency 'turbo-rails', '>= 0.8.0'

@@ -95,7 +95,6 @@ PATH
   specs:
     spina (2.5.0)
       ancestry
-      attr_json
       babosa
       bcrypt
       breadcrumbs_on_rails
