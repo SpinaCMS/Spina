@@ -2,7 +2,8 @@ source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gemspec
-gem 'rails', '~> 6.1.4'
+gem 'rails', github: 'rails/rails'
+gem 'attr_json', github: 'peterberkenbosch/attr_json', branch: 'rails7'
 
 group :development do
   gem 'letter_opener'
