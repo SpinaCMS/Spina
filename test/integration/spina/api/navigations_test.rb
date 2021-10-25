@@ -6,6 +6,7 @@ module Spina
       setup do
         host! "dummy.test"
 
+        FactoryBot.reload
         @routes = Engine.routes
         @account = FactoryBot.create :account
         @page = FactoryBot.create :page, title: "A page"
