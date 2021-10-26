@@ -1,6 +1,8 @@
 //= require ./trix@1.3.1.esm.js
 
 // Extra headings
+Trix.config.blockAttributes.paragraph = {
+  tagName: "p", terminal: true, breakOnReturn: true, group: false }
 Trix.config.blockAttributes.heading2 = {
   tagName: "h2", terminal: true, breakOnReturn: true, group: false }
 Trix.config.blockAttributes.heading3 = {
