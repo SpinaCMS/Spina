@@ -9,11 +9,9 @@ module Spina
     end
     
     def create_views
-      template "app/views/spina/embeds/_fields.html.erb.tt", "app/views/spina/embeds/#{file_name}/_fields.html.erb"
+      template "app/views/spina/embeds/_fields.html.erb", "app/views/spina/embeds/#{plural_file_name}/_#{file_name}_fields.html.erb"
       
-      template "app/views/spina/embeds/_partial.html.erb.tt", "app/views/spina/embeds/#{file_name}/_partial.html.erb"
-      
-      template "app/views/spina/embeds/_trix_partial.html.erb.tt", "app/views/spina/embeds/#{file_name}/_trix_partial.html.erb"
+      template "app/views/spina/embeds/_partial.html.erb", "app/views/spina/embeds/#{plural_file_name}/_#{file_name}.html.erb"
     end
     
   end

@@ -1,0 +1,18 @@
+class <%= class_name %> < Spina::Embeds::Base
+  attributes <%= attributes.map{|attr| ":#{attr.name}"}.join(", ") %>
+  
+  # You can use Rails validations on your attributes
+  validates <%= attributes.map{|attr| ":#{attr.name}"}.join(", ") %>, presence: true
+  
+  # Pick an icon at https://heroicons.com
+  # and it'll show up in the list of embeddable components
+  heroicon "chip"
+  
+  # If you want to render your embeddable component differently in Trix,
+  # you can choose to render a different partial
+  # Default: _<%= file_name %>.html.erb
+  # 
+  # def to_trix_partial_path
+  #  "spina/embeds/<%= plural_file_name %>/trix_<%= file_name %>"
+  # end
+end
