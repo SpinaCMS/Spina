@@ -62,6 +62,11 @@ You can change the way these components are rendered by overriding these view te
 
 It's easy to add custom embeddable components to Spina. Just create a new object that extends from `Spina::Embeds::Base` and add some attributes you'd like to store. All attributes are serialized to JSON and stored directly in HTML.
 
+You can use a generator to easily generate your own component:
+```
+rails g spina:embed my_component some_attribute another_attribute
+```
+
 ```
 # app/models/spina/embeds/my_component.rb
 module Spina::Embeds
