@@ -20,14 +20,7 @@ Run the installer to start the setup process:
 
     rails g spina:install [--silent]
 
-The installer will help you create your first user. 
-
-Or, if you choose the optional `--silent` option, following default will apply : 
-
-- Site Name : MySite
-- Theme : default
-- User : admin@domain.com
-- Password : password
+The installer will help you create your first user interactively, unless you choose the optional `--silent` flag : in this case, defaults will apply.
 
 Then start `rails s` and access Spina at `/admin`.
 
