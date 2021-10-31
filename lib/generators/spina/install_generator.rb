@@ -30,6 +30,7 @@ module Spina
     def create_account
       return if ::Spina::Account.exists? && !no?('An account already exists. Skip? [Yn]')
       name = ::Spina::Account.first.try(:name) || 'MySite'
+      puts cli_args
       name = ask("What would you like to name your website? [#{name}]").presence || name
       account = ::Spina::Account.first_or_create.update_attribute(:name, name)
     end
@@ -90,6 +91,10 @@ module Spina
       def themes
         themes = Spina::Theme.all.map(&:name)
         themes | ['default', 'demo']
+      end
+
+      def cli_args
+        Hash[ ARGV.join(' ').scan(/--?([^=\s]+)(?:="(.*?)"+)?/)]
       end
 
   end
