@@ -40,12 +40,12 @@ module Spina
       account = ::Spina::Account.first
       return if account.theme.present? && !no?("Theme '#{account.theme} is set. Skip? [Yn]")
 
-      theme = begin
-                theme = account.theme || themes.first
-                if talkative_install?
+      theme = account.theme || themes.first
+      if talkative_install?
+        theme = begin
                   theme = ask("What theme do you want to use? (#{themes.join('/')}) [#{theme}]").presence || theme
-                end
-              end until theme.in? themes
+                end until theme.in? themes
+      end
 
       account.update_attribute(:theme, theme)
     end
