@@ -53,7 +53,7 @@ module Spina
       end
 
       def spina_request_path
-        segments = ['/', params[:locale], params[:id]].compact
+        segments = [Spina.mounted_at, params[:locale], params[:id]].compact
         File.join(*segments)
       end
 

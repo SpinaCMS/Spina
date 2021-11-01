@@ -1,0 +1,9 @@
+<div class="text-xl font-bold mb-3 text-gray-800">
+  Snippet
+  <div class="text-sm text-gray-500 font-normal">
+    A simple text template
+  </div>
+</div>
+
+<%= render Spina::Forms::LabelComponent.new(f, :text) %>
+<%= select( :embeddable, :text, Snippet.all.collect {|p| [ p.title, p.content.to_plain_text, {} ] }, {:include_blank => t('common.please_select')}, { autofocus: true })%>

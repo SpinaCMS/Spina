@@ -13,7 +13,6 @@ PATH
       jsonapi-serializer
       kaminari
       mobility (>= 1.1.3)
-      pg
       rack-rewrite (>= 1.5.0)
       rails (>= 6.0)
       sass-rails
@@ -125,7 +124,7 @@ GEM
       ruby-vips (>= 2.0.17, < 3)
     importmap-rails (0.8.1)
       rails (>= 6.0.0)
-    json (2.5.1)
+    json (2.6.1)
     jsonapi-serializer (2.2.0)
       activesupport (>= 4.2)
     kaminari (1.2.1)
