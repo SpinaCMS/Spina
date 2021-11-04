@@ -15,6 +15,8 @@ Gem::Specification.new do |gem|
   gem.description = 'CMS'
   gem.license     = 'MIT'
   
+  gem.required_ruby_version     = ">= 2.7.0"
+  
   gem.metadata = {
     "homepage_uri" => "https://www.spinacms.com",
     "bug_tracker_uri" => "https://github.com/SpinaCMS/Spina/issues",
