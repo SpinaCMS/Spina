@@ -1,29 +1,33 @@
 module Spina
   class InstallGenerator < Rails::Generators::Base
     source_root File.expand_path("../templates", __FILE__)
+    
+    class_option :seed_only, type: :boolean, default: false
+    class_option :silent, type: :boolean, default: false
 
     def create_initializer_file
-      return if Rails.env.production?
+      return if Rails.env.production? || options['seed_only']
       template 'config/initializers/spina.rb'
     end
 
     def create_mobility_initializer_file
-      return if Rails.env.production?
+      return if Rails.env.production? || options['seed_only']
       template 'config/initializers/mobility.rb'
     end
 
     def add_route
-      return if Rails.env.production?
+      return if Rails.env.production? || options['seed_only']
       return if Rails.application.routes.routes.detect { |route| route.app.app == Spina::Engine }
       route "mount Spina::Engine => '/'"
     end
 
     def copy_migrations
-      return if Rails.env.production?
+      return if Rails.env.production? || options['seed_only']
       rake 'spina:install:migrations'
     end
 
     def run_migrations
+      return if options['seed_only']
       rake 'db:migrate'
     end
 
@@ -51,6 +55,7 @@ module Spina
     end
 
     def copy_template_files
+      return if options['seed_only']
       theme = ::Spina::Account.first.theme
       if theme.in? ['default', 'demo']
         template "config/initializers/themes/#{theme}.rb"
@@ -102,12 +107,7 @@ module Spina
       end
 
       def talkative_install?
-        !cli_args.key?('silent')
-      end
-
-      def cli_args
-        # See https://stackoverflow.com/a/59256782/2595513
-        Hash[ ARGV.join(' ').scan(/--?([^=\s]+)(?:="(.*?)"+)?/) ]
+        !options['silent']
       end
 
   end

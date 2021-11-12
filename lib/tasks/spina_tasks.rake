@@ -1,5 +1,15 @@
 namespace :spina do
-
+  
+  desc "Install Spina"
+  task install: :environment do
+    Rails::Command.invoke :generate, ["spina:install"]
+  end
+  
+  desc "Seed Spina"
+  task seed: :environment do
+    Rails::Command.invoke :generate, ["spina:install", "--seed-only"]
+  end
+  
   desc "Generate all pages based on the theme config"
   task bootstrap: :environment do
     Spina::Account.first.save

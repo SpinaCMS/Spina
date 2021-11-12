@@ -21,7 +21,7 @@ gem 'spina'
 Run `bundle install` and run the installer to install Spina CMS.
 
 ```
-rails g spina:install
+rails spina:install
 ```
 
 The installer will ask a couple of questions to help you setup your website.
