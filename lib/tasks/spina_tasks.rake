@@ -14,7 +14,7 @@ namespace :spina do
   desc "First deploy"
   task first_deploy: :environment do
     # First deploy will run the same steps as the install generator, but skips copying files
-    Rails::Command.invoke :generate, ["spina:install", "--first_deploy"]
+    Rails::Command.invoke :generate, ["spina:install", "--first-deploy"]
   end
   
   desc "Generate all pages based on the theme config"
