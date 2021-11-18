@@ -6,6 +6,12 @@ Start by creating a new Rails app using a PostgreSQL database.
 rails new yourwebsite --database=postgresql
 ```
 
+Create a database.
+
+```
+rails db:create
+```
+
 Run the ActiveStorage installer to install ActiveStorage.
 
 ```

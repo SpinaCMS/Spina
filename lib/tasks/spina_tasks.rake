@@ -2,12 +2,19 @@ namespace :spina do
   
   desc "Install Spina"
   task install: :environment do
-    Rails::Command.invoke :generate, ["spina:install"]
+    begin
+      ActiveRecord::Base.connection
+    rescue ActiveRecord::NoDatabaseError
+      puts "ERROR: database does not exist, run \"rails db:create\" first"
+    else
+      Rails::Command.invoke :generate, ["spina:install"]
+    end
   end
   
-  desc "Seed Spina"
-  task seed: :environment do
-    Rails::Command.invoke :generate, ["spina:install", "--seed-only"]
+  desc "First deploy"
+  task first_deploy: :environment do
+    # First deploy will run the same steps as the install generator, but skips copying files
+    Rails::Command.invoke :generate, ["spina:install", "--first_deploy"]
   end
   
   desc "Generate all pages based on the theme config"
