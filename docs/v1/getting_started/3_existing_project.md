@@ -5,7 +5,7 @@ If you already have an existing Rails project, just add `gem "spina"` to your Ge
 Run the installer to get started.
 
 ```
-rails g spina:install
+rails spina:install
 ```
 
 The installer will help you setup your first user.

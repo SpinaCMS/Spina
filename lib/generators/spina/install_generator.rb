@@ -1,29 +1,33 @@
 module Spina
   class InstallGenerator < Rails::Generators::Base
     source_root File.expand_path("../templates", __FILE__)
+    
+    class_option :first_deploy, type: :boolean, default: false
+    class_option :silent, type: :boolean, default: false
 
     def create_initializer_file
-      return if Rails.env.production?
+      return if first_deploy?
       template 'config/initializers/spina.rb'
     end
 
     def create_mobility_initializer_file
-      return if Rails.env.production?
+      return if first_deploy?
       template 'config/initializers/mobility.rb'
     end
 
     def add_route
-      return if Rails.env.production?
+      return if first_deploy?
       return if Rails.application.routes.routes.detect { |route| route.app.app == Spina::Engine }
       route "mount Spina::Engine => '/'"
     end
 
     def copy_migrations
-      return if Rails.env.production?
+      return if first_deploy?
       rake 'spina:install:migrations'
     end
 
     def run_migrations
+      return if first_deploy?
       rake 'db:migrate'
     end
 
@@ -33,12 +37,12 @@ module Spina
       if talkative_install?
         name = ask("What would you like to name your website? [#{name}]").presence || name
       end
-      account = ::Spina::Account.first_or_create.update_attribute(:name, name)
+      account = ::Spina::Account.first_or_create.update(name: name)
     end
 
     def set_theme
       account = ::Spina::Account.first
-      return if account.theme.present? && !no?("Theme '#{account.theme} is set. Skip? [Yn]")
+      return if account.theme.present? && !no?("Theme '#{account.theme}' is set. Skip? [Yn]")
 
       theme = account.theme || themes.first
       if talkative_install?
@@ -47,10 +51,11 @@ module Spina
                 end until theme.in? themes
       end
 
-      account.update_attribute(:theme, theme)
+      account.update(theme: theme)
     end
 
     def copy_template_files
+      return if options['first_deploy']
       theme = ::Spina::Account.first.theme
       if theme.in? ['default', 'demo']
         template "config/initializers/themes/#{theme}.rb"
@@ -100,14 +105,13 @@ module Spina
         themes = Spina::Theme.all.map(&:name)
         themes | ['default', 'demo']
       end
-
-      def talkative_install?
-        !cli_args.key?('silent')
+      
+      def first_deploy?
+        options['first_deploy']
       end
 
-      def cli_args
-        # See https://stackoverflow.com/a/59256782/2595513
-        Hash[ ARGV.join(' ').scan(/--?([^=\s]+)(?:="(.*?)"+)?/) ]
+      def talkative_install?
+        !options['silent']
       end
 
   end
