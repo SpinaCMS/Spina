@@ -18,7 +18,7 @@ gem 'spina'
 
 Run the installer to start the setup process:
 
-    rails g spina:install [--silent]
+    rails g spina:install [--silent] [--first-deploy]
 
 The installer will help you create your first user interactively, unless you choose the optional `--silent` flag : in this case, defaults will apply.
 

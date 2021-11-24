@@ -10,7 +10,7 @@ gem 'spina'
 
 Run the installer to start the setup process:
 
-    rails g spina:install
+    rails spina:install
 
 The installer will help you create your first user.
 
