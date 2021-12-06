@@ -127,7 +127,7 @@ module Spina
         else
           [Spina.mounted_at, Mobility.locale, generate_materialized_path]
         end
-        File.join(*segments.compact)
+        File.join(*segments.map(&:to_s).compact)
       end
 
       def generate_materialized_path
