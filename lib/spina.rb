@@ -88,5 +88,10 @@ module Spina
       
       config_obj
     end
+    
+    def mounted_at
+      Spina::Engine.routes.find_script_name({})
+    end
+    
   end
 end

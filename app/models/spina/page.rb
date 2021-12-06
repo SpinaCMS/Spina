@@ -122,11 +122,12 @@ module Spina
       end
 
       def localized_materialized_path
-        if Mobility.locale == I18n.default_locale
-          generate_materialized_path.prepend('/')
+        segments = if Mobility.locale == I18n.default_locale
+          [Spina.mounted_at, generate_materialized_path]
         else
-          generate_materialized_path.prepend("/#{Mobility.locale}/").gsub(/\/\z/, "")
+          [Spina.mounted_at, Mobility.locale, generate_materialized_path]
         end
+        File.join(*segments.map(&:to_s).compact)
       end
 
       def generate_materialized_path
