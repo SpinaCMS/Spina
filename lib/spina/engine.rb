@@ -1,4 +1,3 @@
-require 'sass-rails'
 require 'importmap-rails'
 require 'turbo-rails'
 require 'stimulus-rails'
