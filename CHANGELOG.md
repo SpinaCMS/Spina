@@ -2,6 +2,9 @@
 
 ## 2.6
 
+### 2.6.1 (December 10th, 2021)
+* Removed sass-rails dependency
+
 ### 2.6.0 (December 9th, 2021)
 * Spina CMS now requires Ruby 2.7+
 * Added Embed generator for Trix
