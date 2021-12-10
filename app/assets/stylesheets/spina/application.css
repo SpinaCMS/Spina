@@ -1,2 +1,4 @@
-@import '_animate';
-@import '_tailwind';
+/*
+ *= require_tree .
+ *= require_self
+ */
