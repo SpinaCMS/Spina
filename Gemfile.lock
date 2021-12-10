@@ -240,7 +240,6 @@ GEM
     stimulus-rails (0.7.3)
       rails (>= 6.0.0)
     thor (1.1.0)
-    tilt (2.0.10)
     turbo-rails (0.9.0)
       rails (>= 6.0.0)
     tzinfo (2.0.4)
