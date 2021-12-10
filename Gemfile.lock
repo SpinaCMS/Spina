@@ -16,7 +16,6 @@ PATH
       pg
       rack-rewrite (>= 1.5.0)
       rails (>= 6.0)
-      sass-rails
       stimulus-rails (>= 0.7.0)
       turbo-rails (~> 0.9)
       view_component (~> 2.32)
@@ -222,16 +221,6 @@ GEM
     ruby-vips (2.1.4)
       ffi (~> 1.12)
     rubyzip (2.3.2)
-    sass-rails (6.0.0)
-      sassc-rails (~> 2.1, >= 2.1.1)
-    sassc (2.4.0)
-      ffi (~> 1.9)
-    sassc-rails (2.1.2)
-      railties (>= 4.0.0)
-      sassc (>= 2.0)
-      sprockets (> 3.0)
-      sprockets-rails
-      tilt
     selenium-webdriver (4.1.0)
       childprocess (>= 0.5, < 5.0)
       rexml (~> 3.2, >= 3.2.5)
@@ -251,7 +240,6 @@ GEM
     stimulus-rails (0.7.3)
       rails (>= 6.0.0)
     thor (1.1.0)
-    tilt (2.0.10)
     turbo-rails (0.9.0)
       rails (>= 6.0.0)
     tzinfo (2.0.4)

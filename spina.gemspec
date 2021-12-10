@@ -30,7 +30,6 @@ Gem::Specification.new do |gem|
   gem.add_dependency 'rails', '>= 6.0'
   gem.add_dependency 'pg'
   gem.add_dependency 'bcrypt'
-  gem.add_dependency 'sass-rails'
   gem.add_dependency 'image_processing'
   gem.add_dependency 'ancestry'
   gem.add_dependency 'breadcrumbs_on_rails'
