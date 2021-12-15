@@ -17,7 +17,7 @@ PATH
       rack-rewrite (>= 1.5.0)
       rails (>= 6.0)
       stimulus-rails (>= 0.7.0)
-      turbo-rails (~> 0.9)
+      turbo-rails (>= 0.9, < 2.0)
       view_component (~> 2.32)
 
 GEM
@@ -241,8 +241,9 @@ GEM
     stimulus-rails (0.7.3)
       rails (>= 6.0.0)
     thor (1.1.0)
-    turbo-rails (0.9.0)
-      rails (>= 6.0.0)
+    turbo-rails (1.0.0)
+      actionpack (>= 6.0.0)
+      railties (>= 6.0.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     view_component (2.46.0)
