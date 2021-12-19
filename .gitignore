@@ -20,9 +20,6 @@ test/dummy/storage/*
 
 /node_modules
 /public/spina-packs
-yarn-debug.log*
-.yarn-integrity
-/yarn-error.log
 
 .nova
 .ruby-version

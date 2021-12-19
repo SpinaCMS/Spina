@@ -18,6 +18,7 @@ PATH
       rails (>= 6.0)
       sprockets-rails
       stimulus-rails (>= 0.7.0)
+      tailwindcss-rails
       turbo-rails (>= 0.9, < 2.0)
       view_component (~> 2.32)
 
@@ -267,6 +268,8 @@ GEM
     strscan (3.0.1)
     thor (1.2.1)
     timeout (0.2.0)
+    tailwindcss-rails (2.0.0)
+      railties (>= 6.0.0)
     turbo-rails (1.0.0)
       actionpack (>= 6.0.0)
       railties (>= 6.0.0)

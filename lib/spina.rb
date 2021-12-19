@@ -4,7 +4,6 @@ require 'spina/railtie'
 require 'spina/theme_reloader'
 require 'spina/plugin'
 require 'spina/theme'
-require 'spina/tailwind_purger'
 require 'spina/attr_json_spina_parts_model'
 require 'spina/attr_json_monkeypatch'
 require 'spina/authentication/sessions'
@@ -59,15 +58,15 @@ module Spina
   # An importmap specifically meant for Spina
   self.importmap = Importmap::Map.new
     
-  # Tailwind purging
+  # Tailwind content
   # Spina will by default purge all unused Tailwind classes by scanning
   # the files listed below. You probably don't want to override this in 
   # your main app. Spina Plugins can add files to this array.
-  self.tailwind_purge_content = Spina::Engine.root.glob("app/views/**/*.*") + 
-                                Spina::Engine.root.glob("app/components/**/*.*") + 
-                                Spina::Engine.root.glob("app/helpers/**/*.*") + 
-                                Spina::Engine.root.glob("app/assets/javascripts/**/*.js") +
-                                Spina::Engine.root.glob("app/**/tailwind/custom.css")
+  self.tailwind_purge_content = ["#{Spina::Engine.root}/app/views/**/*.*",
+                                 "#{Spina::Engine.root}/app/components/**/*.*",
+                                 "#{Spina::Engine.root}/app/helpers/**/*.*",
+                                 "#{Spina::Engine.root}/app/assets/javascripts/**/*.js",
+                                 "#{Spina::Engine.root}/app/**/application.tailwind.css"]
 
   # Images that are embedded in the Trix editor are resized to fit
   # You can optimize this for your website and go for a smaller (or larger) size
