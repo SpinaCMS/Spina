@@ -84,6 +84,10 @@ module Spina
     def bootstrap_spina
       rake 'spina:bootstrap'
     end
+    
+    def build_tailwind
+      rake 'spina:tailwind:build'
+    end
 
     def feedback
       puts
