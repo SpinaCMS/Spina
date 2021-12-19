@@ -1,6 +1,6 @@
 module.exports = {
   content: [
-    <%= Spina.config.tailwind_purge_content.map{|path|"'#{path}'"}.join(",\n") %>
+    <%= Spina.config.tailwind_content.map{|path|"'#{path}'"}.join(",\n") %>
   ],  
   theme: {
     fontFamily: {

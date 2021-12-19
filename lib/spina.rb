@@ -32,7 +32,7 @@ module Spina
                   :mailer_defaults,
                   :thumbnail_image_size,
                   :party_pooper,
-                  :tailwind_purge_content,
+                  :tailwind_content,
                   :queues,
                   :transliterations
 
@@ -59,14 +59,16 @@ module Spina
   self.importmap = Importmap::Map.new
     
   # Tailwind content
-  # Spina will by default purge all unused Tailwind classes by scanning
-  # the files listed below. You probably don't want to override this in 
-  # your main app. Spina Plugins can add files to this array.
-  self.tailwind_purge_content = ["#{Spina::Engine.root}/app/views/**/*.*",
-                                 "#{Spina::Engine.root}/app/components/**/*.*",
-                                 "#{Spina::Engine.root}/app/helpers/**/*.*",
-                                 "#{Spina::Engine.root}/app/assets/javascripts/**/*.js",
-                                 "#{Spina::Engine.root}/app/**/application.tailwind.css"]
+  # In order for Tailwind to generate all of the CSS Spina needs, 
+  # it needs to know about every single file in your project 
+  # that contains any Tailwind class names.
+  # Make sure to add your own glob patterns if you're extending
+  # Spina's UI.
+  self.tailwind_content = ["#{Spina::Engine.root}/app/views/**/*.*",
+                           "#{Spina::Engine.root}/app/components/**/*.*",
+                           "#{Spina::Engine.root}/app/helpers/**/*.*",
+                           "#{Spina::Engine.root}/app/assets/javascripts/**/*.js",
+                           "#{Spina::Engine.root}/app/**/application.tailwind.css"]
 
   # Images that are embedded in the Trix editor are resized to fit
   # You can optimize this for your website and go for a smaller (or larger) size
@@ -76,6 +78,16 @@ module Spina
     
     def config
       config_obj = self.config_original
+      
+      def config_obj.tailwind_purge_content
+        ActiveSupport::Deprecation.warn("config.tailwind_purge_content has been renamed to config.tailwind_content")
+        tailwind_content
+      end
+      
+      def config_obj.tailwind_purge_content=(paths)
+        ActiveSupport::Deprecation.warn("config.tailwind_purge_content has been renamed to config.tailwind_content")
+        tailwind_content = paths
+      end
       
       def config_obj.embedded_image_size=(image_size)
         if image_size.is_a? String
