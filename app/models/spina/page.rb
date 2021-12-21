@@ -123,11 +123,11 @@ module Spina
 
       def localized_materialized_path
         segments = if Mobility.locale == I18n.default_locale
-                     [Spina.mounted_at, generate_materialized_path]
-                   else
-                     [Spina.mounted_at, Mobility.locale, generate_materialized_path]
-                   end
-        File.join(*segments.compact)
+          [Spina.mounted_at, generate_materialized_path]
+        else
+          [Spina.mounted_at, Mobility.locale, generate_materialized_path]
+        end
+        File.join(*segments.map(&:to_s).compact)
       end
 
       def generate_materialized_path

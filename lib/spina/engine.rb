@@ -1,4 +1,3 @@
-require 'sass-rails'
 require 'importmap-rails'
 require 'turbo-rails'
 require 'stimulus-rails'
@@ -9,7 +8,7 @@ require 'mobility'
 require 'rack-rewrite'
 require 'babosa'
 require 'attr_json'
-require 'view_component/engine'
+require 'view_component'
 require 'jsonapi/serializer'
 require 'browser'
 
