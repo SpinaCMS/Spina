@@ -2,6 +2,9 @@
 
 ## 2.6
 
+### 2.6.2 (December 22nd, 2021)
+* Updated gem dependencies
+
 ### 2.6.1 (December 10th, 2021)
 * Removed sass-rails dependency
 
