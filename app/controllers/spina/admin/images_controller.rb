@@ -23,6 +23,8 @@ module Spina
       # 2. We destroy the entire record if the uploaded file is not an image
       def create
         @images = params[:image][:files].map do |file|
+          next if file.blank? # Skip the blank string posted by the hidden files[] field
+          
           # Create the image and attach the file
           image = Image.create(media_folder_id: image_params[:media_folder_id])
           image.file.attach(file)
