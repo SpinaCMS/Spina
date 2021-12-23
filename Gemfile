@@ -2,7 +2,7 @@ source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gemspec
-gem 'rails', '~> 6.1.4'
+gem 'rails', '~> 7.0.0'
 
 group :development do
   gem 'letter_opener'
