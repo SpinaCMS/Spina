@@ -1,5 +1,11 @@
 # Spina CMS Changelog
 
+## 2.7
+
+### 2.7.0 (December 23rd, 2021)
+* Added support for Rails 7
+* Fixed ActiveStorage bugs
+
 ## 2.6
 
 ### 2.6.2 (December 22nd, 2021)
