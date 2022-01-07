@@ -28,7 +28,7 @@ module Spina
         signed_blob_id.present?
       end
       
-      def signed_id
+      def signed_id(expires_in: nil)
         signed_blob_id
       end
       
