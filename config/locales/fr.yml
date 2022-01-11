@@ -346,9 +346,9 @@ fr:
       heading_2: Titre 2
       heading_3: Titre 3
       insert_link: Insérer un lien
-      link: 
+      link: Lien
       paragraph: Paragraphe
       quote: Citation
-      unlink: 
-      url: 
-      url_placeholder: 
+      unlink: Supprimer le lien
+      url: URL
+      url_placeholder: Entrer une URL
