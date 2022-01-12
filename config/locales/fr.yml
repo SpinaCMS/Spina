@@ -1,4 +1,10 @@
 fr:
+  activemodel:
+    attributes:
+      spina/embeds/youtube:
+        url: youtube.com/watch?v=...
+      spina/embeds/vimeo:
+        url: vimeo.com/...
   activerecord:
     attributes:
       spina/account:
@@ -37,21 +43,21 @@ fr:
         pages_description: Sélectionnez les pages que vous voulez utiliser dans cette navigation
       spina/page:
         ancestry: Page parente
-        created_at: 
+        created_at: Créer le
         description: Meta description
         description_description: Cette description sera affichée dans les résultats de recherche
         description_placeholder: Petite description de votre page
         draft: Brouillon
         draft_description: Idéal lorsque votre page n'est pas tout à fait terminée
-        link_url: 
-        link_url_description: 
-        link_url_placeholder: 
+        link_url: URL de redirection
+        link_url_description: Rediriger vers
+        link_url_placeholder: e.g. http://www.example.com/
         menu_title: Titre dans la navigation
         menu_title_placeholder: Laissez vide pour utiliser le titre de la page
         no_parent: Pas de parent
-        resource: 
+        resource: Ressource
         seo_title: Balise SEO <title>
-        seo_title_description: 
+        seo_title_description: Assurez vous que vos résultats de recherche sont clairs dans les moteurs de recherche
         seo_title_placeholder: Ce titre est utilisé dans a balise <title>
         show_in_menu: Afficher dans la navigation
         show_in_menu_description: Si désactivé cette page ne ​​sera pas affichée dans la navigation
@@ -59,15 +65,15 @@ fr:
         skip_to_first_child_description: Renvoyer vers la première page enfant
         title: Titre
         title_placeholder: Titre de la page
-        url_title: 
-        url_title_description: 
-        url_title_placeholder: 
+        url_title: Remplacez le slug
+        url_title_description: Optionnel
+        url_title_placeholder: Slug
         view_template: Modèle de page
       spina/resource:
-        label: 
-        order_by: 
-        parent_page: 
-        view_template: 
+        label: Label
+        order_by: Trier par
+        parent_page: Page parente
+        view_template: Modèle de page par défaut
       spina/user:
         admin: Administrateur
         admin_description: Les administrateurs peuvent créer des utilisateurs
@@ -94,21 +100,31 @@ fr:
       spina/user:
         one: Utilisateur
         other: Utilisateurs
+  helpers:
+    label:
+      spina/embeds/button:
+        url: URL
+        label: Label du bouton
+      spina/embeds/youtube:
+        url: URL Youtube
+      spina/embeds/vimeo:
+        url: URL Vimeo
   spina:
     accounts:
-      contact_details: 
-      contact_details_description: 
-      couldnt_be_saved: 
-      name_description: 
-      save: 
-      saved: 
+      contact_details: Informations de contact
+      contact_details_description: Email et téléphone
+      couldnt_be_saved: "Le compte n\'a pas pu être enregistré"
+      name_description: Le nom de votre site
+      save: Enregistrer le compte
+      saved: Compte enregistré
     ago: Il y a
     attachments:
-      choose_attachment: 
-      delete_confirmation_html: 
+      choose_attachment: Choisir la pièce jointe
+      delete_confirmation_html: Êtes-vous sûr ? Cette pièce jointe pourrait être utilisée sur une page
+      download: Télécharger
       insert: Insérer un document
       insert_multiple: Insérer des documents
-      upload: 
+      upload: Télécharger
     cancel: Annuler
     choose_from_library: Choisir parmi la bibliothèque
     close: Fermer
@@ -116,6 +132,9 @@ fr:
     delete_confirmation: 'Êtes-vous sûr de vouloir supprimer : <strong>%{subject}</strong> ?'
     edit: Editer
     edit_website: Éditer votre site
+    embeds:
+      embed_a_component: Insérer un composant
+      embed_component: Insérer composant
     forgot_password:
       expired: Votre jeton pour réinitialiser votre mot de passe a expiré
       mail_subject: Réinitialiser votre mot de passe
@@ -123,135 +142,138 @@ fr:
       request: Réinitialiser
       save: Enregistrer le nouveau mot de passe
       success: Vous pouvez utiliser votre nouveau mot de passe
-      unknown_user: Cet utilisateur n'existe pas
+      unknown_user: "Cet utilisateur n'existe pas"
     images:
-      all_images: 
-      back: 
-      cannot_be_created: 
-      choose_image: 
-      choose_images: 
-      confirm_selection: 
-      delete: 
-      delete_confirmation_html: 
-      delete_folder: 
-      done_organizing: 
-      insert_image: 
-      insert_photo: 
-      insert_photos: 
-      link: 
-      new_folder: 
-      organize: 
-      remove_image: 
-      upload: 
-      upload_image: 
+      all_images: Toutes les images
+      back: Retour
+      cannot_be_created: Ne peut pas être créé
+      choose_image: Choisir image
+      choose_images: Choisir les images
+      confirm_selection: Confirmer la sélection
+      delete: Supprimer
+      delete_confirmation_html: 'Êtes-vous sûr de vouloir supprimer cette <strong>image</strong> ?'
+      delete_folder: Supprimer le dossier
+      done_organizing: Organisation terminée
+      insert_image: Insérer image
+      insert_photo: Insérer photo
+      insert_photos: Insérer les photos
+      link: Lien
+      missing_image: Image manquante
+      new_folder: Nouveau dossier
+      organize: Organiser
+      remove_image: Supprimer image
+      upload: Télécharger
+      upload_image: Télécharger image
     languages:
-      bg: 
-      de: 
+      bg: Bulgare
+      de: Allemand
       en: Anglais
-      es: 
+      es: Espagnol
       fr: Français
-      id: 
-      it: 
+      id: Indonésien
+      it: Italien
       nl: Néerlandais
-      pl: 
-      pt-BR: 
-      ro: 
-      ru: 
-      sv: 
-      th: 
-      tr: 
-      zh-CN: 
+      pl: Polonais
+      pt-BR: Portuguais brésilien
+      ro: Roumain
+      ru: Russe
+      sv: Suédois
+      th: Thaï
+      tr: Turque
+      zh-CN: Chinois simplifié
     layout:
-      couldnt_be_saved: 
-      layout: 
-      no_layout_parts: 
-      save: 
-      saved: 
+      couldnt_be_saved: "La mise en page n'a pas pu être enregistrée"
+      layout: Mise en page
+      no_layout_parts: Aucun élément de mise en page
+      save: Sauvegarder
+      saved: Sauvegarder
     login: Connexion
     logout: Déconnexion
     main_menu: Menu principal
     media_library:
-      add_folder: 
-      add_image: 
+      add_folder: Ajouter un dossier
+      add_image: Ajouter une image
       attachments: Documents
-      back_to_all: 
-      filename: 
-      images: 
+      back_to_all: Revenir à tous
+      filename: Nom de fichier
+      images: Images
       images_count: 
-      insert: 
-      media_folder_delete_confirmation_html: 
-      no_folder: 
+        one: 1 image
+        other: "%{count} images"
+      insert: Insérer image
+      media_folder_delete_confirmation_html: 'Êtes-vous sûr ? Les images ne seront <strong>pas</strong> supprimées ?'
+      no_folder: Pas de dossier
       photos: Images
-      rename_folder: 
-      save_media_folder: 
-      upload_from_device: 
-      uploading: 
+      rename_folder: Renommer la dossier
+      save_media_folder: Enregistrer le dossier
+      upload_from_device: Télécharger depuis votre appareil
+      uploading: En cours de téléchargement
     modal:
       agree: Oui, je suis sûr
       cancel: Non, annuler
     navigations:
-      add_menu_item: 
-      add_sub_item: 
-      choose_page: 
-      delete_item: 
-      delete_item_confirmation_html: 
-      description: 
-      navigations: 
-      no_navigations: 
-      sorting_saved: 
+      add_menu_item: Ajouter un élément de menu
+      add_sub_item: Ajouter un sous-élément
+      choose_page: Choisir la page
+      delete_item: Supprimer élément
+      delete_item_confirmation_html: 'Êtes-vous sûr de vouloir <strong>supprimer</strong> cet élément de menu ?'
+      description: Description
+      navigations: Navigations
+      no_navigations: Aucune navigation
+      sorting_saved: Trier les éléments sauvegardés
     notifications:
       alert: Oups! Quelque chose a mal fonctionné
       information: Information
-      login: Vous devez d'abord vous identifier
+      login: "Vous devez d'abord vous identifier"
       wrong_username_or_password: Mauvais email ou mot de passe
     options:
-      choose_option: 
+      choose_option: Choisir option
     pages:
-      add_page_to: 
-      add_translation: 
+      add_page_to: Ajouter la page à
+      add_translation: Ajouter traduction
       advanced: Avancé
-      cannot_be_deleted: 
-      change_order: Changer l'ordre
-      change_view_template: 
-      change_view_template_confirmation: 
+      cannot_be_deleted: Ne peut pas être supprimée
+      change_order: "Changer l'ordre"
+      change_view_template: Changer le modèle de vue
+      change_view_template_confirmation: Changer la confirmation du modèle de vue
       concept: brouillon
-      create: 
+      create: Créer
       create_page: Nouvelle page %{template}
-      delete: 
+      delete: Supprimer
       delete_confirmation: 'Êtes-vous sûr de vouloir supprimer la page :  <strong>%{subject}</strong> ?'
-      deleted: 
-      done_changing_order: Changement d'ordre effectué
-      edit_translation: 
-      invisible_to_search_engines: Votre site n'apparait pas sur les moteurs de recherche
-      invisible_to_search_engines_description: Allez dans vos préférences pour activer l'indexation sur les moteurs de recherche.
-      main_collection: 
+      deleted: Supprimé
+      done_changing_order: "Changement d'ordre effectué"
+      edit_translation: Modifier traduction
+      invisible_to_search_engines: "Votre site n'apparait pas sur les moteurs de recherche"
+      invisible_to_search_engines_description: "Allez dans vos préférences pour activer l'indexation sur les moteurs de recherche."
+      main_collection: Collection principale
       materialize_path_confirmation: Êtes-vous sûr de vouloir reconstruire le chemin pour cette page ?
-      missing_translations: 
-      move_page: 
-      moved: 
+      missing_translations: Traductions manquantes
+      move_page: Déplacer la page
+      moved: Déplacé
       new: Nouvelle page
-      no_pages_yet: 
-      no_parent_page: 
+      no_pages_yet: Pas encore de page
+      no_parent_page: Pas de page parente
       page_content: Contenu
       page_part: Section de page
       page_seo: Moteurs de recherche
-      path: 
+      path: Chemin
       photo_picker: Choisir une image
       photos_picker: Choisir des images
-      preview: 
-      publish: 
-      published: 
+      preview: Aperçu
+      publish: Publier
+      published: Publié
       rebuild_materialized_path: Reconstruire le chemin matérialisé
-      recommended: 
+      recommended: Recommandé
       save: Sauvegarder la page
-      save_changes: 
-      save_draft: 
+      save_changes: Enregistrer les changements
+      save_draft: Enregistrer brouillon
       saved: Page enregistrée
       saving: Enregistrement...
-      search_engines: 
+      search_engines: Moteurs de recherche
       show_in_menu: invisible
       skip_to_first_child: Renvoyer vers la première page enfant
-      sorting_saved: 
+      sorting_saved: Trier les éléments sauvegardés
     permanently_delete: Supprimer définitivement
     photos:
       cannot_be_created: 'L''image n''a pas pu être traitée :'
@@ -265,16 +287,16 @@ fr:
       link: 'URL de votre image:'
       new_folder: Nouveau dossier
       organize: Organiser les images
-      rename_folder: 
-      select_images: 
+      rename_folder: Renommer dossier
+      select_images: Choisir images
       upload_image: Envoyer une image
     preferences:
-      Analytics: 
+      Analytics: "Outils d'analyse"
       account: Général
       account_description: Les préférences personnelles
       account_save: Sauvegarder les préférences
       analytics: Analytics et moteurs de recherche
-      analytics_description: Connectez votre compte pour faire de l'analyse en temps réel
+      analytics_description: "Connectez votre compte pour faire de l'analyse en temps réel"
       analytics_save: Sauvegarder vos préférences
       domain_name_settings: Paramètres de domaine
       domain_name_settings_description: Configuration de votre nom de domaine
@@ -289,57 +311,73 @@ fr:
       users_description: Gérer les utilisateurs et les administrateurs
     preview_website: Aperçu du site
     resources:
-      edit: 
-      label_description: 
-      manual_sorting: 
-      no_default_template: 
-      saved: 
-      settings: 
-      settings_description: 
+      edit: Mettre à jour
+      label_description: Description du label
+      manual_sorting: Tri manuel
+      no_default_template: Pas de modèle par défaut
+      saved: Sauvegardé
+      settings: Paramètres
+      settings_description: Sélectionner les paramètres de votre modèle
     save: Enregistrer
     search: Rechercher...
     settings:
+      general: Général
       save: Enregistrer les paramètres
       title: Paramètres
+      users: Utilisateurs
     theme:
-      save: 
-      saved: 
-      theme: 
-      theme_description: 
+      save: Enregistrer modèle
+      saved: Modèle enregistré
+      theme: Modèle
+      theme_description: Configurer votre modèle
     ui:
-      cancel: 
-      delete: 
-      load_more: 
-      move_to: 
-      new_entry: 
-      optional: 
-      rename: 
-      save_changes: 
-      saving: 
+      cancel: Annuler
+      delete: Supprimer
+      load_more: Charger plus
+      move_to: Déplacer vers
+      new_entry: Nouvelle entrée
+      optional: Optionnel
+      rename: Renommer
+      save_changes: Enregistrer les changements
+      saving: "En cours d'enregistrement"
+    user_mailer:
+      forgot_password:
+        button: Réinitialiser votre mot de passe
+        introduction: Vous avez récemment demandé à réinitialiser le mot de passe de votre compte Spina CMS. Le lien ci-dessous est valable 2 heures. Copiez le dans votre navigateur.
+        introduction_html: "Vous avez récemment demandé à réinitialiser le mot de passe de votre compte Spina CMS. Utilisez le bouton ci-dessous pour le mettre à jour. <strong>Le lien est valable 2 heures.</strong>"
+        preheader: Utilisez ce lien pour réinitialiser votre mot de passe. Il est valable 2 heures.
+        request_origin: "Pour votre sécurité, cette demande a été reçu depuis un appareil %{platform} utilisant %{browser}. Si vous n'avez pas effectué cette demande, merci d'ignorer cet email."
+        salutation: Bonjour, %{name}
+        subject: Réinitialisation de votre mot de passe
+        trouble: "Si vous avez des problèmes avec le boutton ci-dessus, copiez-collez l'URL ci-dessous dans votre navigateur."
     users:
-      authorization: 
-      authorization_description: 
-      cannot_be_created: L'utilisateur ne peut pas être sauvegarder
-      delete: 
+      authorization: Autorisation
+      authorization_description: Les administrateurs peuvent gérer les utilisateurs. Les utilisateurs classiques ne le peuvent pas.
+      cannot_be_created: "L'utilisateur ne peut pas être sauvegarder"
+      delete: Supprimer utilisateur
       delete_confirmation_html: 'Êtes-vous sûr de vouloir supprimer l''utilisateur :  <strong>%{user}</strong> ?'
-      deleted: 
-      last_login: 
-      never_logged_in: 
+      deleted: Utilisateur supprimé
+      last_login: Dernière connexion
+      never_logged_in: Jamais connecté depuis
       new: Nouvel utilisateur
-      profile: 
-      profile_description: 
-      save: Sauvegarder l'utilisateur
-      saved: 
-    visit_page: 
+      profile: Profil
+      profile_description: Cette information sera utilisée pour identifier différents utilisateurs. Les utilisateurs utiliseront leur email pour se connecter.
+      save: "Enregistrer l'utilisateur"
+      saved: Utilisateur enregistré
+    visit_page: Visiter la page
     website:
       all_pages: Toutes les pages
+      content: Contenu
       documents: Documents
-      images: 
+      images: Images
+      main: Principal
       media_library: Bibliothèque de médias
       media_library_description: Voici où vous trouverez toutes vos images et documents
       pages: Pages
       pages_description: Toutes les pages de votre site
       photos: Images
+      settings: Paramètres
+      theme: Modèle
       title: Votre site
     wysiwyg:
       heading_1: Titre 1
