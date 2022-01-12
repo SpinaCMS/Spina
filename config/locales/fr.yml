@@ -113,7 +113,7 @@ fr:
     accounts:
       contact_details: Informations de contact
       contact_details_description: Email et téléphone
-      couldnt_be_saved: "Le compte n\'a pas pu être enregistré"
+      couldnt_be_saved: "Le compte n'a pas pu être enregistré"
       name_description: Le nom de votre site
       save: Enregistrer le compte
       saved: Compte enregistré
