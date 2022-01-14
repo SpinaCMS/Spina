@@ -1,0 +1,195 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Configuration */
+@layer base {
+  :root {
+    --animate-duration: 600ms;
+  }
+  
+  html {
+    @apply font-body;
+  }
+  
+  body {
+    background: #F5F5FA; /* Ever so slightly indigo bg */
+    @apply antialiased;
+  }
+  
+  /* Disable tap highlight on iOS */
+  a, button {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+  }
+}
+
+/* Components */
+@layer components {
+  /* Buttons */
+  .btn {
+    @apply flex items-center justify-center rounded-md border;
+    @apply h-9 px-4;
+    @apply text-sm font-medium leading-none whitespace-nowrap;
+    @apply transition-colors duration-200;
+    @apply cursor-pointer;
+  }
+  
+  .btn-default {
+    @apply text-gray-700 bg-white shadow-sm border-gray-300;
+  }
+  
+  .btn-default:hover {
+    @apply bg-gray-50;
+  }
+  
+  .btn-default:active {
+    @apply shadow-inner bg-gray-100;
+  }
+  
+  .btn-primary {
+    @apply bg-spina border-spina-dark text-white;
+  }
+  
+  .btn-primary:hover {
+    @apply bg-spina-dark;
+  }
+  
+  .btn-red {
+    @apply bg-red-500 border-red-500;
+    @apply text-white;
+  }
+  
+  .btn.btn-red:hover {
+    @apply bg-red-600 border-red-600;
+  }
+  
+  .btn.btn-red:active {
+    @apply bg-red-600 border-red-600 shadow-inner;
+  }
+  
+  .btn-gray {
+    @apply border-gray-300;
+    @apply text-gray-800;
+    @apply bg-gray-300;
+  }
+  
+  .btn-gray:hover {
+    @apply bg-gray-400 border-gray-400 bg-opacity-75;
+  }
+  
+  .btn-gray:active {
+    @apply bg-gray-400 border-gray-400 bg-opacity-75 shadow-inner;
+  }
+  
+  .btn-green {
+    @apply bg-green-500;
+  }
+  
+  /* Forms */
+  .form-input, .form-select {
+    /* @apply py-3 px-4; */
+    @apply text-gray-700;
+    @apply shadow-sm;
+    @apply transition duration-150 ease-in-out;
+    @apply border-gray-300;
+    @apply rounded-md;
+  }
+  
+  .form-input::placeholder {
+    @apply text-gray-400;
+  }
+  
+  .form-select {
+    @apply text-sm font-medium;
+    @apply pr-12;
+  }
+  
+  .form-select:focus {
+    @apply border-spina-light;
+    @apply ring-spina-light;
+  }
+  
+  .form-textarea {
+    @apply bg-white;
+    @apply text-gray-700;
+    @apply shadow-sm;
+    @apply transition duration-150 ease-in-out;
+    @apply border border-gray-300;
+    @apply rounded-md;
+  }
+  
+  .form-input:focus {
+    @apply border-spina-light;
+    @apply ring-spina-light
+  }
+  
+  /* Modals */
+  
+  .modal {
+    @apply flex items-center justify-center;
+    @apply fixed z-40 inset-0 h-full p-6;
+  }
+  
+  .modal-window {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    @apply w-full max-w-lg overflow-hidden relative;
+    @apply bg-white bg-opacity-75 shadow-lg rounded-xl;
+    @apply border border-gray-400;
+  }
+
+  /* Trix */  
+  .trix-toolbar button[data-trix-active] {
+    @apply text-white bg-spina;
+  }
+  
+  .trix-toolbar button[disabled] {
+    @apply bg-gray-100 text-gray-400;
+  }
+  
+  trix-editor [data-trix-mutable]:not(.attachment__captain-editor) {
+    @apply select-none
+  }
+    
+  trix-editor figure.attachment {
+    @apply m-0 inline-block
+  }
+
+  trix-editor figure.attachment[data-trix-content-type="Spina::Image"] {
+    max-height: 150px;
+    max-width: 200px;
+  }
+
+  trix-editor figure.attachment[data-trix-content-type="Spina::Image"] img {
+    @apply m-0 rounded-md object-contain;
+  }
+  
+  trix-editor figure.attachment[data-trix-content-type="Spina::Image"] [data-label]:after {
+    content: attr(data-label);
+    @apply italic text-gray-500 h-8 flex items-center px-2 mt-1 text-sm;
+  }
+
+  trix-editor figure[data-trix-mutable].attachment[data-trix-content-type="Spina::Image"] img {
+    @apply shadow-lg ring ring-spina-light
+  }
+  
+  trix-editor figure[data-trix-mutable][data-trix-content-type="application/vnd+spina.embed+html"].attachment > spina-embed {
+    @apply block;
+    @apply shadow-lg ring ring-spina-light rounded-md;
+  }
+
+  trix-editor figure .attachment__caption {
+    @apply hidden
+  }
+
+  trix-editor figure .attachment__toolbar {
+    @apply hidden
+  }
+  
+  trix-editor [data-trix-mutable]::-moz-selection,
+  trix-editor [data-trix-cursor-target]::-moz-selection, trix-editor [data-trix-mutable] ::-moz-selection {
+    background: none; }
+  trix-editor [data-trix-mutable]::selection,
+  trix-editor [data-trix-cursor-target]::selection, trix-editor [data-trix-mutable] ::selection {
+    background: none; }
+}
