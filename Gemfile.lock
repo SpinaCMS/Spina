@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    spina (2.7.0)
+    spina (2.8.0)
       ancestry
       attr_json
       babosa
@@ -123,7 +123,7 @@ GEM
     erubi (1.10.0)
     factory_bot (6.2.0)
       activesupport (>= 5.0.0)
-    ffi (1.15.4)
+    ffi (1.15.5)
     globalid (1.0.0)
       activesupport (>= 5.0)
     i18n (1.8.11)
