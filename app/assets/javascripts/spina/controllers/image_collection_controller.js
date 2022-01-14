@@ -7,9 +7,11 @@ export default class extends Controller {
   }
   
   connect() {
-    this.sortable = Sortable.create(this.collectionTarget, {
-      animation: 150
-    })
+    setTimeout(function() {
+      this.sortable = Sortable.create(this.collectionTarget, {
+        animation: 150
+      })
+    }.bind(this), 250)
   }
   
   removeImage(event) {
