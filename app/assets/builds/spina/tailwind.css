@@ -1530,122 +1530,87 @@ a, button {
 
 /* Trix */
 
-.trix-toolbar {
-  button[data-trix-active] {
-    --tw-bg-opacity: 1;
-    background-color: rgb(104 101 180 / var(--tw-bg-opacity));
-  }
-  button[data-trix-active] {
-    --tw-text-opacity: 1;
-    color: rgb(255 255 255 / var(--tw-text-opacity));
-  }
-  button[disabled] {
-    --tw-bg-opacity: 1;
-    background-color: rgb(243 244 246 / var(--tw-bg-opacity));
-  }
-  button[disabled] {
-    --tw-text-opacity: 1;
-    color: rgb(156 163 175 / var(--tw-text-opacity));
-  }
+.trix-toolbar button[data-trix-active] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(104 101 180 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-trix-editor {
-  [data-trix-mutable]:not(.attachment__captain-editor) {
-    -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
-  }
-  figure.attachment {
-    margin: 0px;
-  }
-  figure.attachment {
-    display: inline-block;
-  }
-  figure.attachment[data-trix-content-type="Spina::Image"] {
-    max-height: 150px;
-    max-width: 200px;
-  }
-  figure.attachment[data-trix-content-type="Spina::Image"] img {
-    margin: 0px;
-  }
-  figure.attachment[data-trix-content-type="Spina::Image"] img {
-    border-radius: 0.375rem;
-  }
-  figure.attachment[data-trix-content-type="Spina::Image"] img {
-    -o-object-fit: contain;
-       object-fit: contain;
-  }
-  figure.attachment[data-trix-content-type="Spina::Image"] [data-label]:after {
-    content: attr(data-label);
-  }
-  figure.attachment[data-trix-content-type="Spina::Image"] [data-label]:after {
-    margin-top: 0.25rem;
-  }
-  figure.attachment[data-trix-content-type="Spina::Image"] [data-label]:after {
-    display: flex;
-  }
-  figure.attachment[data-trix-content-type="Spina::Image"] [data-label]:after {
-    height: 2rem;
-  }
-  figure.attachment[data-trix-content-type="Spina::Image"] [data-label]:after {
-    align-items: center;
-  }
-  figure.attachment[data-trix-content-type="Spina::Image"] [data-label]:after {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-  }
-  figure.attachment[data-trix-content-type="Spina::Image"] [data-label]:after {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-  }
-  figure.attachment[data-trix-content-type="Spina::Image"] [data-label]:after {
-    font-style: italic;
-  }
-  figure.attachment[data-trix-content-type="Spina::Image"] [data-label]:after {
-    --tw-text-opacity: 1;
-    color: rgb(107 114 128 / var(--tw-text-opacity));
-  }
-  figure[data-trix-mutable].attachment[data-trix-content-type="Spina::Image"] img {
-    --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-    --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
-    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-  }
-  figure[data-trix-mutable].attachment[data-trix-content-type="Spina::Image"] img {
-    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);
-    box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
-  }
-  figure[data-trix-mutable].attachment[data-trix-content-type="Spina::Image"] img {
-    --tw-ring-opacity: 1;
-    --tw-ring-color: rgb(121 122 184 / var(--tw-ring-opacity));
-  }
-  figure[data-trix-mutable][data-trix-content-type="application/vnd+spina.embed+html"].attachment > spina-embed {
-    display: block;
-  }
-  figure[data-trix-mutable][data-trix-content-type="application/vnd+spina.embed+html"].attachment > spina-embed {
-    border-radius: 0.375rem;
-  }
-  figure[data-trix-mutable][data-trix-content-type="application/vnd+spina.embed+html"].attachment > spina-embed {
-    --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-    --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
-    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-  }
-  figure[data-trix-mutable][data-trix-content-type="application/vnd+spina.embed+html"].attachment > spina-embed {
-    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);
-    box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
-  }
-  figure[data-trix-mutable][data-trix-content-type="application/vnd+spina.embed+html"].attachment > spina-embed {
-    --tw-ring-opacity: 1;
-    --tw-ring-color: rgb(121 122 184 / var(--tw-ring-opacity));
-  }
-  figure .attachment__caption {
-    display: none;
-  }
-  figure .attachment__toolbar {
-    display: none;
-  }
+.trix-toolbar button[disabled] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(156 163 175 / var(--tw-text-opacity));
+}
+
+trix-editor [data-trix-mutable]:not(.attachment__captain-editor) {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+trix-editor figure.attachment {
+  margin: 0px;
+  display: inline-block;
+}
+
+trix-editor figure.attachment[data-trix-content-type="Spina::Image"] {
+  max-height: 150px;
+  max-width: 200px;
+}
+
+trix-editor figure.attachment[data-trix-content-type="Spina::Image"] img {
+  margin: 0px;
+  border-radius: 0.375rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+trix-editor figure.attachment[data-trix-content-type="Spina::Image"] [data-label]:after {
+  content: attr(data-label);
+  margin-top: 0.25rem;
+  display: flex;
+  height: 2rem;
+  align-items: center;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-style: italic;
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity));
+}
+
+trix-editor figure[data-trix-mutable].attachment[data-trix-content-type="Spina::Image"] img {
+  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(121 122 184 / var(--tw-ring-opacity));
+}
+
+trix-editor figure[data-trix-mutable][data-trix-content-type="application/vnd+spina.embed+html"].attachment > spina-embed {
+  display: block;
+  border-radius: 0.375rem;
+  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(121 122 184 / var(--tw-ring-opacity));
+}
+
+trix-editor figure .attachment__caption {
+  display: none;
+}
+
+trix-editor figure .attachment__toolbar {
+  display: none;
 }
 
 trix-editor [data-trix-mutable]::-moz-selection,
