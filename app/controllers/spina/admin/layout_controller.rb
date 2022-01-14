@@ -11,7 +11,7 @@ module Spina::Admin
 
     def update
       if @account.update(layout_params)
-        redirect_to spina.edit_admin_layout_path, flash: {success: t('spina.layout.saved')}
+        redirect_to spina.edit_admin_layout_path(locale: @locale), flash: {success: t('spina.layout.saved')}
       else
         flash.now[:error] = t('spina.layout.couldnt_be_saved')
         render partial: 'error', status: :unprocessable_entity
