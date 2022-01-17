@@ -5,8 +5,9 @@ module Spina
 
       attr_json_config(unknown_key: :strip)
 
-      attr_json :title, :string
       attr_json :name, :string
+      
+      attr_accessor :title, :hint
 
       def label
         content&.to_s

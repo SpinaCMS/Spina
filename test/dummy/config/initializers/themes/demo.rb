@@ -12,6 +12,7 @@ Spina::Theme.register do |theme|
   theme.parts = [{
     name: 'repeater',
     title: "Repeater",
+    hint: "Repeat something",
     part_type: "Spina::Parts::Repeater",
     parts: ['line', 'body', 'image', 'image_collection']
   }, {
@@ -26,14 +27,17 @@ Spina::Theme.register do |theme|
   }, {
     name: 'body',
     title: "Body",
+    hint: "Put all of your main content here",
     part_type: "Spina::Parts::Text"
   }, {
     name: "image_collection",
     title: "Image collection",
+    hint: "Choose multiple images",
     part_type: "Spina::Parts::ImageCollection"
   }, {
     name: 'image',
     title: "Image",
+    hint: "Choose an image",
     part_type: "Spina::Parts::Image"
   }, {name: 'portrait', part_type: 'Spina::Parts::Image', options: {ratio: "portrait"}
   }, {name: 'landscape', part_type: 'Spina::Parts::Image', options: {ratio: "landscape"}
@@ -41,6 +45,7 @@ Spina::Theme.register do |theme|
   }, {
     name: 'headline',
     title: "Headline",
+    hint: "This is what's displayed in your header",
     part_type: "Spina::Parts::Line"
   }, {
     name: 'footer',
@@ -49,15 +54,18 @@ Spina::Theme.register do |theme|
   }, {
     name: 'option',
     title: "Option",
+    hint: "An option",
     part_type: "Spina::Parts::Option",
     options: [["Left", 'left'], ["Center", 'center'], ["Right", 'right']]
   }, {
     name: 'attachment',
     title: "Attachment",
+    hint: "Pick an attachment",
     part_type: "Spina::Parts::Attachment"
   }, {
     name: 'testrepeater',
     title: 'Testrepeater',
+    hint: "Repeat some content",
     part_type: "Spina::Parts::Repeater",
     parts: %w(line body)
   }]

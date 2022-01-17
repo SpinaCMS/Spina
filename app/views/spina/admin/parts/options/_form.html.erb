@@ -1,5 +1,6 @@
 <div class="mt-6">
   <label for="price" class="block text-sm leading-5 font-medium text-gray-700"><%= f.object.title %></label>
+  <div class="text-gray-400 text-sm"><%= f.object.hint %></div>
 
-  <%= f.select :value, f.object.options, {include_blank: t("spina.options.choose_option")}, class: "form-select" %>
+  <%= f.select :value, f.object.options, {include_blank: t("spina.options.choose_option")}, class: "form-select mt-1" %>
 </div>

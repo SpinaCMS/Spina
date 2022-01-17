@@ -10,7 +10,7 @@ module Spina
         part = find_part(attributes[:name]) || attributes[:part_type].constantize.new
 
         # Copy all attributes to part
-        %w(name title options).each do |attribute|
+        %w(name title hint options).each do |attribute|
           part.public_send("#{attribute}=", attributes[attribute.to_sym]) if part.respond_to?(attribute)
         end
 
