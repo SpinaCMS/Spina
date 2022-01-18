@@ -23,10 +23,10 @@ Spina::Theme.register do |theme|
   theme.parts = [
     {name: 'repeater', title: "Repeater", part_type: "Spina::Parts::Repeater", parts: %w(line image headline)}, 
     {name: 'line', title: "Line", part_type: "Spina::Parts::Line"}, 
-    {name: 'body', title: "Body", part_type: "Spina::Parts::Text"}, 
+    {name: 'body', title: "Body", hint: "Your content", part_type: "Spina::Parts::Text"}, 
     {name: "image_collection", title: "Image collection", part_type: "Spina::Parts::ImageCollection"},
     {name: 'image', title: "Image", part_type: "Spina::Parts::Image"}, 
-    {name: 'headline', title: "Headline", part_type: "Spina::Parts::Line"}, 
+    {name: 'headline', title: "Headline", hint: "Used in the header", part_type: "Spina::Parts::Line"}, 
     {name: 'footer', title: "Footer", part_type: "Spina::Parts::Text"}
   ]
 

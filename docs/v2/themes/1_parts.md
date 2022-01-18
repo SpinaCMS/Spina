@@ -23,35 +23,33 @@ Spina uses an initializer to create the basic building blocks of your page. Ther
 When you install Spina, you will see the following in config/initializers/themes/default.rb
 
 ```ruby
-::Spina::Theme.register do |theme|
+Spina::Theme.register do |theme|
   theme.name = 'default'
-  theme.title = 'Default Theme'
+  theme.title = 'Default theme'
+  
+  theme.parts = [
+    {name: 'text',  title: "Body", hint: "Your main content", part_type: "Spina::Parts::Text"}
+  ]
+  
+  theme.view_templates = [
+    {name: 'homepage', title: 'Homepage', parts: %w(text)}, 
+    {name: 'show', title: 'Page', parts: %w(text)}
+  ]
+  
+  theme.custom_pages = [
+    {name: 'homepage', title: "Homepage", deletable: false, view_template: "homepage"},
+  ]
 
-  theme.parts = [{
-    name:         'content',
-    title:        'Content',
-    part_type:    'Spina::Parts::Text'
-  }]
-
-  theme.view_templates = [{
-    name:  'homepage',
-    title: 'Homepage',
-    parts: %w(content)
-  }, {
-    name: 'show',
-    title:        'Default',
-    description:  'A simple page',
-    usage:        'Use for your content',
-    parts:        %w(content)
-  }]
-
-  theme.custom_pages = [{
-    name:           'homepage',
-    title:          'Homepage',
-    deletable:      false,
-    view_template:  'homepage'
-  }]
+  theme.navigations = [
+    {name: 'main', label: 'Main navigation'}
+  ]
+  
+  theme.layout_parts = []
+  theme.resources = []
+  theme.plugins = []
+  theme.embeds = []
 end
+
 ```
 
 Right now, the default theme is applying a title to the page, with a simple text div below it. Go to /admin on your app and have a look. Edit the textbox and go to preview the page.
