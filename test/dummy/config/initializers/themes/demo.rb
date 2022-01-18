@@ -41,6 +41,7 @@ Spina::Theme.register do |theme|
   }, {
     name: 'headline',
     title: "Headline",
+    hint: "This will be shown in your header",
     part_type: "Spina::Parts::Line"
   }, {
     name: 'footer',

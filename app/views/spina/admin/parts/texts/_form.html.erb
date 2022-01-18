@@ -1,5 +1,6 @@
 <div class="mt-6" data-controller="unique-id" data-unique-id="<%= f.object.object_id %>">
   <label class="block text-sm leading-5 font-medium text-gray-700"><%= f.object.title %></label>
+  <div class="text-gray-400 text-sm"><%= f.object.hint %></div>
   <div class="mt-1 relative">
     <%= f.hidden_field :content, id: "#{f.object.object_id}_input" %>
 

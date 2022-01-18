@@ -21,7 +21,7 @@ Spina::Theme.register do |theme|
   # - Option
   # - Repeater
   theme.parts = [
-    {name: 'text',  title: "Body", part_type: "Spina::Parts::Text"}
+    {name: 'text',  title: "Body", hint: "Your main content", part_type: "Spina::Parts::Text"}
   ]
   
   # View templates

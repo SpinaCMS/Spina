@@ -6,6 +6,7 @@
   theme.parts = [{
     name:       'text',
     title:      'Text',
+    hint:       'Your main content',
     part_type:  'Spina::Parts::Text'
   }]
 

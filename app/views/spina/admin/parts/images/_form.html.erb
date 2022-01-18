@@ -2,6 +2,7 @@
   <label class="block text-sm leading-5 font-medium text-gray-700">
     <%= f.object.title %>
   </label>
+  <div class="text-gray-400 text-sm"><%= f.object.hint %></div>
 
   <%= f.hidden_field :signed_blob_id, data: {media_picker_target: "signedBlobId"} %>
   <%= f.hidden_field :filename, data: {media_picker_target: "filename"} %>
