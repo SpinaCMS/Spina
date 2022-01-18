@@ -70,14 +70,19 @@ Spina::Theme.register do |theme|
   }, {
     name: 'show',
     title: 'Simple page',
-    description: "Default layout",
-    usage: 'Use for your content',
     parts: ['body', 'testrepeater']
   }, {
     name: 'demo',
     title: 'Demo',
     description: 'Example including all parts',
-    parts: ['repeater', 'repeater2', 'attachment', 'option', 'body', 'image_collection', 'image', 'portrait', 'landscape', 'wide'],
+    sections: [{
+      title: "Hero",
+      description: "All content of hero section",
+      parts: %w(headline line)
+    }, {
+      title: "Main content",
+      parts: %w(body)
+    }],
     exclude_from: %w(guides)
   }, {
     name: 'blogpost',

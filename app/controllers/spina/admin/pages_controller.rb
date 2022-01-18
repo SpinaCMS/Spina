@@ -38,9 +38,12 @@ module Spina
       end
 
       def edit_content
-        @parts = current_theme.view_templates.find do |view_template|
-          view_template[:name].to_s == @page.view_template.to_s
-        end&.dig(:parts) || []
+        view_template = current_theme.view_templates.find do |template|
+          template[:name].to_s == @page.view_template.to_s
+        end
+        
+        @parts = view_template&.dig(:parts) || []
+        @sections = view_template&.dig(:sections) || []
       end
 
       def edit_template
