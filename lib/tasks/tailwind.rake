@@ -5,12 +5,12 @@ SPINA_TAILWIND_COMPILE_COMMAND = "#{Tailwindcss::Engine.root.join("exe/tailwindc
 namespace :spina do
   namespace :tailwind do 
     desc "Build your Tailwind CSS"
-    task :build do
+    task build: :environment do
       Rails::Generators.invoke("spina:tailwind_config", ["--force"])
       system SPINA_TAILWIND_COMPILE_COMMAND
     end
     
-    task :watch do
+    task watch: :environment do
       Rails::Generators.invoke("spina:tailwind_config", ["--force"])
       system "#{SPINA_TAILWIND_COMPILE_COMMAND} -w"
     end
