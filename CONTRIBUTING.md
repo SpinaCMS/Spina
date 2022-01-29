@@ -36,7 +36,7 @@ $ git checkout -b feature/feature_name
 $ git add .
 $ git commit -m "Adding posts support."
 $ git push
-# Open PR from your feature branch to master
+# Open PR from your feature branch to main
 ```
 
 Thank you.

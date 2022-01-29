@@ -2,9 +2,9 @@ name: Ruby
 
 on:
   push:
-    branches: [ master, hotwire ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
     
 jobs:
   test:
@@ -57,4 +57,4 @@ jobs:
       env:
         GIT_BRANCH: ${GITHUB_REF/refs\/heads\//}
       run: ./cc-test-reporter after-build -r ${{ secrets.CodeClimate }}
-      if: github.ref == 'refs/heads/master'
+      if: github.ref == 'refs/heads/main'
