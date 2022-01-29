@@ -2,6 +2,11 @@
 
 ## 2.8
 
+### 2.8.1 (January 29nd, 2022)
+* Added hints to parts when editing pages
+* Fixed bug with signed_id for Attachment
+* Fixed bug with tailwind_content not loading properly
+
 ### 2.8.0 (January 14th, 2022)
 * Upgraded to Tailwind 3 JIT
 * Added locale switch to layout form
