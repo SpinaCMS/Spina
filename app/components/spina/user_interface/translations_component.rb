@@ -1,9 +1,9 @@
 module Spina
-  module Accounts
+  module UserInterface
     class TranslationsComponent < ApplicationComponent
   
-      def initialize(account, label: nil)
-        @account = account
+      def initialize(record, label: nil)
+        @record = record
         @label = label
       end
       
