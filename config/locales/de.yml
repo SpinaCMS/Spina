@@ -2,6 +2,12 @@ de:
   time:
     formats:
       long: "%Y-%m-%d %H:%M:%S"
+  activemodel:
+    attributes:
+      spina/embeds/youtube:
+        url: youtube.com/watch?v=...
+      spina/embeds/vimeo:
+        url: vimeo.com/...
   activerecord:
     attributes:
       spina/account:
@@ -97,6 +103,15 @@ de:
       spina/user:
         one: Benutzer
         other: Benutzer
+  helpers:
+    label:
+      spina/embeds/button:
+        url: URL
+        label: Beschriftung der Schaltfläche
+      spina/embeds/youtube:
+        url: Youtube URL
+      spina/embeds/vimeo:
+        url: Vimeo URL
   spina:
     accounts:
       contact_details: Kontaktangaben
@@ -109,6 +124,7 @@ de:
     attachments:
       choose_attachment: Dokument auswählen
       delete_confirmation_html: Bist du sicher? Dieses Dokument <span class='font-semibold'>könnte</span> von einer Seite genutzt werden.
+      download: Herunterladen
       insert: Dokument einfügen
       insert_multiple: Dokumente einfügen
       upload: Dokumente Hochladen
@@ -119,6 +135,9 @@ de:
     delete_confirmation: Bist du sicher, dass du <strong>%{subject}</strong> löschen möchtest?
     edit: Bearbeiten
     edit_website: Deine Website bearbeiten
+    embeds:
+      embed_a_component: Eine Komponente einbetten
+      embed_component: Komponente einbetten
     forgot_password:
       expired: Dein Token zum Zurücksetzen des Passwortes ist abgelaufen
       mail_subject: Passwort zurücksetzen
@@ -142,6 +161,7 @@ de:
       insert_photo: Foto einfügen
       insert_photos: Fotos einfügen
       link: Link
+      missing_image: Fehlendes Bild
       new_folder: Neuer Ordner
       organize: Ordnen
       remove_image: Bild löschen
@@ -323,6 +343,16 @@ de:
       rename: Umbenennen
       save_changes: Änderungen speichern
       saving: Speichern...
+    user_mailer:
+      forgot_password:
+        button: Passwort zurücksetzen
+        introduction: Du hast kürzlich das Zurücksetzen des Passworts für deinen Spina CMS-Zugang angefragt. Die URL zum Zurücksetzen ist nur für die nächsten zwei Stunden gültig. Kopiere die unten stehende URL in deinen Browser.
+        introduction_html: "Du hast kürzlich das Zurücksetzen des Passworts für deinen Spina CMS-Zugang angefragt. Nutze die Schaltfläche, um das Passwort zurück zu setzen. <strong>Die URL zum Zurücksetzen ist nur für die nächsten zwei Stunden gültig.</strong>"
+        preheader: Nutze den Link, um dein Passwort zurück zu setzen. Dieser Link ist nur zwei Stunden lang gültig.
+        request_origin: "Zur Sicherheit: diese Anfrage wurde gesendet von einem %{platform}-Gerät unter Nutzung von %{browser}. Wenn du das Zurücksetzen des Passworts nicht angefragt hast, so kannst du diese E-Mail ignorieren."
+        salutation: Hallo, %{name}
+        subject: Setze dein Passwort zurück
+        trouble: Falls du Probleme mit der Nutzung der obigen Schaltfläche hast, kopiere die nachfolgende URL in deinen Browser.
     users:
       authorization: Authorisierung
       authorization_description: Administratoren können Benutzer verwalten. Normale Benutzer nicht.
@@ -343,6 +373,7 @@ de:
       content: Inhalt
       documents: Dokumente
       images: Bilder
+      main: Hauptseiten
       media_library: Medien-Bibliothek
       media_library_description: Hier findest du alle deine Bilder und Dokumente
       pages: Seiten
