@@ -2,6 +2,12 @@ de:
   time:
     formats:
       long: "%Y-%m-%d %H:%M:%S"
+  activemodel:
+    attributes:
+      spina/embeds/youtube:
+        url: youtube.com/watch?v=...
+      spina/embeds/vimeo:
+        url: vimeo.com/...
   activerecord:
     attributes:
       spina/account:
@@ -40,12 +46,12 @@ de:
         pages_description: Wähle die Seiten aus, die du in diesem Menü verwenden willst
       spina/page:
         ancestry: Oberseite
-        created_at: Erstellt am 
+        created_at: Erstellt am
         description: Meta Beschreibung
         description_description: Diese Beschreibung wird in den Suchergebnissen angezeigt
         description_placeholder: Kurze Beschreibung deiner Seite
         draft: Entwurf
-        draft_description: Praktisch wenn deine Seite noch nicht ganz fertig ist
+        draft_description: Praktisch, wenn deine Seite noch nicht ganz fertig ist
         link_url: Seitenumleitung
         link_url_description: Weiterleiten an URL
         link_url_placeholder: z.B. http://www.example.com/
@@ -54,7 +60,7 @@ de:
         no_parent: Kein Oberelement
         resource: Kollektion
         seo_title: SEO <title>
-        seo_title_description: Stelle sicher dass deine Suchresultate gut aussehen
+        seo_title_description: Stelle sicher, dass deine Suchresultate gut aussehen
         seo_title_placeholder: Dieser Titel wird im <title>-tag verwendet
         show_in_menu: In der Navigation anzeigen
         show_in_menu_description: Wenn diese Option ausgeschaltet ist, wird deine Seite nicht in der Navigation angezeigt
@@ -75,13 +81,13 @@ de:
         admin: Administrator
         admin_description: Administratoren können Benutzer anlegen
         email: E-Mail
-        email_description: Deine E-Mail Adresse muss eindeutig sein
+        email_description: Deine E-Mail-Adresse muss eindeutig sein
         last_logged_in: Zuletzt eingeloggt
         name: Name
         name_placeholder: Name
         password: Passwort
         password_confirmation: Passwort bestätigen
-        password_description: Leer lassen wenn das Passwort nicht geändert werden soll
+        password_description: Leer lassen, wenn das Passwort nicht geändert werden soll
         role: Rolle
         user: Benutzer
     models:
@@ -97,10 +103,19 @@ de:
       spina/user:
         one: Benutzer
         other: Benutzer
+  helpers:
+    label:
+      spina/embeds/button:
+        url: URL
+        label: Beschriftung der Schaltfläche
+      spina/embeds/youtube:
+        url: Youtube URL
+      spina/embeds/vimeo:
+        url: Vimeo URL
   spina:
     accounts:
       contact_details: Kontaktangaben
-      contact_details_description: Email und Telefon
+      contact_details_description: E-Mail und Telefon
       couldnt_be_saved: Konto konnte nicht gespeichert werden
       name_description: Name deiner Webseite
       save: Konto speichern
@@ -109,6 +124,7 @@ de:
     attachments:
       choose_attachment: Dokument auswählen
       delete_confirmation_html: Bist du sicher? Dieses Dokument <span class='font-semibold'>könnte</span> von einer Seite genutzt werden.
+      download: Herunterladen
       insert: Dokument einfügen
       insert_multiple: Dokumente einfügen
       upload: Dokumente Hochladen
@@ -119,6 +135,9 @@ de:
     delete_confirmation: Bist du sicher, dass du <strong>%{subject}</strong> löschen möchtest?
     edit: Bearbeiten
     edit_website: Deine Website bearbeiten
+    embeds:
+      embed_a_component: Eine Komponente einbetten
+      embed_component: Komponente einbetten
     forgot_password:
       expired: Dein Token zum Zurücksetzen des Passwortes ist abgelaufen
       mail_subject: Passwort zurücksetzen
@@ -142,6 +161,7 @@ de:
       insert_photo: Foto einfügen
       insert_photos: Fotos einfügen
       link: Link
+      missing_image: Fehlendes Bild
       new_folder: Neuer Ordner
       organize: Ordnen
       remove_image: Bild löschen
@@ -157,7 +177,7 @@ de:
       it: Italiensich
       nl: Holländisch
       pl: Polnisch
-      pt-BR: Brasilianisches Portugiesisch 
+      pt-BR: Brasilianisches Portugiesisch
       ro: Rumänisch
       ru: Russisch
       sv: Schwedisch
@@ -167,11 +187,11 @@ de:
     layout:
       couldnt_be_saved: Layout konnte nicht gespeichert werden
       layout: Layout
-      no_layout_parts: Keine Layout Elemente verfügbar 
+      no_layout_parts: Keine Layout-Elemente verfügbar
       save: Layout speichern
       saved: Layout gespeichert
-    login: Login
-    logout: Logout
+    login: Anmelden
+    logout: Abmelden
     main_menu: Hauptmenü
     media_library:
       add_folder: Ordner hinzufügen
@@ -180,7 +200,7 @@ de:
       back_to_all: Zurück
       filename: Dateiname
       images: Bilder
-      images_count: 
+      images_count:
         one: 1 Bild
         other: "%{count} Bilder"
       insert: Bild einfügen
@@ -202,7 +222,7 @@ de:
       delete_item_confirmation_html: Bist du sicher, dass du diesen Menü-Eintrag <span class='font-semibold'>löschen</span> möchtest?
       description: Füge und sortiere Einträge wie du möchtest. Optional kannst du auch verschachtelte Menü-Einträge hinzufügen.
       navigations: Navigationen
-      no_navigations: Diese Webseite hat noch keine Navigationen. Du kannst eine in der Theme Konfiguration erstellen.
+      no_navigations: Diese Webseite hat noch keine Navigationen. Du kannst eine in der Theme-Konfiguration erstellen.
       sorting_saved: Reihenfolge gespeichert
     notifications:
       alert: Ups! Etwas ist falsch gelaufen
@@ -210,15 +230,15 @@ de:
       login: Du musst dich zuerst einloggen
       wrong_username_or_password: E-Mail oder Passwort falsch
     options:
-      choose_option: Option auswählen 
+      choose_option: Option auswählen
     pages:
-      add_page_to: 'Seite hinzufügen zu:'
+      add_page_to: "Seite hinzufügen zu:"
       add_translation: Übersetzung für %{language} hinzufügen
       advanced: Erweitert
       cannot_be_deleted: Seite kann nicht gelöscht werden
       change_order: Reihenfolge ändern
-      change_view_template: View Template ändern
-      change_view_template_confirmation: Bist du sicher, dass du dein view Template ändern möchtest? Inhalte die nicht zum neuen Template passen gehen verloren.
+      change_view_template: Seiten-Template ändern
+      change_view_template_confirmation: Bist du sicher, dass du dein Seiten-Template ändern möchtest? Inhalte, die nicht zum neuen Template gehören, gehen verloren.
       concept: Entwurf
       create: Seite erstellen
       create_page: Neue(s) %{template}
@@ -240,12 +260,12 @@ de:
       page_content: Inhalt
       page_part: Seiteninhalt
       page_seo: Suchmaschinen
-      path: 'Pfad:'
+      path: "Pfad:"
       photo_picker: Bild auswählen
       photos_picker: Bilder auswählen
       preview: Vorschau
-      publish: Publizieren
-      published: Seite publiziert
+      publish: Veröffentlichen
+      published: Seite veröffentlicht
       rebuild_materialized_path: Materialisierten Pfad neu erzeugen
       recommended: Empfohlen
       save: Seite speichern
@@ -259,7 +279,7 @@ de:
       sorting_saved: Reihenfolge gespeichert
     permanently_delete: Permanent Löschen
     photos:
-      cannot_be_created: 'Bild kann nicht verarbeitet werden:'
+      cannot_be_created: "Bild kann nicht verarbeitet werden:"
       choose_images: Bilder auswählen
       delete: Löschen
       delete_confirmation: Bist du sicher, dass du das Bild <strong>%{image}</strong> löschen möchtest?
@@ -267,10 +287,10 @@ de:
       done_organizing: Reihenfolge speichern
       insert_photo: Bild einfügen
       insert_photos: Bilder auswählen
-      link: 'URL des Bildes:'
+      link: "URL des Bildes:"
       new_folder: Neuer Ordner
       organize: Bilder sortieren
-      rename_folder: Ordner umbenenen 
+      rename_folder: Ordner umbenenen
       select_images: Bilder auswählen
       upload_image: Bild hochladen
     preferences:
@@ -279,12 +299,12 @@ de:
       account_description: Persönliche Einstellungen
       account_save: Einstellungen speichern
       analytics: Analytics und Suchmaschinen
-      analytics_description: Verknüpfe deinen Account für real-time Analysen
+      analytics_description: Verknüpfe deinen Account für Echtzeit-Analysen
       analytics_save: Einstellungen speichern
-      domain_name_settings: Domain Einstellungen
+      domain_name_settings: Domain-Einstellungen
       domain_name_settings_description: Richte deine Domain ein
       social_media: Social Media
-      social_media_description: Facebook und Twitter Accounts
+      social_media_description: Facebook und Twitter-Accounts
       social_media_save: Speichere Social Media
       style: Stil
       style_description: Wähle einen passenden Stil
@@ -319,10 +339,20 @@ de:
       load_more: Weitere laden
       move_to: Verschieben nach
       new_entry: Neuer Eintrag
-      optional: Optional 
+      optional: Optional
       rename: Umbenennen
       save_changes: Änderungen speichern
       saving: Speichern...
+    user_mailer:
+      forgot_password:
+        button: Passwort zurücksetzen
+        introduction: Du hast kürzlich das Zurücksetzen des Passworts für deinen Spina CMS-Zugang angefragt. Die URL zum Zurücksetzen ist nur für die nächsten zwei Stunden gültig. Kopiere die unten stehende URL in deinen Browser.
+        introduction_html: "Du hast kürzlich das Zurücksetzen des Passworts für deinen Spina CMS-Zugang angefragt. Nutze die Schaltfläche, um das Passwort zurück zu setzen. <strong>Die URL zum Zurücksetzen ist nur für die nächsten zwei Stunden gültig.</strong>"
+        preheader: Nutze den Link, um dein Passwort zurück zu setzen. Dieser Link ist nur zwei Stunden lang gültig.
+        request_origin: "Zur Sicherheit: diese Anfrage wurde gesendet von einem %{platform}-Gerät unter Nutzung von %{browser}. Wenn du das Zurücksetzen des Passworts nicht angefragt hast, so kannst du diese E-Mail ignorieren."
+        salutation: Hallo, %{name}
+        subject: Setze dein Passwort zurück
+        trouble: Falls du Probleme mit der Nutzung der obigen Schaltfläche hast, kopiere die nachfolgende URL in deinen Browser.
     users:
       authorization: Authorisierung
       authorization_description: Administratoren können Benutzer verwalten. Normale Benutzer nicht.
@@ -330,11 +360,11 @@ de:
       delete: Benutzer löschen
       delete_confirmation_html: Bist du sicher, dass du den Benutzer <strong>%{user}</strong> löschen möchtest?
       deleted: Benutzer gelöscht
-      last_login: Letztes Login
+      last_login: Letzte Anmeldung
       never_logged_in: Noch nie eingeloggt
       new: Neuer Benutzer
       profile: Profil
-      profile_description: Diese Information wird zur Identifikation des Benutzers verwendet. Benutzer müssen sich mit ihrer Email Adresse anmelden.
+      profile_description: Diese Information wird zur Identifikation des Benutzers verwendet. Benutzer müssen sich mit ihrer E-Mail-Adresse anmelden.
       save: Benutzer speichern
       saved: Benutzer speichern
     visit_page: Seite besuchen
@@ -343,6 +373,7 @@ de:
       content: Inhalt
       documents: Dokumente
       images: Bilder
+      main: Hauptseiten
       media_library: Medien-Bibliothek
       media_library_description: Hier findest du alle deine Bilder und Dokumente
       pages: Seiten
