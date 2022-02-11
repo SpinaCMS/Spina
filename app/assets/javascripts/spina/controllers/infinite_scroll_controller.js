@@ -16,7 +16,7 @@ export default class extends Controller {
   load() {
     if (this.hasButtonTarget) {
       let top = this.buttonTarget.getBoundingClientRect().top
-      if (top < this.scrollElement.innerHeight + 500) {
+      if (top < window.innerHeight + 500) {
         this.buttonTarget.click()
       }
     }
@@ -26,7 +26,7 @@ export default class extends Controller {
     if (this.hasContainerTarget) {
       return this.containerTarget
     } else {
-      return window
+      return document.getElementById("main")
     }
   }
 
