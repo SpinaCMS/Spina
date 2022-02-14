@@ -2,7 +2,7 @@
   <div class="flex flex-col md:flex-row md:h-screen min-h-screen w-full overflow-hidden">
     <%= render partial: "spina/admin/shared/navigation" %>
     
-    <section class="w-full md:overflow-scroll">
+    <section id="main" class="w-full md:overflow-scroll">
       <%= yield %>
       
       <%= turbo_frame_tag "flash" do %>
