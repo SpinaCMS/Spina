@@ -4,7 +4,7 @@
       <% if @page.draft? %>
         <span class="text-gray-400 ml-2 text-sm">(<%= Spina::Page.human_attribute_name(:draft) %>)</span>
       <% end %>
-      <%= link_to @page.materialized_path, class: 'px-3 py-2 flex items-center text-gray-400 hover:text-gray-700', target: :blank, data: {turbo: false} do %>
+      <%= link_to @page.materialized_path(locale: @locale), class: 'px-3 py-2 flex items-center text-gray-400 hover:text-gray-700', target: :blank, data: {turbo: false} do %>
         <%= heroicon("external-link", style: :solid, class: "w-4 h-4") %>
       <% end %>
     <% end %>
