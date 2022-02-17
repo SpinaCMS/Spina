@@ -2,6 +2,10 @@ de:
   time:
     formats:
       long: "%Y-%m-%d %H:%M:%S"
+      short: "%d %b %H:%M"
+  date:
+    abbr_day_names: [Mo, Di, Mi, Do, Fr, Sa, So]
+    abbr_month_names: [~, Jan., Feb., März, Apr., Mai, Jun., Jul., Aug., Sep., Okt., Nov., Dez.]
   activemodel:
     attributes:
       spina/embeds/youtube:
