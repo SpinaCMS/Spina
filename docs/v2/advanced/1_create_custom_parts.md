@@ -13,7 +13,7 @@ module Spina
       attr_json :movie_id, :integer
 
       def content
-        Movie.find(movie_id)
+        Movie.find_by(id: movie_id)
       end
 
     end
@@ -22,6 +22,8 @@ end
 ```
 
 *In this simplified example we make the content method do a query and return a Movie record. Beware of N+1 queries if you go this route. Generally, the more you store directly in JSON, the better your performance.*
+
+*Any `ActiveRecord::RecordNotFound` Exception will be displayed as 404, which may be happening when using `Movie.find (movie_id)` if movie_id is nil or not found in Database. You should consider using `Movie.find_by (id: movie_id)`, which will not throw an Error but return nil if movie_id is nil or not found in Database.*
 
 ## Step 2. Create a view for page editing
 
@@ -41,6 +43,11 @@ In an initializer, register your newly created part so you can use it in your th
 
 `Spina::Part.register(Spina::Parts::Movie)`
 
-## Step 4. Go wild
+## Step 4. View template example
+```
+<p>Film Director: <%= content(:movie)[:director] %></p>
+```
+
+## Step 5. Go wild
 
 Of course, this is a very simple example. You can store a lot this way. You can take a look at the existing parts in Spina for inspiration. If you want to learn more, you can also [take a look at the attr_json readme](https://github.com/jrochkind/attr_json). 
