@@ -12,6 +12,7 @@ module Spina
                     :list_item_tag, :list_item_css,
                     :link_tag_css,
                     :active_list_item_css,
+                    :current_list_item_css,
                     :include_drafts,
                     :depth # root nodes are at depth 0
 
@@ -54,12 +55,17 @@ module Spina
         return nil unless item.materialized_path
         children = scoped_collection(item.children)
 
-        active_item_css = nil
-        active_item_css = active_list_item_css if apply_active_css?(item)
+        current_active_item_css = nil
+        parent_active_list_item_css = nil
+        parent_active_list_item_css = active_list_item_css if apply_active_list_item_css?(item)
+        current_active_item_css = current_list_item_css if apply_current_list_item_css?(item)
 
-        content_tag(list_item_tag, class: active_item_css || list_item_css, data: {page_id: item.page_id, draft: (true if item.draft?) }) do
+        content_tag(list_item_tag, class: list_item_css, data: {page_id: item.page_id, draft: (true if item.draft?) }) do
           buffer = ActiveSupport::SafeBuffer.new
-          buffer << link_to(item.menu_title, item.materialized_path, class: link_tag_css)
+          buffer << link_to(
+            item.menu_title, item.materialized_path,
+            class: current_active_item_css || parent_active_list_item_css || link_tag_css
+            )
           buffer << render_items(children) if render_children?(item) && children.any?
           buffer
         end
@@ -75,9 +81,13 @@ module Spina
         item.depth < depth
       end
 
-      def apply_active_css?(item)
-        item == Spina::Current.page && active_list_item_css.present?
+      def apply_current_list_item_css?(item)
+        item.materialized_path == Spina::Current.page.materialized_path && current_list_item_css.present?
       end
 
+      def apply_active_list_item_css?(item)
+        Spina::Current.page.ancestry.present? &&
+          item.id == Spina::Current.page.ancestry[0].to_i && active_list_item_css.present?
+      end
   end
 end
