@@ -266,7 +266,7 @@ GEM
     stimulus-rails (1.0.4)
       railties (>= 6.0.0)
     strscan (3.0.1)
-    tailwindcss-rails (2.0.5)
+    tailwindcss-rails (2.0.7)
       railties (>= 6.0.0)
     thor (1.2.1)
     timeout (0.2.0)
