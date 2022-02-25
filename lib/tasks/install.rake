@@ -17,6 +17,12 @@ namespace :spina do
     Rails::Command.invoke :generate, ["spina:install", "--first-deploy"]
   end
   
+  desc "Silent First deploy"
+  task silent_first_deploy: :environment do
+    # Silent First deploy will run the same steps as First Deploy but without prompts
+    Rails::Command.invoke :generate, ["spina:install", "--first-deploy", "--silent"]
+  end
+  
   desc "Generate all pages based on the theme config"
   task bootstrap: :environment do
     Spina::Account.first.save
