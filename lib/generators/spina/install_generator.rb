@@ -32,7 +32,7 @@ module Spina
     end
 
     def create_account
-      return if ::Spina::Account.exists? && !no?('An account already exists. Skip? [Yn]')
+      return if ::Spina::Account.exists? && !talkative_install? || !no?('An account already exists. Skip? [Yn]')
       name = ::Spina::Account.first.try(:name) || 'MySite'
       if talkative_install?
         name = ask("What would you like to name your website? [#{name}]").presence || name
@@ -42,7 +42,7 @@ module Spina
 
     def set_theme
       account = ::Spina::Account.first
-      return if account.theme.present? && !no?("Theme '#{account.theme}' is set. Skip? [Yn]")
+      return if account.theme.present? && !talkative_install? || !no?("Theme '#{account.theme}' is set. Skip? [Yn]")
 
       theme = account.theme || themes.first
       if talkative_install?
@@ -67,7 +67,7 @@ module Spina
     end
 
     def create_user
-      return if ::Spina::User.exists? && !no?('A user already exists. Skip? [Yn]')
+      return if ::Spina::User.exists? && !talkative_install? || !no?('A user already exists. Skip? [Yn]')
 
       email = 'admin@domain.com'
       if talkative_install?
