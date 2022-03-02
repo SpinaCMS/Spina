@@ -88,8 +88,8 @@ module Spina
       end
 
       def parent_of_current?(item)
-        return false unless Spina::Current.page.ancestry.present?
-        Spina::Current.page.ancestry.split('/').map(&:to_i).include? item.id
+        return false if item.homepage?
+        Spina::Current.page.materialized_path.starts_with? item.materialized_path
       end
   end
 end
