@@ -1,2 +1,5 @@
 <% presenter = Spina::MenuPresenter.new(Spina::Page.all) %>
+<% presenter.list_item_css = "list-item" %>
+<% presenter.active_list_item_css = "list-item active" %>
+<% presenter.current_list_item_css = "list-item current" %>
 <%= presenter.to_html %>

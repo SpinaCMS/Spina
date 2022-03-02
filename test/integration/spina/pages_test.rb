@@ -23,6 +23,9 @@ module Spina
       FactoryBot.create :page_translation,
         spina_page_id: @demo_page.id, title: 'Demo',
         materialized_path: '/nl/demo', locale: 'nl'
+        
+      @child_page = FactoryBot.create :child_page
+      @child_page.update(parent: @demo_page)
     end
 
     test "view homepage" do
@@ -67,6 +70,14 @@ module Spina
     test "helper methods parent app" do
       get "/"
       assert_select 'body', /This is some helper method/
+    end
+    
+    test "add styles to active/current item in navigation" do
+      get @child_page.materialized_path
+      assert_select 'h1', 'Child page'
+      
+      assert_select ".list-item.active a", text: "Demo"
+      assert_select ".list-item.current a", text: "Child page"
     end
     
   end

@@ -56,11 +56,7 @@ module Spina
 
         children = scoped_collection(item.children)
 
-        extra_css = active_list_item_css if apply_active_css?(item)
-        extra_css = current_list_item_css if apply_current_css?(item)
-        item_css = extra_css || list_item_css
-
-        content_tag(list_item_tag, class: item_css, data: { page_id: item.page_id, draft: (true if item.draft?) }) do
+        content_tag(list_item_tag, class: item_css(item), data: { page_id: item.page_id, draft: (true if item.draft?) }) do
           buffer = ActiveSupport::SafeBuffer.new
           buffer << link_to(item.menu_title, item.materialized_path, class: link_tag_css)
           buffer << render_items(children) if render_children?(item) && children.any?
@@ -77,14 +73,21 @@ module Spina
         return true unless depth
         item.depth < depth
       end
+      
+      def item_css(item)
+        return current_list_item_css if apply_current_css?(item)
+        return active_list_item_css if apply_active_css?(item)
+        list_item_css
+      end
 
       def apply_current_css?(item)
-        item == Spina::Current.page && current_list_item_css.present?
+        return false if current_list_item_css.nil?
+        Spina::Current.page == item
       end
 
       def apply_active_css?(item)
         return false if apply_current_css?(item)
-        return parent_of_current?(item)
+        parent_of_current?(item)
       end
 
       def parent_of_current?(item)
