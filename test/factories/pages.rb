@@ -25,6 +25,10 @@ FactoryBot.define do
       deletable { true }
       active { false }
     end
+    
+    factory :child_page do
+      title { 'Child page' }
+    end
 
   end
 end
