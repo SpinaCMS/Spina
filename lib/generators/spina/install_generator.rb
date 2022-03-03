@@ -90,6 +90,7 @@ module Spina
     end
 
     def feedback
+      return if !talkative_install?
       puts
       puts '    Your Spina site has been succesfully installed! '
       puts
