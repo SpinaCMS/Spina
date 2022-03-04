@@ -53,7 +53,7 @@ module Spina
         if @image.saved_change_to_media_folder_id?
           render :update
         else
-          redirect_to [:admin, @image]
+          render @image
         end
       end
 

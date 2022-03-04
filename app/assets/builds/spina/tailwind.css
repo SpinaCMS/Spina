@@ -1806,6 +1806,10 @@ trix-editor [data-trix-mutable]::selection,
   margin-top: 0.5rem;
 }
 
+.ml-11 {
+  margin-left: 2.75rem;
+}
+
 .ml-1 {
   margin-left: 0.25rem;
 }
@@ -2054,6 +2058,10 @@ trix-editor [data-trix-mutable]::selection,
   max-width: 768px;
 }
 
+.max-w-screen-lg {
+  max-width: 1024px;
+}
+
 .max-w-5xl {
   max-width: 64rem;
 }
@@ -2152,6 +2160,10 @@ trix-editor [data-trix-mutable]::selection,
 .animate-spin {
   -webkit-animation: spin 1s linear infinite;
           animation: spin 1s linear infinite;
+}
+
+.cursor-zoom-in {
+  cursor: zoom-in;
 }
 
 .cursor-default {

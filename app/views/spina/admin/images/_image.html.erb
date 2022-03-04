@@ -1,7 +1,9 @@
 <%= turbo_frame_tag dom_id(image) do %>
   <div class="flex items-center h-12 border-b border-gray-200 px-8 hover:bg-white group">
     <div class="w-8 mr-4 h-12 flex justify-center">
-      <%= image_tag thumbnail_url(image), class: "object-contain" %>
+      <%= link_to spina.admin_image_path(image), class: "flex items-center cursor-zoom-in", data: {turbo_frame: "modal"} do %>
+        <%= image_tag thumbnail_url(image), class: "object-contain" %>
+      <% end %>
     </div>
     
     <turbo-frame id="<%= dom_id(image) %>_filename" class="font-medium text-gray-800 h-full flex-1 w-56 text-sm flex items-center relative">
@@ -13,33 +15,35 @@
           <%=t 'spina.ui.rename' %>
         <% end %>
         
-        <%= render Spina::UserInterface::DropdownComponent.new do |dropdown| %>
-          <% dropdown.button(classes: 'btn btn-default h-7 px-2 text-xs') do %>
-            <%= heroicon('folder', style: :solid, class: 'w-4 h-4 mr-1 text-gray-600') %>
-            <%=t 'spina.ui.move_to' %>
-            <%= heroicon('chevron-down', style: :solid, class: 'w-4 h-4') %>
-          <% end %>
-          
-          <% dropdown.menu do %>
-            <% if image.media_folder_id.present? %>
-              <%= form_with model: image, url: spina.admin_image_path(image) do |f| %>
-                <%= f.hidden_field :media_folder_id, value: nil %>
-                <%= render Spina::UserInterface::DropdownButtonComponent.new do %>
-                  <%=t 'spina.media_library.no_folder' %>
+        <% if Spina::MediaFolder.any? %>
+          <%= render Spina::UserInterface::DropdownComponent.new do |dropdown| %>
+            <% dropdown.button(classes: 'btn btn-default h-7 px-2 text-xs') do %>
+              <%= heroicon('folder', style: :solid, class: 'w-4 h-4 mr-1 text-gray-600') %>
+              <%=t 'spina.ui.move_to' %>
+              <%= heroicon('chevron-down', style: :solid, class: 'w-4 h-4') %>
+            <% end %>
+            
+            <% dropdown.menu do %>
+              <% if image.media_folder_id.present? %>
+                <%= form_with model: image, url: spina.admin_image_path(image) do |f| %>
+                  <%= f.hidden_field :media_folder_id, value: nil %>
+                  <%= render Spina::UserInterface::DropdownButtonComponent.new do %>
+                    <%=t 'spina.media_library.no_folder' %>
+                  <% end %>
                 <% end %>
               <% end %>
-            <% end %>
-            <% Spina::MediaFolder.order(:name).each do |media_folder| %>
-              <% if media_folder.id == image.media_folder_id %>
-                <%= render Spina::UserInterface::DropdownButtonComponent.new(disabled: true) do %>
-                  <%= media_folder.name %>
-                <% end %>
-              <% else %>
-                <%= form_with model: image, url: spina.admin_image_path(image) do |f| %>
-                  <%= f.hidden_field :media_folder_id, value: media_folder.id %>
-                  
-                  <%= render Spina::UserInterface::DropdownButtonComponent.new do %>
+              <% Spina::MediaFolder.order(:name).each do |media_folder| %>
+                <% if media_folder.id == image.media_folder_id %>
+                  <%= render Spina::UserInterface::DropdownButtonComponent.new(disabled: true) do %>
                     <%= media_folder.name %>
+                  <% end %>
+                <% else %>
+                  <%= form_with model: image, url: spina.admin_image_path(image) do |f| %>
+                    <%= f.hidden_field :media_folder_id, value: media_folder.id %>
+                    
+                    <%= render Spina::UserInterface::DropdownButtonComponent.new do %>
+                      <%= media_folder.name %>
+                    <% end %>
                   <% end %>
                 <% end %>
               <% end %>
@@ -56,8 +60,12 @@
       </div>
     </div>
     <div class="text-gray-500 text-xs w-32 text-right whitespace-nowrap"><%=l image.created_at, format: :short %></div>
-    <div class="">
-      <%= button_to spina.admin_image_path(image), method: :delete, class: "block py-3 px-4 ml-2 text-gray-500 hover:text-gray-900", form: {data: {controller: "confirm", confirm_message: t('spina.images.delete_confirmation_html')}} do %>
+    <div class="flex items-center ml-2">
+      <%= link_to original_url(image), class: "block py-3 px-2 text-gray-500 hover:text-gray-900", download: image.file.filename do %>
+        <%= heroicon('download', class: 'w-5 h-5') %>
+      <% end %>
+      
+      <%= button_to spina.admin_image_path(image), method: :delete, class: "block py-3 px-2 text-gray-500 hover:text-gray-900", form: {data: {controller: "confirm", confirm_message: t('spina.images.delete_confirmation_html')}} do %>
         <%= heroicon('trash', class: "w-5 h-5") %>
       <% end %>
     </div>
