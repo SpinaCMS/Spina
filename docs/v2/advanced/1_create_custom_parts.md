@@ -41,7 +41,11 @@ end
 
 In an initializer, register your newly created part so you can use it in your theme:
 
-`Spina::Part.register(Spina::Parts::Movie)`
+```
+Rails.application.reloader.to_prepare do
+  Spina::Part.register(Spina::Parts::Movie)
+end
+```
 
 ## Step 4. View template example
 ```
