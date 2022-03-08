@@ -10,7 +10,7 @@ module Spina
     private
     
       def current_theme
-        Spina::Current.theme ||= ::Spina::Theme.find_by_name(current_account.theme)
+        Spina::Current.theme ||= ::Spina::Theme.find_by_name(current_spina_account.theme)
       end
         
   end

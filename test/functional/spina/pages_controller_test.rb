@@ -5,7 +5,7 @@ module Spina
     setup do
       I18n.locale = :en
       @routes = Engine.routes
-      @current_account = FactoryBot.create :account
+      @current_spina_account = FactoryBot.create :account
     end
 
     test "visit homepage" do

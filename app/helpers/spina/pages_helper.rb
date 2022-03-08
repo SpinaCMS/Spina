@@ -28,7 +28,7 @@ module Spina
       Current.page
     end
 
-    def current_account
+    def current_spina_account
       Current.account
     end
 

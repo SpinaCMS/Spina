@@ -1,15 +1,15 @@
 module Spina
-  module CurrentAccount
+  module CurrentSpinaAccount
     extend ActiveSupport::Concern
     
     included do
-      before_action :current_account
-      helper_method :current_account
+      before_action :current_spina_account
+      helper_method :current_spina_account
     end
   
     private
     
-      def current_account
+      def current_spina_account
         Spina::Current.account ||= ::Spina::Account.first
       end
         
