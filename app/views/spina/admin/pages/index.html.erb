@@ -14,7 +14,7 @@
   
   <% header.navigation do %>
     <nav class="-mb-1 md:-mb-3 mt-4">
-      <ul class="inline-flex w-auto rounded-md bg-white">
+      <ul class="inline-flex flex-wrap w-auto rounded-md bg-white">
         <%= render Spina::UserInterface::TabLinkComponent.new(spina.admin_pages_path, active: @resource.nil?) do %>
           <%= heroicon('collection', style: :solid, class: "h-4 w-4 mr-1 -ml-1 opacity-75") %>
           <%=t 'spina.website.main' %>

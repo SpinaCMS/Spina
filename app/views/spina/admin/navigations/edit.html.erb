@@ -1,7 +1,7 @@
 <%= render Spina::UserInterface::HeaderComponent.new do |header| %>
   <% header.navigation do %>
     <nav class="-mb-3 mt-4">
-      <ul class="inline-flex w-auto rounded-md bg-white">
+      <ul class="inline-flex flex-wrap w-auto rounded-md bg-white">
         <% @navigations.each do |navigation| %>
           <%= render Spina::UserInterface::TabLinkComponent.new(spina.edit_admin_navigation_path(navigation), active: @navigation == navigation) do %>
             <%= heroicon('menu-alt-2', style: :solid, class: 'w-3 h-3 mr-1') %>
