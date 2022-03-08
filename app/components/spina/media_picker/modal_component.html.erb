@@ -1,9 +1,9 @@
 <%= render(Spina::UserInterface::ModalComponent.new(size: "max-w-6xl h-full")) do |component| %>
   <div class="h-full w-full" data-controller="infinite-scroll media-picker-modal" data-target="<%= @target %>">
-    <turbo-frame id="media_picker">
+    <turbo-frame id="media_picker" data-action= "turbo:frame-load->infinite-scroll#load">
       <div class="flex flex-col md:flex-row h-full w-full">
         <div class="flex-1 bg-white flex flex-col max-h-full relative overflow-hidden">
-          <div data-infinite-scroll-target="container" data-controller="selectable" class="p-6 h-full w-full overflow-scroll ">
+          <div data-infinite-scroll-target="container" data-controller="selectable" class="p-6 h-full w-full overflow-scroll" data-action="scroll->infinite-scroll#load">
             
             <!-- Images are loaded using nested turbo-frame-tags -->
             <!-- Only load images in multiples of 4 so that this grid -->
@@ -14,8 +14,8 @@
               </div>
               
               <% if @images.next_page %>
-                <turbo-frame id="images-<%= @images.next_page %>">
-                  <%= link_to "...", helpers.path_to_next_page(@images), data: {infinite_scroll_target: "button"} %>
+                <turbo-frame id="images-<%= @images.next_page %>" data-action= "turbo:frame-load->infinite-scroll#load">
+                  <%= link_to "Load more images", helpers.path_to_next_page(@images), class: "btn btn-default mt-6", data: {infinite_scroll_target: "button"} %>
                 </turbo-frame>
               <% end %>
               

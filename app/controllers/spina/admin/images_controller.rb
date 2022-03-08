@@ -5,7 +5,7 @@ module Spina
       before_action :set_breadcrumbs
 
       def index
-        @media_folders = MediaFolder.order(:name)
+        @media_folders = MediaFolder.order(:name).includes(:images)
         @images = Image.sorted.where(media_folder: @media_folder).with_attached_file.page(params[:page]).per(25)
       end
       
@@ -53,6 +53,7 @@ module Spina
         if @image.saved_change_to_media_folder_id?
           render :update
         else
+          @media_folders = MediaFolder.order(:name)
           render @image
         end
       end

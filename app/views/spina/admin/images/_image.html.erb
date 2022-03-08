@@ -15,7 +15,7 @@
           <%=t 'spina.ui.rename' %>
         <% end %>
         
-        <% if Spina::MediaFolder.any? %>
+        <% if @media_folders.present? %>
           <%= render Spina::UserInterface::DropdownComponent.new do |dropdown| %>
             <% dropdown.button(classes: 'btn btn-default h-7 px-2 text-xs') do %>
               <%= heroicon('folder', style: :solid, class: 'w-4 h-4 mr-1 text-gray-600') %>
@@ -32,7 +32,7 @@
                   <% end %>
                 <% end %>
               <% end %>
-              <% Spina::MediaFolder.order(:name).each do |media_folder| %>
+              <% @media_folders.each do |media_folder| %>
                 <% if media_folder.id == image.media_folder_id %>
                   <%= render Spina::UserInterface::DropdownButtonComponent.new(disabled: true) do %>
                     <%= media_folder.name %>

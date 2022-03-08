@@ -7,6 +7,7 @@ export default class extends Controller {
 
   connect() {
     this.scrollElement.addEventListener("scroll", this.load.bind(this))
+    this.load() // Initial load
   }
 
   disconnect() {
@@ -18,6 +19,7 @@ export default class extends Controller {
       let top = this.buttonTarget.getBoundingClientRect().top
       if (top < window.innerHeight + 500) {
         this.buttonTarget.click()
+        this.buttonTarget.remove()
       }
     }
   }
