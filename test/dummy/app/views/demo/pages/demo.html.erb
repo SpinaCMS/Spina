@@ -15,9 +15,9 @@
   <%= content.image_tag :image, resize_to_fill: [100, 100] %>
 <% end %>
 
-<%= current_account.content :line %>
+<%= current_spina_account.content :line %>
 
-<% repeater current_account.content(:repeater) do |repeater_content| %>
+<% repeater current_spina_account.content(:repeater) do |repeater_content| %>
   <%= repeater_content.content :line %>
 <% end %>
 

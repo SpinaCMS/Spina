@@ -1,7 +1,7 @@
 module Spina
   module Api
     class ApiController < ActionController::Base
-      include Spina::CurrentAccount, Spina::CurrentTheme
+      include Spina::CurrentSpinaAccount, Spina::CurrentTheme
       
       protect_from_forgery unless: -> { request.format.json? }
       
