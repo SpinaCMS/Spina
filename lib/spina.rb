@@ -27,6 +27,7 @@ module Spina
                   :frontend_parent_controller,
                   :disable_frontend_routes,
                   :disable_decorator_load,
+                  :disable_deprecated_methods,
                   :locales, 
                   :embedded_image_size,
                   :mailer_defaults,
@@ -43,6 +44,7 @@ module Spina
   self.backend_path = 'admin'
   self.disable_frontend_routes = false
   self.disable_decorator_load = false
+  self.disable_deprecated_methods = false
   self.embedded_image_size = [2000, 2000]
   self.mailer_defaults = ActiveSupport::OrderedOptions.new
   self.thumbnail_image_size = [400, 400]
