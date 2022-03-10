@@ -14,6 +14,9 @@ module.exports = {
           DEFAULT: '#6865b4',
           dark: '#3a3a70'
         }
+      },
+      screens: {
+        mob: '450px'
       }
     }
   },
