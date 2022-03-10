@@ -39,11 +39,11 @@
   }
   
   .btn-default:hover {
-    @apply bg-gray-50;
+    @apply bg-gray-200;
   }
   
   .btn-default:active {
-    @apply shadow-inner bg-gray-100;
+    @apply shadow-inner bg-gray-200;
   }
   
   .btn-primary {
