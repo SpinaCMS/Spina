@@ -1,10 +1,10 @@
-<%= render Spina::UserInterface::ModalComponent.new(size: "max-w-screen-md h-full md:h-96") do %>
+<%= render Spina::UserInterface::ModalComponent.new(size: "max-w-screen-md h-full mob:h-96") do %>
   <div class="h-full" data-controller="embed" data-trix-target="<%= params[:target] %>">
     <%= turbo_frame_tag :trix_attachment_html, class: 'hidden', data: {embeddables_target: "html", action: "embed-tag:embedded->embed#insertEmbeddable embed-tag:embedded->modal#close"} %>
     
     <%= turbo_frame_tag :embeddable_form do %>
-      <div class="flex h-full">
-        <div class="p-4 w-64 bg-gray-100 md:bg-opacity-50">
+      <div class="flex flex-col mob:flex-row h-full overflow-auto">
+        <div class="p-4 width-full sm:w-64 bg-gray-100 md:bg-opacity-50">
           <div class="text-xs font-medium text-gray-600 mb-2">
             <%=t "spina.embeds.embed_a_component" %>
           </div>
@@ -26,16 +26,20 @@
           <%= form_with model: @embeddable, scope: :embeddable, url: spina.admin_embeds_path, class: 'h-full' do |f| %>
             <%= hidden_field_tag :embed_type, @embeddable.class.name %>
             
-            <div class="h-full relative">
-              <div class="flex-1 p-5 h-full pb-20 overflow-scroll">
+            <div class="flex flex-col h-full relative">
+              <div class="flex-1 p-5 overflow-auto">
                 <%= render partial: @embeddable.to_fields_path, locals: {f: f} %>
               </div>
               
-              <div class="w-full flex backdrop-filter backdrop-blur-lg absolute bottom-0 justify-end p-5 py-4 border-t border-gray-200">
-                <%= button_tag type: :submit, class: 'btn btn-primary' do %>
+              <div class="w-full flex flex-col mob:flex-row flex-wrap gap-1 backdrop-filter backdrop-blur-lg justify-between p-5 py-4 border-t border-gray-200">
+                <%= button_tag type: :submit, class: 'btn btn-primary grow sm:grow-0' do %>
                   <%= heroicon('plus', style: :solid, class: 'w-6 h-6 -ml-2') %>
                   <%=t "spina.embeds.embed_component" %>
                 <% end %>
+                <button class="btn btn-default grow sm:grow-0" data-action="modal#close">
+                  <%= heroicon('x', style: :solid, class: 'w-4 h-4') %>
+                  <%=t "spina.ui.cancel" %>
+                </button>
               </div>
             </div>
           <% end %>

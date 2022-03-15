@@ -3,7 +3,7 @@
     <turbo-frame id="media_picker">
       <div class="flex flex-col md:flex-row h-full w-full">
         <div class="flex-1 bg-white flex flex-col max-h-full relative overflow-hidden">
-          <div data-infinite-scroll-target="container" data-controller="selectable" class="p-6 h-full w-full overflow-scroll ">
+          <div data-infinite-scroll-target="container" data-controller="selectable" class="p-6 h-full w-full overflow-auto ">
             
             <!-- Images are loaded using nested turbo-frame-tags -->
             <!-- Only load images in multiples of 4 so that this grid -->
@@ -24,8 +24,8 @@
           </div>
         </div>
       
-        <div class="md:w-72 p-4 border-t rounded-b-lg md:rounded-none md:border-t-0 border-gray-200 flex flex-col justify-between bg-gray-100 md:bg-opacity-50 md:rounded-l-lg">
-          <div class="hidden md:block md:mb-6 overflow-scroll">
+        <div class="h-64 md:h-full md:w-72 p-2 sm:p-4 border-t rounded-b-lg md:rounded-none md:border-t-0 border-gray-200 flex flex-col justify-between bg-gray-100 md:bg-opacity-50 md:rounded-l-lg">
+          <div class="block md:mb-6 overflow-auto">
             <%= link_to helpers.spina.admin_media_picker_path, class: "font-medium w-full text-sm px-3 py-2 rounded-lg flex items-center justify-between #{media_folder_classes(nil)}", data: {turbo_frame: "media_picker"} do %>
               <div class="flex items-center">
                 <%= helpers.heroicon("collection", style: :solid, class: "w-5 h-5 mr-2 text-spina-light") %>
@@ -56,17 +56,25 @@
               
               <%= f.file_field :files, multiple: true, accept: "image/*", id: "new_image_file_field", class: 'hidden', data: {action: "loading-button#loading form#requestSubmit"} %>
               
-              <button type="button" class="font-medium w-full text-gray-600 text-sm hover:bg-gray-200 px-3 py-2 cursor-pointer rounded-lg flex items-center w-full" data-controller="delegate-click" data-action="delegate-click#click" data-loading-button-target="button" data-delegate-click-target="#new_image_file_field">
+              <button type="button" class="font-medium w-full text-gray-600 text-sm hover:bg-gray-200 px-3 py-2 cursor-pointer rounded-lg flex items-center" data-controller="delegate-click" data-action="delegate-click#click" data-loading-button-target="button" data-delegate-click-target="#new_image_file_field">
                 <%= helpers.heroicon("upload", style: :solid, class: "w-5 h-5 text-spina mr-2") %>
                 <%=t 'spina.media_library.upload_from_device' %>
               </button>
             <% end %>
           </div>
           
-          <button type="button" class="btn btn-primary w-full mt-3" data-action="media-picker-modal#confirm modal#close">
-            <%= helpers.heroicon("plus", style: :solid, class: "text-white w-6 h-6") %>
-            <%=t 'spina.media_library.insert' %>
-          </button>
+          <div class="flex flex-col mob:flex-row flex-wrap gap-1 bg-gray-100 md:bg-opacity-50 p-2">
+            <button type="button" class="btn btn-primary grow" data-action="media-picker-modal#confirm modal#close">
+              <%= helpers.heroicon("plus", style: :solid, class: "text-white w-6 h-6") %>
+              <%=t 'spina.media_library.insert' %>
+            </button>
+
+            <button type="button" class="btn btn-default grow" data-action="modal#close">
+              <%= helpers.heroicon("x", style: :solid, class: "w-4 h-4") %>
+              <%=t 'spina.ui.cancel' %>
+            </button>
+          </div>
+
         </div>
       </div>
     </turbo-frame>
