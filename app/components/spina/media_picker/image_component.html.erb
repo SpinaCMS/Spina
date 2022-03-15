@@ -10,7 +10,7 @@
     data-deselected-class="border-transparent"
     class="w-full h-40 overflow-hidden rounded-md transform transition-transform duration-200 border-2 border-transparent hover:scale-105">
 
-    <%= image_tag helpers.thumbnail_url(@image), class: 'object-contain h-40 w-full', data: {controller: "image-fade-in"} %>
+    <%= image_tag helpers.large_thumbnail_url(@image), class: 'object-contain h-40 w-full', data: {controller: "image-fade-in"} %>
   </button>
 
   <div class="text-xs text-center text-gray-700 rounded p-1" data-selected-class="text-white bg-spina" data-deselected-class="text-gray-700"><%= @image.file.filename %></div>
