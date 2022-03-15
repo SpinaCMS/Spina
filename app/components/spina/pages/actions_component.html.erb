@@ -14,14 +14,14 @@
 <% end %>
 
 <!-- Advanced actions -->
-<div class="relative w-1/2 md:w-auto" data-controller="reveal" data-reveal-away-value>
+<div class="relative w-full mob:w-auto" data-controller="reveal" data-reveal-away-value>
   <button type="button" class="btn btn-default px-3 w-full" data-action="reveal#toggle">
     <svg class="w-5 h-5 text-gray-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
       <path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z" />
     </svg>
   </button>
 
-  <div hidden data-reveal data-transition class="origin-top-left md:origin-top-right absolute md:right-0 mt-2 w-56 rounded-md shadow-lg border border-gray-200">
+  <div hidden data-reveal data-transition class="origin-top-left md:origin-top-right absolute md:right-0 mt-2 w-56 rounded-md shadow-lg border border-gray-200 z-50">
     <div class="rounded-md bg-white shadow-xs">
       <div class="py-1">
         
@@ -45,7 +45,7 @@
 <!-- Translations -->
 <%= render Spina::Pages::TranslationsComponent.new(@page, label: @locale.upcase) %>
 
-<button type="submit" form="<%= dom_id(@page) %>" class="btn btn-primary w-1/2 md:w-auto" data-controller="button hotkeys" data-hotkeys="command+s, ctrl+s" data-hotkeys-target="button" data-action="button#loading" data-loading-message="Saving...">
+<button type="submit" form="<%= dom_id(@page) %>" class="btn btn-primary w-full mob:w-auto" data-controller="button hotkeys" data-hotkeys="command+s, ctrl+s" data-hotkeys-target="button" data-action="button#loading" data-loading-message="Saving...">
   <%= helpers.heroicon('check', style: :solid, class: 'w-5 h-5 mr-1 -ml-2') %>
   <% if @page.draft? %>
     <%=t 'spina.pages.save_draft' %>

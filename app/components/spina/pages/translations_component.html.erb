@@ -1,5 +1,5 @@
-<div class="relative" data-controller="reveal" data-reveal-away-value>
-  <button type="button" class="btn btn-default px-3" data-action="reveal#toggle">
+<div class="relative w-full mob:w-auto" data-controller="reveal" data-reveal-away-value>
+  <button type="button" class="btn btn-default px-3 w-full" data-action="reveal#toggle">
     <%= helpers.heroicon("chat-alt", style: :solid, class: 'w-4 h-4 text-gray-300') %>
     <% if @label.present? %>
       <span class="ml-1 font-semibold"><%= @label %></span>
@@ -14,7 +14,7 @@
     <% end %>
   </button>
 
-  <div hidden data-reveal data-transition class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg border border-gray-200 z-20">
+  <div hidden data-reveal data-transition class="origin-top-left md:origin-top-right absolute md:right-0 mt-2 w-56 rounded-md shadow-lg border border-gray-200 z-20">
     <div class="rounded-md bg-white shadow-xs">
       <div class="py-1">
         <% if missing_locales.any? %>
