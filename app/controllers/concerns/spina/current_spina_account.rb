@@ -5,17 +5,19 @@ module Spina
     included do
       before_action :current_spina_account
       helper_method :current_spina_account
-      helper_method :current_account unless Spina.disable_deprecated_methods
+      helper_method :current_account
     end
   
     private
 
-      def current_account
-        ActiveSupport::Deprecation.warn(
-          "#current_account is deprecated, due to a common authentication namespace conflict. \n" \
-          "Please use #current_spina_account instead."
-        )
-        current_spina_account
+      unless Spina.disable_deprecated_methods
+        def current_account
+          ActiveSupport::Deprecation.warn(
+            "#current_account is deprecated, due to a common authentication namespace conflict. \n" \
+            "Please use #current_spina_account instead."
+          )
+          current_spina_account
+        end
       end
 
       def current_spina_account
