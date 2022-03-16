@@ -18,11 +18,13 @@
         </div>
       </div>
     </div>
-    <div class="px-4 pb-5 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-      <button type="submit" class="btn btn-primary w-full sm:w-auto sm:ml-2">
+    <div class="flex flex-wrap mob:justify-between p-4 gap-2">
+      <button type="submit" class="btn btn-primary grow mob:grow-0">
+        <%= heroicon('folder-add', style: :solid, class: 'w-4 h-4 ml-1') %>
         <%=t 'spina.media_library.save_media_folder' %>
       </button>
-      <button type="button" class="btn btn-default w-full sm:w-auto mt-2 sm:mt-0" data-action="modal#close">
+      <button type="button" class="btn btn-default grow mob:grow-0" data-action="modal#close">
+        <%= heroicon('x', style: :solid, class: 'w-4 h-4 ml-1') %>
         <%=t 'spina.ui.cancel' %>
       </button>
     </div>
