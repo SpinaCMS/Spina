@@ -1,9 +1,24 @@
 module Spina
   module ImagesHelper
+  
+    def original_url(image)
+      return "" if image.nil?
+      main_app.url_for(image.file)
+    end
 
     def thumbnail_url(image)
       return "" if image.nil?
       main_app.url_for(image.variant(resize_to_fill: [400, 300]))
+    end
+    
+    def large_thumbnail_url(image)
+      return "" if image.nil?
+      main_app.url_for(image.variant(resize_to_fit: [800, 600]))
+    end
+    
+    def preview_url(image)
+      return "" if image.nil?
+      main_app.url_for(image.variant(resize_to_limit: [1600, 1200]))
     end
 
     def embedded_image_url(image)

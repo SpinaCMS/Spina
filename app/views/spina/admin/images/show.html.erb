@@ -1,1 +1,3 @@
-<%= render @image %>
+<%= render Spina::UserInterface::ModalComponent.new(size: "max-w-screen-lg w-auto") do |modal| %>
+  <%= image_tag preview_url(@image) %>
+<% end %>
