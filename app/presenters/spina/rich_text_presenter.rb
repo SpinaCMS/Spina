@@ -20,7 +20,7 @@ module Spina
       end
     
       def render_embeds(html)
-        doc = Nokogiri::HTML(html)
+        doc = Nokogiri::HTML.fragment(html)
         doc.css(embed_selector).each do |node|
           node.replace render_embed(node.first_element_child)
         end
