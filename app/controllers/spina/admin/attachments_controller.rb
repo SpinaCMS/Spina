@@ -17,10 +17,12 @@ module Spina
 
       def create
         @attachments = params[:attachment][:files].map do |file|
+          next if file.blank? # Skip the blank string posted by the hidden files[] field
+          
           attachment = Attachment.create(attachment_params)
           attachment.file.attach(file)
           attachment
-        end
+        end.compact
         
         respond_to do |format|
           format.turbo_stream { render turbo_stream: turbo_stream.prepend("attachments", partial: "attachment", collection: @attachments)}
