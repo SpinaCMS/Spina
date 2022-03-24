@@ -6,6 +6,12 @@ en:
       spina/embeds/vimeo:
         url: vimeo.com/...
   activerecord:
+    errors:
+      models:
+        spina/page:
+          attributes:
+            title:
+              blank: Title required
     attributes:
       spina/account:
         address: Address
@@ -270,6 +276,7 @@ en:
       save_draft: Save draft
       saved: Page saved
       saving: Saving...
+      couldnt_be_saved: Page couldn't be saved
       search_engines: Search engines
       show_in_menu: invisible
       skip_to_first_child: forward to first child page
