@@ -93,12 +93,11 @@ module Spina
         end
   
         def add_index_breadcrumb
-          path = spina.admin_pages_path
           if @page.resource
-            path = spina.admin_pages_path(resource_id: @page.resource_id)
+            add_breadcrumb @page.resource.label, spina.admin_pages_path(resource_id: @page.resource_id), class: 'text-gray-400'
+          else
+            add_breadcrumb t('spina.website.pages'), spina.admin_pages_path, class: 'text-gray-400'
           end
-          
-          add_breadcrumb t('spina.website.pages'), path, class: 'text-gray-400'
         end
   
         def page_params

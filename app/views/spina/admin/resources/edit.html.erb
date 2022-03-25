@@ -52,7 +52,7 @@
         
         <div class="mt-5">
           <%= f.label :order_by, class: 'font-medium text-sm text-gray-700 block' %>
-          <%= f.select :order_by, [[Spina::Page.human_attribute_name(:title), "title"], [Spina::Page.human_attribute_name(:created_at), "created_at"]], {include_blank: t('spina.resources.manual_sorting')}, class: 'form-select' %>
+          <%= f.select :order_by, f.object.order_by_options, {include_blank: t('spina.resources.manual_sorting')}, class: 'form-select' %>
         </div>
       </div>
     </div>
