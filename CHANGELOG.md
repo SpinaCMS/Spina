@@ -2,6 +2,11 @@
 
 ## 2.9
 
+### 2.9.1 (March 30th, 2022)
+* Fixed bug with attachment uploads
+* Refactored order options for Spina::Resource
+* Updated locales
+
 ### 2.9.0 (March 15th, 2022)
 * Added translatable slugs for resources
 * Added large preview and download buttons to media library
