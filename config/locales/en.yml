@@ -345,6 +345,7 @@ en:
       new_entry: New entry
       optional: Optional
       rename: Rename
+      replace: Replace
       save_changes: Save changes
       saving: Saving...
     user_mailer:

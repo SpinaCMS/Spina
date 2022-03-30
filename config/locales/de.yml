@@ -352,6 +352,7 @@ de:
       new_entry: Neuer Eintrag
       optional: Optional
       rename: Umbenennen
+      replace: Ersetzen
       save_changes: Änderungen speichern
       saving: Speichern...
     user_mailer:

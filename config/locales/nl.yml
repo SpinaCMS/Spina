@@ -316,6 +316,7 @@ nl:
       new_entry: Nieuw item
       optional: Optioneel
       rename: Hernoemen
+      replace: Vervangen
       save_changes: Wijzigingen opslaan
       saving: Opslaan...
     users:

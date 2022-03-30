@@ -82,7 +82,7 @@ module Spina
         end
         
         def image_params
-          params.require(:image).permit(:media_folder_id)
+          params.require(:image).permit(:media_folder_id, :file)
         end
 
     end

@@ -32,6 +32,7 @@ module Spina
       
       def update
         @attachment = Attachment.find(params[:id])
+        @attachment.update(attachment_params) if params[:attachment].present?
         if params[:filename].present?
           extension = @attachment.file.filename.extension
           filename = "#{params[:filename]}.#{extension}"
