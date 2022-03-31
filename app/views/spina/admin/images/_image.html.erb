@@ -11,7 +11,7 @@
     
       <div class="absolute h-full opacity-0 group-hover:opacity-100 flex items-center right-0 pr-3 top-0">
         
-        <%= form_with model: image, url: spina.admin_image_path(image), data: {turbo_frame: dom_id(image), controller: "form loading-button", loading_message: t('spina.media_library.uploading'), action: "turbo:submit-end->loading-button#doneLoading"} do |f| %>          
+        <%= form_with model: image, url: spina.replace_admin_image_path(image), data: {turbo_frame: dom_id(image), controller: "form loading-button", loading_message: t('spina.media_library.uploading'), action: "turbo:submit-end->loading-button#doneLoading"} do |f| %>          
           <%= f.file_field :file, accept: "image/*", id: "image_#{image.id}_file_field", class: 'hidden', data: {action: "loading-button#loading form#requestSubmit"} %>
           
           <button type="button" class="btn btn-default h-7 px-2 mr-2 text-xs" data-controller="delegate-click" data-action="delegate-click#click" data-loading-button-target="button" data-delegate-click-target="#image_<%= image.id %>_file_field">

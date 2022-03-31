@@ -77,7 +77,9 @@ Spina::Engine.routes.draw do
       resources :images
     end
 
-    resources :images
+    resources :images do
+      patch :replace, on: :member
+    end
     
     resource :media_picker, controller: "media_picker", only: [:show]
     

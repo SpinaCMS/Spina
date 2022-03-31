@@ -57,6 +57,18 @@ module Spina
           render @image
         end
       end
+      
+      def replace
+        @image = Image.find(params[:id])
+        old_signed_id = @image.file&.blob&.signed_id
+        @image.update(image_params)
+        
+        # Replace all occurrences of the old signed blob ID 
+        # with the new ID in a background job
+        Spina::ImageBlobReplaceJob.perform_later(old_signed_id, @image.reload.file&.blob&.signed_id)
+        @media_folders = MediaFolder.order(:name)
+        render @image
+      end
 
       def destroy
         @image = Image.find(params[:id])
