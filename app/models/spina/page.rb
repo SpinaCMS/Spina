@@ -47,7 +47,7 @@ module Spina
     translates :menu_title, :seo_title, :url_title, default: -> { title }
 
     def to_s
-      name
+      title
     end
 
     def page_id
