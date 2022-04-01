@@ -65,7 +65,7 @@ module Spina
         
         # Replace all occurrences of the old signed blob ID 
         # with the new ID in a background job
-        Spina::ImageBlobReplaceJob.perform_later(old_signed_id, @image.reload.file&.blob&.signed_id)
+        Spina::ReplaceSignedIdJob.perform_later(old_signed_id, @image.reload.file&.blob&.signed_id)
         @media_folders = MediaFolder.order(:name)
         render @image
       end

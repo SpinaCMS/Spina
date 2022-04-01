@@ -1,11 +1,11 @@
 module Spina
-  class ImageBlobReplaceJob < ApplicationJob
+  class ReplaceSignedIdJob < ApplicationJob
     queue_as { Spina.config.queues[:page_updates] }
   
     def perform(old_signed_id, new_signed_id)
       return if old_signed_id.blank? || new_signed_id.blank?
       pages = get_pages(old_signed_id)
-      pages.update_all("json_attributes = regexp_replace(json_attributes::text, '#{old_signed_id}', '#{new_signed_id}')::jsonb")
+      pages.update_all("json_attributes = REGEXP_REPLACE(json_attributes::text, '#{old_signed_id}', '#{new_signed_id}', 'g')::jsonb")
     end
     
     private

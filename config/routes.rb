@@ -64,6 +64,7 @@ Spina::Engine.routes.draw do
     end
 
     resources :attachments do
+      patch :replace, on: :member
       collection do
         get 'select/:page_part_id' => 'attachments#select', as: :select
         post 'insert/:page_part_id' => 'attachments#insert', as: :insert

@@ -39,7 +39,18 @@ module Spina
           @attachment.file.blob.update(filename: filename)
         end
         
-        redirect_to [:admin, @attachment]
+        render @attachment
+      end
+      
+      def replace
+        @attachment = Attachment.find(params[:id])
+        old_signed_id = @attachment.file&.blob&.signed_id
+        @attachment.update(attachment_params)
+        
+        # Replace all occurrences of the old signed blob ID 
+        # with the new ID in a background job
+        Spina::ReplaceSignedIdJob.perform_later(old_signed_id, @attachment.reload.file&.blob&.signed_id)
+        render @attachment
       end
 
       def destroy
