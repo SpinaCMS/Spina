@@ -32,24 +32,20 @@ module Spina
       
       def update
         @attachment = Attachment.find(params[:id])
+        old_signed_id = @attachment.file&.blob&.signed_id
         @attachment.update(attachment_params) if params[:attachment].present?
         if params[:filename].present?
           extension = @attachment.file.filename.extension
           filename = "#{params[:filename]}.#{extension}"
           @attachment.file.blob.update(filename: filename)
         end
-        
-        render @attachment
-      end
-      
-      def replace
-        @attachment = Attachment.find(params[:id])
-        old_signed_id = @attachment.file&.blob&.signed_id
-        @attachment.update(attachment_params)
-        
+
         # Replace all occurrences of the old signed blob ID 
         # with the new ID in a background job
-        Spina::ReplaceSignedIdJob.perform_later(old_signed_id, @attachment.reload.file&.blob&.signed_id)
+        if @attachment.reload.file&.blob&.signed_id != old_signed_id
+          Spina::ReplaceSignedIdJob.perform_later(old_signed_id, @attachment.file&.blob&.signed_id)
+        end
+                
         render @attachment
       end
 

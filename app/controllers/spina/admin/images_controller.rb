@@ -44,30 +44,26 @@ module Spina
       
       def update
         @image = Image.find(params[:id])
+        old_signed_id = @image.file&.blob&.signed_id
         @image.update(image_params) if params[:image].present?
         if params[:filename].present?
           extension = @image.file.filename.extension
           filename = "#{params[:filename]}.#{extension}"
           @image.file.blob.update(filename: filename)
         end
+        
+        # Replace all occurrences of the old signed blob ID 
+        # with the new ID in a background job
+        if @image.reload.file&.blob&.signed_id != old_signed_id
+          Spina::ReplaceSignedIdJob.perform_later(old_signed_id, @image.file&.blob&.signed_id)
+        end
+        
         if @image.saved_change_to_media_folder_id?
           render :update
         else
           @media_folders = MediaFolder.order(:name)
           render @image
         end
-      end
-      
-      def replace
-        @image = Image.find(params[:id])
-        old_signed_id = @image.file&.blob&.signed_id
-        @image.update(image_params)
-        
-        # Replace all occurrences of the old signed blob ID 
-        # with the new ID in a background job
-        Spina::ReplaceSignedIdJob.perform_later(old_signed_id, @image.reload.file&.blob&.signed_id)
-        @media_folders = MediaFolder.order(:name)
-        render @image
       end
 
       def destroy
