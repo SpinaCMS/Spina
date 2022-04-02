@@ -52,15 +52,15 @@ module Spina
           @image.file.blob.update(filename: filename)
         end
         
-        # Replace all occurrences of the old signed blob ID 
-        # with the new ID in a background job
-        if @image.reload.file&.blob&.signed_id != old_signed_id
-          Spina::ReplaceSignedIdJob.perform_later(old_signed_id, @image.file&.blob&.signed_id)
-        end
-        
         if @image.saved_change_to_media_folder_id?
           render :update
         else
+          # Replace all occurrences of the old signed blob ID 
+          # with the new ID in a background job
+          if @image.reload.file&.blob&.signed_id != old_signed_id
+            Spina::ReplaceSignedIdJob.perform_later(old_signed_id, @image.file&.blob&.signed_id)
+          end
+          
           @media_folders = MediaFolder.order(:name)
           render @image
         end
