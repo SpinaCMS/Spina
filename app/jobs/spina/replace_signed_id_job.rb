@@ -4,11 +4,20 @@ module Spina
   
     def perform(old_signed_id, new_signed_id)
       return if old_signed_id.blank? || new_signed_id.blank?
+      
       pages = get_pages(old_signed_id)
-      pages.update_all("json_attributes = REGEXP_REPLACE(json_attributes::text, '#{old_signed_id}', '#{new_signed_id}', 'g')::jsonb")
+      accounts = get_accounts(old_signed_id)
+      
+      [pages, accounts].each do |records|
+        records.update_all("json_attributes = REGEXP_REPLACE(json_attributes::text, '#{old_signed_id}', '#{new_signed_id}', 'g')::jsonb")  
+      end
     end
     
     private
+    
+      def get_account(signed_id)
+        Spina::Account.all
+      end
     
       def get_pages(signed_id)
         return Spina::Page.none unless signed_id.present?
