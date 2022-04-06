@@ -1,5 +1,5 @@
-<% if Spina.config.locales.size > 1 %>
+<% if Spina.locales.size > 1 %>
   <div id="languages">
-    <%= Spina.config.locales.map{|l| link_to_unless(l == I18n.locale, l.upcase, root_url(params: {locale: l}))}.join(' / ').html_safe %>
+    <%= Spina.locales.map{|l| link_to_unless(l == I18n.locale, l.upcase, root_url(params: {locale: l}))}.join(' / ').html_safe %>
   </div>
 <% end %>
