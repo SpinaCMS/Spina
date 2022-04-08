@@ -13,6 +13,7 @@ module Spina
     def variant(options)
       return "" unless file.attached?
       return file if file.content_type.include?('svg')
+      return file if file.content_type.include?('gif')
       return file unless file.variable?
 
       file.variant(options)

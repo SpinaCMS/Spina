@@ -36,10 +36,10 @@ module Spina
     private
 
       def main_app_image_url(image, variant_options = {})
-        # SVG's can't have variants, 
+        # SVG's and animated GIF's can't have variants,
         # Render rails_service_blob_url directly instead
-        return view_context.main_app.url_for(image) if image.svg?
-        
+        return view_context.main_app.url_for(image) if image.svg? || image.gif?
+
         view_context.main_app.url_for(image.variant(variant_options))
       end
 

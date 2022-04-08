@@ -17,7 +17,11 @@ module Spina
       end
 
       def svg?
-        filename =~ /\.svg\z/
+        (filename =~ /\.svg\z/).present?
+      end
+
+      def gif?
+        (filename =~ /\.gif\z/).present?
       end
 
       def spina_image
@@ -27,15 +31,15 @@ module Spina
       def present?
         signed_blob_id.present?
       end
-      
+
       def signed_id(expires_in: nil)
         signed_blob_id
       end
-      
+
       def variant(options)
         Spina::Parts::ImageVariant.new(self, options)
       end
-      
+
     end
   end
 end
