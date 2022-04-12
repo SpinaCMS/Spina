@@ -9,11 +9,11 @@ Spina.configure do |config|
   # Specify a backend path. Defaults to /admin.
   # config.backend_path = 'admin'
 
-  # Deprecated methods
+  # Deprecated current account method
   # ===============
-  # Uncomment the config below to disable all deprecated methods.
+  # Uncomment the config below to disable 'current_account'.
   # Use this if you are having a namespace conflict with the deprecated 'current_account' method.
-  # config.disable_deprecated_methods = true
+  # config.disable_current_account = true
   
   # Frontend routes
   # ===============
