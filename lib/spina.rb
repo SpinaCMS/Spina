@@ -47,7 +47,7 @@ module Spina
   self.mailer_defaults = ActiveSupport::OrderedOptions.new
   self.thumbnail_image_size = [400, 400]
   self.frontend_parent_controller = "ApplicationController"
-  self.locales = [I18n.default_locale]
+  self.locales = []
   self.party_pooper = false
   self.transliterations = %i(latin)
   
@@ -98,6 +98,10 @@ module Spina
       end
       
       config_obj
+    end
+    
+    def locales
+      config.locales.presence || [I18n.default_locale]
     end
     
     def mounted_at
