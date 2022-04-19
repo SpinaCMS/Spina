@@ -254,6 +254,10 @@ nl:
       show_in_menu: onzichtbaar
       skip_to_first_child: doorsturen naar 1<sup>e</sup> subpagina
       sorting_saved: Volgorde opgeslagen
+    page_translations:
+      delete: Verwijder vertaling (%{translation})
+      delete_confirmation: Weet je zeker dat je deze vertaling <strong>(%{subject})</strong> wilt verwijderen?
+      deleted: Vertaling verwijderd
     permanently_delete: Definitief verwijderen
     photos:
       cannot_be_created: 'Foto kon niet worden verwerkt:'
