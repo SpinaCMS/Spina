@@ -2,12 +2,12 @@ module Spina
   module Admin
     class PagesController < AdminController
       before_action :set_locale
-      before_action :set_page, only: [:edit, :edit_content, :edit_template, :update, :destroy, :children]
+      before_action :set_page, only: [:edit, :edit_content, :edit_template, :update, :destroy, :destroy_locale, :children]
       before_action :set_tabs
 
       def index
         add_breadcrumb I18n.t('spina.website.pages'), spina.admin_pages_path
-        
+
         if params[:resource_id]
           @resource = Resource.find(params[:resource_id])
           @page_templates = Spina::Current.theme.new_page_templates(resource: @resource)
@@ -55,8 +55,8 @@ module Spina
           else
             flash[:success] = t('spina.pages.saved')
           end
-          
-          redirect_to spina.edit_admin_page_url(@page, params: {locale: @locale})
+
+          redirect_to spina.edit_admin_page_url(@page, params: { locale: @locale })
         else
           add_index_breadcrumb
           Mobility.locale = I18n.locale
@@ -67,10 +67,10 @@ module Spina
       end
 
       def sort
-        params[:ids].each.with_index do |id, index| 
+        params[:ids].each.with_index do |id, index|
           Page.where(id: id).update_all(position: index + 1)
         end
-        
+
         flash.now[:info] = t("spina.pages.sorting_saved")
         render_flash
       end
@@ -81,9 +81,17 @@ module Spina
       end
 
       def destroy
-        flash[:info] = t('spina.pages.deleted')    
+        flash[:info] = t('spina.pages.deleted')
         @page.destroy
         redirect_to spina.admin_pages_url
+      end
+
+      def destroy_locale
+        flash[:info] = t('spina.pages.deleted')
+        @page.json_attributes["#{params[:locale]}_content"] = []
+        @page.save
+        Spina::Page::Translation.where(spina_page_id: @page.id, locale: params[:locale]).destroy_all
+        redirect_to spina.edit_admin_page_url(@page), status: 303
       end
 
       private
@@ -91,7 +99,7 @@ module Spina
         def set_locale
           @locale = params[:locale] || I18n.default_locale
         end
-  
+
         def add_index_breadcrumb
           if @page.resource
             add_breadcrumb @page.resource.label, spina.admin_pages_path(resource_id: @page.resource_id), class: 'text-gray-400'
@@ -99,11 +107,11 @@ module Spina
             add_breadcrumb t('spina.website.pages'), spina.admin_pages_path, class: 'text-gray-400'
           end
         end
-  
+
         def page_params
           params.require(:page).permit!
         end
-  
+
         def set_page
           @page = Page.find(params[:id])
         end

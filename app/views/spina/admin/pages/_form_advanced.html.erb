@@ -52,4 +52,20 @@
   <div class="col-span-2">
     <%= render Spina::Forms::SwitchComponent.new(f, :skip_to_first_child) %>
   </div>
+
+  <% if @locale != I18n.default_locale.to_s %>
+    <div class="col-span-1 mt-6 md:mt-0">
+      <label class="font-medium text-sm leading-5 w-full text-gray-700">
+        Delete current translation
+      </label>
+    </div>
+
+    <div class="col-span-2">
+      <%= link_to "Delete translation (#{@locale.upcase})",
+                  spina.destroy_locale_admin_page_path(f.object, locale: @locale),
+                  data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+                  class: "text-red-500 font-semibold py-2 px-4 border hover:border-transparent rounded" %>
+    </div>
+  <% end %>
+
 </div>

@@ -47,6 +47,7 @@ Spina::Engine.routes.draw do
         get :edit_content
         get :edit_template
         get :children
+        delete :destroy_locale
       end
       
       resource :move, controller: "move_pages"
