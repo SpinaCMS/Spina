@@ -281,6 +281,10 @@ en:
       show_in_menu: invisible
       skip_to_first_child: forward to first child page
       sorting_saved: Sorting saved
+    page_translations:
+      delete: Delete translation (%{translation})
+      delete_confirmation: Are you sure you want to delete this translation <strong>(%{subject})</strong>?
+      deleted: Translation deleted
     permanently_delete: Permanently delete
     photos:
       cannot_be_created: 'Image could not be processed:'
