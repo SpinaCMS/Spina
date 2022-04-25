@@ -17,16 +17,16 @@ module Spina
     has_many :navigations, through: :navigation_items
 
     # Pages can belong to a resource
-    belongs_to :resource, optional: true
+    belongs_to :resource, optional: true, touch: true
 
-    scope :main, -> { where(resource_id: nil) }    
+    scope :main, -> { where(resource_id: nil) }
     scope :regular_pages, ->  { main }
     scope :resource_pages, -> { where.not(resource: nil) }
     scope :active, -> { where(active: true) }
     scope :sorted, -> { order(:position) }
     scope :live, -> { active.where(draft: false) }
     scope :in_menu, -> { where(show_in_menu: true) }
-    
+
     before_create :set_default_position
 
     # Copy resource from parent
@@ -57,7 +57,7 @@ module Spina
     def slug
       url_title.to_s.to_slug.transliterate(*Spina.config.transliterations).normalize.to_s
     end
-    
+
     def homepage?
       name == 'homepage'
     end
@@ -81,11 +81,11 @@ module Spina
     def next_sibling
       siblings.where('position > ?', position).sorted.first
     end
-    
+
     def set_materialized_path
       self.old_path = materialized_path
       self.materialized_path = localized_materialized_path
-      
+
       # Append counter to duplicate materialized_path
       i = 0
       while duplicate_materialized_path?
@@ -104,7 +104,7 @@ module Spina
     end
 
     private
-    
+
       def set_default_position
         self.position ||= self.class.maximum(:position).to_i.next
       end
@@ -136,7 +136,7 @@ module Spina
         path_fragments.append(slug) unless homepage?
         path_fragments.compact.map(&:parameterize).join('/')
       end
-      
+
       def duplicate_materialized_path?
         self.class.where.not(id: id).i18n.where(materialized_path: materialized_path).exists?
       end
