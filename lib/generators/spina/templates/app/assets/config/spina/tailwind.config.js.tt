@@ -1,7 +1,7 @@
 module.exports = {
   content: [
     <%= Spina.config.tailwind_content.map{|path|"'#{path}'"}.join(",\n") %>
-  ],  
+  ],
   theme: {
     fontFamily: {
       body: ['Metropolis'],
@@ -18,8 +18,6 @@ module.exports = {
     }
   },
   plugins: [
-    require('@tailwindcss/forms'),
-    require('@tailwindcss/aspect-ratio'),
-    require('@tailwindcss/typography'),
+    <%= Spina.config.tailwind_plugins.map {|plugin|"require('#{plugin}')"}.join(",\n\t") %>
   ]
 }
