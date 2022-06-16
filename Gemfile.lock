@@ -92,7 +92,7 @@ GEM
       tzinfo (~> 2.0)
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
-    ancestry (4.1.0)
+    ancestry (4.2.0)
       activerecord (>= 5.2.6)
     ansi (1.5.0)
     attr_json (1.4.0)
