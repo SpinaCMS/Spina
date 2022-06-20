@@ -170,7 +170,7 @@ GEM
       builder
       minitest (>= 5.0)
       ruby-progressbar
-    mobility (1.2.6)
+    mobility (1.2.8)
       i18n (>= 0.6.10, < 2)
       request_store (~> 1.0)
     mocha (1.14.0)
