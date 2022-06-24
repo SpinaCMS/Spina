@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 end
 
 Spina::Engine.routes.draw do
-  
+
   # API
   namespace :api, path: Spina.config.api_path do
     resources :pages, only: [:index, :show]
@@ -33,7 +33,7 @@ Spina::Engine.routes.draw do
     patch "/settings/:plugin", to: "settings#update", as: :settings
 
     resources :users
-    
+
     # Sessions
     resources :sessions
     get "login" => "sessions#new"
@@ -48,7 +48,7 @@ Spina::Engine.routes.draw do
         get :edit_template
         get :children
       end
-      
+
       resource :move, controller: "move_pages"
 
       post :sort, on: :collection
@@ -57,7 +57,7 @@ Spina::Engine.routes.draw do
     resources :parent_pages
     resource :layout, controller: :layout, only: [:edit, :update]
 
-    resources :resources, only: [:show, :edit, :update]
+    resources :resources, except: [:destroy]
 
     resources :navigations do
       post :sort, on: :member
@@ -79,9 +79,9 @@ Spina::Engine.routes.draw do
     end
 
     resources :images
-    
+
     resource :media_picker, controller: "media_picker", only: [:show]
-    
+
     resources :embeds, only: [:new, :create]
   end
 

@@ -1,0 +1,30 @@
+<%= render Spina::UserInterface::HeaderComponent.new do |header| %>
+  <% header.actions do %>
+    <%= link_to spina.new_admin_resource_path, class: "btn btn-primary" do %>
+      <%= heroicon("plus", style: :solid, class: "w-7 h-7 -ml-2") %>
+      <%= t("spina.resources.new") %>
+    <% end %>
+  <% end %>
+<% end %>
+
+<%- if @resources.any? %>
+
+  <div class="my-6 md:m-8 bg-white md:rounded-lg border-l-0 border-r-0 border md:border-r md:border-l border-gray-200 border-b-0 shadow-sm">
+    <ul class="resource--list">
+      <%- @resources.each do |resource| %>
+        <li data-id="<%= resource.id %>">
+          <%= link_to spina.edit_admin_resource_path(resource), class: "block text-spina font-medium text-sm p-4 hover:text-spina-dark" do %>
+            <%= resource.label %>
+
+            <small class="font-normal inline-block pl-4"><%= resource.name %></small>
+          <% end %>
+        </li>
+      <% end -%>
+    </ul>
+  </div>
+
+<% else %>
+
+  <div class="m-8 my-6 italic text-gray-400"><%=t 'spina.resources.no_resources_yet' %></div>
+
+<% end -%>

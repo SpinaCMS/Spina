@@ -325,6 +325,9 @@ en:
       edit: Edit resource
       label_description: User-facing label for this page collection.
       manual_sorting: Manual sorting
+      name_description: Internal label for this page collection.
+      name: Name
+      new: New collection
       no_default_template: No default template
       saved: Page collection saved
       settings: "%{label} settings"
@@ -388,6 +391,7 @@ en:
       pages: Pages
       pages_description: All pages on your website
       photos: Images
+      resources: Collections
       settings: Settings
       theme: Theme
       title: Your website

@@ -1,7 +1,5 @@
 <%= render Spina::UserInterface::HeaderComponent.new do |header| %>
   <% header.actions do %>
-    <%= render Spina::UserInterface::TranslationsComponent.new(@resource, label: @locale.upcase) %>
-
     <%= button_tag type: :submit, form: dom_id(@resource), class: 'btn btn-primary', data: {controller: "button", action: "button#loading", loading_message: t('spina.ui.saving')} do %>
       <%= heroicon('check', style: :solid, class: 'w-5 h-5 mr-1 -ml-2') %>
       <%=t 'spina.ui.save_changes' %>

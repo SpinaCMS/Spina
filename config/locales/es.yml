@@ -294,6 +294,9 @@ es:
       edit: Editar recurso
       label_description: User-facing label for this page collection.
       manual_sorting: Ordenamiento manual
+      name_description: Nombre interno para esta colección de páginas.
+      name: Nombre
+      new: Nueva colección
       no_default_template: No hay plantilla por defecto
       saved: Colección de páginas guardadas
       settings: "%{label} configuraciones"
@@ -342,6 +345,9 @@ es:
       pages: Páginas
       pages_description: Todas las páginas de tu sitio
       photos: Imágenes
+      resources: Colecciones
+      settings: Ajustes
+      theme: Tema
       title: Tu sitio
     wysiwyg:
       heading_1: Encabezado 1

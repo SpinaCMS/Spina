@@ -6,32 +6,34 @@
         <% nav.icon do %>
           <%= heroicon('document-text', style: :solid, class: 'hidden md:block w-8 h-8 text-white md:mr-3') %>
           <%= heroicon('menu', style: :solid, class: 'md:hidden w-8 h-8 text-white md:mr-3') %>
-          
+
           <div class="text-white font-semibold hidden md:block transform -translate-x-2 ease-in-out duration-300 absolute md:relative opacity-0 transition-all" data-navigation-target="label">
             <%= t('spina.website.content') %>
           </div>
         <% end %>
 
         <% nav.links do %>
-        
-          <%= render Spina::MainNavigation::LinkComponent.new t('spina.website.pages'), spina.admin_pages_path, active: controller_name.in?(%w(pages resources)) %>
-          
+
+          <%= render Spina::MainNavigation::LinkComponent.new t('spina.website.resources'), spina.admin_resources_path, active: controller_name.in?(%w(resources)) %>
+
+          <%= render Spina::MainNavigation::LinkComponent.new t('spina.website.pages'), spina.admin_pages_path, active: controller_name.in?(%w(pages)) %>
+
           <%= render Spina::MainNavigation::LinkComponent.new t('spina.navigations.navigations'), spina.admin_navigations_path, active: controller_name == "navigations" %>
 
           <%= render Spina::MainNavigation::LinkComponent.new t('spina.layout.layout'), spina.edit_admin_layout_path, active: controller_name == "layout" %>
-          
+
           <%= render Spina::MainNavigation::LinkComponent.new t('spina.website.media_library'), spina.admin_images_path, active: controller_name.in?(%w(images media_folders attachments)) %>
-          
+
           <%= render Spina::Hooks::HookComponent.new(partial: "website_secondary_navigation") %>
         <% end %>
       <% end %>
-      
+
       <%= render Spina::Hooks::HookComponent.new(partial: "primary_navigation") %>
 
       <%= render Spina::MainNavigation::SubNavComponent.new(:settings) do |nav| %>
         <% nav.icon do %>
           <%= heroicon('cog', style: :solid, class: 'w-8 h-8 text-white md:mr-3') %>
-          
+
           <div class="text-white font-semibold hidden md:block transform -translate-x-2 ease-in-out duration-300 absolute md:relative opacity-0 transition-all" data-navigation-target="label">
             <%= t('spina.website.settings') %>
           </div>
@@ -44,15 +46,15 @@
           <% if Spina.config.authentication == "Spina::Authentication::Sessions" %>
             <%= render Spina::MainNavigation::LinkComponent.new(t('spina.settings.users'), spina.admin_users_path, active: controller_name == "users") %>
           <% end %>
-          
+
           <%= render Spina::Hooks::HookComponent.new(partial: "settings_secondary_navigation") %>
-          
+
           <% Spina::Plugin.all.each do |plugin| %>
             <% if plugin.settings.present? %>
               <%= render Spina::MainNavigation::LinkComponent.new(t("spina.#{plugin.namespace}.title"), spina.admin_edit_settings_path(plugin.namespace), active: controller_name == 'settings' && params[:plugin] == plugin.namespace) %>
             <% end %>
           <% end %>
-          
+
         <% end %>
       <% end %>
     </ul>
