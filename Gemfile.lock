@@ -245,7 +245,7 @@ GEM
     ruby-vips (2.1.4)
       ffi (~> 1.12)
     rubyzip (2.3.2)
-    selenium-webdriver (4.2.1)
+    selenium-webdriver (4.3.0)
       childprocess (>= 0.5, < 5.0)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
@@ -303,7 +303,7 @@ DEPENDENCIES
   pry-rails
   puma
   rails-controller-testing
-  selenium-webdriver (~> 4.2.1)
+  selenium-webdriver (~> 4.3.0)
   simplecov
   spina!
   webdrivers
