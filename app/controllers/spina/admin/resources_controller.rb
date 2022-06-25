@@ -37,6 +37,8 @@ module Spina
           flash[:success] = t("spina.resources.saved")
           redirect_to spina.admin_pages_path(resource_id: @resource.id)
         else
+          add_breadcrumb @resource.label, spina.admin_pages_path(resource_id: @resource.id), class: "text-gray-400"
+          add_breadcrumb t("spina.edit")
           render :edit
         end
       end

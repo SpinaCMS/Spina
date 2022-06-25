@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Spina
   class Resource < ApplicationRecord
     extend Mobility
@@ -7,6 +9,9 @@ module Spina
     after_commit :update_resource_pages, on: [:update]
 
     translates :slug, backend: :jsonb
+
+    validates :label,
+      presence: {allow_blank: false}
 
     def pages
       case order_by
@@ -24,7 +29,7 @@ module Spina
         ResourcePagesUpdateJob.perform_later(id)
       end
     end
-    
+
     def order_by_options
       [
         [Spina::Page.human_attribute_name(:title), "title"], 
