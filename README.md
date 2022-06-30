@@ -20,6 +20,9 @@ Run the installer to start the setup process:
 
     rails g spina:install [--silent] [--first-deploy]
 
+Run the installer to start the setup process if any error occurred for the above command or if you have an existing project:
+    rails spina:install
+
 The installer will help you create your first user interactively, unless you choose the optional `--silent` flag : in this case, defaults will apply.
 
 Then start `rails s` and access Spina at `/admin`.
