@@ -1,5 +1,17 @@
 # Spina CMS Changelog
 
+## 2.11
+
+### 2.11.0 (July 13th, 2022)
+*Security update*
+* Added support for symbols in serialized YAML column (RAILS CVE-2022-32224)
+
+* Added customizable tailwind plugins
+* Added touch:true to page_resource relation on page.rb 
+* Added button to delete translation
+* Added fallback to I18n.default_locale when not using Spina.config.locales
+* Updated gem dependencies
+
 ## 2.10
 
 ### 2.10.0 (April 6th, 2022)
