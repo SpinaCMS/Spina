@@ -22,6 +22,10 @@ module Spina
     def self.serialized_attr_accessor(*args)
       args.each do |method_name|
         define_method method_name do
+          if self.preferences.try(:[], method_name.to_sym).present?
+            ActiveSupport::Deprecation.warn("#{method_name} is stored as a symbol. Please set and save it again using #{method_name}= on your Spina::Account model to store it as a string. You can do this from the UI by saving your account preferences.")
+          end
+          
           self.preferences.try(:[], method_name.to_s) || 
           self.preferences.try(:[], method_name.to_sym)
         end
