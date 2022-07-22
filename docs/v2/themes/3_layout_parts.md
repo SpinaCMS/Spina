@@ -14,4 +14,4 @@ Just like adding parts to view_templates you can also add parts you want to use 
 end
 ```
 
-This content is stored on the `Spina::Account` model. You can use `current_account.content` to render layout parts in your frontend.
+This content is stored on the `Spina::Account` model. You can use `current_spina_account.content` to render layout parts in your frontend.

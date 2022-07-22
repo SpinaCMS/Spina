@@ -9,7 +9,7 @@ module Spina
       
       before_action :set_locale
       before_action :set_current_page
-      before_action :set_current_account
+      before_action :set_current_spina_account
     end
 
     def show
@@ -33,7 +33,7 @@ module Spina
         Spina::Current.page.view_context = view_context
       end
 
-      def set_current_account
+      def set_current_spina_account
         Spina::Current.account = Spina::Account.first
         Spina::Current.account.view_context = view_context
       end

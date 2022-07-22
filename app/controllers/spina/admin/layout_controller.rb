@@ -30,7 +30,7 @@ module Spina::Admin
       end
 
       def set_account
-        @account = current_account
+        @account = current_spina_account
       end
 
       def set_locale
