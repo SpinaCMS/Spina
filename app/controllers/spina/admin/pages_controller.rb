@@ -79,21 +79,17 @@ module Spina
         current_position = @page.position
         
         if params[:direction] == "up"
-          @other_page = @page.resource.pages.sorted.where("position < ?", current_position).last
-          
           @bottom_page = @page
-          @top_page = @other_page
+          @top_page = @target_page = @page.siblings.where(resource_id: @page.resource_id).sorted.where("position < ?", current_position).last
         else
-          @other_page = @page.resource.pages.sorted.where("position > ?", current_position).first
-          
-          @bottom_page = @other_page
+          @bottom_page = @target_page = @page.siblings.where(resource_id: @page.resource_id).sorted.where("position > ?", current_position).first
           @top_page = @page
         end
         
-        if @other_page
+        if @target_page
           @page.transaction do
-            @page.update(position: @other_page&.position)
-            @other_page.update(position: current_position)
+            @page.update(position: @target_page.position)
+            @target_page.update(position: current_position)
           end
         end
       end

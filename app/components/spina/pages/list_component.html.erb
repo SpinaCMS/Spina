@@ -3,16 +3,22 @@
   <% end %>
   
   <ul data-controller="infinite-scroll">
-    <turbo-frame id="pages">
-      <turbo-frame id="pages-<%= @pages.current_page%>" data-sortable-target="list">
-        <%= render Spina::Pages::PageComponent.with_collection(@pages, sortable: sortable, draggable: draggable) %>
-        
-        <% if @pages.next_page %>
-          <turbo-frame id="pages-<%= @pages.next_page %>" data-action="turbo:frame-load->infinite-scroll#load">
-            <%= link_to t('spina.ui.load_more'), helpers.path_to_next_page(@pages), class: "btn btn-default", data: {infinite_scroll_target: "button"} %>
-          </turbo-frame>
-        <% end %>
+    <% if paginated %>
+      <turbo-frame id="pages">
+        <turbo-frame id="pages-<%= @pages.current_page %>" data-sortable-target="list">
+          <%= render Spina::Pages::PageComponent.with_collection(@pages, sortable: sortable, draggable: draggable) %>
+          
+          <% if @pages.next_page %>
+            <turbo-frame id="pages-<%= @pages.next_page %>" data-action="turbo:frame-load->infinite-scroll#load">
+              <%= link_to t('spina.ui.load_more'), helpers.path_to_next_page(@pages), class: "btn btn-default", data: {infinite_scroll_target: "button"} %>
+            </turbo-frame>
+          <% end %>
+        </turbo-frame>
       </turbo-frame>
-    </turbo-frame>
+    <% else %>
+      <div data-sortable-target="list">
+        <%= render Spina::Pages::PageComponent.with_collection(@pages, sortable: sortable, draggable: draggable) %>
+      </div>
+    <% end %>
   </ul>
 </div>

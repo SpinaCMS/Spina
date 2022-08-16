@@ -7,13 +7,13 @@
             <%= helpers.heroicon("menu-alt-4", style: :solid, class: "w-4 h-4 -mr-4") %>
           </div>
         <% else %>
-          <div class="pl-3 flex items-center">          
-            <%= button_to helpers.spina.sort_one_admin_page_path(@page), class: "btn btn-default shadow-none border-gray-200 border-r-0 rounded-r-none px-1.5 h-7" do %>
-              <%= helpers.heroicon("arrow-narrow-down", style: :solid, class: 'w-4 h-4 text-gray-600') %>
+          <div class="pl-2">          
+            <%= button_to helpers.spina.sort_one_admin_page_path(@page, direction: "up"), class: "btn btn-default shadow-none border-gray-200 border-b-0 rounded-b-none px-1 h-5" do %>
+              <%= helpers.heroicon("chevron-up", style: :solid, class: 'w-4 h-4 text-gray-600') %>
             <% end %>
   
-            <%= button_to helpers.spina.sort_one_admin_page_path(@page, direction: "up"), class: "btn btn-default shadow-none border-gray-200 rounded-l-none px-1.5 h-7" do %>
-              <%= helpers.heroicon("arrow-narrow-up", style: :solid, class: 'w-4 h-4 text-gray-600') %>
+            <%= button_to helpers.spina.sort_one_admin_page_path(@page), class: "btn btn-default shadow-none border-gray-200 rounded-t-none px-1 h-5" do %>
+              <%= helpers.heroicon("chevron-down", style: :solid, class: 'w-4 h-4 text-gray-600') %>
             <% end %>
           </div>
         <% end %>
@@ -33,7 +33,7 @@
     </div>
   
     <% if children.any? %>
-      <%= render Spina::Pages::ListComponent.new(pages: children, sortable: sortable) %>
+      <%= render Spina::Pages::ListComponent.new(pages: children, sortable: sortable, draggable: draggable) %>
     <% end %>
   </li>
 </turbo-frame>
