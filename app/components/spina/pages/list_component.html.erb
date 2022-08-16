@@ -2,7 +2,7 @@
   <%= form_with url: helpers.spina.sort_admin_pages_path, data: {sortable_target: "form"} do |f| %>
   <% end %>
   
-  <ul data-controller="infinite-scroll">
+  <div data-controller="infinite-scroll">
     <% if paginated %>
       <turbo-frame id="pages">
         <turbo-frame id="pages-<%= @pages.current_page %>" data-sortable-target="list">
@@ -20,5 +20,5 @@
         <%= render Spina::Pages::PageComponent.with_collection(@pages, sortable: sortable, draggable: draggable) %>
       </div>
     <% end %>
-  </ul>
+  </div>
 </div>
