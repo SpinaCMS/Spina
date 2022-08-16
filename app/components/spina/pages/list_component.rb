@@ -1,15 +1,14 @@
 module Spina
   module Pages
     class ListComponent < ApplicationComponent
-      attr_reader :depth, :sortable
+      attr_reader :depth, :sortable, :draggable
   
       def initialize(pages:, sortable: true)
         @pages = pages
-        if @pages.total_pages > 1
-          @sortable = false
-        else
-          @sortable = sortable
-        end
+        @sortable = sortable
+        
+        # List of pages is only draggable if there's no pagination
+        @draggable = pages.total_pages == 1
       end
   
     end

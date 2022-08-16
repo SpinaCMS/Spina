@@ -2,7 +2,7 @@ module Spina
   module Admin
     class PagesController < AdminController
       before_action :set_locale
-      before_action :set_page, only: [:edit, :edit_content, :edit_template, :update, :destroy, :children]
+      before_action :set_page, only: [:edit, :edit_content, :edit_template, :update, :destroy, :children, :sort_one]
       before_action :set_tabs
 
       def index
@@ -73,6 +73,29 @@ module Spina
         
         flash.now[:info] = t("spina.pages.sorting_saved")
         render_flash
+      end
+      
+      def sort_one
+        current_position = @page.position
+        
+        if params[:direction] == "up"
+          @other_page = @page.resource.pages.sorted.where("position < ?", current_position).last
+          
+          @bottom_page = @page
+          @top_page = @other_page
+        else
+          @other_page = @page.resource.pages.sorted.where("position > ?", current_position).first
+          
+          @bottom_page = @other_page
+          @top_page = @page
+        end
+        
+        if @other_page
+          @page.transaction do
+            @page.update(position: @other_page&.position)
+            @other_page.update(position: current_position)
+          end
+        end
       end
 
       def children

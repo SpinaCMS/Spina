@@ -1,25 +1,39 @@
-<li data-id="<%= @page.id %>">
-  <div class="flex items-center border-gray-200 border-b <%= css_class %> bg-opacity-50">
-    <% if sortable? %>
-      <div data-sortable-handle class="p-4 text-gray-300 hover:text-gray-600 cursor-move">
-        <%= helpers.heroicon("menu-alt-4", style: :solid, class: "w-4 h-4 -mr-4") %>
-      </div>
-    <% end %>
-    
-    <%= link_to helpers.spina.edit_admin_page_path(@page), class: "block text-spina font-medium text-sm p-4 hover:text-spina-dark" do %>
-      <%= @page.menu_title %>
+<turbo-frame id="page_<%= @page.id %>" data-id="<%= @page.id %>">
+  <li>
+    <div class="flex items-center border-gray-200 border-b <%= css_class %> bg-opacity-50">
+      <% if sortable? %>
+        <% if draggable? %>
+          <div data-sortable-handle class="p-4 text-gray-300 hover:text-gray-600 cursor-move">
+            <%= helpers.heroicon("menu-alt-4", style: :solid, class: "w-4 h-4 -mr-4") %>
+          </div>
+        <% else %>
+          <div class="pl-3 flex items-center">          
+            <%= button_to helpers.spina.sort_one_admin_page_path(@page), class: "btn btn-default shadow-none border-gray-200 border-r-0 rounded-r-none px-1.5 h-7" do %>
+              <%= helpers.heroicon("arrow-narrow-down", style: :solid, class: 'w-4 h-4 text-gray-600') %>
+            <% end %>
+  
+            <%= button_to helpers.spina.sort_one_admin_page_path(@page, direction: "up"), class: "btn btn-default shadow-none border-gray-200 rounded-l-none px-1.5 h-7" do %>
+              <%= helpers.heroicon("arrow-narrow-up", style: :solid, class: 'w-4 h-4 text-gray-600') %>
+            <% end %>
+          </div>
+        <% end %>
+      <% end %>
       
-      <small class="font-normal"><%= label %></small>
-    <% end %>
-    
-    <div class='flex-1'></div>
-    <div class="mr-3 flex space-x-2">
-      <%= render Spina::Pages::TranslationsComponent.new(@page) %>
+      <%= link_to helpers.spina.edit_admin_page_path(@page), class: "block text-spina font-medium text-sm p-4 hover:text-spina-dark", data: {turbo_frame: "_top"} do %>
+        <%= @page.menu_title %>
+        
+        <small class="font-normal"><%= label %></small>
+      <% end %>
+      
+      <div class='flex-1'></div>
+      <div class="mr-3 flex space-x-2">
+        <%= render Spina::Pages::TranslationsComponent.new(@page) %>
+      </div>
+  
     </div>
-
-  </div>
-
-  <% if children.any? %>
-    <%= render Spina::Pages::ListComponent.new(pages: children, sortable: sortable) %>
-  <% end %>
-</li>
+  
+    <% if children.any? %>
+      <%= render Spina::Pages::ListComponent.new(pages: children, sortable: sortable) %>
+    <% end %>
+  </li>
+</turbo-frame>

@@ -52,6 +52,7 @@ Spina::Engine.routes.draw do
       resource :move, controller: "move_pages"
 
       post :sort, on: :collection
+      post :sort_one, on: :member
     end
     resources :page_translations, only: [:destroy]
     resources :parent_pages
