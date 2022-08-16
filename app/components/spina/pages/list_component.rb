@@ -5,7 +5,11 @@ module Spina
   
       def initialize(pages:, sortable: true)
         @pages = pages
-        @sortable = sortable
+        if @pages.total_pages > 1
+          @sortable = false
+        else
+          @sortable = sortable
+        end
       end
   
     end
