@@ -91,6 +91,8 @@ module Spina
             @page.update(position: @target_page.position)
             @target_page.update(position: current_position)
           end
+        else
+          head :ok
         end
       end
 
