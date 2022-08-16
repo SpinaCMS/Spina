@@ -11,9 +11,9 @@ module Spina
         if params[:resource_id]
           @resource = Resource.find(params[:resource_id])
           @page_templates = Spina::Current.theme.new_page_templates(resource: @resource)
-          @pages = @resource.pages.active.roots.includes(:translations).page(params[:page]).per(25)
+          @pages = @resource.pages.active.roots.includes(:translations).page(params[:page]).per(Spina.config.pages_limit_value)
         else
-          @pages = Page.active.sorted.roots.main.includes(:translations).page(params[:page]).per(25)
+          @pages = Page.active.sorted.roots.main.includes(:translations).page(params[:page]).per(Spina.config.pages_limit_value)
           @page_templates = Spina::Current.theme.new_page_templates
         end
       end

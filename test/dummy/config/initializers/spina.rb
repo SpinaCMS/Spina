@@ -62,4 +62,10 @@ Spina.configure do |config|
   # ===============
   # For people who don't appreciate confetti, you can disable that here.
   # config.party_pooper = true
+  
+  # Pages Options
+  # ===============
+  # The limit value for page pagination in the admin panel. Above this limit,
+  # drag and drop sorting will be replaced by simple buttons.
+  # config.pages_limit_value = 25
 end

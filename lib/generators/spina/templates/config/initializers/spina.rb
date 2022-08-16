@@ -72,9 +72,8 @@ Spina.configure do |config|
 
   # Pages Options
   # ===============
-
-  # Note that you might need to remove cached asset after changing this value
-  # config.max_page_depth = 5
+  # The limit value for pagination of Spina's pages in the admin panel.
+  # config.pages_limit_value = 25
 
   # Transliterations
   # ===============
