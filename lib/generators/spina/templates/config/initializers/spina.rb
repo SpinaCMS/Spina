@@ -72,8 +72,9 @@ Spina.configure do |config|
 
   # Pages Options
   # ===============
-  # The limit value for pagination of Spina's pages in the admin panel.
-  # config.pages_limit_value = 25
+  # The limit value for resource page pagination in the admin panel. Above this limit,
+  # drag and drop sorting will be replaced by simple buttons.
+  # config.resource_pages_limit_value = 25
 
   # Transliterations
   # ===============

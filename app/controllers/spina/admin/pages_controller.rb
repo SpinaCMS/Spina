@@ -11,9 +11,9 @@ module Spina
         if params[:resource_id]
           @resource = Resource.find(params[:resource_id])
           @page_templates = Spina::Current.theme.new_page_templates(resource: @resource)
-          @pages = @resource.pages.active.roots.includes(:translations).page(params[:page]).per(Spina.config.pages_limit_value)
+          @pages = @resource.pages.active.roots.includes(:translations).page(params[:page]).per(Spina.config.resource_pages_limit_value)
         else
-          @pages = Page.active.sorted.roots.main.includes(:translations).page(params[:page]).per(Spina.config.pages_limit_value)
+          @pages = Page.active.sorted.roots.main.includes(:translations)
           @page_templates = Spina::Current.theme.new_page_templates
         end
       end
@@ -91,6 +91,7 @@ module Spina
             @page.update(position: @target_page.position)
             @target_page.update(position: current_position)
           end
+          flash.now[:info] = t("spina.pages.sorting_saved")
         else
           head :ok
         end

@@ -7,11 +7,11 @@
         </div>
       <% else %>
         <div class="pl-2">          
-          <%= button_to helpers.spina.sort_one_admin_page_path(@page, direction: "up"), class: "btn btn-default shadow-none border-gray-200 border-b-0 rounded-b-none px-1 h-5" do %>
+          <%= button_to helpers.spina.sort_one_admin_page_path(@page, direction: "up"), class: "btn btn-default shadow-none border-gray-200 border-b-0 rounded-b-none px-1 h-5 sort-up" do %>
             <%= helpers.heroicon("chevron-up", style: :solid, class: 'w-4 h-4 text-gray-600') %>
           <% end %>
 
-          <%= button_to helpers.spina.sort_one_admin_page_path(@page), class: "btn btn-default shadow-none border-gray-200 rounded-t-none px-1 h-5" do %>
+          <%= button_to helpers.spina.sort_one_admin_page_path(@page), class: "btn btn-default shadow-none border-gray-200 rounded-t-none px-1 h-5 sort-down" do %>
             <%= helpers.heroicon("chevron-down", style: :solid, class: 'w-4 h-4 text-gray-600') %>
           <% end %>
         </div>

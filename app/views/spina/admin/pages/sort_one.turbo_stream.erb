@@ -5,3 +5,5 @@
 <%= turbo_stream.replace @top_page do %>
   <%= render Spina::Pages::PageComponent.new(page: @bottom_page, draggable: false) %>
 <% end %>
+
+<%= turbo_stream.update("flash", partial: "spina/admin/shared/flash") %>

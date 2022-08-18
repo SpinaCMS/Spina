@@ -36,7 +36,7 @@
 <% if @pages.any? %>
   
   <div class="my-6 md:m-8 bg-white md:rounded-lg border-l-0 border-r-0 border md:border-r md:border-l border-gray-200 border-b-0 shadow-sm">
-    <%= render Spina::Pages::ListComponent.new(pages: @pages, sortable: @resource.nil? || @resource&.order_by&.blank?) %>
+    <%= render Spina::Pages::ListComponent.new(pages: @pages, sortable: @resource.nil? || @resource&.order_by.blank?) %>
   </div>
   
 <% else %>
