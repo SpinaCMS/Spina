@@ -19,7 +19,7 @@
       <div class="py-1">
         <% if missing_locales.any? %>
           <% missing_locales.each do |locale| %>
-            <%= link_to helpers.spina.edit_admin_page_path(@page, locale: locale), class: "block px-3 py-2 text-sm leading-4 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900 font-medium" do %>
+            <%= link_to helpers.spina.edit_admin_page_path(@page, locale: locale), class: "block px-3 py-2 text-sm leading-4 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900 font-medium", data: {turbo_frame: "_top"} do %>
               <div class="text-yellow-500">
                 <%=t('spina.pages.add_translation', language: '<span class="font-semibold">' + t("spina.languages.#{locale}") + '</span>').html_safe %>
               </div>
@@ -29,7 +29,7 @@
         <% end %>
 
         <% existing_locales.each do |locale| %>
-          <%= link_to helpers.spina.edit_admin_page_path(@page, locale: locale), class: "block px-3 py-2 text-sm leading-4 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900 font-medium" do %>
+          <%= link_to helpers.spina.edit_admin_page_path(@page, locale: locale), class: "block px-3 py-2 text-sm leading-4 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900 font-medium", data: {turbo_frame: "_top"} do %>
             <div class="text-gray-700">
               <%=t('spina.pages.edit_translation', language: '<span class="font-semibold">' + t("spina.languages.#{locale}") + '</span>').html_safe %>  
             </div>

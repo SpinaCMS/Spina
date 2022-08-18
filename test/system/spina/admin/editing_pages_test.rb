@@ -45,5 +45,24 @@ module Spina
       assert_selector "iframe", id: "ytplayer"
     end
     
+    setup do
+      @resource = FactoryBot.create :breweries
+      
+      30.times do
+        FactoryBot.create :page, title: "A brewery", resource: @resource
+      end
+    end
+    
+    test "manually order page" do      
+      visit spina.admin_pages_path
+      click_on "Breweries"
+      
+      assert_selector "button", class: "sort-down"
+      
+      find_button(nil, class: "sort-down", match: :first).click
+      
+      assert_selector "turbo-frame", text: "Sorting saved"
+    end
+    
   end
 end

@@ -72,9 +72,9 @@ Spina.configure do |config|
 
   # Pages Options
   # ===============
-
-  # Note that you might need to remove cached asset after changing this value
-  # config.max_page_depth = 5
+  # The limit value for resource page pagination in the admin panel. Above this limit,
+  # drag and drop sorting will be replaced by simple buttons.
+  # config.resource_pages_limit_value = 25
 
   # Transliterations
   # ===============

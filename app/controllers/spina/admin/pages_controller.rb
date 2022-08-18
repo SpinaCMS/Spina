@@ -2,7 +2,7 @@ module Spina
   module Admin
     class PagesController < AdminController
       before_action :set_locale
-      before_action :set_page, only: [:edit, :edit_content, :edit_template, :update, :destroy, :children]
+      before_action :set_page, only: [:edit, :edit_content, :edit_template, :update, :destroy, :children, :sort_one]
       before_action :set_tabs
 
       def index
@@ -11,7 +11,7 @@ module Spina
         if params[:resource_id]
           @resource = Resource.find(params[:resource_id])
           @page_templates = Spina::Current.theme.new_page_templates(resource: @resource)
-          @pages = @resource.pages.active.roots.includes(:translations)
+          @pages = @resource.pages.active.roots.includes(:translations).page(params[:page]).per(Spina.config.resource_pages_limit_value)
         else
           @pages = Page.active.sorted.roots.main.includes(:translations)
           @page_templates = Spina::Current.theme.new_page_templates
@@ -73,6 +73,28 @@ module Spina
         
         flash.now[:info] = t("spina.pages.sorting_saved")
         render_flash
+      end
+      
+      def sort_one
+        current_position = @page.position
+        
+        if params[:direction] == "up"
+          @bottom_page = @page
+          @top_page = @target_page = @page.siblings.where(resource_id: @page.resource_id).sorted.where("position < ?", current_position).last
+        else
+          @bottom_page = @target_page = @page.siblings.where(resource_id: @page.resource_id).sorted.where("position > ?", current_position).first
+          @top_page = @page
+        end
+        
+        if @target_page
+          @page.transaction do
+            @page.update(position: @target_page.position)
+            @target_page.update(position: current_position)
+          end
+          flash.now[:info] = t("spina.pages.sorting_saved")
+        else
+          head :ok
+        end
       end
 
       def children

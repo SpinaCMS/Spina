@@ -32,6 +32,7 @@ module Spina
                   :embedded_image_size,
                   :mailer_defaults,
                   :thumbnail_image_size,
+                  :resource_pages_limit_value,
                   :party_pooper,
                   :tailwind_content,
                   :tailwind_plugins,
@@ -51,6 +52,7 @@ module Spina
   self.thumbnail_image_size = [400, 400]
   self.frontend_parent_controller = "ApplicationController"
   self.locales = [I18n.default_locale]
+  self.resource_pages_limit_value = 25
   self.party_pooper = false
   self.transliterations = %i(latin)
 

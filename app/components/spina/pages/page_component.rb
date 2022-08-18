@@ -1,11 +1,12 @@
 module Spina
   module Pages
     class PageComponent < ApplicationComponent
-      attr_reader :sortable
+      attr_reader :sortable, :draggable
   
-      def initialize(page:, sortable: true)
+      def initialize(page:, sortable: true, draggable: true)
         @page = page
         @sortable = sortable
+        @draggable = draggable
       end
       
       def label
@@ -19,6 +20,10 @@ module Spina
       
       def sortable?
         sortable
+      end
+      
+      def draggable?
+        draggable
       end
   
       def depth

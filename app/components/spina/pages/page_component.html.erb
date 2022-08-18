@@ -1,12 +1,24 @@
-<li data-id="<%= @page.id %>">
+<turbo-frame id="page_<%= @page.id %>" data-id="<%= @page.id %>">
   <div class="flex items-center border-gray-200 border-b <%= css_class %> bg-opacity-50">
     <% if sortable? %>
-      <div data-sortable-handle class="p-4 text-gray-300 hover:text-gray-600 cursor-move">
-        <%= helpers.heroicon("menu-alt-4", style: :solid, class: "w-4 h-4 -mr-4") %>
-      </div>
+      <% if draggable? %>
+        <div data-sortable-handle class="p-4 text-gray-300 hover:text-gray-600 cursor-move">
+          <%= helpers.heroicon("menu-alt-4", style: :solid, class: "w-4 h-4 -mr-4") %>
+        </div>
+      <% else %>
+        <div class="pl-2">          
+          <%= button_to helpers.spina.sort_one_admin_page_path(@page, direction: "up"), class: "btn btn-default shadow-none border-gray-200 border-b-0 rounded-b-none px-1 h-5 sort-up" do %>
+            <%= helpers.heroicon("chevron-up", style: :solid, class: 'w-4 h-4 text-gray-600') %>
+          <% end %>
+
+          <%= button_to helpers.spina.sort_one_admin_page_path(@page), class: "btn btn-default shadow-none border-gray-200 rounded-t-none px-1 h-5 sort-down" do %>
+            <%= helpers.heroicon("chevron-down", style: :solid, class: 'w-4 h-4 text-gray-600') %>
+          <% end %>
+        </div>
+      <% end %>
     <% end %>
     
-    <%= link_to helpers.spina.edit_admin_page_path(@page), class: "block text-spina font-medium text-sm p-4 hover:text-spina-dark" do %>
+    <%= link_to helpers.spina.edit_admin_page_path(@page), class: "block text-spina font-medium text-sm p-4 hover:text-spina-dark", data: {turbo_frame: "_top"} do %>
       <%= @page.menu_title %>
       
       <small class="font-normal"><%= label %></small>
@@ -20,6 +32,6 @@
   </div>
 
   <% if children.any? %>
-    <%= render Spina::Pages::ListComponent.new(pages: children, sortable: sortable) %>
+    <%= render Spina::Pages::ListComponent.new(pages: children, sortable: sortable, draggable: draggable) %>
   <% end %>
-</li>
+</turbo-frame>
