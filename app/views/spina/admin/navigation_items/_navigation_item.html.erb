@@ -14,7 +14,7 @@
       <div hidden data-reveal data-transition class="origin-top-right absolute left-0 z-10 mt-1 w-48 rounded-md shadow-lg">
         <div class="rounded-md bg-gray-700 shadow-xs py-1">
           <%= link_to spina.new_admin_navigation_navigation_item_path(@navigation, parent_id: navigation_item.id), class: "px-3 py-1 text-xs leading-5 text-gray-200 hover:bg-gray-800 hover:text-white focus:outline-none flex items-center", data: {turbo_frame: "modal", action: "reveal#hide"} do %>
-            <%= heroicon('plus', style: :outline, class: 'w-4 h-4 mr-2') %>
+            <%= heroicon('plus', style: :mini, class: 'w-4 h-4 mr-2') %>
             <%=t 'spina.navigations.add_sub_item' %>
           <% end %>
           

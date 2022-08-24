@@ -2,7 +2,7 @@
   <% header.after_breadcrumbs do %>
     <% if current_spina_user.admin? %>
       <%= link_to spina.new_admin_user_path, class: 'btn btn-default h-8 px-2 ml-3' do %>
-        <%= heroicon('plus', style: :solid, class: 'w-4 h-4') %>
+        <%= heroicon('plus', style: :mini, class: 'w-4 h-4') %>
       <% end %>
     <% end %>
   <% end %>
