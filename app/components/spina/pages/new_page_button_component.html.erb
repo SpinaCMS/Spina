@@ -2,7 +2,7 @@
 
   <%= render Spina::UserInterface::DropdownComponent.new do |dropdown| %>
     <% dropdown.button(classes: "btn btn-primary w-full") do %>
-      <%= helpers.heroicon("plus", style: :solid, class: "w-7 h-7 -ml-2") %>
+      <%= helpers.heroicon("plus", style: :solid, class: "w-4 h-4 -ml-1 mr-1") %>
       <%=t 'spina.pages.new' %>
     <% end %>
     
@@ -25,7 +25,7 @@
 <% else %>
 
   <%= link_to helpers.spina.new_admin_page_path(view_template: view_template.name, resource_id: resource&.id), class: "btn btn-primary w-full", data: {turbo_frame: "modal"} do %>
-    <%= helpers.heroicon("plus", style: :solid, class: "w-7 h-7 -ml-2") %>
+    <%= helpers.heroicon("plus", style: :solid, class: "w-4 h-4 -ml-1 mr-1") %>
     <%=t 'spina.pages.new' %>
   <% end %>
   

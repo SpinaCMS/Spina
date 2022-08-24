@@ -1,7 +1,7 @@
 <%= turbo_frame_tag dom_id(media_folder) do %>
   <div class="flex items-center h-12 hover:bg-white border-b border-gray-200 px-8">
     <%= link_to spina.admin_media_folder_images_path(media_folder), class: 'flex h-full items-center flex-1', target: "_top" do %>
-      <div class="w-8 mr-4 flex justify-center"><%= heroicon("folder", style: :solid, class: "w-7 h-7 text-spina") %></div>
+      <div class="w-8 mr-4 flex justify-center"><%= heroicon("folder", style: :solid, class: "w-6 h-6 text-spina") %></div>
       <div class="font-medium text-spina flex-1 text-sm">
         <%= media_folder.name %>
       </div>

@@ -15,20 +15,20 @@
           <%= f.file_field :file, accept: "image/*", id: "image_#{image.id}_file_field", class: 'hidden', data: {action: "loading-button#loading form#requestSubmit"} %>
           
           <button type="button" class="btn btn-default h-7 px-2 mr-2 text-xs" data-controller="delegate-click" data-action="delegate-click#click" data-loading-button-target="button" data-delegate-click-target="#image_<%= image.id %>_file_field">
-            <%= heroicon("upload", style: :solid, class: "w-4 h-4 mr-1 text-gray-600") %>
+            <%= heroicon("arrow-path", style: :mini, class: "w-4 h-4 mr-1 text-gray-600") %>
             <%=t 'spina.ui.replace' %>
           </button>
         <% end %>
         
         <%= link_to spina.edit_admin_image_path(image), class: "btn btn-default h-7 px-2 mr-2 text-xs" do %>
-          <%= heroicon('pencil', style: :solid, class: 'w-4 h-4 mr-1 text-gray-600') %>
+          <%= heroicon('pencil', style: :solid, class: 'w-3 h-3 mr-1 text-gray-600') %>
           <%=t 'spina.ui.rename' %>
         <% end %>
         
         <% if @media_folders.present? %>
           <%= render Spina::UserInterface::DropdownComponent.new do |dropdown| %>
             <% dropdown.button(classes: 'btn btn-default h-7 px-2 text-xs') do %>
-              <%= heroicon('folder', style: :solid, class: 'w-4 h-4 mr-1 text-gray-600') %>
+              <%= heroicon('folder', style: :mini, class: 'w-4 h-4 mr-1 text-gray-600') %>
               <%=t 'spina.ui.move_to' %>
               <%= heroicon('chevron-down', style: :solid, class: 'w-4 h-4') %>
             <% end %>
