@@ -119,7 +119,7 @@ module Spina::Admin
 					"save" => "arrow-down-on-square",
 					"search-circle" => "magnifying-glass-circle",
 					"search" => "magnifying-glass",
-					"selector" => nil,
+					"selector" => "chevron-up-down",
 					"sort-ascending" => nil,
 					"sort-descending" => nil,
 					"speakerphone" => "megaphone",
