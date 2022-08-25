@@ -4,7 +4,7 @@
       <ul class="inline-flex flex-wrap w-auto rounded-md bg-white">
         <% @navigations.each do |navigation| %>
           <%= render Spina::UserInterface::TabLinkComponent.new(spina.edit_admin_navigation_path(navigation), active: @navigation == navigation) do %>
-            <%= heroicon('menu-alt-2', style: :solid, class: 'w-3 h-3 mr-1') %>
+            <%= heroicon('bars-3-bottom-left', style: :solid, class: 'w-4 h-4 mr-1') %>
             <%= navigation.label %>
           <% end %>
         <% end %>
@@ -23,8 +23,7 @@
       <%= render @navigation.navigation_items.sorted.roots %>
     </ul>
     
-    <%= link_to spina.new_admin_navigation_navigation_item_path(@navigation), class: 'btn btn-default w-56 mt-2 bg-transparent', data: {turbo_frame: "modal"} do %>
-      <%= heroicon('plus', style: :solid, class: "w-6 h-6 -ml-1 mr-1 text-gray-400") %>
+    <%= link_to spina.new_admin_navigation_navigation_item_path(@navigation), class: 'btn btn-default w-56 text-center mt-2 bg-transparent', data: {turbo_frame: "modal"} do %>
       <div class="w-full"><%=t 'spina.navigations.add_menu_item' %></div>
     <% end %>
   <% end %>

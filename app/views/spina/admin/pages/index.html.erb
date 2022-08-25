@@ -2,7 +2,7 @@
   <% header.actions do %>
     <% if @resource %>
       <%= link_to spina.edit_admin_resource_path(@resource), class: 'btn btn-default' do %>
-        <%= heroicon('cog', style: :solid, class: 'text-gray-300 w-5 h-5 -ml-1 mr-1') %>
+        <%= heroicon('cog-8-tooth', style: :solid, class: 'text-gray-300 w-5 h-5 -ml-1 mr-1') %>
         <%=t 'spina.resources.settings', label: @resource.label %>
       <% end %>
     <% end %>

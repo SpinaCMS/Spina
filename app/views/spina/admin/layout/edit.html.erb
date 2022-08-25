@@ -4,7 +4,6 @@
   
     <% if Spina::Current.theme.layout_parts.any? %>
       <%= button_tag type: :submit, form: dom_id(@account), class: 'btn btn-primary', data: {controller: "button hotkeys", hotkeys: "command+s, ctrl+s", hotkeys_target: "button", action: "button#loading", loading_message: t('spina.ui.saving')} do %>
-        <%= heroicon('check', style: :solid, class: 'w-5 h-5 mr-1 -ml-2') %>
         <%=t 'spina.layout.save' %>
       <% end %>
     <% end %>

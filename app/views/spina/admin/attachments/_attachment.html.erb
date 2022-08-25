@@ -9,18 +9,18 @@
           <%= f.file_field :file, id: "attachment_#{attachment.id}_file_field", class: 'hidden', data: {action: "loading-button#loading form#requestSubmit"} %>
           
           <button type="button" class="btn btn-default h-7 px-2 mr-2 text-xs" data-controller="delegate-click" data-action="delegate-click#click" data-loading-button-target="button" data-delegate-click-target="#attachment_<%= attachment.id %>_file_field">
-            <%= heroicon("upload", style: :solid, class: "w-4 h-4 mr-1 text-gray-600") %>
+            <%= heroicon("arrow-path", style: :mini, class: "w-4 h-4 mr-1 text-gray-600") %>
             <%=t 'spina.ui.replace' %>
           </button>
         <% end %>
         
         <%= link_to spina.edit_admin_attachment_path(attachment), class: "btn btn-default h-7 px-2 mr-2 text-xs" do %>
-          <%= heroicon('pencil', style: :solid, class: 'w-4 h-4 mr-1 text-gray-600') %>
+          <%= heroicon('pencil', style: :solid, class: 'w-3 h-3 mr-1 text-gray-600') %>
           <%=t 'spina.ui.rename' %>
         <% end %>
         
         <%= link_to file_url(attachment.file), class: "btn btn-default h-7 px-2 mr-2 text-xs" do %>
-          <%= heroicon('download', style: :solid, class: 'w-4 h-4 mr-1 text-gray-600') %>
+          <%= heroicon('download', style: :mini, class: 'w-4 h-4 mr-1 text-gray-600') %>
           <%=t 'spina.attachments.download' %>
         <% end %>
       </div>
