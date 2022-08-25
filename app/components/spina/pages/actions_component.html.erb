@@ -62,7 +62,7 @@
 
 <!-- Saving -->
 <% if @page.persisted? && @page.draft? %>
-  <button type="submit" form="<%= dom_id(@page) %>" name="page[draft]" value="false" class="btn btn-primary flex items-center" data-controller="hotkeys" data-hotkeys="control+command+s" data-hotkeys-target="button">
+  <button type="submit" form="<%= dom_id(@page) %>" name="page[draft]" value="false" class="btn bg-emerald-500 hover:bg-emerald-600 border-emerald-600 text-white flex items-center" data-controller="hotkeys" data-hotkeys="control+command+s" data-hotkeys-target="button">
     <%= helpers.heroicon('cursor-arrow-rays', style: :solid, class: "w-5 h-5 -ml-1 mr-1") %>
     <%=t 'spina.pages.publish' %>
   </button>

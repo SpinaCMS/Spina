@@ -9,7 +9,7 @@
   </div>
   
   <% if user.admin? %>
-    <div class="flex items-center text-green-500">
+    <div class="flex items-center text-emerald-500">
       <%= heroicon("badge-check", style: :solid, class: "w-6 h-6 mr-1") %>
       <span class="text-sm font-medium"><%= Spina::User.human_attribute_name(:admin) %></span>
     </div>
