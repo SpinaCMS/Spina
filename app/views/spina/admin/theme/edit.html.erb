@@ -3,7 +3,10 @@
   <%= render Spina::UserInterface::HeaderComponent.new do |header| %>
     <% header.actions do %>
       
-      <%= button_tag t('spina.theme.save'), type: :submit, class: 'btn btn-primary', data: {controller: "button hotkeys", hotkeys: "command+s, ctrl+s", hotkeys_target: "button", action: "button#loading", loading_message: t("spina.ui.saving")} %>
+      <%= button_tag type: :submit, class: 'btn btn-primary', data: {controller: "button hotkeys", hotkeys: "command+s, ctrl+s", hotkeys_target: "button", action: "button#loading", loading_message: t("spina.ui.saving")} do %>
+        <%= heroicon('check', style: :mini, class: 'w-5 h-5 -ml-1 mr-1') %>
+        <%= t('spina.theme.save') %>
+      <% end %>
       
     <% end %>
   <% end %>
