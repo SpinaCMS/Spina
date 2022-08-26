@@ -1,5 +1,13 @@
 # Spina CMS Changelog
 
+## 2.12
+
+### 2.12.0 (August 26th, 2022)
+* Added pagination to long lists of pages
+* Refactored current_account to current_spina_account
+* Updated Heroicons to v2
+* Updated gem dependencies
+
 ## 2.11
 
 ### 2.11.0 (July 13th, 2022)
