@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    spina (2.11.0)
+    spina (2.12.0)
       ancestry
       attr_json
       babosa
@@ -264,7 +264,7 @@ GEM
       sprockets (>= 3.0.0)
     stimulus-rails (1.1.0)
       railties (>= 6.0.0)
-    strscan (3.0.3)
+    strscan (3.0.4)
     tailwindcss-rails (2.0.12)
       railties (>= 6.0.0)
     thor (1.2.1)
