@@ -2,7 +2,7 @@ module Spina
   module Admin
     class NavigationsController < AdminController
       before_action :set_breadcrumb
-      before_action :set_navigation, only: [:show, :edit, :update]
+      before_action :set_navigation, only: [:edit, :update]
       
       admin_section :content
       
