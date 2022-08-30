@@ -60,7 +60,7 @@ Spina::Engine.routes.draw do
 
     resources :resources, only: [:show, :edit, :update]
 
-    resources :navigations do
+    resources :navigations, only: [:index, :edit, :update] do
       post :sort, on: :member
       resources :navigation_items
     end
