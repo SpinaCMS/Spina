@@ -22,6 +22,7 @@
   </head>
 
   <body>
+    <%= render "spina/admin/shared/version" %>
     <%= content_for?(:body) ? yield(:body) : yield %>
   </body>
 </html>
