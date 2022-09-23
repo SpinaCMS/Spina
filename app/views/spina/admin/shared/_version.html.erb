@@ -1,0 +1,18 @@
+<% unless defined?(Spina::Pro) %>
+  <%= link_to "https://spinacms.com/pro", class: "fixed bottom-0 right-0 px-5 py-4 group text-gray-400 text-xs font-medium", target: :blank do %>
+    <div class="flex items-center justify-end">
+      <svg viewBox="0 0 100 100" class="h-3 w-3 mr-1 text-gray-400 group-hover:text-spina" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+        <path d="M48.6582924,96.1623174 L0.472662785,39.1647593 C-0.121452015,38.4619959 -0.159345587,37.4445295 0.380849751,36.699521 L20.3780861,9.12040239 C20.6765111,8.70883071 21.1204689,8.42634978 21.6197077,8.33038495 L49.1629705,3.03595601 C49.3934881,2.99164538 49.6300066,2.9882617 49.8616974,3.02595987 L78.3181435,7.65607741 C78.8410521,7.74115931 79.30884,8.0302376 79.6188319,8.45986224 L99.9955684,36.7004267 C100.533013,37.4452826 100.494021,38.460456 99.9010274,39.1618937 L51.7129756,96.1623174 C50.999859,97.0058449 49.7379497,97.1115638 48.8944223,96.3984473 C48.8092674,96.3264575 48.7302822,96.2474723 48.6582924,96.1623174 Z"></path>
+      </svg>
+      
+      Spina CMS v<%= Spina::VERSION %>
+    </div>
+    
+    <div class="mt-1">
+      Upgrade to Spina 
+      <span class="bg-gray-400 group-hover:bg-pink-500 text-white rounded px-1 py-0.5 uppercase tracking-wider" style="font-size: 10px">
+        Pro
+      </span>
+    </div>
+  <% end %>
+<% end %>
