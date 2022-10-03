@@ -51,6 +51,8 @@ jobs:
         bin/rails db:setup
         
     - name: Compile assets
+      env:
+        RAILS_ENV: test
       run: bin/rails app:assets:precompile
     
     - name: Run tests
