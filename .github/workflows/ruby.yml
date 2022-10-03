@@ -50,6 +50,9 @@ jobs:
         cp test/dummy/config/database.yml.ci test/dummy/config/database.yml
         bin/rails db:setup
         
+    - name: Compile assets
+      run: bin/rails assets:precompile
+    
     - name: Run tests
       run: bin/rails test test/*
       
