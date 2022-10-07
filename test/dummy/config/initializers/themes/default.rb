@@ -8,6 +8,10 @@
     title:      'Text',
     hint:       'Your main content',
     part_type:  'Spina::Parts::Text'
+  }, {
+    name: 'attachment',
+    title: "Attachment",
+    part_type: "Spina::Parts::Attachment"
   }]
 
   theme.view_templates = [{
@@ -19,7 +23,7 @@
     title:        'Default',
     description:  'A simple page',
     usage:        'Use for your content',
-    parts:        ['text']
+    parts:        ['text', 'attachment']
   }]
 
   theme.custom_pages = [{

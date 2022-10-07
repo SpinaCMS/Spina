@@ -66,12 +66,7 @@ Spina::Engine.routes.draw do
     end
 
     resources :attachments do
-      collection do
-        get 'select/:page_part_id' => 'attachments#select', as: :select
-        post 'insert/:page_part_id' => 'attachments#insert', as: :insert
-        get 'select_collection/:page_part_id' => 'attachments#select_collection', as: :select_collection
-        post 'insert_collection/:page_part_id' => 'attachments#insert_collection', as: :insert_collection
-      end
+      post :inline_upload, on: :collection
     end
     resources :rename_files
 

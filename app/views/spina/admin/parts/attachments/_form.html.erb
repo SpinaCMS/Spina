@@ -5,5 +5,26 @@
   <%= f.hidden_field :signed_blob_id, data: {attachment_picker_target: 'signedBlobId'} %>
   <%= f.hidden_field :filename, data: {attachment_picker_target: 'filename'} %>
 
-  <%= f.select :attachment_id, Spina::Attachment.sorted.map{|attachment| [attachment.file&.filename, attachment.id, data: {signed_blob_id: attachment.file&.blob&.signed_id, filename: attachment.file&.filename}]}, {include_blank: t("spina.attachments.choose_attachment")}, {class: "form-select mt-1", data: {action: "attachment-picker#pick"}} %>
+  <div class="flex items-center space-x-3 mt-1">
+    <% select_id = dom_id(f.object, f.object.object_id) %>
+    
+    <%= f.select :attachment_id, Spina::Attachment.sorted.map{|attachment| [attachment.file&.filename, attachment.id, data: {signed_blob_id: attachment.file&.blob&.signed_id, filename: attachment.file&.filename}]}, {include_blank: t("spina.attachments.choose_attachment")}, {id: select_id, class: "form-select", data: {action: "attachment-picker#pick"}} %>
+    
+    <div class="text-gray-400 font-medium text-sm">
+      <%=t 'spina.ui.or' %>
+    </div>
+    
+    <%= form_with model: [:admin, Spina::Attachment.new], url: spina.inline_upload_admin_attachments_path, data: {controller: "form loading-button", loading_message: t('spina.media_library.uploading'), action: "turbo:submit-end->loading-button#doneLoading"} do |f| %>
+      <%= hidden_field_tag :select_id, select_id %>
+      <% file_field_id = "file_#{f.object.object_id}" %>
+      
+      <%= f.file_field :file, id: file_field_id, class: 'hidden', data: {action: "loading-button#loading form#requestSubmit"} %>
+      
+      <button type="button" class="btn btn-default" data-controller="delegate-click" data-action="delegate-click#click" data-loading-button-target="button" data-delegate-click-target="#<%= file_field_id %>">
+        <%= heroicon("upload", style: :solid, class: "w-4 h-4 -ml-1 mr-1") %>
+        <%=t 'spina.attachments.upload_one' %>
+      </button>
+    <% end %>
+
+  </div>
 </div>
