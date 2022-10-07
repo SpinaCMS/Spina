@@ -108,7 +108,8 @@ nl:
       delete_confirmation_html: Weet je het zeker? Het kan zijn dat dit document in gebruik is op een pagina.
       insert: Document toevoegen
       insert_multiple: Documenten toevoegen
-      upload: 
+      upload: Upload documenten
+      upload_one: Upload document
     cancel: Annuleren
     choose_from_library: Kies uit bibliotheek
     close: Sluiten
@@ -319,6 +320,7 @@ nl:
       move_to: Verplaats naar
       new_entry: Nieuw item
       optional: Optioneel
+      or: of
       rename: Hernoemen
       replace: Vervangen
       save_changes: Wijzigingen opslaan

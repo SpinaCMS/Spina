@@ -30,6 +30,11 @@ module Spina
         end
       end
       
+      def inline_upload
+        @attachment = Attachment.create(attachment_params)
+        render turbo_stream: turbo_stream.append(params[:select_id], partial: "parts/attachments/attachment", object: @attachment)
+      end
+      
       def update
         @attachment = Attachment.find(params[:id])
         old_signed_id = @attachment.file&.blob&.signed_id
@@ -62,7 +67,7 @@ module Spina
       end
 
       def attachment_params
-        params.require(:attachment).permit(:file, :page_id, :_destroy)
+        params.require(:attachment).permit(:file, :_destroy)
       end
     end
   end

@@ -131,6 +131,7 @@ en:
       insert: Insert document
       insert_multiple: Insert documents
       upload: Upload files
+      upload_one: Upload file
     cancel: Cancel
     choose_from_library: Choose from library
     close: Close
@@ -348,6 +349,7 @@ en:
       move_to: Move to
       new_entry: New entry
       optional: Optional
+      or: or
       rename: Rename
       replace: Replace
       save_changes: Save changes
