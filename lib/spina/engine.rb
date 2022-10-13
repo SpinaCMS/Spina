@@ -20,9 +20,9 @@ module Spina
     config.autoload_paths += %W( #{config.root}/lib )
 
     config.to_prepare do
-      # Require decorators from main application
       unless Spina.config.disable_decorator_load
         Dir.glob(Rails.root + "app/decorators/**/*_decorator.rb").each do |decorator|
+          ActiveSupport::Deprecation.warn("using app/decorators is deprecated in favor of app/overrides. Read more about overriding Spina at spinacms.com/guides")
           require_dependency(decorator)
         end
       end
