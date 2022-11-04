@@ -173,7 +173,8 @@ GEM
     mobility (1.2.9)
       i18n (>= 0.6.10, < 2)
       request_store (~> 1.0)
-    mocha (1.15.0)
+    mocha (2.0.1)
+      ruby2_keywords (>= 0.0.5)
     net-imap (0.2.3)
       digest
       net-protocol
@@ -244,6 +245,7 @@ GEM
     ruby-progressbar (1.11.0)
     ruby-vips (2.1.4)
       ffi (~> 1.12)
+    ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
     selenium-webdriver (4.5.0)
       childprocess (>= 0.5, < 5.0)
