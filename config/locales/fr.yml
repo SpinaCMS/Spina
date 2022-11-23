@@ -197,7 +197,7 @@ fr:
       back_to_all: Revenir à tous
       filename: Nom de fichier
       images: Images
-      images_count: 
+      images_count:
         one: 1 image
         other: "%{count} images"
       insert: Insérer image
@@ -333,6 +333,8 @@ fr:
     ui:
       cancel: Annuler
       delete: Supprimer
+      delete_item:
+      entry:
       load_more: Charger plus
       move_to: Déplacer vers
       new_entry: Nouvelle entrée

@@ -4,11 +4,11 @@
 
   <div class="-mt-4 flex flex-col md:flex-row" data-controller="tabs" data-tabs-active="bg-spina-dark bg-opacity-10 text-gray-900" data-tabs-inactive="text-gray-500">
     <div class="md:w-64 md:pr-6">
-      <% 
+      <%
         # Fields
         repeater_content = Spina::Parts::RepeaterContent.new(name: f.object.name, title: f.object.title)
         fields = f.fields_for(:content, [repeater_content], child_index: repeater_content.object_id) do |builder|
-          render("spina/admin/parts/repeaters/fields", f: builder)
+          render("spina/admin/parts/repeaters/fields", f: builder, item_name: f.object.item_name.present? ? f.object.item_name : "Item")
         end.gsub("\n", "")
       %>
 
@@ -31,7 +31,7 @@
 
     <div class="flex-1 pl-6 md:pl-0" data-repeater-target="content">
       <%= f.fields_for :content do |ff| %>
-        <%= render 'spina/admin/parts/repeaters/fields', f: ff %>
+        <%= render 'spina/admin/parts/repeaters/fields', f: ff, item_name: f.object.item_name.present? ? f.object.item_name : "Item" %>
       <% end %>
     </div>
   </div>

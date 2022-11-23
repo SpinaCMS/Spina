@@ -13,6 +13,6 @@
   <% end %>
 
   <div class="text-right">
-    <%= button_tag t('spina.ui.delete'), type: :button, class: 'btn btn-default bg-transparent hover:bg-white hover:text-red-500 h-8 px-3 inline-block mt-3', data: {action: "repeater#removeFields", id: "pane_#{f.object.object_id}"} %>
+    <%= button_tag t('spina.ui.delete_item', item: item_name), type: :button, class: 'btn btn-default bg-transparent hover:bg-white hover:text-red-500 h-8 px-3 inline-block mt-3', data: {action: "repeater#removeFields", id: "pane_#{f.object.object_id}"} %>
   </div>
 </div>
