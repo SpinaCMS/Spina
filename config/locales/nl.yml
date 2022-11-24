@@ -316,6 +316,8 @@ nl:
     ui:
       cancel: Annuleer
       delete: Verwijder
+      delete_item:
+      entry:
       load_more: Meer laden
       move_to: Verplaats naar
       new_entry: Nieuw item

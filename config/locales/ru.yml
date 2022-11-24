@@ -335,6 +335,8 @@ ru:
     ui:
       cancel: Отмена
       delete: Удалить
+      delete_item:
+      entry:
       load_more: Загрузи больше
       move_to: Перенести в
       new_entry: Новая запись

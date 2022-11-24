@@ -9,10 +9,10 @@ sv:
         google_analytics: Google Analytics
         google_plus: Google+
         google_site_verification: Google Site Verification
-        instagram: 
+        instagram:
         kvk_identifier: Handelskammare
         kvk_identifier_description: Handelskammare
-        linkedin: 
+        linkedin:
         logo: Logo
         name: Hemsidenamn
         phone: Telefon
@@ -22,7 +22,7 @@ sv:
         twitter: Twitter
         vat_identifier: moms
         vat_identifier_description: moms
-        youtube: 
+        youtube:
       spina/attachment:
         created_at: Skapad
         name: Filnamn
@@ -37,7 +37,7 @@ sv:
         pages_description: Välj sidorna du vill använda i denna navigering
       spina/page:
         ancestry: Föräldersida
-        created_at: 
+        created_at:
         description: Metabeskrivning
         description_description: Denna beskrivning visas i dina sökresultat
         description_placeholder: Kort beskrivning av din sida
@@ -49,9 +49,9 @@ sv:
         menu_title: Navigeringstitel
         menu_title_placeholder: Lämna tom för att använda sidotiteln
         no_parent: Ingen förälder
-        resource: 
+        resource:
         seo_title: SEO <title>
-        seo_title_description: 
+        seo_title_description:
         seo_title_placeholder: Denna titel används i <title>-taggen
         show_in_menu: Visa i navigering
         show_in_menu_description: Denna sida visas inte i navigeringen om detta är avstängt
@@ -59,15 +59,15 @@ sv:
         skip_to_first_child_description: gå till första undersida
         title: Titel
         title_placeholder: Sidtitel
-        url_title: 
-        url_title_description: 
-        url_title_placeholder: 
+        url_title:
+        url_title_description:
+        url_title_placeholder:
         view_template: Sidmall
       spina/resource:
-        label: 
-        order_by: 
-        parent_page: 
-        view_template: 
+        label:
+        order_by:
+        parent_page:
+        view_template:
       spina/user:
         admin: Administratör
         admin_description: Administratörer kan skapa användare
@@ -96,19 +96,19 @@ sv:
         other: Användare
   spina:
     accounts:
-      contact_details: 
-      contact_details_description: 
-      couldnt_be_saved: 
-      name_description: 
-      save: 
-      saved: 
+      contact_details:
+      contact_details_description:
+      couldnt_be_saved:
+      name_description:
+      save:
+      saved:
     ago: sen
     attachments:
-      choose_attachment: 
-      delete_confirmation_html: 
+      choose_attachment:
+      delete_confirmation_html:
       insert: Infoga dokument
       insert_multiple: Infoga dokument
-      upload: 
+      upload:
     cancel: Avbryt
     choose_from_library: Välj från bibliotek
     close: Stäng
@@ -125,138 +125,138 @@ sv:
       success: Du kan använda ditt nya lösenord
       unknown_user: Denna användare finns inte
     images:
-      all_images: 
-      back: 
-      cannot_be_created: 
-      choose_image: 
-      choose_images: 
-      confirm_selection: 
-      delete: 
-      delete_confirmation_html: 
-      delete_folder: 
-      done_organizing: 
-      insert_image: 
-      insert_photo: 
-      insert_photos: 
-      link: 
-      new_folder: 
-      organize: 
-      remove_image: 
-      upload: 
-      upload_image: 
+      all_images:
+      back:
+      cannot_be_created:
+      choose_image:
+      choose_images:
+      confirm_selection:
+      delete:
+      delete_confirmation_html:
+      delete_folder:
+      done_organizing:
+      insert_image:
+      insert_photo:
+      insert_photos:
+      link:
+      new_folder:
+      organize:
+      remove_image:
+      upload:
+      upload_image:
     languages:
-      bg: 
-      de: 
-      en: 
-      es: 
-      fr: 
-      id: 
-      it: 
-      nl: 
-      pl: 
-      pt-BR: 
-      ro: 
-      ru: 
-      sv: 
-      th: 
-      tr: 
-      zh-CN: 
+      bg:
+      de:
+      en:
+      es:
+      fr:
+      id:
+      it:
+      nl:
+      pl:
+      pt-BR:
+      ro:
+      ru:
+      sv:
+      th:
+      tr:
+      zh-CN:
     layout:
-      couldnt_be_saved: 
-      layout: 
-      no_layout_parts: 
-      save: 
-      saved: 
+      couldnt_be_saved:
+      layout:
+      no_layout_parts:
+      save:
+      saved:
     login: Logga in
     logout: Logga ut
     main_menu: Huvudmeny
     media_library:
-      add_folder: 
-      add_image: 
+      add_folder:
+      add_image:
       attachments: Dokument
-      back_to_all: 
-      filename: 
-      images: 
-      images_count: 
-      insert: 
-      media_folder_delete_confirmation_html: 
-      no_folder: 
+      back_to_all:
+      filename:
+      images:
+      images_count:
+      insert:
+      media_folder_delete_confirmation_html:
+      no_folder:
       photos: Bilder
-      rename_folder: 
-      save_media_folder: 
-      upload_from_device: 
-      uploading: 
+      rename_folder:
+      save_media_folder:
+      upload_from_device:
+      uploading:
     modal:
       agree: Ja, jag är säker
       cancel: Nej, avbryt
     navigations:
-      add_menu_item: 
-      add_sub_item: 
-      choose_page: 
-      delete_item: 
-      delete_item_confirmation_html: 
-      description: 
-      navigations: 
-      no_navigations: 
-      sorting_saved: 
+      add_menu_item:
+      add_sub_item:
+      choose_page:
+      delete_item:
+      delete_item_confirmation_html:
+      description:
+      navigations:
+      no_navigations:
+      sorting_saved:
     notifications:
       alert: Oops! Något gick fel
       information: Information
       login: Du måste logga in först
       wrong_username_or_password: Fel mail eller lösenord
     options:
-      choose_option: 
+      choose_option:
     pages:
-      add_page_to: 
-      add_translation: 
+      add_page_to:
+      add_translation:
       advanced: Avancerat
-      cannot_be_deleted: 
+      cannot_be_deleted:
       change_order: Ändra ordning
-      change_view_template: 
-      change_view_template_confirmation: 
+      change_view_template:
+      change_view_template_confirmation:
       concept: utkast
-      create: 
+      create:
       create_page: ny %{template}
-      delete: 
+      delete:
       delete_confirmation: Är du säker på att du vill radera sidan <strong>%{subject}</strong>?
-      deleted: 
+      deleted:
       done_changing_order: Klar med att ändra ordning
-      edit_translation: 
+      edit_translation:
       invisible_to_search_engines: Din hemsida är osynlig för sökmotorer
       invisible_to_search_engines_description: Gå till inställningar för att aktivera sökmotorer.
-      main_collection: 
+      main_collection:
       materialize_path_confirmation: Är du säker på att du vill bygga om sökvägen för denna sida?
-      missing_translations: 
-      move_page: 
-      moved: 
+      missing_translations:
+      move_page:
+      moved:
       new: Ny sida
-      no_pages_yet: 
-      no_parent_page: 
+      no_pages_yet:
+      no_parent_page:
       page_content: Innehåll
       page_part: Sidsektion
       page_seo: Sökmotorer
-      path: 
+      path:
       photo_picker: Välj bild
       photos_picker: Välj bilder
-      preview: 
-      publish: 
-      published: 
+      preview:
+      publish:
+      published:
       rebuild_materialized_path: Bygg om materialiserade sökvägar
-      recommended: 
+      recommended:
       save: Spara sida
-      save_changes: 
-      save_draft: 
+      save_changes:
+      save_draft:
       saved: Sida sparad
       saving: Sparar...
-      search_engines: 
+      search_engines:
       show_in_menu: osynlig
       skip_to_first_child: gå till första undersida
-      sorting_saved: 
+      sorting_saved:
     permanently_delete: Radera permanent
     photos:
       cannot_be_created: 'Bilden kunde inte behandlas:'
       choose_images: Välj bilder
-      delete: 
+      delete:
       delete_confirmation: Är du säker på att du vill ta bort bilden <strong>image</strong>?
       delete_folder: Radera mapp
       done_organizing: Klar med organisering
@@ -265,11 +265,11 @@ sv:
       link: 'URL till din bild:'
       new_folder: Ny mapp
       organize: Organisera bilder
-      rename_folder: 
-      select_images: 
+      rename_folder:
+      select_images:
       upload_image: Ladda up en bild
     preferences:
-      Analytics: 
+      Analytics:
       account: Allmänt
       account_description: Personliga inställningar
       account_save: Spara inställningar
@@ -289,52 +289,54 @@ sv:
       users_description: Hantera användare och administratörer
     preview_website: Förhandsvisa hemsida
     resources:
-      edit: 
-      label_description: 
-      manual_sorting: 
-      no_default_template: 
-      saved: 
-      settings: 
-      settings_description: 
+      edit:
+      label_description:
+      manual_sorting:
+      no_default_template:
+      saved:
+      settings:
+      settings_description:
     save: Spara
     search: Sök...
     settings:
       save: Spara inställningar
       title: Inställningar
     theme:
-      save: 
-      saved: 
-      theme: 
-      theme_description: 
+      save:
+      saved:
+      theme:
+      theme_description:
     ui:
-      cancel: 
-      delete: 
-      load_more: 
-      move_to: 
-      new_entry: 
-      optional: 
-      rename: 
-      save_changes: 
-      saving: 
+      cancel:
+      delete:
+      delete_item:
+      entry:
+      load_more:
+      move_to:
+      new_entry:
+      optional:
+      rename:
+      save_changes:
+      saving:
     users:
-      authorization: 
-      authorization_description: 
+      authorization:
+      authorization_description:
       cannot_be_created: Användaren kunde inte sparas
-      delete: 
+      delete:
       delete_confirmation_html: Är du säker på att du vill ta bort användaren <strong>%{user}</strong>?
-      deleted: 
-      last_login: 
-      never_logged_in: 
+      deleted:
+      last_login:
+      never_logged_in:
       new: Ny användare
-      profile: 
-      profile_description: 
+      profile:
+      profile_description:
       save: Spara användare
-      saved: 
-    visit_page: 
+      saved:
+    visit_page:
     website:
       all_pages: Alla sidor
       documents: Dokument
-      images: 
+      images:
       media_library: Mediebibliotek
       media_library_description: Här finns alla dina bilder och dokument
       pages: Sidor
@@ -346,9 +348,9 @@ sv:
       heading_2: Rubrik 2
       heading_3: Rubrik 3
       insert_link: Infoga länk
-      link: 
+      link:
       paragraph: Paragraf
       quote: Citat
-      unlink: 
-      url: 
-      url_placeholder: 
+      unlink:
+      url:
+      url_placeholder:
