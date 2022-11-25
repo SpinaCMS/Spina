@@ -347,8 +347,6 @@ de:
     ui:
       cancel: Abbrechen
       delete: Löschen
-      delete_item: "%{item} löschen"
-      entry: Eintrag
       load_more: Weitere laden
       move_to: Verschieben nach
       new_entry: Neuer Eintrag

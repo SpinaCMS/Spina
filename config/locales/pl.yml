@@ -51,7 +51,7 @@ pl:
         no_parent: Brak podrzędnych stron
         resource: Zasób
         seo_title: SEO <title>
-        seo_title_description:
+        seo_title_description: 
         seo_title_placeholder: Tytuł w tagu <title>
         show_in_menu: Pokaż w nawigazji
         show_in_menu_description: Kiedy jest wyłączone to strona nie będzie pokazana w nawigacji
@@ -59,14 +59,14 @@ pl:
         skip_to_first_child_description: Ustaw jako pierwszą w kolejności
         title: Tytuł
         title_placeholder: Tytuł strony
-        url_title:
-        url_title_description:
-        url_title_placeholder:
+        url_title: 
+        url_title_description: 
+        url_title_placeholder: 
         view_template: Szablon strony
       spina/resource:
         label: Etykieta
-        order_by:
-        parent_page:
+        order_by: 
+        parent_page: 
         view_template: Domyślny szablon widoku
       spina/user:
         admin: Administrator
@@ -96,19 +96,19 @@ pl:
         other: Użytkownicy
   spina:
     accounts:
-      contact_details:
-      contact_details_description:
-      couldnt_be_saved:
-      name_description:
-      save:
-      saved:
+      contact_details: 
+      contact_details_description: 
+      couldnt_be_saved: 
+      name_description: 
+      save: 
+      saved: 
     ago: temu
     attachments:
-      choose_attachment:
-      delete_confirmation_html:
+      choose_attachment: 
+      delete_confirmation_html: 
       insert: Wstaw dokument
       insert_multiple: Wstaw dokumenty
-      upload:
+      upload: 
     cancel: Anuluj
     choose_from_library: Wybierz z biblioteki
     close: Zamknij
@@ -134,129 +134,129 @@ pl:
       delete: Usuń
       delete_confirmation_html: Czy na pewno chcesz usunąć ten <strong>image</strong>?
       delete_folder: Usuń folder
-      done_organizing:
+      done_organizing: 
       insert_image: Wstaw obraz
-      insert_photo:
-      insert_photos:
-      link:
-      new_folder:
-      organize:
-      remove_image:
-      upload:
-      upload_image:
+      insert_photo: 
+      insert_photos: 
+      link: 
+      new_folder: 
+      organize: 
+      remove_image: 
+      upload: 
+      upload_image: 
     languages:
-      bg:
-      de:
+      bg: 
+      de: 
       en: Angielski
-      es:
-      fr:
-      id:
-      it:
+      es: 
+      fr: 
+      id: 
+      it: 
       nl: Niderlandzki
       pl: Polski
-      pt-BR:
-      ro:
-      ru:
-      sv:
-      th:
-      tr:
-      zh-CN:
+      pt-BR: 
+      ro: 
+      ru: 
+      sv: 
+      th: 
+      tr: 
+      zh-CN: 
     layout:
-      couldnt_be_saved:
-      layout:
-      no_layout_parts:
-      save:
-      saved:
+      couldnt_be_saved: 
+      layout: 
+      no_layout_parts: 
+      save: 
+      saved: 
     login: Login
     logout: Wyloguj
     main_menu: Główne Menu
     media_library:
-      add_folder:
-      add_image:
+      add_folder: 
+      add_image: 
       attachments: Dokumenty
-      back_to_all:
-      filename:
-      images:
-      images_count:
-      insert:
-      media_folder_delete_confirmation_html:
-      no_folder:
+      back_to_all: 
+      filename: 
+      images: 
+      images_count: 
+      insert: 
+      media_folder_delete_confirmation_html: 
+      no_folder: 
       photos: Obrazki
-      rename_folder:
-      save_media_folder:
-      upload_from_device:
-      uploading:
+      rename_folder: 
+      save_media_folder: 
+      upload_from_device: 
+      uploading: 
     modal:
       agree: Tak
       cancel: Nie
     navigations:
-      add_menu_item:
-      add_sub_item:
-      choose_page:
-      delete_item:
-      delete_item_confirmation_html:
-      description:
-      navigations:
-      no_navigations:
-      sorting_saved:
+      add_menu_item: 
+      add_sub_item: 
+      choose_page: 
+      delete_item: 
+      delete_item_confirmation_html: 
+      description: 
+      navigations: 
+      no_navigations: 
+      sorting_saved: 
     notifications:
       alert: Przepraszamy, coś poszło nie tak
       information: Informacja
       login: Musisz się zalogować
       wrong_username_or_password: Nieprawidłowy email lub hasło
     options:
-      choose_option:
+      choose_option: 
     pages:
-      add_page_to:
-      add_translation:
+      add_page_to: 
+      add_translation: 
       advanced: Zaawansowane
-      cannot_be_deleted:
+      cannot_be_deleted: 
       change_order: Zmień kolejność
-      change_view_template:
-      change_view_template_confirmation:
+      change_view_template: 
+      change_view_template_confirmation: 
       concept: Szkic
-      create:
+      create: 
       create_page: Nowa wg szablonu %{template}
-      delete:
+      delete: 
       delete_confirmation: Czy na pewno usunąć stronę <strong>%{subject}</strong>?
-      deleted:
+      deleted: 
       done_changing_order: Gotowe
-      edit_translation:
+      edit_translation: 
       invisible_to_search_engines: Witryna jest niewidoczna dla wyszukiwarek
       invisible_to_search_engines_description: Przejdź do preferencji aby zmienić widoczność dla wyszukiwarek.
-      main_collection:
+      main_collection: 
       materialize_path_confirmation: Czy na pewno przebudować adres dla tej strony?
-      missing_translations:
-      move_page:
-      moved:
+      missing_translations: 
+      move_page: 
+      moved: 
       new: Nowa strona
-      no_pages_yet:
-      no_parent_page:
+      no_pages_yet: 
+      no_parent_page: 
       page_content: Zawartość
       page_part: Sekcja
       page_seo: Wyszkiwarki
-      path:
+      path: 
       photo_picker: Wybierz obrazki
       photos_picker: Wybierz Obrazki
-      preview:
-      publish:
-      published:
+      preview: 
+      publish: 
+      published: 
       rebuild_materialized_path: Przebuduj adres
-      recommended:
+      recommended: 
       save: Zapisz stronę
-      save_changes:
-      save_draft:
+      save_changes: 
+      save_draft: 
       saved: Strona zapisana
       saving: Zapisuję...
-      search_engines:
+      search_engines: 
       show_in_menu: niewidoczna
       skip_to_first_child: ustawione na pierwszym miejscu
-      sorting_saved:
+      sorting_saved: 
     permanently_delete: Skasuj
     photos:
       cannot_be_created: 'Obrazek nie mógł być przetworzony:'
       choose_images: Wybierz obrazek
-      delete:
+      delete: 
       delete_confirmation: Czy na pewno usunąć ten <strong>obrazek</strong>?
       delete_folder: Usuń folder
       done_organizing: Gotowe
@@ -265,11 +265,11 @@ pl:
       link: 'URL obrazka:'
       new_folder: Nowy folder
       organize: Uporządkuj obrazki
-      rename_folder:
-      select_images:
+      rename_folder: 
+      select_images: 
       upload_image: Wgraj obrazek
     preferences:
-      Analytics:
+      Analytics: 
       account: Ogólne
       account_description: Preferencje osobiste
       account_save: Zapisz preferencje
@@ -289,54 +289,52 @@ pl:
       users_description: Zarządzaj użytkownikami i administratorami
     preview_website: Pogląd
     resources:
-      edit:
-      label_description:
-      manual_sorting:
-      no_default_template:
-      saved:
-      settings:
-      settings_description:
+      edit: 
+      label_description: 
+      manual_sorting: 
+      no_default_template: 
+      saved: 
+      settings: 
+      settings_description: 
     save: Zapisz
     search: Szukaj...
     settings:
       save: Zapisz Ustawienia
       title: Ustawienia
     theme:
-      save:
-      saved:
-      theme:
-      theme_description:
+      save: 
+      saved: 
+      theme: 
+      theme_description: 
     ui:
-      cancel:
-      delete:
-      delete_item:
-      entry:
-      load_more:
-      move_to:
-      new_entry:
-      optional:
-      rename:
-      save_changes:
-      saving:
+      cancel: 
+      delete: 
+      load_more: 
+      move_to: 
+      new_entry: 
+      optional: 
+      rename: 
+      save_changes: 
+      saving: 
     users:
-      authorization:
-      authorization_description:
+      authorization: 
+      authorization_description: 
       cannot_be_created: Nie można usunąć użytkownika
-      delete:
+      delete: 
       delete_confirmation_html: Czy na pewno usunąć użytkownika <strong>%{user}</strong>?
-      deleted:
-      last_login:
-      never_logged_in:
+      deleted: 
+      last_login: 
+      never_logged_in: 
       new: Nowy Użytkownik
-      profile:
-      profile_description:
+      profile: 
+      profile_description: 
       save: Zapisz użytkownika
-      saved:
-    visit_page:
+      saved: 
+    visit_page: 
     website:
       all_pages: Wszystkie strony
       documents: Dokumenty
-      images:
+      images: 
       media_library: Biblioteka mediów
       media_library_description: Znajdziesz tu wszystkie obrazki i dokumenty
       pages: Strony
@@ -348,9 +346,9 @@ pl:
       heading_2: Nagłówek H2
       heading_3: Nagłówek H3
       insert_link: Wstaw link
-      link:
+      link: 
       paragraph: Paragraf
       quote: Cytat
-      unlink:
-      url:
-      url_placeholder:
+      unlink: 
+      url: 
+      url_placeholder: 

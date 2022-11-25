@@ -108,7 +108,7 @@ es:
       delete_confirmation_html: ¿Estás seguro? El documento <span class='font-semibold'>podría estar en uso</span> en otra página.
       insert: Insertar documento
       insert_multiple: Insertar documentos
-      upload:
+      upload: 
     cancel: Cancelar
     choose_from_library: Elegir de la biblioteca
     close: Cerrar
@@ -311,8 +311,6 @@ es:
     ui:
       cancel: Cancelar
       delete: Borrar
-      delete_item:
-      entry:
       load_more: Cargar más
       move_to: Mover a
       new_entry: Nueva entrada
