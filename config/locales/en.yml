@@ -345,6 +345,7 @@ en:
     ui:
       cancel: Cancel
       delete: Delete
+      delete_item: "Delete %{item}"
       load_more: Load more
       move_to: Move to
       new_entry: New entry

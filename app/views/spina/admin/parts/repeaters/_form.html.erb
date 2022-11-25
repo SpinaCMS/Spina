@@ -8,7 +8,7 @@
         # Fields
         repeater_content = Spina::Parts::RepeaterContent.new(name: f.object.name, title: f.object.title)
         fields = f.fields_for(:content, [repeater_content], child_index: repeater_content.object_id) do |builder|
-          render("spina/admin/parts/repeaters/fields", f: builder, item_name: f.object.item_name.present? ? f.object.item_name : "Item")
+          render("spina/admin/parts/repeaters/fields", f: builder, item_name: f.object.item_name)
         end.gsub("\n", "")
       %>
 
@@ -31,7 +31,7 @@
 
     <div class="flex-1 pl-6 md:pl-0" data-repeater-target="content">
       <%= f.fields_for :content do |ff| %>
-        <%= render 'spina/admin/parts/repeaters/fields', f: ff, item_name: f.object.item_name.present? ? f.object.item_name : "Item" %>
+        <%= render 'spina/admin/parts/repeaters/fields', f: ff, item_name: f.object.item_name %>
       <% end %>
     </div>
   </div>
