@@ -21,7 +21,7 @@ Spina::Theme.register do |theme|
   # - Option
   # - Repeater
   theme.parts = [
-    {name: 'repeater', title: "Repeater", part_type: "Spina::Parts::Repeater", parts: %w(line image headline)}, 
+    {name: 'repeater', title: "Repeater", part_type: "Spina::Parts::Repeater", item_name: "item", parts: %w(line image headline)}, 
     {name: 'line', title: "Line", part_type: "Spina::Parts::Line"}, 
     {name: 'body', title: "Body", hint: "Your content", part_type: "Spina::Parts::Text"}, 
     {name: "image_collection", title: "Image collection", part_type: "Spina::Parts::ImageCollection"},
