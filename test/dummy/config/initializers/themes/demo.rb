@@ -18,6 +18,7 @@ Spina::Theme.register do |theme|
     name: 'repeater2',
     title: "Repeater",
     part_type: "Spina::Parts::Repeater",
+    item_name: "item",
     parts: ['line', 'image']
   }, {
     name: 'line',
