@@ -78,7 +78,22 @@ module Spina
       end
 
       def render_with_template(page)
-        render layout: "#{current_theme.name.parameterize.underscore}/#{page.layout_template || 'application'}", template: "#{current_theme.name.parameterize.underscore}/pages/#{Spina::Current.page.view_template || 'show'}"
+        render layout: "#{current_theme.name.parameterize.underscore}/#{layout_template_for_page(page)}", template: "#{current_theme.name.parameterize.underscore}/pages/#{view_template_for_page(page)}"
+      end
+      
+      def view_template_for_page(page)
+        page.view_template.presence || "show"
+      end
+      
+      def layout_template_for_page(page)
+        return page.layout_template if page.layout_template.present?
+        view_template_config(page)[:layout].presence || "application"
+      end
+
+      def view_template_config(page)
+        current_theme.view_templates.find do |template|
+          template[:name] == view_template_for_page(page)
+        end
       end
 
   end

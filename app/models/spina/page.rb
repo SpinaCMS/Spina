@@ -98,11 +98,6 @@ module Spina
       super + "_" + Mobility.locale.to_s
     end
 
-    def view_template_config(theme)
-      view_template_name = view_template.presence || 'show'
-      theme.view_templates.find { |template| template[:name] == view_template_name }
-    end
-
     private
 
       def set_default_position
