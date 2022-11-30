@@ -105,7 +105,8 @@ module Spina
       def destroy
         flash[:info] = t('spina.pages.deleted')
         @page.destroy
-        redirect_to spina.admin_pages_url
+
+        redirect_to spina.admin_pages_url(resource_id: @page.resource_id)
       end
 
       private

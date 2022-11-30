@@ -35,7 +35,7 @@ module Spina
         get "/admin/pages"
         assert_select 'small', text: "(draft)"
       end
-      
+
       test "publish a page" do
         @page = FactoryBot.create :page, draft: true, title: "A page about dogs"
         get "/admin/pages/#{@page.id}/edit"
@@ -44,26 +44,39 @@ module Spina
         follow_redirect!
         assert_select 'small', {count: 0, text: "(Draft)"}
       end
-      
+
       test "move a page" do
         @homepage = FactoryBot.create :homepage
         @page = FactoryBot.create :page, title: "A page about dogs"
         get "/admin/pages/#{@page.id}/move/new"
         assert_select "button[type='submit']", text: "Move page"
-        
+
         patch "/admin/pages/#{@page.id}/move", params: {page: {parent_id: @homepage.id}}
         @page.reload
         assert_equal @page.parent.id, @homepage.id
       end
-      
+
       test "change a view template" do
         @page = FactoryBot.create :page, title: "A page with a template", view_template: "show"
         get "/admin/pages/#{@page.id}/edit_template"
         assert_select "button[type='submit']", text: "Change view template"
-        
+
         patch "/admin/pages/#{@page.id}", params: {page: {view_template: "demo"}}
         @page.reload
         assert_equal @page.view_template, "demo"
+      end
+
+      test "delete a page" do
+        page = FactoryBot.create(:page, title: "Test")
+        delete "/admin/pages/#{page.id}"
+        assert_redirected_to "/admin/pages"
+      end
+
+      test "delete a page with a resource" do
+        resource = FactoryBot.create(:resource, name: "Test Resource")
+        page = FactoryBot.create(:page, title: "Test Page", resource: resource)
+        delete "/admin/pages/#{page.id}"
+        assert_redirected_to "/admin/pages?resource_id=#{resource.id}"
       end
     end
   end
