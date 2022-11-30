@@ -7,7 +7,7 @@ module Spina
 
       def index
         add_breadcrumb I18n.t('spina.website.pages'), spina.admin_pages_path
-        
+
         if params[:resource_id]
           @resource = Resource.find(params[:resource_id])
           @page_templates = Spina::Current.theme.new_page_templates(resource: @resource)
@@ -55,7 +55,7 @@ module Spina
           else
             flash[:success] = t('spina.pages.saved')
           end
-          
+
           redirect_to spina.edit_admin_page_url(@page, params: {locale: @locale})
         else
           add_index_breadcrumb
@@ -67,17 +67,17 @@ module Spina
       end
 
       def sort
-        params[:ids].each.with_index do |id, index| 
+        params[:ids].each.with_index do |id, index|
           Page.where(id: id).update_all(position: index + 1)
         end
-        
+
         flash.now[:info] = t("spina.pages.sorting_saved")
         render_flash
       end
-      
+
       def sort_one
         current_position = @page.position
-        
+
         if params[:direction] == "up"
           @bottom_page = @page
           @top_page = @target_page = @page.siblings.where(resource_id: @page.resource_id).sorted.where("position < ?", current_position).last
@@ -85,7 +85,7 @@ module Spina
           @bottom_page = @target_page = @page.siblings.where(resource_id: @page.resource_id).sorted.where("position > ?", current_position).first
           @top_page = @page
         end
-        
+
         if @target_page
           @page.transaction do
             @page.update(position: @target_page.position)
@@ -103,7 +103,7 @@ module Spina
       end
 
       def destroy
-        flash[:info] = t('spina.pages.deleted')    
+        flash[:info] = t('spina.pages.deleted')
         @page.destroy
         redirect_to spina.admin_pages_url
       end
@@ -113,7 +113,7 @@ module Spina
         def set_locale
           @locale = params[:locale] || I18n.default_locale
         end
-  
+
         def add_index_breadcrumb
           if @page.resource
             add_breadcrumb @page.resource.label, spina.admin_pages_path(resource_id: @page.resource_id), class: 'text-gray-400'
@@ -121,11 +121,11 @@ module Spina
             add_breadcrumb t('spina.website.pages'), spina.admin_pages_path, class: 'text-gray-400'
           end
         end
-  
+
         def page_params
           params.require(:page).permit!
         end
-  
+
         def set_page
           @page = Page.find(params[:id])
         end
@@ -133,7 +133,6 @@ module Spina
         def set_tabs
           @tabs = %w[page_content search_engines advanced]
         end
-
     end
   end
 end
