@@ -27,23 +27,5 @@ Gem::Specification.new do |gem|
 
   gem.files = Dir['{app,config,db,lib,vendor}/**/*'] + ['Rakefile', 'README.md']
 
-  gem.add_dependency 'rails', '>= 6.0'
-  gem.add_dependency 'sprockets-rails'
-  gem.add_dependency 'pg'
-  gem.add_dependency 'bcrypt'
-  gem.add_dependency 'image_processing'
-  gem.add_dependency 'ancestry'
-  gem.add_dependency 'breadcrumbs_on_rails'
-  gem.add_dependency 'kaminari'
-  gem.add_dependency 'mobility', '>= 1.1.3'
-  gem.add_dependency 'rack-rewrite', '>= 1.5.0'
-  gem.add_dependency 'attr_json'
-  gem.add_dependency 'view_component', '~> 2.32'
-  gem.add_dependency 'importmap-rails', '>= 0.7.6'
-  gem.add_dependency 'turbo-rails', '>= 0.9', '< 2.0'
-  gem.add_dependency 'stimulus-rails', '>= 0.7.0'
-  gem.add_dependency 'babosa'
-  gem.add_dependency 'jsonapi-serializer'
-  gem.add_dependency 'browser'
-  gem.add_dependency 'tailwindcss-rails', '>= 2.0.0'
+  gem.add_dependency "standard"
 end
