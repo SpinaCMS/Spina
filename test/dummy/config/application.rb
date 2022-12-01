@@ -1,6 +1,6 @@
-require_relative 'boot'
+require_relative "boot"
 
-require 'rails/all'
+require "rails/all"
 
 Bundler.require(*Rails.groups)
 require "spina"
@@ -11,7 +11,7 @@ module Dummy
 
     config.hosts << "dummy.puma"
     config.hosts << "dummy.test"
-    
+
     overrides = "#{Rails.root}/app/overrides"
     Rails.autoloaders.main.ignore(overrides)
     config.to_prepare do

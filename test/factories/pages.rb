@@ -4,31 +4,30 @@ FactoryBot.define do
     active { true }
 
     factory :homepage do
-      name { 'homepage' }
-      title { 'Homepage' }
+      name { "homepage" }
+      title { "Homepage" }
       deletable { false }
     end
 
     factory :about_page do
-      name { 'about' }
-      title { 'About' }
+      name { "about" }
+      title { "About" }
       deletable { false }
     end
 
     factory :services_page do
-      title { 'Services' }
+      title { "Services" }
     end
 
     factory :demo_page do
-      name { 'demo' }
-      title { 'Demo' }
+      name { "demo" }
+      title { "Demo" }
       deletable { true }
       active { false }
     end
-    
-    factory :child_page do
-      title { 'Child page' }
-    end
 
+    factory :child_page do
+      title { "Child page" }
+    end
   end
 end

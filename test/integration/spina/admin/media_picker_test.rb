@@ -1,4 +1,4 @@
-require 'test_helper'
+require "test_helper"
 
 module Spina
   module Admin
@@ -13,14 +13,13 @@ module Spina
       end
 
       test "Show media picker with spina.png" do
-        spina_png = fixture_file_upload("spina.png", 'image/png')
-        
+        spina_png = fixture_file_upload("spina.png", "image/png")
+
         @image = Spina::Image.create(file: spina_png)
         get "/admin/media_picker"
 
         assert_select "button[data-image-id='#{@image.id}']"
       end
-
     end
   end
 end

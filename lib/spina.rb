@@ -1,16 +1,16 @@
-require 'spina/engine'
-require 'spina/admin_sectionable'
-require 'spina/railtie'
-require 'spina/theme_reloader'
-require 'spina/plugin'
-require 'spina/theme'
-require 'spina/attr_json_spina_parts_model'
-require 'spina/attr_json_monkeypatch'
-require 'spina/authentication/sessions'
-require 'spina/authentication/basic'
-require 'spina/embeddable'
-require 'spina/embeds'
-require 'spina/embeds/trix_conversion'
+require "spina/engine"
+require "spina/admin_sectionable"
+require "spina/railtie"
+require "spina/theme_reloader"
+require "spina/plugin"
+require "spina/theme"
+require "spina/attr_json_spina_parts_model"
+require "spina/attr_json_monkeypatch"
+require "spina/authentication/sessions"
+require "spina/authentication/basic"
+require "spina/embeddable"
+require "spina/embeds"
+require "spina/embeds/trix_conversion"
 
 module Spina
   include ActiveSupport::Configurable
@@ -20,30 +20,30 @@ module Spina
   THEMES = []
 
   config_accessor :api_key,
-                  :api_path,
-                  :authentication,
-                  :backend_path,
-                  :importmap,
-                  :frontend_parent_controller,
-                  :disable_frontend_routes,
-                  :disable_decorator_load,
-                  :disable_current_account,
-                  :locales,
-                  :embedded_image_size,
-                  :mailer_defaults,
-                  :thumbnail_image_size,
-                  :resource_pages_limit_value,
-                  :party_pooper,
-                  :tailwind_content,
-                  :tailwind_plugins,
-                  :queues,
-                  :transliterations
+    :api_path,
+    :authentication,
+    :backend_path,
+    :importmap,
+    :frontend_parent_controller,
+    :disable_frontend_routes,
+    :disable_decorator_load,
+    :disable_current_account,
+    :locales,
+    :embedded_image_size,
+    :mailer_defaults,
+    :thumbnail_image_size,
+    :resource_pages_limit_value,
+    :party_pooper,
+    :tailwind_content,
+    :tailwind_plugins,
+    :queues,
+    :transliterations
 
   # Defaults
   self.api_key = nil
   self.api_path = "api"
   self.authentication = "Spina::Authentication::Sessions"
-  self.backend_path = 'admin'
+  self.backend_path = "admin"
   self.disable_frontend_routes = false
   self.disable_decorator_load = false
   self.disable_current_account = false
@@ -54,7 +54,7 @@ module Spina
   self.locales = [I18n.default_locale]
   self.resource_pages_limit_value = 25
   self.party_pooper = false
-  self.transliterations = %i(latin)
+  self.transliterations = %i[latin]
 
   # Queues for background jobs
   # - config.queues.page_updates
@@ -70,10 +70,10 @@ module Spina
   # Make sure to add your own glob patterns if you're extending
   # Spina's UI.
   self.tailwind_content = ["#{Spina::Engine.root}/app/views/**/*.*",
-                           "#{Spina::Engine.root}/app/components/**/*.*",
-                           "#{Spina::Engine.root}/app/helpers/**/*.*",
-                           "#{Spina::Engine.root}/app/assets/javascripts/**/*.js",
-                           "#{Spina::Engine.root}/app/**/application.tailwind.css"]
+    "#{Spina::Engine.root}/app/components/**/*.*",
+    "#{Spina::Engine.root}/app/helpers/**/*.*",
+    "#{Spina::Engine.root}/app/assets/javascripts/**/*.js",
+    "#{Spina::Engine.root}/app/**/application.tailwind.css"]
 
   self.tailwind_plugins = %w[@tailwindcss/forms @tailwindcss/aspect-ratio @tailwindcss/typography]
 
@@ -84,7 +84,7 @@ module Spina
     alias_method :config_original, :config
 
     def config
-      config_obj = self.config_original
+      config_obj = config_original
 
       def config_obj.tailwind_purge_content
         ActiveSupport::Deprecation.warn("config.tailwind_purge_content has been renamed to config.tailwind_content")
@@ -110,6 +110,5 @@ module Spina
     def mounted_at
       Spina::Engine.routes.find_script_name({})
     end
-
   end
 end

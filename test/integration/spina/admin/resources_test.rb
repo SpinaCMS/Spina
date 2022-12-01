@@ -1,4 +1,4 @@
-require 'test_helper'
+require "test_helper"
 
 module Spina
   module Admin
@@ -15,7 +15,7 @@ module Spina
 
       test "list resources" do
         get "/admin/pages?resource_id=#{@breweries.id}"
-        assert_select 'a.bg-spina-dark', text: /.*Breweries.*/
+        assert_select "a.bg-spina-dark", text: /.*Breweries.*/
       end
 
       test "new resource page" do
@@ -26,21 +26,21 @@ module Spina
       test "create new resource page" do
         post "/admin/pages", params: {page: {title: "Brewery", resource_id: @breweries.id}}
         follow_redirect!
-        assert_select 'a', href: "/admin/pages?resource_id=#{@breweries.id}"
-        assert_select 'div', text: /.*Brewery.*/
+        assert_select "a", href: "/admin/pages?resource_id=#{@breweries.id}"
+        assert_select "div", text: /.*Brewery.*/
       end
 
       test "edit resource" do
         get "/admin/resources/#{@breweries.id}/edit"
-        assert_select 'a', href: "/admin/pages?resource_id=#{@breweries.id}"
-        assert_select 'div', text: /.*Edit.*/
+        assert_select "a", href: "/admin/pages?resource_id=#{@breweries.id}"
+        assert_select "div", text: /.*Edit.*/
       end
 
       test "update resource" do
         put "/admin/resources/#{@breweries.id}", params: {resource: {label: "Top Breweries"}}
         follow_redirect!
-        assert_select 'a', href: "/admin/pages?resource_id=#{@breweries.id}"
-        assert_select 'div', text: /.*Top\sBreweries.*/
+        assert_select "a", href: "/admin/pages?resource_id=#{@breweries.id}"
+        assert_select "div", text: /.*Top\sBreweries.*/
       end
 
       test "update slug enqueues a bg job" do
@@ -48,7 +48,6 @@ module Spina
         follow_redirect!
         assert_enqueued_jobs 1, only: Spina::ResourcePagesUpdateJob
       end
-
     end
   end
 end
