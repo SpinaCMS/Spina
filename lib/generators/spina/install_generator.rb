@@ -37,7 +37,7 @@ module Spina
       if talkative_install?
         name = ask("What would you like to name your website? [#{name}]").presence || name
       end
-      account = ::Spina::Account.first_or_create.update(name: name)
+      ::Spina::Account.first_or_create.update(name: name)
     end
 
     def set_theme

@@ -66,7 +66,7 @@ module Spina
     end
 
     def redirect_or_render_404
-      if rule = RewriteRule.find_by(old_path: spina_request_path)
+      if (rule = RewriteRule.find_by(old_path: spina_request_path))
         redirect_to rule.new_path, status: :moved_permanently
       else
         render_404
