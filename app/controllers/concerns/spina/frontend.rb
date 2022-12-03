@@ -28,7 +28,11 @@ module Spina
         I18n.locale = params[:locale] || I18n.default_locale
       end
 
+      # ADDITION
+      # rescue from page.nil?
       def set_current_page
+        raise ActiveRecord::RecordNotFound unless page.present?
+
         Spina::Current.page = page
         Spina::Current.page.view_context = view_context
       end
@@ -38,18 +42,25 @@ module Spina
         Spina::Current.account.view_context = view_context
       end
 
-      def page_by_locale(locale)
-        I18n.with_locale(locale) do
-          Page.i18n.find_by!(materialized_path: spina_request_path)
-        end
-      end
+      # DEPRECIATE!
+      # in favor of reconfigured #page
+      # def page_by_locale(locale)
+      #   I18n.with_locale(locale) do
+      #     Page.i18n.find_by!(materialized_path: spina_request_path)
+      #   end
+      # end
 
+      # REFACTOR
+      # complexity moved to Spina::Page#find_by_path_locale_and_theme
       def page
-        @page = if action_name == 'homepage'
-          Page.find_by!(name: 'homepage')
-        else 
-          page_by_locale(I18n.locale) || page_by_locale(I18n.default_locale)
-        end
+        theme_name = Spina::Current.account.theme
+
+        @page =
+          Spina::Page.find_by_path_locale_and_theme(
+            locale: set_locale,
+            theme_name:,
+            path: spina_request_path
+          )
       end
 
       def spina_request_path

@@ -53,3 +53,45 @@
     <%= render Spina::Forms::SwitchComponent.new(f, :skip_to_first_child) %>
   </div>
 </div>
+
+<!-- ADDITION: list of themes to associate with this page -->
+<!-- only show if there's more than 1 theme -->
+<% if Spina::Theme.all.size > 1 %>
+  <div class="max-w-5xl grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-6 mt-6">
+    <label class="col-span-1 block text-lg font-medium leading-5 text-gray-700">
+      <%= Spina::Page.human_attribute_name :themes %>
+    </label>
+
+    <div class="col-span-2 text-sm leading-5">
+      <p class="text-gray-500">
+        <%= Spina::Page.human_attribute_name :theme_chooser %>
+      </p>
+    </div>
+  </div>
+
+  <% if @page.errors[:themes].present? %>
+    <div class="leading-relaxed mt-2">
+      <div class="text-red-500 font-medium text-sm px-3 flex items-center">
+        <svg class="w-3 h-3 mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+        </svg>
+        <%= @page.errors[:themes].to_sentence %>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="max-w-5xl grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-6 mt-6">
+    <%= f.fields_for :themes do |ft| %>
+      <% Spina::Theme.all.map(&:name).sort.each do |spina_theme| %>
+        <div class="col-span-1 mt-6 md:mt-0">
+          <label class="font-medium text-sm leading-5 w-full text-gray-700">
+            <%= Spina::Page.human_attribute_name spina_theme %>
+          </label>
+        </div>
+        <div class="col-span-2">
+          <%= render Spina::Forms::SwitchComponent.new(ft, spina_theme, selected: f.object.themes.include?(spina_theme)) %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>

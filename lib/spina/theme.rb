@@ -47,27 +47,36 @@ module Spina
       embeds.map{|embed| Embeds.constantize(embed)}
     end
 
+    # REFACTOR
+    # remove chaining map blocks in favor of array collection
     def new_page_templates(resource: nil)
-      page_collection = resource&.name || "main"
+      page_collection = resource&.name || 'main'
+
+      collection = []
+
       @view_templates.map do |view_template|
-        next if is_custom_undeletable_page?(view_template[:name])
+        # DEPRECIATE!
+        # it doesn't matter if a view template is un-deleteable, it can still be used to make new pages.
+        # next if is_custom_undeletable_page?(view_template[:name])
         next if view_template[:exclude_from]&.include?(page_collection)
         
-        OpenStruct.new({
-          name: view_template[:name],
-          title: view_template[:title],
-          description: view_template[:description],
-          recommended: view_template[:name] == resource&.view_template
-        })
-      end.compact.sort_by do |page_template|
-        [page_template.recommended ? 0 : 1]
+        collection <<
+          OpenStruct.new({
+            name: view_template[:name],
+            title: view_template[:title],
+            description: view_template[:description],
+            recommended: view_template[:name] == resource&.view_template
+          })
       end
+
+      collection.compact.sort_by { |c| c.recommended ? 0 : 1 }
     end
 
-    # Check if view_template is defined as a custom undeletable page
-    def is_custom_undeletable_page?(view_template_name)
-      @custom_pages.any? { |page| page[:view_template] == view_template_name && !page[:deletable] }
-    end
+    # DEPRECIATE!
+    # # Check if view_template is defined as a custom undeletable page
+    # def is_custom_undeletable_page?(view_template_name)
+    #   @custom_pages.any? { |page| page[:view_template] == view_template_name && !page[:deletable] }
+    # end
 
   end
 end

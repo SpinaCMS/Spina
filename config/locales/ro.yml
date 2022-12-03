@@ -57,6 +57,7 @@ ro:
         show_in_menu_description: Când nu este setat, pagina nu va fi afișată in navigare
         skip_to_first_child: Redirecționare
         skip_to_first_child_description: Redirecționează către prima pagină copil
+        theme_chooser: Asociați această pagină cu următoarele teme
         title: Titlu
         title_placeholder: Titlul paginii
         url_title: 
@@ -305,7 +306,9 @@ ro:
       save: 
       saved: 
       theme: 
-      theme_description: 
+      theme_description:
+      theme_homepage:
+      no_template_available:
     ui:
       cancel: 
       delete: 

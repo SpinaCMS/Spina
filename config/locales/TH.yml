@@ -57,6 +57,7 @@ th:
         show_in_menu_description: ถ้าหน้านี้ถูกปิดใช้งานจะไม่ปรากฏการนำทางของคุณ
         skip_to_first_child: ส่งใหม่
         skip_to_first_child_description: ส่งต่อไปยังหน้าแรก
+        theme_chooser: เชื่อมโยงหน้านี้กับหัวข้อต่อไปนี้
         title: ชื่อเรื่อง
         title_placeholder: ชื่อเรื่องของหน้า
         url_title: 
@@ -305,7 +306,9 @@ th:
       save: 
       saved: 
       theme: 
-      theme_description: 
+      theme_description:
+      theme_homepage:
+      no_template_available:
     ui:
       cancel: 
       delete: 

@@ -57,6 +57,7 @@ bg:
         show_in_menu_description: Когато тази опция не е активна, страницата няма да е видима в навигацията
         skip_to_first_child: Пренасочи
         skip_to_first_child_description: Пренасочи към първата дъщерна страница
+        theme_chooser: Свържете тази страница със следните теми
         title: Заглавие
         title_placeholder: Заглавие на страницата
         url_title: 
@@ -306,6 +307,8 @@ bg:
       saved: 
       theme: 
       theme_description: 
+      theme_homepage:
+      no_template_available:
     ui:
       cancel: 
       delete: 

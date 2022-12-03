@@ -9,8 +9,11 @@ module Spina
       @routes = Engine.routes
       FactoryBot.create :account
 
+      # UPDATE
+      # To use new Spina::Page method
+      @homepage = Spina::Page.find_by_path_locale_and_theme(theme_name: 'demo').presence || FactoryBot.create(:homepage)
+
       # Create translations for each page
-      @homepage = Spina::Page.find_by(name: 'homepage')
       FactoryBot.create :page_translation,
         spina_page_id: @homepage.id, title: 'Beginpagina',
         materialized_path: '/nl', locale: 'nl'
@@ -51,7 +54,7 @@ module Spina
       
       image_part = Spina::Parts::Image.new(name: "image", title: "Image", image_id: @image.id, signed_blob_id: @image.file.blob.signed_id, alt: "", filename: "spina.png")
       
-      @demo_page.update(en_content: [image_part]) 
+      @demo_page.update(en_content: [image_part])
       get "/demo"
       assert_select 'img'
     end
@@ -59,6 +62,7 @@ module Spina
     # Different languages
     test "view homepage in another language" do
       get "/nl"
+
       assert_select 'h1', 'Beginpagina'
     end
 
@@ -79,6 +83,5 @@ module Spina
       assert_select ".list-item.active a", text: "Demo"
       assert_select ".list-item.current a", text: "Child page"
     end
-    
   end
 end

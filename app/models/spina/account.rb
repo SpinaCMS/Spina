@@ -70,11 +70,28 @@ module Spina
       end
     end
 
+    # TODO: BUG ALERT!
+    # case: app has multiple themes;
+    # more than one theme defines a custom page with
+    #   the same name (e.g. "homepage")
+    # result: only one page record will be created
+    #   and "shared" across themes
+    # result: users will make changes to the page,
+    #   switch themes, and find those page changes
+    #   persisted unexpectedly.
+    #
+    # REFACTOR
+    # @See Spina::Page#assign_attributes_from_theme
+    # @See Spina::Page#assign_json_attributes_from_theme
     def find_or_create_custom_pages(theme)
-      theme.custom_pages.each do |page|
-        Page.where(name: page[:name])
-            .first_or_create(title: page[:title])
-            .update(view_template: page[:view_template], deletable: page[:deletable])
+      theme.custom_pages.each do |page_hsh|
+        next if page_hsh[:name].blank?
+
+        Page.find_or_initialize_by(name: page_hsh[:name]).tap do |page|
+          page.assign_attributes_from_theme_custom_page(page_hsh:)
+          page.assign_json_attributes_from_theme_custom_page(theme:, page_hsh:)
+          page.save!
+        end
       end
     end
 

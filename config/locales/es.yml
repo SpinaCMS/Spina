@@ -57,6 +57,7 @@ es:
         show_in_menu_description: Si se desactiva esta página no será mostrada en tu navegación
         skip_to_first_child: Reenviar
         skip_to_first_child_description: Reenviar a la primera página hija
+        theme_chooser: Asociar esta página con los siguientes temas
         title: Título
         title_placeholder: Título de la página
         url_title: Sobreescribir slug
@@ -201,6 +202,7 @@ es:
       navigations: Navegación
       no_navigations: Este sitio no cuenta con navegación. Puedes configurarlo en las opciones de tu tema.
       sorting_saved: Se guardó el ordenamiento
+      template_chooser: Elige una plantilla
     notifications:
       alert: Ups! Algo salió mal
       information: Información
@@ -308,6 +310,8 @@ es:
       saved: Tema guardado
       theme: Tema
       theme_description: Configura tu tema
+      theme_homepage: Elija una página como página de inicio para este tema
+      no_template_available: No hay plantillas disponibles para hacer nuevas páginas.
     ui:
       cancel: Cancelar
       delete: Borrar

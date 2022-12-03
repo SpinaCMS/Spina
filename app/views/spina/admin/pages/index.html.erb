@@ -8,7 +8,11 @@
     <% end %>
     
     <div class="ml-3">
-      <%= render Spina::Pages::NewPageButtonComponent.new(@page_templates, resource: @resource) %>
+      <% if @page_templates.any? %>
+        <%= render Spina::Pages::NewPageButtonComponent.new(@page_templates, resource: @resource) %>
+      <% else %>
+        <p class="text-sm text-gray-500"><%= t 'spina.theme.no_template_available' %></p>
+      <% end %>
     </div>
   <% end %>
   

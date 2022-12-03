@@ -6,6 +6,14 @@ fr:
       spina/embeds/vimeo:
         url: vimeo.com/...
   activerecord:
+    errors:
+      models:
+        spina/page:
+          attributes:
+            title:
+              blank: Titre requis
+            themes:
+              required: Au moins un thème doit être sélectionné pour cette page.
     attributes:
       spina/account:
         address: Addresse
@@ -63,6 +71,7 @@ fr:
         show_in_menu_description: Si désactivé cette page ne ​​sera pas affichée dans la navigation
         skip_to_first_child: Renvoyer
         skip_to_first_child_description: Renvoyer vers la première page enfant
+        theme_chooser: Associez cette page aux thèmes suivants
         title: Titre
         title_placeholder: Titre de la page
         url_title: Remplacez le slug
@@ -221,6 +230,7 @@ fr:
       navigations: Navigations
       no_navigations: Aucune navigation
       sorting_saved: Trier les éléments sauvegardés
+      template_chooser: Choisissez un modèle
     notifications:
       alert: Oups! Quelque chose a mal fonctionné
       information: Information
@@ -330,6 +340,8 @@ fr:
       saved: Modèle enregistré
       theme: Modèle
       theme_description: Configurer votre modèle
+      theme_homepage: Choisir une page comme page d'accueil pour ce thème
+      no_template_available: Aucun modèle n'est disponible pour créer de nouvelles pages
     ui:
       cancel: Annuler
       delete: Supprimer
