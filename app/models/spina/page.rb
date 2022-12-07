@@ -88,7 +88,7 @@ module Spina
     def homepage_for_theme?(theme_name)
       return false unless is_homepage?
 
-      homepage_for_theme.include? theme_name
+      homepage_for_themes.include? theme_name
     end
 
     def to_s
