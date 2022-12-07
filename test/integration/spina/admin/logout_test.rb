@@ -1,11 +1,11 @@
-require 'test_helper'
+require "test_helper"
 
 module Spina
   module Admin
     class LogoutTest < ActionDispatch::IntegrationTest
       setup do
         host! "dummy.test"
-        
+
         @routes = Engine.routes
         @account = FactoryBot.create :account
         @user = FactoryBot.create :user
@@ -15,7 +15,7 @@ module Spina
       test "logout and redirect to homepage" do
         get "/admin/logout"
         follow_redirect!
-        assert_equal '/', path
+        assert_equal "/", path
       end
     end
   end

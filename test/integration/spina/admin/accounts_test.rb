@@ -1,4 +1,4 @@
-require 'test_helper'
+require "test_helper"
 
 module Spina
   module Admin
@@ -14,7 +14,7 @@ module Spina
 
       test "Show form with general settings" do
         get "/admin/account/edit"
-        assert_select 'form #account_name'
+        assert_select "form #account_name"
       end
 
       test "Update account name" do
@@ -26,20 +26,19 @@ module Spina
 
       test "Show form with theme config" do
         get "/admin/theme/edit"
-        assert_select 'form select#account_theme'
+        assert_select "form select#account_theme"
       end
-      
+
       test "Show form with layout parts" do
         get "/admin/layout/edit"
         assert_select 'form input[type="text"]'
       end
-      
+
       test "Update layout parts" do
         patch "/admin/layout", params: {account: {name: "Demo Spina website"}}
         follow_redirect!
-        assert_select 'turbo-frame#flash div', text: "Layout saved"
+        assert_select "turbo-frame#flash div", text: "Layout saved"
       end
-
     end
   end
 end

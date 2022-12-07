@@ -1,6 +1,5 @@
 module Spina::Admin
   module ImagesHelper
-  
     def ratio_tailwind_class_for_image_part(image)
       case image.options.try(:[], :ratio)
       when "portrait"
@@ -13,6 +12,5 @@ module Spina::Admin
         "w-36" # Square (default)
       end
     end
-  
   end
 end

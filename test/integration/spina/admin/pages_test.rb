@@ -1,4 +1,4 @@
-require 'test_helper'
+require "test_helper"
 
 module Spina
   module Admin
@@ -16,13 +16,13 @@ module Spina
 
       test "new page form" do
         get "/admin/pages/new"
-        assert_select 'form', action: "/admin/pages"
+        assert_select "form", action: "/admin/pages"
       end
 
       test "create new page" do
         post "/admin/pages", params: @default_params
         follow_redirect!
-        assert_select 'div', text: /.*A\snew\spage.*/
+        assert_select "div", text: /.*A\snew\spage.*/
       end
 
       test "create new page without title" do
@@ -37,18 +37,19 @@ module Spina
 
         post "/admin/pages", params: @default_params
         follow_redirect!
-        assert_select 'div', text: /.*A\snew\spage.*/
+        assert_select "div", text: /.*A\snew\spage.*/
         get "/admin/pages"
-        assert_select 'small', text: "(draft)"
+        assert_select "small", text: "(draft)"
       end
 
       test "publish a page" do
         @page = FactoryBot.create :page, draft: true, title: "A page about dogs"
         get "/admin/pages/#{@page.id}/edit"
+
         assert_select 'span', text: "(Draft)"
         patch "/admin/pages/#{@page.id}", params: { page: { draft: false, themes: { 'demo' => '1' } } }
         follow_redirect!
-        assert_select 'small', {count: 0, text: "(Draft)"}
+        assert_select "small", {count: 0, text: "(Draft)"}
       end
 
       test "move a page" do

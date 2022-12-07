@@ -1,4 +1,4 @@
-require 'test_helper'
+require "test_helper"
 
 module Spina
   module Admin
@@ -16,7 +16,7 @@ module Spina
         media_folder_name = "My Media Folder"
         post "/admin/media_folders", params: {media_folder: {name: media_folder_name}}
         get "/admin/images"
-        assert_select 'turbo-frame div', media_folder_name
+        assert_select "turbo-frame div", media_folder_name
       end
 
       test "Show media folder" do
@@ -29,7 +29,7 @@ module Spina
         @media_folder = FactoryBot.create :media_folder
         delete "/admin/media_folders/#{@media_folder.id}"
         get "/admin/images"
-        assert_select '.media-folder-name', 0
+        assert_select ".media-folder-name", 0
       end
 
       test "Rename media folder" do
@@ -37,9 +37,8 @@ module Spina
         new_name = "New name for media folder"
         patch "/admin/media_folders/#{@media_folder.id}", params: {media_folder: {name: new_name}}
         get "/admin/images"
-        assert_select 'turbo-frame div', new_name
+        assert_select "turbo-frame div", new_name
       end
-
     end
   end
 end

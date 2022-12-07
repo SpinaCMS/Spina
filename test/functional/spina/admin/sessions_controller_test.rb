@@ -1,4 +1,4 @@
-require 'test_helper'
+require "test_helper"
 
 module Spina
   module Admin
@@ -11,7 +11,7 @@ module Spina
 
       test "login renders the correct layout" do
         get :new
-        assert_template layout: 'spina/admin/sessions'
+        assert_template layout: "spina/admin/sessions"
       end
 
       test "should be able to login" do

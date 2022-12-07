@@ -25,7 +25,7 @@ module Spina
     belongs_to :resource, optional: true, touch: true
 
     scope :main, -> { where(resource_id: nil) }
-    scope :regular_pages, ->  { main }
+    scope :regular_pages, -> { main }
     scope :resource_pages, -> { where.not(resource: nil) }
     scope :active, -> { where(active: true) }
     scope :sorted, -> { order(:position) }
@@ -122,11 +122,11 @@ module Spina
     end
 
     def previous_sibling
-      siblings.where('position < ?', position).sorted.last
+      siblings.where("position < ?", position).sorted.last
     end
 
     def next_sibling
-      siblings.where('position > ?', position).sorted.first
+      siblings.where("position > ?", position).sorted.first
     end
 
     def set_materialized_path
@@ -146,7 +146,7 @@ module Spina
     end
 
     def view_template_config(theme)
-      view_template_name = view_template.presence || 'show'
+      view_template_name = view_template.presence || "show"
       theme.view_templates.find { |template| template[:name] == view_template_name }
     end
 
@@ -183,85 +183,85 @@ module Spina
 
     private
 
-      def set_default_position
-        self.position ||= self.class.maximum(:position).to_i.next
-      end
+    def set_default_position
+      self.position ||= self.class.maximum(:position).to_i.next
+    end
 
-      def set_resource_from_parent
-        self.resource_id = parent.resource_id
-      end
+    def set_resource_from_parent
+      self.resource_id = parent.resource_id
+    end
 
+    # ADDITION
+    # page keeps track of the selected theme when the page was created
+    def set_theme
+      self.themes ||= []
+      self.themes |= [theme]
+
+      self.homepage_for_themes ||= []
+      self.homepage_for_themes |= [theme] if is_homepage?
+    end
+
+    def touch_navigations
+      navigations.update_all(updated_at: Time.zone.now)
+    end
+
+    def rewrite_rule
+      RewriteRule.where(old_path: old_path).first_or_create.update(new_path: materialized_path) if old_path != materialized_path
+    end
+
+    def localized_materialized_path
+      segments = if Mobility.locale == I18n.default_locale
+        [Spina.mounted_at, generate_materialized_path]
+      else
+        [Spina.mounted_at, Mobility.locale, generate_materialized_path]
+      end
+      File.join(*segments.map(&:to_s).compact)
+    end
+
+    def generate_materialized_path
+      path_fragments = [resource&.slug]
+      path_fragments.append *ancestors.collect(&:slug)
       # ADDITION
-      # page keeps track of the selected theme when the page was created
-      def set_theme
-        self.themes ||= []
-        self.themes |= [theme]
+      # use new is_homepage? bool
+      path_fragments.append(slug) unless is_homepage?
+      path_fragments.compact.map(&:parameterize).join('/')
+    end
 
-        self.homepage_for_themes ||= []
-        self.homepage_for_themes |= [theme] if is_homepage?
+    def duplicate_materialized_path?
+      self.class.where.not(id: id).i18n.where(materialized_path: materialized_path).exists?
+    end
+
+    # ADDITION
+    # when saving a record, ensure only one page
+    # is set as the homepage, scoped to a theme
+    def unset_homepage_on_theme_siblings
+      # debugger
+
+      theme_siblings = Spina::Page.for_theme(theme).excluding(self)
+
+      return if theme_siblings.none?
+
+      theme_siblings.each do |sib|
+        sib.is_homepage = false
+        sib.homepage_for_themes ||= []
+        sib.homepage_for_themes -= [theme]
+
+        sib.save!
       end
+    end
 
-      def touch_navigations
-        navigations.update_all(updated_at: Time.zone.now)
-      end
+    # ADDITION
+    # used by #unset_homepage_on_theme_siblings
+    # used by #set_theme
+    # used by #unset_homepage_on_theme_siblings
+    def theme
+      Spina::Current.account&.theme || Spina::Account.first&.theme || 'default'
+    end
 
-      def rewrite_rule
-        RewriteRule.where(old_path: old_path).first_or_create.update(new_path: materialized_path) if old_path != materialized_path
-      end
-
-      def localized_materialized_path
-        segments = if Mobility.locale == I18n.default_locale
-          [Spina.mounted_at, generate_materialized_path]
-        else
-          [Spina.mounted_at, Mobility.locale, generate_materialized_path]
-        end
-        File.join(*segments.map(&:to_s).compact)
-      end
-
-      def generate_materialized_path
-        path_fragments = [resource&.slug]
-        path_fragments.append *ancestors.collect(&:slug)
-        # ADDITION
-        # use new is_homepage? bool
-        path_fragments.append(slug) unless is_homepage?
-        path_fragments.compact.map(&:parameterize).join('/')
-      end
-
-      def duplicate_materialized_path?
-        self.class.where.not(id: id).i18n.where(materialized_path: materialized_path).exists?
-      end
-
-      # ADDITION
-      # when saving a record, ensure only one page
-      # is set as the homepage, scoped to a theme
-      def unset_homepage_on_theme_siblings
-        # debugger
-
-        theme_siblings = Spina::Page.for_theme(theme).excluding(self)
-
-        return if theme_siblings.none?
-
-        theme_siblings.each do |sib|
-          sib.is_homepage = false
-          sib.homepage_for_themes ||= []
-          sib.homepage_for_themes -= [theme]
-
-          sib.save!
-        end
-      end
-
-      # ADDITION
-      # used by #unset_homepage_on_theme_siblings
-      # used by #set_theme
-      # used by #unset_homepage_on_theme_siblings
-      def theme
-        Spina::Current.account&.theme || Spina::Account.first&.theme || 'default'
-      end
-
-      # ADDITION
-      # Pages could be turned into ghosts if they are not associated with any theme
-      def themes_cant_be_blank
-        errors.add(:themes, I18n.t('activerecord.errors.models.spina/page.attributes.themes.required'))
-      end
+    # ADDITION
+    # Pages could be turned into ghosts if they are not associated with any theme
+    def themes_cant_be_blank
+      errors.add(:themes, I18n.t('activerecord.errors.models.spina/page.attributes.themes.required'))
+    end
   end
 end

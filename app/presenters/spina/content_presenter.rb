@@ -35,17 +35,16 @@ module Spina
 
     private
 
-      def main_app_image_url(image, variant_options = {})
-        # SVG's can't have variants, 
-        # Render rails_service_blob_url directly instead
-        return view_context.main_app.url_for(image) if image.svg?
-        
-        view_context.main_app.url_for(image.variant(variant_options))
-      end
+    def main_app_image_url(image, variant_options = {})
+      # SVG's can't have variants,
+      # Render rails_service_blob_url directly instead
+      return view_context.main_app.url_for(image) if image.svg?
 
-      def find_part(name)
-        container.find_part(name)
-      end
+      view_context.main_app.url_for(image.variant(variant_options))
+    end
 
+    def find_part(name)
+      container.find_part(name)
+    end
   end
 end

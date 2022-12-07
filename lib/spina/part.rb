@@ -1,8 +1,6 @@
 module Spina
   class Part
-
     class << self
-
       def all
         ::Spina::PARTS
       end
@@ -13,15 +11,12 @@ module Spina
           all << part
         end
       end
-      
+
       def unregister(part)
         all.delete_if do |registered_part|
           registered_part.name == part.name
         end
       end
-
     end
-
   end
 end
-

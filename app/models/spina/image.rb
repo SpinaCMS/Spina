@@ -4,7 +4,7 @@ module Spina
 
     has_one_attached :file
 
-    scope :sorted, -> { order('created_at DESC') }
+    scope :sorted, -> { order("created_at DESC") }
 
     def name
       file.try(:filename).to_s
@@ -12,7 +12,7 @@ module Spina
 
     def variant(options)
       return "" unless file.attached?
-      return file if file.content_type.include?('svg')
+      return file if file.content_type.include?("svg")
       return file unless file.variable?
 
       file.variant(options)
@@ -22,10 +22,10 @@ module Spina
       self
     end
 
-    def thumbnail(size = '100x100', modifier = '^')
+    def thumbnail(size = "100x100", modifier = "^")
       variant(
         combine_options: {
-          gravity: 'center',
+          gravity: "center",
           thumbnail: "#{size}#{modifier}",
           extent: size
         }

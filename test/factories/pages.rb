@@ -16,24 +16,24 @@ FactoryBot.define do
     end
 
     factory :about_page do
-      name { 'about' }
-      title { 'About' }
+      name { "about" }
+      title { "About" }
       deletable { false }
     end
 
     factory :services_page do
-      title { 'Services' }
+      title { "Services" }
     end
 
     factory :demo_page do
-      name { 'demo' }
-      title { 'Demo' }
+      name { "demo" }
+      title { "Demo" }
       deletable { true }
       active { false }
     end
 
     factory :child_page do
-      title { 'Child page' }
+      title { "Child page" }
     end
   end
 end

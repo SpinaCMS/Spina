@@ -1,6 +1,5 @@
 module Spina
   module ImagesHelper
-  
     def original_url(image)
       return "" if image.nil?
       main_app.url_for(image.file)
@@ -10,12 +9,12 @@ module Spina
       return "" if image.nil?
       main_app.url_for(image.variant(resize_to_fill: [400, 300]))
     end
-    
+
     def large_thumbnail_url(image)
       return "" if image.nil?
       main_app.url_for(image.variant(resize_to_fit: [800, 600]))
     end
-    
+
     def preview_url(image)
       return "" if image.nil?
       main_app.url_for(image.variant(resize_to_limit: [1600, 1200]))
@@ -26,9 +25,9 @@ module Spina
 
       # support both ImageProcessing gem macro :resize_to_limit and ImageMagick-specific :resize
       resize_key = Spina.config.embedded_image_size.is_a?(Array) ? :resize_to_limit : :resize
-      main_app.url_for(image.variant(Hash[resize_key, Spina.config.embedded_image_size]))
+      main_app.url_for(image.variant({resize_key => Spina.config.embedded_image_size}))
     end
-    
+
     def content_type_color(image)
       case content_type(image)
       when "png"
@@ -45,10 +44,9 @@ module Spina
         "bg-gray-400"
       end
     end
-    
+
     def content_type(image)
       image.file.content_type&.split("/")&.last || I18n.t("spina.images.missing_image")
     end
-
   end
 end
