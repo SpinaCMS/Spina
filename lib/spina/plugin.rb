@@ -1,6 +1,5 @@
 module Spina
   class Plugin
-
     attr_accessor :name, :namespace, :settings
 
     def create_setting_class!
@@ -10,15 +9,15 @@ module Spina
       klass = Class.new(::Spina::Setting) do
         include AttrJson::Record
         include Spina::AttrJsonMonkeypatch
-        
+
         class_settings.each do |setting|
-          attr_json *setting, container_attribute: "preferences"
+          attr_json(*setting, container_attribute: "preferences")
           attr_json_setter_monkeypatch setting.first
         end
 
-        default_scope { where(plugin: "#{plugin_name}") }
+        default_scope { where(plugin: plugin_name.to_s) }
       end
-      "Spina::#{namespace_class}".constantize.const_set 'Setting', klass
+      "Spina::#{namespace_class}".constantize.const_set :Setting, klass
     end
 
     private
@@ -32,11 +31,11 @@ module Spina
     end
 
     def namespace_class
-      namespace.split('_').map{|part| part.camelize}.join
+      namespace.split("_").map { |part| part.camelize }.join
     end
 
     def data_mapped_settings_hash
-      hash = Hash.new
+      hash = {}
       settings.each do |key, value|
         hash[key] = map_data_type(value)
       end
@@ -44,12 +43,11 @@ module Spina
     end
 
     class << self
-
       def all
         ::Spina::PLUGINS
       end
 
-      def find_by(opts={})
+      def find_by(opts = {})
         all.find do |plugin|
           matches = true
           opts.each do |key, value|
@@ -62,8 +60,8 @@ module Spina
       def register
         plugin = new
         yield plugin
-        raise 'Missing plugin name' if plugin.name.nil?
-        raise 'Missing plugin namespace' if plugin.namespace.nil?
+        raise "Missing plugin name" if plugin.name.nil?
+        raise "Missing plugin namespace" if plugin.namespace.nil?
 
         if plugin.settings.present?
           plugin.create_setting_class!
@@ -72,8 +70,6 @@ module Spina
         all << plugin
         plugin
       end
-
     end
-
   end
 end

@@ -7,7 +7,7 @@ module Spina
       helper_method :current_spina_account
       helper_method :current_account
     end
-  
+
     private
 
     def current_account

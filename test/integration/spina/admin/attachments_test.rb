@@ -1,4 +1,4 @@
-require 'test_helper'
+require "test_helper"
 
 module Spina
   module Admin
@@ -14,17 +14,16 @@ module Spina
 
       test "view table of all attachments" do
         get "/admin/attachments"
-        assert_select 'turbo-frame#attachments'
+        assert_select "turbo-frame#attachments"
       end
 
       test "upload a new document" do
-        spina_png = fixture_file_upload('spina.png','image/png')
+        spina_png = fixture_file_upload("spina.png", "image/png")
         post "/admin/attachments", params: {attachment: {files: [spina_png]}}
         get "/admin/attachments"
-        assert_select 'turbo-frame#attachments-1'
-        assert_select 'span', 'spina.png'
+        assert_select "turbo-frame#attachments-1"
+        assert_select "span", "spina.png"
       end
-
     end
   end
 end

@@ -1,7 +1,6 @@
 module Spina
   module Admin
     class MediaFoldersController < AdminController
-
       def new
         @media_folder = MediaFolder.new
       end
@@ -36,9 +35,9 @@ module Spina
 
       private
 
-        def media_folder_params
-          params.require(:media_folder).permit(:name)
-        end
+      def media_folder_params
+        params.require(:media_folder).permit(:name)
+      end
     end
   end
 end

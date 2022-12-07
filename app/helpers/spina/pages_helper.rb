@@ -1,6 +1,5 @@
 module Spina
   module PagesHelper
-
     def content(part_name = nil)
       Current.page.content(part_name)
     end
@@ -31,6 +30,5 @@ module Spina
     def current_spina_account
       Current.account
     end
-
   end
 end

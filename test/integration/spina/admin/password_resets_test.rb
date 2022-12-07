@@ -1,4 +1,4 @@
-require 'test_helper'
+require "test_helper"
 
 module Spina
   module Admin
@@ -13,15 +13,14 @@ module Spina
 
       test "new password form" do
         get "/admin/password_resets/new"
-        assert_select 'form', action: "/admin/sessions"
+        assert_select "form", action: "/admin/sessions"
       end
 
       test "request new password" do
         post "/admin/password_resets", params: {email: "bram@denkgroot.com"}
         follow_redirect!
-        assert_select 'form', action: "/admin/sessions"
+        assert_select "form", action: "/admin/sessions"
       end
-
     end
   end
 end

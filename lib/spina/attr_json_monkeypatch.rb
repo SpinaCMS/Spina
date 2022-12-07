@@ -1,13 +1,12 @@
 module Spina
-  module AttrJsonMonkeypatch 
+  module AttrJsonMonkeypatch
     extend ActiveSupport::Concern
-    
+
     included do |base|
       extend ClassMethods
     end
-    
+
     module ClassMethods
-    
       def attr_json_setter_monkeypatch(name)
         # Ruby bug in 3.0.0 related to defined?(super) returning true
         # https://github.com/jrochkind/attr_json/issues/112
@@ -21,8 +20,6 @@ module Spina
           end
         end
       end
-      
     end
-  
   end
 end

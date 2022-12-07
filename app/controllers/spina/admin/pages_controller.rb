@@ -6,7 +6,7 @@ module Spina
       before_action :set_tabs
 
       def index
-        add_breadcrumb I18n.t('spina.website.pages'), spina.admin_pages_path
+        add_breadcrumb I18n.t("spina.website.pages"), spina.admin_pages_path
 
         if params[:resource_id]
           @resource = Resource.find(params[:resource_id])
@@ -51,9 +51,9 @@ module Spina
         Mobility.locale = @locale
         if @page.update(page_params)
           if @page.saved_change_to_draft? && @page.live?
-            flash[:confetti] = t('spina.pages.published')
+            flash[:confetti] = t("spina.pages.published")
           else
-            flash[:success] = t('spina.pages.saved')
+            flash[:success] = t("spina.pages.saved")
           end
 
           redirect_to spina.edit_admin_page_url(@page, params: {locale: @locale})
@@ -61,7 +61,7 @@ module Spina
           add_index_breadcrumb
           Mobility.locale = I18n.locale
           add_breadcrumb @page.title
-          flash.now[:error] = t('spina.pages.couldnt_be_saved')
+          flash.now[:error] = t("spina.pages.couldnt_be_saved")
           render :edit, status: :unprocessable_entity
         end
       end
@@ -103,7 +103,7 @@ module Spina
       end
 
       def destroy
-        flash[:info] = t('spina.pages.deleted')
+        flash[:info] = t("spina.pages.deleted")
         @page.destroy
 
         redirect_to spina.admin_pages_url(resource_id: @page.resource_id)
@@ -111,29 +111,29 @@ module Spina
 
       private
 
-        def set_locale
-          @locale = params[:locale] || I18n.default_locale
-        end
+      def set_locale
+        @locale = params[:locale] || I18n.default_locale
+      end
 
-        def add_index_breadcrumb
-          if @page.resource
-            add_breadcrumb @page.resource.label, spina.admin_pages_path(resource_id: @page.resource_id), class: 'text-gray-400'
-          else
-            add_breadcrumb t('spina.website.pages'), spina.admin_pages_path, class: 'text-gray-400'
-          end
+      def add_index_breadcrumb
+        if @page.resource
+          add_breadcrumb @page.resource.label, spina.admin_pages_path(resource_id: @page.resource_id), class: "text-gray-400"
+        else
+          add_breadcrumb t("spina.website.pages"), spina.admin_pages_path, class: "text-gray-400"
         end
+      end
 
-        def page_params
-          params.require(:page).permit!
-        end
+      def page_params
+        params.require(:page).permit!
+      end
 
-        def set_page
-          @page = Page.find(params[:id])
-        end
+      def set_page
+        @page = Page.find(params[:id])
+      end
 
-        def set_tabs
-          @tabs = %w[page_content search_engines advanced]
-        end
+      def set_tabs
+        @tabs = %w[page_content search_engines advanced]
+      end
     end
   end
 end

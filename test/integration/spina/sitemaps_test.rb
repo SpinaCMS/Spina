@@ -1,4 +1,4 @@
-require 'test_helper'
+require "test_helper"
 
 module Spina
   class SitemapsTest < ActionDispatch::IntegrationTest
@@ -11,9 +11,8 @@ module Spina
 
     test "Get sitemap" do
       get "/sitemap.xml"
-      assert_select 'urlset'
-      assert_select 'url'
+      assert_select "urlset"
+      assert_select "url"
     end
-
   end
 end

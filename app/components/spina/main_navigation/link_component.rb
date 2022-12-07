@@ -1,7 +1,6 @@
 module Spina
   module MainNavigation
     class LinkComponent < ApplicationComponent
-
       def initialize(label, path, active: false)
         @label = label
         @path = path
@@ -15,7 +14,6 @@ module Spina
           "opacity-50"
         end
       end
-
     end
   end
 end
