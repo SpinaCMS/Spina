@@ -17,9 +17,9 @@ group :test do
   gem "codeclimate-test-reporter", "~> 1.0.0"
 
   # System tests
-  gem 'capybara'
-  gem 'selenium-webdriver', '~> 4.7.1'
-  gem 'webdrivers'
+  gem "capybara"
+  gem "selenium-webdriver", "~> 4.7.1"
+  gem "webdrivers"
 
   gem "pry-rails"
   gem "mocha"
