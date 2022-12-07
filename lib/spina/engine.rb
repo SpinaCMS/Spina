@@ -1,23 +1,23 @@
-require 'importmap-rails'
-require 'turbo-rails'
-require 'stimulus-rails'
-require 'ancestry'
-require 'breadcrumbs_on_rails'
-require 'kaminari'
-require 'mobility'
-require 'rack-rewrite'
-require 'babosa'
-require 'attr_json'
-require 'view_component'
-require 'jsonapi/serializer'
-require 'browser'
-require 'sprockets/railtie'
+require "importmap-rails"
+require "turbo-rails"
+require "stimulus-rails"
+require "ancestry"
+require "breadcrumbs_on_rails"
+require "kaminari"
+require "mobility"
+require "rack-rewrite"
+require "babosa"
+require "attr_json"
+require "view_component"
+require "jsonapi/serializer"
+require "browser"
+require "sprockets/railtie"
 
 module Spina
   class Engine < ::Rails::Engine
     isolate_namespace Spina
-    
-    config.autoload_paths += %W( #{config.root}/lib )
+
+    config.autoload_paths += %W[#{config.root}/lib]
 
     config.to_prepare do
       unless Spina.config.disable_decorator_load
@@ -27,7 +27,7 @@ module Spina
         end
       end
     end
-    
+
     config.to_prepare do
       Spina::Part.register(
         Spina::Parts::Line,
@@ -40,6 +40,5 @@ module Spina
         Spina::Parts::Attachment
       )
     end
-
   end
 end

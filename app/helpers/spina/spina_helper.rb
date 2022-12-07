@@ -1,5 +1,4 @@
 module Spina::SpinaHelper
-
   def spina_importmap_tags(entry_point = "application", shim: true)
     safe_join [
       javascript_inline_importmap_tag(Spina.config.importmap.to_json(resolver: self)),
@@ -9,5 +8,4 @@ module Spina::SpinaHelper
       javascript_import_module_tag(entry_point)
     ], "\n"
   end
-
 end

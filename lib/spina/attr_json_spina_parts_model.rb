@@ -1,11 +1,10 @@
-require 'attr_json/type/polymorphic_model'
+require "attr_json/type/polymorphic_model"
 
 # Extending the PolymorphicModel to use the Spina::PARTS array as input
 # as opposed to arguments
 module AttrJson
   module Type
     class SpinaPartsModel < PolymorphicModel
-
       def model_names
         spina_parts_lookup.keys
       end
@@ -23,7 +22,6 @@ module AttrJson
       def type_for_model_name(model_name)
         spina_parts_lookup[model_name]
       end
-
     end
   end
 end

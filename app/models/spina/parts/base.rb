@@ -13,7 +13,8 @@ module Spina
         content&.to_s
       end
 
-      def content; end
+      def content
+      end
     end
   end
 end

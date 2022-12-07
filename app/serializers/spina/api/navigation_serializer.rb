@@ -1,15 +1,14 @@
 module Spina::Api
-  class NavigationSerializer < BaseSerializer    
+  class NavigationSerializer < BaseSerializer
     set_type :navigation
-    
+
     attributes :name, :label
-    
+
     attribute :tree do |navigation|
       items_to_tree(navigation.navigation_items.sorted.roots.in_menu.live.joins(:page))
     end
-    
+
     class << self
-      
       def items_to_tree(collection)
         collection.map do |item|
           {
@@ -23,8 +22,6 @@ module Spina::Api
           }
         end
       end
-      
     end
-    
   end
 end

@@ -20,7 +20,7 @@ module Spina
     belongs_to :resource, optional: true, touch: true
 
     scope :main, -> { where(resource_id: nil) }
-    scope :regular_pages, ->  { main }
+    scope :regular_pages, -> { main }
     scope :resource_pages, -> { where.not(resource: nil) }
     scope :active, -> { where(active: true) }
     scope :sorted, -> { order(:position) }
@@ -59,7 +59,7 @@ module Spina
     end
 
     def homepage?
-      name == 'homepage'
+      name == "homepage"
     end
 
     def custom_page?
@@ -75,11 +75,11 @@ module Spina
     end
 
     def previous_sibling
-      siblings.where('position < ?', position).sorted.last
+      siblings.where("position < ?", position).sorted.last
     end
 
     def next_sibling
-      siblings.where('position > ?', position).sorted.first
+      siblings.where("position > ?", position).sorted.first
     end
 
     def set_materialized_path
@@ -100,41 +100,40 @@ module Spina
 
     private
 
-      def set_default_position
-        self.position ||= self.class.maximum(:position).to_i.next
-      end
+    def set_default_position
+      self.position ||= self.class.maximum(:position).to_i.next
+    end
 
-      def set_resource_from_parent
-        self.resource_id = parent.resource_id
-      end
+    def set_resource_from_parent
+      self.resource_id = parent.resource_id
+    end
 
-      def touch_navigations
-        navigations.update_all(updated_at: Time.zone.now)
-      end
+    def touch_navigations
+      navigations.update_all(updated_at: Time.zone.now)
+    end
 
-      def rewrite_rule
-        RewriteRule.where(old_path: old_path).first_or_create.update(new_path: materialized_path) if old_path != materialized_path
-      end
+    def rewrite_rule
+      RewriteRule.where(old_path: old_path).first_or_create.update(new_path: materialized_path) if old_path != materialized_path
+    end
 
-      def localized_materialized_path
-        segments = if Mobility.locale == I18n.default_locale
-          [Spina.mounted_at, generate_materialized_path]
-        else
-          [Spina.mounted_at, Mobility.locale, generate_materialized_path]
-        end
-        File.join(*segments.map(&:to_s).compact)
+    def localized_materialized_path
+      segments = if Mobility.locale == I18n.default_locale
+        [Spina.mounted_at, generate_materialized_path]
+      else
+        [Spina.mounted_at, Mobility.locale, generate_materialized_path]
       end
+      File.join(*segments.map(&:to_s).compact)
+    end
 
-      def generate_materialized_path
-        path_fragments = [resource&.slug]
-        path_fragments.append *ancestors.collect(&:slug)
-        path_fragments.append(slug) unless homepage?
-        path_fragments.compact.map(&:parameterize).join('/')
-      end
+    def generate_materialized_path
+      path_fragments = [resource&.slug]
+      path_fragments.append(*ancestors.collect(&:slug))
+      path_fragments.append(slug) unless homepage?
+      path_fragments.compact.map(&:parameterize).join("/")
+    end
 
-      def duplicate_materialized_path?
-        self.class.where.not(id: id).i18n.where(materialized_path: materialized_path).exists?
-      end
-
+    def duplicate_materialized_path?
+      self.class.where.not(id: id).i18n.where(materialized_path: materialized_path).exists?
+    end
   end
 end

@@ -8,11 +8,10 @@ class Spina::PagesController < Spina::ApplicationController
   def homepage
     render_with_template(page)
   end
-  
-  private
-  
-    def authorize_page
-      raise ActiveRecord::RecordNotFound unless page.live? || logged_in?
-    end
 
+  private
+
+  def authorize_page
+    raise ActiveRecord::RecordNotFound unless page.live? || logged_in?
+  end
 end

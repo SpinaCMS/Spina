@@ -8,7 +8,7 @@ module Spina
     serialize :preferences
 
     after_save :bootstrap_website
-    
+
     validates :name, presence: true
 
     def to_s
@@ -22,12 +22,12 @@ module Spina
     def self.serialized_attr_accessor(*args)
       args.each do |method_name|
         define_method method_name do
-          if self.preferences.try(:[], method_name.to_sym).present?
+          if preferences.try(:[], method_name.to_sym).present?
             ActiveSupport::Deprecation.warn("#{method_name} is stored as a symbol. Please set and save it again using #{method_name}= on your Spina::Account model to store it as a string. You can do this from the UI by saving your account preferences.")
           end
-          
-          self.preferences.try(:[], method_name.to_s) || 
-          self.preferences.try(:[], method_name.to_sym)
+
+          preferences.try(:[], method_name.to_s) ||
+            preferences.try(:[], method_name.to_sym)
         end
 
         define_method "#{method_name}=" do |value|
@@ -73,18 +73,17 @@ module Spina
     def find_or_create_custom_pages(theme)
       theme.custom_pages.each do |page|
         Page.where(name: page[:name])
-            .first_or_create(title: page[:title])
-            .update(view_template: page[:view_template], deletable: page[:deletable])
+          .first_or_create(title: page[:title])
+          .update(view_template: page[:view_template], deletable: page[:deletable])
       end
     end
 
     def deactivate_unused_view_templates(theme)
-      Page.active.where.not(view_template: theme.view_templates.map{|h|h[:name]}).update_all(active: false)
+      Page.active.where.not(view_template: theme.view_templates.map { |h| h[:name] }).update_all(active: false)
     end
 
     def activate_used_view_templates(theme)
-      Page.where(active: false, view_template: theme.view_templates.map{|h|h[:name]}).update_all(active: true)
+      Page.where(active: false, view_template: theme.view_templates.map { |h| h[:name] }).update_all(active: true)
     end
-
   end
 end
