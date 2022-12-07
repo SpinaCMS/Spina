@@ -57,6 +57,7 @@ it:
         show_in_menu_description: Quando è disattivato la pagina non verrà mostrata nel menù
         skip_to_first_child: Avanza
         skip_to_first_child_description: Vai alla prima sottopagina
+        theme_chooser: Associa questa pagina ai seguenti temi
         title: Titolo
         title_placeholder: Titolo pagina
         url_title: Sovrascrivi slug
@@ -305,7 +306,9 @@ it:
       save: 
       saved: 
       theme: 
-      theme_description: 
+      theme_description:
+      theme_homepage:
+      no_template_available:
     ui:
       cancel: 
       delete: 

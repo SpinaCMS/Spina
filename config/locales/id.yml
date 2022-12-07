@@ -57,6 +57,7 @@ id:
         show_in_menu_description: Ketika dimatikan halaman ini tidak akan muncul di navigasi anda
         skip_to_first_child: Majukan
         skip_to_first_child_description: Maju ke halaman anak pertama
+        theme_chooser: Kaitkan halaman ini dengan tema berikut
         title: Judul
         title_placeholder: Judul halaman
         url_title: 
@@ -306,6 +307,8 @@ id:
       saved: 
       theme: 
       theme_description: 
+      theme_homepage:
+      no_template_available:
     ui:
       cancel: 
       delete: 

@@ -22,11 +22,12 @@
     <% end %>
   <% end %>
   <div class="p-4 md:p-8">
-    <%= form_with model: @page, url: spina.admin_page_path(@page), id: dom_id(@page) do |f| %>
+    <!-- ADDITION: Error handling. @see javascripts/spina/controllers/tabs_controller -->
+    <%= form_with model: @page, url: spina.admin_page_path(@page), id: dom_id(@page), data: { 'has-errors': @page.errors.any? } do |f| %>
       <%= hidden_field_tag :locale, @locale %>
       <% Mobility.with_locale(@locale) do %>
         <% @tabs.each_with_index do |tab_name, idx| %>
-          <div data-tabs-target="pane" id="<%= tab_name %>" <%= 'hidden' unless idx.zero? %>>
+          <div class="mt-3" data-tabs-target="pane" id="<%= tab_name %>" <%= 'hidden' unless idx.zero? %>>
             <%= render partial: "form_#{tab_name}", locals: {f: f} %>
           </div>
         <% end %>

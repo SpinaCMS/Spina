@@ -23,8 +23,8 @@ module Spina
         assert_select "#page_resource_id option[value='#{@breweries.id}'][selected='selected']"
       end
 
-      test "create new resource page" do
-        post "/admin/pages", params: {page: {title: "Brewery", resource_id: @breweries.id}}
+      test 'create new resource page' do
+        post '/admin/pages', params: { page: { title: 'Brewery', resource_id: @breweries.id, themes: { 'demo' => '1' } } }
         follow_redirect!
         assert_select "a", href: "/admin/pages?resource_id=#{@breweries.id}"
         assert_select "div", text: /.*Brewery.*/

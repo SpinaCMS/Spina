@@ -40,12 +40,18 @@ Spina::Theme.register do |theme|
     {name: "demo", title: "Demo", parts: %w[body image_collection image repeater], exclude_from: %w[articles]}
   ]
 
+  # ADDITION
+  # add comment about setting a custom page as the homepage
+  # add 'homepage' key/value for the first hash
+  # Create one custom page and set it as the homepage, this can be changed later through the Admin interface
+
   # Custom pages
   # Some pages should not be created by the user, but generated automatically.
   # By naming them you can reference them in your code.
+  # Create one custom page and set it as the homepage using the `homepage: true` attribute, this can be changed later through the Admin interface
   theme.custom_pages = [
-    {name: "homepage", title: "Homepage", deletable: false, view_template: "homepage"},
-    {name: "demo", title: "Demo", deletable: true, view_template: "demo"}
+    {name: 'homepage', title: 'Homepage', deletable: false, view_template: 'homepage', homepage: true},
+    {name: 'demo', title: 'Demo', deletable: true, view_template: 'demo'}
   ]
 
   # Navigations (optional)

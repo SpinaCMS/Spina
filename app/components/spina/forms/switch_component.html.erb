@@ -1,5 +1,5 @@
 <button type="button" data-controller="switch" data-action="click->switch#toggle" class="mt-1">
-  <%= f.check_box method, hidden: true, class: "hidden", data: {switch_target: "checkbox"} %>
+  <%= f.check_box method, hidden: true, class: "hidden", checked: @selected, data: {switch_target: "checkbox"} %>
 
   <div data-switch-target="container" class="w-14 h-8 bg-gray-200 rounded-full flex items-center p-1 cursor-pointer transition transition-colors duration-200">
     <div data-switch-target="knob" class="h-6 w-6 rounded-full bg-white shadow-sm transform transition transition-transform duration-200"></div>

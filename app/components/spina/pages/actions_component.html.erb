@@ -25,7 +25,9 @@
     <div class="rounded-md bg-white shadow-xs">
       <div class="py-1">
         
-        <% unless @page.homepage? %>
+        <!-- ADDITION -->
+        <!-- verify that @page is homepage for current theme -->
+        <% unless @page.homepage_for_theme?(Spina::Theme.all.first.name) %>
           <%= link_to t('spina.pages.move_page') + "...", helpers.spina.new_admin_page_move_path(@page), class: "block px-4 py-2 text-sm font-medium leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900", data: {turbo_frame: "modal", action: "reveal#hide"} %>
         <% end %>
         

@@ -20,5 +20,16 @@
     <% end %>
       
   </div>
+
+  <div class="p-4 md:p-8 max-w-screen-2xl">
+
+    <!-- ADDITION: select field for changing homepage -->
+    <%= render Spina::Forms::GroupComponent.new(label: Spina::Page.human_attribute_name(:homepage), description: t('spina.theme.theme_homepage')) do %>
+
+      <%= f.select :page_id, @theme_pages_select_options, { selected: @current_homepage.id }, class: "form-select" %>
+
+    <% end %>
+
+  </div>
   
 <% end %>

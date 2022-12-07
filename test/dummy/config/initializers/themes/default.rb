@@ -25,11 +25,14 @@
     parts: ["text", "attachment"]
   }]
 
+  # ADDITION
+  # set homepage to true
   theme.custom_pages = [{
-    name: "homepage",
-    title: "Homepage",
-    deletable: false,
-    view_template: "homepage"
+    name:           'homepage',
+    title:          'Homepage',
+    deletable:      false,
+    view_template:  'homepage',
+    homepage:       true
   }]
 
   theme.navigations = [{

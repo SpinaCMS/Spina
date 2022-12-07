@@ -57,6 +57,7 @@ tr:
         show_in_menu_description: Bu seçeneği kapattığınızda sayfanız sitede görünmez
         skip_to_first_child: Öne çıkar
         skip_to_first_child_description: İlk sıraya yerleştir
+        theme_chooser: Bu sayfayı aşağıdaki temalarla ilişkilendirin
         title: Başlık
         title_placeholder: Sayfa başlığı
         url_title: 
@@ -305,7 +306,9 @@ tr:
       save: 
       saved: 
       theme: 
-      theme_description: 
+      theme_description:
+      theme_homepage:
+      no_template_available:
     ui:
       cancel: 
       delete: 

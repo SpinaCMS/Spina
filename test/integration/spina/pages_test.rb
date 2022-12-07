@@ -9,8 +9,11 @@ module Spina
       @routes = Engine.routes
       FactoryBot.create :account
 
+      # UPDATE
+      # To use new Spina::Page method
+      @homepage = Spina::Page.find_by_path_locale_and_theme(theme_name: 'demo').presence || FactoryBot.create(:homepage)
+
       # Create translations for each page
-      @homepage = Spina::Page.find_by(name: "homepage")
       FactoryBot.create :page_translation,
         spina_page_id: @homepage.id, title: "Beginpagina",
         materialized_path: "/nl", locale: "nl"
@@ -59,7 +62,8 @@ module Spina
     # Different languages
     test "view homepage in another language" do
       get "/nl"
-      assert_select "h1", "Beginpagina"
+
+      assert_select 'h1', 'Beginpagina'
     end
 
     test "view show page in another language" do

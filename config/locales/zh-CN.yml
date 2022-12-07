@@ -57,6 +57,7 @@ zh-CN:
         show_in_menu_description: 关闭以后在导航栏不显示
         skip_to_first_child: 跳转到首个子页面
         skip_to_first_child_description: 跳转到首个子页面
+        theme_chooser: 将此页面与以下主题相关联
         title: 标题
         title_placeholder: 页面标题
         url_title: 
@@ -305,7 +306,9 @@ zh-CN:
       save: 
       saved: 
       theme: 
-      theme_description: 
+      theme_description:
+      theme_homepage:
+      no_template_available:
     ui:
       cancel: 
       delete: 

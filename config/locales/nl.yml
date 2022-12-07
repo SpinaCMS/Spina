@@ -1,5 +1,13 @@
 nl:
   activerecord:
+    errors:
+      models:
+        spina/page:
+          attributes:
+            title:
+              blank: Titel vereist
+            themes:
+              required: Voor deze pagina moet minimaal één thema worden geselecteerd.
     attributes:
       spina/account:
         address: Adres
@@ -57,6 +65,7 @@ nl:
         show_in_menu_description: Als dit uit staat komt de pagina niet voor in het menu
         skip_to_first_child: Doorsturen
         skip_to_first_child_description: Doorsturen naar eerste onderliggende pagina
+        theme_chooser: Koppel deze pagina aan de volgende thema's
         title: Titel
         title_placeholder: Titel van de pagina
         url_title: Slug overschrijven
@@ -202,6 +211,7 @@ nl:
       navigations: Navigaties
       no_navigations: Deze website heeft nog geen navigaties. Je kunt er een instellen via je thema configuratie.
       sorting_saved: Volgorde opgeslagen
+      template_chooser: Kies een sjabloon
     notifications:
       alert: Oeps! Er is iets mis gegaan
       information: Informatie
@@ -313,6 +323,8 @@ nl:
       saved: Thema opgeslagen
       theme: Thema
       theme_description: Configureer je thema
+      theme_homepage: Kies een pagina als startpagina voor dit thema
+      no_template_available: Er zijn geen sjablonen beschikbaar om nieuwe pagina's te maken
     ui:
       cancel: Annuleer
       delete: Verwijder

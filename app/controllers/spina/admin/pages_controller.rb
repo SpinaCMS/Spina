@@ -5,16 +5,22 @@ module Spina
       before_action :set_page, only: [:edit, :edit_content, :edit_template, :update, :destroy, :children, :sort_one]
       before_action :set_tabs
 
+      # REFACTOR
+      # Only pages for the current theme should be shown
+      # FIX: Spina::Current.theme can return nil
+      #   but current_theme is more stable because
+      #   it has a fallback
       def index
         add_breadcrumb I18n.t("spina.website.pages"), spina.admin_pages_path
 
         if params[:resource_id]
           @resource = Resource.find(params[:resource_id])
-          @page_templates = Spina::Current.theme.new_page_templates(resource: @resource)
+          @page_templates = current_theme.new_page_templates(resource: @resource)
           @pages = @resource.pages.active.roots.includes(:translations).page(params[:page]).per(Spina.config.resource_pages_limit_value)
         else
           @pages = Page.active.sorted.roots.main.includes(:translations)
-          @page_templates = Spina::Current.theme.new_page_templates
+
+          @page_templates = current_theme.new_page_templates
         end
       end
 
@@ -24,7 +30,7 @@ module Spina
       end
 
       def create
-        @page = Page.new(page_params.merge(draft: true))
+        @page = Page.new(page_params.except(:themes).merge(themes: theme_param_keys, draft: true))
         if @page.save
           redirect_to spina.edit_admin_page_url(@page)
         else
@@ -49,7 +55,7 @@ module Spina
 
       def update
         Mobility.locale = @locale
-        if @page.update(page_params)
+        if @page.update(page_params.except(:themes).merge(themes: theme_param_keys))
           if @page.saved_change_to_draft? && @page.live?
             flash[:confetti] = t("spina.pages.published")
           else
@@ -127,9 +133,15 @@ module Spina
         params.require(:page).permit!
       end
 
-      def set_page
-        @page = Page.find(params[:id])
-      end
+        def theme_param_keys
+          ary = []
+          page_params[:themes].to_h.map { |k, v| ary << k if v.to_i.positive? }
+          ary.flatten
+        end
+
+        def set_page
+          @page = Page.find(params[:id])
+        end
 
       def set_tabs
         @tabs = %w[page_content search_engines advanced]

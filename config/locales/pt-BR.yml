@@ -57,6 +57,7 @@ pt-BR:
         show_in_menu_description: Quando desativada, está página não será exibida no seu menu de navegação
         skip_to_first_child: Encaminhar
         skip_to_first_child_description: Encaminhar para a primeira página filha
+        theme_chooser: Associar esta página aos seguintes temas
         title: Título
         title_placeholder: Título da página
         url_title: 
@@ -305,7 +306,9 @@ pt-BR:
       save: 
       saved: 
       theme: 
-      theme_description: 
+      theme_description:
+      theme_homepage:
+      no_template_available:
     ui:
       cancel: 
       delete: 

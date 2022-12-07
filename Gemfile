@@ -4,7 +4,14 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 gemspec
 
 group :development do
-  gem "letter_opener"
+  gem 'letter_opener'
+  gem 'rubocop', '~> 1.39' # ADDITION
+  gem 'rubocop-rails', '~> 2.17' # ADDITION
+end
+
+# ADDITION
+group :development, :test do
+  gem 'debug', '>= 1.0.0'
 end
 
 group :test do
@@ -21,8 +28,8 @@ group :test do
   gem 'selenium-webdriver', '~> 4.7.1'
   gem 'webdrivers'
 
-  gem "pry-rails"
-  gem "mocha"
+  # gem 'pry-rails' # REMOVED, UNMAINTAINED
+  gem 'mocha'
 
-  gem "puma"
+  gem 'puma'
 end

@@ -58,6 +58,7 @@ ru:
           навигации
         skip_to_first_child: Перенаправление
         skip_to_first_child_description: Переход на дочернюю страницу
+        theme_chooser: Свяжите эту страницу со следующими темами
         title: Заголовок
         title_placeholder: Заголовок страницы
         url_title: Переопределить слаг
@@ -219,6 +220,7 @@ ru:
       no_navigations: На этом веб-сайте еще нет навигации. Вы можете настроить её в своей
         конфигурации темы.
       sorting_saved: Сортировка сохранена
+      template_chooser: Выберите шаблон
     notifications:
       alert: Упс! Что-то пошло не так
       information: Информация
@@ -332,6 +334,8 @@ ru:
       saved: Тема сохранена
       theme: Тема
       theme_description: Настройте свою тему
+      theme_homepage: Выберите страницу в качестве домашней страницы для этой темы
+      no_template_available: Нет доступных шаблонов для создания новых страниц
     ui:
       cancel: Отмена
       delete: Удалить

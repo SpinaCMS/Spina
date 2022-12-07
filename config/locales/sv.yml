@@ -57,6 +57,7 @@ sv:
         show_in_menu_description: Denna sida visas inte i navigeringen om detta är avstängt
         skip_to_first_child: Framåt
         skip_to_first_child_description: gå till första undersida
+        theme_chooser: Koppla denna sida till följande teman
         title: Titel
         title_placeholder: Sidtitel
         url_title: 
@@ -305,7 +306,9 @@ sv:
       save: 
       saved: 
       theme: 
-      theme_description: 
+      theme_description:
+      theme_homepage:
+      no_template_available:
     ui:
       cancel: 
       delete: 

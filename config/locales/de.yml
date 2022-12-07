@@ -19,6 +19,8 @@ de:
           attributes:
             title:
               blank: Titel erforderlich
+          themes:
+            required: Für diese Seite muss mindestens ein Thema ausgewählt werden.
     attributes:
       spina/account:
         address: Adresse
@@ -76,6 +78,7 @@ de:
         show_in_menu_description: Wenn diese Option ausgeschaltet ist, wird deine Seite nicht in der Navigation angezeigt
         skip_to_first_child: Weiterleiten
         skip_to_first_child_description: Zur ersten Unterseite
+        theme_chooser: Verknüpfen Sie diese Seite mit den folgenden Themen
         title: Titel
         title_placeholder: Seiten-Titel
         url_title: Prefix überschreiben
@@ -234,6 +237,7 @@ de:
       navigations: Navigationen
       no_navigations: Diese Webseite hat noch keine Navigationen. Du kannst eine in der Theme-Konfiguration erstellen.
       sorting_saved: Reihenfolge gespeichert
+      template_chooser: Wählen Sie eine Vorlage
     notifications:
       alert: Ups! Etwas ist falsch gelaufen
       information: Information
@@ -288,6 +292,7 @@ de:
       show_in_menu: unsichtbar
       skip_to_first_child: Zur ersten Unterseite weiterleiten
       sorting_saved: Reihenfolge gespeichert
+      template_chooser: Wählen Sie eine Vorlage
     permanently_delete: Permanent Löschen
     photos:
       cannot_be_created: "Bild kann nicht verarbeitet werden:"
@@ -344,6 +349,8 @@ de:
       saved: Theme gespeichert
       theme: Theme
       theme_description: Konfiguriere dein Theme
+      theme_homepage: Wählen Sie eine Seite als Homepage für dieses Theme
+      no_template_available: Es sind keine Vorlagen zum Erstellen neuer Seiten verfügbar
     ui:
       cancel: Abbrechen
       delete: Löschen

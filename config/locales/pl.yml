@@ -57,6 +57,7 @@ pl:
         show_in_menu_description: Kiedy jest wyłączone to strona nie będzie pokazana w nawigacji
         skip_to_first_child: Pierwsza
         skip_to_first_child_description: Ustaw jako pierwszą w kolejności
+        theme_chooser: Powiąż tę stronę z następującymi tematami
         title: Tytuł
         title_placeholder: Tytuł strony
         url_title: 
@@ -305,7 +306,9 @@ pl:
       save: 
       saved: 
       theme: 
-      theme_description: 
+      theme_description:
+      theme_homepage:
+      no_template_available:
     ui:
       cancel: 
       delete: 
