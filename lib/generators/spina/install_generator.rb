@@ -46,9 +46,9 @@ module Spina
 
       theme = account.theme || themes.first
       if talkative_install?
-        theme = begin
+        until theme.in? themes
           theme = ask("What theme do you want to use? (#{themes.join("/")}) [#{theme}]").presence || theme
-        end until theme.in? themes
+        end
       end
 
       account.update(theme: theme)
