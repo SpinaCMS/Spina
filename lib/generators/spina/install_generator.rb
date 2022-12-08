@@ -32,21 +32,24 @@ module Spina
     end
 
     def create_account
-      return if ::Spina::Account.exists? && (!talkative_install? || !no?("An account already exists. Skip? [Yn]"))
-      name = ::Spina::Account.first.try(:name) || "MySite"
+      return if ::Spina::Account.exists? && (silent_install? || !no?("An account already exists. Skip? [Yn]"))
+
+      name = ::Spina::Account.first&.name || "MySite"
       if talkative_install?
-        name = ask("What would you like to name your website? [#{name}]").presence || name
+        name = ask("What would you like to name your website?", default: name)
       end
+
       ::Spina::Account.first_or_create.update(name: name)
     end
 
     def set_theme
       account = ::Spina::Account.first
-      return if account.theme.present? && (!talkative_install? || !no?("Theme '#{account.theme}' is set. Skip? [Yn]"))
+      return if account.theme.present? && (silent_install? || !no?("Theme '#{account.theme}' is set. Skip? [Yn]"))
 
-      theme = account.theme || themes.first
-      if talkative_install?
-        theme = ask("What theme do you want to use? (#{themes.join("/")}) [#{theme}]").presence || theme
+      theme = if talkative_install?
+        ask("What theme do you want to use?", limited_to: themes)
+      else
+        account.theme || themes.first
       end
 
       account.update(theme: theme)
@@ -54,8 +57,9 @@ module Spina
 
     def copy_template_files
       return if options["first_deploy"]
+
       theme = ::Spina::Account.first.theme
-      if theme.in? ["default", "demo"]
+      if theme.in?(["default", "demo"])
         template "config/initializers/themes/#{theme}.rb"
         directory "app/views/#{theme}"
         directory "app/views/layouts/#{theme}"
@@ -65,16 +69,18 @@ module Spina
     end
 
     def create_user
-      return if ::Spina::User.exists? && (!talkative_install? || !no?("A user already exists. Skip? [Yn]"))
+      return if ::Spina::User.exists? && (silent_install? || !no?("A user already exists. Skip? [Yn]"))
 
       email = "admin@domain.com"
       if talkative_install?
-        email = ask("Please enter an email address for your first user: [#{email}]").presence || email
+        email = ask("Please enter an email address for your first user:", default: email)
       end
+
       password = "password"
       if talkative_install?
-        password = ask("Create a temporary password: [#{password}]").presence || password
+        password = ask("Create a temporary password:", default: password)
       end
+
       @temporary_password = password
       ::Spina::User.create name: "admin", email: email, password: password, admin: true
     end
@@ -88,7 +94,7 @@ module Spina
     end
 
     def feedback
-      return if !talkative_install?
+      return if silent_install?
       puts
       puts "    Your Spina site has been succesfully installed! "
       puts
@@ -114,7 +120,11 @@ module Spina
     end
 
     def talkative_install?
-      !options["silent"]
+      !silent_install?
+    end
+
+    def silent_install?
+      options["silent"]
     end
   end
 end
