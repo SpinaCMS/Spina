@@ -93,7 +93,7 @@ module Spina
 
       def config_obj.tailwind_purge_content=(paths)
         ActiveSupport::Deprecation.warn("config.tailwind_purge_content has been renamed to config.tailwind_content")
-        tailwind_content = paths
+        self.tailwind_content = paths
       end
 
       def config_obj.embedded_image_size=(image_size)
