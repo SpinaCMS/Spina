@@ -82,6 +82,11 @@ Spina::Theme.register do |theme|
     description: "Article template",
     parts: ["body"],
     exclude_from: %w[main]
+  }, {
+    name: "different_layout",
+    title: "Different layout",
+    parts: %w[body],
+    layout: "different_layout"
   }]
 
   theme.custom_pages = [{
