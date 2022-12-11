@@ -1,5 +1,18 @@
 # Spina CMS Changelog
 
+## 2.13
+
+### 2.13.0 (December 11th, 2022)
+* Added support for `layout:` to view templates
+* Added StandardRB to SpinaCMS development
+* Added item_name to repeater part
+* Added inline file upload to attachment parts
+* Refactored the install generator
+* Fixed page redirect after deleting page in a resource
+* Fixed logout button icon
+* Deprecated the use of app/decorators in favor of app/overrides
+* Updated gem dependencies
+
 ## 2.12
 
 ### 2.12.0 (August 26th, 2022)
