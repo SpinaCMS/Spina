@@ -2,6 +2,9 @@
 
 ## 2.13
 
+### 2.13.1 (December 13th, 2022)
+* Fixed a bug with spina/version.rb
+
 ### 2.13.0 (December 11th, 2022)
 * Added support for `layout:` to view templates
 * Added StandardRB to SpinaCMS development
