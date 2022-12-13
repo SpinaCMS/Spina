@@ -1,4 +1,5 @@
 require "spina/engine"
+require "spina/version"
 require "spina/admin_sectionable"
 require "spina/railtie"
 require "spina/theme_reloader"
