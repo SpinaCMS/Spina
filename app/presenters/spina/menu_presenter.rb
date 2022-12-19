@@ -91,7 +91,7 @@ module Spina
     end
 
     def parent_of_current?(item)
-      return false if item.homepage?
+      return false if item.page.homepage?
       Spina::Current.page.materialized_path.starts_with? item.materialized_path
     end
   end
