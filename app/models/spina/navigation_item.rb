@@ -13,6 +13,6 @@ module Spina
 
     validates :page, uniqueness: {scope: :navigation}
 
-    delegate :menu_title, :materialized_path, :draft?, to: :page
+    delegate :menu_title, :materialized_path, :draft?, :homepage?, to: :page
   end
 end
