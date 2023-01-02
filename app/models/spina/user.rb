@@ -16,7 +16,7 @@ module Spina
       name
     end
 
-    def reset_passord!
+    def reset_password!
       regenerate_password_reset_token
       self.password_reset_sent_at = Time.current
       save!
