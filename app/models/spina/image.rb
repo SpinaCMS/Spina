@@ -5,6 +5,12 @@ module Spina
     has_one_attached :file
 
     scope :sorted, -> { order("created_at DESC") }
+    scope :with_filename, ->(query) do
+      joins(:file_blob).where(
+        "active_storage_blobs.filename ILIKE ?",
+        "%" + Image.sanitize_sql_like(query) + "%"
+      )
+    end
 
     def name
       file.try(:filename).to_s

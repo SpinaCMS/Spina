@@ -5,6 +5,12 @@ module Spina
     attr_accessor :_destroy
 
     scope :sorted, -> { order("created_at DESC") }
+    scope :with_filename, ->(query) do
+      joins(:file_blob).where(
+        "active_storage_blobs.filename ILIKE ?",
+        "%" + Attachment.sanitize_sql_like(query) + "%"
+      )
+    end
 
     def name
       file.filename.to_s
