@@ -361,7 +361,7 @@ nl:
         introduction: Je hebt recent aangegeven dat je je wachtwoord bent vergeten voor je Spina CMS-account. Deze wachtwoord-reset is geldig voor 2 uur. Klik op de link of plak de URL in je browser.
         introduction_html: "Je hebt recent aangegeven dat je je wachtwoord bent vergeten voor je Spina CMS-account. Gebruik de knop hieronder. <strong>Deze wachtwoord-reset is 2 uur geldig.</strong>"
         preheader: Gebruik deze link om je wachtwoord te resetten. Deze is 2 uur geldig
-        request_origin: Beveiliging, dit is aangevraag vanaf een %{platform}-apparaat via %{browser}. Als je geen wachtwoord-reset hebt aangevraagd, negeer deze e-mail dan.
+        request_origin: Beveiliging, dit is aangevraagd vanaf een %{platform}-apparaat via %{browser}. Als je geen wachtwoord-reset hebt aangevraagd, negeer deze e-mail dan.
         salutation: Hoi, %{name}
         subject: Stel je wachtwoord opnieuw in
         trouble: Als bovenstaande knop niet werkt, kopieer en plak deze onderstaande link dan in de browser
