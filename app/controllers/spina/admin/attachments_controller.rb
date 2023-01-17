@@ -5,6 +5,10 @@ module Spina
 
       def index
         @attachments = Attachment.sorted.with_attached_file.page(params[:page]).per(25)
+
+        if params[:query].present?
+          @attachments = @attachments.with_filename(params[:query])
+        end
       end
 
       def show

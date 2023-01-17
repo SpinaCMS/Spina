@@ -1,5 +1,11 @@
 <%= render Spina::UserInterface::HeaderComponent.new do |header| %>
   <% header.actions do %>
+    <%= form_with method: :get, url: spina.admin_images_path, data: {turbo_frame: "_top"}, class: 'flex gap-2 pr-4 border-r-2 border-gray-200' do |f| %>
+      <%= render Spina::Forms::SearchComponent.new(f, :query) %>
+
+      <%= f.submit value: 'Search', name: nil, class: 'btn btn-default' %>
+    <% end %>
+
     <% if @media_folder.blank? %>
       <%= link_to spina.new_admin_media_folder_path, class: "btn btn-default", data: {turbo_frame: "modal"} do %>
         <%= heroicon("folder", style: :solid, class: 'w-4 h-4 mr-1 -ml-1') %>
