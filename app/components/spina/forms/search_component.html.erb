@@ -1,0 +1,16 @@
+<div class="flex items-center relative">
+  <div class="absolute left-3" style="left: 0.75rem;">
+    <%= helpers.heroicon('search', style: :solid, class: 'text-gray-300 w-5 h-5') %>
+  </div>
+
+  <%= @f.search_field @method, 
+    value: params[@method.to_sym],
+    class: "form-input font-medium block pl-10 pr-2 py-[0.3rem]"
+  %>
+
+  <div class="absolute right-2">
+    <%= link_to request.path do %>
+      <%= helpers.heroicon('x', style: :solid, class: 'text-gray-300 w-5 h-5') %>
+    <% end %>
+  </div>
+</div>
