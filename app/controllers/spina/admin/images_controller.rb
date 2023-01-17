@@ -7,6 +7,10 @@ module Spina
       def index
         @media_folders = MediaFolder.order(:name).includes(:images)
         @images = Image.sorted.where(media_folder: @media_folder).with_attached_file.page(params[:page]).per(25)
+
+        if params[:query].present?
+          @images = @images.with_filename(params[:query])
+        end
       end
 
       def show
