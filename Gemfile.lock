@@ -97,7 +97,7 @@ GEM
       activerecord (>= 5.2.6)
     ansi (1.5.0)
     ast (2.4.2)
-    attr_json (1.4.1)
+    attr_json (1.5.0)
       activerecord (>= 5.0.0, < 7.1)
     babosa (2.0.0)
     bcrypt (3.1.18)
@@ -169,7 +169,7 @@ GEM
     mini_magick (4.12.0)
     mini_mime (1.1.2)
     mini_portile2 (2.8.0)
-    minitest (5.16.3)
+    minitest (5.17.0)
     minitest-reporters (1.5.0)
       ansi
       builder
