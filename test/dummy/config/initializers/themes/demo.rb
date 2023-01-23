@@ -58,12 +58,16 @@ Spina::Theme.register do |theme|
     title: "Testrepeater",
     part_type: "Spina::Parts::Repeater",
     parts: %w[line body]
+  }, {
+    name: "page",
+    title: "Pagina",
+    part_type: "Spina::Parts::Page"
   }]
 
   theme.view_templates = [{
     name: "homepage",
     title: "Homepage",
-    parts: ["headline", "body", "image_collection"]
+    parts: ["headline", "body", "page", "image_collection"]
   }, {
     name: "show",
     title: "Simple page",

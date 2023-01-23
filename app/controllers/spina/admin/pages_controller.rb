@@ -108,7 +108,7 @@ module Spina
 
         redirect_to spina.admin_pages_url(resource_id: @page.resource_id)
       end
-
+      
       private
 
       def set_locale

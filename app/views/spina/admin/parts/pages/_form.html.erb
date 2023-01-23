@@ -1,0 +1,36 @@
+<div class="mt-6">
+  <label class="block text-sm leading-5 font-medium text-gray-700"><%= f.object.title %></label>
+  <div class="text-gray-400 text-sm"><%= f.object.hint %></div>
+
+  <div data-controller="page-select reveal" class="relative" data-reveal-away-value>
+    <%= f.hidden_field :page_id, data: {page_select_target: "input"} %>
+    
+    <button type="button" class="btn btn-default px-3 inline-flex items-center text-sm font-medium" data-action="reveal#toggle page-select#autofocus">
+      <%= heroicon("document", style: :outline, class: "w-4 h-4 mr-1 text-gray-600") %>
+      <div data-page-select-target="label">
+        <% if f.object.page_id.present? %>
+          <%= turbo_frame_tag :page_title, src: spina.admin_page_select_option_path(f.object.page_id) %>
+        <% else %>
+          Select page
+        <% end %>
+      </div>
+    </button>
+     
+    <div class="relative mt-1">
+      <div data-reveal data-transition hidden class="absolute shadow-lg border border-gray-200 origin-top-right rounded-md z-10 top-0">
+        <div class="rounded-md bg-white shadow-xs">
+          <%= form_with url: spina.search_admin_page_select_options_path, data: {turbo_frame: :page_select_options, controller: "form"} do |f| %>
+            <div class="p-2">
+              <%= f.text_field :search, placeholder: "Search", class: "form-input sticky top-0 text-sm w-80", data: {action: "input->form#requestSubmit", page_select_target: "search"} %>
+            </div>
+          <% end %>
+          
+          <div class="overflow-scroll max-h-52">
+            <%= turbo_frame_tag :page_select_options do %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
