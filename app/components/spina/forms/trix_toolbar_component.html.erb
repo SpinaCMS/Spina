@@ -66,11 +66,7 @@
         <svg class="w-4 h-4" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M432 424H16a16 16 0 0 0-16 16v16a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-16a16 16 0 0 0-16-16zM27.31 363.3l96-96a16 16 0 0 0 0-22.62l-96-96C17.27 138.66 0 145.78 0 160v192c0 14.31 17.33 21.3 27.31 11.3zM435.17 168H204.83A12.82 12.82 0 0 0 192 180.83v22.34A12.82 12.82 0 0 0 204.83 216h230.34A12.82 12.82 0 0 0 448 203.17v-22.34A12.82 12.82 0 0 0 435.17 168zM432 48H16A16 16 0 0 0 0 64v16a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V64a16 16 0 0 0-16-16zm3.17 248H204.83A12.82 12.82 0 0 0 192 308.83v22.34A12.82 12.82 0 0 0 204.83 344h230.34A12.82 12.82 0 0 0 448 331.17v-22.34A12.82 12.82 0 0 0 435.17 296z"/></svg>
       </button>
     </div>
-    
-    <div class="absolute hidden w-full" data-trix-target="imageFields">
-      <input type="text" class="h-8 px-2 mt-1 border-0 ring-0 focus:ring-0 w-full text-sm italic" placeholder="Alt text" data-trix-target="altField" data-action="keyup->trix#setAltText keydown->trix#preventSubmission" />
-    </div>
-  
+
     <div hidden data-reveal data-trix-dialogs>
       <div class="trix-dialog" data-trix-dialog="href" data-trix-dialog-attribute="href">
         <div class="fixed inset-0 flex justify-center items-center bg-gray-700 bg-opacity-25 z-50">
@@ -98,4 +94,7 @@
     </div>
     
   </div>
+</div>
+<div class="absolute hidden w-full" data-trix-target="imageFields">
+  <input type="text" class="h-8 px-2 mt-1 border-0 ring-0 focus:ring-0 w-full text-sm italic" placeholder="Alt text" data-trix-target="altField" data-action="keyup->trix#setAltText keydown->trix#preventSubmission" />
 </div>
