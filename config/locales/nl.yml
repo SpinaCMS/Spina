@@ -244,6 +244,7 @@ nl:
       change_view_template: Wijzig pagina template
       change_view_template_confirmation: Weet je zeker dat je de pagina template wil veranderen? Inhoud die niet op de nieuwe pagina past gaat verloren.
       concept: concept
+      couldnt_be_saved: Pagina kon niet worden opgeslagen
       create: Maak pagina
       create_page: "%{template} invullen"
       delete: Verwijder pagina
@@ -277,7 +278,7 @@ nl:
       save_draft: Concept opslaan
       saved: Pagina opgeslagen
       saving: "<i></i> Opslaan..."
-      couldnt_be_saved: Pagina kon niet worden opgeslagen
+      select_page: Kies pagina
       search_engines: Zoekmachines
       show_in_menu: onzichtbaar
       skip_to_first_child: doorsturen naar 1<sup>e</sup> subpagina

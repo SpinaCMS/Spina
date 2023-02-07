@@ -11,12 +11,11 @@ module Spina
       
       def search
         if params[:resource].present?
-          pages = Resource.find_by(name: params[:resource])&.pages
-        else
-          pages = Page.all
+          @pages = Resource.find_by(name: params[:resource])&.pages
         end
-
-        @pages = pages.joins(:translations).where("spina_page_translations.title ILIKE :query OR materialized_path ILIKE :query", query: "%#{params[:search]}%").page(params[:page]).per(20)
+        
+        @pages ||= Page.all
+        @pages = @pages.joins(:translations).where("spina_page_translations.title ILIKE :query OR materialized_path ILIKE :query", query: "%#{params[:search]}%").order(created_at: :desc).distinct.page(params[:page]).per(20)
         render :index
       end
       
