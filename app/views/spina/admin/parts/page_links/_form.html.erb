@@ -2,7 +2,7 @@
   <label class="block text-sm leading-5 font-medium text-gray-700"><%= f.object.title %></label>
   <div class="text-gray-400 text-sm"><%= f.object.hint %></div>
 
-  <div data-controller="page-select reveal" data-placeholder="<%=t "spina.pages.select_page" %>" class="relative" data-reveal-away-value>
+  <div data-controller="page-select reveal" data-placeholder="<%=t "spina.pages.select_page" %>" class="relative mt-1" data-reveal-away-value>
     <%= f.hidden_field :page_id, data: {page_select_target: "input"} %>
     
     <button type="button" class="btn btn-default px-3 inline-flex items-center text-sm font-medium" data-action="reveal#toggle page-select#autofocus">
