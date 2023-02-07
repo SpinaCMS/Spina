@@ -15,7 +15,6 @@ module Spina
 
     def find_part(name)
       send("#{I18n.locale}_content").find { |part| part.name.to_s == name.to_s }
-    rescue AttrJson::Type::PolymorphicModel::TypeError
     end
   end
 end
