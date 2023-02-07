@@ -4,11 +4,7 @@ module Spina
       before_action :set_breadcrumbs
 
       def index
-        @attachments = Attachment.sorted.with_attached_file.page(params[:page]).per(25)
-
-        if params[:query].present?
-          @attachments = @attachments.with_filename(params[:query])
-        end
+        @attachments = Attachment.sorted.with_attached_file.with_filename(params[:query].to_s).page(params[:page]).per(25)
       end
 
       def show
