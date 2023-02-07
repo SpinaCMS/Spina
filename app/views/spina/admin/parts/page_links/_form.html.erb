@@ -6,7 +6,7 @@
     <%= f.hidden_field :page_id, data: {page_select_target: "input"} %>
     
     <button type="button" class="btn btn-default px-3 inline-flex items-center text-sm font-medium" data-action="reveal#toggle page-select#autofocus">
-      <%= heroicon("document", style: :outline, class: "w-4 h-4 mr-1 text-gray-600") %>
+      <%= heroicon("link", style: :mini, class: "w-4 h-4 mr-1 text-gray-600") %>
       <div data-page-select-target="label">
         <% if f.object.page_id.present? %>
           <%= turbo_frame_tag :page_title, src: spina.admin_page_select_option_path(f.object.page_id) %>
