@@ -38,7 +38,7 @@ module Spina
         Spina::Parts::Repeater,
         Spina::Parts::Option,
         Spina::Parts::Attachment,
-        Spina::Parts::Page
+        Spina::Parts::PageLink
       )
     end
   end

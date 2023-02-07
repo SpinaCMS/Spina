@@ -61,19 +61,19 @@ Spina::Theme.register do |theme|
   }, {
     name: "page",
     title: "Pagina",
-    part_type: "Spina::Parts::Page"
+    part_type: "Spina::Parts::PageLink"
   }]
 
   theme.view_templates = [{
     name: "homepage",
     title: "Homepage",
-    parts: ["headline", "body", "page", "image_collection"]
+    parts: ["headline", "body", "image_collection"]
   }, {
     name: "show",
     title: "Simple page",
     description: "Default layout",
     usage: "Use for your content",
-    parts: ["body", "testrepeater"]
+    parts: ["body", "page", "testrepeater"]
   }, {
     name: "demo",
     title: "Demo",

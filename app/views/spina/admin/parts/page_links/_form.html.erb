@@ -19,13 +19,14 @@
     <div class="relative mt-1">
       <div data-reveal data-transition hidden class="absolute shadow-lg border border-gray-200 origin-top-right rounded-md z-10 top-0">
         <div class="rounded-md bg-white shadow-xs">
-          <%= form_with url: spina.search_admin_page_select_options_path, data: {turbo_frame: :page_select_options, controller: "form"} do |f| %>
+          <%= form_with url: spina.search_admin_page_select_options_path, data: {turbo_frame: :page_select_options, controller: "form", debounce_time: 100} do |ff| %>
+            <%= ff.hidden_field :resource, value: f.object.options&.dig(:resource) %>
             <div class="p-2">
-              <%= f.text_field :search, placeholder: "Search", class: "form-input sticky top-0 text-sm w-80", data: {action: "input->form#requestSubmit", page_select_target: "search"} %>
+              <%= ff.search_field :search, placeholder: "Search", class: "form-input sticky top-0 text-sm w-80", data: {action: "input->form#submit focus->form#submit", page_select_target: "search"} %>
             </div>
           <% end %>
           
-          <div class="overflow-scroll max-h-52">
+          <div class="overflow-scroll max-h-80">
             <%= turbo_frame_tag :page_select_options do %>
             <% end %>
           </div>

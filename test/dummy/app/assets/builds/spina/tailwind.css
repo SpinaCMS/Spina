@@ -2222,16 +2222,12 @@ trix-editor [data-trix-mutable]::selection,
   height: 9rem;
 }
 
-.h-44 {
-  height: 11rem;
-}
-
 .h-40 {
   height: 10rem;
 }
 
-.h-60 {
-  height: 15rem;
+.max-h-52 {
+  max-height: 13rem;
 }
 
 .max-h-full {
@@ -2242,8 +2238,12 @@ trix-editor [data-trix-mutable]::selection,
   max-height: 100vh;
 }
 
-.max-h-52 {
-  max-height: 13rem;
+.max-h-64 {
+  max-height: 16rem;
+}
+
+.max-h-80 {
+  max-height: 20rem;
 }
 
 .min-h-screen {
@@ -2314,8 +2314,8 @@ trix-editor [data-trix-mutable]::selection,
   width: 3rem;
 }
 
-.w-44 {
-  width: 11rem;
+.w-80 {
+  width: 20rem;
 }
 
 .w-9 {
@@ -2330,16 +2330,8 @@ trix-editor [data-trix-mutable]::selection,
   width: 50%;
 }
 
-.w-80 {
-  width: 20rem;
-}
-
 .w-36 {
   width: 9rem;
-}
-
-.w-40 {
-  width: 10rem;
 }
 
 .max-w-screen-xl {
@@ -2713,6 +2705,16 @@ trix-editor [data-trix-mutable]::selection,
   border-color: rgb(156 163 175 / var(--tw-border-opacity));
 }
 
+.border-gray-100 {
+  --tw-border-opacity: 1;
+  border-color: rgb(243 244 246 / var(--tw-border-opacity));
+}
+
+.border-gray-50 {
+  --tw-border-opacity: 1;
+  border-color: rgb(249 250 251 / var(--tw-border-opacity));
+}
+
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -2812,11 +2814,6 @@ trix-editor [data-trix-mutable]::selection,
   background-color: rgb(220 38 38 / var(--tw-bg-opacity));
 }
 
-.bg-green-800 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(22 101 52 / var(--tw-bg-opacity));
-}
-
 .bg-opacity-20 {
   --tw-bg-opacity: 0.2;
 }
@@ -2892,10 +2889,6 @@ trix-editor [data-trix-mutable]::selection,
   padding: 1.5rem;
 }
 
-.p-1\.5 {
-  padding: 0.375rem;
-}
-
 .px-8 {
   padding-left: 2rem;
   padding-right: 2rem;
@@ -2951,14 +2944,19 @@ trix-editor [data-trix-mutable]::selection,
   padding-bottom: 0.25rem;
 }
 
-.py-8 {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-}
-
 .px-5 {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
+}
+
+.py-1\.5 {
+  padding-top: 0.375rem;
+  padding-bottom: 0.375rem;
+}
+
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .py-0\.5 {
@@ -2969,11 +2967,6 @@ trix-editor [data-trix-mutable]::selection,
 .py-0 {
   padding-top: 0px;
   padding-bottom: 0px;
-}
-
-.py-1\.5 {
-  padding-top: 0.375rem;
-  padding-bottom: 0.375rem;
 }
 
 .pr-3 {
@@ -3418,6 +3411,11 @@ trix-editor [data-trix-mutable]::selection,
   background-color: rgb(31 41 55 / var(--tw-bg-opacity));
 }
 
+.hover\:bg-gray-100:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+}
+
 .hover\:bg-gray-300:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(209 213 219 / var(--tw-bg-opacity));
@@ -3426,11 +3424,6 @@ trix-editor [data-trix-mutable]::selection,
 .hover\:bg-spina-dark:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(58 58 112 / var(--tw-bg-opacity));
-}
-
-.hover\:bg-gray-100:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
 }
 
 .hover\:bg-red-100:hover {

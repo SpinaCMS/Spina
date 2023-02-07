@@ -1,7 +1,10 @@
 <%= turbo_frame_tag :page_select_options do %>
   <% @pages.each do |page| %>
-    <button type="button" data-action="page-select#select reveal#hide" data-title="<%= page.title %>" data-id="<%= page.id %>" class="block hover:bg-gray-100 w-full text-left px-5 py-1.5 font-medium leading-5 text-gray-700 hover:text-gray-900 text-sm">
+    <button type="button" data-action="page-select#select reveal#hide" data-title="<%= page.title %>" data-id="<%= page.id %>" class="block hover:bg-gray-100 w-full text-left px-5 py-2 font-medium leading-5 text-gray-700 hover:text-gray-900 text-sm border-t border-gray-150">
       <%= page.title %>
+      <div class="text-xs font-normal text-gray-400">
+        <%= page.materialized_path %>
+      </div>
     </button>
   <% end %>
 <% end %>
