@@ -2146,6 +2146,18 @@ trix-editor [data-trix-mutable]::selection,
   margin-right: -1rem;
 }
 
+.ml-4 {
+  margin-left: 1rem;
+}
+
+.-mr-2 {
+  margin-right: -0.5rem;
+}
+
+.-mr-3 {
+  margin-right: -0.75rem;
+}
+
 .block {
   display: block;
 }
@@ -2232,14 +2244,6 @@ trix-editor [data-trix-mutable]::selection,
 
 .h-1 {
   height: 0.25rem;
-}
-
-.h-2 {
-  height: 0.5rem;
-}
-
-.h-1\.5 {
-  height: 0.375rem;
 }
 
 .max-h-full {
@@ -2768,6 +2772,10 @@ trix-editor [data-trix-mutable]::selection,
   background-color: rgb(16 185 129 / var(--tw-bg-opacity));
 }
 
+.bg-spina\/10 {
+  background-color: rgb(104 101 180 / 0.1);
+}
+
 .bg-yellow-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(234 179 8 / var(--tw-bg-opacity));
@@ -2813,17 +2821,8 @@ trix-editor [data-trix-mutable]::selection,
   background-color: rgb(220 38 38 / var(--tw-bg-opacity));
 }
 
-.bg-gray-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
-}
-
-.bg-spina\/20 {
-  background-color: rgb(104 101 180 / 0.2);
-}
-
-.bg-spina\/10 {
-  background-color: rgb(104 101 180 / 0.1);
+.bg-spina\/5 {
+  background-color: rgb(104 101 180 / 0.05);
 }
 
 .bg-opacity-20 {
@@ -2974,11 +2973,6 @@ trix-editor [data-trix-mutable]::selection,
 .py-0 {
   padding-top: 0px;
   padding-bottom: 0px;
-}
-
-.px-1\.5 {
-  padding-left: 0.375rem;
-  padding-right: 0.375rem;
 }
 
 .pr-3 {
@@ -3450,6 +3444,10 @@ trix-editor [data-trix-mutable]::selection,
 
 .hover\:bg-spina\/20:hover {
   background-color: rgb(104 101 180 / 0.2);
+}
+
+.hover\:bg-spina\/10:hover {
+  background-color: rgb(104 101 180 / 0.1);
 }
 
 .hover\:bg-opacity-50:hover {

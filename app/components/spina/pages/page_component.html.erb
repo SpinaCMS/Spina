@@ -18,18 +18,18 @@
       <% end %>
     <% end %>
     
-    <%= link_to helpers.spina.edit_admin_page_path(@page), class: "block text-spina font-medium text-sm p-4 hover:text-spina-dark", data: {turbo_frame: "_top"} do %>
-      <%= @page.menu_title %>
-      
-      <small class="font-normal"><%= label %></small>
-    <% end %>
-    
     <% if children.any? %>
-      <%= button_tag type: :button, class: "bg-spina/10 px-1 h-6 font-medium rounded-md flex items-center text-spina hover:bg-spina/20 transition transition-bg transform", data: {action: "collapse#toggle"} do %>
+      <%= button_tag type: :button, class: "ml-2 -mr-3 px-1 h-6 font-medium rounded-md flex items-center text-spina hover:bg-spina/10 transition transition-bg transform", data: {action: "collapse#toggle"} do %>
         <div data-target="collapse.icon" class="transform transition">
           <%= helpers.heroicon('chevron-right', style: :mini, class: 'w-5 h-5') %>
         </div>
       <% end %>
+    <% end %>
+    
+    <%= link_to helpers.spina.edit_admin_page_path(@page), class: "text-spina font-medium text-sm p-4 hover:text-spina-dark flex items-center", data: {turbo_frame: "_top"} do %>
+      <%= @page.menu_title %>
+      
+      <small class="font-normal ml-2"><%= label %></small>
     <% end %>
     
     <div class='flex-1'></div>
