@@ -19,7 +19,7 @@
     <% end %>
     
     <% if children.any? %>
-      <%= button_tag type: :button, class: "ml-2 -mr-3 px-1 h-6 font-medium rounded-md flex items-center text-spina hover:bg-spina/10 transition transition-bg transform", data: {action: "collapse#toggle"} do %>
+      <%= link_to helpers.spina.children_admin_page_path(@page, sortable: sortable?, draggable: draggable?), class: "ml-2 -mr-3 px-1 h-7 font-medium rounded-md flex items-center text-spina hover:bg-spina/10 transition transition-bg transform", data: {turbo_frame: "page_#{@page.id}_children", action: "collapse#toggle"} do %>
         <div data-target="collapse.icon" class="transform transition">
           <%= helpers.heroicon('chevron-right', style: :mini, class: 'w-5 h-5') %>
         </div>
@@ -41,7 +41,7 @@
 
   <% if children.any? %>
     <div data-target="collapse.container" hidden>
-      <%= render Spina::Pages::ListComponent.new(pages: children, sortable: sortable, draggable: draggable) %>
+      <%= helpers.turbo_frame_tag "page_#{@page.id}_children" %>
     </div>
     <div class="h-1 bg-gray-100 border-b border-gray-200" data-target="collapse.placeholder"></div>
   <% end %>

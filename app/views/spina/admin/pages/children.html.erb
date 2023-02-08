@@ -1,0 +1,3 @@
+<%= turbo_frame_tag "page_#{@page.id}_children" do %>
+  <%= render Spina::Pages::ListComponent.new(pages: @children, sortable: params[:sortable] == "true", draggable: params[:draggable] == "true") %>
+<% end %>
