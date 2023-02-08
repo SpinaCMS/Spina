@@ -1,4 +1,4 @@
-<turbo-frame id="page_<%= @page.id %>" data-id="<%= @page.id %>">
+<turbo-frame id="page_<%= @page.id %>" data-id="<%= @page.id %>" data-controller="collapse">
   <div class="flex items-center border-gray-200 border-b <%= css_class %> bg-opacity-50">
     <% if sortable? %>
       <% if draggable? %>
@@ -24,6 +24,14 @@
       <small class="font-normal"><%= label %></small>
     <% end %>
     
+    <% if children.any? %>
+      <%= button_tag type: :button, class: "bg-spina/10 px-1 h-6 font-medium rounded-md flex items-center text-spina hover:bg-spina/20 transition transition-bg transform", data: {action: "collapse#toggle"} do %>
+        <div data-target="collapse.icon" class="transform transition">
+          <%= helpers.heroicon('chevron-right', style: :mini, class: 'w-5 h-5') %>
+        </div>
+      <% end %>
+    <% end %>
+    
     <div class='flex-1'></div>
     <div class="mr-3 flex space-x-2">
       <%= render Spina::Pages::TranslationsComponent.new(@page) %>
@@ -32,6 +40,10 @@
   </div>
 
   <% if children.any? %>
-    <%= render Spina::Pages::ListComponent.new(pages: children, sortable: sortable, draggable: draggable) %>
+    <div data-target="collapse.container" hidden>
+      <%= render Spina::Pages::ListComponent.new(pages: children, sortable: sortable, draggable: draggable) %>
+    </div>
+    <div class="h-1 bg-gray-100 border-b border-gray-200" data-target="collapse.placeholder"></div>
   <% end %>
 </turbo-frame>
+
