@@ -25,6 +25,10 @@ module Spina
       def draggable?
         draggable
       end
+      
+      def collapsed?
+        !draggable
+      end
 
       def depth
         @page.depth

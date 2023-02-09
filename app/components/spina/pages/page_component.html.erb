@@ -1,4 +1,4 @@
-<turbo-frame id="page_<%= @page.id %>" data-id="<%= @page.id %>" data-controller="collapse">
+<turbo-frame id="page_<%= @page.id %>" data-id="<%= @page.id %>" data-controller="<%= 'collapse' if children.any? %>" <%= 'data-collapsed' if collapsed? %>>
   <div class="flex items-center border-gray-200 border-b <%= css_class %> bg-opacity-50">
     <% if sortable? %>
       <% if draggable? %>
@@ -19,8 +19,8 @@
     <% end %>
     
     <% if children.any? %>
-      <%= link_to helpers.spina.children_admin_page_path(@page, sortable: sortable?, draggable: draggable?), class: "ml-2 -mr-3 px-1 h-7 font-medium rounded-md flex items-center text-spina hover:bg-spina/10 transition transition-bg transform", data: {turbo_frame: "page_#{@page.id}_children", action: "collapse#toggle"} do %>
-        <div data-target="collapse.icon" class="transform transition">
+      <%= link_to helpers.spina.children_admin_page_path(@page, sortable: sortable?, draggable: draggable?), class: "ml-2 -mr-3 px-1 h-7 font-medium rounded-md flex items-center text-spina hover:bg-spina/10 transition transition-bg transform", data: {turbo_frame: "page_#{@page.id}_children", collapse_target: "button", action: "collapse#toggle"} do %>
+        <div data-collapse-target="icon" class="transform transition <%= 'rotate-90' unless collapsed? %>">
           <%= helpers.heroicon('chevron-right', style: :mini, class: 'w-5 h-5') %>
         </div>
       <% end %>
@@ -40,10 +40,13 @@
   </div>
 
   <% if children.any? %>
-    <div data-target="collapse.container" hidden>
-      <%= helpers.turbo_frame_tag "page_#{@page.id}_children" %>
-    </div>
-    <div class="h-1 bg-gray-100 border-b border-gray-200" data-target="collapse.placeholder"></div>
+    <turbo-frame id="page_<%= @page.id %>_children" data-collapse-target="container">
+      <% unless collapsed? %>
+        <%= render Spina::Pages::ListComponent.new(pages: @page.children.active.sorted, sortable: sortable?, draggable: draggable?) %>
+      <% end %>
+    </turbo-frame>
+    
+    <div class="h-1 bg-gray-100 border-b border-gray-200" data-collapse-target="placeholder" <%= 'hidden' unless collapsed? %>></div>
   <% end %>
 </turbo-frame>
 
