@@ -26,8 +26,9 @@ module Spina
         draggable
       end
       
+      # Pages are collapsed by default if they're inside a resource
       def collapsed?
-        !draggable
+        @page.resource_id.present?
       end
 
       def depth
