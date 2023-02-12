@@ -14,7 +14,7 @@ module AttrJson
       end
 
       def spina_parts_lookup
-        @spina_parts_lookup ||= Spina::PARTS.map(&:to_type).map do |type|
+        @spina_parts_lookup = Spina::PARTS.map(&:to_type).map do |type|
           [type.model.name, type]
         end.to_h
       end
