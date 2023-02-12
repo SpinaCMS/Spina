@@ -4,7 +4,7 @@ export default class extends Controller {
   
   static targets = [ "container", "placeholder", "icon" ]
   
-  toggle() {
+  toggle(event) {
     if (this.collapsed) {
       this.containerTarget.removeAttribute("hidden")
       this.placeholderTarget.hidden = true
@@ -15,6 +15,7 @@ export default class extends Controller {
       this.placeholderTarget.removeAttribute("hidden")
       this.iconTarget.classList.remove("rotate-90")
       this.element.dataset.collapsed = true
+      event.preventDefault()
     }
   }
   
