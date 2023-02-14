@@ -10,7 +10,9 @@ module Spina
     attr_accessor :old_path
 
     # Orphaned pages are adopted by parent pages if available, otherwise become root
-    has_ancestry orphan_strategy: :adopt
+    has_ancestry orphan_strategy: :adopt,
+                 counter_cache: :ancestry_children_count,
+                 cache_depth: true
 
     # Pages can belong to navigations (optional)
     has_many :navigation_items, dependent: :destroy

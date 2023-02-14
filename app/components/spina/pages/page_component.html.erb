@@ -1,4 +1,4 @@
-<turbo-frame id="page_<%= @page.id %>" data-id="<%= @page.id %>" data-controller="<%= 'collapse' if children.any? %>" <%= 'data-collapsed' if collapsed? %>>
+<turbo-frame id="page_<%= page.id %>" data-id="<%= page.id %>" data-controller="<%= 'collapse' if has_children? %>" <%= 'data-collapsed' if collapsed? %>>
   <div class="flex items-center border-gray-200 border-b <%= css_class %> bg-opacity-50">
     <% if sortable? %>
       <% if draggable? %>
@@ -7,42 +7,42 @@
         </div>
       <% else %>
         <div class="pl-2">          
-          <%= button_to helpers.spina.sort_one_admin_page_path(@page, direction: "up"), class: "btn btn-default shadow-none border-gray-200 border-b-0 rounded-b-none px-1 h-5 sort-up" do %>
+          <%= button_to helpers.spina.sort_one_admin_page_path(page, direction: "up"), class: "btn btn-default shadow-none border-gray-200 border-b-0 rounded-b-none px-1 h-5 sort-up" do %>
             <%= helpers.heroicon("chevron-up", style: :solid, class: 'w-4 h-4 text-gray-600') %>
           <% end %>
 
-          <%= button_to helpers.spina.sort_one_admin_page_path(@page), class: "btn btn-default shadow-none border-gray-200 rounded-t-none px-1 h-5 sort-down" do %>
+          <%= button_to helpers.spina.sort_one_admin_page_path(page), class: "btn btn-default shadow-none border-gray-200 rounded-t-none px-1 h-5 sort-down" do %>
             <%= helpers.heroicon("chevron-down", style: :solid, class: 'w-4 h-4 text-gray-600') %>
           <% end %>
         </div>
       <% end %>
     <% end %>
     
-    <% if children.any? %>
-      <%= link_to helpers.spina.children_admin_page_path(@page, sortable: sortable?, draggable: draggable?), class: "ml-2 -mr-3 px-1 h-7 font-medium rounded-md flex items-center text-spina hover:bg-spina/10 transition transition-bg transform", data: {turbo_frame: "page_#{@page.id}_children", collapse_target: "button", action: "collapse#toggle"} do %>
+    <% if has_children? %>
+      <%= link_to helpers.spina.children_admin_page_path(page, sortable: sortable?, draggable: draggable?), class: "ml-2 -mr-3 px-1 h-7 font-medium rounded-md flex items-center text-spina hover:bg-spina/10 transition transition-bg transform", data: {turbo_frame: "page_#{page.id}_children", collapse_target: "button", action: "collapse#toggle"} do %>
         <div data-collapse-target="icon" class="transform transition <%= 'rotate-90' unless collapsed? %>">
           <%= helpers.heroicon('chevron-right', style: :mini, class: 'w-5 h-5') %>
         </div>
       <% end %>
     <% end %>
     
-    <%= link_to helpers.spina.edit_admin_page_path(@page), class: "text-spina font-medium text-sm p-4 hover:text-spina-dark flex items-center", data: {turbo_frame: "_top"} do %>
-      <%= @page.menu_title %>
+    <%= link_to helpers.spina.edit_admin_page_path(page), class: "text-spina font-medium text-sm p-4 hover:text-spina-dark flex items-center", data: {turbo_frame: "_top"} do %>
+      <%= page.menu_title %>
       
       <small class="font-normal ml-2"><%= label %></small>
     <% end %>
     
     <div class='flex-1'></div>
     <div class="mr-3 flex space-x-2">
-      <%= render Spina::Pages::TranslationsComponent.new(@page) %>
+      <%= render Spina::Pages::TranslationsComponent.new(page) %>
     </div>
 
   </div>
 
-  <% if children.any? %>
-    <turbo-frame id="page_<%= @page.id %>_children" data-collapse-target="container">
+  <% if has_children? %>
+    <turbo-frame id="page_<%= page.id %>_children" data-collapse-target="container">
       <% unless collapsed? %>
-        <%= render Spina::Pages::ListComponent.new(pages: @page.children.active.sorted, sortable: sortable?, draggable: draggable?) %>
+        <%= render Spina::Pages::ListComponent.new(pages: children, sortable: sortable?, draggable: draggable?) %>
       <% end %>
     </turbo-frame>
     
