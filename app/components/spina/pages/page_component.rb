@@ -31,6 +31,10 @@ module Spina
         page.resource_id.present?
       end
 
+      def depth
+        page.ancestry_depth
+      end
+
       def css_class
         case depth
         when 1
