@@ -10,3 +10,9 @@ Spina.config.importmap.draw do
   pin_all_from Spina::Engine.root.join("app/assets/javascripts/spina/controllers"), under: "controllers", to: "spina/controllers"
   pin_all_from Spina::Engine.root.join("app/assets/javascripts/spina/libraries"), under: "libraries", to: "spina/libraries"
 end
+
+Spina.config.importmap.cache_sweeper watches: Spina::Engine.root.join("app/assets/javascripts")
+
+ActiveSupport.on_load(:action_controller_base) do
+  before_action { Spina.config.importmap.cache_sweeper.execute_if_updated }
+end

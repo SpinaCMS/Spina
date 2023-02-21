@@ -45,8 +45,6 @@
         <%= render Spina::Pages::ListComponent.new(pages: children, sortable: sortable?, draggable: draggable?) %>
       <% end %>
     </turbo-frame>
-    
-    <div class="h-1 bg-gray-100 border-b border-gray-200" data-page-collapse-target="placeholder" <%= 'hidden' unless collapsed? %>></div>
   <% end %>
 </turbo-frame>
 
