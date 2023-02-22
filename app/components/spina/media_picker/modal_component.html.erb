@@ -4,28 +4,36 @@
       <div class="flex flex-col md:flex-row h-full w-full">
         <div class="flex-1 bg-white flex flex-col max-h-full relative overflow-hidden">
           <div data-infinite-scroll-target="container" data-controller="selectable" class="p-6 h-full w-full overflow-scroll" data-action="scroll->infinite-scroll#load">
-            
-            <!-- Images are loaded using nested turbo-frame-tags -->
-            <!-- Only load images in multiples of 4 so that this grid -->
-            <!-- will not show any gaps. -->
-            <turbo-frame id="images-<%= @images.current_page %>">
-              <div class="grid grid-cols-2 md:grid-cols-4 gap-6 auto-rows-min">
-                <%= render Spina::MediaPicker::ImageComponent.with_collection(@images) %>
-              </div>
-              
-              <% if @images.next_page %>
-                <turbo-frame id="images-<%= @images.next_page %>" data-action= "turbo:frame-load->infinite-scroll#load">
-                  <%= link_to "Load more images", helpers.path_to_next_page(@images), class: "btn btn-default mt-6", data: {infinite_scroll_target: "button"} %>
-                </turbo-frame>
-              <% end %>
-              
+            <turbo-frame id="images">
+              <!-- Images are loaded using nested turbo-frame-tags -->
+              <!-- Only load images in multiples of 4 so that this grid -->
+              <!-- will not show any gaps. -->
+              <turbo-frame id="images-<%= @images.current_page %>">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 auto-rows-min">
+                  <%= render Spina::MediaPicker::ImageComponent.with_collection(@images) %>
+                </div>
+                
+                <% if @images.next_page %>
+                  <turbo-frame id="images-<%= @images.next_page %>" data-action= "turbo:frame-load->infinite-scroll#load">
+                    <%= link_to "Load more images", helpers.path_to_next_page(@images), class: "btn btn-default mt-6", data: {infinite_scroll_target: "button"} %>
+                  </turbo-frame>
+                <% end %>
+                
+              </turbo-frame>
             </turbo-frame>
             
           </div>
         </div>
       
         <div class="md:w-72 p-4 border-t rounded-b-lg md:rounded-none md:border-t-0 border-gray-200 flex flex-col justify-between bg-gray-100 md:bg-opacity-50 md:rounded-l-lg">
-          <div class="hidden md:block md:mb-6 overflow-scroll">
+          <div class="mb-4">
+            <%= form_with method: :get, url: helpers.spina.admin_media_picker_path, data: {controller: "form", turbo_frame: "images"} do |f| %>
+              <%= f.hidden_field :media_folder_id, value: @media_folder&.id %>
+              <%= render Spina::Forms::SearchComponent.new(f, :query) %>
+            <% end %>
+          </div>
+          
+          <div class="hidden md:block md:mb-6 overflow-scroll flex-1">
             <%= link_to helpers.spina.admin_media_picker_path, class: "font-medium w-full text-sm px-3 py-2 rounded-lg flex items-center justify-between #{media_folder_classes(nil)}", data: {turbo_frame: "media_picker"} do %>
               <div class="flex items-center">
                 <%= helpers.heroicon("collection", style: :solid, class: "w-5 h-5 mr-2 text-spina-light") %>

@@ -1,14 +1,10 @@
 module Spina
   class Attachment < ApplicationRecord
-    has_one_attached :file
-
+    include Attachable
+    
     attr_accessor :_destroy
 
     scope :sorted, -> { order("created_at DESC") }
-
-    def name
-      file.filename.to_s
-    end
 
     def content
       file if file.attached?

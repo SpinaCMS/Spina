@@ -1,14 +1,10 @@
 module Spina
   class Image < ApplicationRecord
+    include Attachable
+    
     belongs_to :media_folder, optional: true
 
-    has_one_attached :file
-
     scope :sorted, -> { order("created_at DESC") }
-
-    def name
-      file.try(:filename).to_s
-    end
 
     def variant(options)
       return "" unless file.attached?

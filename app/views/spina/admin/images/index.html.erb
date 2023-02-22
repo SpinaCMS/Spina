@@ -41,7 +41,14 @@
   <% end %>
 <% end %>
 
-<div class="my-8 border-t border-gray-200">
+<div class="px-8 mt-4 flex items-center justify-end">
+  <%= form_with method: :get, url: spina.admin_images_path, data: {controller: "form", turbo_frame: "images"} do |f| %>
+    <%= f.hidden_field :media_folder_id, value: @media_folder&.id %>
+    <%= render Spina::Forms::SearchComponent.new(f, :query) %>
+  <% end %>
+</div>
+
+<div class="my-4 border-t border-gray-200">  
   <% if @media_folder.present? %>
     <div class="flex items-center h-12 hover:bg-white border-b border-gray-200 px-8">
       <%= link_to spina.admin_images_path, class: 'flex h-full items-center flex-1' do %>

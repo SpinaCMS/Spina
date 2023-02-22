@@ -27,7 +27,13 @@
   <% end %>
 <% end %>
 
-<div class="my-8 border-t border-gray-200">
+<div class="px-8 mt-4 flex items-center justify-end">
+  <%= form_with method: :get, url: spina.admin_attachments_path, data: {controller: "form", turbo_frame: "attachments"} do |f| %>
+    <%= render Spina::Forms::SearchComponent.new(f, :query) %>
+  <% end %>
+</div>
+
+<div class="my-4 border-t border-gray-200">
   
   <div data-controller="infinite-scroll">
     <%= turbo_frame_tag "attachments" do %>
