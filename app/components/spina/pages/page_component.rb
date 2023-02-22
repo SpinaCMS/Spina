@@ -32,7 +32,7 @@ module Spina
       end
 
       def depth
-        page.ancestry_depth
+        page.depth
       end
 
       def css_class
