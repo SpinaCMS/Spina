@@ -14,6 +14,11 @@ Gem::Specification.new do |gem|
   gem.summary = "Spina"
   gem.description = "CMS"
   gem.license = "MIT"
+  gem.post_install_message = %q{
+    Spina v2.14 includes a new migration, don't forget to run spina:install:migrations.
+    
+    For details on this specific release, refer to the CHANGELOG file.
+  }
 
   gem.required_ruby_version = ">= 2.7.0"
 
@@ -46,5 +51,4 @@ Gem::Specification.new do |gem|
   gem.add_dependency "jsonapi-serializer"
   gem.add_dependency "browser"
   gem.add_dependency "tailwindcss-rails", ">= 2.0.0"
-  gem.add_dependency "standard"
 end

@@ -31,16 +31,14 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
+    - name: Install libvips
+      run: sudo apt-get install -y libvips
+    
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
         ruby-version: ${{matrix.ruby-version}}
         bundler-cache: true
-        
-    - name: StandardRB
-      uses: andrewmcodes/standardrb-action@v1.0.0
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Setup Code Climate test-reporter
       run: |
