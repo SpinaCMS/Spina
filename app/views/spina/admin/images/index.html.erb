@@ -43,6 +43,7 @@
 
 <div class="px-8 mt-4 flex items-center justify-end">
   <%= form_with method: :get, url: spina.admin_images_path, data: {controller: "form", turbo_frame: "images"} do |f| %>
+    <%= f.hidden_field :media_folder_id, value: @media_folder&.id %>
     <%= render Spina::Forms::SearchComponent.new(f, :query) %>
   <% end %>
 </div>
