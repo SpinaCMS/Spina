@@ -21,7 +21,7 @@
             <%= ff.hidden_field :object_id, value: f.object.object_id %>
             <%= ff.hidden_field :resource, value: f.object.options&.dig(:resource) %>
             <div class="p-2">
-              <%= ff.search_field :search, placeholder: "Search", class: "form-input sticky top-0 text-sm w-80", data: {action: "input->form#submit focus->form#submit", page_select_target: "search"} %>
+              <%= ff.search_field :search, placeholder: t("spina.search"), class: "form-input sticky top-0 text-sm w-80", data: {action: "input->form#submit focus->form#submit", page_select_target: "search"} %>
             </div>
           <% end %>
           
