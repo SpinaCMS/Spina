@@ -1,5 +1,18 @@
 # Spina CMS Changelog
 
+## 2.14
+
+### 2.14.0 (February 22nd, 2023)
+* Added Spina::Parts::PageLink part
+* Added search to the media library
+* Added collapsable nested pages
+* Added hint for Spina::Parts::MultiLine
+* Fixed CSS bugs in Trix
+* Fixed bug with AttrJson 2.0
+* Fixed missing translations
+* Updated gem dependencies
+* Removed StandardRB
+
 ## 2.13
 
 ### 2.13.1 (December 13th, 2022)

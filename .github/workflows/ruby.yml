@@ -36,11 +36,6 @@ jobs:
       with:
         ruby-version: ${{matrix.ruby-version}}
         bundler-cache: true
-        
-    - name: StandardRB
-      uses: andrewmcodes/standardrb-action@v1.0.0
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Setup Code Climate test-reporter
       run: |
