@@ -58,6 +58,17 @@ Spina::Theme.register do |theme|
     title: "Testrepeater",
     part_type: "Spina::Parts::Repeater",
     parts: %w[line body]
+  }, {
+    name: "page",
+    title: "Pagina",
+    part_type: "Spina::Parts::PageLink"
+  }, {
+    name: "blogpost",
+    title: "Blogpost",
+    part_type: "Spina::Parts::PageLink",
+    options: {
+      resource: "blog"
+    }
   }]
 
   theme.view_templates = [{
@@ -69,7 +80,7 @@ Spina::Theme.register do |theme|
     title: "Simple page",
     description: "Default layout",
     usage: "Use for your content",
-    parts: ["body", "testrepeater"]
+    parts: ["body", "blogpost", "page", "testrepeater"]
   }, {
     name: "demo",
     title: "Demo",

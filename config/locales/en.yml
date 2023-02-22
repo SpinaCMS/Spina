@@ -277,6 +277,7 @@ en:
       save_draft: Save draft
       saved: Page saved
       saving: Saving...
+      select_page: Select page
       couldnt_be_saved: Page couldn't be saved
       search_engines: Search engines
       show_in_menu: invisible
