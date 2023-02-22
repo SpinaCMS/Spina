@@ -5,7 +5,7 @@
 ### 2.14.0 (February 22nd, 2023)
 * Added Spina::Parts::PageLink part
 * Added search to the media library
-* Added collapsable nested pages
+* Added collapsable nested pages (remember to install the new migration)
 * Added hint for Spina::Parts::MultiLine
 * Fixed CSS bugs in Trix
 * Fixed bug with AttrJson 2.0
