@@ -39,7 +39,7 @@ module Spina
     after_save :touch_navigations
 
     # Create a 301 redirect if materialized_path changed
-    after_update :rewrite_rule
+    after_update :redirect_to_new_path, if: :path_changed?
 
     before_validation :set_materialized_path
     validates :title, presence: true
@@ -114,12 +114,14 @@ module Spina
       navigations.update_all(updated_at: Time.zone.now)
     end
 
-    def rewrite_rule
-      if old_path != materialized_path
-        RewriteRule.where(old_path: materialized_path).delete_all
-        RewriteRule.where(new_path: old_path).update(new_path: materialized_path)
-        RewriteRule.where(old_path: old_path).first_or_create.update(new_path: materialized_path)
-      end
+    def path_changed?
+      old_path != materialized_path
+    end
+
+    def redirect_to_new_path
+      RewriteRule.where(old_path: materialized_path).delete_all
+      RewriteRule.where(new_path: old_path).update(new_path: materialized_path)
+      RewriteRule.where(old_path: old_path).first_or_create.update(new_path: materialized_path)
     end
 
     def localized_materialized_path
