@@ -190,7 +190,7 @@ GEM
     nokogiri (1.14.2)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
-    pg (1.4.5)
+    pg (1.5.1)
     pry (0.14.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
