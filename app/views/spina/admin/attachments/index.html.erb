@@ -1,5 +1,5 @@
 <%= render Spina::UserInterface::HeaderComponent.new do |header| %>
-  <% header.actions do %>
+  <% header.with_actions do %>
     <%= form_with model: [:admin, Spina::Attachment.new], url: spina.admin_attachments_path, data: {controller: "form loading-button", loading_message: t('spina.media_library.uploading'), action: "turbo:submit-end->loading-button#doneLoading"} do |f| %>
     
       <%= f.file_field :files, multiple: true, id: "new_attachment_file_field", class: 'hidden', data: {action: "loading-button#loading form#requestSubmit"} %>
@@ -10,7 +10,7 @@
       </button>
     <% end %>
   <% end %>    
-  <% header.navigation do %>
+  <% header.with_navigation do %>
     <nav class="-mb-3 mt-4">
       <ul class="inline-flex w-auto rounded-md bg-white">
         <%= render Spina::UserInterface::TabLinkComponent.new(spina.admin_images_path) do %>

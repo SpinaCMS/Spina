@@ -27,13 +27,13 @@
         
         <% if @media_folders.present? %>
           <%= render Spina::UserInterface::DropdownComponent.new do |dropdown| %>
-            <% dropdown.button(classes: 'btn btn-default h-7 px-2 text-xs') do %>
+            <% dropdown.with_button(classes: 'btn btn-default h-7 px-2 text-xs') do %>
               <%= heroicon('folder', style: :mini, class: 'w-4 h-4 mr-1 text-gray-600') %>
               <%=t 'spina.ui.move_to' %>
               <%= heroicon('chevron-down', style: :solid, class: 'w-4 h-4') %>
             <% end %>
             
-            <% dropdown.menu do %>
+            <% dropdown.with_menu do %>
               <% if image.media_folder_id.present? %>
                 <%= form_with model: image, url: spina.admin_image_path(image) do |f| %>
                   <%= f.hidden_field :media_folder_id, value: nil %>

@@ -1,5 +1,5 @@
 <%= render Spina::UserInterface::HeaderComponent.new do |header| %>
-  <% header.navigation do %>
+  <% header.with_navigation do %>
     <nav class="-mb-3 mt-4">
       <ul class="inline-flex flex-wrap w-auto rounded-md bg-white">
         <% @navigations.each do |navigation| %>

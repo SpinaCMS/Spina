@@ -1,5 +1,5 @@
 <%= render Spina::UserInterface::HeaderComponent.new do |header| %>
-  <% header.actions do %>
+  <% header.with_actions do %>
     <% if @resource %>
       <%= link_to spina.edit_admin_resource_path(@resource), class: 'btn btn-default' do %>
         <%= heroicon('cog-8-tooth', style: :solid, class: 'text-gray-300 w-5 h-5 -ml-1 mr-1') %>
@@ -12,7 +12,7 @@
     </div>
   <% end %>
   
-  <% header.navigation do %>
+  <% header.with_navigation do %>
     <nav class="-mb-1 md:-mb-3 mt-4">
       <ul class="inline-flex flex-wrap w-auto rounded-md bg-white">
         <%= render Spina::UserInterface::TabLinkComponent.new(spina.admin_pages_path, active: @resource.nil?) do %>

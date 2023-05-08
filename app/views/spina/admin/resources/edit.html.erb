@@ -1,5 +1,5 @@
 <%= render Spina::UserInterface::HeaderComponent.new do |header| %>
-  <% header.actions do %>
+  <% header.with_actions do %>
     <%= render Spina::UserInterface::TranslationsComponent.new(@resource, label: @locale.upcase) %>
   
     <%= button_tag type: :submit, form: dom_id(@resource), class: 'btn btn-primary', data: {controller: "button", action: "button#loading", loading_message: t('spina.ui.saving')} do %>

@@ -1,5 +1,5 @@
 <%= render Spina::UserInterface::HeaderComponent.new do |header| %>
-  <% header.actions do %>
+  <% header.with_actions do %>
     <% if @media_folder.blank? %>
       <%= link_to spina.new_admin_media_folder_path, class: "btn btn-default", data: {turbo_frame: "modal"} do %>
         <%= heroicon("folder", style: :solid, class: 'w-4 h-4 mr-1 -ml-1') %>
@@ -24,7 +24,7 @@
     <% end %>
   <% end %>
   
-  <% header.navigation do %>
+  <% header.with_navigation do %>
     <nav class="-mb-3 mt-4">
       <ul class="inline-flex w-auto rounded-md bg-white">
         <%= render Spina::UserInterface::TabLinkComponent.new(spina.admin_images_path, active: true) do %>

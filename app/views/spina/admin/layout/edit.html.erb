@@ -1,5 +1,5 @@
 <%= render Spina::UserInterface::HeaderComponent.new do |header| %>
-  <% header.actions do %>
+  <% header.with_actions do %>
     <%= render Spina::UserInterface::TranslationsComponent.new(@account, label: @locale.upcase) %>
   
     <% if Spina::Current.theme.layout_parts.any? %>

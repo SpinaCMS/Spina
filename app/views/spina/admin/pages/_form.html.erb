@@ -1,6 +1,6 @@
 <div data-controller="tabs" data-tabs-active="cursor-default text-gray-900 bg-spina-dark bg-opacity-10" data-tabs-inactive="cursor-pointer bg-transparent text-gray-400 border-transparent">
   <%= render Spina::UserInterface::HeaderComponent.new do |header| %>
-    <% header.after_breadcrumbs do %>
+    <% header.with_after_breadcrumbs do %>
       <% if @page.draft? %>
         <span class="text-gray-400 ml-2 text-sm">(<%= Spina::Page.human_attribute_name(:draft) %>)</span>
       <% end %>
@@ -8,10 +8,10 @@
         <%= heroicon("external-link", style: :mini, class: "w-4 h-4") %>
       <% end %>
     <% end %>
-    <% header.actions do %>
+    <% header.with_actions do %>
       <%= render Spina::Pages::ActionsComponent.new(page: @page, locale: @locale) %>
     <% end %>
-    <% header.navigation do %>
+    <% header.with_navigation do %>
       <nav class="-mb-3 mt-4">
         <ul class="inline-flex w-auto rounded-md bg-white">
           <% @tabs.each do |tab_name| %>
