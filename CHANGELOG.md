@@ -1,5 +1,13 @@
 # Spina CMS Changelog
 
+## 2.15
+
+### 2.15.0 (May 10th, 2023)
+_Notice: ViewComponent was updated to v3 in this release, make sure your own components use the new Slots API_
+* Updated ViewComponent to v3
+* Updated gem dependencies
+* Fixed german translations
+
 ## 2.14
 
 ### 2.14.0 (February 22nd, 2023)
