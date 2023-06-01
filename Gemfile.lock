@@ -103,7 +103,7 @@ GEM
       railties (>= 5.0)
     browser (5.3.1)
     builder (3.2.4)
-    capybara (3.39.0)
+    capybara (3.39.1)
       addressable
       matrix
       mini_mime (>= 0.1.3)
