@@ -42,7 +42,7 @@
         
         <% if @attachments.next_page %>
           <%= turbo_frame_tag "attachments-#{@attachments.next_page}", data: {action: "turbo:frame-load->infinite-scroll#load"} do %>
-            <%= link_to t('spina.ui.load_more'), path_to_next_page(@attachments), class: 'hidden', data: {infinite_scroll_target: "button"} %>
+            <%= link_to t('spina.ui.load_more'), path_to_next_page(@attachments), class: "btn btn-default", data: {infinite_scroll_target: "button"} %>
           <% end %>
         <% end %>
       <% end %>
