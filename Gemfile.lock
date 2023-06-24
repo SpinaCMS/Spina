@@ -98,7 +98,7 @@ GEM
     attr_json (2.0.1)
       activerecord (>= 6.0.0, < 7.1)
     babosa (2.0.0)
-    bcrypt (3.1.18)
+    bcrypt (3.1.19)
     breadcrumbs_on_rails (4.1.0)
       railties (>= 5.0)
     browser (5.3.1)
