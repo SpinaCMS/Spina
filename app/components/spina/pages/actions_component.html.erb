@@ -40,7 +40,7 @@
         <% end %>
         
         <% if @page.deletable? %>
-          <%= button_to t('spina.pages.delete'), helpers.spina.admin_page_path(@page), method: :delete, class: "block w-full text-left px-4 py-2 text-sm leading-5 font-medium text-red-500 cursor-pointer bg-white hover:bg-red-100 hover:bg-opacity-50 hover:text-red-500 focus:outline-none focus:bg-gray-100 focus:text-gray-900", form: {data: {controller: "confirm", confirm_message: t('spina.pages.delete_confirmation', subject: @page.title)}} %>
+          <%= button_to t('spina.pages.delete'), helpers.spina.admin_page_path(@page), method: :delete, class: "block w-full text-left px-4 py-2 text-sm leading-5 font-medium text-red-500 cursor-pointer bg-white hover:bg-red-100 hover:bg-opacity-50 hover:text-red-500 focus:outline-none focus:bg-gray-100 focus:text-gray-900", form: {data: {controller: "confirm", confirm_message: t('spina.pages.delete_confirmation', subject: sanitize(@page.title))}} %>
         <% else %>
           <span class="block px-4 py-2 text-sm leading-5 text-gray-400"><%=t 'spina.pages.cannot_be_deleted' %></span>
         <% end %>
