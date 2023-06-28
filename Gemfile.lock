@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    spina (2.15.0)
+    spina (2.15.1)
       ancestry
       attr_json
       babosa
