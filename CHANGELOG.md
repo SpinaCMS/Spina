@@ -2,6 +2,9 @@
 
 ## 2.15
 
+### 2.15.1 (June 28th, 2023)
+* Fix for XSS vulnerability in Pages#edit
+
 ### 2.15.0 (May 10th, 2023)
 _Notice: ViewComponent was updated to v3 in this release, make sure your own components use the new Slots API_
 * Updated ViewComponent to v3
