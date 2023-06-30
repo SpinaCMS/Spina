@@ -72,9 +72,16 @@ module Spina
 
     def find_or_create_custom_pages(theme)
       theme.custom_pages.each do |page|
+        ancestry = nil
+
+        if page[:parent].present?
+          parent_page = Page.find_by(name: page[:parent])
+          ancestry = [parent_page&.ancestry, parent_page&.id].compact.join("/")
+        end
+        
         Page.where(name: page[:name])
           .first_or_create(title: page[:title])
-          .update(view_template: page[:view_template], deletable: page[:deletable])
+          .update(view_template: page[:view_template], deletable: page[:deletable], ancestry: ancestry)
       end
     end
 
