@@ -33,9 +33,12 @@ export default class extends Controller {
   }
   
   insertAttachment(event) {
-    let attachment = new Trix.Attachment({content: `<span class="trix-attachment-spina-image" data-label="Alt text">
-      <img src="${event.detail.embeddedUrl}" />
-    </span>`, contentType: "Spina::Image"})
+    const content =
+      `<span class="trix-attachment-spina-image" data-label="Alt text">
+       <a href="${event.detail.originalUrl}"><img src="${event.detail.embeddedUrl}" /></a>
+       </span>`
+
+    let attachment = new Trix.Attachment({content, contentType: "Spina::Image"})
     this.editor.insertAttachment(attachment)
   }
 

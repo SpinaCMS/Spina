@@ -26,6 +26,7 @@ export default class extends Controller {
 			filename: this.image.dataset.filename,
 			signedBlobId: this.image.dataset.signedBlobId,
 			imageId: this.image.dataset.imageId,
+			originalUrl: this.image.dataset.originalUrl,
 			embeddedUrl: this.image.dataset.embeddedUrl,
 			thumbnail: this.image.dataset.thumbnail
 		}
