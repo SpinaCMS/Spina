@@ -105,3 +105,16 @@ Add some views for editing and rendering:
 <%= my_component.some_attribute %>
 <%= my_component.another_attribute %>
 ```
+
+## Adjusting the size of embedded images
+
+When embedding an image from the media picker, by default Spina will insert the original full sized image onto the page.
+This might be undesirable if working with high resolution images. Spina provides a configuration option
+`embedded_image_size` that could be used to specify the maximum size of embedded images. In your `config/initializers/spina.rb`
+file, inserting this line will limit the size of embedded images to be within 1600x1200:
+
+```
+config.embedded_image_size = [1600, 1200]
+```
+
+
