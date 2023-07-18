@@ -108,13 +108,23 @@ Add some views for editing and rendering:
 
 ## Adjusting the size of embedded images
 
-When embedding an image from the media picker, by default Spina will insert the original full sized image onto the page.
-This might be undesirable if working with high resolution images. Spina provides a configuration option
-`embedded_image_size` that could be used to specify the maximum size of embedded images. In your `config/initializers/spina.rb`
-file, inserting this line will limit the size of embedded images to be within 1600x1200:
+When embedding an image from the media picker, by default Spina will present a variant of that image scaled to fit
+within 2000x2000 pixels. If you want embedded images to be sized differently, Spina allows you to change this setting
+using the configuration option `embedded_image_size`. In your `config/initializers/spina.rb` file, inserting 
+the following line will limit the size of embedded images to be within 1600x1200:
 
 ```
 config.embedded_image_size = [1600, 1200]
 ```
+
+You can also use CSS to adjust the display of embedded images. For example, this CSS will scale embedded images so
+that they fit within the width of their containing `div`:
+
+```
+span.trix-attachment-spina-image img {
+  max-width: 100%;
+}
+```
+
 
 
