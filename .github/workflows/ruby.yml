@@ -32,7 +32,7 @@ jobs:
     - uses: actions/checkout@v2
     
     - name: Install libvips
-      run: sudo apt-get install -y libvips
+      run: sudo apt-get install -y libvips-dev
     
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
