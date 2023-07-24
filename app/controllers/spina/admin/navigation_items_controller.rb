@@ -37,7 +37,15 @@ module Spina
       private
 
       def navigation_item_params
-        params.require(:navigation_item).permit(:page_id, :parent_id).merge(navigation_id: @navigation.id)
+        permitted_params = params.require(:navigation_item).permit(:page_id, :url, :url_label, :parent_id).merge(navigation_id: @navigation.id)
+        if params[:navigation_item][:navigation_option] == "true"
+          permitted_params[:page_id] = nil
+        else
+          permitted_params[:url] = nil
+          permitted_params[:url_label] = nil
+        end
+
+        permitted_params
       end
 
       def set_navigation
