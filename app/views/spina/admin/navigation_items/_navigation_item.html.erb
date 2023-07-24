@@ -17,6 +17,11 @@
             <%= heroicon('plus', style: :mini, class: 'w-4 h-4 mr-2') %>
             <%=t 'spina.navigations.add_sub_item' %>
           <% end %>
+
+          <%= link_to spina.edit_admin_navigation_navigation_item_path(@navigation, id: navigation_item.id), class: "px-3 py-1 text-xs leading-5 text-gray-200 hover:bg-gray-800 hover:text-white focus:outline-none flex items-center", data: {turbo_frame: "modal", action: "reveal#hide"} do %>
+            <%= heroicon('pencil-square', style: :mini, class: 'w-4 h-4 mr-2') %>
+            <%=t 'spina.navigations.edit_item' %>
+          <% end %>
           
           <%= button_to spina.admin_navigation_navigation_item_path(@navigation, navigation_item), method: :delete, class: "bg-transparent w-full text-left cursor-pointer font-medium px-3 py-1 text-xs leading-5 text-red-400 hover:bg-gray-800 hover:text-red-400 focus:outline-none flex items-center", form: {data: {action: "reveal#hide", controller: "confirm", confirm_message: t('spina.navigations.delete_item_confirmation_html')}} do %>
             <%= heroicon('trash', class: 'w-4 h-4 mr-2') %>

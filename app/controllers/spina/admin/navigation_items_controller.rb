@@ -15,6 +15,19 @@ module Spina
         end
       end
 
+      def edit
+        @navigation_item = NavigationItem.find(params[:id])
+        @pages = Page.sorted.main.includes(:translations)
+      end
+
+      def update
+        @navigation_item = NavigationItem.find(params[:id])
+
+        if @navigation_item.update(navigation_item_params)
+          redirect_to spina.edit_admin_navigation_path(@navigation)
+        end
+      end
+
       def destroy
         @navigation_item = @navigation.navigation_items.find(params[:id])
         @navigation_item.destroy
