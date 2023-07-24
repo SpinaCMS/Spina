@@ -230,6 +230,8 @@ en:
       no_navigations: This website has no navigations yet. You can set one up in your theme configuration.
       sorting_saved: Sorting saved
       update_menu_item: "Update menu item"
+      url_placeholder: "Enter a URL"
+      url_label_placeholder: "Enter a navigation label"
     notifications:
       alert: Oops! Something went wrong
       information: Information
