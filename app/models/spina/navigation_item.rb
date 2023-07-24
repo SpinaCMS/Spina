@@ -11,7 +11,15 @@ module Spina
     scope :in_menu, -> { joins(:page).where(spina_pages: {show_in_menu: true}) }
     scope :active, -> { joins(:page).where(spina_pages: {active: true}) }
 
-    validates :page, uniqueness: {scope: :navigation}
+    delegate :materialized_path, :draft?, :homepage?, to: :page
+
+    def menu_title
+      if page.present?
+        page.menu_title
+      else
+        url_label
+      end
+    end
 
     delegate :menu_title, :materialized_path, :draft?, :homepage?, to: :page
   end
