@@ -18,19 +18,11 @@ module Spina
     delegate :draft?, :homepage?, to: :page, allow_nil: true
 
     def menu_title
-      if page.present?
-        page.menu_title
-      else
-        url_label
-      end
+      page&.menu_title || url_label
     end
-
+    
     def materialized_path
-      if page.present?
-        page.materialized_path
-      else
-        url
-      end
+      page&.materialized_path || url
     end
 
     def url_and_url_label_presence
