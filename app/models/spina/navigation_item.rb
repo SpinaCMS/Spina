@@ -12,8 +12,11 @@ module Spina
     scope :active, -> { joins(:page).where(spina_pages: {active: true}) }
 
     validates :page, uniqueness: {scope: :navigation, allow_nil: true}
-    validate :url_and_url_label_presence
-    validate :url_or_page_presence
+
+    with_options if: ->(item) {item.page.blank?} do
+      validates :url, presence: true
+      validates :url_label, presence: true
+    end
 
     delegate :draft?, :homepage?, to: :page, allow_nil: true
 
@@ -23,20 +26,6 @@ module Spina
     
     def materialized_path
       page&.materialized_path || url
-    end
-
-    def url_and_url_label_presence
-      if url.blank? && url_label.present?
-        errors.add(:url, "can't be blank when URL label is present")
-      elsif url.present? && url_label.blank?
-        errors.add(:url_label, "can't be blank when URL is present")
-      end
-    end
-
-    def url_or_page_presence
-      if url.blank? && page_id.blank?
-        errors.add(:url, "or page must be present")
-      end
     end
   end
 end
