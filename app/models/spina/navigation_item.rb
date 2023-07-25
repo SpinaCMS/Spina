@@ -15,7 +15,7 @@ module Spina
     validate :url_and_url_label_presence
     validate :url_or_page_presence
 
-    delegate :draft?, :homepage?, to: :page
+    delegate :draft?, :homepage?, to: :page, allow_nil: true
 
     def menu_title
       if page.present?
