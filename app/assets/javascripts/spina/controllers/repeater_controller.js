@@ -40,9 +40,11 @@ export default class extends Controller {
 
     // Insert button
     this.listTarget.insertAdjacentHTML('beforeend', this.buttonHTML(time))
-
     // Insert fields
-    this.contentTarget.insertAdjacentHTML('beforeend', html)
+    const parser = new DOMParser();
+    const docFields = parser.parseFromString(html, 'text/html');
+    this.contentTarget.appendChild(docFields.body.firstChild);
+
   }
 
   removeFields(event) {
