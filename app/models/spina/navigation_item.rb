@@ -15,13 +15,21 @@ module Spina
     validate :url_and_url_label_presence
     validate :url_or_page_presence
 
-    delegate :materialized_path, :draft?, :homepage?, to: :page
+    delegate :draft?, :homepage?, to: :page
 
     def menu_title
       if page.present?
         page.menu_title
       else
         url_label
+      end
+    end
+
+    def materialized_path
+      if page.present?
+        page.materialized_path
+      else
+        url
       end
     end
 
