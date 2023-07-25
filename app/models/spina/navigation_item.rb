@@ -1,5 +1,6 @@
 module Spina
   class NavigationItem < ApplicationRecord
+    extend Mobility
     belongs_to :navigation, touch: true
     belongs_to :page, optional: true
 
@@ -15,13 +16,15 @@ module Spina
 
     with_options if: ->(item) {item.page.blank?} do
       validates :url, presence: true
-      validates :url_label, presence: true
+      validates :url_title, presence: true
     end
+
+    translates :url_title
 
     delegate :draft?, :homepage?, to: :page, allow_nil: true
 
     def menu_title
-      page&.menu_title || url_label
+      page&.menu_title || url_title
     end
     
     def materialized_path

@@ -24,7 +24,7 @@
 
             <div class="space-y-2" data-button-toggle-target="showOnTrue" <%= "hidden" if @navigation_item.url.blank? %>>
               <div class="border border-gray-300 rounded-md bg-white">
-                <%= f.text_field :url_label, placeholder: t("spina.navigations.url_label_placeholder"), class: "form-select border-none focus:ring-0 bg-none shadow-none bg-transparent border-none pr-2 w-full truncate placeholder:text-gray-400" %>
+                <%= f.text_field :url_title, placeholder: t("spina.navigations.url_title_placeholder"), class: "form-select border-none focus:ring-0 bg-none shadow-none bg-transparent border-none pr-2 w-full truncate placeholder:text-gray-400" %>
               </div>
 
               <div class="border border-gray-300 rounded-md bg-white">

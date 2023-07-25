@@ -95,19 +95,19 @@ module Spina
       assert_nothing_raised { FactoryBot.create :navigation_item, navigation: first_navigation }
     end
 
-    test "url cannot be present without a url_label" do
+    test "url cannot be present without a url_title" do
       navigation = FactoryBot.create :navigation
-      assert_raises (ActiveRecord::RecordInvalid) { FactoryBot.create :navigation_item, navigation: navigation, url: "URL" }
+      assert_raises (ActiveRecord::RecordInvalid) { FactoryBot.create :navigation_item, navigation: navigation, page: nil, url: "URL" }
     end
     
-    test "url_label cannot be present without a url" do
+    test "url_title cannot be present without a url" do
       navigation = FactoryBot.create :navigation
-      assert_raises (ActiveRecord::RecordInvalid) { FactoryBot.create :navigation_item, navigation: navigation, url_label: "URL Label" }
+      assert_raises (ActiveRecord::RecordInvalid) { FactoryBot.create :navigation_item, navigation: navigation, page: nil, url_title: "URL Title" }
     end
     
     test "url or page must be present" do
       navigation = FactoryBot.create :navigation
-      assert_raises (ActiveRecord::RecordInvalid) { FactoryBot.create :navigation_item, navigation: navigation, page: nil, url: nil, url_label: nil }
+      assert_raises (ActiveRecord::RecordInvalid) { FactoryBot.create :navigation_item, navigation: navigation, page: nil, url: nil, url_title: nil }
     end
     
     test "menu_title returns the page's menu_title if there is a page" do      
@@ -118,12 +118,12 @@ module Spina
       assert_equal navigation_item.menu_title, page.menu_title
     end
     
-    test "menu_title returns the url_label if there is no page" do
+    test "menu_title returns the url_title if there is no page" do
       navigation = FactoryBot.create :navigation
       page = FactoryBot.create :page
-      navigation_item = FactoryBot.create :navigation_item, navigation: navigation, page: nil, url: "URL", url_label: "URL Label"
+      navigation_item = FactoryBot.create :navigation_item, navigation: navigation, page: nil, url: "URL", url_title: "URL Title"
   
-      assert_equal navigation_item.menu_title, navigation_item.url_label
+      assert_equal navigation_item.menu_title, navigation_item.url_title
     end
     
     test "materialized_path returns the page's materialized_path if there is a page" do      
@@ -137,7 +137,7 @@ module Spina
     test "materialized_path returns the url if there is no page" do
       navigation = FactoryBot.create :navigation
       page = FactoryBot.create :page
-      navigation_item = FactoryBot.create :navigation_item, navigation: navigation, page: nil, url: "URL", url_label: "URL Label"
+      navigation_item = FactoryBot.create :navigation_item, navigation: navigation, page: nil, url: "URL", url_title: "URL Title"
   
       assert_equal navigation_item.materialized_path, navigation_item.url
     end

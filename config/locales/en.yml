@@ -231,7 +231,7 @@ en:
       sorting_saved: Sorting saved
       update_menu_item: "Update menu item"
       url_placeholder: "Enter a URL"
-      url_label_placeholder: "Enter a navigation label"
+      url_title_placeholder: "Enter a navigation label"
     notifications:
       alert: Oops! Something went wrong
       information: Information

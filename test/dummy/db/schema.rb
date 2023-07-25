@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 17) do
+ActiveRecord::Schema[7.0].define(version: 18) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -123,6 +123,16 @@ ActiveRecord::Schema[7.0].define(version: 17) do
     t.datetime "updated_at", precision: nil, null: false
   end
 
+  create_table "spina_navigation_item_translations", force: :cascade do |t|
+    t.string "url_title"
+    t.string "locale", null: false
+    t.bigint "spina_navigation_item_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["locale"], name: "index_spina_navigation_item_translations_on_locale"
+    t.index ["spina_navigation_item_id", "locale"], name: "index_000e7683e9c93042c0a7a289de357c91ed220812", unique: true
+  end
+
   create_table "spina_navigation_items", id: :serial, force: :cascade do |t|
     t.integer "page_id"
     t.integer "navigation_id", null: false
@@ -131,7 +141,6 @@ ActiveRecord::Schema[7.0].define(version: 17) do
     t.datetime "created_at", precision: nil
     t.datetime "updated_at", precision: nil
     t.string "url"
-    t.string "url_label"
     t.index ["page_id", "navigation_id"], name: "index_spina_navigation_items_on_page_id_and_navigation_id", unique: true
   end
 
@@ -279,4 +288,5 @@ ActiveRecord::Schema[7.0].define(version: 17) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "spina_navigation_item_translations", "spina_navigation_items"
 end
