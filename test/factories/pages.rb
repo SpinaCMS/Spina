@@ -1,5 +1,6 @@
 FactoryBot.define do
   factory :page, class: "Spina::Page" do
+    sequence(:title) { |n| "Page #{n}" }
     draft { false }
     active { true }
 
