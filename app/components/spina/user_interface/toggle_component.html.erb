@@ -5,8 +5,8 @@
 <% circle_position = @conditional ? "translate-x-5" : "translate-x-0" %>
 <% current_color = @conditional ? @button_color : "bg-gray-200" %>
 
-<div data-hidden-options-target="colorClass" data-color-class=<%= @button_color %>>
+<div data-button-toggle-target="colorClass" data-color-class=<%= @button_color %>>
 
-<button type="button" class="<%= current_color %> relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-none" role="switch" data-action="hidden-options#toggle" data-hidden-options-target="button">
-  <span aria-hidden="true" class="<%= circle_position %> pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out" data-hidden-options-target="circle"></span>
+<button type="button" class="<%= current_color %> relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-none" role="switch" data-action="button-toggle#toggle" data-button-toggle-target="button">
+  <span aria-hidden="true" class="<%= circle_position %> pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out" data-button-toggle-target="circle"></span>
 </button>
