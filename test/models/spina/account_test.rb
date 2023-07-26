@@ -29,7 +29,7 @@ module Spina
       @account.save
       child_page = Spina::Page.find_by(name: "child")
 
-      assert_equal child_page.parent, parent_page
+      assert_equal child_page.parent.id, parent_page.id
     end
 
     test "after_save callback to bootstrap_pages deactivates pages with unused templates" do
