@@ -24,12 +24,12 @@ module Spina
     end
 
     test "after_save callback to bootstrap_pages creates nested pages" do
-      parent_page = FactoryBot.create :parent_page
+      parent_page = FactoryBot.create :page, name: "parent"
       @theme.custom_pages << {name: "child", title: "Child", deletable: true, view_template: "child_page", parent: parent_page.name}
       @account.save
       child_page = Spina::Page.find_by(name: "child")
 
-      assert_equal child_page.parent, parent_page
+      assert_equal child_page.parent.id, parent_page.id
     end
 
     test "after_save callback to bootstrap_pages deactivates pages with unused templates" do
