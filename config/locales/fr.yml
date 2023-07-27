@@ -230,7 +230,7 @@ fr:
       choose_option: Choisir option
     pages:
       add_page_to: Ajouter la page à
-      add_translation: Ajouter traduction
+      add_translation: Ajouter traduction en %{language}
       advanced: Avancé
       cannot_be_deleted: Ne peut pas être supprimée
       change_order: "Changer l'ordre"
@@ -243,7 +243,7 @@ fr:
       delete_confirmation: 'Êtes-vous sûr de vouloir supprimer la page :  <strong>%{subject}</strong> ?'
       deleted: Supprimé
       done_changing_order: "Changement d'ordre effectué"
-      edit_translation: Modifier traduction
+      edit_translation: Modifier traduction en %{language}
       invisible_to_search_engines: "Votre site n'apparait pas sur les moteurs de recherche"
       invisible_to_search_engines_description: "Allez dans vos préférences pour activer l'indexation sur les moteurs de recherche."
       main_collection: Collection principale
