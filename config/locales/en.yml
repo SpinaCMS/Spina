@@ -226,6 +226,8 @@ en:
       delete_item_confirmation_html: Are you sure you want to <span class='font-semibold'>delete</span> this menu item?
       description: Add and sort items as you see fit. You can add nested menu items, but don't have to.
       edit_item: "Edit item"
+      item_form_url_link: "Add an external URL"
+      item_form_page_link: "Add an existing page"
       navigations: Navigations
       no_navigations: This website has no navigations yet. You can set one up in your theme configuration.
       sorting_saved: Sorting saved

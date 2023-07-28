@@ -1,49 +1,5 @@
-<%= turbo_frame_tag dom_id(@navigation_item, :form) do %>
-  <%= form_with model: @navigation_item, url: [:admin, @navigation, @navigation_item], data: {turbo_frame: "_top", action: "turbo:submit-end->modal#close"} do |f| %>
-    <%= f.hidden_field :parent_id %>
-    
-    <div class="px-4 pt-5 pb-4 sm:p-6 sm:pb-4" data-controller="button-toggle">
-      <div class="sm:flex sm:items-start">
-        <div class="w-full">
-          <h3 class="text-lg leading-6 font-medium text-gray-900 flex" id="modal-headline">
-            <%= @navigation_item.persisted? ? (t 'spina.navigations.edit_item') : (t 'spina.navigations.add_menu_item') %>
-
-            <%= f.hidden_field :navigation_option, value: @navigation_item.url.present?, data: {button_toggle_target: "toggleValue"} %>
-
-            <div class="flex items-center ml-auto">
-              <%= render Spina::UserInterface::ToggleComponent.new(conditional: @navigation_item.url.present?, label: "Custom URL") %>
-            </div>
-          </h3>
-    
-          <div class="mt-3">
-            <div data-button-toggle-target="showOnFalse" <%= "hidden" if @navigation_item.url.present? %>>
-              <div class="border border-gray-300 rounded-md bg-white">
-                <%= render Spina::Pages::PageSelectComponent.new("navigation_item[page_id]", @pages, include_blank: t("spina.navigations.choose_page"), disabled: @navigation.navigation_items.pluck(:page_id), selected: @navigation_item.page_id) %>
-              </div>
-            </div>
-
-            <div class="space-y-2" data-button-toggle-target="showOnTrue" <%= "hidden" if @navigation_item.url.blank? %>>
-              <div class="border border-gray-300 rounded-md bg-white">
-                <%= f.text_field :url_title, placeholder: t("spina.navigations.url_title_placeholder"), class: "form-select border-none focus:ring-0 bg-none shadow-none bg-transparent border-none pr-2 w-full truncate placeholder:text-gray-400" %>
-              </div>
-
-              <div class="border border-gray-300 rounded-md bg-white">
-                <%= f.text_field :url, placeholder: t("spina.navigations.url_placeholder"), class: "form-select border-none focus:ring-0 bg-none shadow-none bg-transparent border-none pr-2 w-full truncate placeholder:text-gray-400" %>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="px-4 pb-5 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-      <button type="submit" class="btn btn-primary w-full sm:w-auto sm:ml-2">
-        <%= @navigation_item.persisted? ?  (t 'spina.navigations.update_menu_item') : (t 'spina.navigations.add_menu_item') %>
-      </button>
-    
-      <button type="button" class="btn btn-default w-full sm:w-auto mt-2 sm:mt-0" data-action="modal#close">
-        <%=t 'spina.ui.cancel' %>
-      </button>
-    </div> 
-  <% end %>
+<% if @navigation_item.url_kind? %>
+  <%= render template: "spina/admin/navigation_items/url_form" %>
+<% else %>
+  <%= render template: "spina/admin/navigation_items/page_form" %>
 <% end %>

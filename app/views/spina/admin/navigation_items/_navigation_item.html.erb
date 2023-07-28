@@ -4,7 +4,10 @@
       <%= heroicon('menu-alt-4', style: :solid, class: 'w-4 h-4 -ml-1') %>  
     </div>
     
-    <div class="flex-1 truncate text-left"><%= navigation_item.menu_title %></div>
+    <div class="flex items-center flex-1">
+      <%= heroicon("external-link", style: :mini, class: "w-4 h-4 mr-1") if navigation_item.url_kind? %>
+      <div class="truncate text-left"><%= navigation_item.menu_title %></div>
+    </div>
     
     <div data-controller="reveal" data-reveal-away-value class="relative h-full">
       <button type="button" data-action="reveal#toggle" class="h-full px-2 text-gray-400 hover:text-gray-700">

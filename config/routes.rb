@@ -66,7 +66,11 @@ Spina::Engine.routes.draw do
 
     resources :navigations, only: [:index, :edit, :update] do
       post :sort, on: :member
-      resources :navigation_items
+      resources :navigation_items do
+        member do
+          get "get_form/:kind", to: "navigation_items#get_form", as: "get_form"
+        end
+      end
     end
 
     resources :attachments do

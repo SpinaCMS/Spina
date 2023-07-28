@@ -9,9 +9,12 @@ module Spina
       end
 
       def create
-        @navigation_item = NavigationItem.new(navigation_item_params)
+        @navigation_item = @navigation.navigation_items.new(navigation_item_params)
         if @navigation_item.save
-          render turbo_stream: turbo_stream.append(@navigation_item.parent || @navigation, @navigation_item)
+          redirect_to spina.edit_admin_navigation_path(@navigation)
+        else
+          @pages = Page.sorted.main.includes(:translations)
+          render turbo_stream: turbo_stream.update(:navigation_item_form, partial: "form")
         end
       end
 
@@ -25,6 +28,9 @@ module Spina
 
         if @navigation_item.update(navigation_item_params)
           redirect_to spina.edit_admin_navigation_path(@navigation)
+        else
+          @pages = Page.sorted.main.includes(:translations)
+          render turbo_stream: turbo_stream.update(:navigation_item_form, partial: "form")
         end
       end
 
@@ -34,18 +40,28 @@ module Spina
         render turbo_stream: turbo_stream.remove(view_context.dom_id(@navigation_item, :container))
       end
 
+      def get_form
+        @navigation_item = @navigation.navigation_items.find_or_initialize_by(id: params[:id])
+        @navigation_item.parent_id = params[:parent_id]
+        
+        if params[:kind] == "url"
+          render "url_form"
+        else
+          @pages = Page.sorted.main.includes(:translations)
+          render "page_form"
+        end
+      end
+
       private
 
       def navigation_item_params
-        permitted_params = params.require(:navigation_item).permit(:page_id, :url, :url_title, :parent_id).merge(navigation_id: @navigation.id)
-        if params[:navigation_item][:navigation_option] == "true"
-          permitted_params[:page_id] = nil
-        else
-          permitted_params[:url] = nil
-          permitted_params[:url_title] = nil
-        end
-
-        permitted_params
+        params.require(:navigation_item).permit(
+          :kind,
+          :page_id,
+          :parent_id,
+          :url_title,
+          :url
+        ).merge(navigation_id: @navigation.id)
       end
 
       def set_navigation
