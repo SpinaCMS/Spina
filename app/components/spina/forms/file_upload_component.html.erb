@@ -1,0 +1,14 @@
+<div data-controller="file-upload-component" class=<%= @css_classes %>>
+  <%= form_with model: [:admin, Spina::Image.new], url: helpers.spina.admin_images_path, data: {controller: "form loading-button", loading_message: t('spina.media_library.uploading'), action: "turbo:submit-end->loading-button#doneLoading", origin: origin, turbo_frame: turbo_frame} do |f| %>
+    <%= hidden_field_tag :origin, origin %>
+    <%= hidden_field_tag :trix_target_id, value: @trix_target_id %>
+    <%= f.hidden_field :media_folder_id, value: media_folder&.id %>
+
+    <%= f.file_field :files, multiple: true, accept: "image/*", id: file_field_id, class: 'image-upload-file-field hidden', data: {action: "loading-button#loading form#requestSubmit"} %>
+
+    <%= button_tag(type: "button", class: "font-medium w-full text-gray-600 text-sm hover:bg-gray-200 px-3 py-2 cursor-pointer rounded-lg flex items-center w-full", data: { controller:"delegate-click", action: "delegate-click#click", 'loading-button-target': "button", 'delegate-click-target': "##{file_field_id}" }) do %>
+      <%= helpers.heroicon("upload", style: :solid, class: "w-5 h-5 text-spina mr-2") %>
+      <%=t 'spina.media_library.upload_from_device' %>
+    <% end %>
+  <% end %>
+</div>
