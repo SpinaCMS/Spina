@@ -4,12 +4,16 @@
       <%= heroicon('menu-alt-4', style: :solid, class: 'w-4 h-4 -ml-1') %>  
     </div>
     
-    <div class="flex items-center flex-1">
-      <%= heroicon("external-link", style: :mini, class: "w-4 h-4 mr-1") if navigation_item.url_kind? %>
-      <div class="truncate text-left"><%= navigation_item.menu_title %></div>
+    <div class="flex items-center w-2/3">
+      <div class="<%= "w-2/12" if navigation_item.url_kind? %>">
+        <%= heroicon("external-link", style: :mini, class: "w-4 h-4 mr-1") if navigation_item.url_kind? %>
+      </div>
+      <% Mobility.with_locale(@locale) do %>
+        <div class="text-left truncate"><%= navigation_item.menu_title %></div>
+      <% end %>
     </div>
     
-    <div data-controller="reveal" data-reveal-away-value class="relative h-full">
+    <div data-controller="reveal" data-reveal-away-value class="relative h-full ml-auto">
       <button type="button" data-action="reveal#toggle" class="h-full px-2 text-gray-400 hover:text-gray-700">
         <%= heroicon("dots-horizontal", class: "w-5 h-5") %>
       </button>
@@ -21,7 +25,7 @@
             <%=t 'spina.navigations.add_sub_item' %>
           <% end %>
 
-          <%= link_to spina.edit_admin_navigation_navigation_item_path(@navigation, id: navigation_item.id), class: "px-3 py-1 text-xs leading-5 text-gray-200 hover:bg-gray-800 hover:text-white focus:outline-none flex items-center", data: {turbo_frame: "modal", action: "reveal#hide"} do %>
+          <%= link_to spina.edit_admin_navigation_navigation_item_path(@navigation, id: navigation_item.id, locale: @locale), class: "px-3 py-1 text-xs leading-5 text-gray-200 hover:bg-gray-800 hover:text-white focus:outline-none flex items-center", data: {turbo_frame: "modal", action: "reveal#hide"} do %>
             <%= heroicon('pencil-square', style: :mini, class: 'w-4 h-4 mr-2') %>
             <%=t 'spina.navigations.edit_item' %>
           <% end %>

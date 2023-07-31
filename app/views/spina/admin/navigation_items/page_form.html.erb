@@ -13,7 +13,9 @@
           <div class="mt-3">
             <div>
               <div class="border border-gray-300 rounded-md bg-white">
-                <%= render Spina::Pages::PageSelectComponent.new("navigation_item[page_id]", @pages, include_blank: t("spina.navigations.choose_page"), disabled: @navigation.navigation_items.pluck(:page_id), selected: @navigation_item.page_id) %>
+                <% Mobility.with_locale(@locale) do %>
+                  <%= render Spina::Pages::PageSelectComponent.new("navigation_item[page_id]", @pages, include_blank: t("spina.navigations.choose_page"), disabled: @navigation.navigation_items.pluck(:page_id), selected: @navigation_item.page_id) %>
+                <% end %>
               </div>
             </div>
           </div>
@@ -31,7 +33,7 @@
       </button>
 
       <div class="my-auto text-spina hover:text-spina-dark mr-auto">
-        <%= link_to get_form_admin_navigation_navigation_item_path(@navigation, @navigation_item.persisted? ? @navigation_item : :new, :url, parent_id: @navigation_item.parent_id) do %>
+        <%= link_to get_form_admin_navigation_navigation_item_path(@navigation, @navigation_item.persisted? ? @navigation_item : :new, :url, parent_id: @navigation_item.parent_id, locale: @locale) do %>
           <%= t("spina.navigations.item_form_url_link") %>
         <% end %>
       </div>

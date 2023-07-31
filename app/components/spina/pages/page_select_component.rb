@@ -12,7 +12,7 @@ module Spina::Pages
 
     def options
       Spina::Page.sort_by_ancestry(pages.arrange(order: :position)).map do |page|
-        page_menu_title = page.menu_title.indent(page.depth, "–")
+        page_menu_title = page.menu_title&.indent(page.depth, "–")
         [page_menu_title, page.id]
       end
     end

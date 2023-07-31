@@ -1,7 +1,7 @@
 module Spina
   module Admin
     class NavigationItemsController < AdminController
-      before_action :set_navigation
+      before_action :set_navigation, :set_locale
 
       def new
         @navigation_item = @navigation.navigation_items.new(parent_id: params[:parent_id])
@@ -9,9 +9,11 @@ module Spina
       end
 
       def create
+        Mobility.locale = @locale
+
         @navigation_item = @navigation.navigation_items.new(navigation_item_params)
         if @navigation_item.save
-          redirect_to spina.edit_admin_navigation_path(@navigation)
+          redirect_to spina.edit_admin_navigation_path(@navigation, locale: @locale)
         else
           @pages = Page.sorted.main.includes(:translations)
           render turbo_stream: turbo_stream.update(:navigation_item_form, partial: "form")
@@ -24,10 +26,12 @@ module Spina
       end
 
       def update
+        Mobility.locale = @locale
+        
         @navigation_item = NavigationItem.find(params[:id])
 
         if @navigation_item.update(navigation_item_params)
-          redirect_to spina.edit_admin_navigation_path(@navigation)
+          redirect_to spina.edit_admin_navigation_path(@navigation, locale: @locale)
         else
           @pages = Page.sorted.main.includes(:translations)
           render turbo_stream: turbo_stream.update(:navigation_item_form, partial: "form")
@@ -66,6 +70,10 @@ module Spina
 
       def set_navigation
         @navigation = Navigation.find(params[:navigation_id])
+      end
+
+      def set_locale
+        @locale = params[:locale] || I18n.default_locale
       end
     end
   end

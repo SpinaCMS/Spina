@@ -1,14 +1,20 @@
 <%= render Spina::UserInterface::HeaderComponent.new do |header| %>
   <% header.with_navigation do %>
     <nav class="-mb-3 mt-4">
-      <ul class="inline-flex flex-wrap w-auto rounded-md bg-white">
-        <% @navigations.each do |navigation| %>
-          <%= render Spina::UserInterface::TabLinkComponent.new(spina.edit_admin_navigation_path(navigation), active: @navigation == navigation) do %>
-            <%= heroicon('bars-3-bottom-left', style: :solid, class: 'w-4 h-4 mr-1') %>
-            <%= navigation.label %>
+      <div class="flex">
+        <ul class="inline-flex flex-wrap w-auto rounded-md bg-white">
+          <% @navigations.each do |navigation| %>
+            <%= render Spina::UserInterface::TabLinkComponent.new(spina.edit_admin_navigation_path(navigation), active: @navigation == navigation) do %>
+              <%= heroicon('bars-3-bottom-left', style: :solid, class: 'w-4 h-4 mr-1') %>
+              <%= navigation.label %>
+            <% end %>
           <% end %>
-        <% end %>
-      </ul>
+        </ul>
+
+        <div class="ml-auto">
+          <%= render Spina::Navigations::TranslationsComponent.new(label: @locale.upcase, navigation: @navigation, locale: @locale) %>
+        </div>
+      </div>
     </nav>
   <% end %>
 <% end %>
@@ -23,7 +29,7 @@
       <%= render @navigation.navigation_items.sorted.roots %>
     </ul>
     
-    <%= link_to spina.new_admin_navigation_navigation_item_path(@navigation), class: 'btn btn-default w-56 text-center mt-2 bg-transparent', data: {turbo_frame: "modal"} do %>
+    <%= link_to spina.new_admin_navigation_navigation_item_path(@navigation, locale: @locale), class: 'btn btn-default w-56 text-center mt-2 bg-transparent', data: {turbo_frame: "modal"} do %>
       <div class="w-full"><%=t 'spina.navigations.add_menu_item' %></div>
     <% end %>
   <% end %>

@@ -29,6 +29,7 @@ module Spina
     scope :live, -> { joins(:page).where(spina_pages: {draft: false, active: true}) }
     scope :in_menu, -> { joins(:page).where(spina_pages: {show_in_menu: true}) }
     scope :active, -> { joins(:page).where(spina_pages: {active: true}) }
+    scope :urls, -> { all.select {|i| i.url_kind?} }
 
     with_options if: :page_kind? do
       validates :page, uniqueness: {scope: :navigation}, presence: true
