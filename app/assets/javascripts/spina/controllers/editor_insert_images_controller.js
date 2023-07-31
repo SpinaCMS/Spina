@@ -9,7 +9,6 @@ export default class extends Controller {
 
   insertImages() {
     const imagesMetadata = this.element.querySelectorAll('div.trix-insert-image')
-    console.log('Inserting images', imagesMetadata)
     imagesMetadata.forEach(tag => {
       const imageData = this.#imageData(tag)
       let insertImageEvent = new CustomEvent("media-picker:done", {detail: imageData})
