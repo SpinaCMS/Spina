@@ -46,10 +46,11 @@ module Spina
       account = ::Spina::Account.first
       return if account.theme.present? && (silent_install? || !no?("Theme '#{account.theme}' is set. Skip? [Yn]"))
 
+      default_theme = account.theme || themes.first
       theme = if talkative_install?
-        ask("What theme do you want to use?", limited_to: themes)
+        ask("What theme do you want to use?", limited_to: themes, default: default_theme)
       else
-        account.theme || themes.first
+        default_theme
       end
 
       account.update(theme: theme)

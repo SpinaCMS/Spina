@@ -19,7 +19,7 @@ export default class extends Controller {
       }
     }.bind(this))
   }
-  
+
   insertEmbeddable(html) {
     let embeddable = new Trix.Attachment({
       content: html, 
@@ -38,7 +38,15 @@ export default class extends Controller {
     </span>`, contentType: "Spina::Image"})
     this.editor.insertAttachment(attachment)
   }
-  
+
+  fileAccept(event) {
+    const file = event.file
+    if(file) {
+      const startUploadEvent = new CustomEvent("auto-file-upload:start", { detail: { file, trixId: this.trixId }})
+      window.dispatchEvent(startUploadEvent)
+    }
+  }
+
   setAltText(event) {
     let alt = event.currentTarget.value
     let altLabel = alt
@@ -80,6 +88,10 @@ export default class extends Controller {
   
   get trixAttachment() {
     return this.getTrixAttachment(this.mutableImageAttachment.dataset.trixId)
+  }
+
+  get trixId() {
+    return this.element.id
   }
   
   get mutableImageAttachment() {

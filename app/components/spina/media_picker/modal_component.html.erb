@@ -58,17 +58,7 @@
               <% end %>
             <% end %>
             
-            <%= form_with model: [:admin, Spina::Image.new], url: helpers.spina.admin_images_path, data: {controller: "form loading-button", loading_message: t('spina.media_library.uploading'), action: "turbo:submit-end->loading-button#doneLoading", turbo_frame: "media_picker"} do |f| %>
-              <%= hidden_field_tag :modal, true %>
-              <%= f.hidden_field :media_folder_id, value: @media_folder&.id %>
-              
-              <%= f.file_field :files, multiple: true, accept: "image/*", id: "new_image_file_field", class: 'hidden', data: {action: "loading-button#loading form#requestSubmit"} %>
-              
-              <button type="button" class="font-medium w-full text-gray-600 text-sm hover:bg-gray-200 px-3 py-2 cursor-pointer rounded-lg flex items-center w-full" data-controller="delegate-click" data-action="delegate-click#click" data-loading-button-target="button" data-delegate-click-target="#new_image_file_field">
-                <%= helpers.heroicon("upload", style: :solid, class: "w-5 h-5 text-spina mr-2") %>
-                <%=t 'spina.media_library.upload_from_device' %>
-              </button>
-            <% end %>
+            <%= render Spina::Forms::FileUploadComponent.new(origin: 'media-picker', media_folder: @media_folder, turbo_frame: 'media_picker') %>
           </div>
           
           <button type="button" class="btn btn-primary w-full mt-3" data-action="media-picker-modal#confirm modal#close">
