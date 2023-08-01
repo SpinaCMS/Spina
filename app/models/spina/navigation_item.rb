@@ -6,8 +6,8 @@ module Spina
     
     before_validation do
       if page_kind?
-        self.url = nil  
-        self.url_title = nil  
+        self.url = nil
+        self.translations.each { |translation| translation.url_title = nil }
       else
         self.page = nil
       end
