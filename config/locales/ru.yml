@@ -1,4 +1,11 @@
+---
 ru:
+  activemodel:
+    attributes:
+      spina/embeds/vimeo:
+        url: vimeo.com/...
+      spina/embeds/youtube:
+        url: youtube.com/watch?v=...
   activerecord:
     attributes:
       spina/account:
@@ -31,10 +38,12 @@ ru:
         name: Имя
       spina/navigation:
         auto_add_pages: Автоматически добавлять страницы
-        auto_add_pages_description: Новые страницы автоматически добавляются в эту навигацию.
+        auto_add_pages_description: Новые страницы автоматически добавляются в эту
+          навигацию.
         label: Метка
         pages: Страницы
-        pages_description: Выберите страницы, которые вы хотите использовать в этой навигации
+        pages_description: Выберите страницы, которые вы хотите использовать в этой
+          навигации
       spina/page:
         ancestry: Родительская страница
         created_at: Создано в
@@ -51,7 +60,8 @@ ru:
         no_parent: Нет родителя
         resource: Ресурс
         seo_title: SEO <title>
-        seo_title_description: Убедитесь, что ваш результат поиска хорошо выглядит в поисковых системах
+        seo_title_description: Убедитесь, что ваш результат поиска хорошо выглядит
+          в поисковых системах
         seo_title_placeholder: Это название используется в <title>-tag
         show_in_menu: Показать в навигации
         show_in_menu_description: При выключении эта страница не будет показана в
@@ -82,6 +92,12 @@ ru:
         password_description: Оставьте пустым, чтобы сохранить пароль
         role: Роль
         user: Пользователь
+    errors:
+      models:
+        spina/page:
+          attributes:
+            title:
+              blank: Требуется заголовок
     models:
       spina/attachment:
         few: Документа
@@ -103,6 +119,15 @@ ru:
         many: Пользователей
         one: Пользователь
         other: Пользователей
+  helpers:
+    label:
+      spina/embeds/button:
+        label: Метка кнопки
+        url: URL
+      spina/embeds/vimeo:
+        url: Vimeo URL
+      spina/embeds/youtube:
+        url: Youtube URL
   spina:
     accounts:
       contact_details: Контактная информация
@@ -120,6 +145,7 @@ ru:
       insert: Вставить документ
       insert_multiple: Вставить документы
       upload: Загрузить файлы
+      upload_one: Загрузить файл
     cancel: Отмена
     choose_from_library: Выбрать из библиотеки
     close: Закрыть
@@ -127,6 +153,9 @@ ru:
     delete_confirmation: Вы уверены, что хотите удалить <strong>%{subject}</strong>?
     edit: Редактировать
     edit_website: Редактировать сайт
+    embeds:
+      embed_a_component: Встроить компонент
+      embed_component: Встроить компонент
     forgot_password:
       expired: Срок действия вашего токена для сброса пароля истек
       mail_subject: Сбросить пароль
@@ -150,6 +179,7 @@ ru:
       insert_photo: Вставить фото
       insert_photos: Вставить фото
       link: Ссылка на сайт
+      missing_image: Отсутствует изображение
       new_folder: Новая папка
       organize: Организовать
       remove_image: Удалить изображение
@@ -189,9 +219,9 @@ ru:
       filename: Имя файла
       images: Изображения
       images_count:
-        one: "%{count} изображение"
         few: "%{count} изображения"
         many: "%{count} изображений"
+        one: "%{count} изображение"
         other: "%{count} изображений"
         zero: нет изображений
       insert: Вставить изображение
@@ -213,11 +243,11 @@ ru:
       delete_item: Удалить пункт
       delete_item_confirmation_html: Вы уверены, что хотите <span class='font-semibold'>удалить</span>
         этот пункт меню?
-      description: Добавляйте и сортируйте элементы по своему усмотрению. Вы можете добавлять элементы вложенного меню,
-        но не обязательно.
+      description: Добавляйте и сортируйте элементы по своему усмотрению. Вы можете
+        добавлять элементы вложенного меню, но не обязательно.
       navigations: Навигация
-      no_navigations: На этом веб-сайте еще нет навигации. Вы можете настроить её в своей
-        конфигурации темы.
+      no_navigations: На этом веб-сайте еще нет навигации. Вы можете настроить её
+        в своей конфигурации темы.
       sorting_saved: Сортировка сохранена
     notifications:
       alert: Упс! Что-то пошло не так
@@ -226,16 +256,21 @@ ru:
       wrong_username_or_password: Неправильная почта или пароль
     options:
       choose_option: Выберите вариант
+    page_translations:
+      delete: Удалить перевод (%{translation})
+      delete_confirmation: Вы уверены, что хотите удалить этот перевод <strong>(%{subject})</strong>?
+      deleted: Перевод удален
     pages:
       add_page_to: 'Добавить страницу в:'
       add_translation: Добавить перевод %{language}
       advanced: Дополнительно
       cannot_be_deleted: Страница не может быть удалена
       change_order: Изменить порядок
-      change_view_template: Change view template
+      change_view_template: Изменить шаблон представления
       change_view_template_confirmation: Вы уверены, что хотите сменить шаблон страницы?
         Содержимое страницы, которое не входит в новый шаблон, будет потеряно.
       concept: Концепция
+      couldnt_be_saved: Страница не может быть сохранена
       create: Создать страницу
       create_page: Создать %{template}
       delete: Удалить страницу
@@ -247,8 +282,8 @@ ru:
       invisible_to_search_engines_description: Перейти к вашим параметрам, чтобы активировать
         поисковые системы.
       main_collection: Основная коллекция
-      materialize_path_confirmation: Вы уверены, что хотите перестроить путь для
-        этой страницы?
+      materialize_path_confirmation: Вы уверены, что хотите перестроить путь для этой
+        страницы?
       missing_translations: Отсутствующие переводы
       move_page: Переместить страницу
       moved: Страница перемещена
@@ -272,6 +307,7 @@ ru:
       saved: Страница сохранена
       saving: Сохранение...
       search_engines: Поисковые системы
+      select_page: Выберите страницу
       show_in_menu: Невидимый
       skip_to_first_child: Переход на дочернюю страницу
       sorting_saved: Сортировка сохранена
@@ -318,8 +354,8 @@ ru:
       no_default_template: Нет шаблона по умолчанию
       saved: Коллекция страниц сохранена
       settings: "%{label} настройки"
-      settings_description: Перед всеми страницами в этой коллекции будет стоять
-        этот слаг.
+      settings_description: Перед всеми страницами в этой коллекции будет стоять этот
+        слаг.
     save: Сохранить
     search: Поиск...
     settings:
@@ -335,16 +371,38 @@ ru:
     ui:
       cancel: Отмена
       delete: Удалить
+      delete_item: Удалить %{item}
       load_more: Загрузи больше
       move_to: Перенести в
       new_entry: Новая запись
       optional: По желанию
+      or: или
       rename: Переименовать
+      replace: Заменить
       save_changes: Сохранить изменения
       saving: Сохранение...
+    user_mailer:
+      forgot_password:
+        button: Сбросить пароль
+        introduction: Недавно вы запросили сброс пароля для своей учетной записи Spina
+          CMS. Этот сброс пароля действителен только в течение следующих 2 часов.
+          Скопируйте и вставьте приведенный ниже URL-адрес в свой веб-браузер.
+        introduction_html: Недавно вы запросили сброс пароля для своей учетной записи
+          Spina CMS. Используйте кнопку ниже, чтобы сбросить его. <strong>Этот сброс
+          пароля действителен только в течение следующих 2 часов.</strong>
+        preheader: Воспользуйтесь этой ссылкой, чтобы сбросить пароль. Ссылка действительна
+          только 2 часа.
+        request_origin: В целях безопасности этот запрос был получен с устройства
+          %{platform} с использованием %{browser}. Если вы не запрашивали сброс пароля,
+          проигнорируйте это письмо.
+        salutation: Привет, %{name}
+        subject: Сбросить пароль
+        trouble: Если у вас возникли проблемы с кнопкой выше, скопируйте и вставьте
+          приведенный ниже URL-адрес в свой веб-браузер.
     users:
       authorization: Авторизация
-      authorization_description: Администраторы могут управлять пользователями. Обычные пользователи не могут.
+      authorization_description: Администраторы могут управлять пользователями. Обычные
+        пользователи не могут.
       cannot_be_created: Пользователь не сохранен
       delete: Удалить пользователя
       delete_confirmation_html: Вы уверены, что хотите удалить пользователя <strong>%{user}</strong>?
@@ -353,8 +411,9 @@ ru:
       never_logged_in: Никогда не входил в систему
       new: Новый пользователь
       profile: Профиль
-      profile_description: Эта информация будет использоваться для идентификации разных пользователей.
-        Пользователи будут использовать свой адрес электронной почты для входа в систему.
+      profile_description: Эта информация будет использоваться для идентификации разных
+        пользователей. Пользователи будут использовать свой адрес электронной почты
+        для входа в систему.
       save: Сохранить пользователя
       saved: Пользователь сохранен
     visit_page: Посетите страницу
@@ -363,6 +422,7 @@ ru:
       content: Содержание
       documents: Документы
       images: Картинки
+      main: Основное
       media_library: Медиа библиотека
       media_library_description: Здесь вы найдете все ваши изображения и документы
       pages: Страницы
