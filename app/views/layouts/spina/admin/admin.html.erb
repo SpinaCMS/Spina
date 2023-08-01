@@ -13,6 +13,8 @@
   
   <!-- Make sure all modals are rendered in this frame -->
   <%= turbo_frame_tag "modal" %>
+
+  <%= render Spina::Forms::AutoFileUploadComponent.new %>
 <% end %>
 
 <%= render template: 'layouts/spina/admin/application' %>
