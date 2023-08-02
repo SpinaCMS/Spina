@@ -36,14 +36,4 @@ export default class extends Controller {
     this.element.querySelector('form > #trix_target_id').value = value
   }
 
-  #imageData(imageMeta) {
-    return {
-      filename: imageMeta.dataset.filename,
-      signedBlobId: imageMeta.dataset.signedBlobId,
-      imageId: imageMeta.dataset.imageId,
-      embeddedUrl: imageMeta.dataset.embeddedUrl,
-      thumbnail: imageMeta.dataset.thumbnail
-    }
-  }
-
 }

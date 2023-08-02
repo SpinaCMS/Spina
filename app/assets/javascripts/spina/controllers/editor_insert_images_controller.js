@@ -31,7 +31,8 @@ export default class extends Controller {
       signedBlobId: imageMeta.dataset.signedBlobId,
       imageId: imageMeta.dataset.imageId,
       embeddedUrl: imageMeta.dataset.embeddedUrl,
-      thumbnail: imageMeta.dataset.thumbnail
+      thumbnail: imageMeta.dataset.thumbnail,
+      originalUrl: imageMeta.dataset.originalUrl
     }
   }
 
