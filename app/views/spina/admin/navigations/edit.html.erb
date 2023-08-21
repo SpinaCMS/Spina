@@ -1,16 +1,14 @@
 <%= render Spina::UserInterface::HeaderComponent.new do |header| %>
   <% header.with_navigation do %>
     <nav class="-mb-3 mt-4">
-      <div class="flex">
-        <ul class="inline-flex flex-wrap w-auto rounded-md bg-white">
-          <% @navigations.each do |navigation| %>
-            <%= render Spina::UserInterface::TabLinkComponent.new(spina.edit_admin_navigation_path(navigation), active: @navigation == navigation) do %>
-              <%= heroicon('bars-3-bottom-left', style: :solid, class: 'w-4 h-4 mr-1') %>
-              <%= navigation.label %>
-            <% end %>
+      <ul class="inline-flex flex-wrap w-auto rounded-md bg-white">
+        <% @navigations.each do |navigation| %>
+          <%= render Spina::UserInterface::TabLinkComponent.new(spina.edit_admin_navigation_path(navigation), active: @navigation == navigation) do %>
+            <%= heroicon('bars-3-bottom-left', style: :solid, class: 'w-4 h-4 mr-1') %>
+            <%= navigation.label %>
           <% end %>
-        </ul>
-      </div>
+        <% end %>
+      </ul>
     </nav>
   <% end %>
 <% end %>

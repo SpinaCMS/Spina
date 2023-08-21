@@ -14,12 +14,12 @@
             <ul class="inline-flex flex-wrap w-auto rounded-md mt-2">
               <%= render Spina::UserInterface::TabLinkComponent.new(new_admin_navigation_navigation_item_path(@navigation, parent_id: @navigation_item.parent_id, kind: 'page'), active: @navigation_item.page_kind?) do %>
                 <%= heroicon('document', style: :outline, class: 'w-4 h-4 mr-1 -mt-0.5') %>
-                Page
+                <%=t "spina.navigation_items.page" %>
               <% end %>
               
               <%= render Spina::UserInterface::TabLinkComponent.new(new_admin_navigation_navigation_item_path(@navigation, parent_id: @navigation_item.parent_id, kind: 'url'), active: @navigation_item.url_kind?) do %>
                 <%= heroicon('link', style: :outline, class: 'w-4 h-4 mr-1 -mt-0.5') %>
-                URL
+                <%=t "spina.navigation_items.url" %>
               <% end %>
             </ul>
           <% end %>
