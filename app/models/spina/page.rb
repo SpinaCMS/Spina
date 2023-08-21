@@ -19,7 +19,7 @@ module Spina
     has_many :navigations, through: :navigation_items
 
     # Pages can belong to a resource
-    belongs_to :resource, optional: true, touch: true
+    belongs_to :resource, optional: true, touch: true, class_name: "Spina::Resource"
 
     scope :main, -> { where(resource_id: nil) }
     scope :regular_pages, -> { main }

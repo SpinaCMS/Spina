@@ -1,0 +1,6 @@
+<div data-controller="auto-file-upload" data-action="auto-file-upload:start@window->auto-file-upload#start">
+  <%= render Spina::Forms::FileUploadComponent.new(origin: 'auto-file-upload', css_classes: 'hidden', turbo_frame: turbo_frame_id) %>
+  <turbo-frame id="auto-file-upload-images" data-trix-insert-target="">
+    <%= render Spina::Forms::EditorInsertImagesMetaComponent.new %>
+  </turbo-frame>
+</div>
