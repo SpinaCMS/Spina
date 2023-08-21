@@ -1,6 +1,5 @@
 module Spina
   class NavigationItem < ApplicationRecord
-    extend Mobility
     belongs_to :navigation, touch: true, class_name: "Spina::Navigation"
     belongs_to :page, optional: true, class_name: "Spina::Page"
     
