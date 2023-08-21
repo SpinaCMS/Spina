@@ -1,7 +1,7 @@
 module Spina
   module Admin
     class NavigationsController < AdminController
-      before_action :set_breadcrumb, :set_locale
+      before_action :set_breadcrumb
       before_action :set_navigation, only: [:edit, :update]
 
       admin_section :content
@@ -60,10 +60,6 @@ module Spina
 
       def set_navigation
         @navigation = Navigation.find(params[:id])
-      end
-
-      def set_locale
-        @locale = params[:locale] || I18n.default_locale
       end
     end
   end

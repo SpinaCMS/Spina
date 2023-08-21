@@ -10,10 +10,6 @@
             <% end %>
           <% end %>
         </ul>
-
-        <div class="ml-auto">
-          <%= render Spina::Navigations::TranslationsComponent.new(label: @locale.upcase, navigation: @navigation, locale: @locale) %>
-        </div>
       </div>
     </nav>
   <% end %>
@@ -29,7 +25,7 @@
       <%= render @navigation.navigation_items.sorted.roots %>
     </ul>
     
-    <%= link_to spina.new_admin_navigation_navigation_item_path(@navigation, locale: @locale), class: 'btn btn-default w-56 text-center mt-2 bg-transparent', data: {turbo_frame: "modal"} do %>
+    <%= link_to spina.new_admin_navigation_navigation_item_path(@navigation), class: 'btn btn-default w-56 text-center mt-2 bg-transparent', data: {turbo_frame: "modal"} do %>
       <div class="w-full"><%=t 'spina.navigations.add_menu_item' %></div>
     <% end %>
   <% end %>

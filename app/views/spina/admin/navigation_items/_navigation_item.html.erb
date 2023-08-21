@@ -5,11 +5,14 @@
     </div>
     
     <div class="flex items-center w-2/3">
-      <div class="<%= "w-2/12" if navigation_item.url_kind? %>">
-        <%= heroicon("external-link", style: :mini, class: "w-4 h-4 mr-1") if navigation_item.url_kind? %>
-      </div>
       <% Mobility.with_locale(@locale) do %>
         <div class="text-left truncate"><%= navigation_item.menu_title %></div>
+      <% end %>
+      
+      <% if navigation_item.url_kind? %>
+        <%= link_to navigation_item.url, target: :blank, class: "h-7 flex items-center pl-1 text-gray-400 hover:text-gray-700" do %>
+          <%= heroicon("external-link", style: :mini, class: "w-4 h-4") %>
+        <% end %>
       <% end %>
     </div>
     
