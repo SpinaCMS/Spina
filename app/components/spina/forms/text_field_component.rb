@@ -3,11 +3,12 @@ module Spina
     class TextFieldComponent < ApplicationComponent
       attr_accessor :f, :method, :size, :autofocus
 
-      def initialize(f, method, size: "md", autofocus: false)
+      def initialize(f, method, size: "md", autofocus: false, placeholder: nil)
         @f = f
         @method = method
         @size = size
         @autofocus = autofocus
+        @placeholder = placeholder
       end
 
       def controllers
@@ -42,7 +43,7 @@ module Spina
       end
 
       def placeholder
-        f.object.class.human_attribute_name(method)
+        @placeholder || f.object.class.human_attribute_name(method)
       end
     end
   end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_14_143116) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_21_124327) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -124,12 +124,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_14_143116) do
   end
 
   create_table "spina_navigation_items", id: :serial, force: :cascade do |t|
-    t.integer "page_id", null: false
+    t.integer "page_id"
     t.integer "navigation_id", null: false
     t.integer "position", default: 0, null: false
     t.string "ancestry"
     t.datetime "created_at", precision: nil
     t.datetime "updated_at", precision: nil
+    t.string "url"
+    t.string "url_title"
+    t.string "kind", default: "page", null: false
     t.index ["page_id", "navigation_id"], name: "index_spina_navigation_items_on_page_id_and_navigation_id", unique: true
   end
 

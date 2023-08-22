@@ -6,5 +6,7 @@ FactoryBot.define do
 
   factory :navigation_item, class: "Spina::NavigationItem" do
     association :page, title: "A page"
+    kind { "page" }
+    navigation
   end
 end

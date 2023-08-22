@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.2.7 | MIT License | https://tailwindcss.com
+! tailwindcss v3.3.2 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -31,6 +31,7 @@
 3. Use a more readable tab size.
 4. Use the user's configured `sans` font-family by default.
 5. Use the user's configured `sans` font-feature-settings by default.
+6. Use the user's configured `sans` font-variation-settings by default.
 */
 
 html {
@@ -47,6 +48,8 @@ html {
   /* 4 */
   font-feature-settings: normal;
   /* 5 */
+  font-variation-settings: normal;
+  /* 6 */
 }
 
 /*
@@ -620,6 +623,9 @@ a, button {
   --tw-pan-y:  ;
   --tw-pinch-zoom:  ;
   --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
   --tw-ordinal:  ;
   --tw-slashed-zero:  ;
   --tw-numeric-figure:  ;
@@ -667,6 +673,9 @@ a, button {
   --tw-pan-y:  ;
   --tw-pinch-zoom:  ;
   --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
   --tw-ordinal:  ;
   --tw-slashed-zero:  ;
   --tw-numeric-figure:  ;
@@ -1779,10 +1788,7 @@ a, button {
   align-items: center;
   justify-content: center;
   position: fixed;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
+  inset: 0px;
   z-index: 40;
   height: 100%;
   padding: 1.5rem;
@@ -1943,10 +1949,7 @@ trix-editor [data-trix-mutable]::selection,
 }
 
 .inset-0 {
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
+  inset: 0px;
 }
 
 .bottom-0 {
@@ -2066,6 +2069,14 @@ trix-editor [data-trix-mutable]::selection,
   margin-right: -1rem;
 }
 
+.-mt-0 {
+  margin-top: -0px;
+}
+
+.-mt-0\.5 {
+  margin-top: -0.125rem;
+}
+
 .-mt-4 {
   margin-top: -1rem;
 }
@@ -2108,6 +2119,10 @@ trix-editor [data-trix-mutable]::selection,
 
 .ml-8 {
   margin-left: 2rem;
+}
+
+.ml-auto {
+  margin-left: auto;
 }
 
 .mr-1 {
@@ -2264,6 +2279,10 @@ trix-editor [data-trix-mutable]::selection,
 
 .w-14 {
   width: 3.5rem;
+}
+
+.w-2\/3 {
+  width: 66.666667%;
 }
 
 .w-28 {
@@ -2842,13 +2861,13 @@ trix-editor [data-trix-mutable]::selection,
 }
 
 .from-spina-dark {
-  --tw-gradient-from: #3a3a70;
-  --tw-gradient-to: rgb(58 58 112 / 0);
+  --tw-gradient-from: #3a3a70 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(58 58 112 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
 .to-spina-light {
-  --tw-gradient-to: #797ab8;
+  --tw-gradient-to: #797ab8 var(--tw-gradient-to-position);
 }
 
 .object-contain {
@@ -2969,6 +2988,10 @@ trix-editor [data-trix-mutable]::selection,
 
 .pb-5 {
   padding-bottom: 1.25rem;
+}
+
+.pl-1 {
+  padding-left: 0.25rem;
 }
 
 .pl-10 {
@@ -3600,10 +3623,7 @@ trix-editor [data-trix-mutable]::selection,
   }
 
   .md\:inset-0 {
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
+    inset: 0px;
   }
 
   .md\:-top-0 {
@@ -3769,13 +3789,13 @@ trix-editor [data-trix-mutable]::selection,
   }
 
   .md\:from-spina-dark {
-    --tw-gradient-from: #3a3a70;
-    --tw-gradient-to: rgb(58 58 112 / 0);
+    --tw-gradient-from: #3a3a70 var(--tw-gradient-from-position);
+    --tw-gradient-to: rgb(58 58 112 / 0) var(--tw-gradient-to-position);
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
   }
 
   .md\:to-spina-light {
-    --tw-gradient-to: #797ab8;
+    --tw-gradient-to: #797ab8 var(--tw-gradient-to-position);
   }
 
   .md\:p-3 {
