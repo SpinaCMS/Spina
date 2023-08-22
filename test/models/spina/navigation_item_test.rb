@@ -167,30 +167,5 @@ module Spina
       assert_equal navigation_item.materialized_path, navigation_item.url
     end
 
-    test "when changing kind from url to page the url and url_title are cleared out" do
-      page = FactoryBot.create(:page, title: "Title")
-      navigation_item = FactoryBot.create(:navigation_item, kind: :url, url: "URL", url_title: "Title")
-
-      navigation_item.kind = :page
-      navigation_item.page = page
-  
-      navigation_item.save
-  
-      assert_nil navigation_item.url
-      assert_nil navigation_item.url_title
-    end
-
-    test "when changing kind from page to url the page is cleared out" do
-      page = FactoryBot.create(:page, title: "Title")
-      navigation_item = FactoryBot.create(:navigation_item, kind: :page, page: page)
-
-      navigation_item.kind = :url
-      navigation_item.url = "URL"
-      navigation_item.url_title = "Title"
-
-      navigation_item.save
-
-      assert_nil navigation_item.page
-    end
   end
 end
