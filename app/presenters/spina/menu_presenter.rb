@@ -65,7 +65,7 @@ module Spina
     end
 
     def scoped_collection(collection)
-      scoped = collection.regular_pages.active.in_menu.sorted
+      scoped = collection.active.in_menu.sorted
       include_drafts ? scoped : scoped.live
     end
 

@@ -12,9 +12,9 @@ module Spina
 
     scope :regular_pages, -> { joins(:page).where(spina_pages: {resource_id: nil}) }
     scope :sorted, -> { order("spina_navigation_items.position") }
-    scope :live, -> { joins(:page).where(spina_pages: {draft: false, active: true}) }
-    scope :in_menu, -> { joins(:page).where(spina_pages: {show_in_menu: true}) }
-    scope :active, -> { joins(:page).where(spina_pages: {active: true}) }
+    scope :live, -> { left_outer_joins(:page).where("spina_pages.draft = ? AND spina_pages.active = ? OR spina_pages.id IS NULL", false, true) }
+    scope :in_menu, -> { left_outer_joins(:page).where("spina_pages.show_in_menu = ? OR spina_pages.id IS NULL", true) }
+    scope :active, -> { left_outer_joins(:page).where("spina_pages.active = ? OR spina_pages.id IS NULL", true) }
 
     validates :page, uniqueness: {scope: :navigation}, presence: true, if: :page_kind?
     validates :url, presence: true, if: :url_kind?
