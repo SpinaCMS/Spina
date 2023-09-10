@@ -1,0 +1,13 @@
+<div class="flex items-center space-x-2 mt-3">
+  <div class="w-56">
+    <%= render Spina::Forms::TextFieldComponent.new(f, :url_title, autofocus: true, placeholder: t("spina.navigations.url_title_placeholder")) %>
+  </div>
+  
+  <div>
+    <%= heroicon("arrow-right", style: :mini, class: "w-4 h-4 text-gray-400") %>
+  </div>
+
+  <div class="w-full">
+    <%= render Spina::Forms::TextFieldComponent.new(f, :url, placeholder: t("spina.navigations.url_placeholder") ) %>
+  </div>
+</div>

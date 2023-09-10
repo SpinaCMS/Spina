@@ -18,8 +18,7 @@ group :test do
 
   # System tests
   gem "capybara"
-  gem "selenium-webdriver", "~> 4.9.0"
-  gem "webdrivers"
+  gem "selenium-webdriver", "~> 4.11.0"
 
   gem "pry-rails"
   gem "mocha"

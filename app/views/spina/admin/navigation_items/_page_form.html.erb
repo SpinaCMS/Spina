@@ -1,0 +1,5 @@
+<div class="mt-4">
+  <div class="border border-gray-300 rounded-md bg-white">
+    <%= render Spina::Pages::PageSelectComponent.new("navigation_item[page_id]", @pages, include_blank: t("spina.navigations.choose_page"), disabled: @navigation.navigation_items.pluck(:page_id), selected: @navigation_item.page_id) %>
+  </div>
+</div>

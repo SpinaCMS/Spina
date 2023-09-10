@@ -6,6 +6,7 @@ test/dummy/db/*.sqlite3
 test/dummy/log/*.log
 test/dummy/tmp/
 test/dummy/.sass-cache
+test/dummy/public/assets/
 .DS_Store
 test/dummy/public/uploads/*
 test/dummy/app/assets/fonts/
@@ -23,3 +24,6 @@ test/dummy/storage/*
 
 .nova
 .ruby-version
+
+# Ignore auto-generated Spina Tailwind CSS configuration
+/app/assets/config/spina/tailwind.config.js

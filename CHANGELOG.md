@@ -1,5 +1,17 @@
 # Spina CMS Changelog
 
+## 2.16
+
+### 2.16.0 (August 23rd, 2023)
+* Added support for custom URLs in Navigation (remember the install the new migration)
+* Added support for pasting images into the Trix editor
+* Added data-trix-button-group to trix toolbar 
+* Updated theme config to support ancestry settings
+* Updated various translations
+* Updated gem dependencies
+* Fixed: Exclude generated tailwind config from VCS
+* Fixed: Use default theme by default
+
 ## 2.15
 
 ### 2.15.1 (June 28th, 2023)
