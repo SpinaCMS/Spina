@@ -3,6 +3,7 @@ module Spina::Admin
     before_action :set_account
     before_action :set_locale
     before_action :set_breadcrumb
+    before_action :get_layout_parts
 
     admin_section :content
 
@@ -23,6 +24,11 @@ module Spina::Admin
     # Permit all attributes when editing your layout
     def layout_params
       params.require(:account).permit!
+    end
+    
+    def get_layout_parts
+      @layout_parts = Spina::Current.theme.layout_parts
+      @layout_parts = {parts: @layout_parts} if @layout_parts.is_a?(Array)
     end
 
     def set_breadcrumb
