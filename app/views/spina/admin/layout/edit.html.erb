@@ -1,36 +1,47 @@
-<%= render Spina::UserInterface::HeaderComponent.new do |header| %>
-  <% header.with_actions do %>
-    <%= render Spina::UserInterface::TranslationsComponent.new(@account, label: @locale.upcase) %>
-  
-    <% if Spina::Current.theme.layout_parts.any? %>
-      <%= button_tag type: :submit, form: dom_id(@account), class: 'btn btn-primary', data: {controller: "button hotkeys", hotkeys: "command+s, ctrl+s", hotkeys_target: "button", action: "button#loading", loading_message: t('spina.ui.saving')} do %>
-        <%= heroicon('check', style: :mini, class: 'w-5 h-5 -ml-1 mr-1') %>
-        <%=t 'spina.layout.save' %>
+<div data-controller="tabs" data-tabs-active="cursor-default text-gray-900 bg-spina-dark bg-opacity-10" data-tabs-inactive="cursor-pointer bg-transparent text-gray-400 border-transparent">
+  <%= render Spina::UserInterface::HeaderComponent.new do |header| %>
+    <% header.with_actions do %>
+      <%= render Spina::UserInterface::TranslationsComponent.new(@account, label: @locale.upcase) %>
+    
+      <% if Spina::Current.theme.layout_parts.any? %>
+        <%= button_tag type: :submit, form: dom_id(@account), class: 'btn btn-primary', data: {controller: "button hotkeys", hotkeys: "command+s, ctrl+s", hotkeys_target: "button", action: "button#loading", loading_message: t('spina.ui.saving')} do %>
+          <%= heroicon('check', style: :mini, class: 'w-5 h-5 -ml-1 mr-1') %>
+          <%=t 'spina.layout.save' %>
+        <% end %>
       <% end %>
     <% end %>
-  <% end %>
-<% end %>
-  
-<%= form_with model: @account, url: spina.admin_layout_path, id: dom_id(@account) do |f| %>
-  <%= hidden_field_tag :locale, @locale %>
-  
-  <div class="py-4 p-8">
-    <% if Spina::Current.theme.layout_parts.any? %>
-      
-      <div class="max-w-5xl">
-        <%= f.fields_for "#{@locale}_content".to_sym, build_parts(f.object, Spina::Current.theme.layout_parts) do |ff| %>
-          <%= ff.hidden_field :type, value: ff.object.class %>
-          <%= ff.hidden_field :name %>
-          <%= ff.hidden_field :title %>
-  
-          <%= render "spina/admin/parts/#{parts_partial_namespace(ff.object.class.to_s)}/form", f: ff %>
-        <% end %>
-      </div>
-    <% else %>
-      <div class="text-gray-500 italic">
-        <%=t 'spina.layout.no_layout_parts' %>
-      </div>
+    
+    <% header.with_navigation do %>
+      <nav class="-mb-3 mt-4" <%= 'hidden' unless @layout_parts.keys.many? %>>
+        <ul class="inline-flex w-auto rounded-md bg-white">
+          <% @layout_parts.keys.each do |key| %>
+            <%= render Spina::Pages::TabButtonComponent.new(tab_name: key) do %>
+              <%=t "spina.layout.sections.#{key}" %>
+            <% end %>
+          <% end %>
+        </ul>
+      </nav>
     <% end %>
-  </div>
-
-<% end %>
+  <% end %>
+    
+  <%= form_with model: @account, url: spina.admin_layout_path, id: dom_id(@account) do |f| %>
+    <%= hidden_field_tag :locale, @locale %>
+    
+    <div class="py-4 p-8">
+      <% @layout_parts.keys.each.with_index do |key, index| %>
+        <div data-tabs-target="pane" id="<%= key %>">
+          <div class="max-w-5xl">
+            <%= f.fields_for "#{@locale}_content".to_sym, build_parts(f.object, @layout_parts[key]) do |ff| %>
+              <%= ff.hidden_field :type, value: ff.object.class %>
+              <%= ff.hidden_field :name %>
+              <%= ff.hidden_field :title %>
+          
+              <%= render "spina/admin/parts/#{parts_partial_namespace(ff.object.class.to_s)}/form", f: ff %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  
+  <% end %>
+</div>
