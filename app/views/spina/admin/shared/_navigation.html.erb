@@ -17,8 +17,10 @@
           <%= render Spina::MainNavigation::LinkComponent.new t('spina.website.pages'), spina.admin_pages_path, active: controller_name.in?(%w(pages resources)) %>
           
           <%= render Spina::MainNavigation::LinkComponent.new t('spina.navigations.navigations'), spina.admin_navigations_path, active: controller_name == "navigations" %>
-
-          <%= render Spina::MainNavigation::LinkComponent.new t('spina.layout.layout'), spina.edit_admin_layout_path, active: controller_name == "layout" %>
+          
+          <% if Spina::Current.theme.layout_parts.present? %>
+            <%= render Spina::MainNavigation::LinkComponent.new t('spina.layout.layout'), spina.edit_admin_layout_path, active: controller_name == "layout" %>
+          <% end %>
           
           <%= render Spina::MainNavigation::LinkComponent.new t('spina.website.media_library'), spina.admin_images_path, active: controller_name.in?(%w(images media_folders attachments)) %>
           
