@@ -1,10 +1,11 @@
 <div class="flex items-center border border-gray-300 rounded-md bg-white p-1 relative shadow-sm" data-controller="parent-pages">
+  <% if resources.many? %>
+    <%= helpers.heroicon("collection", style: :solid, class: 'w-5 h-5 ml-2 text-gray-400 absolute') %>
+    
+    <%= f.select :resource_id, resources, {}, class: "form-select hover:bg-gray-100 bg-none shadow-none w-auto bg-transparent border-none focus:ring-0 cursor-pointer pr-2 pl-8 flex-none truncate", data: {controller: "select-placeholder", action: "select-placeholder#update parent-pages#update"} %>
   
-  <%= helpers.heroicon("collection", style: :solid, class: 'w-5 h-5 ml-2 text-gray-400 absolute') %>
-  
-  <%= f.select :resource_id, resources, {}, class: "form-select hover:bg-gray-100 bg-none shadow-none w-auto bg-transparent border-none focus:ring-0 cursor-pointer pr-2 pl-8 flex-none truncate", data: {controller: "select-placeholder", action: "select-placeholder#update parent-pages#update"} %>
-  
-  <%= helpers.heroicon('chevron-right', style: :solid, class: 'w-5 h-5 text-gray-600 flex-none') %>
+    <%= helpers.heroicon('chevron-right', style: :solid, class: 'w-5 h-5 text-gray-600 flex-none') %>
+  <% end %>
   
   <%= helpers.turbo_frame_tag "parent_pages", src: default_parent_pages_path, class: 'flex-auto', data: {parent_pages_target: "frame"} %>
 </div>
