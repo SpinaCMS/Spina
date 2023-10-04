@@ -1,0 +1,415 @@
+cs:
+  activemodel:
+    attributes:
+      spina/embeds/youtube:
+        url: youtube.com/watch?v=...
+      spina/embeds/vimeo:
+        url: vimeo.com/...
+  activerecord:
+    errors:
+      models:
+        spina/page:
+          attributes:
+            title:
+              blank: Titulek je povinný
+    attributes:
+      spina/account:
+        address: Adresa
+        city: Město
+        email: E-mail
+        facebook: Facebook
+        google_analytics: Google Analytics
+        google_plus: Google+
+        google_site_verification: Google Site Verification
+        instagram: Instagram
+        kvk_identifier: IČO
+        kvk_identifier_description: IČO
+        linkedin: LinkedIn
+        logo: Logo
+        name: Název webu
+        phone: Telefon
+        postal_code: PSČ
+        robots_allowed: Viditelný ve vyhledávačích
+        theme: Téma webu
+        twitter: Twitter
+        vat_identifier: DIČ
+        vat_identifier_description: DIČ
+        youtube: YouTube
+      spina/attachment:
+        created_at: Vytvořeno
+        name: Název souboru
+        size: Velikost
+      spina/media_folder:
+        name: Název
+      spina/navigation:
+        auto_add_pages: Automaticky přidávat stránky
+        auto_add_pages_description: Nové stránky jsou přidány automaticky do této navigace
+        label: Popisek
+        pages: Stránky
+        pages_description: Vyberte stránky, které chcete použít v této navigaci
+      spina/page:
+        ancestry: Nadřazená stránka
+        created_at: Vytvořeno
+        description: Meta popisek
+        description_description: Tento popisek bude zobrazen ve výsledcích vyhledávání
+        description_placeholder: Krátký popis vaší stránky
+        draft: Návrh
+        draft_description: Ideální pro situace, kdy vaše stránka ještě není hotová
+        link_url: Přesměrování stránky
+        link_url_description: Přesměrujte na URL
+        link_url_placeholder: např. http://www.example.com/
+        menu_title: Popisek v navigaci
+        menu_title_placeholder: Nechte prázdné, abyste použili název stránky
+        no_parent: Žádná nadřazená stránka
+        resource: Zdroj
+        seo_title: SEO titulek
+        seo_title_description: Ujistěte se, že váš výsledek vyhledávání vypadá dobře ve vyhledávačích
+        seo_title_placeholder: Tento titulek je použit v <title>-tagu
+        show_in_menu: Zobrazit v navigaci
+        show_in_menu_description: Pokud vypnete, tato stránka se nezobrazí ve vaší navigaci
+        skip_to_first_child: Přejít na první potomka
+        skip_to_first_child_description: Přejít na první potomkovou stránku
+        title: Titulek
+        title_placeholder: Název stránky
+        url_title: Přepsat slug
+        url_title_description: Volitelné
+        url_title_placeholder: Slug
+        view_template: Šablona stránky
+      spina/resource:
+        label: Popisek
+        order_by: Seřadit podle
+        parent_page: Nadřazená stránka
+        view_template: Výchozí šablona zobrazení
+      spina/user:
+        admin: Administrátor
+        admin_description: Administrátoři mohou vytvářet uživatele
+        email: E-mail
+        email_description: Váš e-mail musí být jedinečný
+        last_logged_in: Naposledy přihlášen
+        name: Jméno
+        name_placeholder: Jméno
+        password: Heslo
+        password_confirmation: Potvrdit heslo
+        password_description: Nechte prázdné, abyste ponechali stávající heslo
+        role: Role
+        user: Uživatel
+    models:
+      spina/attachment:
+        one: Dokument
+        other: Dokumenty
+      spina/page:
+        one: Stránka
+        other: Stránky
+      spina/photo:
+        one: Obrázek
+        other: Obrázky
+      spina/user:
+        one: Uživatel
+        other: Uživatelé
+  helpers:
+    label:
+      spina/embeds/button:
+        url: URL
+        label: Popisek tlačítka
+      spina/embeds/youtube:
+        url: URL YouTube
+      spina/embeds/vimeo:
+        url: URL Vimeo
+  spina:
+    accounts:
+      contact_details: Kontaktní údaje
+      contact_details_description: E-mail a telefon
+      couldnt_be_saved: Účet se nepodařilo uložit
+      name_description: Název vašeho webu
+      save: Uložit účet
+      saved: Účet uložen
+    ago: před
+    attachments:
+      choose_attachment: Vybrat přílohu
+      delete_confirmation_html: Jste si jistý? Tato příloha <span class='font-semibold'>možná</span> je použita na stránce.
+      download: Stáhnout
+      insert: Vložit dokument
+      insert_multiple: Vložit dokumenty
+      upload: Nahrát soubory
+      upload_one: Nahrát soubor
+    cancel: Zrušit
+    choose_from_library: Vybrat z knihovny
+    close: Zavřít
+    delete: Smazat
+    delete_confirmation: Jste si jistý, že chcete smazat <strong>%{subject}</strong>?
+    edit: Upravit
+    edit_website: Upravit váš web
+    embeds:
+      embed_a_component: Vložit komponentu
+      embed_component: Vložit komponentu
+    forgot_password:
+      expired: Platnost vašeho tokenu pro obnovení hesla vypršela.
+      mail_subject: Obnovení hesla
+      new: Obnovit heslo
+      request: Požádat o nové heslo
+      save: Uložit nové heslo
+      success: Můžete použít vaše nové heslo
+      unknown_user: Tento uživatel neexistuje
+    images:
+      all_images: Všechny obrázky
+      back: Zpět
+      cannot_be_created: Nelze vytvořit
+      choose_image: Vybrat obrázek
+      choose_images: Vybrat obrázky
+      confirm_selection: Potvrdit výběr
+      delete: Smazat
+      delete_confirmation_html: Jste si jistý, že chcete smazat tento <strong>obrázek</strong>?
+      delete_folder: Smazat složku
+      done_organizing: Dokončeno organizování
+      insert_image: Vložit obrázek
+      insert_photo: Vložit fotku
+      insert_photos: Vložit fotky
+      link: Odkaz
+      missing_image: Chybí obrázek
+      new_folder: Nová složka
+      organize: Uspořádat
+      remove_image: Odebrat obrázek
+      upload: Nahrát obrázky
+      upload_image: Nahrát obrázek
+    languages:
+      bg: Bulharština
+      de: Německo
+      en: Angličtina
+      es: Španělština
+      fr: Francouzština
+      id: Indonéština
+      it: Italština
+      nl: Holandština
+      pl: Polština
+      pt-BR: Portugalština (Brazílie)
+      ro: Rumunština
+      ru: Rusština
+      sv: Švédština
+      th: Thajština
+      tr: Turečtina
+      zh-CN: Čínština (zjednodušená)
+      cs: Čeština
+    layout:
+      couldnt_be_saved: Layout se nepodařilo uložit
+      layout: Layout
+      no_layout_parts: Žádné layoutové části nejsou k dispozici
+      save: Uložit layout
+      saved: Layout uložen
+    login: Přihlásit se
+    logout: Odhlásit se
+    main_menu: Hlavní menu
+    media_library:
+      add_folder: Přidat složku
+      add_image: Přidat obrázek
+      attachments: Dokumenty
+      back_to_all: Zpět na vše
+      filename: Název souboru
+      images: Obrázky
+      images_count:
+        one: 1 obrázek
+        other: "%{count} obrázků"
+      insert: Vložit obrázek
+      media_folder_delete_confirmation_html: Jste si jistý? Obrázky nebudou <strong>smazány</strong>.
+      no_folder: Žádná složka
+      photos: Obrázky
+      rename_folder: Přejmenovat složku
+      save_media_folder: Uložit mediální složku
+      upload_from_device: Nahrát ze zařízení
+      uploading: Nahrávám...
+    modal:
+      agree: Ano, jsem si jistý
+      cancel: Ne, zrušit
+    navigations:
+      add_menu_item: Přidat položku menu
+      add_sub_item: Přidat pod-položku
+      choose_page: Vybrat stránku
+      delete_item: Smazat položku
+      delete_item_confirmation_html: Jste si jistý, že chcete <span class='font-semibold'>smazat</span> tuto položku menu?
+      description: Přidejte a seřaďte položky podle libosti. Můžete přidat vnořené položky menu, ale nemusíte.
+      edit_item: "Upravit položku"
+      navigations: Navigace
+      no_navigations: Tato webová stránka nemá zatím žádné navigace. Můžete si ji nastavit v nastavení motivu.
+      sorting_saved: Seřazení uloženo
+      url_placeholder: "https://"
+      url_title_placeholder: "Popisek"
+    navigation_items:
+      page: Stránka
+      url: URL
+    notifications:
+      alert: Chybka! Něco se pokazilo
+      information: Informace
+      login: Musíte se nejprve přihlásit
+      wrong_username_or_password: Špatná e-mailová adresa nebo heslo
+    options:
+      choose_option: Vybrat možnost
+    pages:
+      add_page_to: 'Přidat stránku k:'
+      add_translation: Přidat %{language} překlad
+      advanced: Pokročilé
+      cannot_be_deleted: Stránku nelze smazat
+      change_order: Změnit pořadí
+      change_view_template: Změnit šablonu zobrazení
+      change_view_template_confirmation: Jste si jistý, že chcete změnit šablonu zobrazení stránky? Obsah stránky, který nepatří do nové šablony, bude ztracen.
+      concept: koncept
+      create: Vytvořit stránku
+      create_page: nový %{template}
+      delete: Smazat stránku
+      delete_confirmation: Jste si jistý, že chcete smazat stránku <strong>%{subject}</strong>?
+      deleted: Stránka smazána
+      done_changing_order: Dokončeno řazení
+      edit_translation: Upravit %{language} překlad
+      invisible_to_search_engines: Váš web je pro vyhledávače neviditelný
+      invisible_to_search_engines_description: Přejděte do svých preferencí a aktivujte vyhledávače.
+      main_collection: Hlavní kolekce
+      materialize_path_confirmation: Jste si jistý, že chcete znovu vytvořit cestu pro tuto stránku?
+      missing_translations: Chybějící překlady
+      move_page: Přesunout stránku
+      moved: Stránka přemístěna
+      new: Nová stránka
+      no_pages_yet: Zatím žádné stránky
+      no_parent_page: Bez nadřazené stránky
+      page_content: Obsah stránky
+      page_part: Sekce stránky
+      page_seo: Vyhledávací nástroje
+      path: 'Cesta:'
+      photo_picker: Vybrat obrázek
+      photos_picker: Vybrat obrázky
+      preview: Náhled
+      publish: Publikovat
+      published: Stránka publikována
+      rebuild_materialized_path: Obnovit zmaterializovaný odkaz
+      recommended: Doporučeno
+      save: Uložit stránku
+      save_changes: Uložit změny
+      save_draft: Uložit koncept
+      saved: Stránka uložena
+      saving: Ukládám...
+      select_page: Vybrat stránku
+      couldnt_be_saved: Stránka se nepodařilo uložit
+      search_engines: Vyhledávací nástroje
+      show_in_menu: Neviditelná
+      skip_to_first_child: Přejít na první podřízenou stránku
+      sorting_saved: Seřazení uloženo
+    page_translations:
+      delete: Smazat překlad (%{translation})
+      delete_confirmation: Jste si jistý, že chcete smazat tento překlad <strong>(%{subject})</strong>?
+      deleted: Překlad smazán
+    permanently_delete: Trvale smazat
+    photos:
+      cannot_be_created: 'Obrázek nelze zpracovat:'
+      choose_images: Vybrat obrázky
+      delete: Smazat
+      delete_confirmation: Jste si jistý, že chcete smazat tento <strong>obrázek</strong>?
+      delete_folder: Smazat složku
+      done_organizing: Dokončeno organizování
+      insert_photo: Vložit obrázek
+      insert_photos: Vybrat obrázky
+      link: 'URL vašeho obrázku:'
+      new_folder: Nová složka
+      organize: Uspořádat obrázky
+      rename_folder: Přejmenovat složku
+      select_images: Vybrat obrázky
+      upload_image: Nahrát obrázek
+    preferences:
+      Analytics: Analytika
+      account: Obecné
+      account_description: Osobní preference
+      account_save: Uložit preference
+      analytics: Analytika a vyhledávání
+      analytics_description: Připojte svůj účet pro reálnou dobu analýzy
+      analytics_save: Uložit preference
+      domain_name_settings: Nastavení domény
+      domain_name_settings_description: Nastavte si vlastní doménu
+      social_media: Sociální média
+      social_media_description: Facebook a Twitter účty
+      social_media_save: Uložit sociální média
+      style: Stylování
+      style_description: Vyberte si motiv, který se hodí k vaší značce
+      style_save: Uložit stylování
+      title: Preferencie
+      users: Uživatelé
+      users_description: Spravujte uživatele a administrátory
+    preview_website: Náhled webu
+    resources:
+      edit: Upravit zdroj
+      label_description: Popis pro uživatele této kolekce stránek.
+      manual_sorting: Ruční řazení
+      no_default_template: Žádný výchozí šablona
+      saved: Kolekce stránek uložena
+      settings: "%{label} nastavení"
+      settings_description: Všechny stránky uvnitř této kolekce budou mít předponu tímto slugem.
+    save: Uložit
+    search: Hledat...
+    settings:
+      general: Obecné
+      save: Uložit Nastavení
+      title: Nastavení
+      users: Uživatelé
+    theme:
+      save: Uložit téma
+      saved: Téma uloženo
+      theme: Téma
+      theme_description: Nastavte si svůj motiv
+    ui:
+      cancel: Zrušit
+      delete: Smazat
+      delete_item: "Smazat %{item}"
+      load_more: Načíst více
+      move_to: Přesunout do
+      new_entry: Nový záznam
+      optional: Volitelné
+      or: nebo
+      rename: Přejmenovat
+      replace: Nahradit
+      save_changes: Uložit změny
+      saving: Ukládám...
+    user_mailer:
+      forgot_password:
+        button: Obnovit heslo
+        introduction: Nedávno jste požádali o obnovení hesla pro váš účet Spina CMS. Tento odkaz na obnovení hesla je platný pouze po dobu 2 hodin. Zkopírujte a vložte následující URL do svého webového prohlížeče.
+        introduction_html: "Nedávno jste požádali o obnovení hesla pro váš účet Spina CMS. Použijte tlačítko níže k jeho obnovení. <strong>Tento odkaz na obnovení hesla je platný pouze po dobu 2 hodin.</strong>"
+        preheader: Použijte tento odkaz k obnovení hesla. Platný je 2 hodiny.
+        request_origin: Pro účely zabezpečení byla tato žádost přijata ze zařízení %{platform} pomocí %{browser}. Pokud jste nepožádali o obnovení hesla, tuto e-mailovou zprávu ignorujte.
+        salutation: Ahoj, %{name}
+        subject: Obnovit heslo
+        trouble: Pokud máte problémy s tlačítkem níže, zkopírujte a vložte následující URL do svého webového prohlížeče.
+    users:
+      authorization: Autorizace
+      authorization_description: Administrátoři mohou spravovat uživatele. Běžní uživatelé nemohou.
+      cannot_be_created: Uživatel nemůže být uložen
+      delete: Smazat uživatele
+      delete_confirmation_html: Jste si jistý, že chcete smazat uživatele <strong>%{user}</strong>?
+      deleted: Uživatel smazán
+      last_login: 'Poslední přihlášení:'
+      never_logged_in: Nikdy se nepřihlásil
+      new: Nový uživatel
+      profile: Profil
+      profile_description: Tato informace bude použita k identifikaci různých uživatelů. Uživatelé se budou přihlašovat pomocí své e-mailové adresy.
+      save: Uložit uživatele
+      saved: Uživatel uložen
+    visit_page: Navštívit stránku
+    website:
+      all_pages: Všechny stránky
+      content: Obsah
+      documents: Dokumenty
+      images: Obrázky
+      main: Hlavní
+      media_library: Mediální knihovna
+      media_library_description: Tady najdete všechny své obrázky a dokumenty.
+      pages: Stránky
+      pages_description: Všechny stránky na vašem webu
+      photos: Obrázky
+      settings: Nastavení
+      theme: Motiv
+      title: Váš web
+    wysiwyg:
+      heading_1: Nadpis 1
+      heading_2: Nadpis 2
+      heading_3: Nadpis 3
+      insert_link: Vložit odkaz
+      link: Odkaz
+      paragraph: Odstavec
+      quote: Citát
+      unlink: Odebrat odkaz
+      url: URL
+      url_placeholder: Zadejte URL
