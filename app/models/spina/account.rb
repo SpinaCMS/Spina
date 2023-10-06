@@ -5,7 +5,7 @@ module Spina
     include Partable
     include TranslatedContent
 
-    serialize :preferences
+    serialize :preferences, coder: Psych
 
     after_save :bootstrap_website
 
