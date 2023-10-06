@@ -1,5 +1,16 @@
 # Spina CMS Changelog
 
+## 2.17
+
+### 2.17.0 (October 6th, 2023)
+* Added support for Rails 7.1
+* Added localization for Czech language
+* Added support for multiple sections for layout parts
+* Updated page select form
+* Updated post-install message
+* Updated gem dependencies
+* Fixed: scoped collection on NavigationItems
+
 ## 2.16
 
 ### 2.16.0 (August 23rd, 2023)
