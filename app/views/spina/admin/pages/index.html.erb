@@ -1,4 +1,11 @@
 <%= render Spina::UserInterface::HeaderComponent.new do |header| %>
+  <% header.with_after_breadcrumbs do %>
+    <%= link_to "/", class: 'px-3 py-1.5 flex items-center text-gray-400 hover:text-gray-700', data: {turbo: false} do %>
+      <%= heroicon("external-link", style: :mini, class: "w-4 h-4") %>
+      <span class="text-sm ml-1"><%=t "spina.preview_website" %></span>
+    <% end %>
+  <% end %>
+  
   <% header.with_actions do %>
     <% if @resource %>
       <%= link_to spina.edit_admin_resource_path(@resource), class: 'btn btn-default' do %>

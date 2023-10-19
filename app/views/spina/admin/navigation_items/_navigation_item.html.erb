@@ -8,7 +8,7 @@
       <div class="text-left truncate"><%= navigation_item.menu_title %></div>
       
       <% if navigation_item.url_kind? %>
-        <%= link_to navigation_item.url, target: :blank, class: "h-7 flex items-center pl-1 text-gray-400 hover:text-gray-700" do %>
+        <%= link_to navigation_item.url, class: "h-7 flex items-center pl-1 text-gray-400 hover:text-gray-700" do %>
           <%= heroicon("external-link", style: :mini, class: "w-4 h-4") %>
         <% end %>
       <% end %>
