@@ -281,7 +281,7 @@ nl:
       select_page: Kies pagina
       search_engines: Zoekmachines
       show_in_menu: onzichtbaar
-      skip_to_first_child: doorsturen naar 1<sup>e</sup> subpagina
+      skip_to_first_child: doorsturen naar eerste subpagina
       sorting_saved: Volgorde opgeslagen
     page_translations:
       delete: Verwijder vertaling (%{translation})
