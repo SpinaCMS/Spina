@@ -23,6 +23,7 @@ module Spina
   config_accessor :api_key,
     :api_path,
     :authentication,
+    :backend_title,
     :backend_path,
     :importmap,
     :frontend_parent_controller,
@@ -44,6 +45,7 @@ module Spina
   self.api_key = nil
   self.api_path = "api"
   self.authentication = "Spina::Authentication::Sessions"
+  self.backend_title = "Spina CMS"
   self.backend_path = "admin"
   self.disable_frontend_routes = false
   self.disable_decorator_load = false
