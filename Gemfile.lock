@@ -296,7 +296,7 @@ GEM
     stimulus-rails (1.2.2)
       railties (>= 6.0.0)
     stringio (3.0.8)
-    tailwindcss-rails (2.0.30)
+    tailwindcss-rails (2.0.32)
       railties (>= 6.0.0)
     thor (1.3.0)
     timeout (0.4.0)
