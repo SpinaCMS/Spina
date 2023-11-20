@@ -189,6 +189,7 @@ cs:
       tr: Turečtina
       zh-CN: Čínština (zjednodušená)
       cs: Čeština
+      uk: Ukrainian
     layout:
       couldnt_be_saved: Layout se nepodařilo uložit
       layout: Layout

@@ -1,0 +1,430 @@
+uk:
+  activemodel:
+    attributes:
+      spina/embeds/vimeo:
+        url: vimeo.com/...
+      spina/embeds/youtube:
+        url: youtube.com/watch?v=...
+  activerecord:
+    attributes:
+      spina/account:
+        address: Адресса
+        city: Місто
+        email: Пошта
+        facebook: Facebook
+        google_analytics: Google Аналітика
+        google_plus: Google+
+        google_site_verification: Перевірка сайту Google
+        instagram: Instagram
+        kvk_identifier: Торгова палата
+        kvk_identifier_description: Торгова палата
+        linkedin: LinkedIn
+        logo: Логотип
+        name: Назва сайта
+        phone: Телефон
+        postal_code: Почтовий індекс
+        robots_allowed: Видимість для пошукових систем
+        theme: Тема сайта
+        twitter: Twitter
+        vat_identifier: ПДВ
+        vat_identifier_description: ПДВ
+        youtube: YouTube
+      spina/attachment:
+        created_at: Створено в
+        name: Назва файла
+        size: Розмір
+      spina/media_folder:
+        name: Імя
+      spina/navigation:
+        auto_add_pages: Автоматично додавати сторінки
+        auto_add_pages_description: Нові сторінки автоматично додаються до цієї
+          навігації.
+        label: Мітка
+        pages: Сторінки
+        pages_description: Виберіть сторінки, які ви хочете використовувати у цій
+          навігації
+      spina/page:
+        ancestry: Батьківська сторінка
+        created_at: Створено в
+        description: Мета опис
+        description_description: Цей опис буде показаний у результатах пошуку
+        description_placeholder: Короткий опис вашої сторінки
+        draft: Концепт
+        draft_description: Вашу сторінку не зовсім завершено
+        link_url: Перенаправлення на сторінку
+        link_url_description: Перейти на URL
+        link_url_placeholder: Наприклад http://www.example.com/
+        menu_title: Навігація
+        menu_title_placeholder: Залишіть пустим, щоб використовувати заголовок сторінки
+        no_parent: Нема батьківсього
+        resource: Ресурс
+        seo_title: SEO <title>
+        seo_title_description: Переконайтеся, що результат пошуку добре виглядає у пошукових системах
+        seo_title_placeholder: Ця назва використовується в <title>-tag
+        show_in_menu: Показати у навігації
+        show_in_menu_description: При вимкненні ця сторінка не буде показана в навігації
+        skip_to_first_child: Перенаправлення
+        skip_to_first_child_description: Перехід на дочірню сторінку
+        title: Заголовок
+        title_placeholder: Заголовок сторінки
+        url_title: Перевизначити слаг
+        url_title_description: Опціонально
+        url_title_placeholder: Слаг
+        view_template: Шаблон сторінки
+      spina/resource:
+        label: Мітка
+        order_by: Сортувати по
+        parent_page: Батьківська сторінка
+        view_template: Типовий шаблон подання
+      spina/user:
+        admin: Адміністратор
+        admin_description: Адміністратори можуть створювати користувачів
+        email: Пошта
+        email_description: Адреса вашої електронної пошти має бути унікальною
+        last_logged_in: Останній вхід був
+        name: Імя
+        name_placeholder: Імя
+        password: Пароль
+        password_confirmation: Підтвердити пароль
+        password_description: Залиште порожнім, щоб зберегти пароль
+        role: Роль
+        user: Користувач
+    errors:
+      models:
+        spina/page:
+          attributes:
+            title:
+              blank: Потрібен заголовок
+    models:
+      spina/attachment:
+        few: Документа
+        many: Документів
+        one: Документ
+        other: Документів
+      spina/page:
+        few: Сторінки
+        many: Сторінок
+        one: Сторінка
+        other: Сторінок
+      spina/photo:
+        few: Зображення
+        many: Зображень
+        one: Зображення
+        other: Зображень
+      spina/user:
+        few: Користувача
+        many: Користувачів
+        one: Користувач
+        other: Користувачів
+  helpers:
+    label:
+      spina/embeds/button:
+        label: Мітка кнопки
+        url: URL
+      spina/embeds/vimeo:
+        url: Vimeo URL
+      spina/embeds/youtube:
+        url: Youtube URL
+  spina:
+    accounts:
+      contact_details: Контактна інформація
+      contact_details_description: Електронна пошта та телефон
+      couldnt_be_saved: Обліковий запис не може бути збережений
+      name_description: Назва вашого веб-сайту
+      save: Зберегти обліковий запис
+      saved: Обліковий запис збережено
+    ago: назад
+    attachments:
+      choose_attachment: Виберіть вкладення
+      delete_confirmation_html: Ви впевнені? Це вкладення <span class='font-semibold'>може</span> використовуватись на сторінці.
+      download: Завантажити
+      insert: Додати документ
+      insert_multiple: Додати документи
+      upload: Завантажити файли
+      upload_one: Завантажити файл
+    cancel: Відміна
+    choose_from_library: Вибрати з бібліотеки
+    close: Закрити
+    delete: Видалити
+    delete_confirmation: Ви впевнені, що хочете видалити <strong>%{subject}</strong>?
+    edit: Редагувати
+    edit_website: Редагувати сайт
+    embeds:
+      embed_a_component: Вставити компонент
+      embed_component: Вставити компонент
+    forgot_password:
+      expired: Термін дії вашого токена для скидання пароля минув
+      mail_subject: Скинути пароль
+      new: Забули пароль
+      request: Запросини новий пароль
+      save: Зберегти новий пароль
+      success: Ви можете використовувати свій новий пароль
+      unknown_user: Цей користувач не існує
+    images:
+      all_images: Усі зображення
+      back: Назад
+      cannot_be_created: Не може бути створено
+      choose_image: Вибрати зображення
+      choose_images: Вибрати зображення
+      confirm_selection: Підтвердіть вибір
+      delete: Видалити
+      delete_confirmation_html: Ви дійсно хочете видалити це <strong>зображення</strong>?
+      delete_folder: Видалити папку
+      done_organizing: Готово
+      insert_image: Вставити зображення
+      insert_photo: Вставити фото
+      insert_photos: Вставити фото
+      link: Посилання на сайт
+      missing_image: Відсутнє зображення
+      new_folder: Нова папка
+      organize: Організувати
+      remove_image: Видалити зображення
+      upload: Завантажити зображення
+      upload_image: Завантажити зображення
+    languages:
+      bg: Болгарский
+      de: Немецкий
+      en: Английский
+      es: Испанский
+      fr: Французский
+      id: Индонезийский
+      it: Итальянский
+      nl: Голландский
+      pl: Польский
+      pt-BR: Бразильский португальский
+      ro: Румынский
+      ru: Русский
+      sv: Шведский
+      th: Тайский
+      tr: Турецкий
+      zh-CN: Упрощенный китайский
+      uk: Украинський
+    layout:
+      couldnt_be_saved: Макет не може бути збережений
+      layout: Макет
+      no_layout_parts: Немає доступних частин макета
+      save: Зберегти макет
+      saved: Макет збережено
+    login: Логін
+    logout: Вихід
+    main_menu: Головне меню
+    media_library:
+      add_folder: Додати папку
+      add_image: Додати зображення
+      attachments: Документи
+      back_to_all: Назад до усіх
+      filename: Імя файла
+      images: Зображення
+      images_count:
+        few: "%{count} зображення"
+        many: "%{count} зображень"
+        one: "%{count} зображення"
+        other: "%{count} зображень"
+        zero: нема зображень
+      insert: Вставити зображення
+      media_folder_delete_confirmation_html: Ви впевнені? Зображення <strong>не</strong> будуть видалені.
+      no_folder: Нема папки
+      photos: Зображення
+      rename_folder: Перейменувати папку
+      save_media_folder: Зберегти папку мультимедіа
+      upload_from_device: Завантажити з пристрою
+      uploading: Завантаження...
+    modal:
+      agree: Так, я впевнений
+      cancel: Нв, відмінити
+    navigations:
+      add_menu_item: Додати пункт меню
+      add_sub_item: Додати підпункт
+      choose_page: Вибрати сторінку
+      delete_item: Видалити пункт
+      delete_item_confirmation_html: Ви впевнені, що хочете видалити</span> <span class='font-semibold'> цей пункт меню?
+      description: Додайте та сортуйте елементи на свій розсуд. Ви можете
+        додавати елементи вкладеного меню, але не обов'язково.
+      navigations: Навігація
+      no_navigations: На цьому сайті ще немає навігації. Ви можете налаштувати її
+        у своїй конфігурації теми.
+      sorting_saved: Сортування збережено
+    notifications:
+      alert: Упс! Щось пішло не так
+      information: Інформація
+      login: Ви повинні увійти
+      wrong_username_or_password: Неправильна пошта або пароль
+    options:
+      choose_option: Виберіть варіант
+    page_translations:
+      delete: Видалити переклад (% {translation})
+      delete_confirmation: Ви впевнені, що хочете видалити цей переклад <strong>(%{subject})</strong>?
+      deleted: Переклад видалено
+    pages:
+      add_page_to: 'Додати сторінку до:'
+      add_translation: Додати переклад %{language}
+      advanced: Додатково
+      cannot_be_deleted: Сторінку не можна видалити
+      change_order: Змінити порядок
+      change_view_template: Змінити шаблон подання
+      change_view_template_confirmation: Ви впевнені, що хочете змінити шаблон сторінки?
+        Вміст сторінки, яка не входить до нового шаблону, буде втрачена.
+      concept: Концепція
+      couldnt_be_saved: Сторінка не може бути збережена
+      create: Створити сторінку
+      create_page: Створити %{template}
+      delete: Видалити сторінку
+      delete_confirmation: Ви впевнені, що хочете видалити сторінку <strong>%{subject}</strong>?
+      deleted: Сторінка видалена
+      done_changing_order: Порядок змінено
+      edit_translation: Редагувати переклад %{language}
+      invisible_to_search_engines: Ваш сайт не видно для пошукових машин
+      invisible_to_search_engines_description: Перейти до параметрів, щоб активувати пошукові системи.
+      main_collection: Основна колекція
+      materialize_path_confirmation: Ви впевнені, що хочете перебудувати шлях для цієї сторінки?
+      missing_translations: Відсутні переклади
+      move_page: Перемістити сторінку
+      moved: Сторінку переміщено
+      new: Нова сторінка
+      no_pages_yet: Сторінок поки що немає
+      no_parent_page: Немає батьківської сторінки
+      page_content: Контент
+      page_part: Розділ сторінки
+      page_seo: Пошукові системи
+      path: 'Шлях:'
+      photo_picker: Вибрати зображення
+      photos_picker: Вибрати зображення
+      preview: Попередній перегляд
+      publish: Публікувати
+      published: Сторінка опублікована
+      rebuild_materialized_path: Перебудувати матеріалізований шлях
+      recommended: рекомендовані
+      save: Зберегти сторінку
+      save_changes: Зберегти зміни
+      save_draft: Зберегти чорновик
+      saved: Сторінку збережено
+      saving: Збереження...
+      search_engines: Пошукові системи
+      select_page: Виберіть сторінку
+      show_in_menu: Невидимий
+      skip_to_first_child: Перехід на дочірню сторінку
+      sorting_saved: Сортування збережено
+    permanently_delete: Видалити назавжди
+    photos:
+      cannot_be_created: 'Зображення не може бути оброблене:'
+      choose_images: Вибрати зображення
+      delete: Видалити
+      delete_confirmation: Ви впевнені, що хочете видалити <strong>image</strong>?
+      delete_folder: Видалити папку
+      done_organizing: Готово
+      insert_photo: Вставити зображення
+      insert_photos: Вставити зображення
+      link: 'URL зображення:'
+      new_folder: Нова папка
+      organize: Організувати зображення
+      rename_folder: Перейменувати папку
+      select_images: Вибрати зображення
+      upload_image: Завантажте зображення
+    preferences:
+      Analytics: Аналітика
+      account: Загальне
+      account_description: Персональні параметри
+      account_save: Зберегти параметри
+      analytics: Аналітика та пошукові системи
+      analytics_description: Посилання на обліковий запис аналітики
+      analytics_save: Зберегти налаштування
+      domain_name_settings: Налаштування домену
+      domain_name_settings_description: Налаштування вашого домену
+      social_media: Соціальні мережі
+      social_media_description: Facebook и Twitter аккаунти
+      social_media_save: Зберегти соціальні мережі
+      style: Дизайн
+      style_description: Виберіть тему
+      style_save: Зберегти параметри стилю
+      title: Параметри
+      users: Користувачі
+      users_description: Управління користувачами та адміністраторами
+    preview_website: Попередній перегляд сайту
+    resources:
+      edit: Редагувати ресурс
+      label_description: Ярлик для користувача для цієї колекції сторінок.
+      manual_sorting: Ручне сортування
+      no_default_template: За замовчуванням немає шаблону
+      saved: Колекція сторінок збережена
+      settings: "%{label} налаштування"
+      settings_description: Перед усіма сторінками в цій колекції стоятиме цей
+        слаг.
+    save: Зберегти
+    search: Пошук...
+    settings:
+      general: Загальні
+      save: Зберегти налаштування
+      title: Налаштування
+      users: Користувачі
+    theme:
+      save: Зберегти тему
+      saved: Тема збережена
+      theme: Тема
+      theme_description: Налаштуйте свою тему
+    ui:
+      cancel: Відміна
+      delete: Видалити
+      delete_item: Видалити %{item}
+      load_more: Завантаж більше
+      move_to: Перенести в
+      new_entry: Новий запис
+      optional: За побажанням
+      or: або
+      rename: Перейменувати
+      replace: Замінити
+      save_changes: Зберегти зміни
+      saving: Збереження...
+    user_mailer:
+      forgot_password:
+        button: Скинути пароль
+        introduction: Нещодавно ви запросили скидання пароля для свого облікового запису Spina CMS. Це скидання пароля дійсне лише протягом наступних 2 годин. Скопіюйте та вставте наведену нижче URL-адресу у свій веб-браузер.
+        introduction_html: Нещодавно ви запросили скидання пароля для свого облікового запису Spina CMS. Використовуйте кнопку нижче, щоб скинути її. <strong>Це скидання пароля дійсний лише протягом наступних 2 годин.</strong>
+        preheader: Скористайтеся цим посиланням, щоб скинути пароль. Посилання дійсне
+          лише 2 години.
+        request_origin: З метою безпеки цей запит було отримано з пристрою
+          %{platform} за допомогою %{browser}. Якщо ви не запитували скидання пароля,
+          проігноруйте цей лист.
+        salutation: Привіт, %{name}
+        subject: Скинути пароль
+        trouble: Якщо у вас виникли проблеми з кнопкою вище, скопіюйте та вставте наведену нижче URL-адресу у свій веб-браузер.
+    users:
+      authorization: Авторизація
+      authorization_description: Адміністратори можуть керувати користувачами. Звичайні
+        користувачі не можуть.
+      cannot_be_created: Користувач не збережений
+      delete: Видалити користувача
+      delete_confirmation_html: Ви впевнені, що хочете видалити користувача <strong>%{user}</strong>?
+      deleted: Користувача видалено
+      last_login: 'Останній візит:'
+      never_logged_in: Ніколи не входив до системи
+      new: Новий користувач
+      profile: Профіль
+      profile_description: Ця інформація використовуватиметься для ідентифікації різних користувачів. Користувачі будуть використовувати свою адресу електронної пошти для входу до системи.
+      save: Зберегти користувача
+      saved: Користувач збережений
+    visit_page: Відвідайте сторінку
+    website:
+      all_pages: Усі сторінки
+      content: Зміст
+      documents: Документи
+      images: Зображення
+      main: Основне
+      media_library: Медіа бібліотека
+      media_library_description: Тут ви знайдете всі ваші зображення та документи
+      pages: Сторінки
+      pages_description: Усі сторінки вашого сайту
+      photos: Зображення
+      settings: Налаштування
+      theme: Тема
+      title: Ваш сайт
+    wysiwyg:
+      heading_1: Заголовок 1
+      heading_2: Заголовок 2
+      heading_3: Заголовок 3
+      insert_link: Вставити посилання
+      link: Посилання
+      paragraph: Параграф
+      quote: Цитата
+      unlink: Видалити посилання
+      url: URL
+      url_placeholder: Введіть URL

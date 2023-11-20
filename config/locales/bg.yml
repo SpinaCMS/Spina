@@ -9,10 +9,10 @@ bg:
         google_analytics: Google Analytics
         google_plus: Google+
         google_site_verification: Google Site Verification
-        instagram: 
+        instagram:
         kvk_identifier: Търговска камара
         kvk_identifier_description: Търговска камара
-        linkedin: 
+        linkedin:
         logo: Лого
         name: Име на сайта
         phone: Телефон
@@ -22,7 +22,7 @@ bg:
         twitter: Twitter
         vat_identifier: Булстат
         vat_identifier_description: Булстат на юридическото лице представящо сайта
-        youtube: 
+        youtube:
       spina/attachment:
         created_at: Създадено на
         name: Име на файла
@@ -49,9 +49,9 @@ bg:
         menu_title: Име в навигацията
         menu_title_placeholder: Ако е оставено празно ще се използва заглавието на страницата
         no_parent: Няма родителска страница
-        resource: 
+        resource:
         seo_title: SEO <title>
-        seo_title_description: 
+        seo_title_description:
         seo_title_placeholder: Това заглавие се отпечатва в <title>-tag
         show_in_menu: Покажи в навигацията
         show_in_menu_description: Когато тази опция не е активна, страницата няма да е видима в навигацията
@@ -59,9 +59,9 @@ bg:
         skip_to_first_child_description: Пренасочи към първата дъщерна страница
         title: Заглавие
         title_placeholder: Заглавие на страницата
-        url_title: 
-        url_title_description: 
-        url_title_placeholder: 
+        url_title:
+        url_title_description:
+        url_title_placeholder:
         view_template: Темплейт на страницата
       spina/resource:
         label: Етикет
@@ -96,19 +96,19 @@ bg:
         other: Потребители
   spina:
     accounts:
-      contact_details: 
-      contact_details_description: 
-      couldnt_be_saved: 
-      name_description: 
-      save: 
-      saved: 
+      contact_details:
+      contact_details_description:
+      couldnt_be_saved:
+      name_description:
+      save:
+      saved:
     ago: преди
     attachments:
-      choose_attachment: 
-      delete_confirmation_html: 
+      choose_attachment:
+      delete_confirmation_html:
       insert: Добавете документ
       insert_multiple: Добавете документи
-      upload: 
+      upload:
     cancel: Спри
     choose_from_library: Избери от библиотеката
     close: Затвори
@@ -125,25 +125,25 @@ bg:
       success: Вече може да използвате новата си парола
       unknown_user: Този потребител не съществува
     images:
-      all_images: 
-      back: 
-      cannot_be_created: 
-      choose_image: 
-      choose_images: 
-      confirm_selection: 
-      delete: 
-      delete_confirmation_html: 
-      delete_folder: 
-      done_organizing: 
-      insert_image: 
-      insert_photo: 
-      insert_photos: 
-      link: 
-      new_folder: 
-      organize: 
-      remove_image: 
-      upload: 
-      upload_image: 
+      all_images:
+      back:
+      cannot_be_created:
+      choose_image:
+      choose_images:
+      confirm_selection:
+      delete:
+      delete_confirmation_html:
+      delete_folder:
+      done_organizing:
+      insert_image:
+      insert_photo:
+      insert_photos:
+      link:
+      new_folder:
+      organize:
+      remove_image:
+      upload:
+      upload_image:
     languages:
       bg: Български
       de: Немски
@@ -161,97 +161,98 @@ bg:
       th: Тайландски
       tr: Турски
       zh-CN: Китайски (опростен)
+      uk: Украински
     layout:
-      couldnt_be_saved: 
-      layout: 
-      no_layout_parts: 
-      save: 
-      saved: 
+      couldnt_be_saved:
+      layout:
+      no_layout_parts:
+      save:
+      saved:
     login: Вход
     logout: Изход
     main_menu: Основно меню
     media_library:
-      add_folder: 
-      add_image: 
+      add_folder:
+      add_image:
       attachments: Документи
-      back_to_all: 
-      filename: 
-      images: 
-      images_count: 
-      insert: 
-      media_folder_delete_confirmation_html: 
-      no_folder: 
+      back_to_all:
+      filename:
+      images:
+      images_count:
+      insert:
+      media_folder_delete_confirmation_html:
+      no_folder:
       photos: Изображения
-      rename_folder: 
-      save_media_folder: 
-      upload_from_device: 
-      uploading: 
+      rename_folder:
+      save_media_folder:
+      upload_from_device:
+      uploading:
     modal:
       agree: Да, сигурен съм
       cancel: Не, спри
     navigations:
-      add_menu_item: 
-      add_sub_item: 
-      choose_page: 
-      delete_item: 
-      delete_item_confirmation_html: 
-      description: 
-      navigations: 
-      no_navigations: 
-      sorting_saved: 
+      add_menu_item:
+      add_sub_item:
+      choose_page:
+      delete_item:
+      delete_item_confirmation_html:
+      description:
+      navigations:
+      no_navigations:
+      sorting_saved:
     notifications:
       alert: Възникна грешка
       information: Информация
       login: Трябва първо да влезете в системата
       wrong_username_or_password: Грешен email или парола
     options:
-      choose_option: 
+      choose_option:
     pages:
-      add_page_to: 
-      add_translation: 
+      add_page_to:
+      add_translation:
       advanced: Разширени
-      cannot_be_deleted: 
+      cannot_be_deleted:
       change_order: Смяна на подредба
-      change_view_template: 
-      change_view_template_confirmation: 
+      change_view_template:
+      change_view_template_confirmation:
       concept: чернова
-      create: 
+      create:
       create_page: Нов %{template}
-      delete: 
+      delete:
       delete_confirmation: Сигурен ли сте, че желаете да изтриете страницата <strong>%{subject}</strong>?
-      deleted: 
+      deleted:
       done_changing_order: Приключено подреждане
-      edit_translation: 
+      edit_translation:
       invisible_to_search_engines: Вашият сайт е невидим за търсачки
       invisible_to_search_engines_description: Отидете на Настройки за да активирате търсачки.
-      main_collection: 
+      main_collection:
       materialize_path_confirmation: Сигурен ли сте, че искате да възтановите оригиналния адрес на тази страница?
-      missing_translations: 
-      move_page: 
-      moved: 
+      missing_translations:
+      move_page:
+      moved:
       new: Нова страница
-      no_pages_yet: 
-      no_parent_page: 
+      no_pages_yet:
+      no_parent_page:
       page_content: Съдържание на страницата
       page_part: Секция от страницата
       page_seo: Търсачки
-      path: 
+      path:
       photo_picker: Изберете изображение
       photos_picker: Изберете изображения
-      preview: 
-      publish: 
-      published: 
+      preview:
+      publish:
+      published:
       rebuild_materialized_path: Възтановяване на оригинален адрес
-      recommended: 
+      recommended:
       save: Запис на страницата
-      save_changes: 
-      save_draft: 
+      save_changes:
+      save_draft:
       saved: Страницата е записана
       saving: Запис...
-      search_engines: 
+      search_engines:
       show_in_menu: невидима
       skip_to_first_child: изпрати към първата дъщерна страница
-      sorting_saved: 
+      sorting_saved:
     permanently_delete: Изтрий завинаги
     photos:
       cannot_be_created: 'Изображението неможе да бъде обработено:'
@@ -265,11 +266,11 @@ bg:
       link: 'URL на изображението:'
       new_folder: Нова папка
       organize: Организиране на изображения
-      rename_folder: 
-      select_images: 
+      rename_folder:
+      select_images:
       upload_image: Качване на изображение
     preferences:
-      Analytics: 
+      Analytics:
       account: Главни
       account_description: Лични настройки
       account_save: Запис на настройки
@@ -290,51 +291,51 @@ bg:
     preview_website: Преглед на сайта
     resources:
       edit: Редакция на ресурс
-      label_description: 
-      manual_sorting: 
-      no_default_template: 
-      saved: 
-      settings: 
-      settings_description: 
+      label_description:
+      manual_sorting:
+      no_default_template:
+      saved:
+      settings:
+      settings_description:
     save: Запази
     search: Търсене...
     settings:
       save: Запази настройките
       title: Настройки
     theme:
-      save: 
-      saved: 
-      theme: 
-      theme_description: 
+      save:
+      saved:
+      theme:
+      theme_description:
     ui:
-      cancel: 
-      delete: 
-      load_more: 
-      move_to: 
-      new_entry: 
-      optional: 
-      rename: 
-      save_changes: 
-      saving: 
+      cancel:
+      delete:
+      load_more:
+      move_to:
+      new_entry:
+      optional:
+      rename:
+      save_changes:
+      saving:
     users:
-      authorization: 
-      authorization_description: 
+      authorization:
+      authorization_description:
       cannot_be_created: Потребителя неможе да бъде записан
-      delete: 
+      delete:
       delete_confirmation_html: Сигурен ли сте, че искате да изтриете потребител <strong>%{user}</strong>?
-      deleted: 
-      last_login: 
-      never_logged_in: 
+      deleted:
+      last_login:
+      never_logged_in:
       new: Нов потребител
-      profile: 
-      profile_description: 
+      profile:
+      profile_description:
       save: Запис на потребител
-      saved: 
-    visit_page: 
+      saved:
+    visit_page:
     website:
       all_pages: Всички страници
       documents: Документи
-      images: 
+      images:
       media_library: Библиотека с ресурси
       media_library_description: Тук ще намерите всички качени изборажения, файлове и документи
       pages: Страници
@@ -346,9 +347,9 @@ bg:
       heading_2: Heading 2
       heading_3: Heading 3
       insert_link: Позтавете линк
-      link: 
+      link:
       paragraph: Параграф
       quote: Цитат
-      unlink: 
-      url: 
-      url_placeholder: 
+      unlink:
+      url:
+      url_placeholder:

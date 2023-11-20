@@ -181,6 +181,7 @@ fr:
       th: Thaï
       tr: Turque
       zh-CN: Chinois simplifié
+      uk: Ukrainian
     layout:
       couldnt_be_saved: "La mise en page n'a pas pu être enregistrée"
       layout: Mise en page
@@ -197,7 +198,7 @@ fr:
       back_to_all: Revenir à tous
       filename: Nom de fichier
       images: Images
-      images_count: 
+      images_count:
         one: 1 image
         other: "%{count} images"
       insert: Insérer image

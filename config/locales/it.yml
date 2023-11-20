@@ -51,7 +51,7 @@ it:
         no_parent: Nessun parente
         resource: Risorse
         seo_title: "<title> SEO"
-        seo_title_description: 
+        seo_title_description:
         seo_title_placeholder: Questo titolo è usato nel <title>-tag
         show_in_menu: Mostra nel menù
         show_in_menu_description: Quando è disattivato la pagina non verrà mostrata nel menù
@@ -96,19 +96,19 @@ it:
         other: Utenti
   spina:
     accounts:
-      contact_details: 
-      contact_details_description: 
-      couldnt_be_saved: 
-      name_description: 
-      save: 
-      saved: 
+      contact_details:
+      contact_details_description:
+      couldnt_be_saved:
+      name_description:
+      save:
+      saved:
     ago: fa
     attachments:
       choose_attachment: Scegli allegato
-      delete_confirmation_html: 
+      delete_confirmation_html:
       insert: Inserisci documento
       insert_multiple: Inserisci documenti
-      upload: 
+      upload:
     cancel: Annulla
     choose_from_library: Seleziona dalla libreria
     close: Chiudi
@@ -161,44 +161,45 @@ it:
       th: Thailandase
       tr: Turco
       zh-CN: Cinese semplificato
+      uk: Ukrainian
     layout:
-      couldnt_be_saved: 
-      layout: 
-      no_layout_parts: 
-      save: 
-      saved: 
+      couldnt_be_saved:
+      layout:
+      no_layout_parts:
+      save:
+      saved:
     login: Login
     logout: Logout
     main_menu: Menu primario
     media_library:
-      add_folder: 
-      add_image: 
+      add_folder:
+      add_image:
       attachments: Documenti
-      back_to_all: 
-      filename: 
+      back_to_all:
+      filename:
       images: Immagini
-      images_count: 
-      insert: 
-      media_folder_delete_confirmation_html: 
-      no_folder: 
+      images_count:
+      insert:
+      media_folder_delete_confirmation_html:
+      no_folder:
       photos: Immagini
-      rename_folder: 
-      save_media_folder: 
-      upload_from_device: 
-      uploading: 
+      rename_folder:
+      save_media_folder:
+      upload_from_device:
+      uploading:
     modal:
       agree: Si, sono sicuro
       cancel: No, annulla
     navigations:
-      add_menu_item: 
-      add_sub_item: 
-      choose_page: 
-      delete_item: 
-      delete_item_confirmation_html: 
-      description: 
-      navigations: 
-      no_navigations: 
-      sorting_saved: 
+      add_menu_item:
+      add_sub_item:
+      choose_page:
+      delete_item:
+      delete_item_confirmation_html:
+      description:
+      navigations:
+      no_navigations:
+      sorting_saved:
     notifications:
       alert: Oops! Qualcosa è andato storto
       information: Informazioni
@@ -207,51 +208,51 @@ it:
     options:
       choose_option: Scegli un' opzione
     pages:
-      add_page_to: 
-      add_translation: 
+      add_page_to:
+      add_translation:
       advanced: Avanzate
-      cannot_be_deleted: 
+      cannot_be_deleted:
       change_order: Modifica ordine
-      change_view_template: 
-      change_view_template_confirmation: 
+      change_view_template:
+      change_view_template_confirmation:
       concept: bozza
-      create: 
+      create:
       create_page: Nuova %{template}
-      delete: 
+      delete:
       delete_confirmation: Sei sicuro di voler eliminare la pagina <strong>%{subject}</strong>?
-      deleted: 
+      deleted:
       done_changing_order: Ordinamento fatto
-      edit_translation: 
+      edit_translation:
       invisible_to_search_engines: Il tuo sito è nascosto ai motori di ricerca
       invisible_to_search_engines_description: Vai alla sezione impostazioni per attivare la visibilità per i motori di ricerca.
-      main_collection: 
+      main_collection:
       materialize_path_confirmation: Sei sicuro di voler reimpostare il percorso di questa pagina
-      missing_translations: 
-      move_page: 
-      moved: 
+      missing_translations:
+      move_page:
+      moved:
       new: Nuova pagina
-      no_pages_yet: 
-      no_parent_page: 
+      no_pages_yet:
+      no_parent_page:
       page_content: Contenuto
       page_part: Sezione pagina
       page_seo: Motori di ricerca
-      path: 
+      path:
       photo_picker: Seleziona immagine
       photos_picker: Seleziona immagini
-      preview: 
-      publish: 
-      published: 
+      preview:
+      publish:
+      published:
       rebuild_materialized_path: Ricostruisci path
-      recommended: 
+      recommended:
       save: Salva pagina
-      save_changes: 
-      save_draft: 
+      save_changes:
+      save_draft:
       saved: Pagina salvata
       saving: Salvataggio ...
-      search_engines: 
+      search_engines:
       show_in_menu: nascosto
       skip_to_first_child: Vai alla prima sottopagina
-      sorting_saved: 
+      sorting_saved:
     permanently_delete: Elimina definitivamente
     photos:
       cannot_be_created: 'L''immagine non può essere processata:'
@@ -290,46 +291,46 @@ it:
     preview_website: Anteprima sito
     resources:
       edit: Modifica risorse
-      label_description: 
-      manual_sorting: 
-      no_default_template: 
-      saved: 
-      settings: 
-      settings_description: 
+      label_description:
+      manual_sorting:
+      no_default_template:
+      saved:
+      settings:
+      settings_description:
     save: Salva
     search: Cerca...
     settings:
       save: Salva impostazioni
       title: Impostazioni
     theme:
-      save: 
-      saved: 
-      theme: 
-      theme_description: 
+      save:
+      saved:
+      theme:
+      theme_description:
     ui:
-      cancel: 
-      delete: 
-      load_more: 
-      move_to: 
-      new_entry: 
-      optional: 
-      rename: 
-      save_changes: 
-      saving: 
+      cancel:
+      delete:
+      load_more:
+      move_to:
+      new_entry:
+      optional:
+      rename:
+      save_changes:
+      saving:
     users:
-      authorization: 
-      authorization_description: 
+      authorization:
+      authorization_description:
       cannot_be_created: L'utente non può essere salvato
-      delete: 
+      delete:
       delete_confirmation_html: Sei sicuro di voler eliminare l'utente <strong>%{user}</strong>?
-      deleted: 
-      last_login: 
-      never_logged_in: 
+      deleted:
+      last_login:
+      never_logged_in:
       new: Nuovo utente
-      profile: 
-      profile_description: 
+      profile:
+      profile_description:
       save: Salva utente
-      saved: 
+      saved:
     visit_page: Visualizza la pagina
     website:
       all_pages: Tutte le pagine
@@ -346,9 +347,9 @@ it:
       heading_2: Intestazione 2
       heading_3: Intestazione 3
       insert_link: Inserisci link
-      link: 
+      link:
       paragraph: Paragrafo
       quote: Citazione
-      unlink: 
-      url: 
-      url_placeholder: 
+      unlink:
+      url:
+      url_placeholder:

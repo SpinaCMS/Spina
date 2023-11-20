@@ -28,30 +28,30 @@ tr:
         name: Dosya adı
         size: Boyut
       spina/media_folder:
-        name: 
+        name:
       spina/navigation:
-        auto_add_pages: 
-        auto_add_pages_description: 
-        label: 
-        pages: 
-        pages_description: 
+        auto_add_pages:
+        auto_add_pages_description:
+        label:
+        pages:
+        pages_description:
       spina/page:
-        ancestry: 
-        created_at: 
+        ancestry:
+        created_at:
         description: Meta tanımı
         description_description: Arama motorlarında görünecektir
         description_placeholder: Sayfanız hakkında kısa açıklama
         draft: Taslak
         draft_description: Sayfanız henüz hazır değilse seçilecek en iyi seçenek
-        link_url: 
-        link_url_description: 
-        link_url_placeholder: 
+        link_url:
+        link_url_description:
+        link_url_placeholder:
         menu_title: Menü başlığı
         menu_title_placeholder: Sayfa başlığını kullanmak için boş bırakın
-        no_parent: 
-        resource: 
+        no_parent:
+        resource:
         seo_title: SEO <title>
-        seo_title_description: 
+        seo_title_description:
         seo_title_placeholder: "<title> etiletinde kullanılacak başlık"
         show_in_menu: Sitede görünsün
         show_in_menu_description: Bu seçeneği kapattığınızda sayfanız sitede görünmez
@@ -59,15 +59,15 @@ tr:
         skip_to_first_child_description: İlk sıraya yerleştir
         title: Başlık
         title_placeholder: Sayfa başlığı
-        url_title: 
-        url_title_description: 
-        url_title_placeholder: 
+        url_title:
+        url_title_description:
+        url_title_placeholder:
         view_template: Sayfa şablonu
       spina/resource:
-        label: 
-        order_by: 
-        parent_page: 
-        view_template: 
+        label:
+        order_by:
+        parent_page:
+        view_template:
       spina/user:
         admin: Yönetici
         admin_description: Yöneticiler kullanıcı oluşturabilirler
@@ -96,19 +96,19 @@ tr:
         other: Kullanıcılar
   spina:
     accounts:
-      contact_details: 
-      contact_details_description: 
-      couldnt_be_saved: 
-      name_description: 
-      save: 
-      saved: 
+      contact_details:
+      contact_details_description:
+      couldnt_be_saved:
+      name_description:
+      save:
+      saved:
     ago: önce
     attachments:
-      choose_attachment: 
-      delete_confirmation_html: 
+      choose_attachment:
+      delete_confirmation_html:
       insert: Belge ekle
       insert_multiple: Çoklu belge ekle
-      upload: 
+      upload:
     cancel: İptal
     choose_from_library: Kütüphaneden seç
     close: Kapat
@@ -117,159 +117,160 @@ tr:
     edit: Düzenle
     edit_website: Siteyi düzenle
     forgot_password:
-      expired: 
-      mail_subject: 
-      new: 
-      request: 
-      save: 
-      success: 
-      unknown_user: 
+      expired:
+      mail_subject:
+      new:
+      request:
+      save:
+      success:
+      unknown_user:
     images:
-      all_images: 
-      back: 
-      cannot_be_created: 
-      choose_image: 
-      choose_images: 
-      confirm_selection: 
-      delete: 
-      delete_confirmation_html: 
-      delete_folder: 
-      done_organizing: 
-      insert_image: 
-      insert_photo: 
-      insert_photos: 
-      link: 
-      new_folder: 
-      organize: 
-      remove_image: 
-      upload: 
-      upload_image: 
+      all_images:
+      back:
+      cannot_be_created:
+      choose_image:
+      choose_images:
+      confirm_selection:
+      delete:
+      delete_confirmation_html:
+      delete_folder:
+      done_organizing:
+      insert_image:
+      insert_photo:
+      insert_photos:
+      link:
+      new_folder:
+      organize:
+      remove_image:
+      upload:
+      upload_image:
     languages:
-      bg: 
-      de: 
-      en: 
-      es: 
-      fr: 
-      id: 
-      it: 
-      nl: 
-      pl: 
-      pt-BR: 
-      ro: 
-      ru: 
-      sv: 
-      th: 
-      tr: 
-      zh-CN: 
+      bg:
+      de:
+      en:
+      es:
+      fr:
+      id:
+      it:
+      nl:
+      pl:
+      pt-BR:
+      ro:
+      ru:
+      sv:
+      th:
+      tr:
+      zh-CN:
+      uk: Ukrainian
     layout:
-      couldnt_be_saved: 
-      layout: 
-      no_layout_parts: 
-      save: 
-      saved: 
+      couldnt_be_saved:
+      layout:
+      no_layout_parts:
+      save:
+      saved:
     login: Giriş
     logout: Çıkış
-    main_menu: 
+    main_menu:
     media_library:
-      add_folder: 
-      add_image: 
+      add_folder:
+      add_image:
       attachments: Belgeler
-      back_to_all: 
-      filename: 
-      images: 
-      images_count: 
-      insert: 
-      media_folder_delete_confirmation_html: 
-      no_folder: 
+      back_to_all:
+      filename:
+      images:
+      images_count:
+      insert:
+      media_folder_delete_confirmation_html:
+      no_folder:
       photos: Resimler
-      rename_folder: 
-      save_media_folder: 
-      upload_from_device: 
-      uploading: 
+      rename_folder:
+      save_media_folder:
+      upload_from_device:
+      uploading:
     modal:
       agree: Evet, eminim
       cancel: Hayır, iptal
     navigations:
-      add_menu_item: 
-      add_sub_item: 
-      choose_page: 
-      delete_item: 
-      delete_item_confirmation_html: 
-      description: 
-      navigations: 
-      no_navigations: 
-      sorting_saved: 
+      add_menu_item:
+      add_sub_item:
+      choose_page:
+      delete_item:
+      delete_item_confirmation_html:
+      description:
+      navigations:
+      no_navigations:
+      sorting_saved:
     notifications:
       alert: Oops! Yanlış giden bir şey var
       information: Bilgi
       login: Öncelikle giriş yapmalısınız
       wrong_username_or_password: Hatalı email ya da parola
     options:
-      choose_option: 
+      choose_option:
     pages:
-      add_page_to: 
-      add_translation: 
+      add_page_to:
+      add_translation:
       advanced: Gelişmiş
-      cannot_be_deleted: 
+      cannot_be_deleted:
       change_order: Sıralamayı değiştir
-      change_view_template: 
-      change_view_template_confirmation: 
+      change_view_template:
+      change_view_template_confirmation:
       concept: taslak
-      create: 
+      create:
       create_page: Yeni %{template}
-      delete: 
+      delete:
       delete_confirmation: "<strong>%{subject}</strong> sayfasını silmek istediğinizden emin misiniz?"
-      deleted: 
+      deleted:
       done_changing_order: Sıralama bitti
-      edit_translation: 
+      edit_translation:
       invisible_to_search_engines: Siteniz arama motorlarına görünmez durumda
       invisible_to_search_engines_description: Seçenekler bölümünden arama motorlarını aktif ediniz.
-      main_collection: 
-      materialize_path_confirmation: 
-      missing_translations: 
-      move_page: 
-      moved: 
+      main_collection:
+      materialize_path_confirmation:
+      missing_translations:
+      move_page:
+      moved:
       new: Yeni sayfa
-      no_pages_yet: 
-      no_parent_page: 
+      no_pages_yet:
+      no_parent_page:
       page_content: İçerik
       page_part: Sayfa bölümü
       page_seo: Arama motorları
-      path: 
+      path:
       photo_picker: Resim seç
       photos_picker: Çoklu resim seç
-      preview: 
-      publish: 
-      published: 
-      rebuild_materialized_path: 
-      recommended: 
+      preview:
+      publish:
+      published:
+      rebuild_materialized_path:
+      recommended:
       save: Sayfayı kaydet
-      save_changes: 
-      save_draft: 
-      saved: 
-      saving: 
-      search_engines: 
+      save_changes:
+      save_draft:
+      saved:
+      saving:
+      search_engines:
       show_in_menu: görünmez
       skip_to_first_child: ilk sıraya gönder
-      sorting_saved: 
+      sorting_saved:
     permanently_delete: Sil
     photos:
       cannot_be_created: 'Resim işlenemedi:'
-      choose_images: 
-      delete: 
+      choose_images:
+      delete:
       delete_confirmation: Bu <strong>resmi</strong> silmek istediğinizden emin misiniz?
-      delete_folder: 
-      done_organizing: 
+      delete_folder:
+      done_organizing:
       insert_photo: Resim ekle
       insert_photos: Çoklu resim ekle
       link: 'Resim linki:'
-      new_folder: 
-      organize: 
-      rename_folder: 
-      select_images: 
-      upload_image: 
+      new_folder:
+      organize:
+      rename_folder:
+      select_images:
+      upload_image:
     preferences:
-      Analytics: 
+      Analytics:
       account: Genel
       account_description: Kişisel seçenekleriniz
       account_save: Seçenekleri kaydet
@@ -289,52 +290,52 @@ tr:
       users_description: Kullanıcı ve yöneticileri yönetin
     preview_website: Siteye gözat
     resources:
-      edit: 
-      label_description: 
-      manual_sorting: 
-      no_default_template: 
-      saved: 
-      settings: 
-      settings_description: 
-    save: 
+      edit:
+      label_description:
+      manual_sorting:
+      no_default_template:
+      saved:
+      settings:
+      settings_description:
+    save:
     search: Ara...
     settings:
-      save: 
-      title: 
+      save:
+      title:
     theme:
-      save: 
-      saved: 
-      theme: 
-      theme_description: 
+      save:
+      saved:
+      theme:
+      theme_description:
     ui:
-      cancel: 
-      delete: 
-      load_more: 
-      move_to: 
-      new_entry: 
-      optional: 
-      rename: 
-      save_changes: 
-      saving: 
+      cancel:
+      delete:
+      load_more:
+      move_to:
+      new_entry:
+      optional:
+      rename:
+      save_changes:
+      saving:
     users:
-      authorization: 
-      authorization_description: 
+      authorization:
+      authorization_description:
       cannot_be_created: Kullanıcı kaydedilemiyor
-      delete: 
+      delete:
       delete_confirmation_html: "<strong>%{user}</strong> kullanıcısını silmek istediğinizden emin misiniz?"
-      deleted: 
-      last_login: 
-      never_logged_in: 
+      deleted:
+      last_login:
+      never_logged_in:
       new: Yeni kullanıcı
-      profile: 
-      profile_description: 
+      profile:
+      profile_description:
       save: Kullanıcıyı kaydet
-      saved: 
-    visit_page: 
+      saved:
+    visit_page:
     website:
-      all_pages: 
+      all_pages:
       documents: Belgeler
-      images: 
+      images:
       media_library: Ortam kütüphanesi
       media_library_description: Tüm resim ve belgeleriniz
       pages: Sayfalar
@@ -346,9 +347,9 @@ tr:
       heading_2: Başlık 2
       heading_3: Başlık 3
       insert_link: Link ekle
-      link: 
+      link:
       paragraph: Paragraf
       quote: Alıntıla
-      unlink: 
-      url: 
-      url_placeholder: 
+      unlink:
+      url:
+      url_placeholder:
