@@ -1,5 +1,16 @@
 # Spina CMS Changelog
 
+## 2.18
+
+### 2.18.0 (January 10th, 2024)
+* Added custom title for admin panel
+* Added preview website button
+* Hide navigations if none are present
+* Removed importmap shims
+* Fixed bugs for Rails 7.1
+* Fixed translations
+* Updated gem dependencies
+
 ## 2.17
 
 ### 2.17.0 (October 6th, 2023)
