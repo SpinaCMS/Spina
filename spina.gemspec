@@ -16,7 +16,7 @@ Gem::Specification.new do |gem|
   gem.license = "MIT"
   gem.post_install_message = %q{
     Spina v2.16 includes a new migration, don't forget to run spina:install:migrations.
-    
+
     For details on this specific release, refer to the CHANGELOG file.
     https://github.com/SpinaCMS/Spina/blob/main/CHANGELOG.md#2160-august-23rd-2022
   }
@@ -46,7 +46,7 @@ Gem::Specification.new do |gem|
   gem.add_dependency "attr_json"
   gem.add_dependency "view_component", ">= 2.32", "< 4.0"
   gem.add_dependency "importmap-rails", ">= 0.7.6"
-  gem.add_dependency "turbo-rails", ">= 0.9", "< 2.0"
+  gem.add_dependency "turbo-rails", ">= 0.9", "< 3.0"
   gem.add_dependency "stimulus-rails", ">= 0.7.0"
   gem.add_dependency "babosa"
   gem.add_dependency "jsonapi-serializer"
