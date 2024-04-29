@@ -20,6 +20,7 @@ Spina::Theme.register do |theme|
   # - Attachment
   # - Option
   # - Repeater
+  # - PageLink
   theme.parts = [
     {name: "text", title: "Body", hint: "Your main content", part_type: "Spina::Parts::Text"}
   ]

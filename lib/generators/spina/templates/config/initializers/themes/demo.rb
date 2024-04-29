@@ -20,6 +20,7 @@ Spina::Theme.register do |theme|
   # - Attachment
   # - Option
   # - Repeater
+  # - PageLink
   theme.parts = [
     {name: "repeater", title: "Repeater", part_type: "Spina::Parts::Repeater", item_name: "item", parts: %w[line image headline]},
     {name: "line", title: "Line", part_type: "Spina::Parts::Line"},
