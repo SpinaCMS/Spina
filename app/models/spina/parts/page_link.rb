@@ -6,7 +6,7 @@ module Spina
       attr_accessor :options
 
       def content
-        Page.live.find_by(id: page_id)
+        ::Spina::Page.live.find_by(id: page_id)
       end
     end
   end
