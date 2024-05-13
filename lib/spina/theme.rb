@@ -47,7 +47,6 @@ module Spina
     def new_page_templates(resource: nil)
       page_collection = resource&.name || "main"
       @view_templates.map do |view_template|
-        next if is_custom_undeletable_page?(view_template[:name])
         next if view_template[:exclude_from]&.include?(page_collection)
 
         OpenStruct.new({
@@ -59,11 +58,6 @@ module Spina
       end.compact.sort_by do |page_template|
         [page_template.recommended ? 0 : 1]
       end
-    end
-
-    # Check if view_template is defined as a custom undeletable page
-    def is_custom_undeletable_page?(view_template_name)
-      @custom_pages.any? { |page| page[:view_template] == view_template_name && !page[:deletable] }
     end
   end
 end
