@@ -69,6 +69,10 @@ Spina::Theme.register do |theme|
     options: {
       resource: "blog"
     }
+  }, {
+    name: "page_group",
+    title: "Pagegroup",
+    part_type: "Spina::Parts::ResourceLink",
   }]
 
   theme.view_templates = [{
@@ -80,12 +84,12 @@ Spina::Theme.register do |theme|
     title: "Simple page",
     description: "Default layout",
     usage: "Use for your content",
-    parts: ["body", "blogpost", "page", "testrepeater"]
+    parts: ["body", "blogpost", "page", "testrepeater", "page_group"]
   }, {
     name: "demo",
     title: "Demo",
     description: "Example including all parts",
-    parts: ["repeater", "repeater2", "attachment", "option", "body", "image_collection", "image", "portrait", "landscape", "wide"],
+    parts: ["repeater", "repeater2", "attachment", "option", "body", "image_collection", "image", "portrait", "landscape", "wide", "page_group"],
     exclude_from: %w[guides]
   }, {
     name: "blogpost",
