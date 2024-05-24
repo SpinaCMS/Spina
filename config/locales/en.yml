@@ -242,7 +242,7 @@ en:
     options:
       choose_option: Choose option
     pages:
-      add_page_to: 'Add page to:'
+      add_page_to: "Add page to:"
       add_translation: Add %{language} translation
       advanced: Advanced
       cannot_be_deleted: Page can't be deleted
@@ -270,7 +270,7 @@ en:
       page_content: Content
       page_part: Page section
       page_seo: Search engines
-      path: 'Path:'
+      path: "Path:"
       photo_picker: Choose image
       photos_picker: Choose images
       preview: Preview
@@ -295,7 +295,7 @@ en:
       deleted: Translation deleted
     permanently_delete: Permanently delete
     photos:
-      cannot_be_created: 'Image could not be processed:'
+      cannot_be_created: "Image could not be processed:"
       choose_images: Choose images
       delete: Delete
       delete_confirmation: Are you sure you want to delete this <strong>image</strong>?
@@ -303,7 +303,7 @@ en:
       done_organizing: Done organizing
       insert_photo: Insert image
       insert_photos: Choose images
-      link: 'URL of your image:'
+      link: "URL of your image:"
       new_folder: New folder
       organize: Organize images
       rename_folder: Rename folder
@@ -335,6 +335,7 @@ en:
       manual_sorting: Manual sorting
       no_default_template: No default template
       saved: Page collection saved
+      select_resource: Select resource
       settings: "%{label} settings"
       settings_description: All pages inside this collection will be prepended with this slug.
     save: Save
@@ -379,7 +380,7 @@ en:
       delete: Delete user
       delete_confirmation_html: Are you sure you want to delete the user <strong>%{user}</strong>?
       deleted: User deleted
-      last_login: 'Last login:'
+      last_login: "Last login:"
       never_logged_in: Never logged in
       new: New user
       profile: Profile

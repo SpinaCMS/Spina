@@ -1,12 +1,12 @@
 <%= turbo_frame_tag "page_select_options_#{params[:object_id]}" do %>
   <% if params[:search].blank? %>
-    <button type="button" data-action="page-select#clear reveal#hide" class="block hover:bg-gray-100 w-full text-left px-5 py-2 font-medium leading-5 text-gray-700 hover:text-gray-900 text-sm border-t border-gray-150">
+    <button type="button" data-action="select#clear reveal#hide" class="block hover:bg-gray-100 w-full text-left px-5 py-2 font-medium leading-5 text-gray-700 hover:text-gray-900 text-sm border-t border-gray-150">
       –
     </button>
   <% end %>
-  
+
   <% @pages.each do |page| %>
-    <button type="button" data-action="page-select#select reveal#hide" data-title="<%= page.title %>" data-id="<%= page.id %>" class="block hover:bg-gray-100 w-full text-left px-5 py-2 font-medium leading-5 text-gray-700 hover:text-gray-900 text-sm border-t border-gray-150">
+    <button type="button" data-action="select#select reveal#hide" data-title="<%= page.title %>" data-id="<%= page.id %>" class="block hover:bg-gray-100 w-full text-left px-5 py-2 font-medium leading-5 text-gray-700 hover:text-gray-900 text-sm border-t border-gray-150">
       <%= page.title %>
       <% if page.draft? %>
         <span class="font-normal text-gray-400">

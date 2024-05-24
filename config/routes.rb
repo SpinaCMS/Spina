@@ -48,7 +48,7 @@ Spina::Engine.routes.draw do
         get :children
         post :sort_one
       end
-      
+
       collection do
         post :sort
       end
@@ -56,6 +56,9 @@ Spina::Engine.routes.draw do
       resource :move, controller: "move_pages"
     end
     resources :page_select_options, only: [:show, :index] do
+      post :search, on: :collection
+    end
+    resources :resource_select_options, only: [:show, :index] do
       post :search, on: :collection
     end
     resources :page_translations, only: [:destroy]
