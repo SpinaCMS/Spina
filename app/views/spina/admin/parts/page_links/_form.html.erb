@@ -1,16 +1,23 @@
 <div class="mt-6">
   <label class="block text-sm leading-5 font-medium text-gray-700"><%= f.object.title %></label>
   <div class="text-gray-400 text-sm"><%= f.object.hint %></div>
-  <div data-controller="select reveal" data-placeholder="<%=t "spina.pages.select_page" %>" class="relative mt-1" data-reveal-away-value>
-    <%= f.hidden_field :page_id, data: {select_target: "input"} %>
-    <button type="button" class="btn btn-default px-3 inline-flex items-center text-sm font-medium" data-action="reveal#toggle select#autofocus">
-      <%= heroicon("link", style: :mini, class: "w-4 h-4 mr-1 text-gray-600") %>
-      <div data-select-target="label">
-        <% if f.object.page_id.present? %>
-          <%= turbo_frame_tag :page_title, src: spina.admin_page_select_option_path(f.object.page_id) %>
-        <% end %>
+  <div data-controller="select reveal data-binding" data-placeholder="<%=t "spina.pages.select_page" %>" class="relative mt-1" data-reveal-away-value>
+    <%= f.hidden_field :page_id, data: { select_target: "input", action: 'change->data-binding#update', binding_target: 'label', binding_condition: "$source.value == ''", binding_attribute: 'hidden' } %>
+    <div class="flex">
+      <div class="rounded-md border text-gray-700 bg-white shadow-sm border-gray-300">
+        <button type="button" class="w-full py-1.5 px-3 inline-flex items-center text-sm font-medium" data-action="reveal#toggle select#autofocus">
+          <%= heroicon("link", style: :mini, class: "w-4 h-4 mr-1 text-gray-600") %>
+          <div data-select-target="label">
+            <% if f.object.page_id.present? %>
+              <%= turbo_frame_tag :page_title, src: spina.admin_page_select_option_path(f.object.page_id) %>
+            <% end %>
+          </div>
+        </button>
+        <fieldset class="border-t border-gray-300 border-dashed" data-binding-ref="label">
+          <%= f.text_field :text, placeholder: t("spina.page_links.text_placeholder"), class: "w-full min-w-64 py-1.5 border-0 rounded-b-md text-sm text-gray-700 focus:border-spina-light focus:ring focus:ring-spina-light" %>
+        </fieldset>
       </div>
-    </button>
+    </div>
     <div class="relative mt-1">
       <div data-reveal data-transition hidden class="absolute shadow-lg border border-gray-200 origin-top-right rounded-md z-10 top-0">
         <div class="rounded-md bg-white shadow-xs">
