@@ -18,6 +18,7 @@ export default class extends Controller {
 
     this.inputTarget.value = button.dataset.id
     this.labelTarget.innerText = button.dataset.title
+    this._dispatchChange()
   }
 
   clear() {
@@ -27,12 +28,17 @@ export default class extends Controller {
         ${this.element.dataset.placeholder}
       </span>
     `
+    this._dispatchChange()
   }
 
   autofocus() {
     setTimeout(function () {
       this.searchTarget.focus()
     }.bind(this), 100)
+  }
+
+  _dispatchChange() {
+    this.inputTarget.dispatchEvent(new Event('change', { bubbles: true, cancelable: false }))
   }
 
 }

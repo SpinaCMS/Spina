@@ -241,6 +241,8 @@ en:
       wrong_username_or_password: Wrong email or password
     options:
       choose_option: Choose option
+    page_links:
+      text_placeholder: "Optional text for the link"
     pages:
       add_page_to: "Add page to:"
       add_translation: Add %{language} translation

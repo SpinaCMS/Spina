@@ -2,7 +2,8 @@ module Spina
   module Parts
     class PageLink < Base
       attr_json :page_id, :integer, default: nil
-      
+      attr_json :text, :string, default: nil
+
       attr_accessor :options
 
       def content

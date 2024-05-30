@@ -1,1 +1,1 @@
-//= require ../libraries/stimulus-reveal@1.2.4.js
+//= require ../libraries/stimulus-reveal@1.4.2.js
