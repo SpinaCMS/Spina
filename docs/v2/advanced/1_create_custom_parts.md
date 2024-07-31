@@ -1,6 +1,6 @@
 # Custom parts
 
-All page content is stored in a single JSONB-column in the database. Spina uses the `attr_json` gem to work with these nested json objects. All default parts are `AttrJson::Model` objects. Follow the steps below to create your own custom part.
+All page content is stored in a single JSON-column in the database. Spina uses the `attr_json` gem to work with these nested json objects. All default parts are `AttrJson::Model` objects. Follow the steps below to create your own custom part.
 
 ## Step 1. Create a part
 Let's imagine our app contains a movie database. We'd like to add a part to select one of the movies in our collection. First we need to create the object that can be stored as page content.

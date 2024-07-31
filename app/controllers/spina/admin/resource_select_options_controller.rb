@@ -11,7 +11,7 @@ module Spina
 
       def search
         @resources ||= Resource.all
-        @resources = @resources.where("name ILIKE :query OR label ILIKE :query", query: "%#{params[:search]}%").order(created_at: :desc).distinct.page(params[:page]).per(20)
+        @resources = @resources.where("LOWER(name) LIKE LOWER(:query) OR LOWER(label) LIKE LOWER(:query)", query: "%#{params[:search]}%").order(created_at: :desc).distinct.page(params[:page]).per(20)
         render :index
       end
 
