@@ -13,7 +13,6 @@ PATH
       jsonapi-serializer
       kaminari
       mobility (>= 1.1.3)
-      pg
       rack-rewrite (>= 1.5.0)
       rails (>= 6.0)
       sprockets-rails
@@ -210,7 +209,6 @@ GEM
     nokogiri (1.16.0)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
-    pg (1.5.4)
     pry (0.14.2)
       coderay (~> 1.1)
       method_source (~> 1.0)
