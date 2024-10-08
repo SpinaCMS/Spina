@@ -14,12 +14,6 @@ Gem::Specification.new do |gem|
   gem.summary = "Spina"
   gem.description = "CMS"
   gem.license = "MIT"
-  gem.post_install_message = %q{
-    Spina v2.16 includes a new migration, don't forget to run spina:install:migrations.
-
-    For details on this specific release, refer to the CHANGELOG file.
-    https://github.com/SpinaCMS/Spina/blob/main/CHANGELOG.md#2160-august-23rd-2022
-  }
 
   gem.required_ruby_version = ">= 2.7.0"
 
@@ -35,7 +29,6 @@ Gem::Specification.new do |gem|
 
   gem.add_dependency "rails", ">= 6.0"
   gem.add_dependency "sprockets-rails"
-  # gem.add_dependency "pg"
   gem.add_dependency "bcrypt"
   gem.add_dependency "image_processing"
   gem.add_dependency "ancestry"

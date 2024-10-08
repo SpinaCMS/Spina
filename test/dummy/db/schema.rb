@@ -53,7 +53,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_21_124327) do
     t.datetime "created_at", precision: nil, null: false
     t.datetime "updated_at", precision: nil, null: false
     t.boolean "robots_allowed", default: false
-    t.jsonb "json_attributes"
+    t.json "json_attributes"
   end
 
   create_table "spina_attachment_collections", id: :serial, force: :cascade do |t|
@@ -193,7 +193,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_21_124327) do
     t.integer "position"
     t.boolean "active", default: true
     t.integer "resource_id"
-    t.jsonb "json_attributes"
+    t.json "json_attributes"
     t.integer "ancestry_depth", default: 0
     t.integer "ancestry_children_count"
     t.index ["resource_id"], name: "index_spina_pages_on_resource_id"
@@ -207,7 +207,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_21_124327) do
     t.string "order_by"
     t.datetime "created_at", precision: nil, null: false
     t.datetime "updated_at", precision: nil, null: false
-    t.jsonb "slug"
+    t.json "slug"
     t.index ["parent_page_id"], name: "index_spina_resources_on_parent_page_id"
   end
 
@@ -220,7 +220,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_21_124327) do
 
   create_table "spina_settings", id: :serial, force: :cascade do |t|
     t.string "plugin"
-    t.jsonb "preferences", default: {}
+    t.json "preferences", default: {}
     t.datetime "created_at", precision: nil, null: false
     t.datetime "updated_at", precision: nil, null: false
     t.index ["plugin"], name: "index_spina_settings_on_plugin"
