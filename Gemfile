@@ -16,6 +16,11 @@ group :test do
   gem "simplecov"
   gem "codeclimate-test-reporter", "~> 1.0.0"
 
+  # Databases
+  gem "pg"
+  gem "mysql2"
+  gem "sqlite3"
+
   # System tests
   gem "capybara"
   gem "selenium-webdriver", "~> 4.11.0"
