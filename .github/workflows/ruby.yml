@@ -7,11 +7,12 @@ on:
     branches: [ main ]
     
 jobs:
-  test:
+  test-postgresql:
+    name: Test on PostgreSQL
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        ruby-version: ['3.2']
+        ruby-version: ['3.3']
         
     services:
       postgres:
@@ -50,7 +51,7 @@ jobs:
       env:
         RAILS_ENV: test
       run: |
-        cp test/dummy/config/database.yml.ci test/dummy/config/database.yml
+        cp test/dummy/config/database.yml.postgresql test/dummy/config/database.yml
         bin/rails db:setup
         
     - name: Compile assets
@@ -66,3 +67,41 @@ jobs:
         GIT_BRANCH: ${GITHUB_REF/refs\/heads\//}
       run: ./cc-test-reporter after-build -r ${{ secrets.CodeClimate }}
       if: github.ref == 'refs/heads/main'
+
+  test-sqlite:
+    name: Test on SQLite
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        ruby-version: ['3.3']
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Install libvips
+        run: sudo apt-get install -y libvips
+      
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby-version }}
+          bundler-cache: true
+
+      - name: Install dependencies
+        run: bundle install
+
+      - name: Create DB
+        env:
+          RAILS_ENV: test
+        run: |
+          cp test/dummy/config/database.yml.sqlite test/dummy/config/database.yml
+          bin/rails db:setup
+          
+      - name: Compile assets
+        env:
+          RAILS_ENV: test
+        run: bin/rails app:assets:precompile
+      
+      - name: Run tests
+        env:
+          RAILS_ENV: test
+        run: bin/rails test test/*
