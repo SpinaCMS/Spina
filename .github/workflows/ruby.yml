@@ -29,7 +29,7 @@ jobs:
           --health-retries 5
         
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
     
     - name: Install libvips
       run: sudo apt-get install -y libvips
@@ -50,7 +50,7 @@ jobs:
       env:
         RAILS_ENV: test
       run: |
-        cp test/dummy/config/database.yml.ci test/dummy/config/database.yml
+        cp test/dummy/config/database.yml.postgresql test/dummy/config/database.yml
         bin/rails db:setup
         
     - name: Compile assets
@@ -66,3 +66,4 @@ jobs:
         GIT_BRANCH: ${GITHUB_REF/refs\/heads\//}
       run: ./cc-test-reporter after-build -r ${{ secrets.CodeClimate }}
       if: github.ref == 'refs/heads/main'
+

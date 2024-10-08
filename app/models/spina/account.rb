@@ -18,7 +18,7 @@ module Spina
     # Spina previously stored account preferences with symbols as keys.
     # Because of CVE-2022-32224 we're changing that to strings instead.
     # This fallback ensures backwards compatibility, but in the long run this
-    # should be refactored to use a simple JSONB-column with Postgres.
+    # should be refactored to use a simple JSON-column with Postgres.
     def self.serialized_attr_accessor(*args)
       args.each do |method_name|
         define_method method_name do
