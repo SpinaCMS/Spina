@@ -6,7 +6,11 @@ module Spina
     # NavigationItems can be of two different kinds:
     # - A link to a page
     # - A link to a URL
-    enum :kind, {page: "page", url: "url"}, suffix: true
+    if Rails.version >= '7.2'
+      enum :kind, {page: "page", url: "url"}, suffix: true
+    else
+      enum kind: {page: "page", url: "url"}, _suffix: true
+    end
 
     has_ancestry
 
