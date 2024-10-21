@@ -1,20 +1,28 @@
-require "tailwindcss-rails"
+require "tailwindcss/ruby"
 
 namespace :spina do
   namespace :tailwind do
     def spina_tailwind_compile_command
-      "#{Tailwindcss::Engine.root.join("exe/tailwindcss")} -i #{Spina::Engine.root.join("app/assets/stylesheets/spina/application.tailwind.css")} -o #{Rails.root.join("app/assets/builds", "spina/tailwind.css")} -c #{Rails.root.join("app/assets/config/spina/tailwind.config.js")}"
+      [
+        Tailwindcss::Ruby.executable,
+        "-i", Spina::Engine.root.join("app/assets/stylesheets/spina/application.tailwind.css").to_s,
+        "-o", Rails.root.join("app/assets/builds/spina/tailwind.css").to_s,
+        "-c", Rails.root.join("app/assets/config/spina/tailwind.config.js").to_s,
+      ]
     end
 
     desc "Build your Tailwind CSS"
     task build: :environment do
       Rails::Generators.invoke("spina:tailwind_config", ["--force"])
-      system spina_tailwind_compile_command
+      command = spina_tailwind_compile_command
+      system *command
     end
 
     task watch: :environment do
       Rails::Generators.invoke("spina:tailwind_config", ["--force"])
-      system "#{spina_tailwind_compile_command} -w"
+      command = spina_tailwind_compile_command
+      command << "-w"
+      system *command
     end
   end
 end
