@@ -1,0 +1,420 @@
+pt-PT:
+  activemodel:
+    attributes:
+      spina/embeds/youtube:
+        url: youtube.com/watch?v=...
+      spina/embeds/vimeo:
+        url: vimeo.com/...
+  activerecord:
+    attributes:
+      spina/account:
+        address: Endereço
+        city: Cidade
+        email: Email
+        facebook: Facebook
+        google_analytics: Google Analytics
+        google_plus: Google+
+        google_site_verification: Verificação do Google Site
+        instagram: Instagram
+        kvk_identifier: Câmara de Comércio
+        kvk_identifier_description: Câmara de Comércio
+        linkedin: LinkedIn
+        logo: Logo
+        name: Nome do site
+        phone: Telefone
+        postal_code: Caixa Postal
+        robots_allowed: Visível para sistemas de busca
+        theme: Tema do site
+        twitter: Twitter
+        vat_identifier: VAT
+        vat_identifier_description: VAT
+        youtube: YouTube
+      spina/attachment:
+        created_at: Criado em
+        name: Arquivo
+        size: Tamanho
+      spina/media_folder:
+        name: Nome
+      spina/navigation:
+        auto_add_pages: Adicionar páginas automaticamente
+        auto_add_pages_description: Novas páginas são adicionadas automaticamente para esta navegação
+        label: Etiqueta
+        pages: Páginas
+        pages_description: Selecione as páginas que você quer usar nesta navegação
+      spina/page:
+        ancestry: Página pai
+        created_at: Criado em
+        description: Meta descrição
+        description_description: Esta descrição será exibida nos resultados de busca
+        description_placeholder: Descrição resumida da sua página
+        draft: Rascunho
+        draft_description: Ótimo para quando sua página ainda não está finalizada
+        link_url: Redirecionar página
+        link_url_description: Encaminhar para URL
+        link_url_placeholder: ex. http://www.example.com/
+        menu_title: Título do menu
+        menu_title_placeholder: Deixe vazio para utilizar o título da página
+        no_parent: Nenhum pai
+        resource: Recurso
+        seo_title: SEO <title>
+        seo_title_description: Certifique-se de que o resultado da sua pesquisa pareça bom nos motores de busca
+        seo_title_placeholder: Este título é utilizado na tag <title>
+        show_in_menu: Mostrar no menu de navegação
+        show_in_menu_description: Quando desativada, está página não será exibida no seu menu de navegação
+        skip_to_first_child: Encaminhar
+        skip_to_first_child_description: Encaminhar para a primeira página filha
+        title: Título
+        title_placeholder: Título da página
+        url_title: Substituir slug
+        url_title_description: Optional
+        url_title_placeholder: Slug
+        view_template: Modelo da página
+      spina/resource:
+        label: Etiqueta
+        order_by: Ordenar por
+        parent_page: Página pai
+        view_template: Modelo da página
+      spina/user:
+        admin: Administrador
+        admin_description: Administradores podem criar utilizadores
+        email: Email
+        email_description: Seu email deve ser único
+        last_logged_in: Último acesso em
+        name: Nome
+        name_placeholder: Nome
+        password: Palavra-passe
+        password_confirmation: Confirmar palavra-passe
+        password_description: Deixe em branco para manter a palavra-passe
+        role: Papel
+        user: Utilizador
+    models:
+      spina/attachment:
+        one: Documento
+        other: Documentos
+      spina/page:
+        one: Página
+        other: Páginas
+      spina/photo:
+        one: Imagem
+        other: Imagens
+      spina/user:
+        one: Utilizador
+        other: Utilizadores
+    errors:
+      models:
+        spina/page:
+          attributes:
+            title:
+              blank: não pode ficar em branco
+  helpers:
+    label:
+      spina/embeds/button:
+        url: URL
+        label: Texto do botão
+      spina/embeds/youtube:
+        url: Youtube URL
+      spina/embeds/vimeo:
+        url: Vimeo URL
+  spina:
+    accounts:
+      contact_details: Detalhes de contato
+      contact_details_description: Email e telefone
+      couldnt_be_saved: Conta não pôde ser salva
+      name_description: Nome do seu site
+      save: Salvar conta
+      saved: Conta salva
+    ago: atrás
+    attachments:
+      choose_attachment: Escolher anexo
+      delete_confirmation_html: Tem certeza? Este anexo <span class='font-semibold'>pode</span> estar em uso em uma página.
+      download: Descarregar
+      insert: Inserir anexo
+      insert_multiple: Inserir anexos
+      upload: Carregar anexos
+      upload_one: Carregar anexo
+    cancel: Cancelar
+    choose_from_library: Escolher da biblioteca
+    close: Fechar
+    delete: Remover
+    delete_confirmation: Tem certeza que deseja remover <strong>%{subject}</strong>?
+    edit: Editar
+    edit_website: Editar seu site
+    embeds:
+      embed_a_component: Inserir um componente
+      embed_component: Inserir componente
+    forgot_password:
+      expired: O token para recuperar sua palavra-passe expirou
+      mail_subject: Recuperar a sua palavra-passe
+      new: Recuperar a palavra-passe
+      request: Receber nova palavra-passe
+      save: Salve a nova palavra-passe
+      success: Você já pode usar sua nova palavra-passe
+      unknown_user: Este utilizador não existe
+    images:
+      all_images: Todas as imagens
+      back: Voltar
+      cannot_be_created: 'Imagem não pôde ser processada:'
+      choose_image: Escolher imagem
+      choose_images: Escolher imagens
+      confirm_selection: Confirmar seleção
+      delete: Excluir
+      delete_confirmation_html: Tem certeza que deseja remover esta <strong>imagem</strong>?
+      delete_folder: Excluir pasta
+      done_organizing: Concluir organização
+      insert_image: Inserir imagem
+      insert_photo: Inserir imagem
+      insert_photos: Inserir imagens
+      link: 'URL da sua imagem:'
+      missing_image: Missing image
+      new_folder: Nova pasta
+      organize: Organizar imagens
+      remove_image: Remover imagem
+      upload: Carregar imagem
+      upload_image: Carregar uma imagem
+    languages:
+      bg: Búlgaro
+      de: Alemão
+      en: Inglês
+      es: Espanhol
+      fr: Francês
+      id: Indonésio
+      it: Italiano
+      nl: Neerlandês
+      pl: Polaco
+      pt-BR: Português Brasileiro
+      pt-PT: Português (Portugal)
+      pt: Português
+      ro: Romeno
+      ru: Russo
+      sv: Sueco
+      th: Tailandês
+      tr: Turco
+      zh-CN: Chinês Simplificado
+    layout:
+      couldnt_be_saved: Layout não pôde ser salvo
+      layout: Layout
+      no_layout_parts: Nenhuma parte de layout disponível
+      save: Salvar layout
+      saved: Layout salvo
+    login: Login
+    logout: Sair
+    main_menu: Menu principal
+    media_library:
+      add_folder: Adicionar pasta
+      add_image: Adicionar imagem
+      attachments: Documentos
+      back_to_all: Voltar a todos
+      filename: Nome do arquivo
+      images: Imagens
+      images_count:
+        one: 1 imagem
+        other: "%{count} imagens"
+      insert: Inserir imagem
+      media_folder_delete_confirmation_html: Tem certeza? As imagens <strong>não</strong> serão excluídas.
+      no_folder: Sem pasta
+      photos: Imagens
+      rename_folder: Renomear pasta
+      save_media_folder: Salvar pasta de média
+      upload_from_device: Carregar do dispositivo
+      uploading: Enviando...
+    modal:
+      agree: Sim, tenho certeza
+      cancel: Não, cancelar
+    navigations:
+      add_menu_item: Adicionar item
+      add_sub_item: Adicionar sub-item
+      choose_page: Escolher página
+      delete_item: Remover item
+      delete_item_confirmation_html: Tem certeza que deseja <span class='font-semibold'>remover</span> este item?
+      description: Adicione e ordene os itens conforme desejar. É possivel adicionar sub-itens.
+      edit_item: "Editar item"
+      edit_menu_item: "Editar item"
+      navigations: Navegações
+      no_navigations: Este site ainda não têm navegações. É possível configurar a navegação no seu tema.
+      sorting_saved: Ordenação salva
+      url_placeholder: "https://"
+      url_title_placeholder: "Label"
+    navigation_items:
+      page: Página
+      url: URL
+    notifications:
+      alert: Oops! Algo deu errado
+      information: Informação
+      login: Você deve estar autenticado
+      wrong_username_or_password: Email ou senha incorreto(s)
+    options:
+      choose_option: Escolher opção
+    page_links:
+      text_placeholder: "Optional text for the link"
+    pages:
+      add_page_to: "Adicionar página a:"
+      add_translation: Adicionar tradução %{language}
+      advanced: Avançado
+      cannot_be_deleted: Página não pode ser removida
+      change_order: Mudar ordem
+      change_view_template: Mudar modelo da página
+      change_view_template_confirmation: Tem certeza que deseja mudar o modelo da página? O conteúdo da página que não pertence ao noco modelo de página será apagado.
+      concept: rascunho
+      create: Criar página
+      create_page: novo %{template}
+      delete: Remover página
+      delete_confirmation: Tem certeza que deseja remover a página <strong>%{subject}</strong>?
+      deleted: Página removida
+      done_changing_order: Ordenação finalizada
+      edit_translation: Editar tradução %{language}
+      invisible_to_search_engines: Seu site não está visível para os sistemas de busca
+      invisible_to_search_engines_description: Vá para as preferências para ativar os sistemas de busca
+      main_collection: Coleção principal
+      materialize_path_confirmation: Você está certo que quer reconstruir o caminho para esta página?
+      missing_translations: Traduções em falta
+      move_page: Mover página
+      moved: Página movida
+      new: Nova página
+      no_pages_yet: Ainda não há páginas
+      no_parent_page: Sem página pai
+      page_content: Conteúdo
+      page_part: Secção de página
+      page_seo: Sistemas de busca
+      path: "Path/Caminho:"
+      photo_picker: Escolher imagem
+      photos_picker: Escolher imagens
+      preview: Pré-visualizar
+      publish: Publicar
+      published: Página publicada
+      rebuild_materialized_path: Reconstruir caminho materializado
+      recommended: recomendado
+      save: Salvar página
+      save_changes: Salvar alterações
+      save_draft: Salvar rascunho
+      saved: Página salva
+      saving: Salvando...
+      select_page: Selecionar página
+      couldnt_be_saved: Página não pôde ser salva
+      search_engines: Motores de busca
+      show_in_menu: invisível
+      skip_to_first_child: encaminhar para a primeira página filha
+      sorting_saved: Ordenação salva
+    page_translations:
+      delete: Remover tradução (%{translation})
+      delete_confirmation: Tem certeza que deseja remover esta tradução <strong>(%{subject})</strong>?
+      deleted: Tradução removida
+    permanently_delete: Remover permanentemente
+    photos:
+      cannot_be_created: 'Imagem não pôde ser processada:'
+      choose_images: Escolher imagens
+      delete: Excluir
+      delete_confirmation: Tem certeza que deseja remover esta <strong>imagem</strong>?
+      delete_folder: Excluir pasta
+      done_organizing: Concluir organização
+      insert_photo: Inserir imagem
+      insert_photos: Inserir imagens
+      link: 'URL da sua imagem:'
+      new_folder: Nova pasta
+      organize: Organizar imagens
+      rename_folder: Renomear pasta
+      select_images: Selecionar imagens
+      upload_image: Carregar uma imagem
+    preferences:
+      Analytics: Analytics
+      account: Gerais
+      account_description: Preferências pessoais
+      account_save: Salvar preferências
+      analytics: Analytics e sistemas de busca
+      analytics_description: Vincule sua conta para análise em tempo real
+      analytics_save: Salvar preferências
+      domain_name_settings: Configurações de domínio
+      domain_name_settings_description: Configurar seu próprio domínio
+      social_media: Social media
+      social_media_description: Contas do Facebook e Twitter
+      social_media_save: Salvar social media
+      style: Estilo
+      style_description: Escolha o tema que melhor identifica sua marca
+      style_save: Salvar estilo
+      title: Preferências
+      users: Utilizadores
+      users_description: Gerenciar utilizadores e administradores
+    preview_website: Pré-visualizar site
+    resources:
+      edit: Editar recurso
+      label_description: Rótulo visível para esta coleção de páginas.
+      manual_sorting: Ordenação manual
+      no_default_template: Sem modelo padrão
+      saved: Coleção de páginas salva
+      settings: "Configurações de %{label}"
+      settings_description: Todas as páginas dentro desta coleção serão prefixadas com este slug.
+    save: Salvar
+    search: Buscar...
+    settings:
+      general: Gerais
+      save: Salvar Configurações
+      title: Configurações
+      users: Utilizadores
+    theme:
+      save: Salvar tema
+      saved: Tema salvo
+      theme: Tema
+      theme_description: Configure o tema do seu site
+    ui:
+      cancel: Cancelar
+      delete: Remover
+      delete_item: "Remover %{item}"
+      load_more: Carregar mais
+      move_to: Mover para
+      new_entry: Novo item
+      optional: Opcional
+      or: ou
+      rename: Renomear
+      replace: Substituir
+      save_changes: Salvar alterações
+      saving: Salvando...
+    user_mailer:
+      forgot_password:
+        button: Redefinir a palavra-passe
+        introduction: Você recentemente solicitou redefinir sua senha para sua conta Spina CMS. Esta redefinição de senha é válida apenas para as próximas 2 horas. Copie e cole o URL abaixo em seu navegador da web.
+        introduction_html: "Você recentemente solicitou redefinir sua senha para sua conta Spina CMS. Use o botão abaixo para redefini-la. <strong>Esta redefinição de senha é válida apenas para as próximas 2 horas.</strong>"
+        preheader: Use este link para redefinir sua senha. O link é válido por 2 horas.
+        request_origin: Para segurança, este pedido foi recebido de um dispositivo %{platform} usando %{browser}. Se você não solicitou uma redefinição de senha, ignore este email.
+        salutation: Olá, %{name}
+        subject: Redefinir a sua palavra-passe
+        trouble_pt: Se estiver com dificuldade em utilizar o botão acima, copie e cole o URL abaixo em seu navegador da web.
+    users:
+      authorization: Autorização
+      authorization_description: Administradores podem criar utilizadores. Utilizadores simples não podem criar outros utilizadores.
+      cannot_be_created: O utilizador não pode ser salvo
+      delete: Remover utilizador
+      delete_confirmation_html: Tem certeza que deseja remover o utilizador <strong>%{user}</strong>?
+      deleted: Utilizador removido
+      last_login: "Último acesso:"
+      never_logged_in: Nunca acessou
+      new: Novo utilizador
+      profile: Perfil
+      profile_description: Esta informação será usada para identificar diferentes utilizadores. Os utilizadores usarão seu endereço de email para fazer login.
+      save: Salvar utilizador
+      saved: Utilizador salvo
+    visit_page: Visitar página
+    website:
+      all_pages: Todas as páginas
+      content: Conteúdo
+      documents: Documentos
+      images: Imagens
+      main: Princípio
+      media_library: Biblioteca de média
+      media_library_description: Aqui é onde você vai encontrar todas as suas imagens e documentos
+      pages_description: Todas as páginas no seu site
+      pages: Páginas
+      photos: Imagens
+      settings: Configurações
+      theme: Tema
+      title: Seu site
+    wysiwyg:
+      heading_1: Cabeçalho 1
+      heading_2: Cabeçalho 2
+      heading_3: Cabeçalho 3
+      insert_link: Inserir link
+      link: Link
+      paragraph: Parágrafo
+      quote: Citação
+      unlink: Remover link
+      url: URL
+      url_placeholder: Insira uma URL
+
