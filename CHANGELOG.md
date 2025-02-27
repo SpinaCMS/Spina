@@ -1,5 +1,11 @@
 # Spina CMS Changelog
 
+## 2.20
+
+### 2.20.0 (February 27th, 2025)
+* Added support for Rails 8
+* Updated gem dependencies
+
 ## 2.19
 
 ### 2.19.0 (November 18th, 2024)
