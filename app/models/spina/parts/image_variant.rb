@@ -1,6 +1,8 @@
 module Spina
   module Parts
     class ImageVariant
+      ImageVariation = Struct.new(:key)
+
       attr_reader :blob
 
       def initialize(image, options)
@@ -9,9 +11,7 @@ module Spina
       end
 
       def variation
-        OpenStruct.new({
-          key: ActiveStorage::Variation.encode(@options)
-        })
+        ImageVariation.new(ActiveStorage::Variation.encode(@options))
       end
     end
   end

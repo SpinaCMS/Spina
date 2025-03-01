@@ -1,5 +1,17 @@
 # Spina CMS Changelog
 
+## 2.19
+
+### 2.19.0 (March 1st, 2025)
+* Added ResourceLink as page part
+* Added optional text to PageLink part
+* Added localization for Danish language
+* Replaced tailwindcss-rails with tailwindcss-ruby
+* Support Turbo 8
+* Fixed bug with Spina PageLink part
+* Fixed deprecation warning for enum in Rails 7.2
+* Refactored OpenStruct into Struct
+
 ## 2.18
 
 ### 2.18.0 (January 10th, 2024)
