@@ -1,0 +1,114 @@
+@font-face {
+  font-family: "Metropolis";
+  font-weight: 400;
+  src: url('Metropolis-Regular.woff2') format("woff2");
+}
+
+@font-face {
+  font-family: "Metropolis";
+  font-style: italic;
+  src: url('Metropolis-RegularItalic.woff2') format("woff2");
+}
+
+@font-face {
+  font-family: "Metropolis";
+  font-weight: 100;
+  src: url('Metropolis-Thin.woff2') format("woff2");
+}
+
+@font-face {
+  font-family: "Metropolis";
+  font-weight: 100;
+  font-style: italic;
+  src: url('Metropolis-ThinItalic.woff2') format("woff2");
+}
+
+@font-face {
+  font-family: "Metropolis";
+  font-weight: 200;
+  src: url('Metropolis-ExtraLight.woff2') format("woff2");
+}
+
+@font-face {
+  font-family: "Metropolis";
+  font-weight: 200;
+  src: url('Metropolis-ExtraLightItalic.woff2') format("woff2");
+}
+
+@font-face {
+  font-family: "Metropolis";
+  font-weight: 300;
+  src: url('Metropolis-Light.woff2') format("woff2");
+}
+
+@font-face {
+  font-family: "Metropolis";
+  font-weight: 300;
+  font-style: italic;
+  src: url('Metropolis-LightItalic.woff2') format("woff2");
+}
+
+@font-face {
+  font-family: "Metropolis";
+  font-weight: 500;
+  src: url('Metropolis-Medium.woff2') format("woff2");
+}
+
+@font-face {
+  font-family: "Metropolis";
+  font-weight: 500;
+  font-style: italic;
+  src: url('Metropolis-MediumItalic.woff2') format("woff2");
+}
+
+@font-face {
+  font-family: "Metropolis";
+  font-weight: 600;
+  src: url('Metropolis-SemiBold.woff2') format("woff2");
+}
+
+@font-face {
+  font-family: "Metropolis";
+  font-weight: 600;
+  font-style: italic;
+  src: url('Metropolis-SemiBoldItalic.woff2') format("woff2");
+}
+
+@font-face {
+  font-family: "Metropolis";
+  font-weight: 700;
+  src: url('Metropolis-Bold.woff2') format("woff2");
+}
+
+@font-face {
+  font-family: "Metropolis";
+  font-weight: 700;
+  font-style: italic;
+  src: url('Metropolis-BoldItalic.woff2') format("woff2");
+}
+
+@font-face {
+  font-family: "Metropolis";
+  font-weight: 800;
+  src: url('Metropolis-ExtraBold.woff2') format("woff2");
+}
+
+@font-face {
+  font-family: "Metropolis";
+  font-weight: 800;
+  font-style: italic;
+  src: url('Metropolis-ExtraBoldItalic.woff2') format("woff2");
+}
+
+@font-face {
+  font-family: "Metropolis";
+  font-weight: 900;
+  src: url('Metropolis-Black.woff2') format("woff2");
+}
+
+@font-face {
+  font-family: "Metropolis";
+  font-weight: 900;
+  font-style: italic;
+  src: url('Metropolis-BlackItalic.woff2') format("woff2");
+}
