@@ -10,6 +10,7 @@
 * Support Turbo 8
 * Fixed bug with Spina PageLink part
 * Fixed deprecation warning for enum in Rails 7.2
+* Refactored OpenStruct into Struct
 
 ## 2.18
 
