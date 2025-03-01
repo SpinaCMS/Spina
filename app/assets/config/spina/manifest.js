@@ -5,7 +5,7 @@
 //= link_directory ../../javascripts/spina/libraries
 
 //= link spina/animate.css
-//= link spina/fonts.css
+//= link spina/fonts-sprockets.css
 //= link spina/tailwind.css
 
 //= link spina/application.js
