@@ -2,7 +2,7 @@
 
 ## 2.19
 
-### 2.19.0 (November 18th, 2024)
+### 2.19.0 (March 1st, 2025)
 * Added ResourceLink as page part
 * Added optional text to PageLink part
 * Added localization for Danish language
