@@ -2,6 +2,8 @@ module Spina
   class Theme
     attr_accessor :name, :title, :parts, :page_parts, :structures, :view_templates, :layout_parts, :custom_pages, :plugins, :public_theme, :config, :navigations, :resources, :embeds
 
+    NewPageTemplate = Struct.new(:name, :title, :description, :recommended)
+
     class << self
       def all
         ::Spina::THEMES
@@ -50,12 +52,12 @@ module Spina
         next if is_custom_undeletable_page?(view_template[:name])
         next if view_template[:exclude_from]&.include?(page_collection)
 
-        OpenStruct.new({
-          name: view_template[:name],
-          title: view_template[:title],
-          description: view_template[:description],
-          recommended: view_template[:name] == resource&.view_template
-        })
+        NewPageTemplate.new(
+          view_template[:name],
+          view_template[:title],
+          view_template[:description],
+          view_template[:name] == resource&.view_template
+        )
       end.compact.sort_by do |page_template|
         [page_template.recommended ? 0 : 1]
       end
