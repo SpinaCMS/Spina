@@ -1,10 +1,10 @@
 module Spina::Admin
   module PagesHelper
     def asset_available?(path)
-      if Rails.configuration.assets.compile
-        Rails.application.precompiled_assets.include?(path)
-      else
-        Rails.application.assets_manifest.assets[path].present?
+      if defined?(Propshaft)
+        check_propshaft_asset(path)
+      elsif defined?(Sprockets)
+        check_sprockets_asset(path)
       end
     end
 
@@ -24,5 +24,24 @@ module Spina::Admin
     def option_label(part, value)
       t(["options", part.name, value].compact.join("."))
     end
+
+    private
+
+      def check_propshaft_asset(path)
+        if Rails.configuration.assets.compile
+          Rails.application.assets.load_path.find(path).present? rescue false
+        else
+          Rails.application.assets.asset_for(path).present? rescue false
+        end
+      end
+
+      def check_sprockets_asset(path)
+        if Rails.configuration.assets.compile
+          Rails.application.precompiled_assets.include?(path)
+        else
+          Rails.application.assets_manifest.assets[path].present?
+        end
+      end
+
   end
 end

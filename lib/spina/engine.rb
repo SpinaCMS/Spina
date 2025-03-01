@@ -11,7 +11,7 @@ require "attr_json"
 require "view_component"
 require "jsonapi/serializer"
 require "browser"
-require "sprockets/railtie"
+# require "sprockets/railtie"
 
 module Spina
   class Engine < ::Rails::Engine

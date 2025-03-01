@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gemspec
 
+gem "sprockets-rails"
+
 group :development do
   gem "letter_opener"
 end

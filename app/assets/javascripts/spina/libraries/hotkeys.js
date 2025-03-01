@@ -1,1 +1,2 @@
-//= require ./hotkeys@3.8.7.js
+import hotkeys from "libraries/hotkeys@3.8.7"
+export default hotkeys

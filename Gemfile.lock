@@ -15,8 +15,7 @@ PATH
       mobility (>= 1.1.3)
       pg
       rack-rewrite (>= 1.5.0)
-      rails (>= 6.0, < 8.0)
-      sprockets-rails
+      rails (>= 6.0, < 9.0)
       stimulus-rails (>= 0.7.0)
       tailwindcss-ruby
       turbo-rails (>= 0.9, < 3.0)
@@ -370,6 +369,7 @@ DEPENDENCIES
   selenium-webdriver (~> 4.11.0)
   simplecov
   spina!
+  sprockets-rails
 
 BUNDLED WITH
    2.5.17
