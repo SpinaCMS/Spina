@@ -1,1 +1,1 @@
-//= require ./sortablejs@1.13.0.js
+export { default } from "libraries/sortablejs@1.13.0"
