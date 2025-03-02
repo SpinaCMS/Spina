@@ -10,8 +10,15 @@
     
     <title><%= Spina.config.backend_title %></title>
 
+    <!-- Fonts -->
+    <% if defined?(Propshaft) %>
+      <%= stylesheet_link_tag "spina/fonts-propshaft", data: {turbo_track: "reload"} %>
+    <% elsif defined?(Sprockets) %>
+      <%= stylesheet_link_tag "spina/fonts-sprockets", data: {turbo_track: "reload"} %>
+    <% end %>
+
     <!-- Stylesheets -->
-    <%= stylesheet_link_tag "spina/tailwind", "spina/fonts", "spina/animate", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "spina/tailwind", "spina/animate", "data-turbo-track": "reload" %>
     
     <!-- Spina's importmap -->
     <%= spina_importmap_tags %>

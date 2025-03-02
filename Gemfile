@@ -3,6 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gemspec
 
+# Assets for the dummy app (can also be sprockets, but propshaft is the new default)
+gem "propshaft"
+
 group :development do
   gem "letter_opener"
 end

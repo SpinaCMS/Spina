@@ -1,1 +1,1 @@
-//= require ./hotkeys@3.8.7.js
+export { default } from "libraries/hotkeys@3.8.7"

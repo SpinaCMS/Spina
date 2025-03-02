@@ -1,1 +1,1 @@
-//= require ./canvas-confetti@1.3.2.js
+export { default } from "libraries/canvas-confetti@1.3.2"
