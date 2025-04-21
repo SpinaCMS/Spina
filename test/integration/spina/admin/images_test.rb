@@ -28,6 +28,7 @@ module Spina
         spina_png = fixture_file_upload("spina.png", "image/png")
         post "/admin/images", params: {image: {files: [spina_png]}, format: :js}
         delete "/admin/images/#{Spina::Image.last.id}"
+        assert_select "span", text: "spina.png", count: 0
       end
 
       test "move an image to a folder" do
