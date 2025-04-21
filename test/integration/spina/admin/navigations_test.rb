@@ -10,7 +10,7 @@ module Spina
         @account = FactoryBot.create :account
         @user = FactoryBot.create :user
         @navigation = FactoryBot.create :navigation
-        post "/admin/sessions", params: {email: @user.email, password: "password"}
+        post "/admin/sessions", params: {email: @user.email, password: @user.password}
       end
 
       test "Edit a navigation with pages to select" do

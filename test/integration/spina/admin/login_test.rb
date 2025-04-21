@@ -15,7 +15,7 @@ module Spina
         get "/admin/login"
         assert_response :success
 
-        post "/admin/sessions", params: {email: @user.email, password: "password"}
+        post "/admin/sessions", params: {email: @user.email, password: @user.password}
         follow_redirect!
         assert_equal "/admin", path
 

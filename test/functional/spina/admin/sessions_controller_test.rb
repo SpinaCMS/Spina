@@ -15,7 +15,7 @@ module Spina
       end
 
       test "should be able to login" do
-        post :create, params: {email: @user.email, password: "password"}
+        post :create, params: {email: @user.email, password: @user.password}
         assert_not_nil session[:spina_user_id]
       end
 
