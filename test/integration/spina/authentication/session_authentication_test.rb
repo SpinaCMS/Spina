@@ -17,7 +17,7 @@ module Spina
       end
 
       test "login" do
-        post "/admin/sessions", params: {email: @user.email, password: "password"}
+        post "/admin/sessions", params: {email: @user.email, password: @user.password}
         assert_redirected_to spina.admin_root_url
       end
     end

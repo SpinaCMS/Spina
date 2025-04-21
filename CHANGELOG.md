@@ -1,5 +1,16 @@
 # Spina CMS Changelog
 
+## 2.20
+
+### Unreleased
+* Added support for Rails 8 
+* Added support for Propshaft
+* Added support for Youtube Shorts in Youtube Embeds
+* Fixed translations
+* Updated gem dependencies 
+
+(remember to run `bin/rails spina:install:migrations`)
+
 ## 2.19
 
 ### 2.19.0 (March 1st, 2025)

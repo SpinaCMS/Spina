@@ -33,14 +33,14 @@ Gem::Specification.new do |gem|
 
   gem.files = Dir["{app,config,db,lib,vendor}/**/*"] + ["Rakefile", "README.md"]
 
-  gem.add_dependency "rails", ">= 6.0", "< 8.0"
+  gem.add_dependency "rails", ">= 7.0", "< 9.0"
   gem.add_dependency "pg"
   gem.add_dependency "bcrypt"
   gem.add_dependency "image_processing"
   gem.add_dependency "ancestry"
   gem.add_dependency "breadcrumbs_on_rails"
   gem.add_dependency "kaminari"
-  gem.add_dependency "mobility", ">= 1.1.3"
+  gem.add_dependency "mobility", ">= 1.3.0"
   gem.add_dependency "rack-rewrite", ">= 1.5.0"
   gem.add_dependency "attr_json"
   gem.add_dependency "view_component", ">= 2.32", "< 4.0"

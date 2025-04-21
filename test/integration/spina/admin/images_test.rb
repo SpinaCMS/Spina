@@ -9,7 +9,7 @@ module Spina
         @routes = Engine.routes
         @account = FactoryBot.create :account
         @user = FactoryBot.create :user
-        post "/admin/sessions", params: {email: @user.email, password: "password"}
+        post "/admin/sessions", params: {email: @user.email, password: @user.password}
       end
 
       test "view all images with image upload form" do
@@ -28,6 +28,7 @@ module Spina
         spina_png = fixture_file_upload("spina.png", "image/png")
         post "/admin/images", params: {image: {files: [spina_png]}, format: :js}
         delete "/admin/images/#{Spina::Image.last.id}"
+        assert_select "span", text: "spina.png", count: 0
       end
 
       test "move an image to a folder" do
