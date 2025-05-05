@@ -2,7 +2,7 @@
 
 ## 2.20
 
-### Unreleased
+### 2.20.0 (May 5th, 2025)
 * Added support for Rails 8 
 * Added support for Propshaft
 * Added support for Youtube Shorts in Youtube Embeds
