@@ -90,24 +90,28 @@ module Spina
       config_obj = config_original
 
       def config_obj.tailwind_purge_content
-        ActiveSupport::Deprecation.warn("config.tailwind_purge_content has been renamed to config.tailwind_content")
+        deprecator.warn("config.tailwind_purge_content has been renamed to config.tailwind_content")
         tailwind_content
       end
 
       def config_obj.tailwind_purge_content=(paths)
-        ActiveSupport::Deprecation.warn("config.tailwind_purge_content has been renamed to config.tailwind_content")
+        deprecator.warn("config.tailwind_purge_content has been renamed to config.tailwind_content")
         self.tailwind_content = paths
       end
 
       def config_obj.embedded_image_size=(image_size)
         if image_size.is_a? String
-          ActiveSupport::Deprecation.warn("Spina embedded_image_size should be set to an array of arguments to be passed to the :resize_to_limit ImageProcessing macro. https://github.com/janko/image_processing/blob/master/doc/minimagick.md#resize_to_limit")
+          deprecator.warn("Spina embedded_image_size should be set to an array of arguments to be passed to the :resize_to_limit ImageProcessing macro. https://github.com/janko/image_processing/blob/master/doc/minimagick.md#resize_to_limit")
         end
 
         self[:embedded_image_size] = image_size
       end
 
       config_obj
+    end
+
+    def deprecator
+      ActiveSupport::Deprecation.new("", "Spina")
     end
 
     def mounted_at

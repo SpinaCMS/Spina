@@ -21,7 +21,7 @@ module Spina
     config.to_prepare do
       unless Spina.config.disable_decorator_load
         Dir.glob(Rails.root + "app/decorators/**/*_decorator.rb").each do |decorator|
-          ActiveSupport::Deprecation.warn("using app/decorators is deprecated in favor of app/overrides. Read more about overriding Spina at spinacms.com/guides")
+          Spina.deprecator.warn("using app/decorators is deprecated in favor of app/overrides. Read more about overriding Spina at spinacms.com/guides")
           require_dependency(decorator)
         end
       end
