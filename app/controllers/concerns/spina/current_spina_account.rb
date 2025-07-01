@@ -11,7 +11,7 @@ module Spina
     private
 
     def current_account
-      ActiveSupport::Deprecation.warn(
+      Spina.deprecator.warn(
         "#current_account is deprecated, due to a common authentication namespace conflict. \n" \
         "Please use #current_spina_account instead."
       )

@@ -23,7 +23,7 @@ module Spina
       args.each do |method_name|
         define_method method_name do
           if preferences.try(:[], method_name.to_sym).present?
-            ActiveSupport::Deprecation.warn("#{method_name} is stored as a symbol. Please set and save it again using #{method_name}= on your Spina::Account model to store it as a string. You can do this from the UI by saving your account preferences.")
+            Spina.deprecator.warn("#{method_name} is stored as a symbol. Please set and save it again using #{method_name}= on your Spina::Account model to store it as a string. You can do this from the UI by saving your account preferences.")
           end
 
           preferences.try(:[], method_name.to_s) ||
@@ -78,7 +78,7 @@ module Spina
           parent_page = Page.find_by(name: page[:parent])
           ancestry = [parent_page&.ancestry, parent_page&.id].compact.join("/")
         end
-        
+
         Page.where(name: page[:name])
           .first_or_create(title: page[:title])
           .update(view_template: page[:view_template], deletable: page[:deletable], ancestry: ancestry)
