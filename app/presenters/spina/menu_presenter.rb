@@ -7,7 +7,7 @@ module Spina
     attr_accessor :collection, :output_buffer
 
     # Configuration
-    config_accessor :menu_tag, :menu_css,
+    config_accessor :menu_tag, :menu_css, :menu_id
       :list_tag, :list_css,
       :list_item_tag, :list_item_css,
       :link_tag_css,
@@ -38,7 +38,7 @@ module Spina
     end
 
     def render_menu(collection)
-      content_tag(menu_tag, class: menu_css) do
+      content_tag(menu_tag, class: menu_css, id: menu_id) do
         render_items(scoped_collection(collection))
       end
     end
