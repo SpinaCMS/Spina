@@ -5,7 +5,7 @@ namespace :spina do
     def spina_tailwind_compile_command
       [
         Tailwindcss::Ruby.executable,
-        "-i", Rails.root.join("app/assets/stylesheets/spina/application.tailwind.css").to_s,
+        "-i", Rails.root.join("app/assets/config/spina/application.tailwind.css").to_s,
         "-o", Rails.root.join("app/assets/builds/spina/tailwind.css").to_s
       ]
     end
