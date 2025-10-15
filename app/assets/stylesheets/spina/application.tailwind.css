@@ -1,13 +1,21 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss" source("/Users/bram/apps/spina");
+
+@plugin "@tailwindcss/typography";
+@plugin "@tailwindcss/forms";
+@plugin "@tailwindcss/aspect-ratio";
+
+@theme {
+  --font-body: "Metropolis";
+
+  --color-spina: #6865b4;
+  --color-spina-light: #797ab8;
+  --color-spina-dark: #3a3a70;
+
+  --animate-duration: 600ms;
+}
 
 /* Configuration */
 @layer base {
-  :root {
-    --animate-duration: 600ms;
-  }
-  
   html {
     @apply font-body;
   }
@@ -24,7 +32,7 @@
 }
 
 /* Components */
-@layer components {
+@layer utilities {
   /* Buttons */
   .btn {
     @apply flex items-center justify-center rounded-md border;
@@ -74,11 +82,11 @@
   }
   
   .btn-gray:hover {
-    @apply bg-gray-400 border-gray-400 bg-opacity-75;
+    @apply bg-gray-400/75 border-gray-400;
   }
   
   .btn-gray:active {
-    @apply bg-gray-400 border-gray-400 bg-opacity-75 shadow-inner;
+    @apply bg-gray-400/75 border-gray-400 shadow-inner;
   }
   
   .btn-green {
@@ -134,7 +142,7 @@
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     @apply w-full max-w-lg overflow-hidden relative;
-    @apply bg-white bg-opacity-75 shadow-lg rounded-xl;
+    @apply bg-white/75 shadow-lg rounded-xl;
     @apply border border-gray-400;
   }
 

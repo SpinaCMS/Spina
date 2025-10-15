@@ -1,4 +1,4 @@
-<div data-controller="tabs" data-tabs-active="cursor-default text-gray-900 bg-spina-dark bg-opacity-10" data-tabs-inactive="cursor-pointer bg-transparent text-gray-400 border-transparent">
+<div data-controller="tabs" data-tabs-active="cursor-default text-gray-900 bg-spina-dark/10" data-tabs-inactive="cursor-pointer bg-transparent text-gray-400 border-transparent">
   <%= render Spina::UserInterface::HeaderComponent.new do |header| %>
     <% header.with_actions do %>
       <%= render Spina::UserInterface::TranslationsComponent.new(@account, label: @locale.upcase) %>

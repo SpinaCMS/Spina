@@ -50,5 +50,5 @@ Gem::Specification.new do |gem|
   gem.add_dependency "babosa"
   gem.add_dependency "jsonapi-serializer"
   gem.add_dependency "browser"
-  gem.add_dependency "tailwindcss-ruby"
+  gem.add_dependency "tailwindcss-ruby", ">= 4.0"
 end
