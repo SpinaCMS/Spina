@@ -1,13 +1,10 @@
 @import "tailwindcss";
 
 /* Source paths */
-<% Spina.config.tailwind_content.each do |path| %>
-@source "<%= path %>";
-<% end %>
+<%= Spina.config.tailwind_content.map{|path| "@source \"#{path}\";"}.join("\n") %>
 
-<% Spina.config.tailwind_plugins.each do |plugin| %>
-@plugin "<%= plugin %>";
-<% end %>
+/* Plugins */
+<%= Spina.config.tailwind_plugins.map{|plugin| "@plugin \"#{plugin}\";"}.join("\n") %>
 
 @theme {
   --font-body: "Metropolis";
