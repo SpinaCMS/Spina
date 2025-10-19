@@ -43,7 +43,7 @@
   }
   
   .btn-default {
-    @apply text-gray-700 bg-white shadow-sm border-gray-300;
+    @apply text-gray-700 bg-white shadow-xs border-gray-300;
   }
   
   .btn-default:hover {
@@ -97,7 +97,7 @@
   .form-input, .form-select {
     /* @apply py-3 px-4; */
     @apply text-gray-700;
-    @apply shadow-sm;
+    @apply shadow-xs;
     @apply transition duration-150 ease-in-out;
     @apply border-gray-300;
     @apply rounded-md;
@@ -120,7 +120,7 @@
   .form-textarea {
     @apply bg-white;
     @apply text-gray-700;
-    @apply shadow-sm;
+    @apply shadow-xs;
     @apply transition duration-150 ease-in-out;
     @apply border border-gray-300;
     @apply rounded-md;
@@ -178,12 +178,12 @@
   }
 
   trix-editor figure[data-trix-mutable].attachment[data-trix-content-type="Spina::Image"] img {
-    @apply shadow-lg ring ring-spina-light
+    @apply shadow-lg ring-3 ring-spina-light
   }
   
   trix-editor figure[data-trix-mutable][data-trix-content-type="application/vnd+spina.embed+html"].attachment > spina-embed {
     @apply block;
-    @apply shadow-lg ring ring-spina-light rounded-md;
+    @apply shadow-lg ring-3 ring-spina-light rounded-md;
   }
 
   trix-editor figure .attachment__caption {

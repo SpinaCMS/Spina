@@ -26,21 +26,21 @@
       <div class="py-1">
         
         <% unless @page.homepage? %>
-          <%= link_to t('spina.pages.move_page') + "...", helpers.spina.new_admin_page_move_path(@page), class: "block px-4 py-2 text-sm font-medium leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900", data: {turbo_frame: "modal", action: "reveal#hide"} %>
+          <%= link_to t('spina.pages.move_page') + "...", helpers.spina.new_admin_page_move_path(@page), class: "block px-4 py-2 text-sm font-medium leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-hidden focus:bg-gray-100 focus:text-gray-900", data: {turbo_frame: "modal", action: "reveal#hide"} %>
         <% end %>
         
         <% if !@page.custom_page? %>
-          <%= link_to t('spina.pages.change_view_template') + "...", helpers.spina.edit_template_admin_page_path(@page), class: "block px-4 py-2 text-sm font-medium leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900", data: {turbo_frame: "modal", action: "reveal#hide"} %>
+          <%= link_to t('spina.pages.change_view_template') + "...", helpers.spina.edit_template_admin_page_path(@page), class: "block px-4 py-2 text-sm font-medium leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-hidden focus:bg-gray-100 focus:text-gray-900", data: {turbo_frame: "modal", action: "reveal#hide"} %>
         <% end %>
         
         <% if @locale.to_sym != I18n.locale.to_sym %>
           <% @page.translations.where(locale: @locale).each do |translation| %>
-            <%= button_to t("spina.page_translations.delete", translation: @locale.upcase), helpers.spina.admin_page_translation_path(translation), method: :delete, class: "block w-full text-left px-4 py-2 text-sm leading-5 font-medium text-red-500 cursor-pointer bg-white hover:bg-red-100/50 hover:text-red-500 focus:outline-none focus:bg-gray-100 focus:text-gray-900", form: {data: {controller: "confirm", confirm_message: t('spina.page_translations.delete_confirmation', subject: @locale.upcase)}} %>
+            <%= button_to t("spina.page_translations.delete", translation: @locale.upcase), helpers.spina.admin_page_translation_path(translation), method: :delete, class: "block w-full text-left px-4 py-2 text-sm leading-5 font-medium text-red-500 cursor-pointer bg-white hover:bg-red-100/50 hover:text-red-500 focus:outline-hidden focus:bg-gray-100 focus:text-gray-900", form: {data: {controller: "confirm", confirm_message: t('spina.page_translations.delete_confirmation', subject: @locale.upcase)}} %>
           <% end %>
         <% end %>
         
         <% if @page.deletable? %>
-          <%= button_to t('spina.pages.delete'), helpers.spina.admin_page_path(@page), method: :delete, class: "block w-full text-left px-4 py-2 text-sm leading-5 font-medium text-red-500 cursor-pointer bg-white hover:bg-red-100/50 hover:text-red-500 focus:outline-none focus:bg-gray-100 focus:text-gray-900", form: {data: {controller: "confirm", confirm_message: t('spina.pages.delete_confirmation', subject: sanitize(@page.title))}} %>
+          <%= button_to t('spina.pages.delete'), helpers.spina.admin_page_path(@page), method: :delete, class: "block w-full text-left px-4 py-2 text-sm leading-5 font-medium text-red-500 cursor-pointer bg-white hover:bg-red-100/50 hover:text-red-500 focus:outline-hidden focus:bg-gray-100 focus:text-gray-900", form: {data: {controller: "confirm", confirm_message: t('spina.pages.delete_confirmation', subject: sanitize(@page.title))}} %>
         <% else %>
           <span class="block px-4 py-2 text-sm leading-5 text-gray-400"><%=t 'spina.pages.cannot_be_deleted' %></span>
         <% end %>

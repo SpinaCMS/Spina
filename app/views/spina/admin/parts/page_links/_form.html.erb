@@ -4,7 +4,7 @@
   <div data-controller="select reveal data-binding" data-placeholder="<%=t "spina.pages.select_page" %>" class="relative mt-1" data-reveal-away-value>
     <%= f.hidden_field :page_id, data: { select_target: "input", action: 'change->data-binding#update', binding_target: 'label', binding_condition: "$source.value == ''", binding_attribute: 'hidden' } %>
     <div class="flex">
-      <div class="rounded-md border text-gray-700 bg-white shadow-sm border-gray-300">
+      <div class="rounded-md border text-gray-700 bg-white shadow-xs border-gray-300">
         <button type="button" class="w-full py-1.5 px-3 inline-flex items-center text-sm font-medium" data-action="reveal#toggle select#autofocus">
           <%= heroicon("link", style: :mini, class: "w-4 h-4 mr-1 text-gray-600") %>
           <div data-select-target="label">
