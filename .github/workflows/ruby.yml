@@ -50,7 +50,7 @@ jobs:
     - name: Compile assets
       env:
         RAILS_ENV: test
-      run: bin/rails app:assets:precompile
+      run: cd test/dummy && bin/rails assets:precompile
     
     - name: Run tests
       run: bin/rails test test/*
