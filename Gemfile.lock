@@ -19,7 +19,7 @@ PATH
       stimulus-rails (>= 0.7.0)
       tailwindcss-ruby
       turbo-rails (>= 0.9, < 3.0)
-      view_component (>= 2.32, < 4.0)
+      view_component (>= 2.32, < 5.0)
 
 GEM
   remote: https://rubygems.org/
