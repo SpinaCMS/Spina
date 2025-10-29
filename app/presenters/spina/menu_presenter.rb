@@ -2,25 +2,21 @@ module Spina
   class MenuPresenter
     include ActionView::Helpers::TagHelper
     include ActionView::Helpers::UrlHelper
-    include ActiveSupport::Configurable
 
     attr_accessor :collection, :output_buffer
 
     # Configuration
-    config_accessor :menu_tag, :menu_css,
-      :list_tag, :list_css,
-      :list_item_tag, :list_item_css,
-      :link_tag_css,
-      :active_list_item_css,
-      :current_list_item_css,
-      :include_drafts,
-      :depth # root nodes are at depth 0
-
-    # Default configuration
-    self.menu_tag = :nav
-    self.list_tag = :ul
-    self.list_item_tag = :li
-    self.include_drafts = false
+    class_attribute :menu_tag, default: :nav
+    class_attribute :menu_css
+    class_attribute :list_tag, default: :ul
+    class_attribute :list_css
+    class_attribute :list_item_tag, default: :li
+    class_attribute :list_item_css
+    class_attribute :link_tag_css
+    class_attribute :active_list_item_css
+    class_attribute :current_list_item_css
+    class_attribute :include_drafts, default: false
+    class_attribute :depth # root nodes are at depth 0
 
     def initialize(collection)
       @collection = collection
