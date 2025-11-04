@@ -1,13 +1,23 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+/* Source paths */
+<%= Spina.config.tailwind_content.map{|path| "@source \"#{path}\";"}.join("\n") %>
+
+/* Plugins */
+<%= Spina.config.tailwind_plugins.map{|plugin| "@plugin \"#{plugin}\";"}.join("\n") %>
+
+@theme {
+  --font-body: "Metropolis";
+
+  --color-spina: #6865b4;
+  --color-spina-light: #797ab8;
+  --color-spina-dark: #3a3a70;
+
+  --animate-duration: 600ms;
+}
 
 /* Configuration */
 @layer base {
-  :root {
-    --animate-duration: 600ms;
-  }
-  
   html {
     @apply font-body;
   }
@@ -24,7 +34,7 @@
 }
 
 /* Components */
-@layer components {
+@layer utilities {
   /* Buttons */
   .btn {
     @apply flex items-center justify-center rounded-md border;
@@ -35,7 +45,7 @@
   }
   
   .btn-default {
-    @apply text-gray-700 bg-white shadow-sm border-gray-300;
+    @apply text-gray-700 bg-white shadow-xs border-gray-300;
   }
   
   .btn-default:hover {
@@ -74,11 +84,11 @@
   }
   
   .btn-gray:hover {
-    @apply bg-gray-400 border-gray-400 bg-opacity-75;
+    @apply bg-gray-400/75 border-gray-400;
   }
   
   .btn-gray:active {
-    @apply bg-gray-400 border-gray-400 bg-opacity-75 shadow-inner;
+    @apply bg-gray-400/75 border-gray-400 shadow-inner;
   }
   
   .btn-green {
@@ -89,7 +99,7 @@
   .form-input, .form-select {
     /* @apply py-3 px-4; */
     @apply text-gray-700;
-    @apply shadow-sm;
+    @apply shadow-xs;
     @apply transition duration-150 ease-in-out;
     @apply border-gray-300;
     @apply rounded-md;
@@ -112,7 +122,7 @@
   .form-textarea {
     @apply bg-white;
     @apply text-gray-700;
-    @apply shadow-sm;
+    @apply shadow-xs;
     @apply transition duration-150 ease-in-out;
     @apply border border-gray-300;
     @apply rounded-md;
@@ -134,7 +144,7 @@
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     @apply w-full max-w-lg overflow-hidden relative;
-    @apply bg-white bg-opacity-75 shadow-lg rounded-xl;
+    @apply bg-white/75 shadow-lg rounded-xl;
     @apply border border-gray-400;
   }
 
@@ -170,12 +180,12 @@
   }
 
   trix-editor figure[data-trix-mutable].attachment[data-trix-content-type="Spina::Image"] img {
-    @apply shadow-lg ring ring-spina-light
+    @apply shadow-lg ring-3 ring-spina-light
   }
   
   trix-editor figure[data-trix-mutable][data-trix-content-type="application/vnd+spina.embed+html"].attachment > spina-embed {
     @apply block;
-    @apply shadow-lg ring ring-spina-light rounded-md;
+    @apply shadow-lg ring-3 ring-spina-light rounded-md;
   }
 
   trix-editor figure .attachment__caption {

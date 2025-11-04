@@ -38,9 +38,9 @@ module Spina
       def css_class
         case depth
         when 1
-          "pl-5 bg-gray-100"
+          "pl-5 bg-gray-100/50"
         when 2
-          "pl-10 bg-gray-200"
+          "pl-10 bg-gray-200/50"
         end
       end
       

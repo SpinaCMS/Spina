@@ -1,5 +1,5 @@
 <turbo-frame id="page_<%= page.id %>" data-id="<%= page.id %>" data-controller="<%= 'page-collapse' if has_children? %>">
-  <div class="flex items-center border-gray-200 border-b <%= css_class %> bg-opacity-50">
+  <div class="flex items-center border-gray-200 border-b <%= css_class %>">
     <% if sortable? %>
       <% if draggable? %>
         <div data-sortable-handle class="p-4 text-gray-300 hover:text-gray-600 cursor-move">

@@ -1,5 +1,5 @@
 <li data-id="<%= navigation_item.id %>" id="<%= dom_id(navigation_item, :container) %>">
-  <div class="btn w-56 px-0 text-gray-700 bg-white shadow-sm border-gray-300 cursor-default justify-start">
+  <div class="btn w-56 px-0 text-gray-700 bg-white shadow-xs border-gray-300 cursor-default justify-start">
     <div data-sortable-handle class="cursor-move px-2 pl-4 h-full flex items-center text-gray-400 hover:text-gray-700">
       <%= heroicon('menu-alt-4', style: :solid, class: 'w-4 h-4 -ml-1') %>  
     </div>
@@ -21,17 +21,17 @@
       
       <div hidden data-reveal data-transition class="origin-top-right absolute left-0 z-10 mt-1 w-48 rounded-md shadow-lg">
         <div class="rounded-md bg-gray-700 shadow-xs py-1">
-          <%= link_to spina.new_admin_navigation_navigation_item_path(@navigation, parent_id: navigation_item.id), class: "px-3 py-1 text-xs leading-5 text-gray-200 hover:bg-gray-800 hover:text-white focus:outline-none flex items-center", data: {turbo_frame: "modal", action: "reveal#hide"} do %>
+          <%= link_to spina.new_admin_navigation_navigation_item_path(@navigation, parent_id: navigation_item.id), class: "px-3 py-1 text-xs leading-5 text-gray-200 hover:bg-gray-800 hover:text-white focus:outline-hidden flex items-center", data: {turbo_frame: "modal", action: "reveal#hide"} do %>
             <%= heroicon('plus', style: :mini, class: 'w-4 h-4 mr-2') %>
             <%=t 'spina.navigations.add_sub_item' %>
           <% end %>
 
-          <%= link_to spina.edit_admin_navigation_navigation_item_path(@navigation, id: navigation_item.id, locale: @locale), class: "px-3 py-1 text-xs leading-5 text-gray-200 hover:bg-gray-800 hover:text-white focus:outline-none flex items-center", data: {turbo_frame: "modal", action: "reveal#hide"} do %>
+          <%= link_to spina.edit_admin_navigation_navigation_item_path(@navigation, id: navigation_item.id, locale: @locale), class: "px-3 py-1 text-xs leading-5 text-gray-200 hover:bg-gray-800 hover:text-white focus:outline-hidden flex items-center", data: {turbo_frame: "modal", action: "reveal#hide"} do %>
             <%= heroicon('pencil-square', style: :mini, class: 'w-4 h-4 mr-2') %>
             <%=t 'spina.navigations.edit_item' %>
           <% end %>
           
-          <%= button_to spina.admin_navigation_navigation_item_path(@navigation, navigation_item), method: :delete, class: "bg-transparent w-full text-left cursor-pointer font-medium px-3 py-1 text-xs leading-5 text-red-400 hover:bg-gray-800 hover:text-red-400 focus:outline-none flex items-center", form: {data: {action: "reveal#hide", controller: "confirm", confirm_message: t('spina.navigations.delete_item_confirmation_html')}} do %>
+          <%= button_to spina.admin_navigation_navigation_item_path(@navigation, navigation_item), method: :delete, class: "bg-transparent w-full text-left cursor-pointer font-medium px-3 py-1 text-xs leading-5 text-red-400 hover:bg-gray-800 hover:text-red-400 focus:outline-hidden flex items-center", form: {data: {action: "reveal#hide", controller: "confirm", confirm_message: t('spina.navigations.delete_item_confirmation_html')}} do %>
             <%= heroicon('trash', class: 'w-4 h-4 mr-2') %>
             <%=t 'spina.navigations.delete_item' %>
           <% end %>

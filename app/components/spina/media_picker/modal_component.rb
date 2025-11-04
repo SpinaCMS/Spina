@@ -17,9 +17,9 @@ module Spina
 
       def media_folder_classes(media_folder)
         if media_folder == @media_folder
-          "text-gray-900 bg-spina-dark bg-opacity-20"
+          "text-gray-900 bg-spina-dark/20"
         else
-          "text-gray-600 hover:bg-gray-200 bg-opacity-100 hover:bg-gray-200"
+          "text-gray-600 hover:bg-gray-200 hover:bg-gray-200"
         end
       end
     end

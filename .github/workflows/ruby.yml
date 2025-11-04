@@ -40,12 +40,6 @@ jobs:
         ruby-version: ${{matrix.ruby-version}}
         bundler-cache: true
 
-    - name: Setup Code Climate test-reporter
-      run: |
-        curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-        chmod +x ./cc-test-reporter
-        ./cc-test-reporter before-build
-        
     - name: Create DB
       env:
         RAILS_ENV: test
@@ -56,13 +50,7 @@ jobs:
     - name: Compile assets
       env:
         RAILS_ENV: test
-      run: bin/rails app:assets:precompile
+      run: cd test/dummy && bin/rails assets:precompile
     
     - name: Run tests
       run: bin/rails test test/*
-      
-    - name: Publish Code Coverage
-      env:
-        GIT_BRANCH: ${GITHUB_REF/refs\/heads\//}
-      run: ./cc-test-reporter after-build -r ${{ secrets.CodeClimate }}
-      if: github.ref == 'refs/heads/main'
