@@ -41,7 +41,7 @@ module Spina
     end
 
     test "after_save callback to bootstrap_pages activates pages with used templates" do
-      @theme.view_templates << {name: "valid_template", title: "Template"}
+      @theme.view_templates << {name: "valid_template", title: "Template", parts: []}
       @theme.custom_pages << {name: "page", title: "Page", deletable: true, active: false, view_template: "valid_template"}
       @account.save
       page = Spina::Page.find_by(name: "page")
