@@ -2,17 +2,17 @@ name: Ruby
 
 on:
   push:
-    branches: [main]
+    branches: [ main ]
   pull_request:
-    branches: [main]
-
+    branches: [ main ]
+    
 jobs:
   test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        ruby-version: ["3.4"]
-
+        ruby-version: ['3.4']
+        
     services:
       postgres:
         image: postgres:latest
@@ -27,30 +27,30 @@ jobs:
           --health-interval 10s
           --health-timeout 5s
           --health-retries 5
-
+        
     steps:
-      - uses: actions/checkout@v4
+    - uses: actions/checkout@v4
+    
+    - name: Install libvips
+      run: sudo apt-get install -y libvips
+    
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: ${{matrix.ruby-version}}
+        bundler-cache: true
 
-      - name: Install libvips
-        run: sudo apt-get update && sudo apt-get install -y libvips
-
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: ${{matrix.ruby-version}}
-          bundler-cache: true
-
-      - name: Create DB
-        env:
-          RAILS_ENV: test
-        run: |
-          cp test/dummy/config/database.yml.ci test/dummy/config/database.yml
-          bin/rails db:setup
-
-      - name: Compile assets
-        env:
-          RAILS_ENV: test
-        run: cd test/dummy && bin/rails assets:precompile
-
-      - name: Run tests
-        run: bin/rails test test/*
+    - name: Create DB
+      env:
+        RAILS_ENV: test
+      run: |
+        cp test/dummy/config/database.yml.ci test/dummy/config/database.yml
+        bin/rails db:setup
+        
+    - name: Compile assets
+      env:
+        RAILS_ENV: test
+      run: cd test/dummy && bin/rails assets:precompile
+    
+    - name: Run tests
+      run: bin/rails test test/*

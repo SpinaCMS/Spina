@@ -1,4 +1,4 @@
-<trix-toolbar class="sticky top-0 pt-4 bg-white trix-toolbar" id="<%= @trix_id %>">
+<trix-toolbar class="sticky z-10 top-0 pt-4 bg-white trix-toolbar" id="<%= @trix_id %>">
   <div class="flex items-center flex-wrap trix-button-row">
     <div class="flex items-center bg-gray-200 rounded overflow-hidden mb-3 mr-3" data-trix-button-group="text-tools">
       <button type="button" class="hover:bg-gray-300 text-gray-700 w-9 h-9 flex items-center justify-center" data-trix-attribute="bold" data-trix-key="b" title="${Trix.config.lang.bold}" tabindex="-1">
@@ -63,15 +63,14 @@
     </div>
   </div>
   <div class="trix-dialogs relative" data-trix-dialogs>
-    <!-- additional classes: relative trix-colour-option-circle w-4 h-4 rounded-full hover:-translate-y-1 hover:scale-125 transition-all duration-300 ease-in-out group group-hover:shadow-md right-auto -->
     <div class="trix-dialog right-0 trix-dialog--link max-w-[600px] px-4 py-4 border border-gray-200" data-trix-dialog="href" data-trix-dialog-attribute="href">
       <div class="trix-dialog__link-fields flex items-baseline">
         <input type="text" name="href" class="form-input block w-full sm:text-sm sm:leading-5" placeholder="<%=t 'spina.wysiwyg.url_placeholder' %>" aria-label="<%=t 'spina.wysiwyg.url' %>" data-trix-input>
         <div class="trix-button-group flex grow-0 shrink-0 ml-2">
-          <button type="button" class="inline-flex cursor-pointer justify-center rounded-l-md border border-transparent px-4 py-2 bg-spina text-base leading-6 font-medium text-white shadow-sm hover:bg-spina-dark focus:outline-hidden focus:border-red-700 focus:shadow-outline-red transition ease-in-out duration-150 sm:text-sm sm:leading-5" data-trix-method="setAttribute" data-action="reveal#hide">
+          <button type="button" class="inline-flex cursor-pointer justify-center rounded-l-md border border-transparent px-4 py-2 bg-spina text-base leading-6 font-medium text-white shadow-sm hover:bg-spina-dark focus:outline-hidden focus:border-red-700 focus:shadow-outline-red transition ease-in-out duration-150 sm:text-sm sm:leading-5" data-trix-method="setAttribute">
             <%=t 'spina.wysiwyg.link' %>
           </button>
-          <button type="button" class="inline-flex cursor-pointer justify-center rounded-r-md border border-gray-300 px-4 py-2 bg-white text-base leading-6 font-medium text-gray-700 shadow-sm hover:text-gray-500 focus:outline-hidden focus:border-blue-300 focus:shadow-outline-blue transition ease-in-out duration-150 sm:text-sm sm:leading-5" data-trix-method="removeAttribute" data-action="reveal#hide">
+          <button type="button" class="inline-flex cursor-pointer justify-center rounded-r-md border border-gray-300 px-4 py-2 bg-white text-base leading-6 font-medium text-gray-700 shadow-sm hover:text-gray-500 focus:outline-hidden focus:border-blue-300 focus:shadow-outline-blue transition ease-in-out duration-150 sm:text-sm sm:leading-5" data-trix-method="removeAttribute">
             <%=t 'spina.wysiwyg.unlink' %>
           </button>
         </div>

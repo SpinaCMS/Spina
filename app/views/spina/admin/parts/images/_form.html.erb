@@ -13,7 +13,7 @@
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
     </svg>
   </button>
-
+  
   <%= link_to spina.admin_media_picker_path(target: dom_id(f.object, f.object.object_id)), class: "block relative mt-1 w-full", data: {turbo_frame: "modal"} do %>
     <div class="<%= ratio_tailwind_class_for_image_part(f.object) %> h-36 bg-transparent border-2 border-dashed border-gray-300 rounded-lg flex items-center flex-col justify-center">
       <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48">
@@ -21,7 +21,7 @@
       </svg>
       <div class="text-gray-400 font-medium text-sm"><%=t 'spina.images.choose_image' %></div>
     </div>
-
+    
     <div class="border absolute inset-0 <%= ratio_tailwind_class_for_image_part(f.object) %> h-36 bg-gray-100 rounded-lg shadow-md overflow-hidden" data-media-picker-target="thumbnail">
       <% if f.object.signed_blob_id.present? && f.object.spina_image.present? %>
         <%= image_tag thumbnail_url(f.object.spina_image), class: 'object-contain h-36 w-full', data: {controller: "image-fade-in"} %>
