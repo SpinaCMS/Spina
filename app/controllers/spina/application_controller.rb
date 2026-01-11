@@ -1,4 +1,4 @@
-class Spina::ApplicationController < Spina.frontend_parent_controller.constantize
+class Spina::ApplicationController < Spina.config.frontend_parent_controller.constantize
   include Spina.config.authentication.constantize
   include Spina::CurrentTheme
   include Spina::CurrentSpinaAccount

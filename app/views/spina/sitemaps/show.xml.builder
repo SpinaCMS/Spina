@@ -7,7 +7,7 @@ xml.urlset "xmlns" => "http://www.google.com/schemas/sitemap/0.9", "xmlns:xhtml"
 
       # Translations
       page.translations.each do |translation|
-        if translation.locale.in? Spina.locales.map(&:to_s)
+        if translation.locale.in? Spina.config.locales.map(&:to_s)
           Mobility.with_locale(translation.locale) do
             xml.xhtml(:link, rel: "alternate", hreflang: translation.locale, href: "#{request.protocol}#{request.host}#{page.materialized_path}")
           end

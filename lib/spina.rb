@@ -14,100 +14,74 @@ require "spina/embeds"
 require "spina/embeds/trix_conversion"
 
 module Spina
-  include ActiveSupport::Configurable
-
   PARTS = []
   PLUGINS = []
   THEMES = []
 
-  config_accessor :api_key,
-    :api_path,
-    :authentication,
-    :backend_title,
-    :backend_path,
-    :importmap,
-    :frontend_parent_controller,
-    :disable_frontend_routes,
-    :disable_decorator_load,
-    :disable_current_account,
-    :locales,
-    :embedded_image_size,
-    :mailer_defaults,
-    :thumbnail_image_size,
-    :resource_pages_limit_value,
-    :party_pooper,
-    :tailwind_content,
-    :tailwind_plugins,
-    :queues,
-    :transliterations
+  class Configuration
+    attr_accessor :api_key,
+      :api_path,
+      :authentication,
+      :backend_title,
+      :backend_path,
+      :importmap,
+      :frontend_parent_controller,
+      :disable_frontend_routes,
+      :disable_decorator_load,
+      :disable_current_account,
+      :locales,
+      :embedded_image_size,
+      :mailer_defaults,
+      :thumbnail_image_size,
+      :resource_pages_limit_value,
+      :party_pooper,
+      :tailwind_plugins,
+      :queues,
+      :transliterations
 
-  # Defaults
-  self.api_key = nil
-  self.api_path = "api"
-  self.authentication = "Spina::Authentication::Sessions"
-  self.backend_title = "Spina CMS"
-  self.backend_path = "admin"
-  self.disable_frontend_routes = false
-  self.disable_decorator_load = false
-  self.disable_current_account = false
-  self.embedded_image_size = [2000, 2000]
-  self.mailer_defaults = ActiveSupport::OrderedOptions.new
-  self.thumbnail_image_size = [400, 400]
-  self.frontend_parent_controller = "ApplicationController"
-  self.locales = [I18n.default_locale]
-  self.resource_pages_limit_value = 25
-  self.party_pooper = false
-  self.transliterations = %i[latin]
+    def initialize
+      @api_key = nil
+      @api_path = "api"
+      @authentication = "Spina::Authentication::Sessions"
+      @backend_title = "Spina CMS"
+      @backend_path = "admin"
+      @disable_frontend_routes = false
+      @disable_decorator_load = false
+      @disable_current_account = false
+      @embedded_image_size = [2000, 2000]
+      @mailer_defaults = ActiveSupport::OrderedOptions.new
+      @thumbnail_image_size = [400, 400]
+      @frontend_parent_controller = "ApplicationController"
+      @locales = [I18n.default_locale]
+      @resource_pages_limit_value = 25
+      @party_pooper = false
+      @transliterations = %i[latin]
+      @queues = ActiveSupport::InheritableOptions.new
+      @importmap = Importmap::Map.new
+      @tailwind_plugins = %w[@tailwindcss/forms @tailwindcss/aspect-ratio @tailwindcss/typography]
+    end
 
-  # Queues for background jobs
-  # - config.queues.page_updates
-  self.queues = ActiveSupport::InheritableOptions.new
+    def tailwind_content
+      @tailwind_content ||= [
+        "#{Spina::Engine.root}/app/views/**/*.*",
+        "#{Spina::Engine.root}/app/components/**/*.*",
+        "#{Spina::Engine.root}/app/helpers/**/*.*",
+        "#{Spina::Engine.root}/app/assets/javascripts/**/*.js",
+        "#{Spina::Engine.root}/app/**/application.tailwind.css"
+      ]
+    end
 
-  # An importmap specifically meant for Spina
-  self.importmap = Importmap::Map.new
+    attr_writer :tailwind_content
+  end
 
-  # Tailwind content
-  # In order for Tailwind to generate all of the CSS Spina needs,
-  # it needs to know about every single file in your project
-  # that contains any Tailwind class names.
-  # Make sure to add your own glob patterns if you're extending
-  # Spina's UI.
-  self.tailwind_content = ["#{Spina::Engine.root}/app/views/**/*.*",
-    "#{Spina::Engine.root}/app/components/**/*.*",
-    "#{Spina::Engine.root}/app/helpers/**/*.*",
-    "#{Spina::Engine.root}/app/assets/javascripts/**/*.js",
-    "#{Spina::Engine.root}/app/**/application.tailwind.css"]
-
-  self.tailwind_plugins = %w[@tailwindcss/forms @tailwindcss/aspect-ratio @tailwindcss/typography]
-
-  # Images that are embedded in the Trix editor are resized to fit
-  # You can optimize this for your website and go for a smaller (or larger) size
-  # Default: 2000x2000px
   class << self
-    alias_method :config_original, :config
+    def configuration
+      @configuration ||= Configuration.new
+    end
+    alias_method :config, :configuration
 
-    def config
-      config_obj = config_original
-
-      def config_obj.tailwind_purge_content
-        deprecator.warn("config.tailwind_purge_content has been renamed to config.tailwind_content")
-        tailwind_content
-      end
-
-      def config_obj.tailwind_purge_content=(paths)
-        deprecator.warn("config.tailwind_purge_content has been renamed to config.tailwind_content")
-        self.tailwind_content = paths
-      end
-
-      def config_obj.embedded_image_size=(image_size)
-        if image_size.is_a? String
-          deprecator.warn("Spina embedded_image_size should be set to an array of arguments to be passed to the :resize_to_limit ImageProcessing macro. https://github.com/janko/image_processing/blob/master/doc/minimagick.md#resize_to_limit")
-        end
-
-        self[:embedded_image_size] = image_size
-      end
-
-      config_obj
+    def configure
+      yield(configuration)
     end
 
     def deprecator
