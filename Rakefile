@@ -17,8 +17,6 @@ end
 APP_RAKEFILE = File.expand_path("test/dummy/Rakefile", __dir__)
 load "rails/tasks/engine.rake"
 
-load "rails/tasks/statistics.rake"
-
 load "lib/tasks/install.rake"
 load "lib/tasks/tailwind.rake"
 

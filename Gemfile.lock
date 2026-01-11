@@ -19,7 +19,7 @@ PATH
       stimulus-rails (>= 0.7.0)
       tailwindcss-ruby (>= 4.0)
       turbo-rails (>= 0.9, < 3.0)
-      view_component (>= 2.32, < 4.0)
+      view_component (>= 2.32, < 5.0)
 
 GEM
   remote: https://rubygems.org/
@@ -360,10 +360,10 @@ GEM
       concurrent-ruby (~> 1.0)
     uri (1.1.1)
     useragent (0.16.11)
-    view_component (3.24.0)
-      activesupport (>= 5.2.0, < 8.2)
+    view_component (4.2.0)
+      actionview (>= 7.1.0)
+      activesupport (>= 7.1.0)
       concurrent-ruby (~> 1)
-      method_source (~> 1.0)
     websocket (1.2.11)
     websocket-driver (0.8.0)
       base64
