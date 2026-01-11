@@ -33,8 +33,11 @@ module Spina
       visit spina.admin_pages_path
       click_on "Homepage"
       find_link(nil, href: /\/admin\/embeds\/new/).click
+      # Wait for embed modal to fully load before clicking Youtube
+      assert_selector "[data-controller='embed']", wait: 5
       click_link "Youtube"
-      assert_selector "label", text: "Youtube URL", wait: 5
+      # Wait for the input field to be present and ready
+      assert_selector "input[name='embeddable[url]']", wait: 5
       fill_in "embeddable[url]", with: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
       click_button "Embed component"
       assert_selector "trix-editor spina-embed", text: "Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster)", wait: 5
