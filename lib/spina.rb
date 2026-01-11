@@ -84,6 +84,8 @@ module Spina
       yield(configuration)
     end
 
+    delegate :locales, to: :config
+
     def deprecator
       ActiveSupport::Deprecation.new("", "Spina")
     end
