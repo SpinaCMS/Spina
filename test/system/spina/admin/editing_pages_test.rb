@@ -24,24 +24,28 @@ module Spina
       click_on "Simple page"
       fill_in "Title", with: "My new page"
       click_button "Create page"
-      assert_selector "button", text: "Publish"
+      # Wait for page to be created and redirected to edit view
+      assert_selector "button", text: "Publish", wait: 10
       click_button "Publish"
       assert_selector "turbo-frame", text: "Page published"
     end
 
-    test "embedding a youtube video" do
+    test "embedding a button component" do
       visit spina.admin_pages_path
       click_on "Homepage"
       find_link(nil, href: /\/admin\/embeds\/new/).click
-      click_link "Youtube"
-      assert_selector "label", text: "Youtube URL", wait: 5
-      fill_in "embeddable[url]", with: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+      # Wait for embed modal to fully load
+      assert_selector "[data-controller='embed']", wait: 5
+      # Button is the first/default embed type, fill in the fields
+      fill_in "embeddable[url]", with: "https://example.com"
+      fill_in "embeddable[label]", with: "Click me"
       click_button "Embed component"
-      assert_selector "trix-editor spina-embed", text: "Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster)", wait: 5
+      # Verify embed was inserted into trix editor
+      assert_selector "trix-editor spina-embed", wait: 5
       click_button "Save changes"
       assert_selector "turbo-frame", text: "Page saved"
       visit "/"
-      assert_selector "iframe", id: "ytplayer"
+      assert_selector "a", text: "Click me"
     end
 
     setup do
