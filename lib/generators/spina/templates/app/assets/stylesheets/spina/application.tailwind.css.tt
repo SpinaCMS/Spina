@@ -145,7 +145,7 @@
   .modal-window {
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
-    @apply w-full overflow-hidden relative;
+    @apply w-full max-w-lg overflow-hidden relative;
     @apply bg-white/75 shadow-lg rounded-xl;
     @apply border border-gray-400;
   }
