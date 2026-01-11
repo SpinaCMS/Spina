@@ -24,3 +24,6 @@ test/dummy/storage/*
 
 .nova
 .ruby-version
+
+# Ignore auto-generated Spina Tailwind CSS configuration
+/app/assets/stylesheets/spina/application.tailwind.css
