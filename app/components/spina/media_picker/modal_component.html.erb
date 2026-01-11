@@ -25,7 +25,7 @@
           </div>
         </div>
       
-        <div class="md:w-72 p-4 border-t rounded-b-lg md:rounded-none md:border-t-0 border-gray-200 flex flex-col justify-between bg-gray-100 md:bg-opacity-50 md:rounded-l-lg">
+        <div class="md:w-72 p-4 border-t rounded-b-lg md:rounded-none md:border-t-0 border-gray-200 flex flex-col justify-between bg-gray-100 md:bg-gray-100/50 md:rounded-l-lg">
           <div class="mb-4">
             <%= form_with method: :get, url: helpers.spina.admin_media_picker_path, data: {controller: "form", turbo_frame: "images"} do |f| %>
               <%= f.hidden_field :media_folder_id, value: @media_folder&.id %>

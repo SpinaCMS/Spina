@@ -1,7 +1,7 @@
 <%= turbo_frame_tag dom_id(image) do %>
   <div class="flex items-center h-12 border-b border-gray-200 px-8 hover:bg-white group">
     <div class="w-8 mr-4 h-12 flex justify-center">
-      <%= link_to spina.admin_image_path(image), class: "flex items-center cursor-zoom-in", data: {turbo_frame: "modal"} do %>
+      <%= link_to spina.admin_image_path(image), class: "flex flex-1 items-center cursor-zoom-in", data: {turbo_frame: "modal"} do %>
         <%= image_tag thumbnail_url(image), class: "object-contain" %>
       <% end %>
     </div>

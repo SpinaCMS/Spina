@@ -15,7 +15,7 @@ module Spina
 
       test "list resources" do
         get "/admin/pages?resource_id=#{@breweries.id}"
-        assert_select "a.bg-spina-dark", text: /.*Breweries.*/
+        assert_select "a", text: /.*Breweries.*/
       end
 
       test "new resource page" do

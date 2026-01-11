@@ -14,14 +14,14 @@ export default class extends Controller {
   toggleNavigation(navigation) {
     let ul = navigation.querySelector("ul")
     if (ul.classList.contains("translate-x-full")) { 
-      this.primaryTarget.classList.add("md:bg-opacity-50")
+      this.primaryTarget.classList.add("md:bg-black/50")
       this.labelTargets.forEach(function(label) {
         label.classList.add("-translate-x-2")
         this.switchClass(label, 'opacity-100', 'opacity-0')
       }.bind(this))
       this.switchClass(navigation.querySelector("ul"), "translate-x-full", "md:translate-x-20")
     } else {
-      this.primaryTarget.classList.remove("md:bg-opacity-50")
+      this.primaryTarget.classList.remove("md:bg-black/50")
       this.labelTargets.forEach(function(label) {
         label.classList.remove("-translate-x-2")
         this.switchClass(label, 'opacity-0', 'opacity-100')
@@ -54,7 +54,7 @@ export default class extends Controller {
     this.navigationTargets.forEach(function(navigation) {
       this.switchClass(navigation.querySelector("ul"), "md:translate-x-20", "translate-x-full")
     }.bind(this))
-    this.primaryTarget.classList.remove("md:bg-opacity-50")
+    this.primaryTarget.classList.remove("md:bg-black/50")
     this.labelTargets.forEach(function(label) {
       label.classList.remove("-translate-x-2")
       this.switchClass(label, 'opacity-0', 'opacity-100')

@@ -23,7 +23,7 @@ module Spina
       private
 
       def spina_locales
-        Spina.locales.map(&:to_sym)
+        Spina.config.locales.map(&:to_sym)
       end
     end
   end

@@ -4,15 +4,15 @@
     
     <%= turbo_frame_tag :embeddable_form do %>
       <div class="flex h-full">
-        <div class="p-4 w-64 bg-gray-100 md:bg-opacity-50">
+        <div class="p-4 w-64 bg-gray-100 md:bg-gray-100/50">
           <div class="text-xs font-medium text-gray-600 mb-2">
             <%=t "spina.embeds.embed_a_component" %>
           </div>
           <% embeddables.each do |embeddable| %>
             <% if embeddable.name == @embeddable.class.name %>
-              <% classes = "font-medium w-full text-sm px-3 py-2 rounded-lg flex items-center text-gray-900 bg-spina-dark bg-opacity-20" %>
+              <% classes = "font-medium w-full text-sm px-3 py-2 rounded-lg flex items-center text-gray-900 bg-spina-dark/20" %>
             <% else %>
-              <% classes = "font-medium w-full text-sm px-3 py-2 rounded-lg flex items-center text-gray-600 hover:bg-gray-200 bg-opacity-100 hover:bg-gray-200" %>
+              <% classes = "font-medium w-full text-sm px-3 py-2 rounded-lg flex items-center text-gray-600 hover:bg-gray-200 hover:bg-gray-200" %>
             <% end %>
           
             <%= link_to spina.new_admin_embed_path(embed_type: embeddable.name), class: classes, data: {turbo_frame: :embeddable_form} do %>

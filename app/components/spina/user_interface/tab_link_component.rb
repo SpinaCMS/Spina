@@ -10,7 +10,7 @@ module Spina
 
       def css_classes
         if @active
-          "cursor-default text-gray-900 bg-spina-dark bg-opacity-10"
+          "cursor-default text-gray-900 bg-spina-dark/10"
         else
           ""
         end

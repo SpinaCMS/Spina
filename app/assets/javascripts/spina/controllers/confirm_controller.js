@@ -14,7 +14,7 @@ export default class extends Controller {
 
   get modalHTML() {
     return `<div class="modal" data-controller="modal shortcuts" data-action="keyup@document->shortcuts#confirmClick keyup@document->modal#escClose">
-      <button type="button" class="cursor-default w-full h-full fixed inset-0 bg-gray-700 bg-opacity-25 animate__animated animate__fadeIn animate__faster" tabindex="-1" data-action="modal#close"></button>
+      <button type="button" class="cursor-default w-full h-full fixed inset-0 bg-gray-700/25 animate__animated animate__fadeIn animate__faster" tabindex="-1" data-action="modal#close"></button>
       <div class="modal-window animate__animated animate__zoomIn animate__fadeIn animate__faster p-5 max-w-xs">
         <div class="text-center">
           ${this.message}

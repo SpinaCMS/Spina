@@ -3,7 +3,7 @@ module Spina
     source_root File.expand_path("../templates", __FILE__)
 
     def create_tailwind_config_file
-      filename = "app/assets/config/spina/tailwind.config.js"
+      filename = "app/assets/stylesheets/spina/application.tailwind.css"
       template filename
       insert_into_file ".gitignore", <<~TEXT
 
