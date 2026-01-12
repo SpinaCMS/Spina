@@ -1,6 +1,6 @@
 # Existing project
 
-If you already have an existing Rails project, just add `gem "spina"` to your Gemfile and run `bundle install`. (Make sure you're using PostgreSQL as your database)
+If you already have an existing Rails project, just add `gem "spina"` to your Gemfile and run `bundle install`. Spina supports PostgreSQL, MySQL (5.7.8+), and SQLite (3.38+) databases.
 
 Run the installer to get started.
 

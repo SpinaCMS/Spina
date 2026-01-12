@@ -5,14 +5,10 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
-    
+
 jobs:
-  test:
+  test-postgresql:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        ruby-version: ['3.4']
-        
     services:
       postgres:
         image: postgres:latest
@@ -27,30 +23,103 @@ jobs:
           --health-interval 10s
           --health-timeout 5s
           --health-retries 5
-        
+
     steps:
     - uses: actions/checkout@v4
-    
+
     - name: Install libvips
       run: sudo apt-get install -y libvips
-    
+
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: ${{matrix.ruby-version}}
+        ruby-version: '3.4'
         bundler-cache: true
 
     - name: Create DB
       env:
         RAILS_ENV: test
       run: |
-        cp test/dummy/config/database.yml.ci test/dummy/config/database.yml
+        cp test/dummy/config/database.yml.postgresql test/dummy/config/database.yml
         bin/rails db:setup
-        
+
     - name: Compile assets
       env:
         RAILS_ENV: test
       run: cd test/dummy && bin/rails assets:precompile
-    
+
+    - name: Run tests
+      run: bin/rails test test/*
+
+  test-mysql:
+    runs-on: ubuntu-latest
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: mysql
+          MYSQL_DATABASE: spina_test
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Install libvips
+      run: sudo apt-get install -y libvips
+
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: '3.4'
+        bundler-cache: true
+
+    - name: Create DB
+      env:
+        RAILS_ENV: test
+      run: |
+        cp test/dummy/config/database.yml.mysql test/dummy/config/database.yml
+        bin/rails db:setup
+
+    - name: Compile assets
+      env:
+        RAILS_ENV: test
+      run: cd test/dummy && bin/rails assets:precompile
+
+    - name: Run tests
+      run: bin/rails test test/*
+
+  test-sqlite:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Install libvips
+      run: sudo apt-get install -y libvips
+
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: '3.4'
+        bundler-cache: true
+
+    - name: Create DB
+      env:
+        RAILS_ENV: test
+      run: |
+        cp test/dummy/config/database.yml.sqlite test/dummy/config/database.yml
+        bin/rails db:setup
+
+    - name: Compile assets
+      env:
+        RAILS_ENV: test
+      run: cd test/dummy && bin/rails assets:precompile
+
     - name: Run tests
       run: bin/rails test test/*
