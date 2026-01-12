@@ -14,6 +14,11 @@ group :test do
   gem "factory_bot"
   gem "rails-controller-testing"
 
+  # Database adapters
+  gem "pg"
+  gem "mysql2"
+  gem "sqlite3"
+
   # CodeClimate
   gem "minitest-reporters"
   gem "simplecov"

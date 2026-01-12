@@ -15,7 +15,7 @@ module Spina
         end
         
         @pages ||= Page.all
-        @pages = @pages.joins(:translations).where("spina_page_translations.title ILIKE :query OR materialized_path ILIKE :query", query: "%#{params[:search]}%").order(created_at: :desc).distinct.page(params[:page]).per(20)
+        @pages = @pages.joins(:translations).where("LOWER(spina_page_translations.title) LIKE LOWER(:query) OR LOWER(materialized_path) LIKE LOWER(:query)", query: "%#{params[:search]}%").order(created_at: :desc).distinct.page(params[:page]).per(20)
         render :index
       end
       
