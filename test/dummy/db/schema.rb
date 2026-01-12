@@ -205,7 +205,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_21_162022) do
     t.string "order_by"
     t.datetime "created_at", precision: nil, null: false
     t.datetime "updated_at", precision: nil, null: false
-    t.json "slug", default: {}
+    t.json "slug"
     t.index ["parent_page_id"], name: "index_spina_resources_on_parent_page_id"
   end
 
@@ -218,7 +218,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_21_162022) do
 
   create_table "spina_settings", force: :cascade do |t|
     t.string "plugin"
-    t.json "preferences", default: {}
+    t.json "preferences"
     t.datetime "created_at", precision: nil, null: false
     t.datetime "updated_at", precision: nil, null: false
     t.index ["plugin"], name: "index_spina_settings_on_plugin"

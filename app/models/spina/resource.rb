@@ -2,6 +2,8 @@ module Spina
   class Resource < ApplicationRecord
     extend Mobility
 
+    attribute :slug, :json, default: -> { {} }
+
     has_many :pages, dependent: :restrict_with_exception
 
     after_commit :update_resource_pages, on: [:update]

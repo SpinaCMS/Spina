@@ -2,7 +2,7 @@ class CreateSpinaSettings < ActiveRecord::Migration[5.0]
   def change
     create_table :spina_settings do |t|
       t.string :plugin
-      t.json :preferences, default: {}
+      t.json :preferences
       t.timestamps
     end
 

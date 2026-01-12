@@ -1,9 +1,9 @@
 class ChangeDefaultSpinaResourcesSlug < ActiveRecord::Migration[7.0]
   def up
-    change_column :spina_resources, :slug, :json, default: {}
+    # Default handled in model layer for MySQL compatibility
   end
 
   def down
-    change_column :spina_resources, :slug, :json, default: nil
+    # Default handled in model layer for MySQL compatibility
   end
 end
