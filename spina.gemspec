@@ -50,4 +50,5 @@ Gem::Specification.new do |gem|
   gem.add_dependency "jsonapi-serializer"
   gem.add_dependency "browser"
   gem.add_dependency "tailwindcss-ruby", ">= 4.0"
+  gem.add_dependency "kramdown"
 end

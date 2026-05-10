@@ -11,6 +11,7 @@ require "attr_json"
 require "view_component"
 require "jsonapi/serializer"
 require "browser"
+require "kramdown"
 
 module Spina
   class Engine < ::Rails::Engine
@@ -38,7 +39,8 @@ module Spina
         Spina::Parts::Option,
         Spina::Parts::Attachment,
         Spina::Parts::PageLink,
-        Spina::Parts::ResourceLink
+        Spina::Parts::ResourceLink,
+        Spina::Parts::Markdown
       )
     end
   end

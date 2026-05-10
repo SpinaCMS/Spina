@@ -17,6 +17,10 @@ module Spina
       RichTextPresenter.new(view_context, html)
     end
 
+    def markdown(name)
+      Kramdown::Document.new(find_part(name)&.content.to_s).to_html.html_safe
+    end
+
     def image_tag(image, variant_options = {}, options = {})
       image = find_part(image) unless image.is_a? Spina::Parts::Image
       image_tag_options = {alt: image&.alt}
