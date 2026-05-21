@@ -35,7 +35,7 @@
 }
 
 /* Components */
-@layer utilities {
+@layer components {
   /* Buttons */
   .btn {
     @apply flex items-center justify-center rounded-md border;
