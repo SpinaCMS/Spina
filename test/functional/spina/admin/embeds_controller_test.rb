@@ -7,7 +7,6 @@ module Spina
         @routes = Spina::Engine.routes
         @account = FactoryBot.create(:account)
         @user = FactoryBot.create(:user)
-        sign_in @user
       end
 
       test "should work with normal nested embeddable params" do
