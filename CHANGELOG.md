@@ -1,5 +1,20 @@
 # Spina CMS Changelog
 
+## 2.21
+
+### 2.21.0 (May 22nd, 2026)
+* Added support for MySQL and SQLite databases
+* Added menu_id config option to MenuPresenter
+* Upgraded to Tailwind v4
+* Updated to Rails 8.1.2
+* Updated ViewComponent to v4
+* Refactored configuration
+* Fixed multiple Trix dialogs not opening properly
+* Fixed z-index of PageLink and ResourceLink dropdowns
+* Fixed SVG display in flex containers
+* Fixed named deprecator warning
+* Updated gem dependencies
+
 ## 2.20
 
 ### 2.20.0 (May 5th, 2025)

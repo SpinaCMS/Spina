@@ -6,6 +6,9 @@ gemspec
 # Assets for the dummy app (can also be sprockets, but propshaft is the new default)
 gem "propshaft"
 
+# image_processing 2.0 no longer ships a backend; host apps pick vips or mini_magick
+gem "ruby-vips"
+
 group :development do
   gem "letter_opener"
 end
