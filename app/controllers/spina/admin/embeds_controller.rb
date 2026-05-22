@@ -27,7 +27,7 @@ module Spina
       end
 
       def embed_params
-        params.require(:embeddable).permit!
+        params.permit(embeddable: {}).fetch(:embeddable, {})
       end
     end
   end
