@@ -12,7 +12,7 @@
       </div>
     </button>
     <div class="relative mt-1">
-      <div data-reveal data-transition hidden class="absolute shadow-lg border border-gray-200 origin-top-right rounded-md z-10 top-0">
+      <div data-reveal data-transition hidden class="absolute shadow-lg border border-gray-200 origin-top-right rounded-md z-50 top-0">
         <div class="rounded-md bg-white shadow-xs">
           <%= form_with url: spina.search_admin_resource_select_options_path, data: {turbo_frame: "resource_select_options_#{f.object.object_id}", controller: "form", debounce_time: 100} do |ff| %>
             <%= ff.hidden_field :object_id, value: f.object.object_id %>
