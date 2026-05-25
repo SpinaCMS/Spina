@@ -4,6 +4,13 @@ require "spina/admin_sectionable"
 require "spina/railtie"
 require "spina/theme_reloader"
 require "spina/plugin"
+require "spina/part_type"
+require "spina/parts_definition"
+require "spina/layout_parts"
+require "spina/page_template"
+require "spina/page_template_loader"
+require "spina/page_templates_compiler"
+require "spina/theme_migrator"
 require "spina/theme"
 require "spina/attr_json_spina_parts_model"
 require "spina/attr_json_monkeypatch"
@@ -87,7 +94,7 @@ module Spina
     delegate :locales, to: :config
 
     def deprecator
-      ActiveSupport::Deprecation.new("", "Spina")
+      @deprecator ||= ActiveSupport::Deprecation.new("", "Spina")
     end
 
     def mounted_at

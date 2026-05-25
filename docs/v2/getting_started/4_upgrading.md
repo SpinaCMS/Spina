@@ -1,5 +1,29 @@
 # Upgrading
 
+# Migrating theme configuration to page template files
+
+Defining `theme.parts` and `theme.view_templates` directly in your theme initializer is deprecated and will be removed in a future major version of Spina.
+
+The new style moves part definitions into `app/templates/spina/your_theme/`:
+
+- `layout.rb` for global layout parts
+- one file per page type (e.g. `homepage.rb`, `show.rb`)
+
+To migrate automatically:
+
+```bash
+bin/rails spina:theme:migrate_templates[default]
+```
+
+This will:
+
+1. Generate page template files under `app/templates/spina/default/`
+2. Generate `layout.rb` if your theme has layout parts
+3. Replace your theme initializer with a slim version
+4. Back up the original to `config/initializers/themes/default.rb.bak`
+
+If you have both the old configuration and template files present, Spina will raise an error at boot. Remove `theme.parts` and `theme.view_templates` from your theme initializer, or run the migrator.
+
 # Upgrading from v2.0 to v2.1
 
 v2.1 is a big upgrade for Spina's interface. All JavaScript, CSS and views have been refactored. Gone are jQuery, Turbolinks, custom stylesheets and Haml. 

@@ -18,6 +18,10 @@ module Spina
 
     config.autoload_paths += %W[#{config.root}/lib]
 
+    initializer "spina.ignore_page_template_files" do
+      Rails.autoloaders.main.ignore(Rails.root.join("app/templates"))
+    end
+
     config.to_prepare do
       unless Spina.config.disable_decorator_load
         Dir.glob(Rails.root + "app/decorators/**/*_decorator.rb").each do |decorator|

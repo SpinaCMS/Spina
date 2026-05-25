@@ -6,15 +6,13 @@ This part returns HTML. You can use the following helper to render it as HTML:
 
 ## Theme configuration
 
-```
-config.parts = [
-  # ...
-  {
-    name: "main_content",
-    title: "Main content",
-    part_type: "Spina::Parts::Text"
-  }
-]
+Define text parts in your page template file:
+
+```ruby
+# app/templates/spina/default/show.rb
+PageTemplate.define :show do
+  part :main_content, :text, title: "Main content"
+end
 ```
 
 ## View template example

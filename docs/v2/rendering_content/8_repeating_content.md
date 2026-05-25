@@ -4,18 +4,16 @@ Nesting content is a very powerful feature of Spina. In your theme config you ca
 
 ## Theme configuration
 
-```
-config.parts = [
-  # ...
-  { name: "title", title: "Title", part_type: "Spina::Parts::Line" }, 
-  { name: "image", title: "Image", part_type: "Spina::Parts::Image" }, 
-  {
-    name: "portfolio",
-    title: "Portfolio",
-    parts: %w(title image),
-    part_type: "Spina::Parts::Repeater"
-  }
-]
+Define repeating content in your page template file:
+
+```ruby
+# app/templates/spina/default/show.rb
+PageTemplate.define :show do
+  repeater :portfolio do
+    part :title, :line
+    part :image, :image
+  end
+end
 ```
 
 ## View template example

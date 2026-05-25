@@ -3,6 +3,7 @@ module Spina::Admin
     before_action :set_account
     before_action :set_locale
     before_action :set_breadcrumb
+    before_action :set_parts_context
     before_action :get_layout_parts
 
     admin_section :content
@@ -41,6 +42,10 @@ module Spina::Admin
 
     def set_locale
       @locale = params[:locale] || I18n.default_locale
+    end
+
+    def set_parts_context
+      @parts_context = :layout
     end
   end
 end
