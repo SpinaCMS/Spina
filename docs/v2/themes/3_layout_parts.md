@@ -1,17 +1,23 @@
 # Layout parts
 
-Just like adding parts to view_templates you can also add parts you want to use globally throughout your website. These are called `layout_parts` and you can set them up like this:
+Layout parts are editable content that belongs to your website as a whole, rather than to a single page. This content is stored on the `Spina::Account` model and can be rendered with `current_spina_account.content`.
+
+Define layout parts in `app/templates/spina/your_theme/layout.rb`:
 
 ```ruby
-::Spina::Theme.register do |theme|
-  theme.parts = [{
-    name:       'footer',
-    title:      'Footer',
-    part_type:  'Spina::Parts::Text'
-  }]
-  # ...
-  theme.layout_parts = %w(footer)
+# app/templates/spina/default/layout.rb
+LayoutParts.define do
+  part :footer, :text, title: "Footer"
+  part :tag_line, :line
 end
 ```
 
-This content is stored on the `Spina::Account` model. You can use `current_spina_account.content` to render layout parts in your frontend.
+Spina automatically sets `theme.layout_parts` from the parts defined in this file.
+
+## Rendering layout parts
+
+```erb
+<%= current_spina_account.content.html :footer %>
+```
+
+If you need a part to appear on the layout but not on any page type, define it only in `layout.rb`.

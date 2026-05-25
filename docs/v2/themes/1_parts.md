@@ -12,89 +12,85 @@ A page in Spina has many parts. By default these parts can be one of the followi
 
 These are the building blocks of your view templates. You can have an unlimited number of parts in a page. We prefer to keep the number of parts to a minimum so that managing your pages isn't too complex.
 
-Spina uses an initializer to create the basic building blocks of your page. There are three steps to add a new building block or part to your app:
+Parts are defined in page template files under `app/templates/spina/your_theme/`. There are three steps to add a new part to your app:
 
-- Set up a new part in the initializer
-- Set the new initializer into a view template
+- Define the part in a page template file
 - Add it to the view
 
-**Create a new page part**
+## Theme configuration
 
-When you install Spina, you will see the following in config/initializers/themes/default.rb
+Your theme initializer only contains global theme settings:
 
 ```ruby
+# config/initializers/themes/default.rb
 Spina::Theme.register do |theme|
-  theme.name = 'default'
-  theme.title = 'Default theme'
-  
-  theme.parts = [
-    {name: 'text',  title: "Body", hint: "Your main content", part_type: "Spina::Parts::Text"}
-  ]
-  
-  theme.view_templates = [
-    {name: 'homepage', title: 'Homepage', parts: %w(text)}, 
-    {name: 'show', title: 'Page', parts: %w(text)}
-  ]
-  
+  theme.name = "default"
+  theme.title = "Default theme"
+
   theme.custom_pages = [
-    {name: 'homepage', title: "Homepage", deletable: false, view_template: "homepage"},
+    {name: "homepage", title: "Homepage", deletable: false, view_template: "homepage"}
   ]
 
   theme.navigations = [
-    {name: 'main', label: 'Main navigation'}
+    {name: "main", label: "Main navigation"}
   ]
-  
-  theme.layout_parts = []
-  theme.resources = []
-  theme.plugins = []
+
   theme.embeds = []
 end
-
 ```
 
-Right now, the default theme is applying a title to the page, with a simple text div below it. Go to /admin on your app and have a look. Edit the textbox and go to preview the page.
+Page templates are loaded automatically from `app/templates/spina/default/`.
 
-Let's say I wanted to add another text box below this called portfolio. First I would add another hash to the parts array like so:
+## Create a new page part
+
+When you install Spina, you will see page template files like this:
 
 ```ruby
-theme.parts = [{
-  name:         'content',
-  title:        'Content',
-  part_type:    'Spina::Parts::Text'
-}, {
-  name:         'portfolio', # added this part
-  title:        'Portfolio',
-  part_type:    'Spina::Parts::Text'
-}]
+# app/templates/spina/default/show.rb
+PageTemplate.define :show do
+  title "Page"
+  part :text, :text, title: "Body", hint: "Your main content"
+end
 ```
 
-**Add it to the view template**
-
-Now, we need to update the view_templates config. These view templates provide customization for the different views you might want. For example, you may have a 'blog' view or an 'about' view which add different parts. For this example we will add the portfolio part into the 'Default' view template.
+Built-in part types can be referenced as symbols (`:line`, `:text`, `:image`, and so on). Custom or extension parts use the full class name as a string:
 
 ```ruby
-theme.view_templates = [{
-  name:  'homepage',
-  title: 'Homepage',
-  parts: %w(content)
-}, {
-  name:         'show',
-  title:        'Default',
-  description:  'A simple page',
-  usage:        'Use for your content',
-  parts:        %w(content portfolio) # added 'portfolio'
-}]
+part :case_study, "MyApp::Parts::CaseStudy"
 ```
 
-**Add it to the view**
+Let's say you wanted to add another text box below the body called portfolio. Update the page template:
 
-Finally, let's go to views/default/pages/show.html.erb and add the following:
+```ruby
+# app/templates/spina/default/show.rb
+PageTemplate.define :show do
+  title "Page"
+  part :text, :text, title: "Body", hint: "Your main content"
+  part :portfolio, :text, title: "Portfolio"
+end
+```
+
+## Add it to the view
+
+Finally, go to `app/views/default/pages/show.html.erb` and add:
 
 ```erb
 <h1><%= current_page.title %></h1>
 
 <%= content.html :text %>
-<%= content.html :portfolio %> # added this line
+<%= content.html :portfolio %>
 ```
 
-We have successfully added another textbox! Refresh the page form in the admin section. You should see another text box below the content box.
+Refresh the page form in the admin section. You should see another text box below the content box.
+
+## Migrating from the old configuration style
+
+Previously, all parts were defined in the theme initializer using `theme.parts` and `theme.view_templates`. That style still works, but is deprecated and will be removed in a future major version of Spina.
+
+To migrate an existing theme automatically:
+
+```bash
+bin/rails spina:theme:migrate_templates[default]
+```
+
+This generates page template files, creates `layout.rb` if needed, and replaces your theme initializer with a slim version. Your original file is backed up to `config/initializers/themes/default.rb.bak`.
