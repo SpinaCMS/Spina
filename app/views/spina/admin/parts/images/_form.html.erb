@@ -1,4 +1,4 @@
-<div class="mt-6 relative" data-controller="media-picker unique-id" data-unique-id="<%= dom_id(f.object, f.object.object_id) %>" data-action="media-picker:done->media-picker#handleDone">
+<div class="mt-6 relative" data-controller="media-picker unique-id image-part-paste" data-unique-id="<%= dom_id(f.object, f.object.object_id) %>" data-action="media-picker:done->media-picker#handleDone" data-image-part-paste-upload-url="<%= spina.admin_images_path %>">
   <label class="block text-sm leading-5 font-medium text-gray-700">
     <%= f.object.title %>
   </label>
@@ -8,11 +8,18 @@
   <%= f.hidden_field :filename, data: {media_picker_target: "filename"} %>
   <%= f.hidden_field :image_id, data: {media_picker_target: "imageId"} %>
 
-  <button class="absolute mt-3 ml-2 z-10 cursor-pointer flex items-center h-9 px-2 rounded-md bg-gray-700/50 border-gray-300 active:shadow-inner text-gray-200 hover:text-white text-sm font-medium leading-none leading-none shadow-xs" data-action="media-picker#removeImage" data-media-picker-target="clearButton" type="button">
-    <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-    </svg>
-  </button>
+  <div class="absolute mt-3 ml-2 z-10 flex items-center">
+    <button class="cursor-pointer flex items-center h-9 px-2 mr-1 rounded-md bg-gray-700/50 border-gray-300 active:shadow-inner text-gray-200 hover:text-white text-sm font-medium leading-none shadow-xs" data-action="media-picker#removeImage" data-media-picker-target="clearButton" type="button">
+      <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+      </svg>
+    </button>
+    <button class="cursor-pointer flex items-center h-9 px-2 rounded-md bg-gray-700/50 border-gray-300 active:shadow-inner text-gray-200 hover:text-white text-sm font-medium leading-none shadow-xs" data-action="image-part-paste#paste" type="button" title="Paste image from clipboard">
+      <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+      </svg>
+    </button>
+  </div>
   
   <%= link_to spina.admin_media_picker_path(target: dom_id(f.object, f.object.object_id)), class: "block relative mt-1 w-full", data: {turbo_frame: "modal"} do %>
     <div class="<%= ratio_tailwind_class_for_image_part(f.object) %> h-36 bg-transparent border-2 border-dashed border-gray-300 rounded-lg flex items-center flex-col justify-center">
