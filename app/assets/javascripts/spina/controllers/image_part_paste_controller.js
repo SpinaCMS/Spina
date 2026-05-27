@@ -7,12 +7,17 @@ export default class extends Controller {
   }
 
   async paste() {
-    console.log("Detected paste image action...")
+    if (!navigator.clipboard?.read) {
+      alert("Clipboard paste is not available. This feature requires HTTPS and browser clipboard permission.")
+      return
+    }
+
     let clipboardItems
     try {
       clipboardItems = await navigator.clipboard.read()
     } catch (error) {
       console.error("Clipboard access denied:", error)
+      alert("Could not read clipboard. Please allow clipboard access in your browser when prompted.")
       return
     }
 
