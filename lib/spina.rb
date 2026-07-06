@@ -26,7 +26,6 @@ module Spina
       :backend_path,
       :importmap,
       :frontend_parent_controller,
-      :freeze_url_titles,
       :disable_frontend_routes,
       :disable_decorator_load,
       :disable_current_account,
@@ -53,7 +52,6 @@ module Spina
       @mailer_defaults = ActiveSupport::OrderedOptions.new
       @thumbnail_image_size = [400, 400]
       @frontend_parent_controller = "ApplicationController"
-      @freeze_url_titles = false
       @locales = [I18n.default_locale]
       @resource_pages_limit_value = 25
       @party_pooper = false

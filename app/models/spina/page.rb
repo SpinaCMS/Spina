@@ -85,7 +85,7 @@ module Spina
     end
 
     def set_materialized_path
-      freeze_url_title if Spina.config.freeze_url_titles
+      freeze_url_title
       self.old_path = materialized_path
       self.materialized_path = localized_materialized_path
 
