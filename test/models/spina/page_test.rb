@@ -40,6 +40,45 @@ module Spina
       assert_equal "/custom-slug", @demo.materialized_path
     end
 
+    test "url follows the title by default" do
+      page = FactoryBot.create(:page, title: "First title")
+      page.update(title: "Second title")
+
+      assert_equal "/second-title", page.materialized_path
+    end
+
+    test "freeze_url_titles keeps the url of a live page when the title changes" do
+      Spina.config.freeze_url_titles = true
+      page = FactoryBot.create(:page, title: "First title")
+      page.update(title: "Second title")
+
+      assert_equal "/first-title", page.materialized_path
+      assert_empty RewriteRule.all
+    ensure
+      Spina.config.freeze_url_titles = false
+    end
+
+    test "freeze_url_titles still allows changing the url through url_title" do
+      Spina.config.freeze_url_titles = true
+      page = FactoryBot.create(:page, title: "First title")
+      page.update(url_title: "different-url")
+
+      assert_equal "/different-url", page.materialized_path
+      assert_equal [["/first-title", "/different-url"]], RewriteRule.pluck(:old_path, :new_path)
+    ensure
+      Spina.config.freeze_url_titles = false
+    end
+
+    test "freeze_url_titles keeps drafts following the title" do
+      Spina.config.freeze_url_titles = true
+      page = FactoryBot.create(:page, title: "First title", draft: true)
+      page.update(title: "Second title")
+
+      assert_equal "/second-title", page.materialized_path
+    ensure
+      Spina.config.freeze_url_titles = false
+    end
+
     test "build slug from ancestors" do
       about = FactoryBot.create :about_page
       page = FactoryBot.create :services_page

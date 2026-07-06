@@ -85,6 +85,7 @@ module Spina
     end
 
     def set_materialized_path
+      freeze_url_title if Spina.config.freeze_url_titles
       self.old_path = materialized_path
       self.materialized_path = localized_materialized_path
 
@@ -116,6 +117,17 @@ module Spina
 
     def rewrite_rule
       RewriteRule.where(old_path: old_path).first_or_create.update(new_path: materialized_path) if old_path != materialized_path
+    end
+
+    # Locks the slug of a live page by writing it to url_title, so changing
+    # the title no longer changes the URL. The URL can still be changed
+    # explicitly through url_title.
+    def freeze_url_title
+      return unless persisted? && live?
+      return if homepage? || url_title(default: nil).present?
+
+      current_slug = materialized_path.to_s.split("/").last
+      self.url_title = current_slug if current_slug.present?
     end
 
     def localized_materialized_path
