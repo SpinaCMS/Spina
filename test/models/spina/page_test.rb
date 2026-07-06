@@ -40,6 +40,16 @@ module Spina
       assert_equal "/custom-slug", @demo.materialized_path
     end
 
+    test "renaming a page back and forth does not leave redirect loops or chains" do
+      page = FactoryBot.create(:page, title: "Looping page")
+      page.update(url_title: "somewhere-else")
+      page.update(url_title: "looping-page")
+
+      rules = RewriteRule.pluck(:old_path, :new_path)
+      assert_not rules.any? { |old_path, new_path| rules.include?([new_path, old_path]) }
+      assert_equal [page.materialized_path], RewriteRule.distinct.pluck(:new_path)
+    end
+
     test "build slug from ancestors" do
       about = FactoryBot.create :about_page
       page = FactoryBot.create :services_page
