@@ -7,6 +7,8 @@ module Spina
 
       helper Spina::Engine.helpers
 
+      protect_from_forgery with: :exception
+
       before_action :add_view_path
       before_action :set_admin_locale
       before_action :authenticate

@@ -19,6 +19,19 @@ module Spina
         assert_select "turbo-frame div", media_folder_name
       end
 
+      # Regression test for CVE-2024-7106 / GHSA-wqw3-p83g-r24v:
+      # the admin area must reject cross-site (token-less) state-changing requests.
+      test "rejects forged requests without a CSRF token" do
+        ActionController::Base.allow_forgery_protection = true
+
+        assert_no_difference -> { MediaFolder.count } do
+          post "/admin/media_folders", params: {media_folder: {name: "Forged"}}
+        end
+        assert_response :unprocessable_entity
+      ensure
+        ActionController::Base.allow_forgery_protection = false
+      end
+
       test "Show media folder" do
         @media_folder = FactoryBot.create :media_folder
         get "/admin/media_folders/#{@media_folder.id}/images"
