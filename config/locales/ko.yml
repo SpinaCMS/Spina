@@ -1,0 +1,417 @@
+ko:
+  activemodel:
+    attributes:
+      spina/embeds/youtube:
+        url: youtube.com/watch?v=...
+      spina/embeds/vimeo:
+        url: vimeo.com/...
+  activerecord:
+    errors:
+      models:
+        spina/page:
+          attributes:
+            title:
+              blank: 제목을 입력해 주세요
+    attributes:
+      spina/account:
+        address: 주소
+        city: 도시
+        email: 이메일
+        facebook: Facebook
+        google_analytics: Google Analytics
+        google_plus: Google+
+        google_site_verification: Google 사이트 확인
+        instagram: Instagram
+        kvk_identifier: 상공회의소
+        kvk_identifier_description: 상공회의소
+        linkedin: LinkedIn
+        logo: 로고
+        name: 웹사이트 이름
+        phone: 전화번호
+        postal_code: 우편번호
+        robots_allowed: 검색엔진에 노출
+        theme: 웹사이트 테마
+        twitter: Twitter
+        vat_identifier: 부가가치세(VAT)
+        vat_identifier_description: 부가가치세(VAT)
+        youtube: YouTube
+      spina/attachment:
+        created_at: 생성일
+        name: 파일명
+        size: 크기
+      spina/media_folder:
+        name: 이름
+      spina/navigation:
+        auto_add_pages: 페이지 자동 추가
+        auto_add_pages_description: 새 페이지가 이 내비게이션에 자동으로 추가됩니다
+        label: 라벨
+        pages: 페이지
+        pages_description: 이 내비게이션에서 사용할 페이지를 선택하세요
+      spina/page:
+        ancestry: 상위 페이지
+        created_at: 생성일
+        description: 메타 설명
+        description_description: 이 설명은 검색 결과에 표시됩니다
+        description_placeholder: 페이지에 대한 짧은 설명
+        draft: 임시 저장
+        draft_description: 페이지가 아직 완성되지 않았을 때 유용합니다
+        link_url: 페이지 리디렉션
+        link_url_description: URL로 이동
+        link_url_placeholder: 예. http://www.example.com/
+        menu_title: 내비게이션 제목
+        menu_title_placeholder: 비워두면 페이지 제목이 사용됩니다
+        no_parent: 상위 페이지 없음
+        resource: 리소스
+        seo_title: SEO <title>
+        seo_title_description: 검색엔진 결과에서 보기 좋게 표시되도록 하세요
+        seo_title_placeholder: 이 제목은 <title> 태그에 사용됩니다
+        show_in_menu: 내비게이션에 표시
+        show_in_menu_description: 끄면 이 페이지가 내비게이션에 표시되지 않습니다
+        skip_to_first_child: 이동
+        skip_to_first_child_description: 첫 번째 하위 페이지로 이동
+        title: 제목
+        title_placeholder: 페이지 제목
+        url_title: 슬러그 재정의
+        url_title_description: 선택 사항
+        url_title_placeholder: 슬러그
+        view_template: 페이지 템플릿
+      spina/resource:
+        label: 라벨
+        order_by: 정렬 기준
+        parent_page: 상위 페이지
+        view_template: 기본 보기 템플릿
+      spina/user:
+        admin: 관리자
+        admin_description: 관리자는 사용자를 생성할 수 있습니다
+        email: 이메일
+        email_description: 이메일은 고유해야 합니다
+        last_logged_in: 마지막 로그인
+        name: 이름
+        name_placeholder: 이름
+        password: 비밀번호
+        password_confirmation: 비밀번호 확인
+        password_description: 비밀번호를 유지하려면 비워두세요
+        role: 역할
+        user: 사용자
+    models:
+      spina/attachment:
+        one: 문서
+        other: 문서
+      spina/page:
+        one: 페이지
+        other: 페이지
+      spina/photo:
+        one: 이미지
+        other: 이미지
+      spina/user:
+        one: 사용자
+        other: 사용자
+  helpers:
+    label:
+      spina/embeds/button:
+        url: URL
+        label: 버튼 라벨
+      spina/embeds/youtube:
+        url: Youtube URL
+      spina/embeds/vimeo:
+        url: Vimeo URL
+  spina:
+    accounts:
+      contact_details: 연락처 정보
+      contact_details_description: 이메일 및 전화번호
+      couldnt_be_saved: 계정을 저장할 수 없습니다
+      name_description: 웹사이트 이름
+      save: 계정 저장
+      saved: 계정이 저장되었습니다
+    ago: 전
+    attachments:
+      choose_attachment: 첨부 파일 선택
+      delete_confirmation_html: "정말 삭제하시겠습니까? 이 첨부 파일은 페이지에서 <span class='font-semibold'>사용 중일 수 있습니다</span>."
+      download: 다운로드
+      insert: 문서 삽입
+      insert_multiple: 문서 여러 개 삽입
+      upload: 파일 업로드
+      upload_one: 파일 업로드
+    cancel: 취소
+    choose_from_library: 라이브러리에서 선택
+    close: 닫기
+    delete: 삭제
+    delete_confirmation: "<strong>%{subject}</strong>을(를) 삭제하시겠습니까?"
+    edit: 편집
+    edit_website: 웹사이트 편집
+    embeds:
+      embed_a_component: 컴포넌트 임베드
+      embed_component: 컴포넌트 임베드
+    forgot_password:
+      expired: 비밀번호 재설정 토큰이 만료되었습니다
+      mail_subject: 비밀번호 재설정
+      new: 비밀번호를 잊으셨나요
+      request: 새 비밀번호 요청
+      save: 새 비밀번호 저장
+      success: 새 비밀번호를 사용할 수 있습니다
+      unknown_user: 존재하지 않는 사용자입니다
+    images:
+      all_images: 모든 이미지
+      back: 뒤로
+      cannot_be_created: 생성할 수 없습니다
+      choose_image: 이미지 선택
+      choose_images: 이미지 선택
+      confirm_selection: 선택 확인
+      delete: 삭제
+      delete_confirmation_html: "이 <strong>이미지</strong>를 삭제하시겠습니까?"
+      delete_folder: 폴더 삭제
+      done_organizing: 정리 완료
+      insert_image: 이미지 삽입
+      insert_photo: 사진 삽입
+      insert_photos: 사진 삽입
+      link: 링크
+      missing_image: 이미지 없음
+      new_folder: 새 폴더
+      organize: 정리
+      remove_image: 이미지 제거
+      upload: 이미지 업로드
+      upload_image: 이미지 업로드
+    languages:
+      bg: 불가리아어
+      de: 독일어
+      en: 영어
+      es: 스페인어
+      fr: 프랑스어
+      id: 인도네시아어
+      it: 이탈리아어
+      nl: 네덜란드어
+      pl: 폴란드어
+      pt-BR: 브라질 포르투갈어
+      ro: 루마니아어
+      ru: 러시아어
+      sv: 스웨덴어
+      th: 태국어
+      tr: 터키어
+      zh-CN: 중국어 간체
+    layout:
+      couldnt_be_saved: 레이아웃을 저장할 수 없습니다
+      layout: 레이아웃
+      no_layout_parts: 사용 가능한 레이아웃 파트가 없습니다
+      save: 레이아웃 저장
+      saved: 레이아웃이 저장되었습니다
+    login: 로그인
+    logout: 로그아웃
+    main_menu: 메인 메뉴
+    media_library:
+      add_folder: 폴더 추가
+      add_image: 이미지 추가
+      attachments: 문서
+      back_to_all: 전체로 돌아가기
+      filename: 파일명
+      images: 이미지
+      images_count:
+        one: 이미지 1개
+        other: "이미지 %{count}개"
+      insert: 이미지 삽입
+      media_folder_delete_confirmation_html: "정말 삭제하시겠습니까? 이미지는 <strong>삭제되지 않습니다</strong>."
+      no_folder: 폴더 없음
+      photos: 이미지
+      rename_folder: 폴더 이름 변경
+      save_media_folder: 미디어 폴더 저장
+      upload_from_device: 기기에서 업로드
+      uploading: 업로드 중...
+    modal:
+      agree: 예, 확실합니다
+      cancel: 아니요, 취소
+    navigations:
+      add_menu_item: 메뉴 항목 추가
+      add_sub_item: 하위 항목 추가
+      choose_page: 페이지 선택
+      delete_item: 항목 삭제
+      delete_item_confirmation_html: "이 메뉴 항목을 <span class='font-semibold'>삭제</span>하시겠습니까?"
+      description: 원하는 대로 항목을 추가하고 정렬하세요. 중첩된 메뉴 항목을 추가할 수 있지만 필수는 아닙니다.
+      edit_item: "항목 편집"
+      navigations: 내비게이션
+      no_navigations: 이 웹사이트에는 아직 내비게이션이 없습니다. 테마 설정에서 만들 수 있습니다.
+      sorting_saved: 정렬이 저장되었습니다
+      url_placeholder: "https://"
+      url_title_placeholder: "라벨"
+    navigation_items:
+      page: 페이지
+      url: URL
+    notifications:
+      alert: 이런! 문제가 발생했습니다
+      information: 알림
+      login: 먼저 로그인해야 합니다
+      wrong_username_or_password: 이메일 또는 비밀번호가 올바르지 않습니다
+    options:
+      choose_option: 옵션 선택
+    page_links:
+      text_placeholder: "링크에 대한 선택적 텍스트"
+    pages:
+      add_page_to: "페이지 추가 위치:"
+      add_translation: "%{language} 번역 추가"
+      advanced: 고급
+      cannot_be_deleted: 페이지를 삭제할 수 없습니다
+      change_order: 순서 변경
+      change_view_template: 보기 템플릿 변경
+      change_view_template_confirmation: 페이지 템플릿을 변경하시겠습니까? 새 템플릿에 속하지 않는 페이지 콘텐츠는 사라집니다.
+      concept: 임시 저장
+      create: 페이지 생성
+      create_page: "새 %{template}"
+      delete: 페이지 삭제
+      delete_confirmation: "<strong>%{subject}</strong> 페이지를 삭제하시겠습니까?"
+      deleted: 페이지가 삭제되었습니다
+      done_changing_order: 정렬 완료
+      edit_translation: "%{language} 번역 편집"
+      invisible_to_search_engines: 웹사이트가 검색엔진에 노출되지 않습니다
+      invisible_to_search_engines_description: 검색엔진 노출을 활성화하려면 환경설정으로 이동하세요.
+      main_collection: 메인 컬렉션
+      materialize_path_confirmation: 이 페이지의 경로를 다시 생성하시겠습니까?
+      missing_translations: 누락된 번역
+      move_page: 페이지 이동
+      moved: 페이지가 이동되었습니다
+      new: 새 페이지
+      no_pages_yet: 아직 페이지가 없습니다
+      no_parent_page: 상위 페이지 없음
+      page_content: 콘텐츠
+      page_part: 페이지 섹션
+      page_seo: 검색엔진
+      path: "경로:"
+      photo_picker: 이미지 선택
+      photos_picker: 이미지 선택
+      preview: 미리보기
+      publish: 게시
+      published: 페이지가 게시되었습니다
+      rebuild_materialized_path: 경로 재생성
+      recommended: 권장
+      save: 페이지 저장
+      save_changes: 변경사항 저장
+      save_draft: 임시 저장
+      saved: 페이지가 저장되었습니다
+      saving: 저장 중...
+      select_page: 페이지 선택
+      couldnt_be_saved: 페이지를 저장할 수 없습니다
+      search_engines: 검색엔진
+      show_in_menu: 숨김
+      skip_to_first_child: 첫 번째 하위 페이지로 이동
+      sorting_saved: 정렬이 저장되었습니다
+    page_translations:
+      delete: "번역 삭제 (%{translation})"
+      delete_confirmation: "이 번역 <strong>(%{subject})</strong>을(를) 삭제하시겠습니까?"
+      deleted: 번역이 삭제되었습니다
+    permanently_delete: 영구 삭제
+    photos:
+      cannot_be_created: "이미지를 처리할 수 없습니다:"
+      choose_images: 이미지 선택
+      delete: 삭제
+      delete_confirmation: "이 <strong>이미지</strong>를 삭제하시겠습니까?"
+      delete_folder: 폴더 삭제
+      done_organizing: 정리 완료
+      insert_photo: 이미지 삽입
+      insert_photos: 이미지 선택
+      link: "이미지 URL:"
+      new_folder: 새 폴더
+      organize: 이미지 정리
+      rename_folder: 폴더 이름 변경
+      select_images: 이미지 선택
+      upload_image: 이미지 업로드
+    preferences:
+      Analytics: 분석
+      account: 일반
+      account_description: 개인 환경설정
+      account_save: 환경설정 저장
+      analytics: 분석 및 검색
+      analytics_description: 실시간 분석을 위해 계정을 연결하세요
+      analytics_save: 환경설정 저장
+      domain_name_settings: 도메인 설정
+      domain_name_settings_description: 커스텀 도메인을 설정하세요
+      social_media: 소셜 미디어
+      social_media_description: Facebook 및 Twitter 계정
+      social_media_save: 소셜 미디어 저장
+      style: 스타일
+      style_description: 브랜드에 맞는 테마를 선택하세요
+      style_save: 스타일 저장
+      title: 환경설정
+      users: 사용자
+      users_description: 사용자 및 관리자 관리
+    preview_website: 웹사이트 미리보기
+    resources:
+      edit: 리소스 편집
+      label_description: 이 페이지 컬렉션의 사용자에게 표시되는 라벨입니다.
+      manual_sorting: 수동 정렬
+      no_default_template: 기본 템플릿 없음
+      saved: 페이지 컬렉션이 저장되었습니다
+      select_resource: 리소스 선택
+      settings: "%{label} 설정"
+      settings_description: 이 컬렉션 안의 모든 페이지는 이 슬러그로 시작됩니다.
+    save: 저장
+    search: 검색...
+    settings:
+      general: 일반
+      save: 설정 저장
+      title: 설정
+      users: 사용자
+    theme:
+      save: 테마 저장
+      saved: 테마가 저장되었습니다
+      theme: 테마
+      theme_description: 테마를 설정하세요
+    ui:
+      cancel: 취소
+      delete: 삭제
+      delete_item: "%{item} 삭제"
+      load_more: 더 보기
+      move_to: 이동
+      new_entry: 새 항목
+      optional: 선택 사항
+      or: 또는
+      rename: 이름 변경
+      replace: 교체
+      save_changes: 변경사항 저장
+      saving: 저장 중...
+    user_mailer:
+      forgot_password:
+        button: 비밀번호 재설정
+        introduction: 최근 Spina CMS 계정의 비밀번호 재설정을 요청하셨습니다. 이 비밀번호 재설정은 앞으로 2시간 동안만 유효합니다. 아래 URL을 웹 브라우저에 복사하여 붙여넣으세요.
+        introduction_html: "최근 Spina CMS 계정의 비밀번호 재설정을 요청하셨습니다. 아래 버튼을 사용해 재설정하세요. <strong>이 비밀번호 재설정은 앞으로 2시간 동안만 유효합니다.</strong>"
+        preheader: 이 링크를 사용해 비밀번호를 재설정하세요. 링크는 2시간 동안만 유효합니다.
+        request_origin: "보안을 위해 안내드리면, 이 요청은 %{browser}을(를) 사용하는 %{platform} 기기에서 수신되었습니다. 비밀번호 재설정을 요청하지 않으셨다면 이 이메일을 무시하세요."
+        salutation: "안녕하세요, %{name}님"
+        subject: 비밀번호 재설정
+        trouble: "위 버튼이 작동하지 않는다면, 아래 URL을 웹 브라우저에 복사하여 붙여넣으세요."
+    users:
+      authorization: 권한
+      authorization_description: 관리자는 사용자를 관리할 수 있습니다. 일반 사용자는 관리할 수 없습니다.
+      cannot_be_created: 사용자를 저장할 수 없습니다
+      delete: 사용자 삭제
+      delete_confirmation_html: "사용자 <strong>%{user}</strong>을(를) 삭제하시겠습니까?"
+      deleted: 사용자가 삭제되었습니다
+      last_login: "마지막 로그인:"
+      never_logged_in: 로그인 기록 없음
+      new: 새 사용자
+      profile: 프로필
+      profile_description: 이 정보는 사용자를 구분하는 데 사용됩니다. 사용자는 이메일 주소로 로그인합니다.
+      save: 사용자 저장
+      saved: 사용자가 저장되었습니다
+    visit_page: 페이지 방문
+    website:
+      all_pages: 모든 페이지
+      content: 콘텐츠
+      documents: 문서
+      images: 이미지
+      main: 메인
+      media_library: 미디어 라이브러리
+      media_library_description: 이곳에서 모든 이미지와 문서를 확인할 수 있습니다
+      pages: 페이지
+      pages_description: 웹사이트의 모든 페이지
+      photos: 이미지
+      settings: 설정
+      theme: 테마
+      title: 내 웹사이트
+    wysiwyg:
+      heading_1: 제목 1
+      heading_2: 제목 2
+      heading_3: 제목 3
+      insert_link: 링크 삽입
+      link: 링크
+      paragraph: 문단
+      quote: 인용구
+      unlink: 링크 해제
+      url: URL
+      url_placeholder: URL을 입력하세요
