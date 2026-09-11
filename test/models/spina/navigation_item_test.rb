@@ -167,5 +167,49 @@ module Spina
       assert_equal navigation_item.materialized_path, navigation_item.url
     end
 
+test "url cannot use an unsafe scheme" do
+  [
+    "javascript:alert(1)",
+    "JavaScript:alert(1)",
+    "  javascript:alert(1)",
+    "\tjavascript:alert(1)",
+    "java\nscript:alert(1)",
+    "java\tscript:alert(1)",
+    "data:text/html;base64,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg==",
+    "vbscript:msgbox(1)",
+    "ftp://example.com"
+  ].each do |url|
+    navigation_item = FactoryBot.build(:navigation_item, kind: :url, url: url, url_title: "Title")
+
+    assert navigation_item.invalid?, "expected #{url.inspect} to be invalid"
+    assert_not_empty navigation_item.errors.where(:url, :unsafe_url), "expected an unsafe_url error for #{url.inspect}"
+  end
+end
+
+test "url allows safe schemes and relative urls" do
+  [
+    "https://example.com",
+    "HTTP://EXAMPLE.COM/path?query=1#fragment",
+    "//example.com",
+    "/about",
+    "about",
+    "#contact",
+    "?locale=nl",
+    "mailto:hello@example.com",
+    "tel:+31612345678"
+  ].each do |url|
+    navigation_item = FactoryBot.build(:navigation_item, kind: :url, url: url, url_title: "Title")
+
+    assert navigation_item.valid?, "expected #{url.inspect} to be valid, got: #{navigation_item.errors.full_messages}"
+  end
+end
+
+test "unsafe url has a translated error message" do
+  navigation_item = FactoryBot.build(:navigation_item, kind: :url, url: "javascript:alert(1)", url_title: "Title")
+  navigation_item.validate
+
+  assert_includes navigation_item.errors[:url], "must be a relative path or start with http://, https://, mailto: or tel:"
+end
+
   end
 end

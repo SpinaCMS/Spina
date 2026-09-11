@@ -354,3 +354,6 @@ es:
       unlink: Quitar enlace
       url: URL
       url_placeholder: Inserta una URL
+  errors:
+    messages:
+      unsafe_url: "debe ser una ruta relativa o comenzar con http://, https://, mailto: o tel:"

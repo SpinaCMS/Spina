@@ -352,3 +352,6 @@ th:
       unlink: 
       url: 
       url_placeholder: 
+  errors:
+    messages:
+      unsafe_url: "ต้องเป็นพาธแบบสัมพัทธ์ หรือเริ่มต้นด้วย http://, https://, mailto: หรือ tel:"

@@ -106,6 +106,9 @@ da:
       spina/user:
         one: Bruger
         other: Brugere
+  errors:
+    messages:
+      unsafe_url: "skal være en relativ sti eller begynde med http://, https://, mailto: eller tel:"
   helpers:
     label:
       spina/embeds/button:

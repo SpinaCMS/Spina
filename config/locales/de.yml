@@ -113,6 +113,9 @@ de:
       spina/user:
         one: Benutzer
         other: Benutzer
+  errors:
+    messages:
+      unsafe_url: "muss ein relativer Pfad sein oder mit http://, https://, mailto: oder tel: beginnen"
   helpers:
     label:
       spina/embeds/button:

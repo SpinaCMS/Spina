@@ -352,3 +352,6 @@ id:
       unlink: 
       url: 
       url_placeholder: 
+  errors:
+    messages:
+      unsafe_url: "harus berupa path relatif atau diawali dengan http://, https://, mailto: atau tel:"

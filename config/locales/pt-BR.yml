@@ -352,3 +352,6 @@ pt-BR:
       unlink: 
       url: 
       url_placeholder: 
+  errors:
+    messages:
+      unsafe_url: "deve ser um caminho relativo ou começar com http://, https://, mailto: ou tel:"

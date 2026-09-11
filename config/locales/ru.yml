@@ -119,6 +119,9 @@ ru:
         many: Пользователей
         one: Пользователь
         other: Пользователей
+  errors:
+    messages:
+      unsafe_url: "должен быть относительным путём или начинаться с http://, https://, mailto: или tel:"
   helpers:
     label:
       spina/embeds/button:
