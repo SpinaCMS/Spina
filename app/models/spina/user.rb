@@ -8,10 +8,6 @@ module Spina
     validates :name, presence: true
     validates :email, uniqueness: true, presence: true, format: {with: /\A[^@]+@[^@]+\z/}
 
-    def admin?
-      admin
-    end
-
     def to_s
       name
     end

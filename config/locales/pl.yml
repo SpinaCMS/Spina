@@ -69,8 +69,6 @@ pl:
         parent_page: 
         view_template: Domyślny szablon widoku
       spina/user:
-        admin: Administrator
-        admin_description: Może tworzyć Użytkowników
         email: E-mail
         email_description: Musi być unikalny
         last_logged_in: Ostatnio zalogowano

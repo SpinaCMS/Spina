@@ -69,8 +69,6 @@ tr:
         parent_page: 
         view_template: 
       spina/user:
-        admin: Yönetici
-        admin_description: Yöneticiler kullanıcı oluşturabilirler
         email: Eposta
         email_description: Eposta adresiniz benzersiz olmalıdır
         last_logged_in: Son bağlanma

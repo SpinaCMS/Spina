@@ -69,8 +69,6 @@ pt-BR:
         parent_page: 
         view_template: 
       spina/user:
-        admin: Administrador
-        admin_description: Administradores podem criar usuários
         email: Email
         email_description: Seu email deve ser único
         last_logged_in: Último acesso em

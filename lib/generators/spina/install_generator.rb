@@ -83,7 +83,7 @@ module Spina
       end
 
       @temporary_password = password
-      ::Spina::User.create name: "admin", email: email, password: password, admin: true
+      ::Spina::User.create name: "admin", email: email, password: password
     end
 
     def bootstrap_spina

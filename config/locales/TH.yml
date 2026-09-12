@@ -69,8 +69,6 @@ th:
         parent_page: 
         view_template: 
       spina/user:
-        admin: ผู้ดูแลระบบ
-        admin_description: ผู้ดูแลระบบสามารถสร้างผู้ใช้ได้
         email: อีเมล
         email_description: อีเมลของคุณต้องไม่ซ้ำ
         last_logged_in: ป้อนครั้งสุดท้าย

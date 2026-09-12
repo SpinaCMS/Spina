@@ -25,13 +25,6 @@
     <%= render Spina::Forms::GroupComponent.new(label: t('spina.users.authorization'), description: t('spina.users.authorization_description')) do %>
       <%= render Spina::Forms::LabelComponent.new(f, :password) %>
       <%= render Spina::Forms::PasswordFieldComponent.new(f, :password) %>
-      
-      <% if @user != Spina::Current.user %>
-        <div class="mt-5">
-          <%= render Spina::Forms::LabelComponent.new(f, :admin) %>
-          <%= render Spina::Forms::SwitchComponent.new(f, :admin) %>
-        </div>
-      <% end %>
     <% end %>
     
   <% end %>

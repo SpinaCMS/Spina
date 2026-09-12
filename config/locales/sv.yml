@@ -69,8 +69,6 @@ sv:
         parent_page: 
         view_template: 
       spina/user:
-        admin: Administratör
-        admin_description: Administratörer kan skapa användare
         email: Email
         email_description: Din email måste vara unik
         last_logged_in: Senast inloggad

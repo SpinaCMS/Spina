@@ -268,7 +268,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_21_162022) do
     t.string "name"
     t.string "email"
     t.string "password_digest"
-    t.boolean "admin", default: false
     t.datetime "created_at", precision: nil, null: false
     t.datetime "updated_at", precision: nil, null: false
     t.datetime "last_logged_in", precision: nil

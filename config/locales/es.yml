@@ -69,8 +69,6 @@ es:
         parent_page: Página padre
         view_template: Plantilla
       spina/user:
-        admin: Administrador
-        admin_description: Los administradores pueden crear usuarios
         email: Email
         email_description: Su email debe ser único
         last_logged_in: Entró por última vez
