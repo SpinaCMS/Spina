@@ -88,8 +88,6 @@ de:
         parent_page: Oberseite
         view_template: Standard View Template
       spina/user:
-        admin: Administrator
-        admin_description: Administratoren können Benutzer anlegen
         email: E-Mail
         email_description: Deine E-Mail-Adresse muss eindeutig sein
         last_logged_in: Zuletzt eingeloggt

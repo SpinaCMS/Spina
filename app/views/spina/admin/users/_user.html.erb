@@ -8,13 +8,6 @@
     </div>
   </div>
   
-  <% if user.admin? %>
-    <div class="flex items-center text-emerald-500">
-      <%= heroicon("badge-check", style: :solid, class: "w-6 h-6 mr-1") %>
-      <span class="text-sm font-medium"><%= Spina::User.human_attribute_name(:admin) %></span>
-    </div>
-  <% end %>
-  
   <div class="flex-1"></div>
   
   <div class="text-gray-400 text-sm">
@@ -26,11 +19,9 @@
     <% end %>
   </div>
 
-  <% if current_spina_user.admin? %>
-    <div>
-      <%= link_to spina.edit_admin_user_path(user), class: "btn btn-default px-3" do %>
-        <%= heroicon('pencil', style: :solid, class: 'w-4 h-4') %>
-      <% end %>
-    </div>
-  <% end %>
+  <div>
+    <%= link_to spina.edit_admin_user_path(user), class: "btn btn-default px-3" do %>
+      <%= heroicon('pencil', style: :solid, class: 'w-4 h-4') %>
+    <% end %>
+  </div>
 </div>

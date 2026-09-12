@@ -69,8 +69,6 @@ zh-CN:
         parent_page: 
         view_template: 
       spina/user:
-        admin: 管理员
-        admin_description: 管理员可创建用户
         email: 邮箱
         email_description: 邮箱必须唯一
         last_logged_in: 上一次登录

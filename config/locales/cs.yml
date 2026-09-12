@@ -81,8 +81,6 @@ cs:
         parent_page: Nadřazená stránka
         view_template: Výchozí šablona zobrazení
       spina/user:
-        admin: Administrátor
-        admin_description: Administrátoři mohou vytvářet uživatele
         email: E-mail
         email_description: Váš e-mail musí být jedinečný
         last_logged_in: Naposledy přihlášen

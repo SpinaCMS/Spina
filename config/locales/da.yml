@@ -81,8 +81,6 @@ da:
         parent_page: Overliggende side
         view_template: Standard designskabelon
       spina/user:
-        admin: Administrator
-        admin_description: Administratorer kan oprette brugere
         email: Email
         email_description: Din email skal være unik
         last_logged_in: Sidst logget ind

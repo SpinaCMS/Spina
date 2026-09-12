@@ -81,8 +81,6 @@ nl:
         parent_page: Bovenliggende pagina
         view_template: Standaard pagina template
       spina/user:
-        admin: Beheerder
-        admin_description: Beheerders kunnen gebruikers aanmaken
         email: Emailadres
         email_description: Gebruik een uniek emailadres
         last_logged_in: Laatst ingelogd

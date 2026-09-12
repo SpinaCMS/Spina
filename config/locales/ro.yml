@@ -69,8 +69,6 @@ ro:
         parent_page: 
         view_template: 
       spina/user:
-        admin: Administrator
-        admin_description: Administratorii pot crea utilizatori
         email: Email
         email_description: Email-ul trebuie să fie unic
         last_logged_in: Ultima dată autentificat

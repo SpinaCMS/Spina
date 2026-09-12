@@ -75,8 +75,6 @@ fr:
         parent_page: Page parente
         view_template: Modèle de page par défaut
       spina/user:
-        admin: Administrateur
-        admin_description: Les administrateurs peuvent créer des utilisateurs
         email: Email
         email_description: Votre email doit être unique
         last_logged_in: Dernière connexion

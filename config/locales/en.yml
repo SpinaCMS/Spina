@@ -81,8 +81,6 @@ en:
         parent_page: Parent page
         view_template: Default view template
       spina/user:
-        admin: Administrator
-        admin_description: Administrators can create users
         email: Email
         email_description: Your email must be unique
         last_logged_in: Last logged in

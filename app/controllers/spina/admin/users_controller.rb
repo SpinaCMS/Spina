@@ -2,7 +2,6 @@ module Spina
   module Admin
     class UsersController < AdminController
       before_action :authorize_authentication_module
-      before_action :authorize_admin, except: [:index]
       before_action :set_user, only: [:edit, :update, :destroy]
 
       admin_section :settings
@@ -61,7 +60,7 @@ module Spina
       end
 
       def user_params
-        params.require(:user).permit(:admin, :email, :name, :password_digest, :password, :password_confirmation, :last_logged_in)
+        params.require(:user).permit(:email, :name, :password_digest, :password, :password_confirmation, :last_logged_in)
       end
 
       def set_user
@@ -70,10 +69,6 @@ module Spina
 
       def authorize_authentication_module
         render status: 401 unless Spina.config.authentication == "Spina::Authentication::Sessions"
-      end
-
-      def authorize_admin
-        render status: 401 unless current_spina_user.admin?
       end
     end
   end

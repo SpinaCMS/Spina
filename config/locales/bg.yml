@@ -69,8 +69,6 @@ bg:
         parent_page: Родителска страница
         view_template: Темплейт по подразбиране
       spina/user:
-        admin: Администратор
-        admin_description: Администраторите могат да добавят потребители
         email: Email
         email_description: Посоченият email трябва да бъде уникален
         last_logged_in: Последен вход
