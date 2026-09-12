@@ -350,3 +350,6 @@ pl:
       unlink: 
       url: 
       url_placeholder: 
+  errors:
+    messages:
+      unsafe_url: "musi być ścieżką względną lub zaczynać się od http://, https://, mailto: lub tel:"

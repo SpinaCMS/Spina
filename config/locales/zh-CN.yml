@@ -350,3 +350,6 @@ zh-CN:
       unlink: 
       url: 
       url_placeholder: 
+  errors:
+    messages:
+      unsafe_url: "必须是相对路径，或以 http://、https://、mailto: 或 tel: 开头"

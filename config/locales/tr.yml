@@ -350,3 +350,6 @@ tr:
       unlink: 
       url: 
       url_placeholder: 
+  errors:
+    messages:
+      unsafe_url: "göreli bir yol olmalı veya http://, https://, mailto: ya da tel: ile başlamalıdır"

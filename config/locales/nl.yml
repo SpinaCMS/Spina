@@ -104,6 +104,9 @@ nl:
       spina/user:
         one: Gebruiker
         other: Gebruikers
+  errors:
+    messages:
+      unsafe_url: "moet een relatief pad zijn of beginnen met http://, https://, mailto: of tel:"
   helpers:
     label:
       spina/embeds/button:

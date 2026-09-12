@@ -350,3 +350,6 @@ bg:
       unlink: 
       url: 
       url_placeholder: 
+  errors:
+    messages:
+      unsafe_url: "трябва да бъде относителен път или да започва с http://, https://, mailto: или tel:"

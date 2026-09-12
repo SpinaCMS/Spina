@@ -98,6 +98,9 @@ fr:
       spina/user:
         one: Utilisateur
         other: Utilisateurs
+  errors:
+    messages:
+      unsafe_url: "doit être un chemin relatif ou commencer par http://, https://, mailto: ou tel:"
   helpers:
     label:
       spina/embeds/button:

@@ -350,3 +350,6 @@ sv:
       unlink: 
       url: 
       url_placeholder: 
+  errors:
+    messages:
+      unsafe_url: "måste vara en relativ sökväg eller börja med http://, https://, mailto: eller tel:"

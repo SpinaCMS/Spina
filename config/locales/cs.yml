@@ -104,6 +104,9 @@ cs:
       spina/user:
         one: Uživatel
         other: Uživatelé
+  errors:
+    messages:
+      unsafe_url: "musí být relativní cesta nebo začínat na http://, https://, mailto: nebo tel:"
   helpers:
     label:
       spina/embeds/button:

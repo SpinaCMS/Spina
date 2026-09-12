@@ -22,6 +22,7 @@ module Spina
 
     validates :page, uniqueness: {scope: :navigation}, presence: true, if: :page_kind?
     validates :url, presence: true, if: :url_kind?
+    validates_with Spina::SafeUrlValidator, attributes: [:url], allow_blank: true, if: :url_kind?
     validates :url_title, presence: true, if: :url_kind?
 
     delegate :draft?, :homepage?, to: :page, allow_nil: true

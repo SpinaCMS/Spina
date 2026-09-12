@@ -350,3 +350,6 @@ ro:
       unlink: 
       url: 
       url_placeholder: 
+  errors:
+    messages:
+      unsafe_url: "trebuie să fie o cale relativă sau să înceapă cu http://, https://, mailto: sau tel:"
