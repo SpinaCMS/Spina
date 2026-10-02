@@ -8,30 +8,9 @@ Spina::Theme.register do |theme|
   theme.name = "default"
   theme.title = "Default theme"
 
-  # Parts
-  # Define all editable parts you want to use in your view templates
-  #
-  # Built-in part types:
-  # - Line
-  # - MultiLine
-  # - Text (Rich text editor)
-  # - Image
-  # - ImageCollection
-  # - Attachment
-  # - Option
-  # - Repeater
-  theme.parts = [
-    {name: "text", title: "Body", hint: "Your main content", part_type: "Spina::Parts::Text"}
-  ]
-
-  # View templates
-  # Every page has a view template stored in app/views/my_theme/pages/*
-  # You define which parts you want to enable for every view template
-  # by referencing them from the theme.parts configuration above.
-  theme.view_templates = [
-    {name: "homepage", title: "Homepage", parts: %w[text]},
-    {name: "show", title: "Page", parts: %w[text]}
-  ]
+  # Page templates are defined in app/templates/spina/default/*.rb
+  # Global layout parts are defined in app/templates/spina/default/layout.rb
+  # theme.load_templates_from "app/templates/spina/default" # default location, can be overridden
 
   # Custom pages
   # Some pages should not be created by the user, but generated automatically.
@@ -47,10 +26,7 @@ Spina::Theme.register do |theme|
     {name: "main", label: "Main navigation"}
   ]
 
-  # Layout parts (optional)
-  # You can create global content that doesn't belong to one specific page. We call these layout parts.
-  # You only have to reference the name of the parts you want to have here.
-  theme.layout_parts = []
+  # Layout parts (optional) — define in app/templates/spina/default/layout.rb
 
   # Resources (optional)
   # Think of resources as a collection of pages. They are managed separately in Spina
