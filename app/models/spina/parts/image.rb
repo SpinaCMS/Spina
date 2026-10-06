@@ -28,6 +28,10 @@ module Spina
         signed_blob_id.present?
       end
 
+      def blank?
+        !present?
+      end
+
       # Rails 7.1 started using 'expires_at', so we 
       # include both expires_in and expires_at for backwards
       # compatibility
