@@ -40,6 +40,29 @@ module Spina
       assert_equal "/custom-slug", @demo.materialized_path
     end
 
+    test "changing the title of a live page keeps the url" do
+      page = FactoryBot.create(:page, title: "First title")
+      page.update(title: "Second title")
+
+      assert_equal "/first-title", page.materialized_path
+      assert_empty RewriteRule.all
+    end
+
+    test "changing url_title still changes the url" do
+      page = FactoryBot.create(:page, title: "First title")
+      page.update(url_title: "different-url")
+
+      assert_equal "/different-url", page.materialized_path
+      assert_equal [["/first-title", "/different-url"]], RewriteRule.pluck(:old_path, :new_path)
+    end
+
+    test "drafts keep following the title" do
+      page = FactoryBot.create(:page, title: "First title", draft: true)
+      page.update(title: "Second title")
+
+      assert_equal "/second-title", page.materialized_path
+    end
+
     test "build slug from ancestors" do
       about = FactoryBot.create :about_page
       page = FactoryBot.create :services_page
