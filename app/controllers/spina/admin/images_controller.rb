@@ -44,6 +44,16 @@ module Spina
               .new(images: @images, trix_target_id: params[:trix_target_id])
               .render_in(view_context)
           )
+        elsif params[:origin] == 'image-part'
+          image = @images.first
+          return head :unprocessable_entity unless image
+          render json: {
+            imageId: image.id,
+            signedBlobId: image.file.blob.signed_id,
+            filename: image.file.filename.to_s,
+            thumbnail: helpers.thumbnail_url(image),
+            embeddedUrl: helpers.embedded_image_url(image)
+          }
         else
           render turbo_stream: turbo_stream.prepend("images", partial: "image", collection: @images)
         end
